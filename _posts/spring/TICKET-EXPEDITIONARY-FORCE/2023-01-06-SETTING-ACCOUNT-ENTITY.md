@@ -2,7 +2,7 @@
 title: "엔티티 설정"
 
 categories:
-  - Spring
+  - spring
 tags:
   - [spring, JPA, entity, TICKET-EXPEDITIONARY-FORCE]
 

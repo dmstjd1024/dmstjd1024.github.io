@@ -2,7 +2,7 @@
 title: "티켓 원정대 출발!"
 
 categories:
-  - Spring
+  - spring
 tags:
   - [spring, JPA, entity, TICKET-EXPEDITIONARY-FORCE]
 
