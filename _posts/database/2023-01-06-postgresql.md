@@ -13,9 +13,6 @@ date: 2023-01-06
 last_modified_at: 2023-01-06
 ---
 
-{% assign posts = site.categories. %}
-{% for post in posts %} {% include archive-single.html type=page.entries_layout %} {% endfor %}
-
 # PostgreSQL
 ---
 오픈 소스 객체 관계형 데이터베이스  
