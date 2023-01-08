@@ -23,14 +23,14 @@ name                     : "전은성"
 description              : "개발 블로그"
 url                      : 'https://dmstjd1024.github.io'
 baseurl                  : ""
-repository               : # GitHub username/repo-name e.g. "dmstjd1024/dmstjd1024.github.io"
+repository               : "dmstjd1024/dmstjd1024.github.io" # GitHub username/repo-name e.g.
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs            : true # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : gisqus # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
+  provider               : "utterances" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "giscus", "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -41,8 +41,8 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "dark" (default), "dark"
   utterances:
-    theme                : # "github-dark" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+    theme                : "photon-dark" # (default), "github-dark"
+    issue_term           : "pathname" # (default)
   giscus:
     repo_id              : # Shown during giscus setup at https://giscus.app
     category_name        : # Full text name of the category
