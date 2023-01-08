@@ -58,7 +58,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-  hide                   : # true, false (default)
+  hide                   : true "# true, false (default)
 search                   : true # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
@@ -98,22 +98,18 @@ analytics:
 # Site Author
 author:
   name             : "전은성"
-  location         : "Seoul"
   email            : "dmstjd1024@naver.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:dmstjd1024@naver.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://dmstjd1024.github.io"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/dmstjd1024"
+      url: "https://github.com/dmstjd1024"
 
 # Site Footer
 footer:
   links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:dmstjd1024@naver.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/dmstjd1024"
