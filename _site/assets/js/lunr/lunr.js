@@ -7,7 +7,7 @@
 ;(function(){
 
 /**
- * A convenience function for configuring and constructing
+ * A convenience fudfdnction for configuring and constructing
  * a new lunr Index.
  *
  * A lunr.Builder instance is created and the pipeline setup
