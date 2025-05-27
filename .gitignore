@@ -2,7 +2,7 @@
 
 dmstjd1024.github.io.iml
 
-/_site/**
+/_site_/**
 /docs/**
 
 # Ignore Jekyll build files
