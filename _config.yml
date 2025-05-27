@@ -1,22 +1,22 @@
-title: example.com
-description: "Satellite - jekyll blog theme"
+title: 전은성 Dev
+description: "개발 블로그"
 logo_img: "/assets/img/favicon.webp"
 profile_img: "/assets/img/profile.webp"
 
 # Social Links
-email: example@gmail.com
-github_username: github
-twitter_username: twitter
-instagram_username: instagram
-linkedin_username: linkedin
-facebook_username: facebook
+email: dmstjd1024@naver.com
+github_username: dmstjd1024
+twitter_username:
+instagram_username:
+linkedin_username:
+facebook_username:
 
 # External API
-giscus_repo: "byanko55/jekyll-theme-satellite"
-giscus_repoId: "R_kgDOJ6fqWg"
+giscus_repo: "dmstjd1024/dmstjd1024.github.io"
+giscus_repoId: "R_kgDOIsWKcQ"
 giscus_category: "Q&A"
-giscus_categoryId: "DIC_kwDOJ6fqWs4Cc7p7"
-goatcounter_code: byanko77
+giscus_categoryId: "DIC_kwDOIsWKcc4Cqn3h"
+goatcounter_code: dmstjd1024
 google_analytics:
 
 # If your repo name follows the format "<user-name>.github.io", then leave the below blank.
@@ -45,7 +45,7 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      date: "1900-01-01"
+      date: "2025-05-27"
 
 # Markdown newline activator 
 kramdown:
