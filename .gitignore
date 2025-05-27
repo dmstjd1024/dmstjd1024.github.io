@@ -4,3 +4,9 @@ dmstjd1024.github.io.iml
 
 /_site/**
 /docs/**
+
+# Ignore Jekyll build files
+.sass-cache/**
+.jekyll-cache/**
+.jekyll-metadata
+/Gemfile.lock
