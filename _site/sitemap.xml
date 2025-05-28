@@ -101,6 +101,10 @@
 <lastmod>2025-05-27T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4001/Docker/</loc>
+<lastmod>2025-05-27T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4001/Etc/</loc>
 <lastmod>2025-05-27T00:00:00+09:00</lastmod>
 </url>
@@ -131,5 +135,9 @@
 <url>
 <loc>http://localhost:4001/</loc>
 <lastmod>2025-05-27T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4001/Docker/Text_Book_1.html</loc>
+<lastmod>2025-05-28T00:00:00+09:00</lastmod>
 </url>
 </urlset>
