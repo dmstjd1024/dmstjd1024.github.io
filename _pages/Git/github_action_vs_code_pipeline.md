@@ -40,29 +40,31 @@ ex)
 ```yaml
 name: dmstjd1024-github-actions              # WorkFlow 이름
 on:                                     # 트리거 하는 이벤트 명시
-push:                               # push 이벤트일때
-branches: [ master, dev ]         # 어떤 브랜치들
-pull_request:                       # 어떤 풀리퀘일때
-branches: [ master ]
-paths:                            # 특정 패턴을 설정하여 변경되었을 때 이벤트 실행
-- "**.js"
-schedule:
-- cron: '0 01 * * *'              # 새벽 1시 (https://crontab.guru 참조)
+  push:                               # push 이벤트일때
+    branches: [ master, dev ]         # 어떤 브랜치들
+  pull_request:                       # 어떤 풀리퀘일때
+    branches: [ master ]
+    paths:                            # 특정 패턴을 설정하여 변경되었을 때 이벤트 실행
+      - "**.js"
+    schedule:
+        - cron: '0 01 * * *'              # 새벽 1시 (https://crontab.guru 참조)
 jobs:
-build:
-strategy:
-matrix:                           # 테스트 배포를 위한 빌드 matrix 구성
-node-version: [10.x, 12.x]
-runs-on: ubuntu-latest              # 어떤 OS로 실행
-steps:                              # Job이 가질 수 있는 동작 나열 step 독립적 프로세스
-- name: Checkout source code      # Step 이름
-uses: actions/checkout@v2       # Step에서 사용할 액션 (Github 마켓플레이스 action 사용가능)
-- name: My First Step             # step 이름
-run:                            # job에 할당된 자원 shell 이용하여 커맨드 라인 실행
-npm install
-npm test
-npm build
-- name: Cache yarn dependencies
+  build:
+    strategy:
+      matrix:                           # 테스트 배포를 위한 빌드 matrix 구성
+        node-version: [10.x, 12.x]
+
+    runs-on: ubuntu-latest              # 어떤 OS로 실행
+    steps:                              # Job이 가질 수 있는 동작 나열 step 독립적 프로세스
+      - name: Checkout source code      # Step 이름
+        uses: actions/checkout@v2       # Step에서 사용할 액션 (Github 마켓플레이스 action 사용가능)
+
+      - name: My First Step             # step 이름
+        run:                            # job에 할당된 자원 shell 이용하여 커맨드 라인 실행
+          npm install
+          npm test
+          npm build
+      - name: Cache yarn dependencies
 uses: actions/cache@v1
 id: yarn-cache
 with:                           # action에 정의되는 input 파라미터 (환경 변수)
