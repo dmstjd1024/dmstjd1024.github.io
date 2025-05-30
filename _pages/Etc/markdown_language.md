@@ -11,7 +11,7 @@ thumbnail: "/assets/img/thumbnail/markdown_thumbnail.webp"
 ---
 
 # Markdown 문법
- 게시물 작성하면서, Markdown을 많이 사용할텐데, 요약집처럼 정리해보았다.
+게시물 작성하면서, Markdown을 많이 사용할텐데, 요약집처럼 정리해보았다.
 
 제목
 ======
@@ -57,7 +57,7 @@ thumbnail: "/assets/img/thumbnail/markdown_thumbnail.webp"
 볼드 :  **별 기호** 혹은 __언더바__
 __*이텔릭체*와 볼드__ 혼용 가능
 
-취소선 : ~~물결 기호~~ 
+취소선 : ~~물결 기호~~
 밑줄 : 직접 `<u></u>` <u>밑줄</u> 사용
 ```
 
@@ -200,8 +200,8 @@ __*이텔릭체*와 볼드__ 혼용 가능
 
 ```javascript
 function add(a, b = 1) {
-  console.log(a, b)
-  return a + b
+    console.log(a, b)
+    return a + b
 }
 ```
 
@@ -315,7 +315,7 @@ ___
 줄바꿈
 =====
 ```markdown
-동해물과 백두산이 마르고 닳도록 
+동해물과 백두산이 마르고 닳도록
 하느님이 보우하사 우리나라 만세
 무궁화 삼천리 화려 강산    <!--띄어쓰기 2번--> 대한
 사람 대한으로 길이 보전하세<br>
@@ -352,5 +352,6 @@ ___
 
 -- 끝 --
 
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
- 
+[참조]
+[markdown guide](https://www.markdownguide.org/basic-syntax/)
+[HEROPY.DEV](https://www.heropy.dev/p/B74sNE)
