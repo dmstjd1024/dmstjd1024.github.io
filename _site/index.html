@@ -143,6 +143,12 @@
 
         
     
+
+        
+    
+
+        
+    
             
 
         
@@ -172,6 +178,7 @@
 
         
     
+            
             
             
 
@@ -180,6 +187,24 @@
     
 
     <ul class="nav-list">
+<li id="nav-first" aria-label="AWS">
+            <div class="nav-item">
+                <a href="/AWS/" class="nav-list-link nav-lh">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"></path></svg>
+                    <span>AWS</span>
+                </a><button class="nav-list-expander" aria-label="toggle items in AWS category" aria-pressed="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
+                </button>
+</div>
+<ul class="nav-list"><li id="nav-second" aria-label="업무에 바로쓰는 AWS 입문">
+                    <div class="nav-item">
+                        <a href="/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/" class="nav-list-link nav-sh">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
+                            <span>업무에 바로쓰는 AWS 입문</span>
+                        </a>
+</div>
+</li></ul>
+</li>
 <li id="nav-first" aria-label="Database">
             <div class="nav-item">
                 <a href="/Database/" class="nav-list-link nav-lh">
@@ -343,6 +368,31 @@
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
+                            <a href="/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/EC2.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/aws_thumbnail.jpeg') !important"></a>
+                        
+                    </div>
+                    <div class="box_contents">
+                        <a href="/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/EC2.html"><h1 class="title_post">EC2 란</h1></a>
+                        <a href="/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/EC2.html" class="txt_post">
+                            EC2 란
+
+
+                        </a>
+                        <div class="info-post">
+                                <a href="/AWS" class="category">AWS</a>
+                            
+                                <span class="date">· 2025-06-03</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        
+        
+        <li class="paginated-item">
+                <div id="article_content">
+                    <div class="thumbnail_zone">
+                        
                             <a href="/Etc/markdown_language.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/markdown_thumbnail.webp') !important"></a>
                         
                     </div>
@@ -388,7 +438,7 @@
 볼드 :  **별 기호** 혹은 __언더바__
 __*이텔릭체*와 볼드__ 혼용 가능
 
-취소선 : ~~물결 기호~~ 
+취소선 : ~~물결 기호~~
 밑줄 : 직접 `&lt;u&gt;&lt;/u&gt;` &lt;u&gt;밑줄&lt;/u&gt; 사용
 
 
@@ -523,8 +573,8 @@ background 혹은 background-image 속성으로 요소에 배경 이미지를 �
 
 
 function add(a, b = 1) {
-  console.log(a, b)
-  return a + b
+    console.log(a, b)
+    return a + b
 }
 
 
@@ -672,7 +722,7 @@ ___
 
 
 줄바꿈
-동해물과 백두산이 마르고 닳도록 
+동해물과 백두산이 마르고 닳도록
 하느님이 보우하사 우리나라 만세
 무궁화 삼천리 화려 강산    &lt;!--띄어쓰기 2번--&gt; 대한
 사람 대한으로 길이 보전하세&lt;br&gt;
@@ -700,8 +750,9 @@ ___
 
 – 끝 –
 
-ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-
+[참조]
+markdown guide
+HEROPY.DEV
 
                         </a>
                         <div class="info-post">
@@ -1398,6 +1449,10 @@ void connectStibee(){
                     </div>
                 </div>
             </li>
+        
+        
+        
+        
         
         
         
@@ -5940,6 +5995,28 @@ java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테�
 
         posts.push({
             'title'    : "Index",
+            'path'     : "AWS",
+            'type'     : "category",
+            'tags'     : "",
+            'url'      : "/AWS/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
+            'date'     : "2025-05-27"
+        });
+    
+
+        posts.push({
+            'title'    : "Index",
+            'path'     : "AWS > 업무에 바로쓰는 AWS 입문",
+            'type'     : "category",
+            'tags'     : "",
+            'url'      : "/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
+            'date'     : "2025-05-27"
+        });
+    
+
+        posts.push({
+            'title'    : "Index",
             'path'     : "Database > Postgresql",
             'type'     : "category",
             'tags'     : "",
@@ -6100,6 +6177,17 @@ java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테�
             'url'      : "/Etc/markdown_language.html",
             'image'    : "/assets/img/thumbnail/markdown_thumbnail.webp",
             'date'     : "2025-05-30"
+        });
+    
+
+        posts.push({
+            'title'    : "EC2 란",
+            'path'     : "AWS > 업무에 바로쓰는 AWS 입문",
+            'type'     : "post",
+            'tags'     : "AWS, EC2",
+            'url'      : "/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/EC2.html",
+            'image'    : "/assets/img/thumbnail/aws_thumbnail.jpeg",
+            'date'     : "2025-06-03"
         });
     
 
