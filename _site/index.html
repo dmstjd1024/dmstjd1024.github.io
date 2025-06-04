@@ -149,13 +149,6 @@
 
         
     
-            
-
-        
-    
-
-        
-    
 
         
     
@@ -169,6 +162,7 @@
 
         
     
+            
 
         
     
@@ -178,6 +172,16 @@
 
         
     
+
+        
+    
+
+        
+    
+
+        
+    
+            
             
             
             
@@ -187,6 +191,14 @@
     
 
     <ul class="nav-list">
+<li id="nav-first" aria-label="AI">
+            <div class="nav-item">
+                <a href="/AI/" class="nav-list-link nav-lh">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"></path></svg>
+                    <span>AI</span>
+                </a>
+</div>
+</li>
 <li id="nav-first" aria-label="AWS">
             <div class="nav-item">
                 <a href="/AWS/" class="nav-list-link nav-lh">
@@ -364,6 +376,177 @@
 </h1>
 <div id="category-list">
     <ul class="paginated-list" data-current-page="1" aria-live="polite">
+        <li class="paginated-item">
+                <div id="article_content">
+                    <div class="thumbnail_zone">
+                        
+                            <a href="/AI/MCP%EB%9E%80.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/mcp_thumbnail.jpg') !important"></a>
+                        
+                    </div>
+                    <div class="box_contents">
+                        <a href="/AI/MCP%EB%9E%80.html"><h1 class="title_post">MCP 란</h1></a>
+                        <a href="/AI/MCP%EB%9E%80.html" class="txt_post">
+                            MCP 란
+
+Model Context Protocol (MCP)는 LLM(대형 언어 모델)과의 상호작용을 위한 프로토콜입니다. MCP는 LLM이 특정 작업을 수행하기 위해 필요한 컨텍스트를 제공하는 데 중점을 둡니다. 이 프로토콜은 LLM이 더 나은 응답을 생성할 수 있도록 돕기 위해 설계되었습니다.
+
+MCP는 LLM이 작업을 수행하는 데 필요한 정보를 명확하게 전달하고, LLM이 해당 정보를 기반으로 최적의 응답을 생성할 수 있도록 지원합니다. 이를 통해 LLM의 성능을 향상시키고, 사용자와의 상호작용을 보다 효율적으로 만들 수 있습니다.
+
+LLM vs LLM Agent
+
+
+  
+    
+      정의
+      LLM
+      LLM Agent
+    
+  
+  
+    
+      주요 역할
+      대형 언어 모델 (예: GPT-3, GPT-4)
+      LLM을 활용한 에이전트 (예: AutoGPT, BabyAGI)
+    
+    
+      Tool 사용
+      자연어 처리, 텍스트 생성 등 단일 작업 수행
+      복잡한 태스크를 계획하고 실행하는 에이전트
+    
+    
+      Memory
+      없음 (컨텍스트 제한)
+      있음 (대화 기록, 작업 히스토리 기억 가능)
+    
+    
+      Tool 사용
+      불가능 (내부 모델 능력에만 의존)
+      가능 (API, 계산기, DB, 웹 브라우저 등 외부 리소스 활용)
+    
+    
+      Planner
+      없음
+      있음 (도구를 언제/어떻게 쓸지 판단하고 순서 계획)
+    
+    
+      실행 방식
+      정적인 응답 → 입력 1개 → 출력 1개
+      동적인 행동 → 입력 → 툴 호출 → 결과 해석 → 반복
+    
+    
+      유연성
+      낮음 (미리 학습된 지식만 활용 가능)
+      높음 (실시간 검색, 계산, API 활용 가능)
+    
+    
+      지속적 작업
+      어려움
+      가능 (여러 단계를 거치는 장기 과제 처리)
+    
+  
+
+
+즉 LLM은 단순히 입력에 대한 응답을 생성하는 반면, LLM Agent는 LLM을 활용하여 복잡한 작업을 계획하고 실행하는 에이전트입니다.
+LLM Agent는 도구를 사용하고, 기억을 유지하며, 동적인 행동을 통해 지속적인 작업을 수행할 수 있는 능력을 갖추고 있습니다. 이러한 차이로 인해 LLM Agent는 더 유연하고 강력한 기능을 제공합니다.
+
+LLM Agent 개발의 파편화와 표준화 필요성
+
+LLM Agent 구축하는 방식은 프레임워크마다 제각각이었습니다.
+
+  툴 연동방식이 서로 다름
+  재사용과 확장성 부족
+  시스템간 연동이 어려움
+
+
+따라서 표준 프로토콜의 필요성이 커졌고 해결책으로 MCP 등장
+
+MCP의 기본구조
+
+Host, Client, Server
+
+Host
+LLM Application 자체로 통신의 중심이며 여러 개의 Client 포함하고 이들을 관리
+
+특징
+
+  LLM 기반의 인터페이스
+  내부에 MCP Client 포함
+  user interface 상호작용
+  Client와 연결된 Server들의 실행 결과와 context를 통합해 LLM에 전달
+
+
+역할 요약
+
+  MCP Client들의 초기화 및 라이프사이클 관리
+  인증 및 권한 제어
+  여러 Client로부터 받은 정보를 Context로 통합
+  사용자와 LLM 사이의 브릿지
+
+
+ex) Claude 사이트, Cursor AI Code Editor
+
+Client
+MCP 서버들과 연결되어있으며, 양방향 메시지 교환 기능 목록 관리, 초기 협상등을 수행
+
+특징
+
+  MCP 서버와 연결 (1:1)
+  내부적 메시지 교환 기능, 서버 상태, 기능 목록
+  각 Client는 특정 목적에 맞춰 설계
+
+
+역할 요약
+
+  stateful connection
+  메시지 라우팅 처리
+
+
+Server
+LLM이 외부 세계와 상호작용 할 수 있도록 도와주는 역할
+
+특징
+
+  Tool
+    
+      외부 API 또는 기능 실행 명령 단위, LLM이 호출 가능
+    
+  
+  Resource
+    
+      텍스트, 로그, DB 스키마 등 외부 Conext 제공
+    
+  
+  Prompt Template
+    
+      LLM이 따라야 할 지시문, 형식
+    
+  
+
+
+역할 요약
+
+  LLM이 직접 호출할 수 있는 도구(Tool) 제공
+  Host/Client가 요청하는 리소스 정보 제공
+  LLM의 행동을 안내할 프롬프트 템플릿 제공
+  초기화 과정에서 프로토콜 협상 수행
+  Client로부터 받은 요청을 처리하고 응답 반환
+
+
+기반 LLM Agent의 동작 흐름
+
+
+                        </a>
+                        <div class="info-post">
+                                <a href="/AI" class="category">AI</a>
+                            
+                                <span class="date">· 2025-06-04</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        
+        
         <li class="paginated-item">
                 <div id="article_content">
                     <div class="thumbnail_zone">
@@ -1449,6 +1632,8 @@ void connectStibee(){
                     </div>
                 </div>
             </li>
+        
+        
         
         
         
@@ -3874,159 +4059,75 @@ class Study extends Object{
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
-                            <a href="/Java/Live-Study/2023-01-06-live-study5.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/java_thumbnail.png') !important"></a>
+                            <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/postgresql_thumbnail.png') !important"></a>
                         
                     </div>
                     <div class="box_contents">
-                        <a href="/Java/Live-Study/2023-01-06-live-study5.html"><h1 class="title_post">자바의 Class</h1></a>
-                        <a href="/Java/Live-Study/2023-01-06-live-study5.html" class="txt_post">
-                            목적
-
-자바의 Class에 대해 학습하세요.
-
-학습할 것
+                        <a href="/Database/Postgresql/2023-01-06-postgresql.html"><h1 class="title_post">PostgreSQL이란</h1></a>
+                        <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="txt_post">
+                            PostgreSQL
 
 
-  클래스 정의하는 방법
-  객체 만드는 방법 (new 키워드 이해하기)
-  메소드 정의하는 방법
-  생성자 정의하는 방법
-  this 키워드 이해하기
+오픈 소스 객체 관계형 데이터베이스  
+새로운 하나의 프로그래밍처럼 구현하는 기능을 제공한다.
+
+구조
+
+클라이언트 / 서버 모델 사용
+
+기능
+
+트랜잭션과 ACID(Atomicity, Consistency, Isolation, Durability)를 지원
+또한 주요 기능들을 많이 가지고 있다고 한다.
+
+Nested transactions (savepoints)    
+Point in time recovery  
+Online/hot backups, Parallel restore  
+Rules system (query rewrite system)  
+B-tree, R-tree, hash, GiST method indexes  
+Multi-Version Concurrency Control (MVCC)  
+Tablespaces  
+Procedural Language  
+Information Schema  
+I18N, L10N  
+Database &amp; Column level collation  
+Array, XML, UUID type  
+Auto-increment (sequences),  
+Asynchronous replication  
+LIMIT/OFFSET  
+Full text search  
+SSL, IPv6  
+Key/Value storage  
+Table inheritance
+
+등등 여러 기능들을 제공한다고 하는데 여기서 Auto-increment나 Limit 등등 빼고는 잘 접하지 않아서 그런지 이해는 못하겠다. 나중에 PostgreSQL을 좀 더 많이쓰는 일이 생기면 접할 것 같다.
+
+특징
 
 
-1. 클래스 정의하는 방법
-
-
-
-클래스란, 객체를 정의해놓은 것, 또는 객체의 설계도 라고 정의할 수 있다. 그리고 클래스는 객체를 생성하는데 사용된다.
-
-클래스를 구성하는 요소들은 필드들과 메소드, 생성자로 되어있다.
-
-public class Account{
-
-	private Long id;
-	private String name;
-	private String email;
-	private String password;
-
-    /* 생성자는 default 하게 만들 수 있지만 생성자에서 파라미터로 값을 받아서 작성 시, 반드        시 작성해주어야 한다.
-    */
-    public Account(String email, String password){
-        this.email = email;
-        this.password = password;
-    }
-
-	public String getEmail(){
-		return Email;
-	}
-
-	public void changePassword(String password){
-		this.password = password;
-	}
-}
-
-
-2. 객체 만드는 방법(new 키워드 이해하기)
-
-
-
-클래스로부터 객체를 만드는 과정을 인스턴스화 라고 하며 만들어진 객체를 그 클래스의 인스턴스라고 한다. 그리고 객체는 속성과 기능 두 종류의 구성요소로 이루어져 있으며 이들은 그 객체의 멤버라고 한다. 속성과 기능 같은 경우, 속성은 멤버변수, 기능은 메소드 라고 말한다.
-
-클래스명 변수명; // 선언
-변수명 = new 클래스명(); // 생성
-
-
-기본적으로 인스턴스 생성( 객체 만들기 )는 위 코드처럼 정의하며 위 클래스를 예시로 들었을 땐,
-
-Account account;
-account = new Account(); // 기본 생성자
-account = new Account("dmstjd1024@naver.com", "password") // 파라미터 있는 생성자
-
-
-이런 식으로 구성된다.
-
-3. 메소드 정의하는 법
+  
+    유연한 객체 생성  
+단순한 자료 저장소로써의 기능을 넘어 마치 하나의 새로운 프로그래밍 언어처럼 개발자의 창의성에 따라 무한한 기능을 손쉽게 구현할 수 있도록 한다.
+  
+  
+    상속  
+java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테이블 상속 기능을 이용해 하위 테이블을 만들 수 있다. 테이블에 저장된 자료는 상위 테이블을 조회하면, 해당 테이블의 하위 테이블에 포함된 모든 자료를 조회할 수 있으며, 하위 테이블을 만들 때, 상위 테이블의 칼럼을 그대로 상속 받으면서, 하위 테이블에만 속하는 칼럼을 추가로 만들 수 있다.
+  
+  
+    함수  
+때때로, ‘저장 프로시저’라고 불리는 SQL문으로 작성된 함수를 서버환경에서 사용할 수 있다. 비록 다른 언어와는 달리 제어문과 반복문을 사용하지는 못하지만, 다른 언어와 결합시킬 수 있다. 일부 언어에서는 심지어 트리거 내부에서 실행시킬 수 있다.
+  
 
 
 
-반환타입 메서드이름 (타입 변수명, 타입변수명, ... )
-{
-	//메서드 호출 시 수행될 코드
-}
 
+내 생각
 
-ex)
-
-int add (int a, int b)
-{
-	int result = a + b;
-	return result;
-}
-
-
-4. 생성자 정의하는 방법
-
-
-
-컴파일 시 소스파일에 생성자가 하나도 정의되지 않은 경우, 컴파일러는 자동적으로 아래와 같은 내용의 기본 생성자를 추가하여 컴파일 한다.
-
-클래스이름() {}
-
-
-조심해야 할 점은 클래스 내에 생성자가 하나도 없을 때 이므로 혹시나 뜬금없이 파라미터를 가진 생성자만 적어놓으면 에러가 난다.
-
-클래스 클래스명{
-	변수
-	변수
-	생성자(파라미터 파라미터명){
-		// 에러 발생
-	}
-}
-
-
-5. this 키워드 이해하기
-
-
-
-생성자 간에도 서로 호출이 가능한다. 허나 2가지 조건이 필요한다.
-
-
-  생성자의 이름으로 클래스이름 대신 this를 사용
-  한 생성자에서 다른 생성자를 호출할 때는 반드시 첫 줄에서만 호출이 가능
-
-
-ex)
-
-Car (String color){
-	door = 5;
-	Car(color, "auto", 4); // X 생성자에서 다른 생성자를 호출 =&gt; this(color ....) 생성 O
-}
-
-
-첫줄에서만 호출 가능한 이유는 생성자 내에서 ㅗ기화 작업 도중, 다른 생성자를 호출하게 되면, 호출된 다른 생성자 내에서도 멤버변수들의 값을 초기화를 할 것이므로 다른 생성자를 호출하기 이전의 초기화 작업이 무의미해질수 있기 떄문이다.
-
-그리고 this같은 경우는
-
-Car(){
-	this("white", "auto", 4); // 처럼 깔끔하게 적는 것이 보기 더 좋다.
-}
-
-
-또한 this를 이용해서 인스턴스변수에 접근할 수 있다. 허나 this는 인스턴스 변수에만 접근할 수 있다. static 메서드에서는 인스턴스를 사용할 수 없는 것처럼, this 역시 사용할 수 없다. static 메서드는 인스턴스를 생성하지 않고도 호출될 수 있기 때문이다.
-
-정리하자면
-
-this 인스턴스 자신을 가리키는 참조변수, 인스턴스의 주소가 저장되어 있따. 모든 인스턴스메서드에 지역변수로 숨겨진 채로 존재한다.
-
-this(), this(매개변수) 생성자, 같은 클래스의 다른 생성자를 호출할 때 사용한다.
-
-Reference
-
-남궁성. Java의 정석
+일단은 이러한 장점들이 있지만 현재 프로젝트에선 JPA를 활용하여 진행하므로 PostgreSQL의 장점을 활용할 기회가 있을지는 잘 모르겠다. 차후 postgresQL의 특징을 사용하는 경험이나 정보를 듣는다면 추가로 적용하겠다.
 
                         </a>
                         <div class="info-post">
-                                <a href="/Java" class="category">Java</a>
+                                <a href="/Database" class="category">Database</a>
                             
                                 <span class="date">· 2023-01-06</span>
                             
@@ -5631,75 +5732,159 @@ pre-landering, decoupling
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
-                            <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/postgresql_thumbnail.png') !important"></a>
+                            <a href="/Java/Live-Study/2023-01-06-live-study5.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/java_thumbnail.png') !important"></a>
                         
                     </div>
                     <div class="box_contents">
-                        <a href="/Database/Postgresql/2023-01-06-postgresql.html"><h1 class="title_post">PostgreSQL이란</h1></a>
-                        <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="txt_post">
-                            PostgreSQL
+                        <a href="/Java/Live-Study/2023-01-06-live-study5.html"><h1 class="title_post">자바의 Class</h1></a>
+                        <a href="/Java/Live-Study/2023-01-06-live-study5.html" class="txt_post">
+                            목적
+
+자바의 Class에 대해 학습하세요.
+
+학습할 것
 
 
-오픈 소스 객체 관계형 데이터베이스  
-새로운 하나의 프로그래밍처럼 구현하는 기능을 제공한다.
-
-구조
-
-클라이언트 / 서버 모델 사용
-
-기능
-
-트랜잭션과 ACID(Atomicity, Consistency, Isolation, Durability)를 지원
-또한 주요 기능들을 많이 가지고 있다고 한다.
-
-Nested transactions (savepoints)    
-Point in time recovery  
-Online/hot backups, Parallel restore  
-Rules system (query rewrite system)  
-B-tree, R-tree, hash, GiST method indexes  
-Multi-Version Concurrency Control (MVCC)  
-Tablespaces  
-Procedural Language  
-Information Schema  
-I18N, L10N  
-Database &amp; Column level collation  
-Array, XML, UUID type  
-Auto-increment (sequences),  
-Asynchronous replication  
-LIMIT/OFFSET  
-Full text search  
-SSL, IPv6  
-Key/Value storage  
-Table inheritance
-
-등등 여러 기능들을 제공한다고 하는데 여기서 Auto-increment나 Limit 등등 빼고는 잘 접하지 않아서 그런지 이해는 못하겠다. 나중에 PostgreSQL을 좀 더 많이쓰는 일이 생기면 접할 것 같다.
-
-특징
+  클래스 정의하는 방법
+  객체 만드는 방법 (new 키워드 이해하기)
+  메소드 정의하는 방법
+  생성자 정의하는 방법
+  this 키워드 이해하기
 
 
-  
-    유연한 객체 생성  
-단순한 자료 저장소로써의 기능을 넘어 마치 하나의 새로운 프로그래밍 언어처럼 개발자의 창의성에 따라 무한한 기능을 손쉽게 구현할 수 있도록 한다.
-  
-  
-    상속  
-java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테이블 상속 기능을 이용해 하위 테이블을 만들 수 있다. 테이블에 저장된 자료는 상위 테이블을 조회하면, 해당 테이블의 하위 테이블에 포함된 모든 자료를 조회할 수 있으며, 하위 테이블을 만들 때, 상위 테이블의 칼럼을 그대로 상속 받으면서, 하위 테이블에만 속하는 칼럼을 추가로 만들 수 있다.
-  
-  
-    함수  
-때때로, ‘저장 프로시저’라고 불리는 SQL문으로 작성된 함수를 서버환경에서 사용할 수 있다. 비록 다른 언어와는 달리 제어문과 반복문을 사용하지는 못하지만, 다른 언어와 결합시킬 수 있다. 일부 언어에서는 심지어 트리거 내부에서 실행시킬 수 있다.
-  
+1. 클래스 정의하는 방법
 
 
 
+클래스란, 객체를 정의해놓은 것, 또는 객체의 설계도 라고 정의할 수 있다. 그리고 클래스는 객체를 생성하는데 사용된다.
 
-내 생각
+클래스를 구성하는 요소들은 필드들과 메소드, 생성자로 되어있다.
 
-일단은 이러한 장점들이 있지만 현재 프로젝트에선 JPA를 활용하여 진행하므로 PostgreSQL의 장점을 활용할 기회가 있을지는 잘 모르겠다. 차후 postgresQL의 특징을 사용하는 경험이나 정보를 듣는다면 추가로 적용하겠다.
+public class Account{
+
+	private Long id;
+	private String name;
+	private String email;
+	private String password;
+
+    /* 생성자는 default 하게 만들 수 있지만 생성자에서 파라미터로 값을 받아서 작성 시, 반드        시 작성해주어야 한다.
+    */
+    public Account(String email, String password){
+        this.email = email;
+        this.password = password;
+    }
+
+	public String getEmail(){
+		return Email;
+	}
+
+	public void changePassword(String password){
+		this.password = password;
+	}
+}
+
+
+2. 객체 만드는 방법(new 키워드 이해하기)
+
+
+
+클래스로부터 객체를 만드는 과정을 인스턴스화 라고 하며 만들어진 객체를 그 클래스의 인스턴스라고 한다. 그리고 객체는 속성과 기능 두 종류의 구성요소로 이루어져 있으며 이들은 그 객체의 멤버라고 한다. 속성과 기능 같은 경우, 속성은 멤버변수, 기능은 메소드 라고 말한다.
+
+클래스명 변수명; // 선언
+변수명 = new 클래스명(); // 생성
+
+
+기본적으로 인스턴스 생성( 객체 만들기 )는 위 코드처럼 정의하며 위 클래스를 예시로 들었을 땐,
+
+Account account;
+account = new Account(); // 기본 생성자
+account = new Account("dmstjd1024@naver.com", "password") // 파라미터 있는 생성자
+
+
+이런 식으로 구성된다.
+
+3. 메소드 정의하는 법
+
+
+
+반환타입 메서드이름 (타입 변수명, 타입변수명, ... )
+{
+	//메서드 호출 시 수행될 코드
+}
+
+
+ex)
+
+int add (int a, int b)
+{
+	int result = a + b;
+	return result;
+}
+
+
+4. 생성자 정의하는 방법
+
+
+
+컴파일 시 소스파일에 생성자가 하나도 정의되지 않은 경우, 컴파일러는 자동적으로 아래와 같은 내용의 기본 생성자를 추가하여 컴파일 한다.
+
+클래스이름() {}
+
+
+조심해야 할 점은 클래스 내에 생성자가 하나도 없을 때 이므로 혹시나 뜬금없이 파라미터를 가진 생성자만 적어놓으면 에러가 난다.
+
+클래스 클래스명{
+	변수
+	변수
+	생성자(파라미터 파라미터명){
+		// 에러 발생
+	}
+}
+
+
+5. this 키워드 이해하기
+
+
+
+생성자 간에도 서로 호출이 가능한다. 허나 2가지 조건이 필요한다.
+
+
+  생성자의 이름으로 클래스이름 대신 this를 사용
+  한 생성자에서 다른 생성자를 호출할 때는 반드시 첫 줄에서만 호출이 가능
+
+
+ex)
+
+Car (String color){
+	door = 5;
+	Car(color, "auto", 4); // X 생성자에서 다른 생성자를 호출 =&gt; this(color ....) 생성 O
+}
+
+
+첫줄에서만 호출 가능한 이유는 생성자 내에서 ㅗ기화 작업 도중, 다른 생성자를 호출하게 되면, 호출된 다른 생성자 내에서도 멤버변수들의 값을 초기화를 할 것이므로 다른 생성자를 호출하기 이전의 초기화 작업이 무의미해질수 있기 떄문이다.
+
+그리고 this같은 경우는
+
+Car(){
+	this("white", "auto", 4); // 처럼 깔끔하게 적는 것이 보기 더 좋다.
+}
+
+
+또한 this를 이용해서 인스턴스변수에 접근할 수 있다. 허나 this는 인스턴스 변수에만 접근할 수 있다. static 메서드에서는 인스턴스를 사용할 수 없는 것처럼, this 역시 사용할 수 없다. static 메서드는 인스턴스를 생성하지 않고도 호출될 수 있기 때문이다.
+
+정리하자면
+
+this 인스턴스 자신을 가리키는 참조변수, 인스턴스의 주소가 저장되어 있따. 모든 인스턴스메서드에 지역변수로 숨겨진 채로 존재한다.
+
+this(), this(매개변수) 생성자, 같은 클래스의 다른 생성자를 호출할 때 사용한다.
+
+Reference
+
+남궁성. Java의 정석
 
                         </a>
                         <div class="info-post">
-                                <a href="/Database" class="category">Database</a>
+                                <a href="/Java" class="category">Java</a>
                             
                                 <span class="date">· 2023-01-06</span>
                             
@@ -5995,6 +6180,17 @@ java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테�
 
         posts.push({
             'title'    : "Index",
+            'path'     : "AI",
+            'type'     : "category",
+            'tags'     : "",
+            'url'      : "/AI/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
+            'date'     : "2025-05-27"
+        });
+    
+
+        posts.push({
+            'title'    : "Index",
             'path'     : "AWS",
             'type'     : "category",
             'tags'     : "",
@@ -6188,6 +6384,17 @@ java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테�
             'url'      : "/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/EC2.html",
             'image'    : "/assets/img/thumbnail/aws_thumbnail.jpeg",
             'date'     : "2025-06-03"
+        });
+    
+
+        posts.push({
+            'title'    : "MCP 란",
+            'path'     : "AI",
+            'type'     : "post",
+            'tags'     : "AI, MCP, LLM",
+            'url'      : "/AI/MCP%EB%9E%80.html",
+            'image'    : "/assets/img/thumbnail/mcp_thumbnail.jpg",
+            'date'     : "2025-06-04"
         });
     
 
