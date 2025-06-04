@@ -85,6 +85,10 @@
 <lastmod>2023-01-06T00:00:00+09:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4001/AI/</loc>
+<lastmod>2025-05-27T00:00:00+09:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4001/AWS/</loc>
 <lastmod>2025-05-27T00:00:00+09:00</lastmod>
 </url>
@@ -155,5 +159,9 @@
 <url>
 <loc>http://localhost:4001/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/EC2.html</loc>
 <lastmod>2025-06-03T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4001/AI/MCP%EB%9E%80.html</loc>
+<lastmod>2025-06-04T00:00:00+09:00</lastmod>
 </url>
 </urlset>
