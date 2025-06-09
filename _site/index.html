@@ -185,6 +185,7 @@
             
             
             
+            
 
     
     
@@ -376,6 +377,115 @@
 </h1>
 <div id="category-list">
     <ul class="paginated-list" data-current-page="1" aria-live="polite">
+        <li class="paginated-item">
+                <div id="article_content">
+                    <div class="thumbnail_zone">
+                        
+                            <a href="/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/RDS.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/aws_thumbnail.jpeg') !important"></a>
+                        
+                    </div>
+                    <div class="box_contents">
+                        <a href="/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/RDS.html"><h1 class="title_post">RDS 란</h1></a>
+                        <a href="/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/RDS.html" class="txt_post">
+                            RDS 란
+
+
+
+  관계형 데이터 베이스 서비스
+  RDBS
+
+
+Amazon Aurora
+
+  서버리스 및 머신러닝 어플리케이션 구축을 위해 요구되는 고성능 관계형 DB
+
+
+데이터 웨어하우스
+
+  데이터 관리하는 시스템 유형
+  데이터 분석 작업 진행
+  즉, ‘데이터를 보관하고 사용하는 저장 창고’
+  하나 혹은 여러 개의 소스로부터 데이터 수집, 보관, 규모가 큰 데이터를 분석하는 데 사용
+
+
+OLTP vs OLAP
+
+  OLTP (Online Transaction Processing): 데이터베이스에 삽입되자마자 바로 쿼리하여 사용될 때, 작은 규모의 데이터 불러올 때 사용되는 시스템
+  OLAP (Online Analytical Processing): 대량의 데이터를 분석하고, 복잡한 쿼리를 실행하는 시스템
+
+
+데이터베이스 백업
+
+
+작동 백업 (AB : Auto Backup)
+
+  7일에서 35일 설정, 스냅샷과 트랜잭션 로그 생성
+  (RDS 백업 크기 == S3 백업 크기) = 무료
+  백업중 I/O 작업 suspension
+  RDS 인스턴스 삭제 시, 백업 정보 모두 삭제
+
+
+스냅샷 (Snapshot)
+
+  수동으로 생성, 백업 크기만큼 S3에 저장
+  개발자가 수동으로 실행
+
+
+백업 원리
+
+  원본 인스턴스 백업 시, 새로운 인스턴스 생성
+  원본 인스턴스 (original) 이름으로 시작, 백업 인스턴스는 (restored) 이름으로 시작
+
+
+다중 가용 영역과 읽기 전용
+
+
+다중 가용 영역 (Multi-AZ)
+
+  데이터베이스에서 어떤 이벤트 발생 시, 원래 데이터베이스 인스턴스에 업데이트 하는 동시, 존재하는 가용 영역에 복제본이 생성됨
+  복제본 생성이 실패할 경우, RDS가 자동으로 다른 안정적 가용 영역에 복제본 다시 생성
+  재해복구
+
+
+읽기 전용 (Read Replica)
+
+  읽기 전용 인스턴스 생성, 원본 인스턴스에 대한 읽기 작업을 분산시켜 성능 향상
+  복제본 개수는 최대 5개
+
+
+캐시로 성능 향상(엘라스틱캐시)
+
+
+
+  AWS 리소스, 클라우드 내 인메모리를 사용해 데이터베이스 성능 향상
+  종류 : 맴캐시드, 레디스
+
+
+맴캐시드
+
+  오브젝트 캐시 라고 불리며, 메모리 사용량에 있어 문자열 자료형을 처리할 때 주로 사용
+  캐시의 몸집이 커졌다 작아졌다 함
+
+
+레디스
+
+  복잡한 데이터 타입 메모리 저장
+  리스트와 해시 테이블로 정렬 (수많은 데이터 정렬에 필요한 비용, 시간을 줄여줌)
+  다중 가용 영역 기능 포함
+
+
+                        </a>
+                        <div class="info-post">
+                                <a href="/AWS" class="category">AWS</a>
+                            
+                                <span class="date">· 2025-06-05</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        
+        
         <li class="paginated-item">
                 <div id="article_content">
                     <div class="thumbnail_zone">
@@ -1137,8 +1247,6 @@ docker container stats [컨테이너 ID prefix]
         
         
         
-        
-        
         <li class="paginated-item">
                 <div id="article_content">
                     <div class="thumbnail_zone">
@@ -1744,110 +1852,56 @@ void connectStibee(){
         
         
         
+        
+        
         <li class="paginated-item">
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
-                            <a href="/Spring/TICKET-EXPEDITIONARY-FORCE/2023-01-06-TICKET-EXPEDITIONARY-FORCE-start.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/spring_thumbnail.webp') !important"></a>
+                            <a href="/Etc/2023-01-06-SSR,%20SSG.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/ect_thumbnail.jpg') !important"></a>
                         
                     </div>
                     <div class="box_contents">
-                        <a href="/Spring/TICKET-EXPEDITIONARY-FORCE/2023-01-06-TICKET-EXPEDITIONARY-FORCE-start.html"><h1 class="title_post">티켓 원정대 출발!</h1></a>
-                        <a href="/Spring/TICKET-EXPEDITIONARY-FORCE/2023-01-06-TICKET-EXPEDITIONARY-FORCE-start.html" class="txt_post">
-                            프로젝트 시작
+                        <a href="/Etc/2023-01-06-SSR,%20SSG.html"><h1 class="title_post">SSR, SSG</h1></a>
+                        <a href="/Etc/2023-01-06-SSR,%20SSG.html" class="txt_post">
+                            SSR, SSG, jamstack
 
+SSR
+Server Side Rendering으로 서버에서 HTML 구조로 응답하는 방식
 
-TDD 책을 정독하고 읽었던 내용들을 사용해보는 프로젝트를 진행해보려고 한다.  
- 나는 2,3번 프로젝트를 진행해봤는데 결과는 좋지 않았고 이번에는 결과물을 완성하고 싶은 마음이 크다.
+CSR
+Client Side Rendering (ex Angular, React, Vue) javascript로 동적 페이지를 출력
 
+SPA
+Single Page Application으로 한 페이지 내에서 모든 동작을 수행 ( CSR과는 다른 개념)
 
+SEO (Search Engine Optimization)
+검색 페이지 적합하게 만들어진 페이지, 크롤링을 통해 구조, 컨텐츠 파악해 목차와 색인을 만드어 사용자 검색의 결과물을 나타낸다.
 
-설명
+Next.js, Nuxt.js
+Next.js는 React, Nuxt.js는 Vue에 각각 두개의 장점을 가져오는 ssr로 페이지를 제공하는 기능들을 추가 즉( CSR을 통해 비 동기인 방식으로 요청했을 때, SSR의 장점인 html 구조로 응답하는 방식
 
-100명에게 Ticket을 배포하는 프로그램을 RESTful방식 개발합니다 *신청시 확률에 따라 티켓을 획득 하거나 꽝이 됩니다
+Vue를 통해 만든 프로젝트를 요청했을 때, 처음에 div만 들어있는 페이지를 호출하고, 브라우저의 요청이 실행되었을 때, 링크된 자바스크립트 파일을 다운로드 뒤 데이터를 요청해서 서버에 받아온 데이터들을 클라이언트에서 모양을 생성해 출력한다. 이때 요청이나 로직이 많은 경우라면 시작 시에 딜레이가 발생한다.
 
-  티켓:100매
-  로그인도 추가하기 (카카오, 네이버)
-  공인 IP당 1회 신청가능
-  30%확률로티켓획득가능
-  WAS는 2대 이상 이용한다고 가정
+허나 Next.js나 Nuxt.js를 사용하면 기존에 노출시키고 싶은 페이지와 데이터를 mounted()를 통해 먼저 렌더링 한 후, fetch 코드를 사용하여 변화되는 데이터를 API 서버에 요청해 받아오는 것이다. node js가 깔린 서버에서 프로젝트를 어플리케이션으로 실행해 프론트를 배포한다. 즉, 페이지에서 접속시 바로 출력할 내용을 서버에 미리 렌더링 해 출력한다.
 
+또한 mounted를 통해 먼저 렌더링했을 경우 SEO에 잡힐 수 있기 때문에 검색결과에 노출 비중이 높다.
 
+SSG
+Static Site Generator, 정적 사이트 생성기, -&gt; 렌더링을 다 마친 정적 파일들을 배포,
+정적인 사이트를 만들 때엔 json, yaml, xml등의 view 파일에 저장하고 build 시 html 태그 구조에 맞게 수정한 html 파일을 서버에 저장시켜 놓는다. (Next, Hugo, Gatsby)
 
+Jam Stack
 
-사용 기술
+Javascript API Markup + Stack 으로 웹서비스 만드는 설계 방식, 
+pre-landering, decoupling
 
-
-  
-    
-      기술명
-      내용
-    
-  
-  
-    
-      spring boot
-      Spring framework의 다양한 설정을 최소화
-    
-    
-      thymeleaf
-      스프링에서 미는 Java XML / XHTML / HTML5 템플릿 엔진
-    
-    
-      lombok
-      getter, setter, 등의 기본 메서드 코드 간략화
-    
-    
-      spring boot test
-      spring 통합테스트 진행으로 api 테스트 사용
-    
-    
-      h2 database
-      RDBMS, 메모리에 데이터 저장 용도(추후 database 추가)
-    
-    
-      spring boot security
-      spring 기반 Application 보안, 인증 담당 framework
-    
-    
-      swagger
-      api 문서화 활용
-    
-    
-      bootstrap
-      웹사이트 꾸며주는 HTML, CSS, JS 프레임워크
-    
-    
-      git
-      버전관리 툴로 github를 통해 개발 진행
-    
-  
-
-
-
-
-파트
-
-
-  템플릿 설정
-  티켓
-  회원 관리(내 파트)
-  로그인
-
-
-개발 방법  
- 애자일 방법론으로 서로 스터디를 통한 프로젝트이기에 짧은 반복을 진행할 것이며  
- 배달의 민족에서 사용하는 git flow를 사용해 기능마다 merge시키는 방식을 진행할 것입니다.
-
-
-
-처음 내가 해야 할 일
-Account Entity에서 내가 생각하는 column명을 Template 설정 파트 담당에게 넘길 것이다.
-
+자바 스크립트를 사용한 Jam으로 페이지를 Pre 렌더링 후 외부 API 서비스로 아웃소싱해서 설계 분리(decoupling) 
+이렇게 만든 정적 페이지를 CDN으로 배포하는 방식이다. 이걸 통해 비용절감, 보안강화, 사이트 확장에 용이하다.
 
                         </a>
                         <div class="info-post">
-                                <a href="/Spring" class="category">Spring</a>
+                                <a href="/Etc" class="category">Etc</a>
                             
                                 <span class="date">· 2023-01-06</span>
                             
@@ -4241,6 +4295,172 @@ java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테�
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
+                            <a href="/Java/Live-Study/2023-01-06-live-study5.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/java_thumbnail.png') !important"></a>
+                        
+                    </div>
+                    <div class="box_contents">
+                        <a href="/Java/Live-Study/2023-01-06-live-study5.html"><h1 class="title_post">자바의 Class</h1></a>
+                        <a href="/Java/Live-Study/2023-01-06-live-study5.html" class="txt_post">
+                            목적
+
+자바의 Class에 대해 학습하세요.
+
+학습할 것
+
+
+  클래스 정의하는 방법
+  객체 만드는 방법 (new 키워드 이해하기)
+  메소드 정의하는 방법
+  생성자 정의하는 방법
+  this 키워드 이해하기
+
+
+1. 클래스 정의하는 방법
+
+
+
+클래스란, 객체를 정의해놓은 것, 또는 객체의 설계도 라고 정의할 수 있다. 그리고 클래스는 객체를 생성하는데 사용된다.
+
+클래스를 구성하는 요소들은 필드들과 메소드, 생성자로 되어있다.
+
+public class Account{
+
+	private Long id;
+	private String name;
+	private String email;
+	private String password;
+
+    /* 생성자는 default 하게 만들 수 있지만 생성자에서 파라미터로 값을 받아서 작성 시, 반드        시 작성해주어야 한다.
+    */
+    public Account(String email, String password){
+        this.email = email;
+        this.password = password;
+    }
+
+	public String getEmail(){
+		return Email;
+	}
+
+	public void changePassword(String password){
+		this.password = password;
+	}
+}
+
+
+2. 객체 만드는 방법(new 키워드 이해하기)
+
+
+
+클래스로부터 객체를 만드는 과정을 인스턴스화 라고 하며 만들어진 객체를 그 클래스의 인스턴스라고 한다. 그리고 객체는 속성과 기능 두 종류의 구성요소로 이루어져 있으며 이들은 그 객체의 멤버라고 한다. 속성과 기능 같은 경우, 속성은 멤버변수, 기능은 메소드 라고 말한다.
+
+클래스명 변수명; // 선언
+변수명 = new 클래스명(); // 생성
+
+
+기본적으로 인스턴스 생성( 객체 만들기 )는 위 코드처럼 정의하며 위 클래스를 예시로 들었을 땐,
+
+Account account;
+account = new Account(); // 기본 생성자
+account = new Account("dmstjd1024@naver.com", "password") // 파라미터 있는 생성자
+
+
+이런 식으로 구성된다.
+
+3. 메소드 정의하는 법
+
+
+
+반환타입 메서드이름 (타입 변수명, 타입변수명, ... )
+{
+	//메서드 호출 시 수행될 코드
+}
+
+
+ex)
+
+int add (int a, int b)
+{
+	int result = a + b;
+	return result;
+}
+
+
+4. 생성자 정의하는 방법
+
+
+
+컴파일 시 소스파일에 생성자가 하나도 정의되지 않은 경우, 컴파일러는 자동적으로 아래와 같은 내용의 기본 생성자를 추가하여 컴파일 한다.
+
+클래스이름() {}
+
+
+조심해야 할 점은 클래스 내에 생성자가 하나도 없을 때 이므로 혹시나 뜬금없이 파라미터를 가진 생성자만 적어놓으면 에러가 난다.
+
+클래스 클래스명{
+	변수
+	변수
+	생성자(파라미터 파라미터명){
+		// 에러 발생
+	}
+}
+
+
+5. this 키워드 이해하기
+
+
+
+생성자 간에도 서로 호출이 가능한다. 허나 2가지 조건이 필요한다.
+
+
+  생성자의 이름으로 클래스이름 대신 this를 사용
+  한 생성자에서 다른 생성자를 호출할 때는 반드시 첫 줄에서만 호출이 가능
+
+
+ex)
+
+Car (String color){
+	door = 5;
+	Car(color, "auto", 4); // X 생성자에서 다른 생성자를 호출 =&gt; this(color ....) 생성 O
+}
+
+
+첫줄에서만 호출 가능한 이유는 생성자 내에서 ㅗ기화 작업 도중, 다른 생성자를 호출하게 되면, 호출된 다른 생성자 내에서도 멤버변수들의 값을 초기화를 할 것이므로 다른 생성자를 호출하기 이전의 초기화 작업이 무의미해질수 있기 떄문이다.
+
+그리고 this같은 경우는
+
+Car(){
+	this("white", "auto", 4); // 처럼 깔끔하게 적는 것이 보기 더 좋다.
+}
+
+
+또한 this를 이용해서 인스턴스변수에 접근할 수 있다. 허나 this는 인스턴스 변수에만 접근할 수 있다. static 메서드에서는 인스턴스를 사용할 수 없는 것처럼, this 역시 사용할 수 없다. static 메서드는 인스턴스를 생성하지 않고도 호출될 수 있기 때문이다.
+
+정리하자면
+
+this 인스턴스 자신을 가리키는 참조변수, 인스턴스의 주소가 저장되어 있따. 모든 인스턴스메서드에 지역변수로 숨겨진 채로 존재한다.
+
+this(), this(매개변수) 생성자, 같은 클래스의 다른 생성자를 호출할 때 사용한다.
+
+Reference
+
+남궁성. Java의 정석
+
+                        </a>
+                        <div class="info-post">
+                                <a href="/Java" class="category">Java</a>
+                            
+                                <span class="date">· 2023-01-06</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        
+        
+        <li class="paginated-item">
+                <div id="article_content">
+                    <div class="thumbnail_zone">
+                        
                             <a href="/Java/Live-Study/2023-01-06-live-study4.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/java_thumbnail.png') !important"></a>
                         
                     </div>
@@ -5775,216 +5995,106 @@ Jira랑 연결이 되면 Default task라는 부분이 생성되고 클릭시
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
-                            <a href="/Etc/2023-01-06-SSR,%20SSG.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/ect_thumbnail.jpg') !important"></a>
+                            <a href="/Spring/TICKET-EXPEDITIONARY-FORCE/2023-01-06-TICKET-EXPEDITIONARY-FORCE-start.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/spring_thumbnail.webp') !important"></a>
                         
                     </div>
                     <div class="box_contents">
-                        <a href="/Etc/2023-01-06-SSR,%20SSG.html"><h1 class="title_post">SSR, SSG</h1></a>
-                        <a href="/Etc/2023-01-06-SSR,%20SSG.html" class="txt_post">
-                            SSR, SSG, jamstack
+                        <a href="/Spring/TICKET-EXPEDITIONARY-FORCE/2023-01-06-TICKET-EXPEDITIONARY-FORCE-start.html"><h1 class="title_post">티켓 원정대 출발!</h1></a>
+                        <a href="/Spring/TICKET-EXPEDITIONARY-FORCE/2023-01-06-TICKET-EXPEDITIONARY-FORCE-start.html" class="txt_post">
+                            프로젝트 시작
 
-SSR
-Server Side Rendering으로 서버에서 HTML 구조로 응답하는 방식
 
-CSR
-Client Side Rendering (ex Angular, React, Vue) javascript로 동적 페이지를 출력
+TDD 책을 정독하고 읽었던 내용들을 사용해보는 프로젝트를 진행해보려고 한다.  
+ 나는 2,3번 프로젝트를 진행해봤는데 결과는 좋지 않았고 이번에는 결과물을 완성하고 싶은 마음이 크다.
 
-SPA
-Single Page Application으로 한 페이지 내에서 모든 동작을 수행 ( CSR과는 다른 개념)
 
-SEO (Search Engine Optimization)
-검색 페이지 적합하게 만들어진 페이지, 크롤링을 통해 구조, 컨텐츠 파악해 목차와 색인을 만드어 사용자 검색의 결과물을 나타낸다.
 
-Next.js, Nuxt.js
-Next.js는 React, Nuxt.js는 Vue에 각각 두개의 장점을 가져오는 ssr로 페이지를 제공하는 기능들을 추가 즉( CSR을 통해 비 동기인 방식으로 요청했을 때, SSR의 장점인 html 구조로 응답하는 방식
+설명
 
-Vue를 통해 만든 프로젝트를 요청했을 때, 처음에 div만 들어있는 페이지를 호출하고, 브라우저의 요청이 실행되었을 때, 링크된 자바스크립트 파일을 다운로드 뒤 데이터를 요청해서 서버에 받아온 데이터들을 클라이언트에서 모양을 생성해 출력한다. 이때 요청이나 로직이 많은 경우라면 시작 시에 딜레이가 발생한다.
+100명에게 Ticket을 배포하는 프로그램을 RESTful방식 개발합니다 *신청시 확률에 따라 티켓을 획득 하거나 꽝이 됩니다
 
-허나 Next.js나 Nuxt.js를 사용하면 기존에 노출시키고 싶은 페이지와 데이터를 mounted()를 통해 먼저 렌더링 한 후, fetch 코드를 사용하여 변화되는 데이터를 API 서버에 요청해 받아오는 것이다. node js가 깔린 서버에서 프로젝트를 어플리케이션으로 실행해 프론트를 배포한다. 즉, 페이지에서 접속시 바로 출력할 내용을 서버에 미리 렌더링 해 출력한다.
+  티켓:100매
+  로그인도 추가하기 (카카오, 네이버)
+  공인 IP당 1회 신청가능
+  30%확률로티켓획득가능
+  WAS는 2대 이상 이용한다고 가정
 
-또한 mounted를 통해 먼저 렌더링했을 경우 SEO에 잡힐 수 있기 때문에 검색결과에 노출 비중이 높다.
 
-SSG
-Static Site Generator, 정적 사이트 생성기, -&gt; 렌더링을 다 마친 정적 파일들을 배포,
-정적인 사이트를 만들 때엔 json, yaml, xml등의 view 파일에 저장하고 build 시 html 태그 구조에 맞게 수정한 html 파일을 서버에 저장시켜 놓는다. (Next, Hugo, Gatsby)
 
-Jam Stack
 
-Javascript API Markup + Stack 으로 웹서비스 만드는 설계 방식, 
-pre-landering, decoupling
+사용 기술
 
-자바 스크립트를 사용한 Jam으로 페이지를 Pre 렌더링 후 외부 API 서비스로 아웃소싱해서 설계 분리(decoupling) 
-이렇게 만든 정적 페이지를 CDN으로 배포하는 방식이다. 이걸 통해 비용절감, 보안강화, 사이트 확장에 용이하다.
+
+  
+    
+      기술명
+      내용
+    
+  
+  
+    
+      spring boot
+      Spring framework의 다양한 설정을 최소화
+    
+    
+      thymeleaf
+      스프링에서 미는 Java XML / XHTML / HTML5 템플릿 엔진
+    
+    
+      lombok
+      getter, setter, 등의 기본 메서드 코드 간략화
+    
+    
+      spring boot test
+      spring 통합테스트 진행으로 api 테스트 사용
+    
+    
+      h2 database
+      RDBMS, 메모리에 데이터 저장 용도(추후 database 추가)
+    
+    
+      spring boot security
+      spring 기반 Application 보안, 인증 담당 framework
+    
+    
+      swagger
+      api 문서화 활용
+    
+    
+      bootstrap
+      웹사이트 꾸며주는 HTML, CSS, JS 프레임워크
+    
+    
+      git
+      버전관리 툴로 github를 통해 개발 진행
+    
+  
+
+
+
+
+파트
+
+
+  템플릿 설정
+  티켓
+  회원 관리(내 파트)
+  로그인
+
+
+개발 방법  
+ 애자일 방법론으로 서로 스터디를 통한 프로젝트이기에 짧은 반복을 진행할 것이며  
+ 배달의 민족에서 사용하는 git flow를 사용해 기능마다 merge시키는 방식을 진행할 것입니다.
+
+
+
+처음 내가 해야 할 일
+Account Entity에서 내가 생각하는 column명을 Template 설정 파트 담당에게 넘길 것이다.
+
 
                         </a>
                         <div class="info-post">
-                                <a href="/Etc" class="category">Etc</a>
-                            
-                                <span class="date">· 2023-01-06</span>
-                            
-                        </div>
-                    </div>
-                </div>
-            </li>
-        
-        
-        <li class="paginated-item">
-                <div id="article_content">
-                    <div class="thumbnail_zone">
-                        
-                            <a href="/Java/Live-Study/2023-01-06-live-study5.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/java_thumbnail.png') !important"></a>
-                        
-                    </div>
-                    <div class="box_contents">
-                        <a href="/Java/Live-Study/2023-01-06-live-study5.html"><h1 class="title_post">자바의 Class</h1></a>
-                        <a href="/Java/Live-Study/2023-01-06-live-study5.html" class="txt_post">
-                            목적
-
-자바의 Class에 대해 학습하세요.
-
-학습할 것
-
-
-  클래스 정의하는 방법
-  객체 만드는 방법 (new 키워드 이해하기)
-  메소드 정의하는 방법
-  생성자 정의하는 방법
-  this 키워드 이해하기
-
-
-1. 클래스 정의하는 방법
-
-
-
-클래스란, 객체를 정의해놓은 것, 또는 객체의 설계도 라고 정의할 수 있다. 그리고 클래스는 객체를 생성하는데 사용된다.
-
-클래스를 구성하는 요소들은 필드들과 메소드, 생성자로 되어있다.
-
-public class Account{
-
-	private Long id;
-	private String name;
-	private String email;
-	private String password;
-
-    /* 생성자는 default 하게 만들 수 있지만 생성자에서 파라미터로 값을 받아서 작성 시, 반드        시 작성해주어야 한다.
-    */
-    public Account(String email, String password){
-        this.email = email;
-        this.password = password;
-    }
-
-	public String getEmail(){
-		return Email;
-	}
-
-	public void changePassword(String password){
-		this.password = password;
-	}
-}
-
-
-2. 객체 만드는 방법(new 키워드 이해하기)
-
-
-
-클래스로부터 객체를 만드는 과정을 인스턴스화 라고 하며 만들어진 객체를 그 클래스의 인스턴스라고 한다. 그리고 객체는 속성과 기능 두 종류의 구성요소로 이루어져 있으며 이들은 그 객체의 멤버라고 한다. 속성과 기능 같은 경우, 속성은 멤버변수, 기능은 메소드 라고 말한다.
-
-클래스명 변수명; // 선언
-변수명 = new 클래스명(); // 생성
-
-
-기본적으로 인스턴스 생성( 객체 만들기 )는 위 코드처럼 정의하며 위 클래스를 예시로 들었을 땐,
-
-Account account;
-account = new Account(); // 기본 생성자
-account = new Account("dmstjd1024@naver.com", "password") // 파라미터 있는 생성자
-
-
-이런 식으로 구성된다.
-
-3. 메소드 정의하는 법
-
-
-
-반환타입 메서드이름 (타입 변수명, 타입변수명, ... )
-{
-	//메서드 호출 시 수행될 코드
-}
-
-
-ex)
-
-int add (int a, int b)
-{
-	int result = a + b;
-	return result;
-}
-
-
-4. 생성자 정의하는 방법
-
-
-
-컴파일 시 소스파일에 생성자가 하나도 정의되지 않은 경우, 컴파일러는 자동적으로 아래와 같은 내용의 기본 생성자를 추가하여 컴파일 한다.
-
-클래스이름() {}
-
-
-조심해야 할 점은 클래스 내에 생성자가 하나도 없을 때 이므로 혹시나 뜬금없이 파라미터를 가진 생성자만 적어놓으면 에러가 난다.
-
-클래스 클래스명{
-	변수
-	변수
-	생성자(파라미터 파라미터명){
-		// 에러 발생
-	}
-}
-
-
-5. this 키워드 이해하기
-
-
-
-생성자 간에도 서로 호출이 가능한다. 허나 2가지 조건이 필요한다.
-
-
-  생성자의 이름으로 클래스이름 대신 this를 사용
-  한 생성자에서 다른 생성자를 호출할 때는 반드시 첫 줄에서만 호출이 가능
-
-
-ex)
-
-Car (String color){
-	door = 5;
-	Car(color, "auto", 4); // X 생성자에서 다른 생성자를 호출 =&gt; this(color ....) 생성 O
-}
-
-
-첫줄에서만 호출 가능한 이유는 생성자 내에서 ㅗ기화 작업 도중, 다른 생성자를 호출하게 되면, 호출된 다른 생성자 내에서도 멤버변수들의 값을 초기화를 할 것이므로 다른 생성자를 호출하기 이전의 초기화 작업이 무의미해질수 있기 떄문이다.
-
-그리고 this같은 경우는
-
-Car(){
-	this("white", "auto", 4); // 처럼 깔끔하게 적는 것이 보기 더 좋다.
-}
-
-
-또한 this를 이용해서 인스턴스변수에 접근할 수 있다. 허나 this는 인스턴스 변수에만 접근할 수 있다. static 메서드에서는 인스턴스를 사용할 수 없는 것처럼, this 역시 사용할 수 없다. static 메서드는 인스턴스를 생성하지 않고도 호출될 수 있기 때문이다.
-
-정리하자면
-
-this 인스턴스 자신을 가리키는 참조변수, 인스턴스의 주소가 저장되어 있따. 모든 인스턴스메서드에 지역변수로 숨겨진 채로 존재한다.
-
-this(), this(매개변수) 생성자, 같은 클래스의 다른 생성자를 호출할 때 사용한다.
-
-Reference
-
-남궁성. Java의 정석
-
-                        </a>
-                        <div class="info-post">
-                                <a href="/Java" class="category">Java</a>
+                                <a href="/Spring" class="category">Spring</a>
                             
                                 <span class="date">· 2023-01-06</span>
                             
@@ -6495,6 +6605,17 @@ Reference
             'url'      : "/AI/MCP%EB%9E%80.html",
             'image'    : "/assets/img/thumbnail/mcp_thumbnail.jpg",
             'date'     : "2025-06-04"
+        });
+    
+
+        posts.push({
+            'title'    : "RDS 란",
+            'path'     : "AWS > 업무에 바로쓰는 AWS 입문",
+            'type'     : "post",
+            'tags'     : "AWS, RDS, Database",
+            'url'      : "/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/RDS.html",
+            'image'    : "/assets/img/thumbnail/aws_thumbnail.jpeg",
+            'date'     : "2025-06-05"
         });
     
 
