@@ -186,6 +186,7 @@
             
             
             
+            
 
     
     
@@ -1163,6 +1164,115 @@ HEROPY.DEV
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
+                            <a href="/Docker/Text_Book_2.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/docker_thumbnail.png') !important"></a>
+                        
+                    </div>
+                    <div class="box_contents">
+                        <a href="/Docker/Text_Book_2.html"><h1 class="title_post">도커 교과서 3장</h1></a>
+                        <a href="/Docker/Text_Book_2.html" class="txt_post">
+                            도커 이미지 만들기
+
+
+도커 허브에 공유된 이미지 사용하기
+web-ping 어플리케이션 이미지 pull 명령어
+docker image pull diamol/ch03-web-ping
+
+도커 이미지를 다운받을 때 각각의 파일을 이미지 레이어 라고 부른다.
+
+환경변수
+도커 컨테이너도 별도의 환경변수를 가질 수 있다.
+컨테이너의 호스트명, IP 주소처럼 Docker 가 부여해준다.
+
+환경변수를 사용한 docker 명령어
+docker rm -f web-ping
+docker container run --env TARGET=google.com diamol/ch03-web-ping
+# google 도메인을 타겟으로 요청 보내는 명령어
+
+
+Dockerfile 작성하기
+web-ping 애플리케이션 Dockerfile 스크립트
+FROM diamol/node -- 이미지 시작점 (web-ping 어플리케이션 실행위한 런타임 Node.js)
+
+ENV TARGET="도메인" -- 환경 변수 값을 지정하기 위한 인스크럭션
+ENV METHOD="HEAD"
+ENV INTERVAL="3000"
+
+WORKDIR /web-ping -- 해당 디렉터리를 작업 디렉토리로 지정
+COPY app.js . -- 로컬 파일 시스템의 파일 혹은 디렉터리를 컨테이너 이미지로 복사하는 인스트럭션
+
+CMD ["node", "/web-ping/app.js"] -- 컨테이너가 시작될 때 실행할 명령어를 지정하는 인스트럭션
+
+
+컨테이너 이미지 빌드하기
+이미지 빌드를 위해선, 이미지 이름, 파일 경로 추가 지정해줘야함
+docker image build --tag web-ping .
+-- tag 옵션은 이미지 이름을 지정하는 옵션
+-- .은 현재 디렉터리에서 Dockerfile을 찾겠다는 의미
+
+※문제 발생 시, 도커 엔진 -&gt; 현재 작업 디렉토리 -&gt; build 명령어 정확한지 확인
+
+이미지 목록 확인
+docker image ls 'w*' -- w로 시작하는 이미지 목록
+
+
+도커 이미지와 이미지 레이어 이해하기
+
+#이미지 히스토리 확인하기
+docker image history web-ping
+
+
+  도커 이미지는 이미지 레이어가 모인 논리적 대상
+  레이어는 도커 엔진의 캐시에 물리적으로 저장된 파일
+  이미지 레이어는 여러 이미지와 컨테이너에서 공유
+
+
+docker 에서는 이미지가 비슷한 용량을 가진 것으로 보이지만, 
+Node.js 런타임을 포함한 이미지가 런타임을 공유하였을 때, 
+각 Image의 실제 용량은 image ls로 호출한 SIZE 값아랑 다르다. 
+(system df로 확인 가능)
+
+따라서 공유되는 레이어는 수정할 수 없어야 한다. (읽기전용으로 구현)
+
+이미지 레이어 캐시를 이요한 Dockerfile 스크립트 최적화
+
+# 이미지의 파일을 수정 후 다시 빌드 시, 새로운 이미지 레이어 생성.
+docker image build -t web-ping:v2 .
+
+
+  Docker 스크립트 인스트럭션은 각 하나의 이미지 레이어와 1:1 연결
+  결과가 이전과 같다면 이전 캐시된 레이어 사용
+따라서 잘 수정하지 않는 인스트럭션이 앞으로 오도록 작성하는 것이 좋다.
+
+
+최적화 한 스크립트 (핵심)
+FROM diamol/node 
+
+CMD ["node", "/web-ping/app.js"] 
+
+ENV TARGET="도메인"
+    METHOD="HEAD"
+    INTERVAL="3000"
+
+WORKDIR /web-ping
+COPY app.js . ## 현재 명령어 빼고 모든 레이어를 캐시에서 재사용
+
+
+                        </a>
+                        <div class="info-post">
+                                <a href="/Docker" class="category">Docker</a>
+                            
+                                <span class="date">· 2025-05-28</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        
+        
+        <li class="paginated-item">
+                <div id="article_content">
+                    <div class="thumbnail_zone">
+                        
                             <a href="/Docker/Text_Book_1.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/docker_thumbnail.png') !important"></a>
                         
                     </div>
@@ -1235,6 +1345,8 @@ docker container stats [컨테이너 ID prefix]
                     </div>
                 </div>
             </li>
+        
+        
         
         
         
@@ -1373,6 +1485,16 @@ AWS 답변 : AWS CodeDeploy를 통해 Amazon EC2 인스턴스에 코드를 배�
                     </div>
                 </div>
             </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1840,18 +1962,6 @@ void connectStibee(){
                     </div>
                 </div>
             </li>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         <li class="paginated-item">
@@ -4213,88 +4323,6 @@ class Study extends Object{
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
-                            <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/postgresql_thumbnail.png') !important"></a>
-                        
-                    </div>
-                    <div class="box_contents">
-                        <a href="/Database/Postgresql/2023-01-06-postgresql.html"><h1 class="title_post">PostgreSQL이란</h1></a>
-                        <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="txt_post">
-                            PostgreSQL
-
-
-오픈 소스 객체 관계형 데이터베이스  
-새로운 하나의 프로그래밍처럼 구현하는 기능을 제공한다.
-
-구조
-
-클라이언트 / 서버 모델 사용
-
-기능
-
-트랜잭션과 ACID(Atomicity, Consistency, Isolation, Durability)를 지원
-또한 주요 기능들을 많이 가지고 있다고 한다.
-
-Nested transactions (savepoints)    
-Point in time recovery  
-Online/hot backups, Parallel restore  
-Rules system (query rewrite system)  
-B-tree, R-tree, hash, GiST method indexes  
-Multi-Version Concurrency Control (MVCC)  
-Tablespaces  
-Procedural Language  
-Information Schema  
-I18N, L10N  
-Database &amp; Column level collation  
-Array, XML, UUID type  
-Auto-increment (sequences),  
-Asynchronous replication  
-LIMIT/OFFSET  
-Full text search  
-SSL, IPv6  
-Key/Value storage  
-Table inheritance
-
-등등 여러 기능들을 제공한다고 하는데 여기서 Auto-increment나 Limit 등등 빼고는 잘 접하지 않아서 그런지 이해는 못하겠다. 나중에 PostgreSQL을 좀 더 많이쓰는 일이 생기면 접할 것 같다.
-
-특징
-
-
-  
-    유연한 객체 생성  
-단순한 자료 저장소로써의 기능을 넘어 마치 하나의 새로운 프로그래밍 언어처럼 개발자의 창의성에 따라 무한한 기능을 손쉽게 구현할 수 있도록 한다.
-  
-  
-    상속  
-java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테이블 상속 기능을 이용해 하위 테이블을 만들 수 있다. 테이블에 저장된 자료는 상위 테이블을 조회하면, 해당 테이블의 하위 테이블에 포함된 모든 자료를 조회할 수 있으며, 하위 테이블을 만들 때, 상위 테이블의 칼럼을 그대로 상속 받으면서, 하위 테이블에만 속하는 칼럼을 추가로 만들 수 있다.
-  
-  
-    함수  
-때때로, ‘저장 프로시저’라고 불리는 SQL문으로 작성된 함수를 서버환경에서 사용할 수 있다. 비록 다른 언어와는 달리 제어문과 반복문을 사용하지는 못하지만, 다른 언어와 결합시킬 수 있다. 일부 언어에서는 심지어 트리거 내부에서 실행시킬 수 있다.
-  
-
-
-
-
-내 생각
-
-일단은 이러한 장점들이 있지만 현재 프로젝트에선 JPA를 활용하여 진행하므로 PostgreSQL의 장점을 활용할 기회가 있을지는 잘 모르겠다. 차후 postgresQL의 특징을 사용하는 경험이나 정보를 듣는다면 추가로 적용하겠다.
-
-                        </a>
-                        <div class="info-post">
-                                <a href="/Database" class="category">Database</a>
-                            
-                                <span class="date">· 2023-01-06</span>
-                            
-                        </div>
-                    </div>
-                </div>
-            </li>
-        
-        
-        <li class="paginated-item">
-                <div id="article_content">
-                    <div class="thumbnail_zone">
-                        
                             <a href="/Java/Live-Study/2023-01-06-live-study5.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/java_thumbnail.png') !important"></a>
                         
                     </div>
@@ -5590,6 +5618,88 @@ Reference
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
+                            <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/postgresql_thumbnail.png') !important"></a>
+                        
+                    </div>
+                    <div class="box_contents">
+                        <a href="/Database/Postgresql/2023-01-06-postgresql.html"><h1 class="title_post">PostgreSQL이란</h1></a>
+                        <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="txt_post">
+                            PostgreSQL
+
+
+오픈 소스 객체 관계형 데이터베이스  
+새로운 하나의 프로그래밍처럼 구현하는 기능을 제공한다.
+
+구조
+
+클라이언트 / 서버 모델 사용
+
+기능
+
+트랜잭션과 ACID(Atomicity, Consistency, Isolation, Durability)를 지원
+또한 주요 기능들을 많이 가지고 있다고 한다.
+
+Nested transactions (savepoints)    
+Point in time recovery  
+Online/hot backups, Parallel restore  
+Rules system (query rewrite system)  
+B-tree, R-tree, hash, GiST method indexes  
+Multi-Version Concurrency Control (MVCC)  
+Tablespaces  
+Procedural Language  
+Information Schema  
+I18N, L10N  
+Database &amp; Column level collation  
+Array, XML, UUID type  
+Auto-increment (sequences),  
+Asynchronous replication  
+LIMIT/OFFSET  
+Full text search  
+SSL, IPv6  
+Key/Value storage  
+Table inheritance
+
+등등 여러 기능들을 제공한다고 하는데 여기서 Auto-increment나 Limit 등등 빼고는 잘 접하지 않아서 그런지 이해는 못하겠다. 나중에 PostgreSQL을 좀 더 많이쓰는 일이 생기면 접할 것 같다.
+
+특징
+
+
+  
+    유연한 객체 생성  
+단순한 자료 저장소로써의 기능을 넘어 마치 하나의 새로운 프로그래밍 언어처럼 개발자의 창의성에 따라 무한한 기능을 손쉽게 구현할 수 있도록 한다.
+  
+  
+    상속  
+java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테이블 상속 기능을 이용해 하위 테이블을 만들 수 있다. 테이블에 저장된 자료는 상위 테이블을 조회하면, 해당 테이블의 하위 테이블에 포함된 모든 자료를 조회할 수 있으며, 하위 테이블을 만들 때, 상위 테이블의 칼럼을 그대로 상속 받으면서, 하위 테이블에만 속하는 칼럼을 추가로 만들 수 있다.
+  
+  
+    함수  
+때때로, ‘저장 프로시저’라고 불리는 SQL문으로 작성된 함수를 서버환경에서 사용할 수 있다. 비록 다른 언어와는 달리 제어문과 반복문을 사용하지는 못하지만, 다른 언어와 결합시킬 수 있다. 일부 언어에서는 심지어 트리거 내부에서 실행시킬 수 있다.
+  
+
+
+
+
+내 생각
+
+일단은 이러한 장점들이 있지만 현재 프로젝트에선 JPA를 활용하여 진행하므로 PostgreSQL의 장점을 활용할 기회가 있을지는 잘 모르겠다. 차후 postgresQL의 특징을 사용하는 경험이나 정보를 듣는다면 추가로 적용하겠다.
+
+                        </a>
+                        <div class="info-post">
+                                <a href="/Database" class="category">Database</a>
+                            
+                                <span class="date">· 2023-01-06</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        
+        
+        <li class="paginated-item">
+                <div id="article_content">
+                    <div class="thumbnail_zone">
+                        
                             <a href="/Java/Live-Study/2023-01-06-live-study.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/java_thumbnail.png') !important"></a>
                         
                     </div>
@@ -6570,6 +6680,17 @@ Account Entity에서 내가 생각하는 column명을 Template 설정 파트 담
             'type'     : "post",
             'tags'     : "docker",
             'url'      : "/Docker/Text_Book_1.html",
+            'image'    : "/assets/img/thumbnail/docker_thumbnail.png",
+            'date'     : "2025-05-28"
+        });
+    
+
+        posts.push({
+            'title'    : "도커 교과서 3장",
+            'path'     : "Docker",
+            'type'     : "post",
+            'tags'     : "docker",
+            'url'      : "/Docker/Text_Book_2.html",
             'image'    : "/assets/img/thumbnail/docker_thumbnail.png",
             'date'     : "2025-05-28"
         });
