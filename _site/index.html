@@ -181,6 +181,13 @@
 
         
     
+
+        
+    
+
+        
+    
+            
             
             
             
@@ -283,6 +290,24 @@
                         <a href="/Java/Live-Study/" class="nav-list-link nav-sh">
                             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
                             <span>Live-Study</span>
+                        </a>
+</div>
+</li></ul>
+</li>
+<li id="nav-first" aria-label="React">
+            <div class="nav-item">
+                <a href="/React/" class="nav-list-link nav-lh">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"></path></svg>
+                    <span>React</span>
+                </a><button class="nav-list-expander" aria-label="toggle items in React category" aria-pressed="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"></path></svg>
+                </button>
+</div>
+<ul class="nav-list"><li id="nav-second" aria-label="처음 만난 리액트">
+                    <div class="nav-item">
+                        <a href="/React/%EC%B2%98%EC%9D%8C%20%EB%A7%8C%EB%82%9C%20%EB%A6%AC%EC%95%A1%ED%8A%B8/" class="nav-list-link nav-sh">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><path d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z"></path></svg>
+                            <span>처음 만난 리액트</span>
                         </a>
 </div>
 </li></ul>
@@ -670,6 +695,129 @@ LLM Agent
                                 <a href="/AI" class="category">AI</a>
                             
                                 <span class="date">· 2025-06-04</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        
+        
+        <li class="paginated-item">
+                <div id="article_content">
+                    <div class="thumbnail_zone">
+                        
+                            <a href="/React/%EC%B2%98%EC%9D%8C%20%EB%A7%8C%EB%82%9C%20%EB%A6%AC%EC%95%A1%ED%8A%B8/First%20meet%20React.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/react_thumbnail.webp') !important"></a>
+                        
+                    </div>
+                    <div class="box_contents">
+                        <a href="/React/%EC%B2%98%EC%9D%8C%20%EB%A7%8C%EB%82%9C%20%EB%A6%AC%EC%95%A1%ED%8A%B8/First%20meet%20React.html"><h1 class="title_post">리액트 시작하기</h1></a>
+                        <a href="/React/%EC%B2%98%EC%9D%8C%20%EB%A7%8C%EB%82%9C%20%EB%A6%AC%EC%95%A1%ED%8A%B8/First%20meet%20React.html" class="txt_post">
+                            리액트 설치 방법
+
+
+
+  npm 설치
+  node 설치
+  툴은 원하는대로
+
+
+
+
+JSX 문법
+
+
+  자바스크립트 확장 문법
+  JavaScript + XML/HTML 
+ex) 예시
+    const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;;
+    
+  
+
+
+원리
+React.createElement(
+    type,
+    [props], ## 속성
+    [...children]  ## 자식 엘리먼트
+)
+
+
+JSX 문법의 장점
+
+  가독성 향상: HTML과 유사한 문법으로 작성되어, 코드가 더 직관적이고 이해하기 쉬움
+  Injection 방지: JSX는 자바스크립트 표현식을 안전하게 HTML에 삽입할 수 있도록 하여, XSS 공격을 방지하는 데 도움을 줌
+
+
+{} 가 들어가면 무조건 자바스크립트 코드로 바뀜
+
+Rendering Element
+
+
+Elements의 정의와 생김새
+
+  어떤 물체를 구성하는 성분
+  리액트 앱을 구성하는 가장 작은 블록들
+  화면에 보이는 것들을 기술
+  리액트(Elements)는 자바스크립트 객체 형태로 존재
+
+
+Elements의 특징 및 렌더링하기
+
+  불변성 (immutable)
+  변경된 부분을 계산하여 해당 부분만 다시 렌더링
+  Root dom node
+  ReactElement : React 의 Virtual DOM에 존재
+  DOMElement : 실제 브라우저의 DOM에 존재
+  ReactDOM.render()를 통해 ReactElement를 DOMElement로 변환
+
+
+Components 와 Props
+
+컴포넌트의 정의
+
+  컴포넌트는 UI를 구성하는 독립적인 재사용 가능한 코드 블록
+  컴포넌트는 함수나 클래스 형태로 정의되며, 입력값(Props)을 받아 UI를 렌더링
+  컴포넌트는 상태(State)를 가질 수 있으며, 상태가 변경되면 UI가 자동으로 업데이트됨
+  컴포넌트는 계층 구조로 구성되어, 상위 컴포넌트가 하위 컴포넌트를 포함할 수 있음
+  컴포넌트는 Props를 통해 데이터를 전달받아 렌더링
+  컴포넌트는 재사용 가능하고, 유지보수가 용이함
+
+
+Props의 정의
+
+  Props는 컴포넌트에 전달되는 입력값 (React의 속성)
+  ReadOnly 속성으로, 컴포넌트 내부에서 변경할 수 없음
+  모든 리액트 컴포넌트들은 그들의 Props에 관해서는 Pure(순수)함수 같은 역할을 해야한다.
+  모든 리액트 컴포넌트는 Props를 통해 데이터를 전달받아 렌더링해야한다.
+
+
+function App(pros){
+    return (
+        &lt;Profile
+            name="John Doe"
+            age= {30}
+            /&gt;
+    );
+}
+
+function App(pros){
+    return (
+        &lt;Layout
+            width={100}
+            height={200}
+            header={&lt;Header title="제목"/&gt;}
+            footer={&lt;Footer/&gt;}
+            /&gt;
+    );
+}
+
+
+
+                        </a>
+                        <div class="info-post">
+                                <a href="/React" class="category">React</a>
+                            
+                                <span class="date">· 2025-06-03</span>
                             
                         </div>
                     </div>
@@ -1359,6 +1507,10 @@ docker container stats [컨테이너 ID prefix]
         
         
         
+        
+        
+        
+        
         <li class="paginated-item">
                 <div id="article_content">
                     <div class="thumbnail_zone">
@@ -1485,18 +1637,6 @@ AWS 답변 : AWS CodeDeploy를 통해 Amazon EC2 인스턴스에 코드를 배�
                     </div>
                 </div>
             </li>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -1962,6 +2102,18 @@ void connectStibee(){
                     </div>
                 </div>
             </li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         <li class="paginated-item">
@@ -5056,6 +5208,88 @@ Print print = (i) -&gt; System.out.println(i);
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
+                            <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/postgresql_thumbnail.png') !important"></a>
+                        
+                    </div>
+                    <div class="box_contents">
+                        <a href="/Database/Postgresql/2023-01-06-postgresql.html"><h1 class="title_post">PostgreSQL이란</h1></a>
+                        <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="txt_post">
+                            PostgreSQL
+
+
+오픈 소스 객체 관계형 데이터베이스  
+새로운 하나의 프로그래밍처럼 구현하는 기능을 제공한다.
+
+구조
+
+클라이언트 / 서버 모델 사용
+
+기능
+
+트랜잭션과 ACID(Atomicity, Consistency, Isolation, Durability)를 지원
+또한 주요 기능들을 많이 가지고 있다고 한다.
+
+Nested transactions (savepoints)    
+Point in time recovery  
+Online/hot backups, Parallel restore  
+Rules system (query rewrite system)  
+B-tree, R-tree, hash, GiST method indexes  
+Multi-Version Concurrency Control (MVCC)  
+Tablespaces  
+Procedural Language  
+Information Schema  
+I18N, L10N  
+Database &amp; Column level collation  
+Array, XML, UUID type  
+Auto-increment (sequences),  
+Asynchronous replication  
+LIMIT/OFFSET  
+Full text search  
+SSL, IPv6  
+Key/Value storage  
+Table inheritance
+
+등등 여러 기능들을 제공한다고 하는데 여기서 Auto-increment나 Limit 등등 빼고는 잘 접하지 않아서 그런지 이해는 못하겠다. 나중에 PostgreSQL을 좀 더 많이쓰는 일이 생기면 접할 것 같다.
+
+특징
+
+
+  
+    유연한 객체 생성  
+단순한 자료 저장소로써의 기능을 넘어 마치 하나의 새로운 프로그래밍 언어처럼 개발자의 창의성에 따라 무한한 기능을 손쉽게 구현할 수 있도록 한다.
+  
+  
+    상속  
+java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테이블 상속 기능을 이용해 하위 테이블을 만들 수 있다. 테이블에 저장된 자료는 상위 테이블을 조회하면, 해당 테이블의 하위 테이블에 포함된 모든 자료를 조회할 수 있으며, 하위 테이블을 만들 때, 상위 테이블의 칼럼을 그대로 상속 받으면서, 하위 테이블에만 속하는 칼럼을 추가로 만들 수 있다.
+  
+  
+    함수  
+때때로, ‘저장 프로시저’라고 불리는 SQL문으로 작성된 함수를 서버환경에서 사용할 수 있다. 비록 다른 언어와는 달리 제어문과 반복문을 사용하지는 못하지만, 다른 언어와 결합시킬 수 있다. 일부 언어에서는 심지어 트리거 내부에서 실행시킬 수 있다.
+  
+
+
+
+
+내 생각
+
+일단은 이러한 장점들이 있지만 현재 프로젝트에선 JPA를 활용하여 진행하므로 PostgreSQL의 장점을 활용할 기회가 있을지는 잘 모르겠다. 차후 postgresQL의 특징을 사용하는 경험이나 정보를 듣는다면 추가로 적용하겠다.
+
+                        </a>
+                        <div class="info-post">
+                                <a href="/Database" class="category">Database</a>
+                            
+                                <span class="date">· 2023-01-06</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        
+        
+        <li class="paginated-item">
+                <div id="article_content">
+                    <div class="thumbnail_zone">
+                        
                             <a href="/Java/Live-Study/2023-01-06-live-study2.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/java_thumbnail.png') !important"></a>
                         
                     </div>
@@ -5605,88 +5839,6 @@ Reference
                         </a>
                         <div class="info-post">
                                 <a href="/Java" class="category">Java</a>
-                            
-                                <span class="date">· 2023-01-06</span>
-                            
-                        </div>
-                    </div>
-                </div>
-            </li>
-        
-        
-        <li class="paginated-item">
-                <div id="article_content">
-                    <div class="thumbnail_zone">
-                        
-                            <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/postgresql_thumbnail.png') !important"></a>
-                        
-                    </div>
-                    <div class="box_contents">
-                        <a href="/Database/Postgresql/2023-01-06-postgresql.html"><h1 class="title_post">PostgreSQL이란</h1></a>
-                        <a href="/Database/Postgresql/2023-01-06-postgresql.html" class="txt_post">
-                            PostgreSQL
-
-
-오픈 소스 객체 관계형 데이터베이스  
-새로운 하나의 프로그래밍처럼 구현하는 기능을 제공한다.
-
-구조
-
-클라이언트 / 서버 모델 사용
-
-기능
-
-트랜잭션과 ACID(Atomicity, Consistency, Isolation, Durability)를 지원
-또한 주요 기능들을 많이 가지고 있다고 한다.
-
-Nested transactions (savepoints)    
-Point in time recovery  
-Online/hot backups, Parallel restore  
-Rules system (query rewrite system)  
-B-tree, R-tree, hash, GiST method indexes  
-Multi-Version Concurrency Control (MVCC)  
-Tablespaces  
-Procedural Language  
-Information Schema  
-I18N, L10N  
-Database &amp; Column level collation  
-Array, XML, UUID type  
-Auto-increment (sequences),  
-Asynchronous replication  
-LIMIT/OFFSET  
-Full text search  
-SSL, IPv6  
-Key/Value storage  
-Table inheritance
-
-등등 여러 기능들을 제공한다고 하는데 여기서 Auto-increment나 Limit 등등 빼고는 잘 접하지 않아서 그런지 이해는 못하겠다. 나중에 PostgreSQL을 좀 더 많이쓰는 일이 생기면 접할 것 같다.
-
-특징
-
-
-  
-    유연한 객체 생성  
-단순한 자료 저장소로써의 기능을 넘어 마치 하나의 새로운 프로그래밍 언어처럼 개발자의 창의성에 따라 무한한 기능을 손쉽게 구현할 수 있도록 한다.
-  
-  
-    상속  
-java 또는 C++ 프로그래밍 언어와 같이 테이블을 만들어 그 테이블 상속 기능을 이용해 하위 테이블을 만들 수 있다. 테이블에 저장된 자료는 상위 테이블을 조회하면, 해당 테이블의 하위 테이블에 포함된 모든 자료를 조회할 수 있으며, 하위 테이블을 만들 때, 상위 테이블의 칼럼을 그대로 상속 받으면서, 하위 테이블에만 속하는 칼럼을 추가로 만들 수 있다.
-  
-  
-    함수  
-때때로, ‘저장 프로시저’라고 불리는 SQL문으로 작성된 함수를 서버환경에서 사용할 수 있다. 비록 다른 언어와는 달리 제어문과 반복문을 사용하지는 못하지만, 다른 언어와 결합시킬 수 있다. 일부 언어에서는 심지어 트리거 내부에서 실행시킬 수 있다.
-  
-
-
-
-
-내 생각
-
-일단은 이러한 장점들이 있지만 현재 프로젝트에선 JPA를 활용하여 진행하므로 PostgreSQL의 장점을 활용할 기회가 있을지는 잘 모르겠다. 차후 postgresQL의 특징을 사용하는 경험이나 정보를 듣는다면 추가로 적용하겠다.
-
-                        </a>
-                        <div class="info-post">
-                                <a href="/Database" class="category">Database</a>
                             
                                 <span class="date">· 2023-01-06</span>
                             
@@ -6643,6 +6795,28 @@ Account Entity에서 내가 생각하는 column명을 Template 설정 파트 담
 
         posts.push({
             'title'    : "Index",
+            'path'     : "React",
+            'type'     : "category",
+            'tags'     : "",
+            'url'      : "/React/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
+            'date'     : "2025-05-27"
+        });
+    
+
+        posts.push({
+            'title'    : "Index",
+            'path'     : "React > 처음 만난 리액트",
+            'type'     : "category",
+            'tags'     : "",
+            'url'      : "/React/%EC%B2%98%EC%9D%8C%20%EB%A7%8C%EB%82%9C%20%EB%A6%AC%EC%95%A1%ED%8A%B8/index.html",
+            'image'    : "/assets/img/thumbnail/empty.jpg",
+            'date'     : "2025-05-27"
+        });
+    
+
+        posts.push({
+            'title'    : "Index",
             'path'     : "Sap",
             'type'     : "category",
             'tags'     : "",
@@ -6714,6 +6888,17 @@ Account Entity에서 내가 생각하는 column명을 Template 설정 파트 담
             'tags'     : "AWS, EC2",
             'url'      : "/AWS/%EC%97%85%EB%AC%B4%EC%97%90%20%EB%B0%94%EB%A1%9C%EC%93%B0%EB%8A%94%20AWS%20%EC%9E%85%EB%AC%B8/EC2.html",
             'image'    : "/assets/img/thumbnail/aws_thumbnail.jpeg",
+            'date'     : "2025-06-03"
+        });
+    
+
+        posts.push({
+            'title'    : "리액트 시작하기",
+            'path'     : "React > 처음 만난 리액트",
+            'type'     : "post",
+            'tags'     : "Frontend, React",
+            'url'      : "/React/%EC%B2%98%EC%9D%8C%20%EB%A7%8C%EB%82%9C%20%EB%A6%AC%EC%95%A1%ED%8A%B8/First%20meet%20React.html",
+            'image'    : "/assets/img/thumbnail/react_thumbnail.webp",
             'date'     : "2025-06-03"
         });
     
