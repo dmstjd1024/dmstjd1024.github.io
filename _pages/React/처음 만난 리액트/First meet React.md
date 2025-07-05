@@ -32,7 +32,7 @@ const element = <h1>Hello, world!</h1>;
 ```
 
 ## 원리
-```javascript
+```jsx
 React.createElement(
     type,
     [props], ## 속성
@@ -80,6 +80,7 @@ Components 와 Props
 - Props는 컴포넌트에 전달되는 입력값 (React의 속성)
 - ReadOnly 속성으로, 컴포넌트 내부에서 변경할 수 없음
 - 모든 리액트 컴포넌트들은 그들의 Props에 관해서는 Pure(순수)함수 같은 역할을 해야한다.
+  - Pure : 입력값이 동일하면 항상 동일한 출력을 반환하는 함수
 - 모든 리액트 컴포넌트는 Props를 통해 데이터를 전달받아 렌더링해야한다.
 
 ```jsx
@@ -104,4 +105,215 @@ function App(pros){
     );
 }
 ```
+## Props의 특징 사용법
+- Props는 컴포넌트에 전달되는 데이터로, 컴포넌트의 동작과 렌더링을 제어
 
+```jsx
+function App(props) {
+    return (
+        <Profile
+            name="소플"
+            introduction="안녕하세요, 소플입니다."
+            viewCount={1000}
+            />
+    );
+}
+```
+
+### Component 만들기 및 랜더링
+- 클래스 컴포넌트, 함수 컴포넌트
+- 주로 함수 컴포넌트를 사용한다함
+- 그래도 클래스 컴포넌트를 알고있어야 한다.
+
+#### 함수 컴포넌트
+- react Component를 일종의 함수로 생각한다.
+```jsx
+function Welcome(props) {
+    return <h1>안녕하세요, {props.name}님!</h1>;
+}
+```
+#### 클래스 컴포넌트
+- javascript es6 문법을 사용하여 만든 컴포넌트
+```jsx
+class Welcome extends React.Component {
+    render() {
+        return <h1>안녕하세요, {this.props.name}님!</h1>;
+    }
+}
+```
+- 컴포넌트의 이름
+- 항상 대문자로 시작해야함 (소문자로 입력하면 DOM 엘리먼트로 인식됨)
+```jsx
+const element = <Welcome name="소플" />;
+```
+#### 컴포넌트 렌더링
+```jsx
+function Welcome(props) {
+  return <h1>안녕하세요, {props.name}님!</h1>;
+}
+const element = <Welcome name="소플" />;
+ReactDOM.render(
+    element,
+    document.getElementById('root')
+);
+```
+
+### 컴포넌트 합성과 추출
+#### 컴포넌트 합성
+- 복잡한 화면을 여러개의 Components로 나눠서 구현
+```jsx
+function App() {
+    return (
+        <div>
+            <Header />
+            <MainContent />
+            <Footer />
+        </div>
+    );
+}
+```
+#### 컴포넌트 추출
+- 큰 컴포넌트를 작은 컴포넌트로 나누어 재사용성을 높임
+```jsx
+function Component(props) {
+    return (
+        <div className="content">
+          <div className="user-info">
+            <img className="avatar"
+                 src={props.author.avatarUrl}
+                 alt={props.author.name} 
+            />
+            <div className="user-info-name">
+              {props.author.name}
+              </div>
+          </div>
+          <div className="comment-text">
+                {props.text}
+          </div>
+          <div className="comment-date">
+              {formatDate(props.date)}
+          </div>
+        </div>
+    );
+}
+```
+#### Avatar 추출
+```jsx
+function Avatar(props) {
+    return (
+        <img className="avatar"
+             src={props.user.avatarUrl}
+             alt={props.user.name} 
+        />
+    );
+}
+```
+```jsx
+function Component(props) {
+    return (
+        <div className="content">
+          <div className="user-info">
+            <Avatar user={props.author} />
+            <div className="user-info-name">
+              {props.author.name}
+              </div>
+          </div>
+          <div className="comment-text">
+                {props.text}
+          </div>
+          <div className="comment-date">
+              {formatDate(props.date)}
+          </div>
+        </div>
+    );
+}
+```
+#### UserInfo 추출
+```jsx
+function UserInfo(props) {
+    return (
+        <div className="user-info">
+            <Avatar user={props.user} />
+            <div className="user-info-name">
+                {props.user.name}
+            </div>
+        </div>
+    );
+}
+```
+```jsx
+function Component(props) {
+    return (
+        <div className="content">
+            <UserInfo user={props.author} />
+          <div className="comment-text">
+                {props.text}
+          </div>
+          <div className="comment-date">
+              {formatDate(props.date)}
+          </div>
+        </div>
+    );
+}
+```
+
+### (실습) 댓글 컴포넌트 만들기
+- Comment.jsx
+```jsx
+import React from "react";
+
+function Comment(props) {
+    return (
+        <div>
+            <div>
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"/>
+            </div>
+        <div>
+            <span>{props.name}</span>
+            <span>{props.comment}</span>
+        </div>
+        </div>
+
+    );
+}
+
+export default Comment;
+```
+
+- CommentList.jsx
+```jsx
+import React from "react";
+import Comment from "./Comment";
+
+const comments = [
+    { name: "test", comment: "안녕하세요 test." },
+    { name: "test2", comment: "안녕하세요 test2." },
+    { name: "test3", comment: "안녕하세요 test3." },
+];
+
+function CommentList(props) {
+    return (
+        <div>
+            {comments.map((comment) => {
+                return (
+                    <Comment name={comment.name} comment={comment.comment}/>
+                )
+            })}
+        </div>
+    );
+}
+
+export default CommentList;
+```
+
+- App.jsx
+```jsx
+const root = createRoot(document.getElementById('root'));
+root.render(
+    <React.StrictMode>
+        <CommentList />
+    </React.StrictMode>,
+    document.getElementById('root')
+    );
+```
