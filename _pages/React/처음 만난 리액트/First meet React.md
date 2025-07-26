@@ -1,5 +1,5 @@
 ---
-title:  "리액트 시작하기"
+title:  "리액트 시작하기 (1 ~ 5장)"
 
 categories:
   - frontend, react
