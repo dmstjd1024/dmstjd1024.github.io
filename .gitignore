@@ -4,6 +4,8 @@ dmstjd1024.github.io.iml
 
 **/_site/**
 /docs/**
+feed.xml
+index.html
 
 # Ignore Jekyll build files
 .sass-cache/**
