@@ -239,3 +239,60 @@ const mesureRef = useCallback(node => {
     }
 }, []);
 ```
+
+## Hook의 규칙과 Custom Hook 만들기
+- Hook은 컴포넌트의 최상위 레벨에서만 호출해야 한다.
+- Hook은 컴포넌트가 렌더링 될 때마다 매번 같은 순서로 호출되어야 한다.
+
+잘못된 Hook 사용법
+```jsx
+function MyComponent(props) {
+    const [name, setName] = useState('Inje');
+    
+    if(name !== ''){
+       useEffect( () => {
+          ... // 이 부분은 잘못된 사용 예시입니다.
+       });
+    }
+}
+```
+- 리액트 함수 컴포넌트에서만 Hook을 호출해야 한다.
+- 일반적인 javascript에서 호출 X
+`eslint-plugin-react-hooks`를 사용하여 Hook의 규칙을 검사할 수 있다.
+
+### Custom Hook
+- Hook을 재사용할 수 있는 방법
+- Custom Hook 추출하기
+- 이름이 `use` 로 시작하고, 내부에서 다른 Hook을 호출하는 하나의 자바스크립트 함수
+```jsx
+// useUserStatus 를 사용하여 사용자 상태를 관리하는 Custom Hook
+function UserStatus(props) {
+    const isOnline = useUserStatus(props.user.id);
+    
+    if(isOnline === null){
+        return '대기 중...';
+    }
+    return isOnline ? '온라인' : '오프라인';
+}
+
+function UserListItem(props) {
+    const isOnline = useUserStatus(props.user.id);
+    
+    return (
+        <li>
+            {props.user.name} - {isOnline ? '온라인' : '오프라인'}
+        </li>
+    );
+}
+```
+- 여러개의 컴포넌트에서 하나의 Custom Hook을 사용할 때, 컴포넌트 내부에 있는 모든 state와 effect는 전부 분리되어 있다.
+- Custom Hook은 컴포넌트의 상태를 공유하지 않는다. (분리된 state와 effect를 가진다.)
+- 분리된 데이터들을 공유하고싶을 때,
+```jsx
+function CheckUserStatus(props) {
+    / ** Custom Hook을 사용하여 사용자 상태를 관리하는 예시
+    const [userId, setUserId] = useState(1);
+    const isUserOnline = useUserStatus(userId);
+    / ** 으로 하면, 이전에 선택된 사용자를 취소하고, 새로운 사람의 상태를 다시 구독한다.
+}
+```
