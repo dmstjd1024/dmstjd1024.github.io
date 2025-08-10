@@ -28,7 +28,7 @@ Docker Compose의 확장판이라고 생각
 - 쿠버네티스에서 가장 작은 단위
 - 일반적으로 하나의 파드가 하나의 컨테이너를 가진다. (예외로 여러 컨테이너를 가지는 경우도 있다.)
 
-Nginx 파드 예시
+## Nginx 파드 예시
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -45,3 +45,4 @@ spec:
 ```
 매니페스트 파일(Manifest File) 이라고 부른다.
 `kubectl apply -f nginx-pod.yaml` 명령어로 파드를 생성할 수 있다.
+

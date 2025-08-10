@@ -1975,12 +1975,12 @@ HEROPY.DEV
                 <div id="article_content">
                     <div class="thumbnail_zone">
                         
-                            <a href="/Kubernetes/Text_Book_1.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/kubernetes_thumbnail.png') !important"></a>
+                            <a href="/Kubernetes/non-majors-Kubernetes-1.html" class="thumbnail_post" loading="lazy" aria-label="thumbnail_post" style="background-image:url('/assets/img/thumbnail/kubernetes_thumbnail.png') !important"></a>
                         
                     </div>
                     <div class="box_contents">
-                        <a href="/Kubernetes/Text_Book_1.html"><h1 class="title_post">쿠버네티스</h1></a>
-                        <a href="/Kubernetes/Text_Book_1.html" class="txt_post">
+                        <a href="/Kubernetes/non-majors-Kubernetes-1.html"><h1 class="title_post">쿠버네티스</h1></a>
+                        <a href="/Kubernetes/non-majors-Kubernetes-1.html" class="txt_post">
                             쿠버네티스란,
 
 다수의 컨테이너를 효율적으로 배포, 확장 및 관리 하기 위한 오픈소스 시스템
@@ -1993,7 +1993,30 @@ Docker Compose의 확장판이라고 생각
   셀프 힐링
 
 
+파드(Pod) 란?,
 
+하나의 프로그램을 실행시키는 단위
+
+  쿠버네티스에서 가장 작은 단위
+  일반적으로 하나의 파드가 하나의 컨테이너를 가진다. (예외로 여러 컨테이너를 가지는 경우도 있다.)
+
+
+Nginx 파드 예시
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: nginx-pod
+
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      ports:
+        - containerPort: 80 # 컨테이너가 사용하는 포트
+
+매니페스트 파일(Manifest File) 이라고 부른다.
+kubectl apply -f nginx-pod.yaml 명령어로 파드를 생성할 수 있다.
 
 
                         </a>
@@ -7601,7 +7624,7 @@ Account Entity에서 내가 생각하는 column명을 Template 설정 파트 담
             'path'     : "Kubernetes",
             'type'     : "post",
             'tags'     : "kubernetes, docker",
-            'url'      : "/Kubernetes/Text_Book_1.html",
+            'url'      : "/Kubernetes/non-majors-Kubernetes-1.html",
             'image'    : "/assets/img/thumbnail/kubernetes_thumbnail.png",
             'date'     : "2025-05-28"
         });
