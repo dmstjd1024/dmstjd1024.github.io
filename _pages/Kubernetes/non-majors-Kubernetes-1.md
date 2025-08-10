@@ -43,6 +43,19 @@ spec:
       ports:
         - containerPort: 80 # 컨테이너가 사용하는 포트
 ```
+- 파드 조회 명령어 `kubectl get pods`
 매니페스트 파일(Manifest File) 이라고 부른다.
 `kubectl apply -f nginx-pod.yaml` 명령어로 파드를 생성할 수 있다.
 
+## 파드(Pod)로 띄운 프로그램에 접속이 안 되는 이유
+- 도커에 대해서 공부했을 때는 컨테이너 내부와 컨테이너 외부의 네트워크가 서로 독립적으로 분리
+쿠버네티스에서는 파드(Pod) 내부의 네트워크를 컨테이너가 공유해서 같이 사용
+- 파드(Pod) 네트워크는 로컬 컴퓨터의 네트워크와 독립적 분리 -> 외부에서 접근 불가
+### 2가지 접근 방법
+1. 파드 내부로 들어가서 접근
+`kubectl exec -it nginx-pod -- bash`
+2. 파드 의 내부네트워크를 외부에서도 접속할 수 있도록 포트 포워딩 활용
+`sudo kubectl port-forward pod/nginx-pod 80:80`
+
+파드 삭제
+`kubectl delete pod nginx-pod`
