@@ -2039,6 +2039,58 @@ sudo kubectl port-forward pod/nginx-pod 80:80
 파드 삭제
 kubectl delete pod nginx-pod
 
+백앤드 서버 파드로 띄우기
+Spring boot 서버에 Dockerfile 작성
+FROM openjdk:17-jdk
+
+COPY build/libs/*SNAPSHOT.jar app.jar
+LABEL authors="jeon-eunseong"
+
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+쿠버네티스 파드 매니페스트 파일 작성
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: spring-pod
+  labels:
+    app: spring-app
+
+spec:
+  containers:
+    - name: spring-container
+      image: spring-server
+      ports:
+        - containerPort: 8080
+
+등록 명령어
+kubectl apply -f spring-pod.yaml
+조회 명령어
+kubectl get pods
+ImagePullBackOff 오류 발생
+이미지가 없다고 에러가 뜨는 이유
+이미지 풀 정책(Image pull Policy) 때문에 발생
+이미지 풀 정책
+yaml 을 읽어서 Pod 생성 시, 이미지를 어떻게 Pull 할 지에 대한 정책
+
+  Always: 로컬 말고, 무조건 레지스트리(Dockerhub, ECR(원격 이미지 저장소)) 에서 가져온다.
+  IfNotPresent: 로컬에 이미지 먼저 가져오고, 없으면 레지스트리에서 가져온다.
+  Never: 로컬에서만 이미지를 가져온다.
+
+
+image 뒤에 version을 명시하지 않거나, latest 태그를 사용하는 경우 Always 가 기본값
+lastest 태그를 사용하지 않는다면 IfNotPresent 가 기본값
+
+해결 방법
+이미지 풀 정책을 IfNotPresent 로 변경
+...
+      ports:
+        - containerPort: 8080
+      imagePullPolicy: IfNotPresent  
+
+
+
                         </a>
                         <div class="info-post">
                                 <a href="/Kubernetes" class="category">Kubernetes</a>
