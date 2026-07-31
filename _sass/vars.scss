@@ -1,101 +1,94 @@
 // ---------------------------------------------------------------------------
-// Design tokens
+// 디자인 토큰
 //
-// 색상을 SCSS 변수가 아닌 CSS custom property 로 둔다. SCSS 변수는 컴파일 시점에
-// 값이 박혀서 테마별로 규칙을 통째로 다시 선언해야 하지만(기존 darkmode.scss 가
-// 그 방식이었다), CSS 변수는 :root 값만 바꾸면 참조하는 곳이 모두 따라온다.
+// 색은 전부 CSS 변수(커스텀 프로퍼티)로 둔다. SCSS 변수($x)는 컴파일 시점에
+// 값이 박혀버려서 다크모드를 만들려면 규칙을 통째로 다시 써야 하지만,
+// CSS 변수는 :root 에서 값만 바꾸면 쓰는 쪽이 전부 따라온다.
+// 덕분에 다크모드 전용 스타일시트가 필요 없다.
 //
-// 팔레트 출처: Anthropic brand-guidelines
-// https://github.com/anthropics/skills/blob/main/skills/brand-guidelines/SKILL.md
+// 레이아웃 수치(폭 등)만 SCSS 변수로 둔다 — 미디어쿼리 안에서 계산에 쓰이는데
+// CSS 변수는 미디어쿼리 조건절에서 못 쓴다.
 // ---------------------------------------------------------------------------
 
 :root {
-  // 원본 팔레트 — 테마와 무관한 고정값
-  --c-slate:      #141413;
-  --c-ivory:      #faf9f5;
-  --c-cloud:      #b0aea5;
-  --c-ivory-dark: #e8e6dc;
-  --c-clay:       #d97757;
-  --c-sky:        #6a9bcc;
-  --c-olive:      #788c5d;
+  // 원색 팔레트
+  --c-slate:#141413;
+  --c-slate-mid:#3d3d3a;
+  --c-slate-light:#5e5d59;
+  --c-ivory:#faf9f5;
+  --c-ivory-mid:#f0eee6;
+  --c-ivory-dark:#e8e6dc;
+  --c-cloud:#b0aea5;
+  --c-cloud-dark:#87867f;
+  --c-clay:#d97757;
+  --c-clay-deep:#c6613f;
+  --c-sky:#6a9bcc;
+  --c-olive:#788c5d;
 
-  // 파생값
-  --c-clay-deep:   #c6613f;
-  --c-ivory-mid:   #f0eee6;
-  --c-slate-mid:   #3d3d3a;
-  --c-slate-light: #5e5d59;
-  --c-cloud-dark:  #87867f;
+  // 의미 토큰 — 컴포넌트는 항상 이쪽만 쓴다
+  --bg:var(--c-ivory);
+  --bg-raised:#fff;
+  --bg-sunken:var(--c-ivory-mid);
+  --fg:var(--c-slate);
+  --fg-muted:var(--c-slate-light);
+  --fg-subtle:var(--c-cloud-dark);
+  --border:var(--c-ivory-dark);
+  --border-strong:var(--c-cloud);
+  --accent:var(--c-clay-deep);
+  --accent-hover:var(--c-clay);
+  --link:var(--c-slate);
+  --category:var(--c-olive);
 
-  // --- 의미 토큰 (라이트) -------------------------------------------------
-  --bg:            var(--c-ivory);
-  --bg-raised:     #fff;
-  --bg-sunken:     var(--c-ivory-mid);
-  --bg-code:       var(--c-ivory-dark);
+  // 타이포
+  //
+  // 제목에도 Pretendard 를 쓴다. Poppins 를 앞에 두면 라틴/숫자만 Poppins 로,
+  // 한글은 Pretendard 로 그려지는데 같은 굵기라도 Poppins 가 더 두껍게 보여서
+  // "초당 85줄" 처럼 숫자만 굵어진 것처럼 보인다.
+  // Poppins 는 로고(--font-display)에만 남긴다.
+  --font-display:'Poppins','Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-sans:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-body:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;
 
-  --fg:            var(--c-slate);
-  --fg-muted:      var(--c-slate-light);
-  --fg-subtle:     var(--c-cloud-dark);
-  --fg-onaccent:   #fff;
+  // 반지름
+  --r-sm:.25rem;
+  --r:.5rem;
+  --r-lg:1rem;
 
-  --border:        var(--c-ivory-dark);
-  --border-strong: var(--c-cloud);
+  // 그림자 — toss 처럼 아주 옅게. 진한 그림자는 촌스럽다.
+  --shadow-sm:0 1px 2px rgba(20,20,19,.04);
+  --shadow:0 2px 8px rgba(20,20,19,.06);
+  --shadow-lg:0 8px 24px rgba(20,20,19,.08);
 
-  --accent:        var(--c-clay-deep);
-  --accent-hover:  var(--c-clay);
-  --link:          var(--c-clay-deep);
-  --category:      var(--c-olive);
-
-  --shadow-sm: 0 1px 2px rgba(20, 20, 19, .06);
-  --shadow-md: 0 2px 8px rgba(20, 20, 19, .08);
-  --shadow-lg: 0 8px 28px rgba(20, 20, 19, .12);
-
-  // --- 타이포 -------------------------------------------------------------
-  // Pretendard 가 한글과 라틴을 모두 커버하므로 본문 기본으로 두고,
-  // 제목에만 Poppins 를 앞에 얹는다. Poppins 에 한글 글리프가 없어서
-  // 한글 제목은 자동으로 Pretendard 로 넘어간다.
-  --font-sans: 'Poppins', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
-
-  // --- 형태 ---------------------------------------------------------------
-  --r-sm: .25rem;
-  --r:    .5rem;
-  --r-lg: 1rem;
+  // 레이아웃
+  --nav-h:4rem;
 }
 
-// --- 다크 ------------------------------------------------------------------
-// 의미 토큰만 재정의한다. 컴포넌트 규칙은 건드리지 않는다.
+// 다크모드는 의미 토큰만 다시 정의한다. 컴포넌트 규칙은 손대지 않는다.
 body.dark-theme {
-  --bg:            var(--c-slate);
-  --bg-raised:     #1e1e1c;
-  --bg-sunken:     #1a1a18;
-  --bg-code:       #262623;
+  --bg:#12120f;
+  --bg-raised:#1c1c19;
+  --bg-sunken:#26262230;
+  --fg:var(--c-ivory);
+  --fg-muted:#b8b6ad;
+  --fg-subtle:var(--c-cloud-dark);
+  --border:#2e2e2a;
+  --border-strong:#44443f;
+  --accent:var(--c-clay);
+  --accent-hover:#e8906f;
+  --link:var(--c-ivory);
+  --category:#9db37e;
 
-  --fg:            var(--c-ivory);
-  --fg-muted:      var(--c-cloud);
-  --fg-subtle:     var(--c-cloud-dark);
-  --fg-onaccent:   var(--c-slate);
-
-  --border:        var(--c-slate-mid);
-  --border-strong: var(--c-slate-light);
-
-  --accent:        #e08a6d;
-  --accent-hover:  var(--c-clay);
-  --link:          #e08a6d;
-  --category:      #9bb07d;
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, .5);
-  --shadow-lg: 0 8px 28px rgba(0, 0, 0, .6);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+  --shadow:0 2px 8px rgba(0,0,0,.4);
+  --shadow-lg:0 8px 24px rgba(0,0,0,.5);
 }
 
-// --- 레이아웃 (계산에 쓰이므로 SCSS 변수 유지) -----------------------------
-$sidebarwd: 18rem;
-$contentwd: 54rem;
+// 레이아웃 수치 (미디어쿼리에서 써야 해 SCSS 변수로 둔다)
+$contentwd:44rem;    // 본문 최대폭 — 한 줄 65자 근처
+$listwd:60rem;       // 목록 최대폭
+$widewd:72rem;       // 네비/히어로 최대폭
 
-$mediawd: (
-  mobile: 320px,
-  tablet: 769px,
-  desktop: 1025px,
-  wide: 1441px,
-) !default;
+$bp-mobile:640px;
+$bp-tablet:900px;
+$bp-desktop:1100px;

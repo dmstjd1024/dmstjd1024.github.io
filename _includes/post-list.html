@@ -1,0 +1,66 @@
+{%- comment -%}
+  카테고리 / 전체 글 목록.
+
+  받는 변수 (Jekyll 은 include 인자를 반드시 include. 접두사로 읽는다):
+    inc_level  - _pages 기준 깊이. 1 이면 전체 목록.
+    inc_title  - 카테고리 이름
+
+  요약문에 truncate 를 반드시 건다. 이게 없으면 글 본문 전체가 HTML 로
+  들어간 뒤 CSS 로 두 줄만 보이게 잘리는데, 안 보일 뿐 다운로드는 다 된다.
+  (이전 테마가 이래서 목록 페이지가 무거웠다.)
+{%- endcomment -%}
+{%- assign here = page.url | remove: 'index.html' -%}
+{%- assign posts = site.pages
+      | where_exp: "p", "p.url contains here"
+      | where_exp: "p", "p.path != page.path"
+      | sort: "date" | reverse -%}
+{%- comment -%}
+  첫 화면에는 최근 글만 싣는다. 101편을 한 번에 그리면 눈에 보이지도 않는
+  카드 100개의 HTML 을 매번 내려받게 된다. 나머지는 카테고리에서 본다.
+{%- endcomment -%}
+{%- assign total = posts.size -%}
+{%- if include.inc_level == 1 -%}
+  {%- assign posts = posts | slice: 0, 30 -%}
+{%- endif -%}
+
+<div class="wrap wrap--list">
+  <header class="list-head">
+    {%- if include.inc_level == 1 -%}
+      <p class="list-head__eyebrow">{{ site.description }}</p>
+      <h1 class="list-head__title">{{ site.title }}</h1>
+    {%- else -%}
+      <p class="list-head__eyebrow"><a href="{{ '/' | prepend: site.baseurl }}">전체 글</a></p>
+      <h1 class="list-head__title">{{ include.inc_title }}</h1>
+    {%- endif -%}
+    <p class="list-head__count">
+      글 {{ total }}편
+      {%- if posts.size < total %} · 최근 {{ posts.size }}편{% endif -%}
+    </p>
+  </header>
+
+  {%- if posts.size == 0 -%}
+    <p class="empty">아직 글이 없습니다.</p>
+  {%- else -%}
+    <ul class="cards">
+      {%- for p in posts -%}
+        {%- assign seg = p.path | remove_first: '_pages/' | split: '/' -%}
+        <li class="card">
+          <a class="card__link" href="{{ p.url | prepend: site.baseurl }}">
+            <div class="card__body">
+              <div class="card__meta">
+                <span class="card__cat">{{ seg[0] }}</span>
+                {%- assign d = p.date | date: "%Y-%m-%d" -%}
+                {%- if d != "1900-01-01" -%}
+                  <time datetime="{{ d }}">{{ p.date | date: "%Y.%m.%d" }}</time>
+                {%- endif -%}
+              </div>
+              <h2 class="card__title">{{ p.title }}</h2>
+              <p class="card__summary">{{ p.content | markdownify | strip_html | normalize_whitespace | truncate: 160 }}</p>
+            </div>
+            {% include thumb.html inc_page=p %}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
