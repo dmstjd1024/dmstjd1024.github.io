@@ -1,9 +1,95 @@
-$color-wenge: #66545E;
-$color-beige: #F1EBE5;
-$color-darkbrown: #3A241A;
-$color-darkorange: #B04008;
-$color-rose: #fa4251;
-$color-aqua: #64c8c8;
+// ---------------------------------------------------------------------------
+// Design tokens
+//
+// 색상을 SCSS 변수가 아닌 CSS custom property 로 둔다. SCSS 변수는 컴파일 시점에
+// 값이 박혀서 테마별로 규칙을 통째로 다시 선언해야 하지만(기존 darkmode.scss 가
+// 그 방식이었다), CSS 변수는 :root 값만 바꾸면 참조하는 곳이 모두 따라온다.
+//
+// 팔레트 출처: Anthropic brand-guidelines
+// https://github.com/anthropics/skills/blob/main/skills/brand-guidelines/SKILL.md
+// ---------------------------------------------------------------------------
+
+:root {
+  // 원본 팔레트 — 테마와 무관한 고정값
+  --c-slate:      #141413;
+  --c-ivory:      #faf9f5;
+  --c-cloud:      #b0aea5;
+  --c-ivory-dark: #e8e6dc;
+  --c-clay:       #d97757;
+  --c-sky:        #6a9bcc;
+  --c-olive:      #788c5d;
+
+  // 파생값
+  --c-clay-deep:   #c6613f;
+  --c-ivory-mid:   #f0eee6;
+  --c-slate-mid:   #3d3d3a;
+  --c-slate-light: #5e5d59;
+  --c-cloud-dark:  #87867f;
+
+  // --- 의미 토큰 (라이트) -------------------------------------------------
+  --bg:            var(--c-ivory);
+  --bg-raised:     #fff;
+  --bg-sunken:     var(--c-ivory-mid);
+  --bg-code:       var(--c-ivory-dark);
+
+  --fg:            var(--c-slate);
+  --fg-muted:      var(--c-slate-light);
+  --fg-subtle:     var(--c-cloud-dark);
+  --fg-onaccent:   #fff;
+
+  --border:        var(--c-ivory-dark);
+  --border-strong: var(--c-cloud);
+
+  --accent:        var(--c-clay-deep);
+  --accent-hover:  var(--c-clay);
+  --link:          var(--c-clay-deep);
+  --category:      var(--c-olive);
+
+  --shadow-sm: 0 1px 2px rgba(20, 20, 19, .06);
+  --shadow-md: 0 2px 8px rgba(20, 20, 19, .08);
+  --shadow-lg: 0 8px 28px rgba(20, 20, 19, .12);
+
+  // --- 타이포 -------------------------------------------------------------
+  // Pretendard 가 한글과 라틴을 모두 커버하므로 본문 기본으로 두고,
+  // 제목에만 Poppins 를 앞에 얹는다. Poppins 에 한글 글리프가 없어서
+  // 한글 제목은 자동으로 Pretendard 로 넘어간다.
+  --font-sans: 'Poppins', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  // --- 형태 ---------------------------------------------------------------
+  --r-sm: .25rem;
+  --r:    .5rem;
+  --r-lg: 1rem;
+}
+
+// --- 다크 ------------------------------------------------------------------
+// 의미 토큰만 재정의한다. 컴포넌트 규칙은 건드리지 않는다.
+body.dark-theme {
+  --bg:            var(--c-slate);
+  --bg-raised:     #1e1e1c;
+  --bg-sunken:     #1a1a18;
+  --bg-code:       #262623;
+
+  --fg:            var(--c-ivory);
+  --fg-muted:      var(--c-cloud);
+  --fg-subtle:     var(--c-cloud-dark);
+  --fg-onaccent:   var(--c-slate);
+
+  --border:        var(--c-slate-mid);
+  --border-strong: var(--c-slate-light);
+
+  --accent:        #e08a6d;
+  --accent-hover:  var(--c-clay);
+  --link:          #e08a6d;
+  --category:      #9bb07d;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, .5);
+  --shadow-lg: 0 8px 28px rgba(0, 0, 0, .6);
+}
+
+// --- 레이아웃 (계산에 쓰이므로 SCSS 변수 유지) -----------------------------
 $sidebarwd: 18rem;
 $contentwd: 54rem;
 
