@@ -59,7 +59,10 @@
   }
 
   &__results {
-    max-height:min(24rem, 55vh);
+    // 옛 Ruby Sass(GitHub Pages)는 min() 을 CSS 함수가 아니라 자기 내장
+    // 함수로 해석해 빌드가 깨진다. vh 만 쓰면 어느 쪽에서든 안전하고,
+    // 결과도 거의 같다(24rem == 384px, 화면 700px 이상이면 55vh 가 더 크다).
+    max-height:55vh;
     overflow-y:auto;
 
     a {
