@@ -12,3 +12,8 @@ index.html
 .jekyll-cache/**
 .jekyll-metadata
 /Gemfile.lock_pages/AI/.omc/
+_site/
+.jekyll-cache/
+.omc/
+.playwright-mcp/
+Gemfile.lock
