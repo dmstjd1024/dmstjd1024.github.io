@@ -1,3 +1,10 @@
+// ---------------------------------------------------------------------------
+// 검색 오버레이
+//
+// 이전에는 주황색 파도(.wave) 3겹이 무한 반복되는 배경이었다. 검색은 빠르게
+// 쓰고 닫는 기능이라 배경 모션이 시선을 뺏는다. 불투명 오버레이로 바꾼다.
+// (.wave 마크업은 _includes/search.html 에 남아 있으므로 규칙만 비워 둔다)
+// ---------------------------------------------------------------------------
 #search
 {
   width:100%;
@@ -6,7 +13,7 @@
   left:0;
   position:fixed;
   display:none;
-  background:rgba(255,255,255,0.875);
+  background:var(--bg);
   z-index:999;
   text-align:center;
 
@@ -20,140 +27,139 @@
     padding:0;
     overflow-y:auto;
     max-height:60vh;
-    border-bottom:2px solid #aaa;
-    box-shadow:0px 4px 8px 0 #ccc;
+    border:1px solid var(--border);
+    border-top:none;
+    border-radius:0 0 var(--r) var(--r);
+    box-shadow:var(--shadow-lg);
+    background:var(--bg-raised);
+    text-align:left;
 
     i {
       margin-right:0.5rem;
-      color:#666;
+      color:var(--fg-subtle);
     }
 
     &::-webkit-scrollbar {
       width:8px;
-      background-color:#ddd;
+      background-color:var(--bg-sunken);
     }
-    &::-webkit-scrollbar-thumb { background-color:rosybrown; }
+    &::-webkit-scrollbar-thumb {
+      background-color:var(--border-strong);
+      border-radius:100vw;
+    }
   }
 
   &.active{ display:flex; }
 }
 
-.wave {
-  background:rgba(253, 177, 55, 0.5);
-  border-radius:0 0 250% 250%;
-  position:fixed;
-  width:200%;
-  height:12rem;
-  animation:wave 10s -3s linear infinite;
-  transform:translate3d(0, 0, 0);
-  opacity:0.75;
-  top:0;
-  left:0;
-  z-index:-1;
-}
-.wave:nth-of-type(2) {
-  top:-1.5em;
-  animation:wave 18s linear reverse infinite;
-  opacity:0.75;
-}
-.wave:nth-of-type(3) {
-  top:-3em;
-  animation:wave 20s -1s reverse infinite;
-  opacity:0.875;
-}
-
-@keyframes wave {
-  2% { transform:translateX(1); }
-  25% { transform:translateX(-25%); }
-  50% { transform:translateX(-50%); }
-  75% { transform:translateX(-25%); }
-  100% { transform:translateX(1); }
-}
+// 배경 파도 제거 — 마크업은 남아 있어도 렌더되지 않는다
+.wave { display:none; }
 
 .search-box {
   margin:auto;
   margin-top:2rem;
+  width:100%;
 
-  mark { 
+  mark {
     margin-bottom:1rem;
-    color:#fff !important;
-    opacity:0.8;
-    font-size:1.5rem;
-    font-weight:200;
+    color:var(--fg-subtle) !important;
+    font-size:0.8125rem;
+    font-family:var(--font-sans);
+    font-weight:500;
+    letter-spacing:.04em;
     display:block;
   }
 
   input {
-    font-size:1.25rem;
-    padding:8px;
-    border:2px solid #aaa;
-    background:none;
+    font-size:1.125rem;
+    font-family:var(--font-body);
+    padding:.75rem 1rem;
+    border:1px solid var(--border-strong);
+    border-radius:var(--r);
+    background:var(--bg-raised);
+    color:var(--fg);
+    outline:none;
+    transition:border-color .15s ease;
+
+    &:focus { border-color:var(--accent); }
+
+    &::placeholder { color:var(--fg-subtle); }
   }
 }
 
 .input-box {
   position:relative;
 
-  &:before, 
-  &:after {
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    z-index:-1;
-  }
-  &:before { background:#fff; }
-  &:after { background-image:url($baseurl + '/assets/img/tile.png'); }
+  // 이전 타일 배경 레이어 제거
+  &:before,
+  &:after { content:none; }
 
   button {
     position:absolute;
-    display:none; 
+    display:none;
     cursor:pointer;
-    top:0;
-    right:8px;
+    top:50%;
+    right:12px;
     width:22px;
     aspect-ratio:1.0;
     border-radius:50%;
-    transform:translateY(50%);
+    transform:translateY(-50%);
     font-size:14px;
-    background:slategrey !important;
+    background:var(--border-strong) !important;
 
-    svg { 
-      fill:#fff !important;
-      width:14px;
+    svg {
+      fill:var(--bg-raised) !important;
+      width:12px;
     }
+
+    &:hover { background:var(--fg-muted) !important; }
   }
 }
 
 .result-item {
   list-style:none;
-  text-align:justify;
-  padding:8px;
-  border:1px solid #aaa;
-  background:#fff;
+  text-align:left;
+  padding:.75rem 1rem;
+  border:none;
+  border-bottom:1px solid var(--border);
+  background:var(--bg-raised);
+  transition:background-color .12s ease;
 
-  &:hover { background:#ffe7a0; }
+  &:last-child { border-bottom:none; }
+
+  &:hover { background:var(--bg-sunken); }
 
   table {
-    th, td { 
+    width:100%;
+    border-collapse:collapse;
+
+    th, td {
       text-align:left;
       vertical-align:top;
+      border:none;
+      padding:1px 0;
     }
-    th { font-size:1rem; }
-    td { font-size:0.875rem; }
+    th {
+      font-size:0.9375rem;
+      font-family:var(--font-sans);
+      font-weight:600;
+      color:var(--fg);
+    }
+    td {
+      font-size:0.8125rem;
+      color:var(--fg-muted);
+    }
 
     svg {
-      background-color:darkslategrey;  
+      background-color:var(--fg-subtle);
       mask-repeat:no-repeat;
       display:inline-flex;
-      width:14px;
+      width:13px;
       margin-right:8px;
       transform:translateY(2px);
     }
     .ico-book {
-      background-color:dodgerblue !important;
+      background-color:var(--accent) !important;
       -webkit-mask-image:url($baseurl + '/assets/img/icon/book-solid.svg');
       mask-image:url($baseurl + '/assets/img/icon/book-solid.svg');
     }
@@ -169,13 +175,14 @@
       -webkit-mask-image:url($baseurl + '/assets/img/icon/calendar-days-regular.svg');
       mask-image:url($baseurl + '/assets/img/icon/calendar-days-regular.svg');
     }
-    .ico-book, th .ico-folder { width:18px; }
-    th .ico-folder { background-color:mediumseagreen !important; }
+    .ico-book, th .ico-folder { width:16px; }
+    th .ico-folder { background-color:var(--category) !important; }
   }
 
   .highlight {
-    font-weight:900;
-    color:yellowgreen !important;
+    font-weight:700;
+    color:var(--accent) !important;
+    background:none;
   }
 }
 
@@ -184,46 +191,46 @@
 #search {
   ul, input { width:40rem; }
   ul {
-    div { font-size:1.125rem; }
+    div { font-size:1rem; }
     i { margin-right:1rem; }
   }
 }
 
-.search-box { 
-  margin-top:4rem; 
+.search-box {
+  margin-top:5rem;
 
-  mark { 
-    font-size:2.5rem;
-    margin-bottom:2rem;
+  mark {
+    font-size:0.875rem;
+    margin-bottom:1.25rem;
   }
 }
 
 .search-box input {
-  font-size:2rem;
-  padding:1rem;
+  font-size:1.375rem;
+  padding:1rem 1.25rem;
   width:40rem;
 }
 
 .input-box button {
-  width:36px;
+  width:28px;
   right:16px;
 
-  svg { width:20px; }
+  svg { width:14px; }
 }
 
 .result-item {
-  padding:1rem;
+  padding:1rem 1.25rem;
 
   table {
-    th { font-size:1.25rem; }
-    td { font-size:1rem; }
+    th { font-size:1.0625rem; }
+    td { font-size:0.875rem; }
 
-    svg { width:16px; }
+    svg { width:14px; }
 
-    .ico-book, th .ico-folder { width:20px; }
+    .ico-book, th .ico-folder { width:17px; }
   }
 
-  .title { font-size:1.25rem; }
+  .title { font-size:1.0625rem; }
 }
 
 }
