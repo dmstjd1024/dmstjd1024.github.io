@@ -1,226 +1,109 @@
-document.addEventListener('DOMContentLoaded', function(){
-    var innerContent = document.querySelector('main');
-    let currentTheme = localStorage.getItem('theme');
+// ---------------------------------------------------------------------------
+// 글 페이지 전용: 목차 생성, 읽는 위치 표시, 댓글 지연 로드.
+// ---------------------------------------------------------------------------
+(function () {
+  'use strict';
 
-    // tocbot
-    var headings = innerContent.querySelectorAll('h1, h2');
-    var prevHead;
+  var body = document.getElementById('post-body');
 
-    const tocBorad = document.querySelector(".toc-board");
-    
-    Array.from(headings).forEach(function(heading){
-        let tocItem = document.createElement("li");
-        tocItem.classList.add("toc-list-item");
+  // --- 목차 ---------------------------------------------------------------
+  // 본문의 h2/h3 를 훑어 옆쪽 목차를 만든다. 제목이 2개도 안 되면
+  // 목차가 의미 없으므로 그냥 숨긴 채로 둔다.
+  var toc = document.getElementById('toc');
+  if (body && toc) {
+    var heads = body.querySelectorAll('h2, h3');
+    if (heads.length >= 2) {
+      var list = toc.querySelector('.toc__list');
+      var items = [];
 
-        let itemLink = document.createElement("a");
-        itemLink.classList.add("toc-link");
-        itemLink.id = "toc-id-" + heading.textContent;
-        itemLink.textContent = heading.textContent;
+      Array.prototype.forEach.call(heads, function (h, i) {
+        // 마크다운이 id 를 안 붙였으면 여기서 붙인다 — 앵커 링크에 필요하다.
+        if (!h.id) h.id = 'h-' + i;
 
-        tocItem.append(itemLink);
+        var li = document.createElement('li');
+        if (h.tagName === 'H3') li.className = 'toc__sub';
 
-        itemLink.addEventListener('click', function(){
-            heading.scrollIntoView({
-                behavior: 'smooth'
-            });
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        list.appendChild(li);
+
+        items.push({ head: h, li: li });
+      });
+
+      toc.hidden = false;
+
+      // 화면에 보이는 제목을 목차에서 강조한다.
+      // 스크롤 이벤트마다 계산하면 버벅이므로 IntersectionObserver 를 쓴다.
+      var visible = new Set();
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) visible.add(en.target);
+          else visible.delete(en.target);
         });
 
-        if (heading.tagName == 'H1'){
-            itemLink.classList.add("node-name--H1");
-            prevHead = tocItem;
-            tocBorad.append(tocItem);
+        var active = null;
+        for (var i = 0; i < items.length; i++) {
+          if (visible.has(items[i].head)) { active = items[i]; break; }
         }
-        else {
-            itemLink.classList.add("node-name--H2");
-
-            if (prevHead == undefined) {
-                tocBorad.append(tocItem);
-                return;
-            }
-
-            let subList = prevHead.querySelector('ol');
-
-            if (!subList){
-                subList = document.createElement("ol");
-                subList.classList.add("toc-list");
-                prevHead.append(subList);
-            }
-
-            subList.append(tocItem);
-        }
-    });
-
-    setInterval(function(){
-        var scrollPos = document.documentElement.scrollTop;
-
-        Array.from(tocBorad.querySelectorAll('.toc-link')).forEach(function(link){
-            link.classList.remove('is-active-link');
+        items.forEach(function (it) {
+          it.li.classList.toggle('is-active', it === active);
         });
+      }, { rootMargin: '-80px 0px -70% 0px' });
 
-        var currHead;
-
-        Array.from(headings).forEach(function(heading){
-            let headPos = heading.getBoundingClientRect().top + window.scrollY - 512;
-
-            if (scrollPos > headPos) currHead = heading;
-        });
-
-        if (currHead != undefined){
-            let tocLink = document.getElementById("toc-id-" + currHead.textContent);
-            tocLink.classList.add('is-active-link');
-        }
-    }, 200);
-
-    // link (for hover effect)
-    var links = innerContent.querySelectorAll('a:not(.related-item a)');
-
-    links.forEach((link) => {
-        link.setAttribute('data-content', link.innerText);
-    });
-
-    // Tag EventListener
-    const searchPage = document.querySelector("#search");
-
-    document.querySelectorAll('.tag-box .tag').forEach(function(tagButton){
-        tagButton.addEventListener('click', function() {
-            const contentID = tagButton.getAttribute('contentID');
-            const inpuxBox = document.getElementById('search-input');
-            searchPage.classList.add('active');
-
-            inpuxBox.value = contentID;
-            inpuxBox.dispatchEvent(new KeyboardEvent('keyup'));
-        });
-    });
-
-    // Move to Top
-    if (document.querySelector('.thumbnail')){
-        const arrowButton = document.querySelector('.top-arrow');
-
-        setInterval(function(){
-            var scrollPos = document.documentElement.scrollTop;
-    
-            if (scrollPos < 512){
-                arrowButton.classList.remove('arrow-open');
-            }
-            else {
-                arrowButton.classList.add('arrow-open');
-            }
-        }, 1000);
-
-        arrowButton.addEventListener('click', function(){
-            window.scroll({top:0, behavior:'smooth'});
-        });
+      items.forEach(function (it) { io.observe(it.head); });
     }
+  }
 
-    // Move to Comment
-    document.getElementById('comments-counter').addEventListener('click', function(){
-        document.getElementById("giscus").scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
+  // --- 댓글 --------------------------------------------------------------
+  // giscus 는 iframe 이라 무겁다. 처음부터 붙이면 글보다 먼저 네트워크를
+  // 잡아먹으므로, 댓글 자리가 화면에 가까워질 때 붙인다.
+  var box = document.getElementById('comments');
+  if (box) {
+    var meta = function (n) {
+      var el = document.querySelector('meta[name="' + n + '"]');
+      return el ? el.content : '';
+    };
 
-});
+    var mount = function () {
+      if (box.dataset.loaded) return;
+      box.dataset.loaded = '1';
 
-window.addEventListener('load', function(){
-    // Page Hits
-    const pageHits = document.getElementById('page-hits');
+      var s = document.createElement('script');
+      s.src = 'https://giscus.app/client.js';
+      s.async = true;
+      s.crossOrigin = 'anonymous';
+      s.setAttribute('data-repo', meta('giscus_repo'));
+      s.setAttribute('data-repo-id', meta('giscus_repoId'));
+      s.setAttribute('data-category', meta('giscus_category'));
+      s.setAttribute('data-category-id', meta('giscus_categoryId'));
+      s.setAttribute('data-mapping', 'pathname');
+      s.setAttribute('data-reactions-enabled', '1');
+      s.setAttribute('data-emit-metadata', '0');
+      s.setAttribute('data-input-position', 'bottom');
+      s.setAttribute('data-lang', 'ko');
+      s.setAttribute('data-loading', 'lazy');
+      s.setAttribute('data-theme',
+        document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+      box.appendChild(s);
+    };
 
-    if (pageHits) {
-        const goatcounterCode = pageHits.getAttribute('usercode');
-        const requestURL = 'https://' 
-            + goatcounterCode 
-            + '.goatcounter.com/counter/' 
-            + encodeURIComponent(location.pathname) 
-            + '.json';
+    var io2 = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { io2.disconnect(); mount(); }
+    }, { rootMargin: '300px' });
+    io2.observe(box);
 
-        var resp = new XMLHttpRequest();
-        resp.open('GET', requestURL);
-        resp.onerror = function() { pageHits.innerText = "0"; };
-        resp.onload = function() { pageHits.innerText = JSON.parse(this.responseText).count; };
-        resp.send();
+    // 테마를 바꾸면 iframe 안쪽도 따라 바꿔준다.
+    var themeBtn = document.getElementById('btn-theme');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function () {
+        var frame = box.querySelector('iframe.giscus-frame');
+        if (!frame) return;
+        var t = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+        frame.contentWindow.postMessage(
+          { giscus: { setConfig: { theme: t } } }, 'https://giscus.app');
+      });
     }
-
-    // 코드 하이라이팅은 Jekyll 이 빌드 시 Rouge 로 처리한다(_sass/syntax.scss).
-    // 런타임 하이라이터(highlight.js)는 같은 일을 반복해 렌더를 지연시켜 제거했다.
-
-    // Initialize/Change Giscus theme
-    var giscusTheme = "light";
-
-    const giscus_repo = document.querySelector('meta[name="giscus_repo"]').content;
-    const giscus_repoId = document.querySelector('meta[name="giscus_repoId"]').content;
-    const giscus_category = document.querySelector('meta[name="giscus_category"]').content;
-    const giscus_categoryId = document.querySelector('meta[name="giscus_categoryId"]').content;
-
-    if (giscus_repo !== undefined) {
-        let currentTheme = localStorage.getItem('theme');
-
-        if (currentTheme === 'dark'){
-            giscusTheme = "noborder_gray";
-        }
-
-        let giscusAttributes = {
-            "src": "https://giscus.app/client.js",
-            "data-repo": giscus_repo,
-            "data-repo-id": giscus_repoId,
-            "data-category": giscus_category,
-            "data-category-id": giscus_categoryId,
-            "data-mapping": "pathname",
-            "data-reactions-enabled": "1",
-            "data-emit-metadata": "1",
-            "data-theme": giscusTheme,
-            "data-lang": "en",
-            "crossorigin": "anonymous",
-            "async": "",
-        };
-
-        let giscusScript = document.createElement("script");
-        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
-        document.body.appendChild(giscusScript);
-    }
-
-    // code clipboard copy button
-    async function copyCode(block) {
-        let code = block.querySelector("code");
-        let text = code.innerText;
-      
-        await navigator.clipboard.writeText(text);
-    }
-
-    let blocks = document.querySelectorAll("pre");
-
-    blocks.forEach((block) => {
-        // only add button if browser supports Clipboard API
-        if (navigator.clipboard) {
-            let clip_btn = document.createElement("button");
-            let clip_img = document.createElement("svg");
-
-            clip_btn.setAttribute('title', "Copy Code");
-            clip_img.ariaHidden = true;
-
-            block.appendChild(clip_btn);
-            clip_btn.appendChild(clip_img);
-
-            clip_btn.addEventListener("click", async () => {
-                await copyCode(block, clip_btn);
-            });
-        }
-    });
-
-    // Giscus IMetadataMessage event handler
-    function handleMessage(event) {
-        if (event.origin !== 'https://giscus.app') return;
-        if (!(typeof event.data === 'object' && event.data.giscus)) return;
-        
-        const giscusData = event.data.giscus;
-        const commentCount = document.getElementById('num-comments');
-
-        if (giscusData && giscusData.hasOwnProperty('discussion')) {
-            commentCount.innerText = giscusData.discussion.totalCommentCount;
-        }
-        else {
-            commentCount.innerText = '0';
-        }
-    }
-        
-    window.addEventListener('message', handleMessage);
-});
+  }
+})();

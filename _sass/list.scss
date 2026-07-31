@@ -1,0 +1,209 @@
+// ---------------------------------------------------------------------------
+// 글 목록
+//
+// toss.tech 처럼 카드가 아래로 쌓이는 한 줄 목록이다. 격자로 늘어놓으면
+// 제목이 짧게 잘려 무슨 글인지 알기 어려워서, 가로로 넓게 쓴다.
+// ---------------------------------------------------------------------------
+.list-head {
+  margin-bottom:2.5rem;
+
+  &__eyebrow {
+    font-size:.875rem;
+    color:var(--fg-subtle);
+    margin-bottom:.5rem;
+
+    a:hover { color:var(--accent); }
+  }
+
+  &__title {
+    font-size:clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing:-.03em;
+  }
+
+  &__count {
+    margin-top:.5rem;
+    font-family:var(--font-mono);
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+    font-variant-numeric:tabular-nums;
+  }
+}
+
+// 하위 카테고리 칩
+//
+// 서브가 있는 카테고리(AI 등)에서만 나온다. 개수를 같이 보여줘서
+// 어디에 글이 몰려 있는지 눌러보기 전에 알 수 있게 했다.
+.chips {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+  margin-bottom:2rem;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--border);
+}
+
+.chip {
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.35rem .7rem;
+  border:1px solid var(--border);
+  border-radius:var(--r-sm);     // 둥근 알약 대신 각지게 — 터미널 느낌
+  font-family:var(--font-mono);
+  font-size:.8125rem;
+  color:var(--fg-muted);
+  transition:border-color .15s ease, color .15s ease, background-color .15s ease;
+
+  &:hover {
+    border-color:var(--border-strong);
+    background:var(--bg-sunken);
+    color:var(--fg);
+  }
+
+  // 지금 보고 있는 곳
+  &.is-on {
+    background:var(--fg);
+    border-color:var(--fg);
+    color:var(--bg);
+    font-weight:600;
+  }
+
+  &__n {
+    font-size:.75rem;
+    color:var(--fg-subtle);
+    font-variant-numeric:tabular-nums;
+  }
+
+  &.is-on &__n { color:var(--bg); opacity:.7; }
+}
+
+// breadcrumb 구분자
+.list-head__eyebrow .sep {
+  margin-inline:.4rem;
+  color:var(--fg-subtle);
+}
+
+.cards {
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+}
+
+.card {
+  &__link {
+    display:flex;
+    align-items:center;
+    gap:1.25rem;
+    padding:1.25rem;
+    border-radius:var(--r-lg);
+    transition:background-color .15s ease;
+
+    &:hover { background:var(--bg-sunken); }
+    &:hover .card__title { color:var(--accent); }
+  }
+
+  &__body { flex:1; min-width:0; }
+
+  // 카테고리·날짜는 등폭 폰트로. 값이 세로로 정렬돼 목록이 표처럼 읽힌다.
+  &__meta {
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    color:var(--fg-subtle);
+    margin-bottom:.4rem;
+
+    time { font-variant-numeric:tabular-nums; }
+  }
+
+  &__cat {
+    color:var(--category);
+    font-weight:600;
+  }
+
+  &__title {
+    font-size:1.125rem;
+    margin-bottom:.35rem;
+    transition:color .15s ease;
+  }
+
+  &__summary {
+    font-size:.9375rem;
+    color:var(--fg-muted);
+    line-height:1.6;
+
+    // 두 줄까지만 — 여기서 자르는 건 보기 위한 것이고,
+    // 실제 글자 수는 Liquid 의 truncate 가 이미 줄여 놓았다.
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+
+  &__thumb {
+    flex-shrink:0;
+    width:7rem;
+    height:5rem;
+    border-radius:var(--r);
+    object-fit:cover;
+    background:var(--bg-sunken);
+  }
+
+  // 이미지가 없는 글은 카테고리 이름을 얹은 그라디언트로 대신한다.
+  &__thumb--auto {
+    display:grid;
+    place-items:center;
+    padding:.25rem;
+    font-family:var(--font-display);
+    font-size:.8125rem;
+    font-weight:600;
+    letter-spacing:.01em;
+    line-height:1.2;
+    text-align:center;
+    color:#fff;
+    text-shadow:0 1px 3px rgba(0,0,0,.28);
+    word-break:break-word;
+  }
+}
+
+// 8종 팔레트 — 파랑을 축으로 한 차가운 계열.
+//
+// 채도를 낮춰 뒀다. 원색을 그대로 쓰면 목록에서 색 덩어리가 제목보다
+// 먼저 눈에 들어와 읽는 것을 방해한다. 글끼리 구분되기만 하면 충분하다.
+//
+// color-mix 로 배경색과 섞어 두면 다크모드에서도 자동으로 톤이 눌려
+// 다크용 색을 따로 정의할 필요가 없다.
+$tones:
+  #4a7ab5 #3d648f,   // 파랑
+  #4f8062 #3f6650,   // 초록
+  #7d6ba8 #64558a,   // 보라
+  #4a8a92 #3b6f75,   // 청록
+  #5c7290 #495b74,   // 남색
+  #8a7bb0 #6e6291,   // 연보라
+  #5b86bd #4a6d99,   // 하늘
+  #6b7480 #565d66;   // 회색
+
+@each $pair in $tones {
+  $i: index($tones, $pair) - 1;
+  .tone-#{$i} {
+    background-image:linear-gradient(135deg,
+      color-mix(in srgb, nth($pair, 1) 78%, var(--bg-raised)),
+      color-mix(in srgb, nth($pair, 2) 88%, var(--bg-raised)));
+  }
+}
+
+.empty {
+  padding:4rem 0;
+  text-align:center;
+  color:var(--fg-subtle);
+}
+
+@media (max-width:$bp-mobile) {
+  .card {
+    &__link { gap:.875rem; padding:1rem .5rem; align-items:flex-start; }
+    &__thumb { width:4.5rem; height:4.5rem; }
+    &__title { font-size:1rem; }
+    &__summary { -webkit-line-clamp:2; font-size:.875rem; }
+  }
+}

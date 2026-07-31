@@ -1,0 +1,35 @@
+{%- comment -%}
+  카드 썸네일.
+
+  지정된 이미지가 있으면 그것을 쓰고, 없으면 제목에서 만든 그라디언트를 쓴다.
+  44편이 같은 sample.png 를 공유해 목록에서 글이 서로 구분되지 않았는데,
+  이미지를 44개 만드는 대신 CSS 로 만든다.
+
+  Liquid 에는 해시 함수가 없어서 길이 값들을 조합해 0~7 을 만든다.
+  같은 글은 언제 빌드해도 같은 색이 나온다.
+
+  받는 변수: inc_page (반드시 include. 접두사로 읽어야 한다)
+{%- endcomment -%}
+{%- assign t = include.inc_page -%}
+{%- assign img = t.thumbnail -%}
+{%- comment -%} sample.png 는 "지정 없음"과 같게 본다 {%- endcomment -%}
+{%- if img contains 'sample.png' -%}{%- assign img = nil -%}{%- endif -%}
+
+{%- if img -%}
+  {%- assign head = img | split: '/' -%}
+  {%- if head[0] == '' -%}{%- assign img = img | prepend: site.baseurl -%}{%- endif -%}
+  <img class="card__thumb" src="{{ img }}" alt="" loading="lazy" decoding="async" width="120" height="120">
+{%- else -%}
+  {%- assign a = t.url | size | times: 3 -%}
+  {%- assign b = t.title | strip | size | times: 5 -%}
+  {%- assign c = t.path | size | times: 2 -%}
+  {%- assign sum = a | plus: b | plus: c -%}
+  {%- assign tone = sum | modulo: 8 -%}
+  {%- comment -%}
+    글자는 제목 첫 글자 대신 카테고리 이름을 쓴다. 한글 제목의 첫 음절
+    하나("초", "종")만 떼어 놓으면 뜻이 없어 보이는데, 카테고리는 어느 분야
+    글인지 바로 읽힌다.
+  {%- endcomment -%}
+  {%- assign cat = t.path | remove_first: '_pages/' | split: '/' | first -%}
+  <span class="card__thumb card__thumb--auto tone-{{ tone }}" aria-hidden="true">{{ cat }}</span>
+{%- endif -%}
