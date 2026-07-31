@@ -10,22 +10,40 @@
   (이전 테마가 이래서 목록 페이지가 무거웠다.)
 {%- endcomment -%}
 {%- comment -%}
-  하위 카테고리의 index.md 는 글이 아니므로 목록과 개수에서 뺀다.
-  (page.path 만 제외하면 AI 아래 Backend/index.md 등이 글로 섞여 들어온다.)
+  이 아래(here)에 속한 글을 모은다.
+
+  카테고리 페이지(*/index.md)는 글이 아니므로 빼야 하는데, 판별을 URL 로 한다.
+  카테고리의 URL 은 항상 .../index.html 로 끝난다.
+
+  p.name 이나 reject_exp 를 쓰지 않는 이유:
+    - p.name 은 Jekyll 3(GitHub Pages)에서 비어 있어 필터가 무력화된다.
+      로컬(Jekyll 4)에서는 78편이 맞게 나오는데 운영에서는 102편으로 나왔다.
+    - reject_exp 는 Jekyll 4 전용이라 운영에서 빌드가 깨진다.
+  URL 기준이면 두 버전에서 똑같이 동작한다.
+
+  Liquid 에는 배열에 항목을 추가하는 필터가 없어서, 개수는 먼저 세고
+  출력은 루프 안에서 같은 조건으로 거른다.
 {%- endcomment -%}
 {%- assign here = page.url | remove: 'index.html' -%}
-{%- assign posts = site.pages
+{%- assign cand = site.pages
       | where_exp: "p", "p.url contains here"
-      | where_exp: "p", "p.path != page.path"
-      | where_exp: "p", "p.name != 'index.md'"
       | sort: "date" | reverse -%}
+
+{%- assign total = 0 -%}
+{%- for p in cand -%}
+  {%- unless p.url contains 'index.html' -%}
+    {%- assign total = total | plus: 1 -%}
+  {%- endunless -%}
+{%- endfor -%}
+
 {%- comment -%}
-  첫 화면에는 최근 글만 싣는다. 101편을 한 번에 그리면 눈에 보이지도 않는
-  카드 100개의 HTML 을 매번 내려받게 된다. 나머지는 카테고리에서 본다.
+  첫 화면에는 최근 글만 싣는다. 전부 그리면 눈에 보이지도 않는 카드
+  수십 개의 HTML 을 매번 내려받게 된다. 나머지는 카테고리에서 본다.
 {%- endcomment -%}
-{%- assign total = posts.size -%}
 {%- if include.inc_level == 1 -%}
-  {%- assign posts = posts | slice: 0, 30 -%}
+  {%- assign show_max = 30 -%}
+{%- else -%}
+  {%- assign show_max = 9999 -%}
 {%- endif -%}
 
 <div class="wrap wrap--list">
@@ -53,9 +71,14 @@
       </p>
       <h1 class="list-head__title">{{ include.inc_title }}</h1>
     {%- endif -%}
+    {%- if total < show_max -%}
+      {%- assign shown = total -%}
+    {%- else -%}
+      {%- assign shown = show_max -%}
+    {%- endif -%}
     <p class="list-head__count">
       글 {{ total }}편
-      {%- if posts.size < total %} · 최근 {{ posts.size }}편{% endif -%}
+      {%- if shown < total %} · 최근 {{ shown }}편{% endif -%}
     </p>
   </header>
 
@@ -112,15 +135,22 @@
   {%- endfor -%}
 
   {%- if sub_n > 0 and show_chips -%}
-    {%- comment -%} 부모 전체의 글 수 {%- endcomment -%}
-    {%- assign base_all = site.pages
-          | where_exp: "p", "p.url contains base_url"
-          | where_exp: "p", "p.name != 'index.md'" -%}
+    {%- comment -%}
+      부모 전체의 글 수. p.name 은 Jekyll 3 에서 비어 있어 쓸 수 없으므로
+      URL 로 카테고리 페이지를 걸러 센다.
+    {%- endcomment -%}
+    {%- assign base_cand = site.pages | where_exp: "p", "p.url contains base_url" -%}
+    {%- assign base_n = 0 -%}
+    {%- for bp in base_cand -%}
+      {%- unless bp.url contains 'index.html' -%}
+        {%- assign base_n = base_n | plus: 1 -%}
+      {%- endunless -%}
+    {%- endfor -%}
     <nav class="chips" aria-label="카테고리">
       <a class="chip{% if base_url == here %} is-on{% endif %}"
          href="{{ base_url | prepend: site.baseurl }}"
          {% if base_url == here %}aria-current="page"{% endif %}>
-        {{ base_name }} 전체 <span class="chip__n">{{ base_all.size }}</span>
+        {{ base_name }} 전체 <span class="chip__n">{{ base_n }}</span>
       </a>
       {%- for s in subs -%}
         {%- assign s_depth = s.path | remove_first: '_pages/' | split: '/' | size -%}
@@ -146,11 +176,15 @@
     </nav>
   {%- endif -%}
 
-  {%- if posts.size == 0 -%}
+  {%- if total == 0 -%}
     <p class="empty">아직 글이 없습니다.</p>
   {%- else -%}
     <ul class="cards">
-      {%- for p in posts -%}
+      {%- assign drawn = 0 -%}
+      {%- for p in cand -%}
+        {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
+        {%- if drawn >= show_max -%}{%- break -%}{%- endif -%}
+        {%- assign drawn = drawn | plus: 1 -%}
         {%- assign seg = p.path | remove_first: '_pages/' | split: '/' -%}
         <li class="card">
           <a class="card__link" href="{{ p.url | prepend: site.baseurl }}">
