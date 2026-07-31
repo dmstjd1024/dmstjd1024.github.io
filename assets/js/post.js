@@ -119,13 +119,6 @@ document.addEventListener('DOMContentLoaded', function(){
         });
     });
 
-    // Code highlighter
-    if (currentTheme === 'dark'){
-        // Disable highlighter default color theme
-        Array.from(innerContent.querySelectorAll('pre')).forEach(function (codeblock){
-            codeblock.classList.add('pre-dark');
-        });
-    }
 });
 
 window.addEventListener('load', function(){
@@ -147,15 +140,8 @@ window.addEventListener('load', function(){
         resp.send();
     }
 
-    // Highlighter
-    hljs.highlightAll();
-
-    // Disable code highlights to the plaintext codeblocks
-    document.querySelectorAll('.language-text, .language-plaintext').forEach(function(codeblock){
-        codeblock.querySelectorAll('.hljs-keyword, .hljs-meta, .hljs-selector-tag').forEach(function($){
-            $.outerHTML = $.innerHTML;
-        });
-    });
+    // 코드 하이라이팅은 Jekyll 이 빌드 시 Rouge 로 처리한다(_sass/syntax.scss).
+    // 런타임 하이라이터(highlight.js)는 같은 일을 반복해 렌더를 지연시켜 제거했다.
 
     // Initialize/Change Giscus theme
     var giscusTheme = "light";

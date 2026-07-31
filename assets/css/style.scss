@@ -7,10 +7,18 @@ $baseurl: "{{ site.baseurl }}";
 // ---------------------------------------------------------------------------
 // Webfonts
 //
-// 전부 자체 호스팅한다(외부 CDN 요청 없음). Pretendard 는 unicode-range 로
-// core/ext 를 쪼개 두었다 — 브라우저는 페이지에 실제 등장하는 글자가 속한
-// 조각만 내려받으므로, 평소에는 core(82KB)만 로드된다. ext(538KB)는 core 에
-// 없는 한글이 나올 때만 요청된다.
+// 전부 자체 호스팅한다(외부 CDN 요청 없음).
+//
+// Pretendard 는 원본이 748KB 라 그대로 쓸 수 없어 서브셋했다. 담은 글자는
+// 블로그에 실제 등장하는 한글 919자 + 받침 없는 음절 399자(초성19x중성21) +
+// 라틴/자모/기호로, 92KB 다. 블로그에 없던 한국어 문장으로 확인했을 때
+// 커버리지는 100% 였다 — 실사용 글자에 기본 음절을 더하면 일상적인 한국어는
+// 사실상 모두 포함된다.
+//
+// 처음에는 core/ext 2단으로 나눠 unicode-range 로 필요한 쪽만 받게 했는데,
+// 두 @font-face 가 같은 범위(U+AC00-D7A3)를 선언해 브라우저가 ext(538KB)까지
+// 받아버렸다. 겹치지 않게 쪼개려면 unicode-range 가 900개 구간으로 늘어나
+// CSS 가 더 무거워지므로, 단일 파일로 두는 편이 낫다.
 //
 // font-display:swap — 웹폰트가 늦으면 시스템 폰트로 먼저 그린다. 기존 테마는
 // optional + FontFaceObserver(JS) 조합이었는데, JS 없이 CSS 만으로 처리한다.
@@ -21,17 +29,6 @@ $baseurl: "{{ site.baseurl }}";
   font-weight:400;
   font-display:swap;
   src:url("#{$baseurl}/assets/fonts/pretendard-core.woff2") format("woff2");
-  // 라틴 + 자모 + 블로그에 실제 등장하는 한글
-  unicode-range:U+0020-007F, U+3131-3163, U+2018-201D, U+2026, U+00B7,
-                U+2190-2193, U+00D7, U+00F7, U+00B1, U+00B0, U+AC00-D7A3;
-}
-@font-face {
-  font-family:'Pretendard';
-  font-style:normal;
-  font-weight:400;
-  font-display:swap;
-  src:url("#{$baseurl}/assets/fonts/pretendard-ext.woff2") format("woff2");
-  unicode-range:U+AC00-D7A3;
 }
 
 @font-face {
@@ -173,4 +170,6 @@ input::-webkit-search-results-decoration{
 @import "pagination";
 @import "toc";
 @import "post";
+@import "syntax";
 @import "search";
+@import "transitions";
