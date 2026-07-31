@@ -8,23 +8,23 @@
 // 색은 팔레트에서 뽑았다 — 코드 블록만 튀지 않게.
 // ---------------------------------------------------------------------------
 :root {
-  --syn-comment:#8a8578;
-  --syn-keyword:#a8563a;
-  --syn-string:#5f7247;
-  --syn-number:#46688f;
-  --syn-func:#3d3d3a;
-  --syn-type:#6a5535;
-  --syn-punct:#6b6a64;
+  --syn-comment:#6e7781;
+  --syn-keyword:#cf222e;   // 붉은색 키워드 — 기술문서에서 가장 익숙한 배색
+  --syn-string:#0a3069;
+  --syn-number:#0550ae;
+  --syn-func:#8250df;
+  --syn-type:#953800;
+  --syn-punct:#57606a;
 }
 
 body.dark-theme {
-  --syn-comment:#7d7a70;
-  --syn-keyword:#e08a6d;
-  --syn-string:#a3bb82;
-  --syn-number:#8fb3d9;
-  --syn-func:#e8e6dc;
-  --syn-type:#d9bb84;
-  --syn-punct:#9b9a93;
+  --syn-comment:#9198a1;
+  --syn-keyword:#ff7b72;
+  --syn-string:#a5d6ff;
+  --syn-number:#79c0ff;
+  --syn-func:#d2a8ff;
+  --syn-type:#ffa657;
+  --syn-punct:#9198a1;
 }
 
 .highlight, .highlighter-rouge {
