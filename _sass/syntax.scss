@@ -1,82 +1,59 @@
 // ---------------------------------------------------------------------------
-// Syntax highlighting (Rouge)
+// 코드 색칠
 //
-// Jekyll 은 빌드 시점에 Rouge 로 코드를 토큰화해 <span class="k"> 같은 클래스를
-// 이미 붙여 둔다. 기존 테마는 그 위에 highlight.js(41KB)를 얹어 런타임에 같은
-// 일을 한 번 더 했고, CSS 는 .hljs-* 만 있어서 JS 가 실행되기 전까지 코드가
-// 무채색으로 보였다 — 페이지 이동마다 반복되는 렌더 지연의 원인이었다.
+// Jekyll 은 빌드할 때 Rouge 로 코드에 이미 .k .s .n 같은 클래스를 붙여 놓는다.
+// 이전 테마는 그걸 두고 브라우저에서 highlight.js 로 한 번 더 칠했는데,
+// 같은 일을 두 번 하느라 첫 화면이 250ms 늦어졌다. JS 를 걷어내고 색만 준다.
 //
-// 여기서는 Rouge 가 만들어 둔 클래스에 직접 색을 입힌다. JS 는 필요 없다.
-// 색은 팔레트 토큰에서 파생시켜 라이트/다크가 함께 따라오게 한다.
+// 색은 팔레트에서 뽑았다 — 코드 블록만 튀지 않게.
 // ---------------------------------------------------------------------------
-
 :root {
-  --syn-comment: #8a8578;
-  --syn-keyword: #a8563a;   // clay 계열
-  --syn-string:  #5f7247;   // olive 계열
-  --syn-number:  #46688f;   // sky 계열
-  --syn-func:    #3d3d3a;
-  --syn-type:    #6a5535;
-  --syn-punct:   #6b6a64;
-  --syn-err-bg:  #f3ded6;
+  --syn-comment:#6e7781;
+  --syn-keyword:#cf222e;   // 붉은색 키워드 — 기술문서에서 가장 익숙한 배색
+  --syn-string:#0a3069;
+  --syn-number:#0550ae;
+  --syn-func:#8250df;
+  --syn-type:#953800;
+  --syn-punct:#57606a;
 }
 
 body.dark-theme {
-  --syn-comment: #7d7a72;
-  --syn-keyword: #e08a6d;
-  --syn-string:  #a3bb82;
-  --syn-number:  #8fb6dd;
-  --syn-func:    #e8e6dc;
-  --syn-type:    #d9bd8a;
-  --syn-punct:   #9b9a93;
-  --syn-err-bg:  #4a2b22;
+  --syn-comment:#9198a1;
+  --syn-keyword:#ff7b72;
+  --syn-string:#a5d6ff;
+  --syn-number:#79c0ff;
+  --syn-func:#d2a8ff;
+  --syn-type:#ffa657;
+  --syn-punct:#9198a1;
 }
 
-.highlight,
-.highlighter-rouge .highlight {
-  // 주석
-  .c, .cd, .cm, .c1, .cs { color:var(--syn-comment); font-style:italic; }
-  .cp { color:var(--syn-comment); }
+.highlight, .highlighter-rouge {
+  .c, .c1, .cm, .cs, .cd { color:var(--syn-comment); font-style:italic; }
 
-  // 키워드
-  .k, .kc, .kd, .kn, .kp, .kr, .kv { color:var(--syn-keyword); font-weight:600; }
-  .kt { color:var(--syn-type); font-weight:600; }
+  .k, .kc, .kd, .kn, .kp, .kr, .kt { color:var(--syn-keyword); font-weight:600; }
+  .o, .ow { color:var(--syn-keyword); }
 
-  // 문자열
-  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr, .ss, .dl {
-    color:var(--syn-string);
-  }
+  .s, .s1, .s2, .sb, .sc, .sd, .se, .sh, .si, .sx, .sr { color:var(--syn-string); }
 
-  // 숫자·리터럴
-  .m, .mb, .mf, .mh, .mi, .mo, .mx, .il { color:var(--syn-number); }
+  .m, .mf, .mh, .mi, .mo, .il { color:var(--syn-number); }
+  .kc { color:var(--syn-number); }
 
-  // 이름
-  .n, .nb, .bp { color:var(--syn-func); }
-  .nc, .nn, .no { color:var(--syn-type); font-weight:600; }
-  .nf, .fm { color:var(--syn-number); font-weight:600; }
-  .na, .nv, .vc, .vg, .vi, .nl { color:var(--syn-func); }
+  .nf, .nd { color:var(--syn-func); font-weight:600; }
+  .nc, .nn, .no, .ne, .bp { color:var(--syn-type); }
+  .na, .nv, .vc, .vg, .vi { color:var(--syn-number); }
   .nt { color:var(--syn-keyword); }
-  .nd, .ni, .ne, .nx { color:var(--syn-type); }
 
-  // 연산자·구두점
-  .o, .ow, .p, .pi { color:var(--syn-punct); }
+  .p, .pi { color:var(--syn-punct); }
 
-  // diff
-  .gd { color:var(--syn-keyword); }
-  .gi { color:var(--syn-string); }
+  .gd { color:#b0566f; }
+  .gi { color:#5f7247; }
   .gh, .gu { color:var(--syn-comment); font-weight:600; }
-  .ge { font-style:italic; }
-  .gs { font-weight:600; }
+  .err { color:#b0566f; }
 
-  // 오류
-  .err { color:var(--syn-keyword); background-color:var(--syn-err-bg); }
-
-  // 줄번호
+  // 줄번호가 있는 코드 블록
   .lineno {
     color:var(--fg-subtle);
-    user-select:none;
     padding-right:1rem;
+    user-select:none;
   }
-
-  .w { color:transparent; }
 }

@@ -1,101 +1,109 @@
 // ---------------------------------------------------------------------------
-// Design tokens
+// 디자인 토큰
 //
-// 색상을 SCSS 변수가 아닌 CSS custom property 로 둔다. SCSS 변수는 컴파일 시점에
-// 값이 박혀서 테마별로 규칙을 통째로 다시 선언해야 하지만(기존 darkmode.scss 가
-// 그 방식이었다), CSS 변수는 :root 값만 바꾸면 참조하는 곳이 모두 따라온다.
+// 색은 전부 CSS 변수(커스텀 프로퍼티)로 둔다. SCSS 변수($x)는 컴파일 시점에
+// 값이 박혀버려서 다크모드를 만들려면 규칙을 통째로 다시 써야 하지만,
+// CSS 변수는 :root 에서 값만 바꾸면 쓰는 쪽이 전부 따라온다.
+// 덕분에 다크모드 전용 스타일시트가 필요 없다.
 //
-// 팔레트 출처: Anthropic brand-guidelines
-// https://github.com/anthropics/skills/blob/main/skills/brand-guidelines/SKILL.md
+// 레이아웃 수치(폭 등)만 SCSS 변수로 둔다 — 미디어쿼리 안에서 계산에 쓰이는데
+// CSS 변수는 미디어쿼리 조건절에서 못 쓴다.
 // ---------------------------------------------------------------------------
 
 :root {
-  // 원본 팔레트 — 테마와 무관한 고정값
-  --c-slate:      #141413;
-  --c-ivory:      #faf9f5;
-  --c-cloud:      #b0aea5;
-  --c-ivory-dark: #e8e6dc;
-  --c-clay:       #d97757;
-  --c-sky:        #6a9bcc;
-  --c-olive:      #788c5d;
+  // 원색 팔레트
+  //
+  // 따뜻한 아이보리/클레이 계열에서 중성 회색 계열로 바꿨다. 베이지빛이
+  // 빠지니 코드와 글자가 먼저 눈에 들어온다.
+  //
+  // 회색에 파랑을 아주 살짝 섞었다(순수 회색 #808080 이 아니라 h≈210).
+  // 완전한 무채색은 화면에서 탁해 보이고, 포인트인 파랑과도 겉돈다.
+  --c-ink:#1f2328;         // 본문 글자
+  --c-ink-mid:#424a53;
+  --c-ink-light:#656d76;   // 보조 텍스트
+  --c-paper:#fff;          // 바탕
+  --c-paper-mid:#f6f8fa;   // 한 단 낮은 면(코드블록, 눌린 영역)
+  --c-line:#d1d9e0;        // 테두리
+  --c-line-strong:#afb8c1;
+  --c-blue:#0969da;        // 링크·강조
+  --c-blue-bright:#218bff; // 호버, 다크모드
+  --c-green:#1a7f37;       // 카테고리
 
-  // 파생값
-  --c-clay-deep:   #c6613f;
-  --c-ivory-mid:   #f0eee6;
-  --c-slate-mid:   #3d3d3a;
-  --c-slate-light: #5e5d59;
-  --c-cloud-dark:  #87867f;
+  // 의미 토큰 — 컴포넌트는 항상 이쪽만 쓴다
+  --bg:var(--c-paper);
+  --bg-raised:var(--c-paper);
+  --bg-sunken:var(--c-paper-mid);
+  --fg:var(--c-ink);
+  --fg-muted:var(--c-ink-mid);
+  --fg-subtle:var(--c-ink-light);
+  --border:var(--c-line);
+  --border-strong:var(--c-line-strong);
+  --accent:var(--c-blue);
+  --accent-hover:var(--c-blue-bright);
+  --link:var(--c-ink);
+  --category:var(--c-green);
 
-  // --- 의미 토큰 (라이트) -------------------------------------------------
-  --bg:            var(--c-ivory);
-  --bg-raised:     #fff;
-  --bg-sunken:     var(--c-ivory-mid);
-  --bg-code:       var(--c-ivory-dark);
+  // 타이포
+  //
+  // 제목에도 Pretendard 를 쓴다. Poppins 를 앞에 두면 라틴/숫자만 Poppins 로,
+  // 한글은 Pretendard 로 그려지는데 같은 굵기라도 Poppins 가 더 두껍게 보여서
+  // "초당 85줄" 처럼 숫자만 굵어진 것처럼 보인다.
+  // Poppins 는 로고(--font-display)에만 남긴다.
+  --font-display:'Poppins','Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-sans:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-body:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,'SF Mono',Menlo,Consolas,monospace;
 
-  --fg:            var(--c-slate);
-  --fg-muted:      var(--c-slate-light);
-  --fg-subtle:     var(--c-cloud-dark);
-  --fg-onaccent:   #fff;
+  // 반지름
+  --r-sm:.25rem;
+  --r:.5rem;
+  --r-lg:1rem;
 
-  --border:        var(--c-ivory-dark);
-  --border-strong: var(--c-cloud);
+  // 그림자 — 아주 옅게. 진한 그림자는 촌스럽다.
+  --shadow-sm:0 1px 2px rgba(31,35,40,.04);
+  --shadow:0 2px 8px rgba(31,35,40,.08);
+  --shadow-lg:0 8px 24px rgba(31,35,40,.12);
 
-  --accent:        var(--c-clay-deep);
-  --accent-hover:  var(--c-clay);
-  --link:          var(--c-clay-deep);
-  --category:      var(--c-olive);
-
-  --shadow-sm: 0 1px 2px rgba(20, 20, 19, .06);
-  --shadow-md: 0 2px 8px rgba(20, 20, 19, .08);
-  --shadow-lg: 0 8px 28px rgba(20, 20, 19, .12);
-
-  // --- 타이포 -------------------------------------------------------------
-  // Pretendard 가 한글과 라틴을 모두 커버하므로 본문 기본으로 두고,
-  // 제목에만 Poppins 를 앞에 얹는다. Poppins 에 한글 글리프가 없어서
-  // 한글 제목은 자동으로 Pretendard 로 넘어간다.
-  --font-sans: 'Poppins', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
-
-  // --- 형태 ---------------------------------------------------------------
-  --r-sm: .25rem;
-  --r:    .5rem;
-  --r-lg: 1rem;
+  // 레이아웃
+  --nav-h:4rem;
 }
 
-// --- 다크 ------------------------------------------------------------------
-// 의미 토큰만 재정의한다. 컴포넌트 규칙은 건드리지 않는다.
+// 다크모드는 의미 토큰만 다시 정의한다. 컴포넌트 규칙은 손대지 않는다.
+//
+// 밝은 쪽과 같은 색상 계열(h≈215)을 유지하되 명도만 뒤집는다. 단순히
+// 반전시키면 색이 틀어지고 파랑이 탁해진다.
 body.dark-theme {
-  --bg:            var(--c-slate);
-  --bg-raised:     #1e1e1c;
-  --bg-sunken:     #1a1a18;
-  --bg-code:       #262623;
+  --bg:#0d1117;
+  --bg-raised:#151b23;
+  --bg-sunken:#161b22;
+  --fg:#e6edf3;
+  --fg-muted:#b7bfc8;
+  --fg-subtle:#9198a1;
+  --border:#3d444d;
+  --border-strong:#565e68;
+  --accent:#4493f8;         // 어두운 바탕에선 파랑을 밝게 올려야 읽힌다
+  --accent-hover:#6cb0ff;
+  --link:#e6edf3;
+  --category:#3fb950;
 
-  --fg:            var(--c-ivory);
-  --fg-muted:      var(--c-cloud);
-  --fg-subtle:     var(--c-cloud-dark);
-  --fg-onaccent:   var(--c-slate);
-
-  --border:        var(--c-slate-mid);
-  --border-strong: var(--c-slate-light);
-
-  --accent:        #e08a6d;
-  --accent-hover:  var(--c-clay);
-  --link:          #e08a6d;
-  --category:      #9bb07d;
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .4);
-  --shadow-md: 0 2px 8px rgba(0, 0, 0, .5);
-  --shadow-lg: 0 8px 28px rgba(0, 0, 0, .6);
+  --shadow-sm:0 1px 2px rgba(1,4,9,.4);
+  --shadow:0 2px 8px rgba(1,4,9,.5);
+  --shadow-lg:0 8px 24px rgba(1,4,9,.6);
 }
 
-// --- 레이아웃 (계산에 쓰이므로 SCSS 변수 유지) -----------------------------
-$sidebarwd: 18rem;
-$contentwd: 54rem;
+// 레이아웃 수치 (미디어쿼리에서 써야 해 SCSS 변수로 둔다)
+//
+// "한 줄 65자"는 영문 기준이다. 한글은 글자 폭이 넓어 같은 폭에서 글자 수가
+// 훨씬 적게 들어간다 — 44rem 에서 43자였다. 한글 본문은 40~50자가 적정이라
+// 52rem(약 50자)으로 넓혔다. 코드 블록이 잘리는 것도 함께 줄어든다.
+$contentwd:52rem;    // 본문 최대폭 — 한글 한 줄 50자 근처
+$listwd:70rem;       // 목록 최대폭
+$widewd:76rem;       // 네비 최대폭 (목록보다 살짝 넓게 둬 여백이 맞물린다)
 
-$mediawd: (
-  mobile: 320px,
-  tablet: 769px,
-  desktop: 1025px,
-  wide: 1441px,
-) !default;
+$bp-mobile:640px;
+$bp-tablet:900px;
+
+// 목차를 띄울 수 있는 최소 폭.
+// 본문 52rem(832px) + 여백 2rem + 목차 13rem + 바깥 여백 = 약 1230px.
+// 이보다 좁으면 목차가 화면 밖으로 밀리므로 숨긴다.
+$bp-desktop:1260px;
