@@ -2,30 +2,116 @@
 ---
 $baseurl: "{{ site.baseurl }}";
 
+@import "vars";
+
+// ---------------------------------------------------------------------------
+// Webfonts
+//
+// 전부 자체 호스팅한다(외부 CDN 요청 없음). Pretendard 는 unicode-range 로
+// core/ext 를 쪼개 두었다 — 브라우저는 페이지에 실제 등장하는 글자가 속한
+// 조각만 내려받으므로, 평소에는 core(82KB)만 로드된다. ext(538KB)는 core 에
+// 없는 한글이 나올 때만 요청된다.
+//
+// font-display:swap — 웹폰트가 늦으면 시스템 폰트로 먼저 그린다. 기존 테마는
+// optional + FontFaceObserver(JS) 조합이었는데, JS 없이 CSS 만으로 처리한다.
+// ---------------------------------------------------------------------------
+@font-face {
+  font-family:'Pretendard';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url("#{$baseurl}/assets/fonts/pretendard-core.woff2") format("woff2");
+  // 라틴 + 자모 + 블로그에 실제 등장하는 한글
+  unicode-range:U+0020-007F, U+3131-3163, U+2018-201D, U+2026, U+00B7,
+                U+2190-2193, U+00D7, U+00F7, U+00B1, U+00B0, U+AC00-D7A3;
+}
+@font-face {
+  font-family:'Pretendard';
+  font-style:normal;
+  font-weight:400;
+  font-display:swap;
+  src:url("#{$baseurl}/assets/fonts/pretendard-ext.woff2") format("woff2");
+  unicode-range:U+AC00-D7A3;
+}
+
+@font-face {
+  font-family:'Poppins';
+  font-style:normal;
+  font-weight:500;
+  font-display:swap;
+  src:url("#{$baseurl}/assets/fonts/poppins-500.woff2") format("woff2");
+  unicode-range:U+0000-00FF, U+2000-206F, U+2190-21FF, U+2212;
+}
+@font-face {
+  font-family:'Poppins';
+  font-style:normal;
+  font-weight:600;
+  font-display:swap;
+  src:url("#{$baseurl}/assets/fonts/poppins-600.woff2") format("woff2");
+  unicode-range:U+0000-00FF, U+2000-206F, U+2190-21FF, U+2212;
+}
+@font-face {
+  font-family:'Poppins';
+  font-style:normal;
+  font-weight:700;
+  font-display:swap;
+  src:url("#{$baseurl}/assets/fonts/poppins-700.woff2") format("woff2");
+  unicode-range:U+0000-00FF, U+2000-206F, U+2190-21FF, U+2212;
+}
+
+// ---------------------------------------------------------------------------
+// Base
+// ---------------------------------------------------------------------------
+*, *::before, *::after { box-sizing:border-box; }
+
+html { -webkit-text-size-adjust:100%; }
+
 html, body {
   margin:0;
   padding:0;
 }
 
-.fonts-loaded {
-  a, span, p { font-family:"Nunito Sans", 'Lucida Sans', sans-serif; }
-  h1, h2, h3 { font-family:"Lato", Helvetica, sans-serif; }
-  mark { font-family:'Righteous', sans-serif; }
+body {
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.7;
+  letter-spacing:-.003em;
+  word-break:keep-all;          // 한글이 단어 중간에서 잘리지 않게
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition:background-color .2s ease, color .2s ease;
 }
 
-a { text-decoration:none; }
-a, span, p, h1, h2, h3, i { color:#3A241A; }
-a, span, p { font-family:'Lucida Sans', sans-serif; }
-h1, h2, h3, mark {
+h1, h2, h3, h4, mark {
   margin:0;
-  font-family:Helvetica, sans-serif;
+  font-family:var(--font-sans);
+  color:var(--fg);
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:-.02em;
+  text-wrap:balance;
 }
+
+p, span, li { color:var(--fg); }
+
+a {
+  color:var(--link);
+  text-decoration:none;
+  transition:color .15s ease;
+
+  &:hover { color:var(--accent-hover); }
+}
+
 mark { background-color:transparent; }
+
+code, pre, kbd, samp { font-family:var(--font-mono); }
 
 svg {
   width:16px;
   aspect-ratio:1.0;
-  fill:#3A241A;
+  fill:var(--fg);
   display:block;
   margin:auto;
 }
@@ -34,6 +120,32 @@ button {
   border:none;
   background:none;
   padding:0;
+  font-family:inherit;
+  color:inherit;
+  cursor:pointer;
+}
+
+hr {
+  border:0;
+  border-top:1px solid var(--border);
+}
+
+img { max-width:100%; }
+
+// 키보드 사용자를 위한 포커스 표시
+:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:2px;
+  border-radius:var(--r-sm);
+}
+
+@media (prefers-reduced-motion:reduce) {
+  *, *::before, *::after {
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+    scroll-behavior:auto !important;
+  }
 }
 
 /* Disable default input cancel button */
@@ -50,7 +162,6 @@ input::-webkit-search-results-decoration{
 	display:none;
 }
 
-@import "vars";
 @import "layout";
 
 :root{
@@ -63,4 +174,3 @@ input::-webkit-search-results-decoration{
 @import "toc";
 @import "post";
 @import "search";
-@import "darkmode";

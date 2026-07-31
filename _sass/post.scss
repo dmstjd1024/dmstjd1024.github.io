@@ -5,8 +5,9 @@
 
 .inner-header {
   display:none;
-  background:linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(224,224,224,1) 100%);
-  border-radius:1rem 1rem 0 0;
+  background:var(--bg-sunken);
+  border-bottom:1px solid var(--border);
+  border-radius:var(--r-lg) var(--r-lg) 0 0;
   padding:8px 16px;
 
   .dot {
@@ -19,7 +20,7 @@
 }
 
 .inner-content {
-  background:#fff;
+  background:var(--bg-raised);
 
   img {
     display:block;
@@ -41,9 +42,10 @@
   margin:auto;
   background-size:cover;
   background-position:center center;
-  box-shadow:0 16px 16px 8px rgba(31, 35, 46, .15);
 }
 
+// 썸네일 위에 얹히는 제목 박스. 배경 이미지 위에서도 글자가 읽히도록
+// 살짝 흐린 유리판을 깐다.
 .transbox {
   position:absolute;
   top:50%;
@@ -55,72 +57,81 @@
   margin:auto;
   padding:1rem 0;
   text-align:center;
-  backdrop-filter:blur(4px);
-  background-color:rgba(255, 255, 255, 0.5);
+  backdrop-filter:blur(8px);
+  background-color:var(--bg-raised);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
 }
 
 .post-title {
-  font-size:1.25rem;
-  word-spacing:4px;
+  display:block;
+  font-family:var(--font-sans);
+  font-size:1.5rem;
   font-weight:600;
+  line-height:1.25;
+  letter-spacing:-.02em;
+  color:var(--fg);
+  word-spacing:normal;
   word-wrap:break-word;
-  font-family:Cambria, sans-serif;
+  text-wrap:balance;
 }
 
 .post-info {
-  margin-top:1.25rem;
-  font-size:0.875rem;
+  margin-top:1rem;
+  font-size:0.8125rem;
+  color:var(--fg-muted);
 
-  svg { width:14px; }
+  svg {
+    width:14px;
+    fill:var(--fg-subtle);
+  }
 }
 
+// 카테고리·날짜·조회수 같은 메타 정보. 장식을 걷어내고 조용한 pill 로 둔다.
 .info-box {
   display:inline-flex;
-  border-radius:8px;
-  margin:0;
-  padding:6px;
+  align-items:center;
+  border:1px solid var(--border);
+  border-radius:999px;
+  margin:2px;
+  padding:3px 10px;
   position:relative;
-  transition:all .5s;
+  background:var(--bg-sunken);
+  color:var(--fg-muted);
+  transition:border-color .15s ease, color .15s ease;
 
-  background:
-  linear-gradient(
-    to right,
-    rgba(100, 200, 200, 1),
-    rgba(100, 200, 200, 1)
-  ),
-  linear-gradient(
-    to right,
-    rgba(255, 0, 0, 1),
-    rgba(255, 0, 180, 1),
-    rgba(0, 100, 200, 1)
-  );
-  background-size:100% 3px, 0 3px;
-  background-position:100% 100%, 0 100%;
-  background-repeat:no-repeat;
+  span { color:inherit; }
 
   &:hover {
-    background-size:0 3px, 100% 3px;
-    box-shadow:0 3px 48px 12px rgba(100, 200, 200, 1);
+    border-color:var(--border-strong);
+    color:var(--fg);
+
+    svg { fill:var(--fg); }
   }
 
   svg { margin-right:4px; }
 }
 
-.tag-box { 
+.tag-box {
   margin:1rem;
   display:inline-block;
 }
 
+// 기존의 리본 모양(::before 화살촉 + ::after 구멍)은 유지하되
+// 색만 토큰으로 바꾼다. 확대 애니메이션은 과해서 걷어냈다.
 .tag {
   float:left;
   position:relative;
   margin:8px 12px;
   padding:0 10px 0 12px;
   line-height:1.5rem;
-  color:#fff !important;
-  font-size:1rem;
-  text-shadow:0 1px 2px rgba(0,0,0,0.6);
+  background:var(--bg-sunken);
+  color:var(--fg-muted) !important;
+  border:1px solid var(--border);
+  border-left:0;
+  font-size:0.875rem;
   cursor:pointer;
+  transition:color .15s ease, border-color .15s ease;
 
   &:before {
     content:"";
@@ -128,6 +139,7 @@
     left:-12px;
     border-style:solid;
     border-width:12px 12px 12px 0;
+    border-color:transparent var(--border) transparent transparent;
   }
   &:after {
     content:"";
@@ -138,40 +150,32 @@
     height:5px;
     -webkit-border-radius:50%;
     border-radius:50%;
-    background:#fff;
-    -webkit-box-shadow:-1px -1px 2px rgba(0,0,0,0.4);
-    box-shadow:-1px -1px 2px rgba(0,0,0,0.4);
+    background:var(--bg-raised);
   }
   &:hover {
-    animation:pulse 1s infinite;
-    transition:0.3s;
-  }
+    color:var(--accent) !important;
+    border-color:var(--border-strong);
 
-  @keyframes pulse {
-    0% { transform:scale(1); }
-    70% { transform:scale(0.9); }
-    100% { transform:scale(1); }
+    &:before { border-right-color:var(--border-strong); }
   }
 }
 
-.theme-0 {
-  background:hsl(50, 65%, 50%);
-  &::before { border-color:transparent hsl(50, 65%, 50%) transparent transparent; } 
-}
-.theme-1 { 
-  background:hsl(360, 65%, 50%);
-  &::before { border-color:transparent hsl(360, 65%, 50%) transparent transparent; }
-}
-.theme-2 { 
-  background:hsl(200, 65%, 50%);
-  &::before { border-color:transparent hsl(200, 65%, 50%) transparent transparent; }
+// 태그 3색 순환 — 이전엔 hsl 색상환이었지만 색으로 구분할 의미가 없어
+// 전부 같은 중립 톤으로 통일한다(마크업의 theme-N 클래스는 그대로 둠).
+.theme-0,
+.theme-1,
+.theme-2 {
+  background:var(--bg-sunken);
+  &::before { border-color:transparent var(--border) transparent transparent; }
 }
 
 main {
   padding:1rem;
   margin:auto;
+  font-family:var(--font-body);
   font-size:1rem;
-  line-height:200%;
+  line-height:1.8;          // 한글 본문은 라틴보다 여유가 더 필요하다
+  color:var(--fg);
   position:relative;
   overflow-wrap:break-word;
   word-wrap:break-word;
@@ -179,124 +183,142 @@ main {
   * { margin:auto; }
 
   h1, h2, h3 {
+    font-family:var(--font-sans);
+    color:var(--fg);
+    font-weight:600;
+    line-height:1.25;
+    letter-spacing:-.02em;
     margin-top:3rem;
     margin-bottom:1rem;
   }
   h1, .sh1 { font-size:1.75rem; }
-  h2, .sh2 { font-size:1.375rem; }
+  h2, .sh2 {
+    font-size:1.375rem;
+    padding-bottom:.5rem;
+    border-bottom:1px solid var(--border);
+  }
   h3, .sh3 { font-size:1.125rem; }
 
-  p { text-align:justify; }
+  .sh1, .sh2, .sh3 {
+    font-family:var(--font-sans);
+    font-weight:600;
+    line-height:1.25;
+    letter-spacing:-.02em;
+  }
+
+  p { text-align:left; }   // 한글 양쪽정렬은 어절 사이가 벌어져 읽기 나쁘다
 
   u {
-    color:$color-rose;
-    text-underline-offset:2px;
+    color:var(--accent);
+    text-decoration-color:var(--accent);
+    text-underline-offset:3px;
   }
 
   em { padding-right:2px; }
 
-  a {
-    color:dodgerblue;
-    text-decoration:none;
+  strong { color:var(--fg); }
 
-    &::before {
-      position:absolute;
-      content:attr(data-content);
-      color:midnightblue;
-      text-decoration:underline;
-      text-decoration-style:wavy;
-      text-underline-offset:4px;
-      text-decoration-color:midnightblue;
-      clip-path:polygon(0 0, 0 0, 0% 100%, 0 100%);
-      transition:clip-path .25s;
-    }
-    &:hover::before {
-      clip-path:polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  // 본문 링크는 색 + 밑줄로 표시한다. 색만으로는 색각 이상 사용자가 구분 못 한다.
+  a {
+    color:var(--link);
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:.2em;
+    text-decoration-color:var(--border-strong);
+    transition:color .15s ease, text-decoration-color .15s ease;
+
+    &:hover {
+      color:var(--accent-hover);
+      text-decoration-color:var(--accent-hover);
     }
   }
 
-  p, ul, table, div { margin-bottom:3rem; }
+  p, ul, ol, table, div { margin-bottom:1.75rem; }
 
   p + div,
   p + pre,
   p + blockquote,
   div + div,
-  div + blockquote { 
-    margin-top:-2rem; 
+  div + blockquote {
+    margin-top:-.75rem;
   }
 
-  ul { padding-left:2rem; }
+  ul, ol { padding-left:1.5rem; }
 
-  li > ul { margin:0; }
+  li > ul, li > ol { margin:0; }
 
   code {
     margin:0 2px;
-    padding:1px 5px;
-    border:1px solid #eaeaea;
-    background-color:#f4f4f4;
-    border-radius:3px;
-    font-family:'Courier New', Courier, monospace;
-    color:$color-darkorange;
+    padding:.1em .35em;
+    border:1px solid var(--border);
+    background-color:var(--bg-code);
+    color:var(--fg);
+    border-radius:var(--r-sm);
+    font-family:var(--font-mono);
+    font-size:.875em;
     position:relative;
     top:-1px;
     vertical-align:middle;
   }
 
+  // 코드 블록. 긴 줄은 블록 안에서만 가로 스크롤되고
+  // 페이지 전체가 밀려나지 않아야 한다.
+  pre,
+  .highlight,
+  .highlighter-rouge {
+    background:var(--bg-code);
+    border-radius:var(--r);
+    max-width:100%;
+    overflow-x:auto;
+  }
+
   .highlighter-rouge .highlight {
-    background:#f4f4f4;
-    border:1px solid #eaeaea;
-    border-radius:3px;
-    margin:8px auto;
+    background:var(--bg-code);
+    border:1px solid var(--border);
+    border-radius:var(--r);
+    margin:1rem auto;
+    overflow-x:auto;
 
     pre {
       margin:0;
       border:none;
+      border-radius:0;
+      background:transparent;
       overflow-x:auto;
       position:relative;
+      font-family:var(--font-mono);
+      font-size:.875rem;
+      line-height:1.65;
+      color:var(--fg);
 
+      // 복사 버튼 — 블록에 마우스를 올렸을 때만 나타난다.
       button {
         display:none;
         position:absolute;
-        top:20px;
-        right:20px;
+        top:12px;
+        right:12px;
         width:2rem;
         height:2rem;
-        font-size:1.125rem;
-        color:#777;
+        font-size:1rem;
+        color:var(--fg-muted);
         padding:4px;
-        background-color:#ddd;
-        border-radius:4px;
+        background-color:var(--bg-raised);
+        border:1px solid var(--border);
+        border-radius:var(--r-sm);
+        transition:border-color .15s ease;
 
         svg {
           -webkit-mask-image:url($baseurl + '/assets/img/icon/clipboard-regular.svg');
           mask-image:url($baseurl + '/assets/img/icon/clipboard-regular.svg');
-          background-color:#555 !important; 
+          background-color:var(--fg-muted) !important;
           mask-repeat:no-repeat;
           mask-position:center;
           mask-size:80%;
         }
 
-        &:after {
-          content:"";
-          display:block;
-          position:absolute;
-          border-radius:4rem;
-          left:0;
-          top:0;
-          width:100%;
-          height:100%;
-          opacity:0;
-          transition:.5s;
-          box-shadow:0 0 6px 24px #888;
-        }
-        &:active:after {
-          box-shadow:0 0 0 0 #888;
-          position:absolute;
-          border-radius:4rem;
-          left:0;
-          top:0;
-          opacity:1;
-          transition:0s;
+        &:hover {
+          border-color:var(--border-strong);
+          svg { background-color:var(--fg) !important; }
         }
       }
 
@@ -306,84 +328,122 @@ main {
     }
 
     code {
+      display:block;
       margin:0;
-      padding:1.5rem 1rem;
+      padding:1.25rem 1rem;
       border:none;
+      border-radius:0;
+      background:transparent;
+      color:inherit;
+      font-size:inherit;
+      top:0;
+      vertical-align:baseline;
     }
   }
 
   blockquote {
-    background:$color-beige;
-    border-left:4px solid burlywood;
-    border-radius:4px;
-    box-shadow:0 1px 2px rgba(0,0,0,.15), 0 3px 10px rgba(0,0,0,.1);
-    padding-left:1rem;
-    padding-right:1rem;
-    margin:8px auto;
-    word-break:break-all;
+    background:var(--bg-sunken);
+    border-left:3px solid var(--accent);
+    border-radius:0 var(--r-sm) var(--r-sm) 0;
+    color:var(--fg-muted);
+    padding:.25rem 1.25rem;
+    margin:1.75rem auto;
+    word-break:keep-all;
 
     p {
       margin:0;
-      padding:1rem 0;
+      padding:.75rem 0;
+      color:inherit;
+      font-style:normal;   // 한글 이탤릭은 가짜 기울임이라 읽기 나쁘다
     }
+
+    // 인용 안의 마지막 요소가 여백을 이중으로 만들지 않도록
+    > :last-child { margin-bottom:0; }
   }
 
-  .table-wrapper { overflow-x:auto; }
+  .table-wrapper {
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
 
   table {
     display:block;
-    max-width:-moz-fit-content;
-    max-width:fit-content;
+    max-width:100%;
     overflow-x:auto;
-    white-space:nowrap;
+    -webkit-overflow-scrolling:touch;
     position:relative;
-    background-color:#fff;
-    border-radius:10px;
+    background-color:var(--bg-raised);
+    color:var(--fg);
+    border:1px solid var(--border);
+    border-radius:var(--r);
     border-collapse:collapse;
-    line-height:1.5;
-    box-shadow:0 0 40px 0 rgba(0,0,0,.15);
+    border-spacing:0;
+    font-size:.9375rem;
+    line-height:1.6;
 
-    thead { box-shadow:0 0 40px 0 rgba(0,0,0,.15); }
-    th, td {
-      border:1px solid lightgrey;
-      word-wrap:break-word;
-      white-space:initial;
-      max-width:16rem;
+    thead {
+      background:var(--bg-sunken);
+
+      th {
+        color:var(--fg);
+        font-family:var(--font-sans);
+        font-weight:600;
+        letter-spacing:-.01em;
+        text-align:left;
+        border-bottom:1px solid var(--border-strong);
+      }
     }
-    thead tr { height:3.5rem; }
-    tbody tr { height:3rem; }
-    tbody td, thead th { padding:8px; }
 
+    th, td {
+      border:1px solid var(--border);
+      word-wrap:break-word;
+      max-width:16rem;
+      vertical-align:top;
+    }
+    thead tr { height:auto; }
+    tbody tr { height:auto; }
+    tbody td, thead th { padding:.625rem .75rem; }
+
+    tbody tr:last-child td { border-bottom:0; }
     tr:first-child th { border-top:0; }
     td:first-child, th:first-child { border-left:0; }
     td:last-child, th:last-child { border-right:0; }
   }
 
-  li { padding:4px 0; }
+  li { padding:2px 0; }
 
   hr {
     border:0;
-    height:2px;
-    margin:1rem 0;
-    background:burlywood;
+    height:1px;
+    margin:3rem 0;
+    background:var(--border);
   }
 
+  // 이미지 바로 밑의 강조 문단은 캡션으로 취급한다.
   img + em {
     display:block;
     text-align:center;
-    color:dimgrey;
-    font-size:0.875rem;
+    color:var(--fg-subtle);
+    font-size:0.8125rem;
     font-style:normal;
+    margin-top:.5rem;
   }
 }
 
 #related-box {
   margin-top:2rem;
 
-  span { font-size:1.25rem; }
+  span {
+    font-family:var(--font-sans);
+    font-size:1.125rem;
+    font-weight:600;
+    letter-spacing:-.02em;
+    color:var(--fg);
+  }
 
-  svg { 
-    width:20px;
+  svg {
+    width:18px;
+    fill:var(--fg-subtle);
     display:inline-flex;
     transform:translateY(3px);
   }
@@ -404,19 +464,15 @@ main {
     margin-bottom:2rem;
     padding:0;
     list-style:none;
-    transition:.3s;
+    transition:box-shadow .2s ease, transform .2s ease;
     overflow: hidden;
+    border-radius:var(--r);
 
     &:hover {
-      box-shadow:8px 8px 16px -4px rgba(0, 0, 255, .2);
+      box-shadow:var(--shadow-md);
+      transform:translateY(-2px);
 
-      -webkit-transform:scale(1.05);
-      -moz-transform:scale(1.05);
-      transform:scale(1.05);
-
-      img {
-        opacity:.7;
-      }
+      img { opacity:.85; }
     }
   }
 
@@ -429,11 +485,11 @@ main {
     display:inline-block;
     text-decoration:none;
 
-    p { 
+    p {
       width:100%;
       margin:8px 0;
-      line-height:1.25;
-      font-family:Verdana, Tahoma, sans-serif;
+      line-height:1.4;
+      font-family:var(--font-body);
     }
   }
 
@@ -441,20 +497,23 @@ main {
     display:block;
     width:100%;
     aspect-ratio:1.5/1;
-    transition:.3s;
+    transition:opacity .2s ease;
   }
 
   .category {
-    color:$color-aqua;
-    font-size:1rem;
+    color:var(--category);
+    font-size:0.8125rem;
+    font-weight:500;
   }
 
   .title {
     display:-webkit-box;
-    color:$color-darkbrown;
-    font-size:1.125rem;
+    font-family:var(--font-sans);
+    color:var(--fg);
+    font-size:1rem;
     font-weight:600;
-    height:2.5em;
+    letter-spacing:-.02em;
+    height:2.8em;
     text-align:left;
     overflow:hidden;
     text-overflow:ellipsis;
@@ -464,9 +523,8 @@ main {
   }
 
   .date {
-    color:goldenrod;
-    font-size:0.875rem;
-    text-transform:uppercase;
+    color:var(--fg-subtle);
+    font-size:0.8125rem;
   }
 }
 
@@ -476,8 +534,10 @@ main {
   bottom:2rem;
   right:2rem;
   width:48px;
-  background:rgba(100, 200, 200, 0.75);
+  background:var(--accent);
+  box-shadow:var(--shadow-md);
   cursor:pointer;
+  transition:background-color .15s ease;
 
   &, &:before{
     aspect-ratio:1.0;
@@ -486,18 +546,20 @@ main {
   &:before{
     content:"";
     width:40px;
-    border:2px solid #fff;
+    border:1px solid var(--fg-onaccent);
     position:absolute;
     top:2px;
     left:2px;
+    opacity:.4;
   }
+
+  &:hover { background:var(--accent-hover); }
 
   svg {
     width:28px;
     top:11px;
     left:10px;
-    fill:#fff !important;
-    filter:drop-shadow(0 1px 2px rgba(0,0,0,0.6));
+    fill:var(--fg-onaccent) !important;
     position:absolute;
     animation:ascend 2s infinite;
   }
@@ -521,43 +583,37 @@ main {
 
 @include mq(tablet){
 
-.transbox { 
+.transbox {
   width:87.5%;
-  padding:2rem; 
+  padding:2rem;
 }
 
 .post-title { font-size:2.25rem; }
 
-.post-info { 
-  margin-top:4rem; 
-  font-size:1.25rem;
+.post-info {
+  margin-top:1.5rem;
+  font-size:0.9375rem;
 
-  svg { width:20px; }
+  svg { width:16px; }
 }
 
 .info-box {
-  margin:0 8px;
-  padding:8px;
-  background-size:100% 4px, 0 4px;
+  margin:4px;
+  padding:5px 14px;
 
-  &:hover {
-    background-size:0 4px, 100% 4px;
-    box-shadow:0 4px 64px 16px rgba(100, 200, 200, 1);
-  }
-
-  svg { margin-right:8px; }
+  svg { margin-right:6px; }
 }
 
-.tag-box { 
+.tag-box {
   margin:3rem;
   margin-top:1rem;
 }
 
 .tag {
-  margin:12px 16px; 
+  margin:12px 16px;
   padding:0 14px 0 16px;
   line-height:2rem;
-  font-size:1.125rem;
+  font-size:1rem;
 
   &:before {
     left:-16px;
@@ -572,25 +628,31 @@ main {
 main {
   padding:2.5rem;
   padding-top:0;
-  font-size:1.125rem;
+  font-size:1.0625rem;
+  line-height:1.8;
 
   h1, .sh1 {
     font-size:2.25rem;
-    margin-top:5rem;
+    margin-top:4.5rem;
   }
   h2, .sh2 {
-    font-size:1.75rem;
-    margin-top:4rem;
+    font-size:1.625rem;
+    margin-top:3.5rem;
   }
   h3, .sh3 {
-    font-size:1.375rem;
+    font-size:1.25rem;
   }
+
+  p, ul, ol, table, div { margin-bottom:2rem; }
 
   table {
-    tbody td, thead th { padding:1rem; }
+    font-size:1rem;
+    tbody td, thead th { padding:.875rem 1rem; }
   }
 
-  code { font-size:1rem; }
+  code { font-size:.875em; }
+
+  .highlighter-rouge .highlight pre { font-size:.9375rem; }
 
   blockquote p { font-size:1rem; }
 }
@@ -598,9 +660,9 @@ main {
 #related-box {
   margin-top:4rem;
 
-  span { font-size:1.5rem; }
+  span { font-size:1.375rem; }
 
-  svg { width:24px; }
+  svg { width:22px; }
 }
 
 #related-posts {
@@ -619,11 +681,16 @@ main {
   display:inline-block;
 }
 
-.inner-header { display:block; }
+.inner-header {
+  display:block;
+  border:1px solid var(--border);
+}
 
 .inner-content {
-  border-radius:0 0 1rem 1rem;
-  box-shadow:0 16px 16px 8px rgba(31, 35, 46, 0.15);
+  border:1px solid var(--border);
+  border-top:0;
+  border-radius:0 0 var(--r-lg) var(--r-lg);
+  box-shadow:var(--shadow-lg);
 }
 
 .top-arrow { left:calc(#{$sidebarwd} + var(--pagewidth-desktop) - 4rem); }
