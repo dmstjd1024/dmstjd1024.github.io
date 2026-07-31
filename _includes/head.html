@@ -1,26 +1,38 @@
 <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>
-    {% if page.url == "/index.html" %}
-        Home
-    {% elsif page_type == "category" %}
-        {{ category_title }}
-    {% else %}
-        {{ page.title }}
-    {% endif %}
-</title>
-{% seo %}
 
-<link rel="shortcut icon" type="image/png" href="{{ site.logo_img | prepend: site.baseurl }}">
 {%- comment -%}
-  본문용 한글 서브셋만 미리 받는다. @font-face 정의는 style.scss 에 있고,
-  이 preload 는 CSS 파싱을 기다리지 않고 폰트 요청을 앞당기는 역할이다.
-  ext(나머지 한글)와 Poppins 는 실제로 필요할 때만 받게 두어 preload 하지 않는다.
+  카테고리 페이지(_pages/**/index.md)는 front matter 에 title 이 없다.
+  이때 Jekyll 이 파일명에서 "Index" 를 자동으로 채워 넣기 때문에
+  title 이 비었는지로는 구분할 수 없다 — 파일명으로 판별한다.
+
+  카테고리는 디렉터리 이름을, 최상위(_pages/index.md)는 사이트 이름을 쓴다.
+{%- endcomment -%}
+{%- assign seg = page.path | remove_first: '_pages/' | split: '/' -%}
+{%- if seg.last == 'index.md' -%}
+  {%- if seg.size > 1 -%}
+    {%- assign idx = seg.size | minus: 2 -%}
+    {%- assign head_title = seg[idx] -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign head_title = page.title -%}
+{%- endif -%}
+
+<title>{% if head_title %}{{ head_title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+{%- comment -%} 카테고리 페이지에만 설명을 붙인다(글은 jekyll-seo-tag 가 처리) {%- endcomment -%}
+{%- if seg.last == 'index.md' and head_title -%}
+  <meta name="description" content="{{ head_title }} 관련 글 모음 · {{ site.title }}">
+{%- endif -%}
+
+{%- comment -%}
+  폰트는 CSS 보다 먼저 요청을 걸어 둔다. CSS 를 다 받은 뒤에야 @font-face 를
+  발견하면 글자가 늦게 자리를 잡는다.
 {%- endcomment -%}
 <link rel="preload" href="{{ '/assets/fonts/pretendard-core.woff2' | prepend: site.baseurl }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
 
-<meta name="baseurl" content="{{ site.baseurl }}">
-<meta
-name="description"
-content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<link rel="icon" href="{{ site.logo_img | prepend: site.baseurl }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
+
+{% seo title=false %}

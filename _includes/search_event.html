@@ -1,94 +1,89 @@
-{%- comment -%}
-  검색 인덱스를 페이지마다 인라인하던 것을 /assets/search-index.json 으로 분리했다.
-  글이 101편인 지금 인라인 인덱스는 페이지당 약 45KB 였고, 검색을 쓰지 않아도
-  매번 내려받아 파싱해야 했다 — 페이지 이동이 느리게 느껴지던 원인 중 하나다.
-
-  이제 인덱스는 실제로 필요할 때만 받는다:
-    - 검색: 버튼에 마우스를 올리거나 누를 때
-    - 관련 글: 해당 영역이 화면에 들어올 때
-  한 번 받으면 재사용하고, 브라우저 캐시에도 남는다.
-{%- endcomment -%}
 <script>
-(function(){
-    var INDEX_URL = "{{ '/assets/search-index.json' | prepend: site.baseurl }}";
-    var cache = null, inflight = null;
+// 검색 인덱스는 페이지마다 심지 않고 별도 JSON 으로 두고, 검색을 처음 열 때만
+// 받는다. 인덱스를 HTML 에 넣어두면 모든 페이지가 그만큼(28KB) 무거워지는데
+// 정작 검색을 쓰는 사람은 일부다.
+(function () {
+  var box = document.getElementById('search');
+  var input = document.getElementById('search-input');
+  var out = document.getElementById('search-results');
+  var hint = document.getElementById('search-hint');
+  var openBtn = document.getElementById('btn-search');
+  if (!box || !input || !openBtn) return;
 
-    function loadIndex(){
-        if (cache) return Promise.resolve(cache);
-        if (inflight) return inflight;
+  var index = null, loading = null;
 
-        inflight = fetch(INDEX_URL)
-            .then(function(r){
-                if (!r.ok) throw new Error('search index ' + r.status);
-                return r.json();
-            })
-            .then(function(data){
-                cache = data;
-                inflight = null;
-                return data;
-            })
-            .catch(function(err){
-                inflight = null;
-                throw err;
-            });
+  function load() {
+    if (loading) return loading;
+    loading = fetch('{{ "/assets/search-index.json" | prepend: site.baseurl }}')
+      .then(function (r) { return r.json(); })
+      .then(function (d) { index = d; return d; })
+      .catch(function () { loading = null; });
+    return loading;
+  }
 
-        return inflight;
-    }
+  function open() {
+    box.hidden = false;
+    document.body.style.overflow = 'hidden';
+    load().then(function () { input.focus(); });
+    input.focus();
+  }
 
-    // --- 검색 ---------------------------------------------------------------
-    var wired = false;
+  function close() {
+    box.hidden = true;
+    document.body.style.overflow = '';
+    input.value = '';
+    out.innerHTML = '';
+    hint.textContent = '제목과 본문에서 찾습니다.';
+  }
 
-    function initSearch(){
-        if (wired) return;
-        wired = true;
+  // 버튼에 마우스만 올려도 미리 받아둔다 — 누를 때쯤이면 준비되어 있다.
+  openBtn.addEventListener('mouseenter', load, { once: true });
+  openBtn.addEventListener('click', open);
+  box.addEventListener('click', function (e) {
+    if (e.target.hasAttribute('data-search-close')) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !box.hidden) close();
+    // cmd/ctrl + K
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); box.hidden ? open() : close(); }
+  });
 
-        loadIndex().then(function(posts){
-            searchPost(posts);
-
-            // 인덱스가 도착하기 전에 이미 입력한 글자가 있으면 즉시 반영한다
-            var input = document.getElementById('search-input');
-            if (input && input.value) {
-                input.dispatchEvent(new Event('keyup'));
-            }
-        }).catch(function(){
-            var results = document.getElementById('search-result');
-            if (results) {
-                results.style.display = 'block';
-                results.innerHTML = '<li class="result-item">'
-                    + '<span class="description">검색 목록을 불러오지 못했습니다.</span></li>';
-            }
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('#btn-search').forEach(function(btn){
-            // 누르기 전에 미리 받아두면 첫 검색이 즉시 반응한다
-            btn.addEventListener('mouseenter', loadIndex, { once:true });
-            btn.addEventListener('focus', loadIndex, { once:true });
-            btn.addEventListener('click', initSearch);
-        });
+  function esc(s) {
+    return s.replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
     });
+  }
 
-    {% if page_type == "post" %}
-    // --- 관련 글: 화면에 들어올 때 채운다 ------------------------------------
-    document.addEventListener('DOMContentLoaded', function(){
-        var box = document.getElementById('related-box');
-        if (!box) return;
+  var timer;
+  input.addEventListener('input', function () {
+    clearTimeout(timer);
+    timer = setTimeout(run, 120);
+  });
 
-        var fill = function(){
-            loadIndex().then(function(posts){ searchRelated(posts); })
-                       .catch(function(){ box.style.display = 'none'; });
-        };
+  function run() {
+    var q = input.value.trim().toLowerCase();
+    if (!q) { out.innerHTML = ''; hint.textContent = '제목과 본문에서 찾습니다.'; return; }
+    if (!index) { hint.textContent = '불러오는 중…'; load().then(run); return; }
 
-        if ('IntersectionObserver' in window) {
-            var io = new IntersectionObserver(function(entries){
-                if (entries[0].isIntersecting) { io.disconnect(); fill(); }
-            }, { rootMargin: '400px' });
-            io.observe(box);
-        } else {
-            fill();
-        }
-    });
-    {% endif %}
+    // 인덱스에는 제목/경로/태그만 있다. 본문까지 넣으면 인덱스가 수백 KB 로
+    // 커져서, 검색 대상은 이 셋으로 둔다.
+    var hits = [];
+    for (var i = 0; i < index.length && hits.length < 20; i++) {
+      var it = index[i];
+      if (it.type === 'category') continue;
+      var pos = it.title.toLowerCase().indexOf(q);
+      if (pos > -1) { hits.push({ it: it, rank: pos === 0 ? 0 : 1 }); continue; }
+      if ((it.tags || '').toLowerCase().indexOf(q) > -1) { hits.push({ it: it, rank: 2 }); continue; }
+      if ((it.path || '').toLowerCase().indexOf(q) > -1) hits.push({ it: it, rank: 3 });
+    }
+    hits.sort(function (a, b) { return a.rank - b.rank; });
+
+    hint.textContent = hits.length ? hits.length + '건' : '결과가 없습니다.';
+    out.innerHTML = hits.map(function (h) {
+      return '<li><a href="' + h.it.url + '">' +
+             '<span class="search__cat">' + esc(h.it.path || '') + '</span>' +
+             '<span class="search__title">' + esc(h.it.title) + '</span></a></li>';
+    }).join('');
+  }
 })();
 </script>

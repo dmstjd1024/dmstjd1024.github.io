@@ -1,0 +1,147 @@
+// ---------------------------------------------------------------------------
+// 글 목록
+//
+// toss.tech 처럼 카드가 아래로 쌓이는 한 줄 목록이다. 격자로 늘어놓으면
+// 제목이 짧게 잘려 무슨 글인지 알기 어려워서, 가로로 넓게 쓴다.
+// ---------------------------------------------------------------------------
+.list-head {
+  margin-bottom:2.5rem;
+
+  &__eyebrow {
+    font-size:.875rem;
+    color:var(--fg-subtle);
+    margin-bottom:.5rem;
+
+    a:hover { color:var(--accent); }
+  }
+
+  &__title {
+    font-size:clamp(1.75rem, 4vw, 2.5rem);
+    letter-spacing:-.03em;
+  }
+
+  &__count {
+    margin-top:.5rem;
+    font-size:.875rem;
+    color:var(--fg-subtle);
+    font-variant-numeric:tabular-nums;
+  }
+}
+
+.cards {
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+}
+
+.card {
+  &__link {
+    display:flex;
+    align-items:center;
+    gap:1.25rem;
+    padding:1.25rem;
+    border-radius:var(--r-lg);
+    transition:background-color .15s ease;
+
+    &:hover { background:var(--bg-sunken); }
+    &:hover .card__title { color:var(--accent); }
+  }
+
+  &__body { flex:1; min-width:0; }
+
+  &__meta {
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+    margin-bottom:.4rem;
+
+    time { font-variant-numeric:tabular-nums; }
+  }
+
+  &__cat {
+    color:var(--category);
+    font-weight:600;
+  }
+
+  &__title {
+    font-size:1.125rem;
+    margin-bottom:.35rem;
+    transition:color .15s ease;
+  }
+
+  &__summary {
+    font-size:.9375rem;
+    color:var(--fg-muted);
+    line-height:1.6;
+
+    // 두 줄까지만 — 여기서 자르는 건 보기 위한 것이고,
+    // 실제 글자 수는 Liquid 의 truncate 가 이미 줄여 놓았다.
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+
+  &__thumb {
+    flex-shrink:0;
+    width:7rem;
+    height:5rem;
+    border-radius:var(--r);
+    object-fit:cover;
+    background:var(--bg-sunken);
+  }
+
+  // 이미지가 없는 글은 카테고리 이름을 얹은 그라디언트로 대신한다.
+  &__thumb--auto {
+    display:grid;
+    place-items:center;
+    padding:.25rem;
+    font-family:var(--font-display);
+    font-size:.8125rem;
+    font-weight:600;
+    letter-spacing:.01em;
+    line-height:1.2;
+    text-align:center;
+    color:#fff;
+    text-shadow:0 1px 3px rgba(0,0,0,.28);
+    word-break:break-word;
+  }
+}
+
+// 8종 팔레트. color-mix 로 배경색과 섞어 두면 다크모드에서도 자동으로
+// 톤이 눌려 — 다크용 색을 따로 정의할 필요가 없다.
+$tones:
+  var(--c-clay) var(--c-clay-deep),
+  var(--c-sky) #4a7ba8,
+  var(--c-olive) #5c6f47,
+  #a8763a #8a5f2c,
+  #7a6ca8 #5e5288,
+  #3f8f88 #2f6e68,
+  #b0566f #8f4257,
+  #6b7f8f #4e6070;
+
+@each $pair in $tones {
+  $i: index($tones, $pair) - 1;
+  .tone-#{$i} {
+    background-image:linear-gradient(135deg,
+      color-mix(in srgb, nth($pair, 1) 78%, var(--bg-raised)),
+      color-mix(in srgb, nth($pair, 2) 88%, var(--bg-raised)));
+  }
+}
+
+.empty {
+  padding:4rem 0;
+  text-align:center;
+  color:var(--fg-subtle);
+}
+
+@media (max-width:$bp-mobile) {
+  .card {
+    &__link { gap:.875rem; padding:1rem .5rem; align-items:flex-start; }
+    &__thumb { width:4.5rem; height:4.5rem; }
+    &__title { font-size:1rem; }
+    &__summary { -webkit-line-clamp:2; font-size:.875rem; }
+  }
+}

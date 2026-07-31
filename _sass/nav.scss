@@ -1,0 +1,120 @@
+// ---------------------------------------------------------------------------
+// 상단 가로 네비게이션
+//
+// 이전 테마는 왼쪽 세로 사이드바였는데, toss.tech 처럼 위쪽 가로 바로 바꿨다.
+// 본문이 화면 가운데를 온전히 쓰게 되고, 모바일에서 접었다 펴기도 쉽다.
+//
+// 스크롤해도 상단에 붙어 있되(sticky) 배경을 반투명 + blur 로 둬서
+// 본문이 비쳐 지나간다.
+// ---------------------------------------------------------------------------
+.nav {
+  position:sticky;
+  top:0;
+  z-index:50;
+  height:var(--nav-h);
+  background:color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter:saturate(180%) blur(12px);
+  -webkit-backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--border);
+
+  &__inner {
+    max-width:$widewd;
+    height:100%;
+    margin-inline:auto;
+    padding-inline:1.25rem;
+    display:flex;
+    align-items:center;
+    gap:1.5rem;
+  }
+
+  &__brand {
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    flex-shrink:0;
+    font-family:var(--font-display);   // 로고에만 Poppins 를 쓴다
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:-.02em;
+
+    img { border-radius:50%; }
+  }
+
+  &__menu {
+    flex:1;
+    min-width:0;
+
+    ul {
+      display:flex;
+      align-items:center;
+      gap:.25rem;
+      overflow-x:auto;
+      scrollbar-width:none;
+      &::-webkit-scrollbar { display:none; }
+    }
+
+    a {
+      display:block;
+      padding:.4rem .7rem;
+      border-radius:var(--r);
+      font-size:.9rem;
+      color:var(--fg-muted);
+      white-space:nowrap;
+      transition:background-color .15s ease, color .15s ease;
+
+      &:hover { background:var(--bg-sunken); color:var(--fg); }
+
+      // 현재 보고 있는 카테고리
+      &[aria-current="page"] { color:var(--fg); font-weight:600; }
+    }
+  }
+
+  &__tools {
+    display:flex;
+    align-items:center;
+    gap:.25rem;
+    flex-shrink:0;
+
+    button {
+      display:grid;
+      place-items:center;
+      width:2.25rem;
+      height:2.25rem;
+      border-radius:var(--r);
+      color:var(--fg-muted);
+      transition:background-color .15s ease, color .15s ease;
+
+      &:hover { background:var(--bg-sunken); color:var(--fg); }
+    }
+  }
+}
+
+// 메뉴 버튼은 모바일에서만 쓴다
+#btn-menu { display:none; }
+
+@media (max-width:$bp-tablet) {
+  .nav {
+    &__menu {
+      // 접혀 있다가 버튼을 누르면 아래로 펼쳐진다
+      position:absolute;
+      top:var(--nav-h);
+      left:0;
+      right:0;
+      background:var(--bg-raised);
+      border-bottom:1px solid var(--border);
+      box-shadow:var(--shadow);
+      padding:.5rem 1rem 1rem;
+      display:none;
+
+      ul { flex-wrap:wrap; overflow:visible; }
+    }
+
+    &.is-open &__menu { display:block; }
+  }
+
+  #btn-menu { display:grid; }
+}
+
+@media (max-width:$bp-mobile) {
+  .nav__brand span { display:none; }
+}
