@@ -1,28 +1,22 @@
 ---
 ---
+@import "vars";
+
+// 404 는 별도 진입점이라 토큰을 직접 가져온다.
+// 격자 무늬 + 핑크/하늘색 그라데이션 배경을 걷어내고 본문과 같은 지면을 쓴다.
 
 body {
   margin:0;
-  background:
-    repeating-linear-gradient(
-    to right, transparent, 
-    transparent 100px, 
-    white 100px, 
-    white 112px
-    ),
-    repeating-linear-gradient(
-    to bottom, transparent, 
-    transparent 100px, 
-    white 100px, 
-    white 112px
-    ),
-    linear-gradient(45deg, pink, skyblue);
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--font-body);
+  -webkit-font-smoothing:antialiased;
 }
 
 .blank-page {
   display:table-cell;
   z-index:0;
-  background:#fff;
+  background:var(--bg);
   margin:1rem auto;
   width:100vw;
   height:45vh;
@@ -31,16 +25,25 @@ body {
   .go-home {
     text-decoration:none;
     margin-left:5vw;
-    font-size:1.25rem;
+    font-size:1.0625rem;
+    font-family:var(--font-sans);
+    font-weight:500;
+    color:var(--link);
+
+    &:hover { color:var(--accent-hover); }
   }
 
-  .not-found-msg { text-align:center; }
+  .not-found-msg {
+    text-align:center;
+    color:var(--fg-muted);
+  }
 
   .sour-face {
     margin:3rem auto;
-    font-size:5rem;
+    font-size:4rem;
     line-height:1;
     letter-spacing:-1px;
+    color:var(--fg-subtle);
   }
 }
 

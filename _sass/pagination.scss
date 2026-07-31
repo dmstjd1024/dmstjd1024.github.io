@@ -3,19 +3,22 @@
 .category-tree {
   margin:0 8px;
   position:relative;
-  font-size:0.875rem;
+  font-size:0.8125rem;
+  font-family:var(--font-sans);
 
   p {
     margin:0;
     padding:1rem 0 1rem 1.5rem;
     line-height:150%;
-    font-weight:bold;
-    color:slategrey;
+    font-weight:500;
+    color:var(--fg-subtle);
   }
 
   a {
-    color:dodgerblue;
+    color:var(--fg-muted);
     text-decoration:none;
+
+    &:hover { color:var(--accent); }
   }
 
   svg {
@@ -23,16 +26,18 @@
     display:inline-flex;
     top:18px;
     width:14px;
+    fill:var(--fg-subtle);
   }
 }
 
 .category-header {
-  margin:0 8px 24px 8px;
+  margin:0 8px 2rem 8px;
   font-weight:600;
-  border-bottom:1px solid lightgrey;
-  text-decoration:underline dimgrey;
-  text-underline-offset:12px;
-  padding-bottom:8px;
+  font-size:1.75rem;
+  letter-spacing:-.02em;
+  color:var(--fg);
+  border-bottom:1px solid var(--border);
+  padding-bottom:1rem;
 }
 
 .paginated-list {
@@ -44,8 +49,14 @@
   height:fit-content;
 }
 
+// ---------------------------------------------------------------------------
+// 글 목록 카드
+//
+// 이전에는 썸네일 위로 본문 박스를 -5rem 겹치고 타일 이미지를 배경에 깔았다.
+// 여기서는 겹침과 배경 패턴을 없애고, 얇은 구분선과 여백으로만 항목을 나눈다.
+// ---------------------------------------------------------------------------
 #article_content {
-  border-bottom:2px solid lightgrey;
+  border-bottom:1px solid var(--border);
 
   .thumbnail_post {
     display:block;
@@ -53,12 +64,14 @@
     background-position:50% 50%;
     width:100%;
     aspect-ratio:5/3;
-    border-radius:0;
+    border-radius:var(--r);
+    background-color:var(--bg-sunken);
+    transition:opacity .2s ease;
 
-    &:hover { opacity:0.8; }
+    &:hover { opacity:.85; }
   }
 
-  .empty { opacity:0.5; }
+  .empty { opacity:.4; }
 
   .box_contents {
     margin:12px;
@@ -68,34 +81,52 @@
 
   a { text-decoration:none; }
 
-  .info-post { font-size:0.875rem; }
+  .info-post {
+    font-size:0.8125rem;
+    font-family:var(--font-sans);
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    color:var(--fg-subtle);
+  }
 
   .title_post {
     font-weight:600;
-    font-size:1rem;
-    line-height:2rem;
-    word-break:normal;
-    white-space:nowrap;
+    font-size:1.0625rem;
+    line-height:1.45;
+    color:var(--fg);
+    word-break:keep-all;
     overflow:hidden;
     text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
     text-align:left;
+    transition:color .15s ease;
   }
-  .title_post:hover,
-  .category:hover {
-    color:$color-rose;
+
+  a:hover .title_post { color:var(--accent); }
+
+  .category {
+    color:var(--category) !important;
+    font-weight:500;
+
+    &:hover { color:var(--accent) !important; }
   }
-  .category{ color:mediumseagreen !important; }
+
+  .date { color:var(--fg-subtle); }
 
   .txt_post {
     display:-webkit-box;
-    margin-bottom:12px;
-    font-size:0.875rem;
-    color:grey;
+    margin:.5rem 0 .75rem;
+    font-size:0.9rem;
+    line-height:1.6;
+    color:var(--fg-muted);
     overflow:hidden;
     text-overflow:ellipsis;
     -webkit-line-clamp:2;
     -webkit-box-orient:vertical;
-    word-wrap:break-word;
+    word-break:keep-all;
   }
 }
 
@@ -107,9 +138,10 @@
   img {
     width:50% !important;
     aspect-ratio:2/1;
+    opacity:.6;
   }
 
-  h1 {margin-top:3rem;}
+  h1 { margin-top:3rem; color:var(--fg-muted); }
 }
 
 .hidden { display:none; }
@@ -124,115 +156,124 @@
 }
 .pagination-number,
 .pagination-button{
-  font-size:1rem;
-  margin:4px;
+  font-size:0.9375rem;
+  font-family:var(--font-sans);
+  font-weight:500;
+  color:var(--fg-muted);
+  margin:3px;
   cursor:pointer;
-  width:2.5rem;
+  width:2.375rem;
   aspect-ratio:1.0;
-  border-radius:.2rem;
+  border-radius:var(--r-sm);
+  border:1px solid transparent;
+  transition:background-color .15s ease, color .15s ease, border-color .15s ease;
 }
 .pagination-number:hover,
 .pagination-button:not(.disabled):hover {
-  background:#fff;
+  background:var(--bg-sunken);
+  border-color:var(--border);
+  color:var(--fg);
 }
 .pagination-number.active {
-  color:#fff;
-  background:#0085b6;
+  color:var(--fg-onaccent);
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.pagination-button.disabled {
+  opacity:.35;
+  cursor:default;
 }
 
 @include mq(tablet){
 
 .category-tree {
   margin:0 2rem;
-  font-size:1.125rem;
+  font-size:0.875rem;
 
   p { padding:1.5rem 0 1.5rem 2rem; }
 
-  svg { 
+  svg {
     top:28px;
-    width:18px;
+    width:16px;
   }
 }
 
 .category-header {
   font-size:2.25rem;
-  padding-bottom:8px;
-  text-underline-offset:16px;
-  margin:0 2rem 3rem 2rem; 
+  padding-bottom:1.25rem;
+  margin:0 2rem 3rem 2rem;
 }
 
 .paginated-list { margin:auto 2rem; }
 .paginated-item {
-  margin:3rem 0;
-  height:12.5rem;
+  margin:0;
+  height:auto;
 }
 
 #article_content {
   display:flex;
-  transition:.3s;
-  box-shadow:0 1px 1px 0 rgba(31, 35, 46, .15);
+  gap:1.75rem;
+  align-items:center;
+  padding:1.75rem .25rem;
+  transition:background-color .15s ease;
 
   &:hover {
-    transform:translate(0px, -4px);
-    box-shadow:0 15px 45px -10px rgba(10, 16, 34, .2);
+    background-color:var(--bg-sunken);
   }
 
   .thumbnail_post {
     display:block;
-    height:12.5rem;
-    aspect-ratio:4/3;
-    margin:auto;
+    height:8.5rem;
+    width:12.75rem;
+    flex:0 0 12.75rem;
+    aspect-ratio:3/2;
+    margin:0;
   }
 
   .box_contents {
     width:100%;
-    margin:auto 0 auto -5rem;
-    padding:8px 24px;
-    background-color:rgba(255,255,255,0.95);
-    background-image:url($baseurl + "/assets/img/tile.png");
-    border-radius:6px;
+    margin:0;
+    padding:0;
+    background:none;
+    border-radius:0;
   }
-
-  .category{ font-weight:bold; }
 
   .title_post{
-    font-size:1.5rem;
-    padding-top:12px;
-  }
-  .info-post,
-  .txt_post {
-    font-size:1.125rem;
+    font-size:1.3125rem;
+    padding-top:0;
+    -webkit-line-clamp:2;
   }
   .txt_post {
-    margin-top:1rem;
-    margin-bottom:1.5rem;
+    font-size:0.9375rem;
+    margin:.6rem 0 .85rem;
   }
+  .info-post { font-size:0.8125rem; }
 }
 
 .pagination-number,
 .pagination-button{
-  font-size:1.125rem;
+  font-size:1rem;
+  width:2.5rem;
 }
 
 }
 
 @include mq(desktop){
 
-.category-header { font-size:3rem; }
-
-.paginated-item { height:15rem; }
+.category-header { font-size:2.75rem; }
 
 #article_content {
-  .thumbnail_post { height:15rem; }
+  padding:2rem .5rem;
 
-  .box_contents {
-    margin-left:-6rem;
-    border-radius:8px;
+  .thumbnail_post {
+    height:9.5rem;
+    width:14.25rem;
+    flex:0 0 14.25rem;
   }
 
-  .date { font-size:1.125rem; }
-  .category { font-size:1.25rem; }
-  .txt_post { margin-top:1.25rem; }
+  .title_post { font-size:1.4375rem; }
+  .txt_post { font-size:0.975rem; }
+  .date, .category { font-size:0.875rem; }
 }
 
 }
