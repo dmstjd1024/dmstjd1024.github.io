@@ -148,11 +148,21 @@
 .toc {
   position:fixed;
   top:calc(var(--nav-h) + 3rem);
-  left:calc(50% + #{$contentwd} / 2 + 2rem);
   width:13rem;
   max-height:70vh;
   overflow-y:auto;
   font-size:.8125rem;
+
+  // 본문 오른쪽 여백에 놓되, 화면 밖으로는 절대 나가지 않게 한다.
+  //
+  // left 만 계산해서 두면 화면 폭이 목차를 띄우는 최소 폭에 가까울 때
+  // 오른쪽 끝이 화면을 넘어간다(1280px 에서 16px 잘렸다).
+  // min() 으로 "본문 옆" 과 "오른쪽 여백" 중 작은 값을 쓴다.
+  // 100vw 는 세로 스크롤바 폭까지 포함하므로 2.5rem 을 빼 여유를 준다.
+  left:min(
+    calc(50% + #{$contentwd} / 2 + 2rem),
+    calc(100vw - 13rem - 2.5rem)
+  );
 
   &__label {
     font-weight:600;
