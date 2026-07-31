@@ -11,9 +11,13 @@ index.html
 .sass-cache/**
 .jekyll-cache/**
 .jekyll-metadata
-/Gemfile.lock_pages/AI/.omc/
+_pages/AI/.omc/
 _site/
 .jekyll-cache/
 .omc/
 .playwright-mcp/
-Gemfile.lock
+
+# Gemfile.lock 은 커밋한다.
+# GitHub Actions 가 이 파일 그대로 gem 을 설치하므로, 무시하면 빌드할 때마다
+# 최신 버전을 받아 어느 날 갑자기 깨질 수 있다. 로컬과 배포 환경을 같게
+# 유지하려면 잠금 파일이 저장소에 있어야 한다.
