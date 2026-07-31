@@ -153,16 +153,18 @@
   overflow-y:auto;
   font-size:.8125rem;
 
-  // 본문 오른쪽 여백에 놓되, 화면 밖으로는 절대 나가지 않게 한다.
+  // 화면 오른쪽 끝에서 일정 거리에 붙인다.
   //
-  // left 만 계산해서 두면 화면 폭이 목차를 띄우는 최소 폭에 가까울 때
-  // 오른쪽 끝이 화면을 넘어간다(1280px 에서 16px 잘렸다).
-  // min() 으로 "본문 옆" 과 "오른쪽 여백" 중 작은 값을 쓴다.
-  // 100vw 는 세로 스크롤바 폭까지 포함하므로 2.5rem 을 빼 여유를 준다.
-  left:min(
-    calc(50% + #{$contentwd} / 2 + 2rem),
-    calc(100vw - 13rem - 2.5rem)
-  );
+  // left 를 계산해서 두면 화면 폭이 목차를 띄우는 최소 폭에 가까울 때
+  // 오른쪽 끝이 화면을 넘어간다(1280px 에서 16px 잘렸다). right 기준으로
+  // 두면 폭과 무관하게 항상 화면 안에 있다.
+  //
+  // min() 으로 두 후보 중 작은 값을 쓰는 방법도 있지만 쓰지 않았다.
+  // GitHub Pages 는 옛 Ruby Sass(3.7)로 빌드하는데, 거기서는 min() 을
+  // CSS 함수가 아니라 Sass 내장 함수로 해석해 calc() 를 넘기면 빌드가
+  // 깨진다("is not a number for `min'"). 로컬 Dart Sass 에서는 통과해서
+  // 배포 단계에서야 드러났다.
+  right:2rem;
 
   &__label {
     font-weight:600;
@@ -187,6 +189,14 @@
   .is-active > a { color:var(--accent); font-weight:600; }
 
   .toc__sub { padding-left:.75rem; }
+}
+
+// 아주 넓은 화면에서는 오른쪽 끝에 붙어 있으면 본문과 너무 멀어진다.
+// 자리가 충분할 때만 본문 바로 옆으로 당긴다.
+// (계산식 하나로 처리하려면 min() 이 필요한데 옛 Sass 에서 깨지므로
+//  미디어쿼리로 나눈다 — 어느 Sass 에서든 안전하다.)
+@media (min-width:1600px) {
+  .toc { right:auto; left:calc(50% + #{$contentwd} / 2 + 2rem); }
 }
 
 @media (max-width:$bp-desktop) {
