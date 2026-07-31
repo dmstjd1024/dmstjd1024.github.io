@@ -9,10 +9,15 @@
   들어간 뒤 CSS 로 두 줄만 보이게 잘리는데, 안 보일 뿐 다운로드는 다 된다.
   (이전 테마가 이래서 목록 페이지가 무거웠다.)
 {%- endcomment -%}
+{%- comment -%}
+  하위 카테고리의 index.md 는 글이 아니므로 목록과 개수에서 뺀다.
+  (page.path 만 제외하면 AI 아래 Backend/index.md 등이 글로 섞여 들어온다.)
+{%- endcomment -%}
 {%- assign here = page.url | remove: 'index.html' -%}
 {%- assign posts = site.pages
       | where_exp: "p", "p.url contains here"
       | where_exp: "p", "p.path != page.path"
+      | where_exp: "p", "p.name != 'index.md'"
       | sort: "date" | reverse -%}
 {%- comment -%}
   첫 화면에는 최근 글만 싣는다. 101편을 한 번에 그리면 눈에 보이지도 않는
@@ -29,7 +34,23 @@
       <p class="list-head__eyebrow">{{ site.description }}</p>
       <h1 class="list-head__title">{{ site.title }}</h1>
     {%- else -%}
-      <p class="list-head__eyebrow"><a href="{{ '/' | prepend: site.baseurl }}">전체 글</a></p>
+      {%- comment -%}
+        서브 카테고리(AI/Backend)에서는 바로 위(AI)로 올라갈 수 있게 한다.
+        최상위(AI)에서는 전체 글로 간다.
+      {%- endcomment -%}
+      {%- assign my_seg = page.path | remove_first: '_pages/' | split: '/' -%}
+      <p class="list-head__eyebrow">
+        <a href="{{ '/' | prepend: site.baseurl }}">전체 글</a>
+        {%- if my_seg.size > 2 -%}
+          {%- assign up_idx = my_seg.size | minus: 3 -%}
+          {%- comment -%} here 에서 마지막 한 칸을 떼면 부모 주소가 된다 {%- endcomment -%}
+          {%- assign up_url = here | split: '/' -%}
+          {%- assign up_cut = up_url.size | minus: 1 -%}
+          {%- assign up_path = up_url | slice: 0, up_cut | join: '/' -%}
+          <span class="sep">›</span>
+          <a href="{{ up_path | append: '/' | prepend: site.baseurl }}">{{ my_seg[up_idx] }}</a>
+        {%- endif -%}
+      </p>
       <h1 class="list-head__title">{{ include.inc_title }}</h1>
     {%- endif -%}
     <p class="list-head__count">
@@ -37,6 +58,93 @@
       {%- if posts.size < total %} · 최근 {{ posts.size }}편{% endif -%}
     </p>
   </header>
+
+  {%- comment -%}
+    같은 묶음의 카테고리를 칩으로 띄운다.
+
+    기준은 "나" 가 아니라 "형제를 묶는 부모" 다. AI 에서는 AI 의 하위가,
+    AI/Backend 에서는 (부모인 AI 의 하위, 즉) 형제들이 나온다. 그래야
+    Backend 에서 Frontend 로 갈 때 AI 로 한 번 올라갔다 내려오지 않아도 된다.
+
+    서브가 없는 카테고리(Docker 등)에는 칩 줄 자체를 그리지 않는다 —
+    "전체" 하나만 덩그러니 있으면 누를 것도 없이 자리만 차지한다.
+
+    Liquid 에는 배열에 항목을 추가하는 필터(push)가 없다. 그래서 목록을
+    미리 모아두지 않고, 먼저 개수만 세어 칩을 그릴지 정한 뒤 같은 조건으로
+    한 번 더 돌면서 출력한다.
+  {%- endcomment -%}
+  {%- comment -%}
+    첫 화면에는 칩을 그리지 않는다. 최상위 13개는 이미 상단 바에 다 있어서
+    같은 목록이 두 번 나올 뿐이다.
+  {%- endcomment -%}
+  {%- assign my_seg2 = page.path | remove_first: '_pages/' | split: '/' -%}
+  {%- assign show_chips = true -%}
+  {%- if include.inc_level == 1 -%}
+    {%- assign show_chips = false -%}
+  {%- elsif my_seg2.size > 2 -%}
+    {%- comment -%}
+      서브에 있다 — 부모를 기준으로 삼는다.
+      here 는 "/AI/Frontend/" 처럼 index.html 이 이미 빠진 값이고,
+      split 하면 ["","AI","Frontend"] 라 마지막 한 칸을 떼면 부모가 된다.
+    {%- endcomment -%}
+    {%- assign u = here | split: '/' -%}
+    {%- assign u_cut = u.size | minus: 1 -%}
+    {%- assign base_url = u | slice: 0, u_cut | join: '/' | append: '/' -%}
+    {%- assign up_i = my_seg2.size | minus: 3 -%}
+    {%- assign base_name = my_seg2[up_i] -%}
+    {%- assign base_depth = my_seg2.size | minus: 1 -%}
+  {%- else -%}
+    {%- assign base_url = here -%}
+    {%- assign base_name = include.inc_title -%}
+    {%- assign base_depth = my_seg2.size -%}
+  {%- endif -%}
+  {%- assign want_depth = base_depth | plus: 1 -%}
+
+  {%- assign subs = site.pages
+        | where_exp: "p", "p.url contains base_url"
+        | where_exp: "p", "p.path contains '/index.md'"
+        | sort: "path" -%}
+
+  {%- assign sub_n = 0 -%}
+  {%- for s in subs -%}
+    {%- assign s_depth = s.path | remove_first: '_pages/' | split: '/' | size -%}
+    {%- if s_depth == want_depth -%}{%- assign sub_n = sub_n | plus: 1 -%}{%- endif -%}
+  {%- endfor -%}
+
+  {%- if sub_n > 0 and show_chips -%}
+    {%- comment -%} 부모 전체의 글 수 {%- endcomment -%}
+    {%- assign base_all = site.pages
+          | where_exp: "p", "p.url contains base_url"
+          | where_exp: "p", "p.name != 'index.md'" -%}
+    <nav class="chips" aria-label="카테고리">
+      <a class="chip{% if base_url == here %} is-on{% endif %}"
+         href="{{ base_url | prepend: site.baseurl }}"
+         {% if base_url == here %}aria-current="page"{% endif %}>
+        {{ base_name }} 전체 <span class="chip__n">{{ base_all.size }}</span>
+      </a>
+      {%- for s in subs -%}
+        {%- assign s_depth = s.path | remove_first: '_pages/' | split: '/' | size -%}
+        {%- if s_depth == want_depth -%}
+          {%- assign s_here = s.url | remove: 'index.html' -%}
+          {%- assign s_seg = s.path | remove_first: '_pages/' | split: '/' -%}
+          {%- assign s_idx = s_seg.size | minus: 2 -%}
+          {%- comment -%} 그 서브에 속한 글 수 — index.md 는 글이 아니므로 뺀다 {%- endcomment -%}
+          {%- assign s_all = site.pages | where_exp: "p", "p.url contains s_here" -%}
+          {%- assign s_count = 0 -%}
+          {%- for sp in s_all -%}
+            {%- unless sp.path contains '/index.md' -%}
+              {%- assign s_count = s_count | plus: 1 -%}
+            {%- endunless -%}
+          {%- endfor -%}
+          <a class="chip{% if s_here == here %} is-on{% endif %}"
+             href="{{ s.url | prepend: site.baseurl }}"
+             {% if s_here == here %}aria-current="page"{% endif %}>
+            {{ s_seg[s_idx] }} <span class="chip__n">{{ s_count }}</span>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </nav>
+  {%- endif -%}
 
   {%- if posts.size == 0 -%}
     <p class="empty">아직 글이 없습니다.</p>
