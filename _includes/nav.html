@@ -1,0 +1,51 @@
+{%- comment -%}
+  상단 가로 네비게이션.
+
+  카테고리 목록은 _pages 바로 아래의 index.md 들에서 만든다. 즉 디렉터리를
+  하나 추가하고 빈 index.md 를 넣으면 메뉴에 자동으로 나타난다 — 설정 파일에
+  따로 적을 필요가 없다.
+
+  page.url 로 현재 위치를 표시한다. 앞에서 자른 뒤 비교하므로 하위 글에
+  들어가 있어도 상위 카테고리에 표시가 남는다.
+{%- endcomment -%}
+{%- assign nav_cats = site.pages | where_exp: "p", "p.path contains 'index.md'" | sort: "path" -%}
+{%- assign here = page.url | remove_first: '/' | split: '/' | first -%}
+
+<a class="skip-link" href="#content">본문 바로가기</a>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="{{ '/' | prepend: site.baseurl }}">
+      <img src="{{ site.profile_img | prepend: site.baseurl }}" alt="" width="28" height="28" loading="eager" decoding="async">
+      <span>{{ site.title }}</span>
+    </a>
+
+    <nav class="nav__menu" aria-label="카테고리">
+      <ul>
+        {%- for cat in nav_cats -%}
+          {%- assign seg = cat.path | remove_first: '_pages/' | split: '/' -%}
+          {%- comment -%} 최상위 카테고리만 메뉴에 올린다(깊이 2 = 이름/index.md) {%- endcomment -%}
+          {%- if seg.size == 2 -%}
+            {%- assign name = seg[0] -%}
+            <li>
+              <a href="{{ cat.url | prepend: site.baseurl }}"
+                 {% if here == name %}aria-current="page"{% endif %}>{{ name }}</a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <div class="nav__tools">
+      <button id="btn-search" type="button" aria-label="검색" title="검색">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 105.3 14l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+      </button>
+      <button id="btn-theme" type="button" aria-label="테마 전환" title="테마 전환">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 109 9c0-.3 0-.6-.05-.9A6.5 6.5 0 0112.9 3.05 9.6 9.6 0 0012 3z"/></svg>
+      </button>
+      <button id="btn-menu" type="button" aria-label="메뉴" aria-expanded="false" title="메뉴">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
