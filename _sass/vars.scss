@@ -12,32 +12,36 @@
 
 :root {
   // 원색 팔레트
-  --c-slate:#141413;
-  --c-slate-mid:#3d3d3a;
-  --c-slate-light:#5e5d59;
-  --c-ivory:#faf9f5;
-  --c-ivory-mid:#f0eee6;
-  --c-ivory-dark:#e8e6dc;
-  --c-cloud:#b0aea5;
-  --c-cloud-dark:#87867f;
-  --c-clay:#d97757;
-  --c-clay-deep:#c6613f;
-  --c-sky:#6a9bcc;
-  --c-olive:#788c5d;
+  //
+  // 따뜻한 아이보리/클레이 계열에서 중성 회색 계열로 바꿨다. 베이지빛이
+  // 빠지니 코드와 글자가 먼저 눈에 들어온다.
+  //
+  // 회색에 파랑을 아주 살짝 섞었다(순수 회색 #808080 이 아니라 h≈210).
+  // 완전한 무채색은 화면에서 탁해 보이고, 포인트인 파랑과도 겉돈다.
+  --c-ink:#1f2328;         // 본문 글자
+  --c-ink-mid:#424a53;
+  --c-ink-light:#656d76;   // 보조 텍스트
+  --c-paper:#fff;          // 바탕
+  --c-paper-mid:#f6f8fa;   // 한 단 낮은 면(코드블록, 눌린 영역)
+  --c-line:#d1d9e0;        // 테두리
+  --c-line-strong:#afb8c1;
+  --c-blue:#0969da;        // 링크·강조
+  --c-blue-bright:#218bff; // 호버, 다크모드
+  --c-green:#1a7f37;       // 카테고리
 
   // 의미 토큰 — 컴포넌트는 항상 이쪽만 쓴다
-  --bg:var(--c-ivory);
-  --bg-raised:#fff;
-  --bg-sunken:var(--c-ivory-mid);
-  --fg:var(--c-slate);
-  --fg-muted:var(--c-slate-light);
-  --fg-subtle:var(--c-cloud-dark);
-  --border:var(--c-ivory-dark);
-  --border-strong:var(--c-cloud);
-  --accent:var(--c-clay-deep);
-  --accent-hover:var(--c-clay);
-  --link:var(--c-slate);
-  --category:var(--c-olive);
+  --bg:var(--c-paper);
+  --bg-raised:var(--c-paper);
+  --bg-sunken:var(--c-paper-mid);
+  --fg:var(--c-ink);
+  --fg-muted:var(--c-ink-mid);
+  --fg-subtle:var(--c-ink-light);
+  --border:var(--c-line);
+  --border-strong:var(--c-line-strong);
+  --accent:var(--c-blue);
+  --accent-hover:var(--c-blue-bright);
+  --link:var(--c-ink);
+  --category:var(--c-green);
 
   // 타이포
   //
@@ -55,33 +59,36 @@
   --r:.5rem;
   --r-lg:1rem;
 
-  // 그림자 — toss 처럼 아주 옅게. 진한 그림자는 촌스럽다.
-  --shadow-sm:0 1px 2px rgba(20,20,19,.04);
-  --shadow:0 2px 8px rgba(20,20,19,.06);
-  --shadow-lg:0 8px 24px rgba(20,20,19,.08);
+  // 그림자 — 아주 옅게. 진한 그림자는 촌스럽다.
+  --shadow-sm:0 1px 2px rgba(31,35,40,.04);
+  --shadow:0 2px 8px rgba(31,35,40,.08);
+  --shadow-lg:0 8px 24px rgba(31,35,40,.12);
 
   // 레이아웃
   --nav-h:4rem;
 }
 
 // 다크모드는 의미 토큰만 다시 정의한다. 컴포넌트 규칙은 손대지 않는다.
+//
+// 밝은 쪽과 같은 색상 계열(h≈215)을 유지하되 명도만 뒤집는다. 단순히
+// 반전시키면 색이 틀어지고 파랑이 탁해진다.
 body.dark-theme {
-  --bg:#12120f;
-  --bg-raised:#1c1c19;
-  --bg-sunken:#26262230;
-  --fg:var(--c-ivory);
-  --fg-muted:#b8b6ad;
-  --fg-subtle:var(--c-cloud-dark);
-  --border:#2e2e2a;
-  --border-strong:#44443f;
-  --accent:var(--c-clay);
-  --accent-hover:#e8906f;
-  --link:var(--c-ivory);
-  --category:#9db37e;
+  --bg:#0d1117;
+  --bg-raised:#151b23;
+  --bg-sunken:#161b22;
+  --fg:#e6edf3;
+  --fg-muted:#b7bfc8;
+  --fg-subtle:#9198a1;
+  --border:#3d444d;
+  --border-strong:#565e68;
+  --accent:#4493f8;         // 어두운 바탕에선 파랑을 밝게 올려야 읽힌다
+  --accent-hover:#6cb0ff;
+  --link:#e6edf3;
+  --category:#3fb950;
 
-  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
-  --shadow:0 2px 8px rgba(0,0,0,.4);
-  --shadow-lg:0 8px 24px rgba(0,0,0,.5);
+  --shadow-sm:0 1px 2px rgba(1,4,9,.4);
+  --shadow:0 2px 8px rgba(1,4,9,.5);
+  --shadow-lg:0 8px 24px rgba(1,4,9,.6);
 }
 
 // 레이아웃 수치 (미디어쿼리에서 써야 해 SCSS 변수로 둔다)
