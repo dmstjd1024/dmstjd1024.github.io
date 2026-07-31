@@ -86,13 +86,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // Change Datk/Light Theme
     const themeButton = document.querySelectorAll("#btn-brightness");
-    const innerContent = document.querySelector('main');
 
     themeButton.forEach((btn) => {
         btn.addEventListener('click', function() {
             const moonIcons = document.querySelectorAll(".ico-dark");
             const sunIcons = document.querySelectorAll(".ico-light");
-            const codeblocks = innerContent != null ? innerContent.querySelectorAll('pre') : null;
 
             moonIcons.forEach((ico) => {
                 ico.classList.toggle('active');
@@ -104,27 +102,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
             document.body.classList.toggle('dark-theme');
 
+            // 코드블록 색은 CSS 토큰(body.dark-theme)이 따라오므로
+            // 여기서 클래스를 손댈 필요가 없다.
             if (isDarkMode){
                 localStorage.setItem('theme', 'default');
-                // Disable highlighter dark color theme
-                if (codeblocks) {
-                    Array.from(codeblocks).forEach(function (codeblock){
-                        codeblock.classList.remove('pre-dark');
-                    });
-                }
-
                 changeGiscusTheme('light');
                 isDarkMode = false;
             }
             else {
                 localStorage.setItem('theme', 'dark');
-                // Disable highlighter default color theme
-                if (codeblocks) {
-                    Array.from(codeblocks).forEach(function (codeblock){
-                        codeblock.classList.add('pre-dark');
-                    });
-                }
-
                 changeGiscusTheme('noborder_gray');
                 isDarkMode = true;
             }
