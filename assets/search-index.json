@@ -1,0 +1,41 @@
+---
+layout: null
+sitemap: false
+---
+{%- assign page_list = site.pages | where_exp: "item", "item.title != nil" -%}
+[
+{%- assign first = true -%}
+{%- for p in page_list -%}
+  {%- assign psearch_tree = p.path | split: "/" -%}
+  {%- if psearch_tree.last == "index.md" -%}
+    {%- assign p_type = "category" -%}
+  {%- else -%}
+    {%- assign p_type = "post" -%}
+  {%- endif -%}
+
+  {%- assign tree_len = psearch_tree.size | minus: 2 -%}
+  {%- assign psearch_tree = psearch_tree | slice:1, tree_len -%}
+  {%- assign p_link = "" -%}
+  {%- for sub_tree in psearch_tree -%}
+    {%- if forloop.last -%}
+      {%- assign p_link = p_link | append: sub_tree -%}
+    {%- else -%}
+      {%- assign p_link = p_link | append: sub_tree | append: " > " -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- assign thumbnail_url = p.thumbnail -%}
+  {%- if thumbnail_url != nil -%}
+    {%- assign check_localasset = thumbnail_url | split:'/' -%}
+    {%- if check_localasset[0] == '' -%}
+      {%- assign thumbnail_url = thumbnail_url | prepend: site.baseurl -%}
+    {%- endif -%}
+  {%- else -%}
+    {%- assign thumbnail_url = '/assets/img/thumbnail/empty.jpg' | prepend: site.baseurl -%}
+  {%- endif -%}
+
+  {%- unless first -%},{%- endunless -%}
+  {%- assign first = false -%}
+{"title":{{ p.title | jsonify }},"path":{{ p_link | jsonify }},"type":"{{ p_type }}","tags":{{ p.tags | join: ', ' | jsonify }},"url":{{ p.url | prepend: site.baseurl | jsonify }},"image":{{ thumbnail_url | jsonify }},"date":"{{ p.date | date: '%Y-%m-%d' }}"}
+{%- endfor -%}
+]
