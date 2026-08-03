@@ -31,7 +31,18 @@
 <link rel="preload" href="{{ '/assets/fonts/pretendard-core.woff2' | prepend: site.baseurl }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | prepend: site.baseurl }}">
 
-<link rel="icon" href="{{ site.logo_img | prepend: site.baseurl }}">
+{%- comment -%}
+  favicon.
+  SVG 를 먼저 두면 지원하는 브라우저는 그쪽을 쓴다 — 크기와 무관하게
+  선명하고 용량도 작다(400B). 못 읽는 브라우저는 아래 .ico 로 넘어간다.
+  .ico 안에는 16/32/48px 이 들어 있어 상황에 맞는 크기를 골라 쓴다.
+
+  글자는 폰트가 아니라 도형(path)으로 넣었다. <text> 로 두면 보는 사람
+  컴퓨터에 그 폰트가 없을 때 다른 모양으로 그려진다.
+{%- endcomment -%}
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | prepend: site.baseurl }}">
+<link rel="icon" href="{{ '/assets/img/favicon.ico' | prepend: site.baseurl }}" sizes="any">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | prepend: site.baseurl }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
 
