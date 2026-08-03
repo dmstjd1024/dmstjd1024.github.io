@@ -14,13 +14,13 @@ thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
 ---
 
 
-# Github action 이란
+## Github action 이란
 - Github에서 공식적으로 제공하는 CI / CD 툴
 - 코드 변경 문제사항 검사
 - 소프트웨어 빌드, 상용서버 배포
 - 통계 데이터 수집
 
-# 코어 개념
+## 코어 개념
 
 - **Workflow**
 자동화된 전체 프로세스. 하나 이상의 Job으로 구성되고, Event에 의해 예약되거나 트리거될 수 있는 자동화된 절차를 말한다. ex) deploy.yml
@@ -75,7 +75,7 @@ ${{ runner.os }}-yarn-
 Code Pipeline
 ```
 
-## 가격 비교
+### 가격 비교
 
  
 |                | Github Action(Teams 플랜) | Code Pipeline                                                                                |

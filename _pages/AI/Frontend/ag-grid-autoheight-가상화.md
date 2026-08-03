@@ -13,11 +13,11 @@ date: 2026-06-02
 thumbnail: "/assets/img/thumbnail/sample.png"
 ---
 
-# 문제
+## 문제
 
 입출력 데이터를 입력하는 그리드 화면이 있었다. 행이 수백 개인 상황에서 **셀 하나를 편집할 때마다 눈에 띄게 버벅였다.** 값을 타이핑하는 속도를 화면이 못 따라오는 수준이었다.
 
-# 원인 1: 편집할 때마다 columnDefs가 통째로 재생성됐다
+## 원인 1: 편집할 때마다 columnDefs가 통째로 재생성됐다
 
 `columnDefs`를 `useMemo`로 감싸긴 했는데, 의존성 배열에 `rows`, `visibleRows`, `updateMonth`, `onClickRowAction`이 들어 있었다.
 
@@ -38,7 +38,7 @@ onClickRowActionRef.current = onClickRowAction;
 
 셀 핸들러와 렌더러가 최신값을 ref로 읽으니 `columnDefs`의 의존성에서 이 넷을 뺄 수 있다. 그러면 `columnDefs`는 재생성되지 않는다.
 
-# 원인 2: 체크박스 하나 누를 때마다 전체 배열을 remap했다
+## 원인 2: 체크박스 하나 누를 때마다 전체 배열을 remap했다
 
 기존 방식은 cellRenderer가 자동으로 리렌더되게 하려고 row 데이터에 `_isChecked`를 주입하고 있었다.
 
@@ -62,7 +62,7 @@ api?.refreshHeader();
 api?.refreshCells({ columns: ['__checkbox__'], force: true });
 ```
 
-# 원인 3: autoHeight가 가상화를 끄고 있었다
+## 원인 3: autoHeight가 가상화를 끄고 있었다
 
 이게 가장 놓치기 쉬운 부분이었다. 그리드가 `domLayout='autoHeight'`로 돼 있었다.
 
@@ -88,7 +88,7 @@ const useFixedHeight = collapsed || rowData.length > VISIBLE_ROWS;
 
 접힌 섹션도 고정 높이로 두는 예외가 하나 있는데, 부모가 `display: none`으로 숨기면 `autoHeight`가 높이를 0으로 측정해버리기 때문이다.
 
-# 부수 개선: 전체선택 판정
+## 부수 개선: 전체선택 판정
 
 전체선택 체크 여부를 이렇게 계산하고 있었다.
 
@@ -98,7 +98,7 @@ visibleRows.every((r: any) => (checkedItems as number[]).includes(r.id));
 
 `includes`가 배열 선형 탐색이라 보이는 행 M개 × 선택 항목 N개, 즉 O(M×N)이다. `checkedItems`를 `Set`으로 만들어 조회하도록 바꿔 O(M+N)으로 줄였다(커밋 `9e508f52`).
 
-# 남는 교훈
+## 남는 교훈
 
 세 원인 모두 "잘못 짠 코드"라기보다는 **의도한 대로 동작하는데 부작용이 있는 코드**였다. `useMemo`는 제대로 걸려 있었고(의존성이 자주 바뀌었을 뿐), `_isChecked` 주입은 리렌더를 보장하는 정석적인 방법이고, `autoHeight`는 레이아웃을 위해 합리적인 선택이다.
 

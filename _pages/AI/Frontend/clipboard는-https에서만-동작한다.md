@@ -14,7 +14,7 @@ date: 2026-04-20
 thumbnail: "/assets/img/thumbnail/sample.png"
 ---
 
-# 문제: 복사 버튼이 아무 반응이 없다
+## 문제: 복사 버튼이 아무 반응이 없다
 
 관리자 포털의 대시보드 화면에는 토큰을 복사하는 버튼이 있다. 로컬에서는 잘 됐다. 배포 환경에 올리니 버튼을 눌러도 아무 일도 일어나지 않았다. 에러 토스트도 없고 콘솔에도 아무것도 안 찍혔다.
 
@@ -31,7 +31,7 @@ const copyToken = () => {
 
 반환된 Promise를 아무도 안 받는다. rejection은 어디에도 도달하지 않고 조용히 사라지고, 스낵바는 복사 여부와 무관하게 뜬다. "복사되었습니다"라는 성공 메시지가 뜨면서 클립보드는 비어 있는 상태다. 무반응보다 나쁘다.
 
-# 1단계: async로 바꾸고 실패를 보이게
+## 1단계: async로 바꾸고 실패를 보이게
 
 첫 커밋에서 한 일은 실패를 실패로 만든 것이다.
 
@@ -48,7 +48,7 @@ const copyToken = async () => {
 
 기능이 고쳐진 건 아니다. 여전히 복사는 안 된다. 다만 이제 안 된다는 게 화면에 보인다. 조용히 실패하는 코드를 시끄럽게 실패하게 만드는 게 항상 첫 단계다.
 
-# 2단계: execCommand 폴백
+## 2단계: execCommand 폴백
 
 그 다음 `document.execCommand("copy")` 폴백을 붙였다. 폐기 예정 API지만, secure context를 요구하지 않는다는 점 때문에 HTTP 환경에서는 이게 유일한 선택지다.
 
@@ -79,7 +79,7 @@ function execCommandCopy(text: string) {
 
 두 갈래로 나뉜다. `navigator.clipboard`가 아예 없으면 바로 폴백, 있으면 시도해보고 `.catch()`에서 폴백. 존재 여부와 동작 여부가 별개라서 두 경우를 다 막아야 한다.
 
-# 클라이맥스: 왜 opacity를 버렸나
+## 클라이맥스: 왜 opacity를 버렸나
 
 관리자 포털은 여기서 한 번 더 손봤다. 두 번째 커밋의 diff에서 제일 중요한 줄은 이거다.
 
@@ -122,7 +122,7 @@ function execCommandCopy(text: string) {
 | `opacity: 0` | 포함(투명) | 브라우저에 따라 거부 | 불안정 |
 | `left/top: -999999px` | 포함(화면 밖) | 정상 | 가능 |
 
-# 남는 교훈
+## 남는 교훈
 
 브라우저 API의 동작 조건을 코드가 아니라 배포 환경이 결정하는 경우가 있다. `navigator.clipboard`, `navigator.geolocation`, Service Worker, `crypto.subtle` 모두 secure context를 요구한다. localhost는 secure context로 취급되기 때문에, 로컬 개발에서는 이런 제약이 전부 투명해진다. 폐쇄망 HTTP 배포가 전제라면 이 목록은 처음부터 확인하고 들어가야 한다.
 
