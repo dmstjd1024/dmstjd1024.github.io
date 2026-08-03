@@ -10,14 +10,13 @@ date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
 ---
 
-# 고민
----
+## 고민
 
 과연 Account 객체를 생성할 때 필요한 column명을 찾아서 적어봤다.
 
 ---
 
-## Account
+### Account
 
 ~~~
 @Getter
@@ -86,7 +85,7 @@ DB에 순서 enum의 순서를 정수로 저장하는데 이는 나중에 db를 
 
 ---
 
-## 내 생각
+### 내 생각
 
 일단 기본적으로 내가 아는 것들에 대해서 써놓았고 팀원들과 코드리뷰를 통해 Ticket이나 다른 테이블들의
 컬럼과 연관관계를 짓는 작업을 진행해야겠다.

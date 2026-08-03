@@ -12,7 +12,7 @@ date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/sap_thumbnail.png"
 ---
 
-# oData V2 model
+## oData V2 model
 
 oData V2 모델을 사용하면 oData Service로 부터 데이터 제어를 가져올 수 있다.
 
@@ -46,7 +46,7 @@ ODataModel 생성자
 `vServiceUrl` : 추가된 URL 파라미터들은 모든 요청을 덧붙일 것이다.
 만약 오브젝트를 전달하고 싶을 땐, 이것은 두번째 파라미터 오브젝트로써 해석될 것이다. 그땐 mParameter.serviceUrl은 필수 파라미터가 된다.
 
-## 모델 인스턴스 생성
+### 모델 인스턴스 생성
 하나의 OData 모델 인스턴스는 단지 하나의 OData service를 커버할 수 있다.
 다양한 서비스를 엑세스 하기 위해선 다양한 OData Model을 인스턴스 해야한다.
 
@@ -57,7 +57,7 @@ var oModel = new ODataModel({serviceUrl: "http://services.odata.org/Northwind/No
 ```
 ODataModel 인스턴스를 생성할 때 서비스 메타데이터를 검색하라는 요청이 전송된다.
 
-## Service Metadata
+### Service Metadata
 
 서비스 메타데이터는 서비스 URL 별로 캐싱된다. 같은 서비스에서 사용하는 여러 OData 모델은 이 메타데이터를 공유할 수 있다.
 
@@ -68,7 +68,7 @@ var oMetadata = oModel.getServiceMetadata();
 v2.ODataModel 안에서 서비스 메타데이터는 비동기식으로 불러지며 동기식으로 불러올 수 없다. 로딩이 끝났을 때, `metadataLoaded` 이벤트가 붙는다.
 
 
-## 추가 URL 파라미터
+### 추가 URL 파라미터
 
 OData Service는, URL 파라미터를 설정해서 사용할 수 있다. UI5는 각각의 바인딩에 따라서 파라미터들을 자동적으로 설정한다.
 
@@ -78,7 +78,7 @@ OData Service는, URL 파라미터를 설정해서 사용할 수 있다. UI5는 
 
 URL 파라미터들을 요청하는데 2가지 방법이 있다.
 
-### 파라미터들을 service URL에 추가
+#### 파라미터들을 service URL에 추가
 
 ```
 new ODataModel("http://myserver/MyService.svc/?myParam=value&myParam2=value");
@@ -86,7 +86,7 @@ new ODataModel("http://myserver/MyService.svc/?myParam=value&myParam2=value");
 
 이 파라미터들은 OData 서버에 보내지는 모든 요청이 포함될 것이다.
 
-### mparameter map과 함께 URL 파라미터 전달
+#### mparameter map과 함께 URL 파라미터 전달
 
 $metadata 요청(metadataUrlParams)이 사용되며 게다가 데이터 요청에 포함된 URL 파라미터(serviceUrlParams)를 전달할 수 있다. 파라미터들은 Map 형식으로 보내진다.
 
@@ -105,11 +105,11 @@ var oModel = new ODataModel({
 });
 ```
 
-## HTTP HEADER
+### HTTP HEADER
 
 각 요청에 보내어지는 커스텀 헤더를 추가할 수 있다.
 
-### 맵 파라미터와 함꼐 커스텀 헤더로 전달
+#### 맵 파라미터와 함꼐 커스텀 헤더로 전달
 
 ```
 var oModel = new sap.ui.model.odata.v2.ODataModel({
@@ -120,7 +120,7 @@ var oModel = new sap.ui.model.odata.v2.ODataModel({
 });
 ```
 
-### 모델 인스턴스를 글로벌 커스템헤더로 셋팅
+#### 모델 인스턴스를 글로벌 커스템헤더로 셋팅
 
 ```
 oModel.setHeaders({"myHeader1" : "value1", "myHeader2" : "value2"});
@@ -128,7 +128,7 @@ oModel.setHeaders({"myHeader1" : "value1", "myHeader2" : "value2"});
 
 커스텀 헤더 추가 시 이전 모든 커스텀 헤더들은 지워진다. 일부 헤더들은 private이며 즉, OData모델 내부적으로 설정되어 설정할 수 없다.
 
-## 엔티티 주소 : 바인딩 경로 구문
+### 엔티티 주소 : 바인딩 경로 구문
 
 OData 모델의 바인딩 경로 구문은 특정 엔티티들이나 엔티티 집합을 엑세스한 OData 안의 사용되는 서비스 URL과 상대적 URL 경로와 일치한다.
 
@@ -167,7 +167,7 @@ OData Model 내 바인딩 샘플은 Northwind 데모 서비스에서 부터 가�
 "/Products(1)/Supplier"
 ```
 
-## OData Model로부터 데이터 엑세스
+### OData Model로부터 데이터 엑세스
 
 OData 서비스에서 요청한 데이터는 OData 모델에 캐시된다. `getProperty()` 메서드에 의해 엑세스 될 수 있으며, 엔티티 객체 또는 값을 리턴한다. 이 메서드는 백앤드로부터 요청한 데이터가 아니며, 단지 미리 요청되거나 캐시된 엔티티들로 엑세스 될 수 있다.
 ```
@@ -176,7 +176,7 @@ oModel.getProperty("/Customer('ALFKI')/Address")
 
 이 메소드들로 싱글엔티티들과 속성들을 엑세스 할 수 있다. 엔티티 집합들을 엑세스하면, 바인딩 목록으로 읽기 전용 엔티티들을 바인딩 컨텍스트로 가져올 수 있다. 이 메서드가 리턴한 값들은 JSON 모델 안에서 참조된 것이 아닌 카피된 데이터이다.
 
-## 엔티티 생성
+### 엔티티 생성
 `createEntity()` 메서드를 호출하면 명시된 엔티티 집합에 대한 엔티티들을 호출한다. 이 메서드는 새로 만들어진 엔티티를 가리키는 컨텍스트 객체를 반환한다.
 
 이 어플리케이션은 이러한 객체들을 바인딩 할 수 있고 양뱡향으로 데이터들을 변경할 수 있다. `submitChanges()` 라고 불리는 메서드를 호출하면, OData 백앤드 안에 엔티티들을 저장한다. 변경을 초기화하려면 `deleteCreateEntry()` 함수를 부르면 된다. 
@@ -202,7 +202,7 @@ entity oModel.deleteCreatedEntry(oContext); // 변경 취소 시 호출
 ```
 만약 엔티티들을 submit 하면 컨텍스트는 모델에 import 된 새로운 데이터를 모델로 가져온다. 새로운 엔티티를 가리킨다.
 
-## CRUD 작동  
+### CRUD 작동  
 
 OData 모델은 OData Service에서 메뉴얼적인 작업을 허용한다. 메뉴얼적 작업이 데이터를 반환할 때는 Odata 모델 데이터의 캐시가 import 된다. 모든 작업들은 필수적 sPath 파라미터와 mParameters Map을 선택적으로 요구한다.
 
@@ -270,19 +270,19 @@ oModel.submitChanges(); // OData 백앤드에 저장
 
 ```
 
-## 동시성 제어 와 ETags
+### 동시성 제어 와 ETags
 
 OData는 optimistic한 동시성 제어를 HTTP ETags를 사용한다. ETag는 모든 CRUD 요청을 위해서 parameter map으로 전달될 수 있다. 만약 ETag가 전달되지 않으면, 미리 로드된 경우, 캐시된 엔티티가 사용된다.
 
-## XSRF Token
+### XSRF Token
 
 CSRF 를 해결하기 위해 OData 서비스는 데이터 변경 시 XSRF 토큰을 필요로 한다. 이 경우 서버에서 가져온 토큰을 같이 서버에 보내야 하며 OData 모델은 메타데이터를 읽을때, XSRF 토큰을 가져와 header에 넣어 자동으로 토큰을 전송한다. 토큰이 유효하지 않을때엔, OData Model에서 refreshToken 함수를 호출하여 패치될 수 있다. 이 토큰은 루트 URL 서비스의 호출과 함께 가져오며 서비스 다큐먼트와 함께 응답한다. 유효한 토큰을 가져오려면 응답이 캐싱되지 않았는지 확인해야한다.
 
-## 모델의 새로고침
+### 모델의 새로고침
 
 refresh 함수는 OData 모델의 모든 데이터를 새로고침한다. 각각의 바인딩은 서버로부터 데이터를 다시 읽는다. 리스트 또는 컨텍스트 바인딩 경우, 백앤드에서 새로운 요청이 작동된다. 만약 XSRF 토큰이 유효하지 않으면, 서비스 다큐먼트에서 읽기 요청을 다시 가져와야 한다. 메뉴얼 CRUD 요청들로 임포트된 데이터는 자동으로 리로드 되지 않는다.
 
-## 배치 프로세싱
+### 배치 프로세싱
 
 ODataModel v2는 2가지 다른 방법으로 batch processing을 지원한다.
 
@@ -315,7 +315,7 @@ ODataModel v2는 2가지 다른 방법으로 batch processing을 지원한다.
 		oModel.submitChanges({success: mySuccessHandler, error: myErrorHandler});
 ```
 
-# 양방향 바인딩
+## 양방향 바인딩
 
 v2.oDataModel은 양방향 바인딩을 지원한다. 기본적으로 모든 변경들은 지연으로 설정된 `changes` 라는 배치그룹에 수집된다.
 
@@ -344,7 +344,7 @@ oModel.setProperty("/myEntity(0)", oValue);
 oModel.resetChanges(["/myEntity(0)"]);
 ```
 
-## 바인딩별 매개변수
+### 바인딩별 매개변수
 
 OData 프로토콜은 명시적으로 다른 URL 파라미터이다.
 
@@ -399,11 +399,11 @@ oTextField.bindElement("/GetProducts", {
 });
 ```
 
-## 바인딩 의존 최적화
+### 바인딩 의존 최적화
 
 OData V2 모델 에서 생성자는 `preliminaryContext` 라 불리는 flag를 지원한다. 이 옵션이 true 이면, 모델은 더 적은 $batch 요청 종속적 바인딩에 대한 OData 호출을 다를 수 있게 된다.
 
-### 소개  
+#### 소개  
 
 
 부모 바인딩이 의존 바인딩에 설정된 컨텍스트에 해당하는 OData 엔티티를 읽는다면 다른 바인딩(부모바인딩) 에 의존한다.
@@ -412,7 +412,7 @@ OData V2 모델 에서 생성자는 `preliminaryContext` 라 불리는 flag를 �
 
 부모 바인딩이 컨텍스트 바인딩인 경우, 2개의 읽기 요청을 하나의 번들링으로 퍼포먼스를 증가시킬 수 있다. 바인딩과 연결된 단일 컨텍스트는 예비의 컨텍스트를 명시하여 수행할 수 있다. 이를 위해 부모 바인딩 구성에 `createPreliminaryContext` 파라미터 설정이 필요하다. 의존적 리스트 또는 컨텍스트 바인딩은 데이터를 읽기 전에 preliminaryContext 경로를 사용하여 데이터를 읽어 그들 자신의 요청을 위한 경로 구성을 주문 할 수 있다. 의존 바인딩의 생성을 `usePreliminaryContext` 파라미터를 설정해 수행한다.
 
-### 설정과 사용
+#### 설정과 사용
 
 OData V2 model을 생성할 떄 preliminaryContext 파라미터를 설정할 수있다. 이 모델을 위해 생성된 모든 바인딩의 preliminary 컨텍스트를 전환한다.
 
@@ -446,7 +446,7 @@ ODataContextBinding 생성자 또는 ODataListBinding 생성자에 해당하는 
 |:--:|:--:|
 |1| GET Product(1),GET Product(1)/Supplier|
 
-## 함수 임포트
+### 함수 임포트
 ODataModel은 `callFunction()` 메소드에 의해 임포트나 또는 액션 함수들의 부르는 것을 지원한다.
 ```
 oModel.callFunction("/GetProductsByRating",{method:"GET", urlParameters:{"rating":3}, success:fnSuccess, error: fnError})
@@ -454,7 +454,7 @@ oModel.callFunction("/GetProductsByRating",{method:"GET", urlParameters:{"rating
 
 만약 `callFunction()` 요청이 지연되면, `submitChangesmethod()`를 통해 전송되어 질 수 있다.
 
-### 파라미터를 가져오는 함수의 바인딩
+#### 파라미터를 가져오는 함수의 바인딩
 
 OData Model V2는 파라미터들을 가져오는 함수에 대해 바인딩을 지원한다. 엔티티 속성에 대해 바인딩을 지원하는 `createEntry()` 메서드와 비슷하다. `callFunction()` 메서드는 promise를 가진 핸들을 반환한다. 그 promise는 바인딩된 컨텍스트가 성공적으로 생성되거나 또는 거부될 때 해결된다.
 
@@ -479,17 +479,17 @@ oHandle.contextCreated().then(function(oContext) {
 </form:SimpleForm>
 ```
 
-## 언어
+### 언어
 
 SAPUI5는 현재 언어의 컨셉으로 사용한다. 이 언어는 자동적으로 OData V2 model에 의해 OData service로 전달된다. 이 이유로 어플리케이션은 언어 자체를 하드 코드로 해서 안된다. 예로 커스텀 쿼리 옵션에 'sap-language' URL 파라미터를 명시해서는 안된다.
 
-## OData V2위한 메타 모델
+### OData V2위한 메타 모델
 
 `sap.ui.model.odata.ODataMetaModel`의 구현은 OData V2 metadata, 그리고 V4 어노테이션 둘다 통일된 엑세스로 제공한다.
 
 메타모델은 기존 `sap.ui.model.odata.ODataMetadata` 기반으로 사용하며 엔티티나 또는 속성에 직접적으로 상승하는 기존 `sap.ui.model.odata.ODataAnnotations`로부터의 OData Version 4.0을 병합한다.
 
-### 기본 구조
+#### 기본 구조
 
 `sap.ui.model.odata.ODataMetadata` 의 기본 구조는 코드 스니핑에 따라서 보여진다. 이것은 엔티티 모델이 중첩되는 가장 중요한 요소가 어떻게 되는지 보여준다.
 각각의 요소들은 약간의 네임스페이스로 부터 XML 속성 값의 확장성을 가질 수 있다. 아래 코드스니핑은 이러한 확장성들이 어떻게 저장되고 처리되는 지를 보여준다.
@@ -520,7 +520,7 @@ SAPUI5는 현재 언어의 컨셉으로 사용한다. 이 언어는 자동적으
   }
 ```
 
-### 객체, 속성 엑세스
+#### 객체, 속성 엑세스
 
 OData 메타 모델 안에 객체들은 배열로 처리된다. 예로 '/dataService/schema'는 각각 스키마가 엔티티 타입, 등등의 배열과 함께 엔티티 타입 속성을 가지는 스키마들의 배열이다. 그래서 '/dataServices/schema/0/entityType/16'은 'MySchema' 네임스페이스가 스키마 내 이름이 'Order'인 엔티티 타입의 경로가 될 수 있다.
 
@@ -545,7 +545,7 @@ Example: `{:= ${path:'target>extensions/[${name} === \'semantics\']/value'} === 
 
 이러한 각 쿼리들은 자체적으로 포함되어있다. 쿼리는 관련 경로를 통해서 현재 후보의 속성에 언급할 수 있다. 그러나 XML 탬플릿 안에서 이용가능한 ${meta>} 와 같은 변수들은 언급할 수 없다.
 
-### 확장자
+#### 확장자
 
 확장 배열과 SAP 사용해 단순 속성의 객체로 변환: 이전에 속성 이름들을 추가 ex) 8번쨰 라인 참조
 ```
@@ -560,7 +560,7 @@ Example: `{:= ${path:'target>extensions/[${name} === \'semantics\']/value'} === 
 9  }
 ```
 
-### OData V4 어노테이션
+#### OData V4 어노테이션
 
 엔티티 모델의 각각 요소는 어노테이션을 달 수 있다. 기존 `sap.ui.model.odata.ODataAnnotations` 로 부터의 어노테이션은 해당 요소에 직접적으로 병합된다.  
 아래 코드는 위에서 설명한 것처럼 기존 `sap.ui.model.odata.ODataMetadata`로부터의 구조를 보여준다.
@@ -628,11 +628,11 @@ Example: `{:= ${path:'target>extensions/[${name} === \'semantics\']/value'} === 
     }]
 }
 ```
-### OData Meta Model의 향상
+#### OData Meta Model의 향상
 
 각 sap:label 과 같이 기본 용어에 해당하는 SAP-specific OData 어노테이션에 쉽게 접근하는데다가, 어노테이션은 기존 `sap.ui.model.odata.ODataAnnotations`의 OData 버전 4.0 어노테이션 안에서 정의 되지 않았을 때에서만 믹스된다.
 
-### OData V2 내 통화 및 단위 정의
+#### OData V2 내 통화 및 단위 정의
 
 양이나 치수 는 CLDR에 정의된 것 보다 다른 통화, 또는 단위가 필요할 수 있다.
 
