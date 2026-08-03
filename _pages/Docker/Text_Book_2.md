@@ -23,6 +23,7 @@ thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 컨테이너의 호스트명, IP 주소처럼 Docker 가 부여해준다.
 
 #### 환경변수를 사용한 docker 명령어
+
 ```docker
 docker rm -f web-ping
 docker container run --env TARGET=google.com diamol/ch03-web-ping
@@ -86,6 +87,7 @@ docker image build -t web-ping:v2 .
 따라서 잘 수정하지 않는 인스트럭션이 앞으로 오도록 작성하는 것이 좋다.
 
 #### 최적화 한 스크립트 (핵심)
+
 ```docker
 FROM diamol/node 
 

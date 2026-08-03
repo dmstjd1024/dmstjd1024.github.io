@@ -66,6 +66,7 @@ thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
 ### X-Forwarded-For 헤더
 - Http 요청을 로드밸런서가 받을 때, **출처** 에 대한 정보를 담고있음
 - 헤더 정보의 흐름
+
 ```text
 퍼블릭 IP 주소 -> private IP 주소로 이동 
 -> private IP 주소엔 출처에 대한 정보가 없다.
