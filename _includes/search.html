@@ -3,7 +3,11 @@
   <div class="search__panel" role="dialog" aria-modal="true" aria-label="글 검색">
     <div class="search__bar">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 105.3 14l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
-      <input id="search-input" type="search" placeholder="검색어를 입력하세요" autocomplete="off" spellcheck="false">
+      {%- comment -%}
+        placeholder 는 라벨이 아니다 — 글자를 입력하면 사라지고, 스크린
+        리더도 라벨로 신뢰하지 않는다. aria-label 을 따로 준다.
+      {%- endcomment -%}
+      <input id="search-input" type="search" aria-label="글 검색" placeholder="검색어를 입력하세요" autocomplete="off" spellcheck="false">
       <button type="button" data-search-close aria-label="닫기">esc</button>
     </div>
     <ul class="search__results" id="search-results"></ul>

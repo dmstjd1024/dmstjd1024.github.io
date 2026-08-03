@@ -177,10 +177,10 @@ __*이텔릭체*와 볼드__ 혼용 가능
 
 이미지에 링크 추가
 ```markdown
-[![EUNSEONG.DEV](/assets/img/favicon.webp)](https://dmstjd1024.github.io/)
+[![EUNSEONG.DEV](/assets/img/favicon.svg)](https://dmstjd1024.github.io/)
 ```
 
-[![EUNSEONG.DEV](/assets/img/favicon.webp)](https://dmstjd1024.github.io/)
+[![EUNSEONG.DEV](/assets/img/favicon.svg)](https://dmstjd1024.github.io/)
 
 코드 강조
 ======
@@ -286,14 +286,14 @@ BREAK!
 원시 HTML
 =====
 ```markdown
-<img width="150" src="http://gstatic.com/webp/gallery/4.jpg" alt="Prunus" title="마크다운은 이미지의 크기를 지정할 수 없으므로, 크기 지정을 위해서는 <img> 태그를 사용해야 합니다.">
+<img width="150" src="https://gstatic.com/webp/gallery/4.jpg" alt="Prunus" title="마크다운은 이미지의 크기를 지정할 수 없으므로, 크기 지정을 위해서는 <img> 태그를 사용해야 합니다.">
 
-![Prunus](http://www.gstatic.com/webp/gallery/4.jpg)
+![Prunus](https://www.gstatic.com/webp/gallery/4.jpg)
 ```
 
-<img src="http://gstatic.com/webp/gallery/4.jpg" alt="Prunus" title="마크다운은 이미지의 크기를 지정할 수 없으므로, 크기 지정을 위해서는 <img> 태그를 사용해야 합니다." height="200">
+<img src="https://gstatic.com/webp/gallery/4.jpg" alt="Prunus" title="마크다운은 이미지의 크기를 지정할 수 없으므로, 크기 지정을 위해서는 <img> 태그를 사용해야 합니다." height="200">
 
-![Prunus](http://www.gstatic.com/webp/gallery/4.jpg)
+![Prunus](https://www.gstatic.com/webp/gallery/4.jpg)
 
 수평선
 =====
