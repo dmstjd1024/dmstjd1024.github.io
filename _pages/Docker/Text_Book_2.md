@@ -10,9 +10,7 @@ date: 2025-05-28
 thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 ---
 
-도커 이미지 만들기
-=====
------
+## 도커 이미지 만들기
 
 ## 도커 허브에 공유된 이미지 사용하기
 **web-ping** 어플리케이션 이미지 pull 명령어

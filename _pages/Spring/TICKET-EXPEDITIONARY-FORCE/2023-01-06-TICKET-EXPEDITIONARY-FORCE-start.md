@@ -10,14 +10,13 @@ date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
 ---
 
-# 프로젝트 시작
----
+## 프로젝트 시작
  TDD 책을 정독하고 읽었던 내용들을 사용해보는 프로젝트를 진행해보려고 한다.  
  나는 2,3번 프로젝트를 진행해봤는데 결과는 좋지 않았고 이번에는 결과물을 완성하고 싶은 마음이 크다.
   
 ---
   
-## 설명  
+### 설명  
  
   100명에게 Ticket을 배포하는 프로그램을 RESTful방식 개발합니다 *신청시 확률에 따라 티켓을 획득 하거나 꽝이 됩니다  
 - 티켓:100매  
@@ -28,7 +27,7 @@ thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
   
 ---
   
-## 사용 기술  
+### 사용 기술  
   
 | 기술명 | 내용 |
 |:---------:|:---------------:|
@@ -45,7 +44,7 @@ thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
   
 ---  
   
-## 파트
+### 파트
   
  - 템플릿 설정
  - 티켓
@@ -58,7 +57,7 @@ thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
   
 ---
   
-## 처음 내가 해야 할 일  
+### 처음 내가 해야 할 일  
   Account Entity에서 내가 생각하는 column명을 Template 설정 파트 담당에게 넘길 것이다.
 
  
