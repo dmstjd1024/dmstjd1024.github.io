@@ -14,6 +14,7 @@ thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 ### 컨테이너 실행
 - 컨테이너로 애플리케이션 실행 명령어
 - 애플리케이션은 미리 도커로 실행되도록 패킹돼 누구나 사용되도록 공유된 것
+
 ```docker
 docker container run diamol/ch02-hello-diamol
 ```

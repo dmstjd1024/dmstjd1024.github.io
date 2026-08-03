@@ -26,6 +26,7 @@ thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
   일단 메모장 파일을 생성하고 다음과 같은 코드를 입력한다.
 
 ### 코드
+
 ```sh
 cd C:\Ruby26-x64\bin\setrbvars.cmd
 call setrbvars.cmd

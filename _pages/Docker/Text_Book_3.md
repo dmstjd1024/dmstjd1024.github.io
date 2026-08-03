@@ -16,8 +16,10 @@ thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 - 빌드 툴 체인을 통해 한번에 패키징해서 공유하면 편리
 - 도커만 갖춰진다면 컨테이너를 통해 어떤 환경에서든 애플리케이션 빌드, 실행 가능
 - 도커허브를 통해 빌드도구가 내장된 공식 이미지 제공
+
 ## 애플리케이션 빌드 실전 예제
-```dockerFile
+
+```dockerfile
 FROM diamol/maven AS builder
 
 WORKDIR /usr/src/iotd
