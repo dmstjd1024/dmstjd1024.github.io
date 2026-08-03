@@ -11,7 +11,7 @@ date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/java_thumbnail.png"
 ---
 
-# 목적
+## 목적
 
 ---
 
@@ -23,13 +23,12 @@ thumbnail: "/assets/img/thumbnail/java_thumbnail.png"
 
 
 
-# 학습할 것
+## 학습할 것
 
 
 
 
-### JVM이란 무엇인가
----
+#### JVM이란 무엇인가
 
 JVM이란 java를 실행하기 위한 가상 머신이다. 여기서 '가상머신' 대신 '가상 컴퓨터'라고 부르는게 이해하기 좋다.
 
@@ -41,15 +40,14 @@ JVM이란 java를 실행하기 위한 가상 머신이다. 여기서 '가상머�
 
 이래서 자바는 Write once, run anywhere (한번 작성시 어디서든 실행된다.) 라는 장점이 있다.
 
-### 컴파일 하는 방법
+#### 컴파일 하는 방법
 
 ---
 개발 툴을 이용해 .java 파일을 생성하고 build시 java Compiler의 javac라는 명령어를 사용해 .class 파일을 생성합니다. (이 .class는 파일은 아직은 어셈블리어가 아닌 자바 바이트 코드 입니다)
 이 파일은 클래스 로더에 의해서 JVM 내로 로드되고 Execution Engine에 의해 기계어로 해석되어 메모리에 배치되게 됩니다. 그리고 Stack Area, Method Heap Area, PC Register Area 에 올라간 파일들은 클래스 메소드 호출이 발생하면 영역의 Method들 정보를 읽어 매개변수, 지역변수 리턴값등이 Stack에 의해 처리되게 됩니다. 그리고 메소드 실행 끝나면 Stack영역에서는 자동으로 제거됩니다. 이후 Garbage Collector가 실행되어 메모리를 정리해주게 됩니다.
 
 
-### 바이트코드란 무엇인가
----
+#### 바이트코드란 무엇인가
 
 자바의 바이트 코드란 JVM이 이해할 수 있는 언어로 변환된 자바 소스 코드이며, 자바 컴파일러에 의해 변환되는 코드의 명령어 크기가 1바이트라서 자바 바이트 코드라고 불리고 있다.
 
@@ -57,8 +55,7 @@ JVM이란 java를 실행하기 위한 가상 머신이다. 여기서 '가상머�
 
 
 
-### JIT 컴파일러란 무엇이며 어떻게 동작하는지
----
+#### JIT 컴파일러란 무엇이며 어떻게 동작하는지
 
 일단 JIT(Just In Time) 컴파일러란 동적 번역 이라 할 수 있으며 실제로 프로그램을 실행하는 기점에서 기계어로 번역하는 컴파일러이다.
 
@@ -74,8 +71,7 @@ Interpreter는 실행 중 프로그래밍 언어를 읽어가면서 해당 기�
 
 
 
-### JVM 구성 요소
----
+#### JVM 구성 요소
 
 JVM은 ClassLoader, Execution Engine, RuntimeData Areas로 구성된다.
 
@@ -108,8 +104,7 @@ Excution Engine에게 해석된 프로그램은 Runtime Data Area에 배치되�
 3. JVM Stacks : 호출스택이라 불리며 메소드가 실행 시 필요한 공간을 제공, 매개변수나 지역변수 등의 임시데이터를 저장한다. 메소드가 끝나면 메모리공간은 반환된다. 쓰레드마다 1개 씩 갖는다.
 4. PC Registers : 일종의 스택으로서 Thread 생성될 때의 공간으로 Thread가 어떠한 명령을 실행하게 될지에 대한 부분을 기록한다. Java는 Stacks-Base 방식으로 작동하는데 JVM은 CPU에 직접 Instruction을 수행하지 않고 Stack에서 Operand를 뽑아내 이를 별도의 메모리 공간에 저장하는 방식을 취하는데 이 공간을 PC라고 한다.
 
-### JDK와 JRE의 차이
----
+#### JDK와 JRE의 차이
 
 - JDK
 
