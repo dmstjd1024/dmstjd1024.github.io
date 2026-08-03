@@ -442,6 +442,7 @@ ODataContextBinding 생성자 또는 ODataListBinding 생성자에 해당하는 
 **싱글 바인딩 예제 최적화**
 
 여기 Binding 1은 Binding 0이 생성될 때 `preliminaryContext`를 사용하며, 그리고 이와같이 요청 URL 은 다이렉트로 해결될 수 있다.
+
 | 요청 넘버 | 요소 |
 |:--:|:--:|
 |1| GET Product(1),GET Product(1)/Supplier|
