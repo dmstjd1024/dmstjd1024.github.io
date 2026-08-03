@@ -23,6 +23,15 @@ google_analytics:
 # Otherwise, set its value as "/<repo-name>". ex) baseurl: /myblog
 baseurl:
 
+# 사이트의 실제 주소. 이게 없으면 canonical 과 og: 태그가 "/index.html" 처럼
+# 도메인 없는 반쪽 주소로 나간다 — 링크 공유와 검색엔진 양쪽에서 문제가 된다.
+url: "https://dmstjd1024.github.io"
+
+# 링크를 공유했을 때 뜨는 미리보기 설정.
+lang: ko_KR
+# 미리보기 이미지. 없으면 카톡·슬랙에 이미지 없는 밋밋한 카드로 뜬다.
+image: "/assets/img/apple-touch-icon.png"
+
 # Build settings
 plugins:
   - jekyll-feed
@@ -37,6 +46,19 @@ collections:
   pages:
     output: true
     permalink: /:path.html
+
+# jekyll-feed 는 기본적으로 _posts/ 만 읽는다. 이 블로그의 글은 전부
+# _pages 컬렉션에 있어서, 알려주지 않으면 RSS 가 빈 껍데기로 나간다.
+#
+# path 를 /feed.xml 로 주면 플러그인이 만드는 기본 피드(비어 있음)와
+# 경로가 겹쳐 그쪽이 덮어쓴다. 그래서 컬렉션 피드는 다른 경로에 두고,
+# 사이트에서 링크하는 주소를 이 경로로 맞춘다.
+feed:
+  # 기본값은 최근 10개만 담는다. 새로 구독한 사람도 과거 글을 볼 수 있게 늘린다.
+  posts_limit: 50
+  collections:
+    pages:
+      path: "/posts.xml"
 
 defaults:
   -

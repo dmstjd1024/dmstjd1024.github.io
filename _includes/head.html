@@ -18,10 +18,24 @@
   {%- assign head_title = page.title -%}
 {%- endif -%}
 
-<title>{% if head_title %}{{ head_title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-{%- comment -%} 카테고리 페이지에만 설명을 붙인다(글은 jekyll-seo-tag 가 처리) {%- endcomment -%}
-{%- if seg.last == 'index.md' and head_title -%}
-  <meta name="description" content="{{ head_title }} 관련 글 모음 · {{ site.title }}">
+{%- if head_title -%}
+  {%- assign page_title = head_title | append: ' · ' | append: site.title -%}
+{%- else -%}
+  {%- assign page_title = site.title -%}
+{%- endif -%}
+<title>{{ page_title }}</title>
+
+{%- comment -%}
+  카테고리 페이지에만 설명을 붙인다(글은 jekyll-seo-tag 가 처리).
+  이 값은 아래 og:description 에도 그대로 쓴다.
+{%- endcomment -%}
+{%- if seg.last == 'index.md' -%}
+  {%- if head_title -%}
+    {%- assign page_desc = head_title | append: ' 관련 글 모음 · ' | append: site.title -%}
+  {%- else -%}
+    {%- assign page_desc = site.description -%}
+  {%- endif -%}
+  <meta name="description" content="{{ page_desc }}">
 {%- endif -%}
 
 {%- comment -%}
@@ -43,7 +57,35 @@
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | prepend: site.baseurl }}">
 <link rel="icon" href="{{ '/assets/img/favicon.ico' | prepend: site.baseurl }}" sizes="any">
 <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | prepend: site.baseurl }}">
-<link rel="canonical" href="{{ page.url | absolute_url }}">
-<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/posts.xml' | prepend: site.baseurl }}">
 
-{% seo title=false %}
+{%- comment -%}
+  링크를 공유했을 때 뜨는 미리보기(Open Graph).
+
+  카테고리·홈은 front matter 에 title 이 없어서 Jekyll 이 파일명으로
+  "Index" 를 채운다. jekyll-seo-tag 에 맡기면 그 "Index" 가 미리보기
+  제목으로 나가므로, 여기서 위에 계산해 둔 값으로 직접 써 준다.
+  글 페이지는 title 이 제대로 있으니 seo 태그가 처리한다.
+{%- endcomment -%}
+{%- if seg.last == 'index.md' -%}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_desc }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="{{ site.lang }}">
+  <meta property="og:image" content="{{ site.image | absolute_url }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_desc }}">
+  <meta name="twitter:image" content="{{ site.image | absolute_url }}">
+{%- else -%}
+  {%- comment -%}
+    글 페이지는 seo 태그가 canonical·og:url 까지 다 넣는다.
+    여기서 또 넣으면 같은 태그가 두 번 나가므로 이미지만 보탠다.
+  {%- endcomment -%}
+  {% seo title=false %}
+  <meta property="og:image" content="{{ site.image | absolute_url }}">
+  <meta name="twitter:image" content="{{ site.image | absolute_url }}">
+{%- endif -%}
