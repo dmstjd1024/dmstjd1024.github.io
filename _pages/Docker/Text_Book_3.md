@@ -10,9 +10,7 @@ date: 2025-07-06
 thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 ---
 
-애플리케이션 소스 코드에서 도커 이미지까지
-=====
------
+## 애플리케이션 소스 코드에서 도커 이미지까지
 
 ## Dockerfile 가 있는데 빌드서버가 필요할까?
 - 빌드 툴 체인을 통해 한번에 패키징해서 공유하면 편리

@@ -14,11 +14,11 @@ date: 2026-07-07
 thumbnail: "/assets/img/thumbnail/sample.png"
 ---
 
-# 엔티티 14개를 하드 삭제에서 소프트 삭제로
+## 엔티티 14개를 하드 삭제에서 소프트 삭제로
 
 보고서에서 참조하는 데이터가 삭제되면 과거 보고서가 깨진다. 그래서 삭제를 `is_delete` 플래그로 바꾸는 작업을 했다(PR #792). 개념은 단순한데 실제로 걸린 건 두 곳이었다 — **유니크 제약**과 **@Filter가 적용되지 않는 경로**.
 
-# (a) 유니크 제약이 삭제된 행에 걸린다
+## (a) 유니크 제약이 삭제된 행에 걸린다
 
 하드 삭제일 때는 `UNIQUE(company_id, name)` 같은 제약이 자연스럽게 동작한다. 지우면 행이 사라지니 같은 이름을 다시 만들 수 있다.
 
@@ -38,7 +38,7 @@ ALTER TABLE tb_xxx ADD UNIQUE KEY uk_xxx_active (company_id, active_name);
 
 이름뿐 아니라 계수 값에도 같은 방식을 적용했다(`active_name`, `active_coefficient`).
 
-## FK가 기존 유니크를 붙들고 있는 경우
+### FK가 기존 유니크를 붙들고 있는 경우
 
 여기서 걸린 게 하나 더 있다. **기존 유니크 인덱스를 FK가 지지하고 있으면 그냥 DROP할 수 없다.** MySQL은 FK가 참조하는 인덱스를 삭제하려 하면 거부한다.
 
@@ -50,7 +50,7 @@ ALTER TABLE tb_xxx ADD UNIQUE KEY uk_xxx_active (company_id, active_name);
 
 SQL은 멱등으로 작성했다. 로컬에서 실증도 했다 — 활성 행 중복은 새 유니크 제약 위반으로 거부되고, 소프트 삭제 후 동일 조합 재생성은 성공한다.
 
-# (b) 조회 필터를 @Filter 하이브리드로
+## (b) 조회 필터를 @Filter 하이브리드로
 
 `5ef40e1a`에서 조회 필터링을 Hibernate `@Filter`로 전환했다. `BaseEntity`에 `@FilterDef`를 단일 정의하고 엔티티 15종에 `@Filter`를 붙인 뒤, AOP로 트랜잭션 경계에서 필터를 활성화한다.
 
@@ -65,7 +65,7 @@ SQL은 멱등으로 작성했다. 로컬에서 실증도 했다 — 활성 행 �
 
 필터를 끄는 코드는 남용되기 쉬워서, `87d016f5`에서 봉인 유틸(`SoftDeleteFilterSupport`)을 만들었다. `disable → 실행 → finally enable`을 한 메서드에 가두고 raw `session.disableFilter` 직접 호출을 금지했다. 필터를 끈 채 `finally` 없이 예외가 나면 같은 세션의 이후 쿼리가 전부 삭제 데이터를 보게 되는데, 그건 조용히 번지는 종류의 사고다.
 
-# (c) @Filter는 native SQL에 적용되지 않는다
+## (c) @Filter는 native SQL에 적용되지 않는다
 
 이게 이번 작업에서 가장 값진 발견이다. 보안 리뷰 중에 나왔다.
 
@@ -82,7 +82,7 @@ SQL은 멱등으로 작성했다. 로컬에서 실증도 했다 — 활성 행 �
 
 같은 리뷰에서 `LEFT JOIN` 3곳에도 `is_delete = 0` 조건을 JOIN 조건에 추가했다(LEFT 특성은 유지). 보안 리뷰 결과는 MEDIUM 등급이었고 CRITICAL / HIGH는 없었다.
 
-# 남는 교훈
+## 남는 교훈
 
 소프트 삭제는 "`DELETE`를 `UPDATE`로 바꾸는 것"으로 요약되곤 하는데, 실제로 값을 치르는 곳은 그 주변이다.
 

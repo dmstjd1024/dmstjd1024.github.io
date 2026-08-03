@@ -11,9 +11,7 @@ date: 2025-06-03
 thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 
-리액트 설치 방법
-=====
------
+## 리액트 설치 방법
 
 - npm 설치
 - node 설치
@@ -21,9 +19,7 @@ thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 
 -----
 
-JSX 문법
-=====
------
+## JSX 문법
 - 자바스크립트 확장 문법
 - JavaScript + XML/HTML 
 ex) 예시
@@ -46,9 +42,7 @@ React.createElement(
 
 {} 가 들어가면 무조건 자바스크립트 코드로 바뀜
 
-Rendering Element
-=====
------
+## Rendering Element
 
 ## Elements의 정의와 생김새
 - 어떤 물체를 구성하는 성분
@@ -65,9 +59,7 @@ Rendering Element
 - DOMElement : 실제 브라우저의 DOM에 존재
 - ReactDOM.render()를 통해 ReactElement를 DOMElement로 변환
 
-Components 와 Props
-=====
------
+## Components 와 Props
 ## 컴포넌트의 정의
 - 컴포넌트는 UI를 구성하는 독립적인 재사용 가능한 코드 블록
 - 컴포넌트는 함수나 클래스 형태로 정의되며, 입력값(Props)을 받아 UI를 렌더링
