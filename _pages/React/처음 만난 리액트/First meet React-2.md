@@ -11,9 +11,7 @@ date: 2025-07-12
 thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 
-State
-=====
------
+## State
 - 리액트 Component의 상태를 관리하는 객체
 - state는 개발자가 정의한다.
 - 랜더링이나 데이터의 흐름에 사용되는 값들만 state에 포함시켜야한다.
@@ -41,9 +39,7 @@ class LikeButton extends React.Component {
 
 컴포넌트가 계속 존재하는게 아니라 시간에 따라 생성, 업데이트되다가 사라진다.
 
-Hooks
-=====
------
+## Hooks
 함수 컨퍼넌트도 class 컴포넌트처럼 state를 가질 수 있게 해주는 기능
 갈고리
 함수명 앞에 use가 붙어서 훅이라는 것을 명시해준다.

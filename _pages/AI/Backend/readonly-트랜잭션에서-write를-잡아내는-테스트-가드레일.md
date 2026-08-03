@@ -14,13 +14,13 @@ date: 2026-06-01
 thumbnail: "/assets/img/thumbnail/sample.png"
 ---
 
-# 조회 API가 매번 write 트랜잭션을 만들고 있었다
+## 조회 API가 매번 write 트랜잭션을 만들고 있었다
 
 대시보드 조회 API의 응답이 느려서 들여다봤는데, 조회 경로에서 write가 일어나고 있었다. `f6fd21ef`에서 확인한 내용이다 — eco-view의 배출원 조회 경로가 `lcaStepService.updateStepOnly(write)`를 부수효과로 호출하고 있었다. 대시보드를 열 때마다 write 트랜잭션이 생기는 구조였다.
 
 조회 전용 메서드(`getGwpTotalForView`)를 새로 만들고 계산 로직을 공통화해서 부수효과를 떼어냈다. 여기까지는 평범한 수정이다. 문제는 **이런 걸 어떻게 다시 안 생기게 하느냐**였다.
 
-# 먼저 실패한 시도 — readOnly=true를 붙였다 떼기
+## 먼저 실패한 시도 — readOnly=true를 붙였다 떼기
 
 시간을 조금 앞으로 돌리면, `58134b6d`(2026-05-29)에서 이미 한 번 실패한 적이 있다. `getCutOffIoList`·`getFinalIoList` 두 메서드에 `@Transactional(readOnly = true)`를 붙였는데, 이 메서드들이 내부적으로 `updateStepAndSubStepOnly`라는 쓰기 트랜잭션과 충돌했다. 결국 `readOnly = true`를 도로 제거하는 커밋을 남겼다.
 
@@ -31,7 +31,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 1. 조회 경로에 write가 섞여 있다 (개별 수정 대상)
 2. 그게 섞여 있는지 **자동으로 알 방법이 없다** (구조적 문제)
 
-# 가드레일을 만들었다
+## 가드레일을 만들었다
 
 `9723219b`에서 `ReadOnlyTxGuardConfig`를 추가했다(약 200줄). readOnly 트랜잭션 안에서 write SQL이 실행되면 테스트를 실패시키는 장치다.
 
@@ -48,7 +48,7 @@ if (TransactionSynchronizationManager.isCurrentTransactionReadOnly()
 }
 ```
 
-# 설계에서 신경 쓴 것
+## 설계에서 신경 쓴 것
 
 **테스트 전용이다.** `@TestConfiguration`으로 선언해서 프로덕션 컨텍스트에는 절대 올라가지 않는다. 운영 트래픽에 SQL 문자열 검사를 끼워 넣는 건 비용도 위험도 크다.
 
@@ -56,7 +56,7 @@ if (TransactionSynchronizationManager.isCurrentTransactionReadOnly()
 
 **기존 래핑과 공존한다.** 이 프로젝트의 `DataSource`는 이미 P6Spy(SQL 로깅)와 HikariCP(커넥션 풀)로 겹겹이 감싸여 있다. JDK 동적 프록시로 인터페이스 레벨에서 감싸는 방식을 택한 덕에 그 계층들과 충돌 없이 얹힌다. 상속이나 구체 클래스 프록시를 썼다면 이 조합에서 깨졌을 것으로 보인다.
 
-# 왜 SQL 레벨인가
+## 왜 SQL 레벨인가
 
 readOnly 위반을 잡는 방법은 여러 가지가 있다. JPA 레벨에서 dirty checking을 감시하거나, AOP로 서비스 메서드를 검사하거나.
 
@@ -68,7 +68,7 @@ SQL 레벨을 택한 건 **거기가 마지막 관문이기 때문**이다. JPA�
 | JPA dirty checking | 엔티티 변경 | 벌크·native 우회 |
 | Statement 실행 직전 | 모든 SQL | 없음 |
 
-# 남는 교훈
+## 남는 교훈
 
 같은 문제를 두 번 다르게 다뤘다는 게 이 작업의 핵심이다. `58134b6d`에서는 `readOnly = true`를 붙이는 방식으로 "선언"했고, 그건 되돌려졌다. `9723219b`에서는 위반을 **검출**하는 쪽으로 방향을 바꿨다.
 

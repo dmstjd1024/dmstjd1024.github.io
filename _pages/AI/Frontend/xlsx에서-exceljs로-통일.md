@@ -13,7 +13,7 @@ date: 2026-07-16
 thumbnail: "/assets/img/thumbnail/sample.png"
 ---
 
-# 문제
+## 문제
 
 한 프로젝트 안에서 엑셀을 내보내는 경로가 두 개였고, 각각 다른 라이브러리를 쓰고 있었다.
 
@@ -24,7 +24,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 `xlsx`(SheetJS)의 커뮤니티 버전은 **셀 스타일을 지원하지 않는다.** 그래서 AG Grid에서 내보낸 파일만 헤더가 밋밋했다. 같은 제품에서 받은 두 엑셀 파일의 생김새가 달랐다.
 
-# 경계를 정하는 게 먼저였다
+## 경계를 정하는 게 먼저였다
 
 `excelExport.ts`를 열어보니 코드가 두 종류로 나뉘어 있었다.
 
@@ -34,7 +34,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 라이브러리에 묶인 건 렌더부뿐이었다. 그래서 **순수 로직은 그대로 두고 렌더부만 교체**하는 것으로 범위를 확정했다. 이 경계 덕에 도메인 규칙을 재검증할 필요가 없었고, 기존 테스트의 절반 이상이 그대로 유효했다.
 
-# 교체
+## 교체
 
 ```ts
 export async function exportGridsAsExcel(
@@ -63,7 +63,7 @@ function computeColumnWidths(headers: string[]): number[] {
 }
 ```
 
-# 예상 못 한 파급: 함수가 async가 됐다
+## 예상 못 한 파급: 함수가 async가 됐다
 
 `exceljs`의 `writeBuffer()`는 Promise를 반환한다. `xlsx`의 `XLSX.write()`는 동기였다.
 
@@ -77,11 +77,11 @@ TypeScript의 `no-floating-promises` 규칙에 걸리므로 호출부 **8곳에 
 
 여기서 판단이 하나 있었다. 호출부를 전부 `async` 핸들러로 바꿔 `await`하고 로딩 상태를 노출하는 방법도 있었다. 하지만 그건 이 작업의 범위를 넘어선다 — 8개 화면의 UX를 동시에 바꾸는 일이 된다. 라이브러리 교체와 로딩 UX 개선은 별개의 변경이므로 섞지 않았다.
 
-# 테스트
+## 테스트
 
 `excelExport.test.ts`를 140줄 갱신했다. 순수 로직 테스트(`resolveCellValue`, `buildSheetAoa`)는 대부분 손대지 않았고, 워크북 생성 결과를 검증하는 부분이 바뀌었다. 테스트도 async가 되면서 assertion 앞에 `await`가 붙는 기계적 변경이 상당수였다.
 
-# 남는 교훈
+## 남는 교훈
 
 라이브러리 교체 작업에서 가장 중요한 건 **어디까지가 라이브러리에 묶인 코드인지 선을 긋는 것**이었다. 선을 긋고 나니 실제로 다시 쓴 코드는 `excelExport.ts` 한 파일의 절반 정도였고, 나머지 9개 파일의 변경은 전부 `void` 한 글자였다.
 

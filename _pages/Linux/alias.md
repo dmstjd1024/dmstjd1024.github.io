@@ -11,7 +11,7 @@ date: 2025-07-06
 thumbnail: "/assets/img/thumbnail/linux_thumbnail.jpg"
 ---
 
-# Alias 명령어 처리
+## Alias 명령어 처리
 bash 접근
 ```shell
 nano ~/.bashrc
