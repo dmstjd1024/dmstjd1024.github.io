@@ -28,6 +28,7 @@ const element = <h1>Hello, world!</h1>;
 ```
 
 ## 원리
+
 ```jsx
 React.createElement(
     type,
@@ -119,6 +120,7 @@ function App(props) {
 
 #### 함수 컴포넌트
 - react Component를 일종의 함수로 생각한다.
+
 ```jsx
 function Welcome(props) {
     return <h1>안녕하세요, {props.name}님!</h1>;
@@ -126,6 +128,7 @@ function Welcome(props) {
 ```
 #### 클래스 컴포넌트
 - javascript es6 문법을 사용하여 만든 컴포넌트
+
 ```jsx
 class Welcome extends React.Component {
     render() {
@@ -135,10 +138,12 @@ class Welcome extends React.Component {
 ```
 - 컴포넌트의 이름
 - 항상 대문자로 시작해야함 (소문자로 입력하면 DOM 엘리먼트로 인식됨)
+
 ```jsx
 const element = <Welcome name="소플" />;
 ```
 #### 컴포넌트 렌더링
+
 ```jsx
 function Welcome(props) {
   return <h1>안녕하세요, {props.name}님!</h1>;
@@ -153,6 +158,7 @@ ReactDOM.render(
 ### 컴포넌트 합성과 추출
 #### 컴포넌트 합성
 - 복잡한 화면을 여러개의 Components로 나눠서 구현
+
 ```jsx
 function App() {
     return (
@@ -166,6 +172,7 @@ function App() {
 ```
 #### 컴포넌트 추출
 - 큰 컴포넌트를 작은 컴포넌트로 나누어 재사용성을 높임
+
 ```jsx
 function Component(props) {
     return (
@@ -190,6 +197,7 @@ function Component(props) {
 }
 ```
 #### Avatar 추출
+
 ```jsx
 function Avatar(props) {
     return (
@@ -221,6 +229,7 @@ function Component(props) {
 }
 ```
 #### UserInfo 추출
+
 ```jsx
 function UserInfo(props) {
     return (
@@ -251,6 +260,7 @@ function Component(props) {
 
 ### (실습) 댓글 컴포넌트 만들기
 - Comment.jsx
+
 ```jsx
 import React from "react";
 
@@ -274,6 +284,7 @@ export default Comment;
 ```
 
 - CommentList.jsx
+
 ```jsx
 import React from "react";
 import Comment from "./Comment";
@@ -300,6 +311,7 @@ export default CommentList;
 ```
 
 - App.jsx
+
 ```jsx
 const root = createRoot(document.getElementById('root'));
 root.render(
