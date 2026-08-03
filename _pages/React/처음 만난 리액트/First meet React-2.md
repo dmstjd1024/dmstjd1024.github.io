@@ -28,6 +28,7 @@ class LikeButton extends React.Component {
 }
 ```
 - state는 직접 수정할 수 없다.
+
 ```jsx
   (X)
   this.state = {name : 'Inje'}
@@ -160,6 +161,7 @@ function UserStatusWithCounter(props) {
 - Memoized value를 리턴하는 Hook
 - Memoization : 최적화를 사용하는 개념, 연산 값이 많은 값을 저장해놨다가 이전에 사용한 결과를 받아옴
 - 사용법
+
 ```jsx
 const memoizedValue = useMemo( () => {
     // 연산값이 높은 작업을 수행하여 결과를 반환
@@ -170,12 +172,14 @@ const memoizedValue = useMemo( () => {
 ```
 - 랜더링에서 일어날 내용을 넣으면 안됨 ex) `useEffect`에서 실행되어야 할 side effect
 - 의존성 배열을 넣지 않으면 컴포넌트가 랜더링 될 때마다 실행된다.
+
 ```jsx
 const memoizedValue = useMemo(
         () => computeExpensiveValue(a,b)
 );
 ```
 - 의존성배열이 빈 배열인 경우, 컴포넌트 mount 시에만 호출된다. -> mount 이후에는 변경되지 않음
+
 ```jsx
 const memoizedValue = useMemo(
         () => computeExpensiveValue(a,b),
@@ -185,6 +189,7 @@ const memoizedValue = useMemo(
 `useMemoHook`에 의존성 변수를 넣고, 해당 변수의 값이 변해야 할 경우에만 사용한다.
 ### useCallback()
 - 값이 아닌 함수를 반환
+
 ```jsx
 const memoizedCallback = useCallback(
     () => {
@@ -201,6 +206,7 @@ const memoizedCallback = useCallback(
 ### useRef()
 - reference를 사용하기 위한 Hook -> 특정 컴포넌트를 접근할 수 있는 객체
 - `refObject.current` 속성 -> ref 하는 엘리먼트
+
 ```jsx
 const refContainer = useRef(null);
 ```
@@ -227,6 +233,7 @@ function TextInputWithFocusButton() {
 내부의 데이터가 변경되었을 때, 별도로 알려주지 않는다.
 `useCallback`은 자식 엘리먼트가 변경되었을 때, 알림을 받을 수 있다.
 ### Callback Ref
+
 ```jsx
 const mesureRef = useCallback(node => {
     if(node !== null) {
@@ -260,6 +267,7 @@ function MyComponent(props) {
 - Hook을 재사용할 수 있는 방법
 - Custom Hook 추출하기
 - 이름이 `use` 로 시작하고, 내부에서 다른 Hook을 호출하는 하나의 자바스크립트 함수
+
 ```jsx
 // useUserStatus 를 사용하여 사용자 상태를 관리하는 Custom Hook
 function UserStatus(props) {
@@ -284,6 +292,7 @@ function UserListItem(props) {
 - 여러개의 컴포넌트에서 하나의 Custom Hook을 사용할 때, 컴포넌트 내부에 있는 모든 state와 effect는 전부 분리되어 있다.
 - Custom Hook은 컴포넌트의 상태를 공유하지 않는다. (분리된 state와 effect를 가진다.)
 - 분리된 데이터들을 공유하고싶을 때,
+
 ```jsx
 function CheckUserStatus(props) {
     / ** Custom Hook을 사용하여 사용자 상태를 관리하는 예시
