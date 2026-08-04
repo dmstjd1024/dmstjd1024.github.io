@@ -35,10 +35,10 @@ bundle exec jekyll serve
 ```
   
 ### 다른 이름으로 저장
-  <img src="/img/posts/github-blog-local-batch/save.png" width="800" height="400">
+  ![다른 이름으로 저장](/assets/img/posts/github-blog-local-batch/save.svg)
 
 이렇게 저장하면 bat 파일이 생성된다.
 
-  <img src="/img/posts/github-blog-local-batch/bat.png">
+  ![bat 파일 실행 결과](/assets/img/posts/github-blog-local-batch/bat.svg)
   
 실행하면 http://localhost:4000 포트에서 돌아가고 있는 것을 확인할 수 있다.
