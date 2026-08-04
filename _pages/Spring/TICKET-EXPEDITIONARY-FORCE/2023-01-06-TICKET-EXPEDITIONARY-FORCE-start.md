@@ -8,6 +8,8 @@ tags:
 
 date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
+redirect_from:
+  - /spring/TICKET-EXPEDITIONARY-FORCE-start/
 ---
 
 ## 프로젝트 시작
