@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 250" role="img" aria-label="생성된 bat 파일을 실행하면 로컬 서버가 뜨는 과정">
+  <marker id="bat-ba" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <rect class="dg-card" x="24" y="40" width="180" height="60" rx="8"/>
+  <text class="dg-m" x="44" y="76">blog.bat</text>
+  <text class="dg-s" x="24" y="30">더블클릭</text>
+
+  <path class="dg-arw" d="M212 70 H258" marker-end="url(#bat-ba)"/>
+
+  <rect class="dg-term" x="266" y="34" width="430" height="118" rx="8"/>
+  <text class="dg-tg" x="286" y="60">&gt; bundle exec jekyll serve</text>
+  <text class="dg-tm" x="286" y="84">Server running...</text>
+  <text class="dg-tb" x="286" y="108">http://localhost:4000</text>
+  <text class="dg-tm" x="286" y="132">press ctrl-c to stop</text>
+
+  <text class="dg-s" x="24" y="196">루비 프롬프트를 열고 명령을 매번 입력할 필요 없이 파일 하나로 실행된다</text>
+  <text class="dg-s" x="24" y="220">브라우저에서 localhost:4000 으로 접속하면 블로그가 뜬다</text>
+</svg>
