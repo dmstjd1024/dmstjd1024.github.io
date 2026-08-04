@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300" role="img" aria-label="IntelliJ 에서 Jira 서버를 연결할 때 입력하는 항목 목록">
+
+  <text class="dg-s" x="24" y="30">IntelliJ 설정 경로</text>
+  <text class="dg-path" x="24" y="52">Settings → Tools → Tasks → Servers → Add → JIRA</text>
+
+  <rect class="dg-card" x="24" y="72" width="652" height="196" rx="10"/>
+  <text class="dg-h" x="44" y="102">입력 항목</text>
+
+  <rect class="dg-row" x="44" y="118" width="612" height="38" rx="6"/>
+  <text class="dg-k" x="60"  y="142">Server URL</text>
+  <text class="dg-v" x="220" y="142">https://&lt;조직&gt;.atlassian.net</text>
+
+  <rect class="dg-row" x="44" y="164" width="612" height="38" rx="6"/>
+  <text class="dg-k" x="60"  y="188">Username</text>
+  <text class="dg-v" x="220" y="188">Jira 계정 이메일</text>
+
+  <rect class="dg-row" x="44" y="210" width="612" height="38" rx="6"/>
+  <text class="dg-k" x="60"  y="234">API Token</text>
+  <text class="dg-v" x="220" y="234">Atlassian 에서 발급한 토큰</text>
+
+  <text class="dg-s" x="24" y="288">원본 캡처 대신 재구성한 도식 · 실제 화면과 다를 수 있습니다</text>
+</svg>

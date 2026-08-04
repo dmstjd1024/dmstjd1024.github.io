@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="메모장에서 다른 이름으로 저장할 때 파일 이름과 형식을 지정하는 방법">
+
+  <text class="dg-h" x="24" y="32">다른 이름으로 저장</text>
+
+  <rect class="dg-card" x="24" y="48" width="672" height="150" rx="10"/>
+
+  <rect class="dg-hl" x="44" y="68" width="632" height="42" rx="6"/>
+  <text class="dg-k" x="60"  y="94">파일 이름</text>
+  <text class="dg-m" x="200" y="94">blog.bat</text>
+  <text class="dg-b" x="560" y="94">확장자 .bat</text>
+
+  <rect class="dg-row" x="44" y="120" width="632" height="42" rx="6"/>
+  <text class="dg-k" x="60"  y="146">파일 형식</text>
+  <text class="dg-m" x="200" y="146">모든 파일 (*.*)</text>
+
+  <text class="dg-s" x="44" y="186">형식을 "모든 파일"로 바꾸지 않으면 blog.bat.txt 로 저장된다</text>
+
+  <text class="dg-s" x="24" y="238">원본 캡처 대신 재구성한 도식 · 실제 화면과 다를 수 있습니다</text>
+</svg>
