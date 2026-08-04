@@ -38,6 +38,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-loading-lazy
+  # 2023 년 테마를 바꾸면서 글 주소 규칙이 /:categories/:title/ 에서
+  # /:path.html 로 바뀌었다. 그때 걸어둔 외부 링크와 검색 결과는 전부
+  # 404 가 된다. 각 글의 redirect_from 에 옛 주소를 적어두면 그 주소로
+  # 들어온 사람을 지금 주소로 넘겨준다.
+  - jekyll-redirect-from
 
 exclude:
   - docs/

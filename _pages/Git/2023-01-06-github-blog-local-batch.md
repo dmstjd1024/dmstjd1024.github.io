@@ -10,6 +10,8 @@ tags:
 
 date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
+redirect_from:
+  - /git/github-blog-local-batch/
 ---
 
 ## 깃허브 블로그 실행 파일
