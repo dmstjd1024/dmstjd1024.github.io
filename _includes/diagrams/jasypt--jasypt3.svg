@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Tomcat VM options 에 secretKey 를 외부 변수로 등록하는 방법">
+
+  <text class="dg-s" x="24" y="28">설정 위치</text>
+  <text class="dg-path" x="24" y="50">Run/Debug Configurations → Tomcat Server → VM options</text>
+
+  <rect class="dg-code" x="24" y="70" width="672" height="66" rx="8"/>
+  <text class="dg-f" x="44" y="100">-D</text>
+  <text class="dg-m" x="60" y="100">jasypt.encryptor.password=&quot;secretKey값&quot;</text>
+  <text class="dg-s" x="44" y="124">커스텀 변수로 등록하면 실행 시 이 값을 읽어 복호화한다</text>
+
+  <rect class="dg-warn" x="24" y="156" width="672" height="76" rx="8"/>
+  <text class="dg-k" x="44" y="184">주의</text>
+  <text class="dg-s" x="44" y="210">테스트를 돌릴 때에도 같은 설정 변수를 넣어야 동작한다</text>
+
+  <text class="dg-s" x="24" y="270">secretKey 를 소스에 넣지 않고 실행 환경에만 두는 방식이다</text>
+</svg>

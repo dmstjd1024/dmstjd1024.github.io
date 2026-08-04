@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-label="IntelliJ 의 Default task 목록에서 Jira 이슈를 고르는 과정">
+
+  <text class="dg-s" x="24" y="28">Jira 연결 후 나타나는 Default task 목록</text>
+
+  <rect class="dg-card" x="24" y="44" width="592" height="160" rx="10"/>
+
+  <rect class="dg-item" x="44" y="62" width="552" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="84">Default task</text>
+
+  <rect class="dg-sel" x="44" y="104" width="552" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="126">PROJ-12  로그인 API 구현</text>
+  <text class="dg-b" x="520" y="126">← 선택</text>
+
+  <rect class="dg-item" x="44" y="146" width="552" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="168">PROJ-13  회원 조회 화면</text>
+
+  <text class="dg-s" x="24" y="232">할당받은 이슈를 고르면 그에 맞는 feature 브랜치가 자동으로 만들어진다</text>
+</svg>
