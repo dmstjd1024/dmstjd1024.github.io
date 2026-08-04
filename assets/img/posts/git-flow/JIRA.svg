@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="880" height="200" role="img" aria-label="Jira 이슈 생성부터 develop 병합까지의 운영 순서 흐름도">
+  <style>
+    .bg   { fill:#fff; }
+    .card { fill:#f6f8fa; stroke:#d1d9e0; }
+    .lead { fill:#ddf4ff; stroke:#0969da; }
+    .t    { fill:#1f2328; font:600 14px ui-sans-serif,-apple-system,'Pretendard',sans-serif; }
+    .s    { fill:#656d76; font:400 12px ui-sans-serif,-apple-system,'Pretendard',sans-serif; }
+    .n    { fill:#0969da; font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .arw  { stroke:#afb8c1; fill:none; stroke-width:1.5; }
+    @media (prefers-color-scheme: dark) {
+      .bg   { fill:#0d1117; }
+      .card { fill:#151b23; stroke:#3d444d; }
+      .lead { fill:#121d2f; stroke:#4493f8; }
+      .t    { fill:#e6edf3; }
+      .s    { fill:#9198a1; }
+      .n    { fill:#4493f8; }
+      .arw  { stroke:#565e68; }
+    }
+  </style>
+  <rect class="bg" width="880" height="200"/>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <rect class="lead" x="20"  y="52" width="150" height="62" rx="8"/>
+  <text class="n" x="34" y="76">1</text>
+  <text class="t" x="34" y="94">Jira 이슈 생성</text>
+
+  <path class="arw" d="M176 83 H206" marker-end="url(#a)"/>
+
+  <rect class="card" x="212" y="52" width="150" height="62" rx="8"/>
+  <text class="n" x="226" y="76">2</text>
+  <text class="t" x="226" y="94">IntelliJ 연결</text>
+
+  <path class="arw" d="M368 83 H398" marker-end="url(#a)"/>
+
+  <rect class="card" x="404" y="52" width="150" height="62" rx="8"/>
+  <text class="n" x="418" y="76">3</text>
+  <text class="t" x="418" y="94">feature 브랜치</text>
+
+  <path class="arw" d="M560 83 H590" marker-end="url(#a)"/>
+
+  <rect class="card" x="596" y="52" width="120" height="62" rx="8"/>
+  <text class="n" x="610" y="76">4</text>
+  <text class="t" x="610" y="94">commit</text>
+
+  <path class="arw" d="M722 83 H752" marker-end="url(#a)"/>
+
+  <rect class="card" x="758" y="52" width="102" height="62" rx="8"/>
+  <text class="n" x="772" y="76">5</text>
+  <text class="t" x="772" y="94">PR·리뷰</text>
+
+  <path class="arw" d="M809 120 V146 H440 V128" marker-end="url(#a)"/>
+  <text class="s" x="440" y="168" text-anchor="middle">리뷰 통과 후 develop 에 merge · feature 브랜치 삭제</text>
+
+  <text class="s" x="20" y="30">운영 순서</text>
+</svg>
