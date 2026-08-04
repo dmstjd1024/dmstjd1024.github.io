@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="Jira 이슈 번호로 feature 브랜치가 자동 생성되는 과정">
+  <marker id="feature-fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-s" x="24" y="30">Jira 이슈</text>
+  <rect class="dg-card" x="24" y="44" width="260" height="56" rx="8"/>
+  <text class="dg-m" x="44" y="78">PROJ-12  로그인 API 구현</text>
+
+  <path class="dg-arw" d="M300 72 H352" marker-end="url(#feature-fa)"/>
+  <text class="dg-s" x="326" y="62" text-anchor="middle">자동 생성</text>
+
+  <text class="dg-s" x="368" y="30">feature 브랜치</text>
+  <rect class="dg-card" x="368" y="44" width="328" height="56" rx="8"/>
+  <text class="dg-g" x="388" y="78">feature/PROJ-12-로그인-API-구현</text>
+
+  <rect class="dg-code" x="24" y="128" width="672" height="76" rx="8"/>
+  <text class="dg-m" x="44" y="156">$ git flow feature start PROJ-12</text>
+  <text class="dg-s" x="44" y="182">이슈를 고르면 IntelliJ 가 이 명령을 대신 실행해 브랜치를 만든다</text>
+</svg>

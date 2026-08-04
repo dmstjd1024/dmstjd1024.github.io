@@ -57,5 +57,6 @@ $baseurl: "{{ site.baseurl }}";
 @import "list";
 @import "post";
 @import "syntax";
+@import "diagram";
 @import "search";
 @import "transitions";

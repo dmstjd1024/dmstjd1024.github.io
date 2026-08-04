@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="application.yml 에서 암호문을 ENC 로 감싸 넣는 방법">
+
+  <text class="dg-h" x="24" y="32">application.yml</text>
+
+  <rect class="dg-code" x="24" y="48" width="672" height="164" rx="8"/>
+  <text class="dg-key" x="44"  y="78">spring:</text>
+  <text class="dg-key" x="68"  y="102">datasource:</text>
+  <text class="dg-key" x="92"  y="126">username:</text>
+  <text class="dg-enc" x="188" y="126">ENC(암호화된_문자열)</text>
+  <text class="dg-key" x="92"  y="150">password:</text>
+  <text class="dg-enc" x="188" y="150">ENC(암호화된_문자열)</text>
+  <text class="dg-cm"  x="44"  y="188">복사한 Encrypted String 을 ENC( ) 안에 넣는다</text>
+
+  <text class="dg-s" x="24" y="244">배포 시 Jasypt 가 ENC( ) 안의 값을 자동으로 풀어서 읽는다</text>
+  <text class="dg-s" x="24" y="266">평문이 저장소에 남지 않으므로 그대로 커밋해도 된다</text>
+</svg>
