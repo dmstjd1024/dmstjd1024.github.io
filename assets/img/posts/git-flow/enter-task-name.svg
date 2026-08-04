@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" width="640" height="260" role="img" aria-label="IntelliJ 의 Default task 목록에서 Jira 이슈를 고르는 과정">
+  <style>
+    .bg  { fill:#fff; }
+    .card{ fill:#f6f8fa; stroke:#d1d9e0; }
+    .item{ fill:#fff; stroke:#d1d9e0; }
+    .sel { fill:#ddf4ff; stroke:#0969da; }
+    .h   { fill:#1f2328; font:600 14px ui-sans-serif,-apple-system,'Pretendard',sans-serif; }
+    .k   { fill:#1f2328; font:400 13px ui-monospace,SFMono-Regular,Menlo,monospace; }
+    .s   { fill:#656d76; font:400 12px ui-sans-serif,-apple-system,'Pretendard',sans-serif; }
+    .b   { fill:#0969da; font:600 12px ui-sans-serif,-apple-system,'Pretendard',sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .bg  { fill:#0d1117; }
+      .card{ fill:#151b23; stroke:#3d444d; }
+      .item{ fill:#0d1117; stroke:#3d444d; }
+      .sel { fill:#121d2f; stroke:#4493f8; }
+      .h   { fill:#e6edf3; }
+      .k   { fill:#e6edf3; }
+      .s   { fill:#9198a1; }
+      .b   { fill:#4493f8; }
+    }
+  </style>
+  <rect class="bg" width="640" height="260"/>
+
+  <text class="s" x="24" y="28">Jira 연결 후 나타나는 Default task 목록</text>
+
+  <rect class="card" x="24" y="44" width="592" height="160" rx="10"/>
+
+  <rect class="item" x="44" y="62" width="552" height="34" rx="6"/>
+  <text class="k" x="60" y="84">Default task</text>
+
+  <rect class="sel" x="44" y="104" width="552" height="34" rx="6"/>
+  <text class="k" x="60" y="126">PROJ-12  로그인 API 구현</text>
+  <text class="b" x="520" y="126">← 선택</text>
+
+  <rect class="item" x="44" y="146" width="552" height="34" rx="6"/>
+  <text class="k" x="60" y="168">PROJ-13  회원 조회 화면</text>
+
+  <text class="s" x="24" y="232">할당받은 이슈를 고르면 그에 맞는 feature 브랜치가 자동으로 만들어진다</text>
+</svg>
