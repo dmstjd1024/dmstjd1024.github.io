@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="클래스는 하나만 상속받지만 인터페이스는 여럿을 구현할 수 있다">
+  <marker id="ls8im-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">인터페이스는 여러 개를 한꺼번에 받을 수 있다</text>
+
+  <rect class="dg-lead" x="100" y="56" width="180" height="48" rx="8"/>
+  <text class="dg-t" x="120" y="80">Moving</text>
+  <text class="dg-s" x="120" y="98">move()</text>
+
+  <rect class="dg-lead" x="420" y="56" width="180" height="48" rx="8"/>
+  <text class="dg-t" x="440" y="80">Shooting</text>
+  <text class="dg-s" x="440" y="98">shoot()</text>
+
+  <path class="dg-arw" d="M190 112 V132 H350 V152" marker-end="url(#ls8im-a)"/>
+  <path class="dg-arw" d="M510 112 V132 H350 V152" marker-end="url(#ls8im-a)"/>
+
+  <rect class="dg-out" x="250" y="160" width="200" height="48" rx="8"/>
+  <text class="dg-t" x="270" y="184">Player</text>
+  <text class="dg-s" x="270" y="202">둘 다 가진 인터페이스</text>
+
+  <path class="dg-arw" d="M350 216 V236" marker-end="url(#ls8im-a)"/>
+
+  <rect class="dg-row" x="250" y="242" width="200" height="42" rx="8"/>
+  <text class="dg-t" x="270" y="268">NBAPlayer</text>
+
+  <text class="dg-v" x="24" y="184">클래스 상속은</text>
+  <text class="dg-v" x="24" y="204">하나만 되지만</text>
+
+  <text class="dg-s" x="480" y="184">인터페이스는</text>
+  <text class="dg-s" x="480" y="204">몇 개든 된다</text>
+
+  <text class="dg-s" x="24" y="296">몸통이 없으니 어느 것을 쓸지 헷갈릴 일이 없기 때문이다</text>
+</svg>

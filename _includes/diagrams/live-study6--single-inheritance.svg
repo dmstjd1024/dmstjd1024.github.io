@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="자바가 다중 상속을 막는 이유와 단일 상속 구조">
+  <marker id="ls6si-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">자바가 다중 상속을 막은 이유</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="176" rx="10"/>
+  <text class="dg-t" x="44" y="76">다중 상속 (자바에 없음)</text>
+
+  <rect class="dg-row" x="44" y="92" width="130" height="40" rx="6"/>
+  <text class="dg-k" x="60" y="117">A</text>
+  <text class="dg-s" x="90" y="117">print()</text>
+
+  <rect class="dg-row" x="202" y="92" width="130" height="40" rx="6"/>
+  <text class="dg-k" x="218" y="117">B</text>
+  <text class="dg-s" x="248" y="117">print()</text>
+
+  <path class="dg-arw" d="M109 140 V166" marker-end="url(#ls6si-a)"/>
+  <path class="dg-arw" d="M267 140 V166" marker-end="url(#ls6si-a)"/>
+
+  <rect class="dg-warn" x="88" y="172" width="200" height="40" rx="6"/>
+  <text class="dg-k" x="108" y="197">C — 어느 print() ?</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="176" rx="10"/>
+  <text class="dg-t" x="388" y="76">단일 상속 (자바)</text>
+
+  <rect class="dg-lead" x="468" y="92" width="130" height="40" rx="6"/>
+  <text class="dg-k" x="484" y="117">A</text>
+  <text class="dg-s" x="514" y="117">print()</text>
+
+  <path class="dg-arw" d="M533 140 V166" marker-end="url(#ls6si-a)"/>
+
+  <rect class="dg-out" x="468" y="172" width="130" height="40" rx="6"/>
+  <text class="dg-k" x="484" y="197">B</text>
+  <text class="dg-s" x="514" y="197">헷갈릴 일 없음</text>
+
+  <text class="dg-v" x="24" y="256">조상이 둘이면 같은 이름의 메서드를 구별할 방법이 없다</text>
+  <text class="dg-s" x="24" y="282">편리함을 포기하고 명확함을 택한 결정이다 — 대신 인터페이스로 여럿을 구현한다</text>
+</svg>

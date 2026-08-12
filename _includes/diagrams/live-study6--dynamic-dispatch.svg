@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="같은 코드가 실제로 담긴 객체에 따라 다른 메서드를 실행하는 동적 디스패치">
+  <marker id="ls6dd-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">어느 메서드가 불릴지는 실행할 때 정해진다</text>
+
+  <rect class="dg-code" x="24" y="48" width="360" height="36" rx="4"/>
+  <text class="dg-key" x="44" y="72">Player p = ... ;   p.play();</text>
+  <text class="dg-s" x="400" y="72">코드는 이 한 줄뿐인데</text>
+
+  <text class="dg-s" x="24" y="108">컴파일할 때는 p 가 Player 라는 것만 안다 — 실제로 뭐가 들어올지는 모른다</text>
+
+  <rect class="dg-lane" x="24" y="124" width="328" height="128" rx="10"/>
+  <text class="dg-t" x="44" y="150">p 에 NBAPlayer 가 담겼다면</text>
+  <rect class="dg-row" x="44" y="164" width="288" height="34" rx="6"/>
+  <text class="dg-v" x="60" y="186">new NBAPlayer()</text>
+  <path class="dg-arw" d="M188 202 V216" marker-end="url(#ls6dd-a)"/>
+  <rect class="dg-out" x="44" y="220" width="288" height="26" rx="6"/>
+  <text class="dg-k" x="60" y="239">NBAPlayer 의 play()</text>
+
+  <rect class="dg-lane" x="368" y="124" width="328" height="128" rx="10"/>
+  <text class="dg-t" x="388" y="150">SoccerPlayer 가 담겼다면</text>
+  <rect class="dg-row" x="388" y="164" width="288" height="34" rx="6"/>
+  <text class="dg-v" x="404" y="186">new SoccerPlayer()</text>
+  <path class="dg-arw" d="M532 202 V216" marker-end="url(#ls6dd-a)"/>
+  <rect class="dg-out" x="388" y="220" width="288" height="26" rx="6"/>
+  <text class="dg-k" x="404" y="239">SoccerPlayer 의 play()</text>
+
+  <text class="dg-v" x="24" y="284">호출할 메서드를 실행 시점에 고르는 것 — 이것이 동적 메서드 디스패치다</text>
+  <text class="dg-s" x="24" y="308">덕분에 새 자식 클래스를 추가해도 호출하는 쪽 코드는 그대로 둬도 된다</text>
+</svg>

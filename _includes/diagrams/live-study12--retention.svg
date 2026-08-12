@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="SOURCE, CLASS, RUNTIME 유지 정책이 각 단계에서 애노테이션을 어디까지 남기는지">
+  <marker id="ls12ret-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">애노테이션이 어디까지 살아남나</text>
+
+  <text class="dg-s" x="150" y="60">.java</text>
+  <text class="dg-s" x="330" y="60">.class</text>
+  <text class="dg-s" x="530" y="60">실행 중</text>
+
+  <path class="dg-arw" d="M230 54 H300" marker-end="url(#ls12ret-a)"/>
+  <path class="dg-arw" d="M420 54 H500" marker-end="url(#ls12ret-a)"/>
+
+  <rect class="dg-lane" x="24" y="72" width="672" height="56" rx="8"/>
+  <text class="dg-t" x="44" y="106">SOURCE</text>
+  <rect class="dg-lead" x="130" y="82" width="140" height="36" rx="6"/>
+  <text class="dg-b" x="176" y="106">남는다</text>
+  <rect class="dg-row" x="300" y="82" width="140" height="36" rx="6"/>
+  <text class="dg-s" x="342" y="106">사라짐</text>
+  <rect class="dg-row" x="470" y="82" width="140" height="36" rx="6"/>
+  <text class="dg-s" x="512" y="106">사라짐</text>
+
+  <rect class="dg-lane" x="24" y="140" width="672" height="56" rx="8"/>
+  <text class="dg-t" x="44" y="174">CLASS</text>
+  <text class="dg-s" x="44" y="190">기본값</text>
+  <rect class="dg-lead" x="130" y="150" width="140" height="36" rx="6"/>
+  <text class="dg-b" x="176" y="174">남는다</text>
+  <rect class="dg-lead" x="300" y="150" width="140" height="36" rx="6"/>
+  <text class="dg-b" x="346" y="174">남는다</text>
+  <rect class="dg-row" x="470" y="150" width="140" height="36" rx="6"/>
+  <text class="dg-s" x="500" y="174">읽을 수 없음</text>
+
+  <rect class="dg-lane" x="24" y="208" width="672" height="56" rx="8"/>
+  <text class="dg-t" x="44" y="242">RUNTIME</text>
+  <rect class="dg-lead" x="130" y="218" width="140" height="36" rx="6"/>
+  <text class="dg-b" x="176" y="242">남는다</text>
+  <rect class="dg-lead" x="300" y="218" width="140" height="36" rx="6"/>
+  <text class="dg-b" x="346" y="242">남는다</text>
+  <rect class="dg-out" x="470" y="218" width="140" height="36" rx="6"/>
+  <text class="dg-b" x="500" y="242">읽을 수 있다</text>
+
+  <text class="dg-s" x="24" y="288">리플렉션으로 애노테이션을 읽으려면 RUNTIME 이어야 한다 — Spring 이 이 방식을 쓴다</text>
+</svg>

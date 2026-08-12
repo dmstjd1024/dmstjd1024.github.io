@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Checked 예외는 컴파일러가 처리를 강제하고 Unchecked 는 강제하지 않는다">
+  <marker id="ls9cu-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">컴파일러가 강제하느냐로 갈린다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="180" rx="10"/>
+  <text class="dg-t" x="44" y="76">Checked</text>
+  <text class="dg-s" x="130" y="76">RuntimeException 이 아닌 것</text>
+
+  <rect class="dg-row" x="44" y="90" width="288" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="110">IOException · SQLException</text>
+
+  <path class="dg-arw" d="M188 124 V140" marker-end="url(#ls9cu-a)"/>
+
+  <rect class="dg-lead" x="44" y="146" width="288" height="46" rx="6"/>
+  <text class="dg-k" x="60" y="168">try-catch 하거나 throws 해야</text>
+  <text class="dg-s" x="60" y="186">안 하면 컴파일이 안 된다</text>
+
+  <text class="dg-s" x="44" y="214">파일이 없을 수도, 끊길 수도 있으니 대비하라는 뜻</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="180" rx="10"/>
+  <text class="dg-t" x="388" y="76">Unchecked</text>
+  <text class="dg-s" x="500" y="76">RuntimeException 계열</text>
+
+  <rect class="dg-row" x="388" y="90" width="288" height="30" rx="6"/>
+  <text class="dg-v" x="404" y="110">NullPointerException 등</text>
+
+  <path class="dg-arw" d="M532 124 V140" marker-end="url(#ls9cu-a)"/>
+
+  <rect class="dg-row" x="388" y="146" width="288" height="46" rx="6"/>
+  <text class="dg-k" x="404" y="168">처리하지 않아도 컴파일된다</text>
+  <text class="dg-s" x="404" y="186">막을지 말지는 개발자 선택</text>
+
+  <text class="dg-s" x="388" y="214">코드를 잘못 쓴 것이니 고쳐서 없애는 게 맞다</text>
+
+  <text class="dg-s" x="24" y="276">Unchecked 를 catch 로 덮으면 버그를 감추는 셈이 된다</text>
+</svg>
