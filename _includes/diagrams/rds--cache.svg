@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="엘라스틱캐시의 두 엔진 맴캐시드와 레디스 비교">
+
+  <text class="dg-h" x="24" y="30">엘라스틱캐시 엔진 비교</text>
+
+  <rect class="dg-item" x="24" y="48" width="328" height="152" rx="10"/>
+  <text class="dg-t" x="44" y="80">맴캐시드</text>
+  <rect class="dg-row" x="44" y="96" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="118">다루는 자료</text>
+  <text class="dg-v" x="170" y="118">단순 문자열</text>
+  <rect class="dg-row" x="44" y="138" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="160">특징</text>
+  <text class="dg-v" x="170" y="160">몸집이 늘었다 줄었다</text>
+
+  <rect class="dg-item" x="368" y="48" width="328" height="152" rx="10"/>
+  <text class="dg-t" x="388" y="80">레디스</text>
+  <rect class="dg-row" x="388" y="96" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="118">다루는 자료</text>
+  <text class="dg-v" x="514" y="118">리스트 · 해시 등</text>
+  <rect class="dg-row" x="388" y="138" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="160">특징</text>
+  <text class="dg-v" x="514" y="160">다중 가용 영역 지원</text>
+
+  <text class="dg-s" x="24" y="232">단순히 값만 캐싱하면 맴캐시드로 충분하고, 정렬된 목록까지 다루려면 레디스를 쓴다</text>
+</svg>

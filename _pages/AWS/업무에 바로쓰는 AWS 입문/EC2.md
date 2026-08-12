@@ -23,6 +23,10 @@ thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
 - **리저브드**: 저렴한 비용, 1~3년 임대, 인스턴스 크기 변경 불가능
 - **스팟 인스턴스**: 입찰, 단기 작업에 적합
 
+<div class="diagram" role="img" aria-label="EC2 비용 지불 방법 비교">
+{% include diagrams/ec2--pricing.svg %}
+</div>
+
 ## EBS 란
 
 ## EBS란
@@ -40,6 +44,11 @@ thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
 (Elastic Load Balancer) 로드 밸런싱 서비스로, 여러 인스턴스에 트래픽을 분산시켜 가용성과 안정성 향상
 
 ## ELB 타입
+
+<div class="diagram" role="img" aria-label="ELB 타입별 동작 계층">
+{% include diagrams/ec2--elb-type.svg %}
+</div>
+
 ### ALB(애플리케이션 로드 밸런서)
 - Application OSI Layer 에서 작동. Http/HTTPS 트래픽을 처리하며, URL 기반 라우팅, 호스트 기반 라우팅, WebSocket 지원 등 다양한 기능 제공
 - ALB 의 고급 설정을 통해 원하는 서버로 직접 라우팅할 수 있다.
@@ -73,5 +82,9 @@ thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
 -> X-Forwarded-For 헤더에 출처 정보가 담겨있다
 -> 기존 public IP address를 찾을 수 있다.
 ```
+
+<div class="diagram" role="img" aria-label="X-Forwarded-For 헤더가 필요한 이유">
+{% include diagrams/ec2--x-forwarded-for.svg %}
+</div>
 
 
