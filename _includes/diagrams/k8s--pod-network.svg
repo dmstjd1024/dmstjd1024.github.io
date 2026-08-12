@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="파드 네트워크가 로컬과 분리되어 있어 포트 포워딩이 필요한 구조">
+  <marker id="k8spn-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">파드에 왜 바로 접속이 안 되나</text>
+
+  <rect class="dg-item" x="24" y="56" width="180" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="82">내 컴퓨터</text>
+  <text class="dg-s" x="44" y="104">localhost:80</text>
+  <text class="dg-s" x="44" y="120">으로 열어봐도</text>
+
+  <rect class="dg-warn" x="236" y="66" width="120" height="52" rx="6"/>
+  <text class="dg-k" x="256" y="90">막혀 있다</text>
+  <text class="dg-s" x="256" y="108">서로 분리된 망</text>
+
+  <rect class="dg-lane" x="388" y="48" width="308" height="96" rx="10"/>
+  <text class="dg-t" x="408" y="74">파드</text>
+  <rect class="dg-row" x="408" y="88" width="268" height="40" rx="6"/>
+  <text class="dg-v" x="424" y="113">nginx 컨테이너 : 80</text>
+  <text class="dg-s" x="408" y="140">파드 안에서는 컨테이너끼리 망을 공유한다</text>
+
+  <text class="dg-t" x="24" y="184">그래서 두 가지 방법을 쓴다</text>
+
+  <rect class="dg-row" x="24" y="196" width="328" height="64" rx="8"/>
+  <text class="dg-k" x="44" y="220">파드 안으로 들어간다</text>
+  <text class="dg-s" x="44" y="242">kubectl exec -it nginx-pod -- bash</text>
+
+  <rect class="dg-out" x="368" y="196" width="328" height="64" rx="8"/>
+  <text class="dg-k" x="388" y="220">포트를 이어준다</text>
+  <text class="dg-s" x="388" y="242">kubectl port-forward pod/nginx-pod 80:80</text>
+
+  <path class="dg-arw" d="M364 92 H380" marker-end="url(#k8spn-a)"/>
+
+  <text class="dg-s" x="24" y="288">도커에서 컨테이너 안팎이 나뉘던 것과 같은 이유다</text>
+</svg>

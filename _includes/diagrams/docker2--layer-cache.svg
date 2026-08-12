@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="Dockerfile 에서 자주 바뀌는 인스트럭션을 뒤에 두면 캐시를 더 많이 재사용한다">
+  <marker id="dk2lc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">캐시를 살리는 인스트럭션 순서</text>
+  <text class="dg-s" x="24" y="50">app.js 만 고치고 다시 빌드했을 때</text>
+
+  <rect class="dg-lane" x="24" y="66" width="328" height="212" rx="10"/>
+  <text class="dg-t" x="44" y="92">최적화 전</text>
+
+  <rect class="dg-row" x="44" y="106" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="124">FROM</text>
+  <text class="dg-b" x="250" y="124">캐시 사용</text>
+
+  <rect class="dg-warn" x="44" y="138" width="288" height="26" rx="4"/>
+  <text class="dg-k" x="60" y="156">COPY app.js</text>
+  <text class="dg-k" x="240" y="156">다시 실행</text>
+
+  <rect class="dg-warn" x="44" y="170" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="188">ENV</text>
+  <text class="dg-k" x="240" y="188">다시 실행</text>
+
+  <rect class="dg-warn" x="44" y="202" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="220">CMD</text>
+  <text class="dg-k" x="240" y="220">다시 실행</text>
+
+  <text class="dg-s" x="44" y="252">한 줄 바뀌었는데 아래가 전부 다시 돈다</text>
+
+  <rect class="dg-lane" x="368" y="66" width="328" height="212" rx="10"/>
+  <text class="dg-t" x="388" y="92">최적화 후</text>
+
+  <rect class="dg-row" x="388" y="106" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="404" y="124">FROM</text>
+  <text class="dg-b" x="594" y="124">캐시 사용</text>
+
+  <rect class="dg-row" x="388" y="138" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="404" y="156">CMD</text>
+  <text class="dg-b" x="594" y="156">캐시 사용</text>
+
+  <rect class="dg-row" x="388" y="170" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="404" y="188">ENV</text>
+  <text class="dg-b" x="594" y="188">캐시 사용</text>
+
+  <rect class="dg-lead" x="388" y="202" width="288" height="26" rx="4"/>
+  <text class="dg-k" x="404" y="220">COPY app.js</text>
+  <text class="dg-k" x="584" y="220">이것만 실행</text>
+
+  <text class="dg-s" x="388" y="252">바뀌는 것을 맨 아래로 내렸다</text>
+
+  <text class="dg-v" x="24" y="304">한 레이어가 바뀌면 그 아래는 전부 캐시가 무효가 된다</text>
+  <text class="dg-s" x="24" y="328">그래서 잘 안 바뀌는 것을 위에, 자주 바뀌는 것을 아래에 둔다</text>
+</svg>

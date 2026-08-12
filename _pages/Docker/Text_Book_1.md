@@ -19,10 +19,18 @@ thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 docker container run diamol/ch02-hello-diamol
 ```
 애플리케이션을 컨테이너에서 실행할 수 있도록 패키징(빌드) -> 다른사람들과 공유(공유) -> 패키지 내려받은 사람이 컨테이너를 통해 애플리케이션 실행(실행)
+
+<div class="diagram" role="img" aria-label="빌드, 공유, 실행 세 단계">
+{% include diagrams/docker1--build-share-run.svg %}
+</div>
 ### 컨테이너란 무엇인가?
 - 애플리케이션이 한 컴퓨팅 환경에서 다른 컴퓨팅 환경으로 빠르고 안정적으로 실행될 수 있도록 코드와 모든 종속성을 패키징 하는 표준 소프트웨어 단위입니다. 
 가상머신 : 호스트 컴퓨터의 운영체제를 공유하지 않음
  컨테이너 : 호스트 컴퓨터의 운영체제 공유
+
+<div class="diagram" role="img" aria-label="가상머신과 컨테이너의 구조 차이">
+{% include diagrams/docker1--vm-vs-container.svg %}
+</div>
 ### 컨테이너를 원격 컴퓨터처럼 사용하기
 
 `--tty` : 터미널 세션을 통해 컨테이너 조작
