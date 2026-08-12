@@ -32,6 +32,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 리소스 하나 읽는 GET 요청 → 인증·인가·로깅만으로 DB 4회 접근
 - 캐시 없음 → 100% 매 요청 발생
 
+<div class="diagram" role="img" aria-label="필터 체인에서 DB 를 네 번 접근하는 구조">
+{% include diagrams/auth-filter--four-queries.svg %}
+</div>
+
 ## 어떻게 고쳤나 — 하루에 커밋 다섯 개
 
 - 2026년 5월 7일 하루, 커밋 5개가 순서대로 반영
@@ -60,6 +64,10 @@ User findByUsernameForAudit(String username);
 - 메서드 하나 증가
 - 대신 비동기 경계에서 암묵적 컨텍스트 의존 제거
 - 로깅 필터가 이미 아는 값을 넘기는 것뿐 → 전파 설정 삽입보다 의존 관계 명확
+
+<div class="diagram" role="img" aria-label="SecurityContext 가 비동기 스레드로 전파되지 않는 문제와 두 선택지">
+{% include diagrams/auth-filter--securitycontext.svg %}
+</div>
 
 ### 2. 중복 조회를 request attribute로 제거
 
@@ -91,6 +99,10 @@ public ConcurrentHashMap<String, User> userAuthCache() {
 - 한 줄짜리 설정 변경
 
 순서가 중요하다. 풀부터 늘렸다면 불필요한 쿼리 네 개를 그대로 둔 채 커넥션만 더 태우는 꼴이 됐을 것이다. **쿼리를 없앤 다음에 남은 쿼리를 위해 풀을 늘리는 것**과 순서가 반대다.
+
+<div class="diagram" role="img" aria-label="쿼리를 먼저 없애고 마지막에 풀을 늘린 순서">
+{% include diagrams/auth-filter--fix-order.svg %}
+</div>
 
 ## 솔직히 써야 할 트레이드오프
 

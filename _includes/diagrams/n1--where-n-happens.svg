@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="같은 N+1 증상이라도 발생 지점이 연관 로딩, 애플리케이션 루프, DTO 매퍼로 갈린다">
+  <marker id="n1wnh-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">증상은 같아도 N 이 생기는 자리가 다르다</text>
+
+  <rect class="dg-lead" x="252" y="52" width="216" height="44" rx="8"/>
+  <text class="dg-t" x="272" y="80">쿼리가 N 번 나간다</text>
+
+  <path class="dg-arw" d="M360 104 V120 H140 V142" marker-end="url(#n1wnh-a)"/>
+  <path class="dg-arw" d="M360 104 V142" marker-end="url(#n1wnh-a)"/>
+  <path class="dg-arw" d="M360 104 V120 H580 V142" marker-end="url(#n1wnh-a)"/>
+
+  <rect class="dg-row" x="24" y="148" width="216" height="106" rx="8"/>
+  <text class="dg-t" x="44" y="172">연관 로딩</text>
+  <text class="dg-s" x="44" y="194">엔티티의 컬렉션을</text>
+  <text class="dg-s" x="44" y="212">지연 로딩할 때</text>
+  <text class="dg-b" x="44" y="240">fetch join · @BatchSize</text>
+
+  <rect class="dg-row" x="252" y="148" width="216" height="106" rx="8"/>
+  <text class="dg-t" x="272" y="172">애플리케이션 루프</text>
+  <text class="dg-s" x="272" y="194">코드가 반복문에서</text>
+  <text class="dg-s" x="272" y="212">집계 쿼리를 부를 때</text>
+  <text class="dg-b" x="272" y="240">IN 집합 확대</text>
+
+  <rect class="dg-row" x="480" y="148" width="216" height="106" rx="8"/>
+  <text class="dg-t" x="500" y="172">DTO 매퍼</text>
+  <text class="dg-s" x="500" y="194">매퍼가 프록시를</text>
+  <text class="dg-s" x="500" y="212">건드릴 때</text>
+  <text class="dg-b" x="500" y="240">@EntityGraph + 배치 주입</text>
+
+  <text class="dg-s" x="24" y="286">두 번째·세 번째는 엔티티 연관관계가 아니라서 fetch join 을 붙일 곳조차 없다</text>
+</svg>

@@ -45,6 +45,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 탭만 열어두고 아무것도 안 하는 사용자 — 폴링 방식에서는 세션 무한 유지
 - 이 방식에서는 정상 만료
 
+<div class="diagram" role="img" aria-label="폴링 방식과 API 호출을 신호로 쓰는 방식의 차이">
+{% include diagrams/session--renew-signal.svg %}
+</div>
+
 ## (b) 동시 요청과 Redis 장애
 
 - `191dd914`에서 수정한 두 가지
@@ -64,6 +68,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 - 응답 후처리에 무언가를 얹을 때의 필수 확인: 그 실패가 응답 전체를 막는지 여부
 
+<div class="diagram" role="img" aria-label="부가 기능 실패가 응답 전체를 막는 구조와 가드">
+{% include diagrams/session--redis-guard.svg %}
+</div>
+
 ## (c) 배포하니 로그인이 500
 
 - `73f52ed3` — 가장 고전적인 함정
@@ -72,6 +80,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 배포로 세션에 담기는 클래스 구조 변경 → **이전 버전이 만든 세션은 역직렬화 실패**
 - 기존 세션 정리 로직(`invalidateExistingSessions()`)이 역직렬화를 시도하다 `SerializationException` 발생
 - 결과: **로그인 시 500**
+
+<div class="diagram" role="img" aria-label="배포로 클래스가 바뀌어 이전 세션을 역직렬화하지 못하는 구조">
+{% include diagrams/session--deserialization.svg %}
+</div>
 
 - 로그인 불가 → 새 세션 생성도 불가
 - 구조: 낡은 세션이 새 로그인을 막는 교착

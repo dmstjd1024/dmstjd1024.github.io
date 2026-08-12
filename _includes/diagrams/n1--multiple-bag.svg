@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="컬렉션 두 개를 동시에 fetch join 하면 카테시안 곱을 구분할 수 없어 거부된다">
+  <marker id="n1mb-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">컬렉션 둘을 한꺼번에 fetch join 하면</text>
+
+  <rect class="dg-lead" x="252" y="52" width="216" height="40" rx="8"/>
+  <text class="dg-t" x="272" y="78">Product</text>
+
+  <path class="dg-arw" d="M360 100 V114 H160 V132" marker-end="url(#n1mb-a)"/>
+  <path class="dg-arw" d="M360 100 V114 H560 V132" marker-end="url(#n1mb-a)"/>
+
+  <rect class="dg-row" x="60" y="138" width="200" height="44" rx="6"/>
+  <text class="dg-k" x="80" y="160">lcaList</text>
+  <text class="dg-s" x="80" y="176">List — 순서 없음 (bag)</text>
+
+  <rect class="dg-row" x="460" y="138" width="200" height="44" rx="6"/>
+  <text class="dg-k" x="480" y="160">productUnitProcesses</text>
+  <text class="dg-s" x="480" y="176">List — 순서 없음 (bag)</text>
+
+  <path class="dg-arw" d="M160 190 V206 H360 V222" marker-end="url(#n1mb-a)"/>
+  <path class="dg-arw" d="M560 190 V206 H360 V222" marker-end="url(#n1mb-a)"/>
+
+  <rect class="dg-warn" x="180" y="228" width="360" height="44" rx="8"/>
+  <text class="dg-k" x="200" y="250">MultipleBagFetchException</text>
+  <text class="dg-s" x="200" y="266">행이 곱해졌을 때 원래 몇 개였는지 되돌릴 수 없다</text>
+
+  <text class="dg-s" x="24" y="292">그래서 하나만 fetch join 하고 나머지는 @BatchSize 로 IN 절 배치 조회를 시킨다</text>
+</svg>
