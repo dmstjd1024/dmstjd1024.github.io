@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="effect 가 상태를 거쳐 다음 effect 를 깨우면서 요청이 직렬로 이어지는 워터폴">
+  <marker id="rtkwf-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">요청이 한 줄로 늘어선다</text>
+  <text class="dg-s" x="24" y="50">시간 →</text>
+
+  <rect class="dg-lane" x="24" y="64" width="672" height="150" rx="10"/>
+
+  <rect class="dg-row" x="44" y="78" width="150" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="98">summary 조회</text>
+
+  <path class="dg-arw" d="M120 112 V122 H208 V128" marker-end="url(#rtkwf-a)"/>
+  <text class="dg-s" x="128" y="122">응답을 받아야</text>
+
+  <rect class="dg-row" x="196" y="128" width="150" height="30" rx="6"/>
+  <text class="dg-v" x="212" y="148">첫 제품 자동 선택</text>
+
+  <path class="dg-arw" d="M272 162 V172 H360 V178" marker-end="url(#rtkwf-a)"/>
+
+  <rect class="dg-row" x="348" y="178" width="150" height="30" rx="6"/>
+  <text class="dg-v" x="364" y="198">LCA 선택</text>
+
+  <path class="dg-arw" d="M424 212 V222 H512 V190" marker-end="url(#rtkwf-a)"/>
+
+  <rect class="dg-warn" x="500" y="160" width="176" height="30" rx="6"/>
+  <text class="dg-k" x="516" y="180">상세 데이터 호출</text>
+
+  <rect class="dg-lane" x="24" y="230" width="672" height="62" rx="8"/>
+  <text class="dg-v" x="44" y="254">effect 가 state 를 바꾸고 그 state 가 다음 effect 를 깨우는 구조라</text>
+  <text class="dg-v" x="44" y="274">단계마다 렌더 사이클이 한 번씩 더 끼어든다</text>
+
+  <text class="dg-s" x="360" y="290">캐시도 꺼져 있어 탭에 다시 들어올 때마다 처음부터 반복된다</text>
+</svg>

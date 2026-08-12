@@ -59,6 +59,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 그다음 — 그 이미지를 `jsPDF`로 감싸 이미지 PDF 생성
 - 원리 — PDF 안에 텍스트 객체가 0개이므로 layout할 대상 자체가 없음
 
+<div class="diagram" role="img" aria-label="폰트 최적화 시도가 모두 실패한 뒤 텍스트를 없애는 방향으로 바꾼 과정">
+{% include diagrams/pdf--font-bottleneck.svg %}
+</div>
+
 ```ts
 const CAPTURE_SCALE = 2;
 const JPEG_QUALITY = 0.9;

@@ -28,6 +28,10 @@ QA에서 올라온 증상
 - 한 화면에서 다른 탭 링크 클릭 시 — **URL은 바뀌는데 화면의 탭은 그대로**
 - 새로고침하면 — 그제서야 맞는 탭 표시
 
+<div class="diagram" role="img" aria-label="양방향 동기화와 URL 파생 상태의 차이">
+{% include diagrams/tab-url--derived-state.svg %}
+</div>
+
 ## 원인: 양방향 동기화
 
 기존 훅

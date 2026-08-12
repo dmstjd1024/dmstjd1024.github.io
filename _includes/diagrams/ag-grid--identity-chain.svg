@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="셀 편집이 함수 identity 를 바꾸고 그것이 columnDefs 재생성과 전 컬럼 재적용으로 이어지는 연쇄">
+  <marker id="agic-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">셀 하나 고쳤을 뿐인데 전부 다시 그린다</text>
+
+  <rect class="dg-row" x="24" y="56" width="150" height="52" rx="8"/>
+  <text class="dg-t" x="44" y="80">셀 편집</text>
+  <text class="dg-s" x="44" y="98">gridRows 변경</text>
+
+  <path class="dg-arw" d="M182 82 H210" marker-end="url(#agic-a)"/>
+
+  <rect class="dg-warn" x="218" y="56" width="180" height="52" rx="8"/>
+  <text class="dg-k" x="238" y="80">onClickRowAction</text>
+  <text class="dg-s" x="238" y="98">identity 가 새로 만들어짐</text>
+
+  <path class="dg-arw" d="M406 82 H434" marker-end="url(#agic-a)"/>
+
+  <rect class="dg-warn" x="442" y="56" width="150" height="52" rx="8"/>
+  <text class="dg-k" x="462" y="80">useMemo 무효</text>
+  <text class="dg-s" x="462" y="98">columnDefs 재생성</text>
+
+  <path class="dg-arw" d="M600 82 H628" marker-end="url(#agic-a)"/>
+
+  <rect class="dg-warn" x="612" y="120" width="84" height="52" rx="8"/>
+  <text class="dg-k" x="628" y="144">전 컬럼</text>
+  <text class="dg-k" x="628" y="162">재적용</text>
+
+  <path class="dg-arw" d="M666 112 V118" marker-end="url(#agic-a)"/>
+
+  <rect class="dg-lane" x="24" y="132" width="560" height="60" rx="8"/>
+  <text class="dg-v" x="44" y="156">AG Grid 는 columnDefs 가 바뀌면 컬럼 정의가 달라진 줄 안다</text>
+  <text class="dg-s" x="44" y="178">행이 수백 개면 타이핑 한 번마다 그 비용이 그대로 든다</text>
+
+  <rect class="dg-out" x="24" y="212" width="672" height="64" rx="8"/>
+  <text class="dg-k" x="44" y="238">해법 — 이 값들을 ref 로 읽는다</text>
+  <text class="dg-s" x="44" y="262">값은 최신을 보되 함수의 identity 는 렌더 사이에 그대로 유지된다</text>
+</svg>
