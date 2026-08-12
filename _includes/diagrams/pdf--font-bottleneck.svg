@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="폰트를 빠르게 만드는 시도가 모두 실패한 뒤 텍스트 자체를 없애는 쪽으로 방향을 바꾼 과정">
+  <marker id="pdffb-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">빠르게 만들려다, 없애기로 바꿨다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="176" rx="10"/>
+  <text class="dg-t" x="44" y="74">layout 을 빠르게 하려는 시도</text>
+
+  <rect class="dg-warn" x="44" y="88" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="106">폰트 서브셋팅</text>
+  <rect class="dg-warn" x="44" y="120" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="138">줄바꿈 옵션 조정</text>
+  <rect class="dg-warn" x="44" y="152" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="170">hyphenation 끄기</text>
+  <rect class="dg-warn" x="44" y="184" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="202">텍스트 축약</text>
+
+  <text class="dg-k" x="240" y="106">무효</text>
+  <text class="dg-k" x="240" y="138">무효</text>
+  <text class="dg-k" x="240" y="170">무효</text>
+  <text class="dg-k" x="240" y="202">무효</text>
+
+  <path class="dg-arw" d="M360 140 H388" marker-end="url(#pdffb-a)"/>
+
+  <rect class="dg-lane" x="396" y="48" width="300" height="176" rx="10"/>
+  <text class="dg-t" x="416" y="74">목표를 바꿨다</text>
+
+  <rect class="dg-out" x="416" y="88" width="260" height="30" rx="6"/>
+  <text class="dg-k" x="432" y="108">화면을 이미지로 캡처</text>
+  <path class="dg-arw" d="M546 122 V134" marker-end="url(#pdffb-a)"/>
+  <rect class="dg-out" x="416" y="140" width="260" height="30" rx="6"/>
+  <text class="dg-k" x="432" y="160">그 이미지를 PDF 로 감싼다</text>
+
+  <rect class="dg-lead" x="416" y="180" width="260" height="30" rx="6"/>
+  <text class="dg-k" x="432" y="200">텍스트 객체 0개</text>
+
+  <text class="dg-v" x="24" y="256">글자 수에 비례하지 않는다는 건, 글자를 줄여서는 못 푼다는 뜻이었다</text>
+  <text class="dg-s" x="24" y="282">layout 할 대상 자체가 없으면 layout 비용도 없다 — 대신 PDF 안의 글자는 검색·복사가 안 된다</text>
+</svg>

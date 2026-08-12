@@ -36,6 +36,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 실제 — 탭 B 컴포넌트가 언마운트 상태라 해당 쿼리는 비활성
 - invalidate가 남기는 것 — "다음에 볼 때 새로 받아라"는 메모뿐
 
+<div class="diagram" role="img" aria-label="활성 쿼리와 비활성 쿼리에서 invalidate 동작이 갈리는 구조">
+{% include diagrams/invalidate--active-inactive.svg %}
+</div>
+
 여기에 겹친 변수들 — 모달 닫은 뒤 목록 재마운트 타이밍, `staleTime` 설정, 캐시 gc 시점.
 
 - 사용자 체감: "가끔 되고 가끔 안 되는" 동작

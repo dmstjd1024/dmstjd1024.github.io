@@ -30,6 +30,10 @@ localStorage를 비워야 풀린다 → 원인은 지속된 상태
 - 저장 대상에 `isAuthenticated` 불리언 포함
 - 토큰의 실제 만료와 이 불리언은 무연결 → 토큰이 만료돼도 `isAuthenticated`는 계속 `true`
 
+<div class="diagram" role="img" aria-label="저장된 인증 플래그와 실제 토큰 만료가 연결되어 있지 않은 구조">
+{% include diagrams/persist--stale-flag.svg %}
+</div>
+
 이 어긋남의 정리 담당 — 앱 부팅 시 도는 `checkAuth()`. 그 코드는 아래와 같음
 
 ```ts

@@ -27,6 +27,10 @@ summary 조회
 - 각 단계가 앞 단계의 응답을 기다린 뒤에야 시작 — 전형적인 워터폴
 - 추가로 이 API 그룹은 `keepUnusedDataFor: 0`으로 캐싱 비활성 → 탭 재진입마다 체인을 처음부터 재실행
 
+<div class="diagram" role="img" aria-label="요청이 직렬로 이어지는 워터폴 구조">
+{% include diagrams/rtk--waterfall.svg %}
+</div>
+
 ## 원인: lazy 훅 + useEffect 체인
 
 ```tsx

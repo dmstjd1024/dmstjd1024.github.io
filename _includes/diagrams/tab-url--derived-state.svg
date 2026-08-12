@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="상태를 URL 과 useState 양쪽에 두면 어긋나고 URL 하나에서 파생시키면 어긋날 수 없다">
+  <marker id="turl-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">진실을 두 곳에 두면 어긋난다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="44" y="74">양방향 동기화</text>
+
+  <rect class="dg-row" x="44" y="88" width="130" height="36" rx="6"/>
+  <text class="dg-k" x="60" y="111">URL</text>
+  <rect class="dg-row" x="202" y="88" width="130" height="36" rx="6"/>
+  <text class="dg-k" x="218" y="111">useState</text>
+
+  <path class="dg-arw" d="M182 100 H194" marker-end="url(#turl-a)"/>
+  <path class="dg-arw" d="M194 116 H182" marker-end="url(#turl-a)"/>
+
+  <rect class="dg-warn" x="44" y="136" width="288" height="60" rx="6"/>
+  <text class="dg-k" x="60" y="158">URL 은 바뀌었는데 탭은 그대로</text>
+  <text class="dg-s" x="60" y="180">새로고침해야 맞는 탭이 뜬다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="388" y="74">URL 에서 파생</text>
+
+  <rect class="dg-lead" x="388" y="88" width="130" height="36" rx="6"/>
+  <text class="dg-k" x="404" y="111">URL</text>
+  <path class="dg-arw" d="M526 106 H538" marker-end="url(#turl-a)"/>
+  <rect class="dg-row" x="546" y="88" width="130" height="36" rx="6"/>
+  <text class="dg-v" x="562" y="111">화면</text>
+
+  <rect class="dg-out" x="388" y="136" width="288" height="60" rx="6"/>
+  <text class="dg-k" x="404" y="158">읽는 방향이 하나뿐이다</text>
+  <text class="dg-s" x="404" y="180">어긋날 상태 자체가 없다</text>
+
+  <text class="dg-v" x="24" y="252">복사해 두면 언젠가 둘이 다른 값을 갖는다 — 동기화 코드가 그 틈을 메우려다 실패한다</text>
+  <text class="dg-s" x="24" y="278">애초에 하나만 두고 나머지는 거기서 읽어 쓰면 동기화가 필요 없다</text>
+</svg>
