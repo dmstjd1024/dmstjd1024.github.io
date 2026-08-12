@@ -197,7 +197,29 @@
                 {%- endif -%}
               </div>
               <h2 class="card__title">{{ p.title }}</h2>
-              <p class="card__summary">{{ p.content | markdownify | strip_html | normalize_whitespace | truncate: 160 }}</p>
+              {%- comment -%}
+                p.content 는 Liquid 가 처리되기 전의 원본이라 도식 삽입에 쓰는
+                include 태그가 문자 그대로 남는다. strip_html 은 이걸 못 지우므로
+                요약을 만들기 전에 걷어낸다. 도식이 글 앞부분에 있으면 요약
+                160자 안에 태그가 그대로 노출되기 때문이다.
+
+                태그 문법을 직접 쓸 수 없으므로 여는 기호를 조각내 만든다.
+              {%- endcomment -%}
+              {%- assign lq_open = "{" | append: "%" -%}
+              {%- assign lq_close = "%" | append: "}" -%}
+              {%- assign summary_src = "" -%}
+              {%- assign chunks = p.content | split: lq_open -%}
+              {%- for chunk in chunks -%}
+                {%- if forloop.first -%}
+                  {%- assign summary_src = chunk -%}
+                {%- else -%}
+                  {%- assign rest = chunk | split: lq_close -%}
+                  {%- if rest.size > 1 -%}
+                    {%- assign summary_src = summary_src | append: rest[1] -%}
+                  {%- endif -%}
+                {%- endif -%}
+              {%- endfor -%}
+              <p class="card__summary">{{ summary_src | markdownify | strip_html | normalize_whitespace | truncate: 160 }}</p>
             </div>
             {% include thumb.html inc_page=p %}
           </a>
