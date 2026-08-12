@@ -42,6 +42,10 @@ for (String dir : dirs) {
 - 예외 처리를 한 겹 더 두르면 포착은 가능
 - 단 그건 race 제거가 아니라 race 증상 차단
 
+<div class="diagram" role="img" aria-label="확인과 생성 사이의 틈에 다른 스레드가 끼어드는 구조">
+{% include diagrams/toctou--race-window.svg %}
+</div>
+
 ## 원인 조사를 방해한 두 번째 결함
 
 - 더 곤란했던 점: 실패 원인 미확인
@@ -73,6 +77,10 @@ if (!remoteDir.isEmpty()) {
 - check와 use 사이의 틈이 애초에 존재하지 않음
 - 동시 호출이 몇 개가 들어오든 race 발생 불가
 - 35줄 → 20줄, 그중 중요한 건 삭제된 15줄
+
+<div class="diagram" role="img" aria-label="예외로 감싸는 방식과 틈 자체를 없애는 방식의 대비">
+{% include diagrams/toctou--class-vs-instance.svg %}
+</div>
 
 ### 2. 예외 설정에 부수 효과를 심었다
 

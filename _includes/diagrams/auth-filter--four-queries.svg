@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="필터 체인을 지나며 DB 를 네 번 접근하는 구조">
+  <marker id="afq-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">GET 요청 하나가 DB 를 네 번 때린다</text>
+
+  <rect class="dg-item" x="24" y="52" width="120" height="150" rx="8"/>
+  <text class="dg-t" x="44" y="78">요청</text>
+  <text class="dg-s" x="44" y="100">리소스 하나</text>
+  <text class="dg-s" x="44" y="118">읽기</text>
+
+  <rect class="dg-lane" x="160" y="52" width="360" height="150" rx="10"/>
+  <text class="dg-t" x="180" y="76">필터 체인</text>
+
+  <rect class="dg-warn" x="180" y="88" width="320" height="26" rx="4"/>
+  <text class="dg-v" x="196" y="106">JwtFilter — User 조회</text>
+
+  <rect class="dg-warn" x="180" y="120" width="320" height="26" rx="4"/>
+  <text class="dg-v" x="196" y="138">ResourceAuthorizationFilter — User 재조회</text>
+
+  <rect class="dg-warn" x="180" y="152" width="320" height="26" rx="4"/>
+  <text class="dg-v" x="196" y="170">같은 필터 — 메뉴 권한 조회</text>
+
+  <rect class="dg-warn" x="180" y="184" width="320" height="14" rx="4"/>
+  <text class="dg-s" x="196" y="196">LoggingFilter — 감사 로그 INSERT</text>
+
+  <path class="dg-arw" d="M152 127 H172" marker-end="url(#afq-a)"/>
+  <path class="dg-arw" d="M528 127 H560" marker-end="url(#afq-a)"/>
+
+  <rect class="dg-warn" x="568" y="98" width="128" height="58" rx="8"/>
+  <text class="dg-k" x="588" y="122">DB</text>
+  <text class="dg-k" x="588" y="144">4회 접근</text>
+
+  <rect class="dg-lane" x="24" y="220" width="672" height="56" rx="8"/>
+  <text class="dg-v" x="44" y="244">비즈니스 로직에 닿기도 전에 네 번이다 — 캐시가 없어 매 요청 그대로 발생한다</text>
+  <text class="dg-s" x="44" y="264">필터 체인의 쿼리는 요청 수만큼 곱해지므로 컨트롤러 안의 쿼리와 무게가 다르다</text>
+</svg>

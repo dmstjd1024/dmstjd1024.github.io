@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="예외를 한 겹 더 감싸는 것과 race 자체를 없애는 것의 차이">
+  <marker id="tccvi-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">증상을 막을 것인가, 원인을 없앨 것인가</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="44" y="74">예외를 한 겹 더 두른다</text>
+
+  <rect class="dg-row" x="44" y="88" width="288" height="28" rx="6"/>
+  <text class="dg-v" x="60" y="107">try — stat</text>
+  <rect class="dg-row" x="44" y="122" width="288" height="28" rx="6"/>
+  <text class="dg-v" x="60" y="141">catch — mkdir</text>
+  <rect class="dg-warn" x="44" y="156" width="288" height="28" rx="6"/>
+  <text class="dg-k" x="60" y="175">catch — 또 stat</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="388" y="74">틈 자체를 없앤다</text>
+
+  <rect class="dg-out" x="388" y="88" width="288" height="62" rx="6"/>
+  <text class="dg-k" x="404" y="112">mkdir -p</text>
+  <text class="dg-s" x="404" y="136">확인과 생성이 한 동작</text>
+
+  <text class="dg-b" x="388" y="175">35줄 → 20줄, 지운 15줄이 핵심</text>
+
+  <text class="dg-v" x="24" y="228">예외를 감싸면 race 는 그대로 두고 증상만 가리는 것이 된다</text>
+  <text class="dg-s" x="24" y="252">한 건을 고치는 대신 그런 버그가 생길 수 없는 형태로 바꿨다</text>
+</svg>

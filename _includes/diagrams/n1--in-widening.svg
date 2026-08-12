@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="루프마다 쿼리를 부르는 대신 id 를 모아 한 번에 조회하고 메모리에서 나누는 방식">
+  <marker id="n1iw-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">루프 안 쿼리를 밖으로 끌어낸다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="180" rx="10"/>
+  <text class="dg-t" x="44" y="74">이전</text>
+
+  <rect class="dg-warn" x="44" y="88" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="106">사업장 1 → 집계 쿼리</text>
+  <rect class="dg-warn" x="44" y="120" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="138">사업장 2 → 집계 쿼리</text>
+  <rect class="dg-warn" x="44" y="152" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="170">사업장 3 → 집계 쿼리</text>
+  <text class="dg-s" x="60" y="196">…  사업장 수만큼</text>
+  <text class="dg-k" x="44" y="218">3N 쿼리</text>
+
+  <path class="dg-arw" d="M360 138 H388" marker-end="url(#n1iw-a)"/>
+
+  <rect class="dg-lane" x="396" y="48" width="300" height="180" rx="10"/>
+  <text class="dg-t" x="416" y="74">이후</text>
+
+  <rect class="dg-row" x="416" y="88" width="260" height="30" rx="4"/>
+  <text class="dg-v" x="432" y="108">모든 사업장의 id 를 모은다</text>
+  <path class="dg-arw" d="M546 122 V134" marker-end="url(#n1iw-a)"/>
+  <rect class="dg-lead" x="416" y="140" width="260" height="30" rx="4"/>
+  <text class="dg-k" x="432" y="160">IN 절로 한 번에 조회</text>
+  <path class="dg-arw" d="M546 174 V186" marker-end="url(#n1iw-a)"/>
+  <rect class="dg-out" x="416" y="190" width="260" height="30" rx="4"/>
+  <text class="dg-k" x="432" y="210">groupingBy 로 다시 나눈다</text>
+
+  <rect class="dg-lane" x="24" y="240" width="672" height="52" rx="8"/>
+  <text class="dg-v" x="44" y="264">합쳐도 결과가 같은 근거 — BigDecimal 덧셈은 순서를 바꿔도 합이 같다</text>
+  <text class="dg-s" x="44" y="284">double 이었다면 순서에 따라 오차가 쌓여 같은 논증을 할 수 없었다</text>
+</svg>

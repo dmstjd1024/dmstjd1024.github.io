@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="폴링으로 세션을 갱신하는 방식과 API 호출 자체를 신호로 쓰는 방식의 차이">
+  <marker id="ssrs-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">유휴 사용자를 유휴로 볼 수 있는가</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="180" rx="10"/>
+  <text class="dg-t" x="44" y="74">keep-alive 폴링</text>
+
+  <rect class="dg-row" x="44" y="88" width="288" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="108">일정 간격으로 갱신 요청</text>
+  <path class="dg-arw" d="M188 122 V138" marker-end="url(#ssrs-a)"/>
+  <rect class="dg-warn" x="44" y="144" width="288" height="60" rx="6"/>
+  <text class="dg-k" x="60" y="166">탭만 열어둔 사용자도</text>
+  <text class="dg-k" x="60" y="188">세션이 계속 살아 있다</text>
+  <text class="dg-s" x="44" y="220">아무것도 안 해도 만료되지 않는다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="180" rx="10"/>
+  <text class="dg-t" x="388" y="74">API 호출을 신호로</text>
+
+  <rect class="dg-row" x="388" y="88" width="288" height="30" rx="6"/>
+  <text class="dg-v" x="404" y="108">모든 응답에서 타이머 갱신</text>
+  <path class="dg-arw" d="M532 122 V138" marker-end="url(#ssrs-a)"/>
+  <rect class="dg-out" x="388" y="144" width="288" height="60" rx="6"/>
+  <text class="dg-k" x="404" y="166">쓰고 있으면 유지되고</text>
+  <text class="dg-k" x="404" y="188">안 쓰면 정상 만료된다</text>
+  <text class="dg-s" x="388" y="220">갱신용 엔드포인트가 따로 필요 없다</text>
+
+  <rect class="dg-lane" x="24" y="248" width="672" height="44" rx="8"/>
+  <text class="dg-v" x="44" y="276">남은 시간은 X-Session-Remaining 헤더로 — CORS exposedHeaders 에 넣어야 JS 가 읽는다</text>
+</svg>

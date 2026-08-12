@@ -37,6 +37,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - **둘 다 bag (List, 순서 보장 없음)**
 - Hibernate는 bag 2개 동시 fetch join 시 카테시안 곱 구분 불가 → 거부
 
+<div class="diagram" role="img" aria-label="컬렉션 두 개를 동시에 fetch join 할 수 없는 이유">
+{% include diagrams/n1--multiple-bag.svg %}
+</div>
+
 - 대안: `@BatchSize(100)`
 - 효과: 지연 로딩 유지, N번 나가던 쿼리를 IN 절 배치 조회로 통합
 
@@ -68,6 +72,10 @@ private List<Lca> lcaList;
 - 전 사업장의 대상 id를 합집합으로 수집
 - 쿼리는 1회씩만 실행
 - 결과를 `groupingBy`로 사업장별 · 제품별 재분배
+
+<div class="diagram" role="img" aria-label="루프 안 쿼리를 IN 집합으로 합치고 메모리에서 재분배하는 방식">
+{% include diagrams/n1--in-widening.svg %}
+</div>
 
 | 경로 | 이전 | 이후 |
 |---|---|---|
@@ -141,3 +149,7 @@ private List<Lca> lcaList;
 N+1은 원인이 여러 갈래인데 증상이 같아서 하나의 처방으로 뭉뚱그리기 쉽다. 쿼리 로그를 보고 "N번 나간다"까지만 확인한 뒤 fetch join을 붙이면, `MultipleBagFetchException`을 만나거나 (b)처럼 애초에 엔티티 연관관계 문제가 아니어서 붙일 곳조차 없다.
 
 **어디서 N이 발생하는지 — 연관 로딩인지, 애플리케이션 루프인지, DTO 매퍼인지 — 를 먼저 구분하는 게 처방보다 앞선다.**
+
+<div class="diagram" role="img" aria-label="N 이 발생하는 세 갈래와 각각의 처방">
+{% include diagrams/n1--where-n-happens.svg %}
+</div>

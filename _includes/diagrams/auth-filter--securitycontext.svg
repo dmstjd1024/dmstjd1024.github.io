@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="SecurityContext 가 ThreadLocal 기반이라 비동기 스레드로 전파되지 않는 문제">
+  <marker id="afsc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">비동기로 뺐더니 사용자를 못 찾는다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="320" height="112" rx="10"/>
+  <text class="dg-t" x="44" y="78">요청 스레드</text>
+  <rect class="dg-out" x="44" y="92" width="280" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="114">SecurityContext 있음</text>
+  <text class="dg-s" x="44" y="150">ThreadLocal — 이 스레드에만 붙어 있다</text>
+
+  <path class="dg-arw" d="M352 108 H400" marker-end="url(#afsc-a)"/>
+  <text class="dg-s" x="348" y="98">@Async</text>
+
+  <rect class="dg-lane" x="408" y="52" width="288" height="112" rx="10"/>
+  <text class="dg-t" x="428" y="78">비동기 스레드</text>
+  <rect class="dg-warn" x="428" y="92" width="248" height="34" rx="6"/>
+  <text class="dg-k" x="444" y="114">SecurityContext 없음</text>
+  <text class="dg-s" x="428" y="150">다른 스레드라 넘어오지 않는다</text>
+
+  <text class="dg-t" x="24" y="196">두 가지 선택지</text>
+
+  <rect class="dg-row" x="24" y="208" width="328" height="60" rx="8"/>
+  <text class="dg-v" x="44" y="230">전파 설정을 끼운다</text>
+  <text class="dg-s" x="44" y="252">DelegatingSecurityContextAsyncTaskExecutor</text>
+
+  <rect class="dg-out" x="368" y="208" width="328" height="60" rx="8"/>
+  <text class="dg-k" x="388" y="230">username 을 인자로 넘긴다  (채택)</text>
+  <text class="dg-s" x="388" y="252">비동기 쪽은 SecurityContext 를 아예 안 본다</text>
+
+  <text class="dg-s" x="24" y="292">필터가 이미 아는 값을 넘기는 것뿐이라, 암묵적 의존이 사라져 관계가 명확해진다</text>
+</svg>
