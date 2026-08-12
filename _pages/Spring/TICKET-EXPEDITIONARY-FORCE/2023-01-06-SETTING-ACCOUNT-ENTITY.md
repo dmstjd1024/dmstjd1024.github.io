@@ -85,6 +85,10 @@ Entity에선 enum을 db에 저장할 땐 default로 EnumType.ORIGINAL로 지정�
 DB에 순서 enum의 순서를 정수로 저장하는데 이는 나중에 db를 볼때 1, 2, 3 등등으로 저장되기에
 식별하기가 어려워 enum의 이름을 직접 저장하도록 string을 사용했다.
 
+<div class="diagram" role="img" aria-label="EnumType ORDINAL 과 STRING 의 저장 방식 차이">
+{% include diagrams/account-entity--enumerated.svg %}
+</div>
+
 ---
 
 ### 내 생각

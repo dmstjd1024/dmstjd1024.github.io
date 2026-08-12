@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="DTO, VO, Entity 를 목적과 같음의 기준으로 비교">
+
+  <text class="dg-h" x="24" y="30">DTO · VO · Entity 는 무엇이 다른가</text>
+
+  <rect class="dg-item" x="24" y="48" width="212" height="160" rx="10"/>
+  <text class="dg-t" x="44" y="76">DTO</text>
+  <rect class="dg-row" x="44" y="90" width="172" height="46" rx="6"/>
+  <text class="dg-k" x="60" y="110">목적</text>
+  <text class="dg-s" x="60" y="128">계층 사이 데이터 운반</text>
+  <rect class="dg-row" x="44" y="144" width="172" height="46" rx="6"/>
+  <text class="dg-k" x="60" y="164">같음의 기준</text>
+  <text class="dg-s" x="60" y="182">따지지 않는다</text>
+
+  <rect class="dg-item" x="252" y="48" width="212" height="160" rx="10"/>
+  <text class="dg-t" x="272" y="76">VO</text>
+  <rect class="dg-row" x="272" y="90" width="172" height="46" rx="6"/>
+  <text class="dg-k" x="288" y="110">목적</text>
+  <text class="dg-s" x="288" y="128">값 자체를 표현</text>
+  <rect class="dg-lead" x="272" y="144" width="172" height="46" rx="6"/>
+  <text class="dg-k" x="288" y="164">같음의 기준</text>
+  <text class="dg-s" x="288" y="182">속성 값이 모두 같으면</text>
+
+  <rect class="dg-item" x="480" y="48" width="216" height="160" rx="10"/>
+  <text class="dg-t" x="500" y="76">Entity</text>
+  <rect class="dg-row" x="500" y="90" width="176" height="46" rx="6"/>
+  <text class="dg-k" x="516" y="110">목적</text>
+  <text class="dg-s" x="516" y="128">DB 테이블과 매핑</text>
+  <rect class="dg-lead" x="500" y="144" width="176" height="46" rx="6"/>
+  <text class="dg-k" x="516" y="164">같음의 기준</text>
+  <text class="dg-s" x="516" y="182">id 가 같으면</text>
+
+  <text class="dg-s" x="24" y="240">이름이 달라도 값이 같으면 같은 VO 이고, 값이 달라도 id 가 같으면 같은 Entity 다</text>
+</svg>

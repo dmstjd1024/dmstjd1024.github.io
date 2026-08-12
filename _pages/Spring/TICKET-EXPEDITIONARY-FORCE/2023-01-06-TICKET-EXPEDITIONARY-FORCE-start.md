@@ -26,6 +26,10 @@ redirect_from:
 - 공인 IP당 1회 신청가능  
 - 30%확률로티켓획득가능  
 - WAS는 2대 이상 이용한다고 가정  
+
+<div class="diagram" role="img" aria-label="요구사항에서 도출되는 기술 과제">
+{% include diagrams/ticket-start--requirements.svg %}
+</div>
   
 ---
   
