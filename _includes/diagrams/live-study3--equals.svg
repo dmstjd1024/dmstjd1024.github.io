@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="문자열 비교에서 == 는 주소를 보고 equals 는 내용을 본다는 차이">
+  <marker id="ls3eq-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">문자열은 왜 == 로 비교하면 안 되나</text>
+
+  <rect class="dg-row" x="24" y="52" width="180" height="56" rx="6"/>
+  <text class="dg-t" x="44" y="76">a</text>
+  <text class="dg-v" x="44" y="96">0x1A2B</text>
+
+  <rect class="dg-row" x="24" y="124" width="180" height="56" rx="6"/>
+  <text class="dg-t" x="44" y="148">b</text>
+  <text class="dg-v" x="44" y="168">0x9F3C</text>
+
+  <path class="dg-arw" d="M212 80 H268" marker-end="url(#ls3eq-a)"/>
+  <path class="dg-arw" d="M212 152 H268" marker-end="url(#ls3eq-a)"/>
+
+  <rect class="dg-out" x="276" y="52" width="180" height="56" rx="6"/>
+  <text class="dg-k" x="296" y="86">"hello"</text>
+
+  <rect class="dg-out" x="276" y="124" width="180" height="56" rx="6"/>
+  <text class="dg-k" x="296" y="158">"hello"</text>
+
+  <rect class="dg-warn" x="488" y="52" width="208" height="56" rx="6"/>
+  <text class="dg-k" x="508" y="76">a == b</text>
+  <text class="dg-v" x="508" y="96">false — 주소가 다르다</text>
+
+  <rect class="dg-out" x="488" y="124" width="208" height="56" rx="6"/>
+  <text class="dg-k" x="508" y="148">a.equals(b)</text>
+  <text class="dg-b" x="508" y="168">true — 내용이 같다</text>
+
+  <text class="dg-v" x="24" y="216">참조형 변수가 담은 것은 주소이므로, == 는 "같은 객체냐" 를 묻는 것이 된다</text>
+  <text class="dg-v" x="24" y="240">내용이 같은지 알고 싶으면 equals() 를 써야 한다</text>
+
+  <text class="dg-s" x="24" y="276">기본형은 값을 직접 담으므로 == 로 비교하는 것이 맞다</text>
+</svg>

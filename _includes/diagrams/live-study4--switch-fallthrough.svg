@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="break 를 생략해 아래 case 로 계속 흘러내려 권한을 누적 부여하는 방식">
+  <marker id="ls4sw-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">break 를 일부러 빼면 아래로 흘러내린다</text>
+  <text class="dg-s" x="24" y="50">level = 3 으로 들어왔을 때</text>
+
+  <rect class="dg-lead" x="24" y="66" width="440" height="44" rx="6"/>
+  <text class="dg-k" x="44" y="94">case 3 :</text>
+  <text class="dg-v" x="160" y="94">grantDelete()</text>
+  <text class="dg-s" x="330" y="94">여기로 들어와서</text>
+
+  <path class="dg-arw" d="M244 114 V132" marker-end="url(#ls4sw-a)"/>
+  <text class="dg-s" x="256" y="128">break 가 없으니</text>
+
+  <rect class="dg-lead" x="24" y="140" width="440" height="44" rx="6"/>
+  <text class="dg-k" x="44" y="168">case 2 :</text>
+  <text class="dg-v" x="160" y="168">grantWrite()</text>
+  <text class="dg-s" x="330" y="168">그대로 이어서</text>
+
+  <path class="dg-arw" d="M244 188 V206" marker-end="url(#ls4sw-a)"/>
+
+  <rect class="dg-lead" x="24" y="214" width="440" height="44" rx="6"/>
+  <text class="dg-k" x="44" y="242">case 1 :</text>
+  <text class="dg-v" x="160" y="242">grantRead()</text>
+  <text class="dg-b" x="330" y="242">break — 여기서 끝</text>
+
+  <rect class="dg-out" x="484" y="66" width="212" height="192" rx="8"/>
+  <text class="dg-t" x="504" y="94">결과</text>
+  <text class="dg-v" x="504" y="126">삭제 권한</text>
+  <text class="dg-v" x="504" y="152">쓰기 권한</text>
+  <text class="dg-v" x="504" y="178">읽기 권한</text>
+  <text class="dg-s" x="504" y="212">세 개가 한 번에</text>
+  <text class="dg-s" x="504" y="232">부여된다</text>
+
+  <text class="dg-s" x="24" y="288">보통은 실수지만, 이렇게 누적해서 주고 싶을 땐 의도적으로 쓴다</text>
+</svg>
