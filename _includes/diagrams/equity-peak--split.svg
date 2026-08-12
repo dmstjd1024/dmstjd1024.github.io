@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="계좌 단위여야 할 최고점이 종목별 전략 인스턴스마다 따로 저장돼 네 갈래로 갈라진 구조">
+  <marker id="eqps-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">계좌 하나에 최고점이 네 개 있었다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="122" rx="10"/>
+  <text class="dg-t" x="44" y="74">있어야 할 모습</text>
+  <rect class="dg-out" x="44" y="88" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="110">계좌 최고점 — 하나</text>
+  <text class="dg-s" x="44" y="142">계좌 자산의 최고 기록이므로</text>
+  <text class="dg-s" x="44" y="160">종목과 무관하게 하나여야 한다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="122" rx="10"/>
+  <text class="dg-t" x="388" y="74">실제 모습</text>
+  <text class="dg-s" x="388" y="94">전략 객체가 만들어진 시점의 잔고를 각자 기록</text>
+
+  <rect class="dg-row" x="388" y="104" width="140" height="24" rx="4"/>
+  <text class="dg-v" x="400" y="121">6,527,996  7종목</text>
+  <rect class="dg-warn" x="536" y="104" width="140" height="24" rx="4"/>
+  <text class="dg-v" x="548" y="121">6,522,996  24종목</text>
+  <rect class="dg-row" x="388" y="132" width="140" height="24" rx="4"/>
+  <text class="dg-v" x="400" y="149">5,525,481  11종목</text>
+  <rect class="dg-row" x="536" y="132" width="140" height="24" rx="4"/>
+  <text class="dg-v" x="548" y="149">1,414,195  4종목</text>
+
+  <path class="dg-arw" d="M360 110 H380" marker-end="url(#eqps-a)"/>
+
+  <rect class="dg-warn" x="24" y="194" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="218">그래서 손실이 없는데 손절 모드가 됐다</text>
+  <text class="dg-v" x="44" y="242">가장 오래되고 낮은 값을 기준으로 잡으니 MDD 가 -18.4% 로 계산됐다</text>
+  <text class="dg-s" x="44" y="262">실제로 그만큼 떨어진 적이 없는데도 신규 매수가 차단됐다</text>
+
+  <text class="dg-s" x="24" y="292">계좌 단위 상태를 종목 단위 객체에 두면, 객체 수만큼 진실이 생긴다</text>
+</svg>

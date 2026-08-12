@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="정적 분석으로 판정 가능한 범위와 실행이나 도메인 지식이 필요한 범위의 경계">
+  <marker id="rvbb-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">경계는 "무엇을 보면 알 수 있느냐" 다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="44" y="78">코드만 보면 판정된다</text>
+
+  <rect class="dg-out" x="44" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="112">파일 하나 안에서 결론이 난다</text>
+
+  <text class="dg-v" x="44" y="146">useMemo 가 빠졌다 · cleanup 이 없다</text>
+  <text class="dg-v" x="44" y="168">가드가 한쪽만 있다 · 이 분기는 못 온다</text>
+  <text class="dg-b" x="44" y="192">봇이 잘 잡는다</text>
+
+  <rect class="dg-lane" x="368" y="52" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="388" y="78">그 밖을 봐야 안다</text>
+
+  <rect class="dg-warn" x="388" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="112">실행하거나 업무를 알아야 한다</text>
+
+  <text class="dg-v" x="388" y="146">7초가 왜 걸리는지 — 재봐야 안다</text>
+  <text class="dg-v" x="388" y="168">이 계산식이 업무적으로 맞는지</text>
+  <text class="dg-k" x="388" y="192">봇이 못 잡는다</text>
+
+  <text class="dg-v" x="24" y="240">PDF 7초 문제는 코드만 보면 이상한 데가 없었다 — 평범한 react-pdf 코드였다</text>
+  <text class="dg-s" x="24" y="266">정적 분석으로는 도달할 수 없는 결론이라, 계측해서 찾을 수밖에 없었다</text>
+</svg>

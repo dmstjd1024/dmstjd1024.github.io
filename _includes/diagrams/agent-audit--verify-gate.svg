@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="병렬 에이전트가 찾은 후보를 독립 검증 단계에 통과시켜 걸러내는 구조">
+  <marker id="aavg-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">찾는 것과 믿는 것을 분리한다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="200" height="96" rx="10"/>
+  <text class="dg-t" x="44" y="78">에이전트 72개</text>
+  <text class="dg-s" x="44" y="100">영역별로 나눠</text>
+  <text class="dg-s" x="44" y="118">cleanup 누락 탐색</text>
+  <text class="dg-b" x="44" y="140">넓게 훑는다</text>
+
+  <path class="dg-arw" d="M232 100 H264" marker-end="url(#aavg-a)"/>
+
+  <rect class="dg-row" x="272" y="52" width="180" height="96" rx="10"/>
+  <text class="dg-t" x="292" y="78">후보 51건</text>
+  <text class="dg-s" x="292" y="100">재현율은 높지만</text>
+  <text class="dg-s" x="292" y="118">정밀도는 보장 안 됨</text>
+  <text class="dg-k" x="292" y="140">아직 못 믿는다</text>
+
+  <path class="dg-arw" d="M460 100 H492" marker-end="url(#aavg-a)"/>
+
+  <rect class="dg-lead" x="500" y="52" width="196" height="96" rx="10"/>
+  <text class="dg-t" x="520" y="78">독립 검증</text>
+  <text class="dg-s" x="520" y="100">지적한 에이전트와</text>
+  <text class="dg-s" x="520" y="118">다른 컨텍스트에서</text>
+  <text class="dg-s" x="520" y="140">실제 코드 경로 추적</text>
+
+  <rect class="dg-lane" x="24" y="172" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="196">"cleanup 이 없다" 에 섞이는 것들</text>
+  <text class="dg-v" x="44" y="220">리소스가 컴포넌트 수명과 무관한 경우 · 이미 상위에서 정리되는 경우 · 그냥 오탐</text>
+  <text class="dg-s" x="44" y="240">넓게 찾은 결과를 그대로 고치면, 고치지 않아도 될 곳을 건드리게 된다</text>
+
+  <text class="dg-s" x="24" y="284">찾는 쪽은 넓게, 믿는 쪽은 좁게 — 같은 문맥에서 스스로 검증하면 의미가 없다</text>
+</svg>

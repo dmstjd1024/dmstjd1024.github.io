@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="프레임워크마다 제각각이던 툴 연동 방식이 표준 프로토콜로 정리되는 구조">
+  <marker id="mcpstd-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">연결 방식이 제각각이면 조합이 폭발한다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="184" rx="10"/>
+  <text class="dg-t" x="44" y="74">MCP 이전</text>
+
+  <rect class="dg-row" x="44" y="88" width="88" height="30" rx="4"/>
+  <text class="dg-s" x="60" y="108">에이전트 A</text>
+  <rect class="dg-row" x="152" y="88" width="88" height="30" rx="4"/>
+  <text class="dg-s" x="168" y="108">에이전트 B</text>
+  <rect class="dg-row" x="248" y="88" width="84" height="30" rx="4"/>
+  <text class="dg-s" x="264" y="108">에이전트 C</text>
+
+  <path class="dg-arw" d="M88 122 V158" marker-end="url(#mcpstd-a)"/>
+  <path class="dg-arw" d="M88 122 V140 H196 V158" marker-end="url(#mcpstd-a)"/>
+  <path class="dg-arw" d="M196 122 V158" marker-end="url(#mcpstd-a)"/>
+  <path class="dg-arw" d="M196 122 V140 H290 V158" marker-end="url(#mcpstd-a)"/>
+  <path class="dg-arw" d="M290 122 V158" marker-end="url(#mcpstd-a)"/>
+  <path class="dg-arw" d="M290 122 V140 H88 V158" marker-end="url(#mcpstd-a)"/>
+
+  <rect class="dg-warn" x="44" y="164" width="88" height="30" rx="4"/>
+  <text class="dg-s" x="66" y="184">DB</text>
+  <rect class="dg-warn" x="152" y="164" width="88" height="30" rx="4"/>
+  <text class="dg-s" x="172" y="184">API</text>
+  <rect class="dg-warn" x="248" y="164" width="84" height="30" rx="4"/>
+  <text class="dg-s" x="266" y="184">파일</text>
+
+  <text class="dg-s" x="44" y="216">붙일 때마다 새로 짜야 한다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="184" rx="10"/>
+  <text class="dg-t" x="388" y="74">MCP 이후</text>
+
+  <rect class="dg-row" x="388" y="88" width="88" height="30" rx="4"/>
+  <text class="dg-s" x="404" y="108">에이전트 A</text>
+  <rect class="dg-row" x="496" y="88" width="88" height="30" rx="4"/>
+  <text class="dg-s" x="512" y="108">에이전트 B</text>
+  <rect class="dg-row" x="592" y="88" width="84" height="30" rx="4"/>
+  <text class="dg-s" x="608" y="108">에이전트 C</text>
+
+  <path class="dg-arw" d="M432 122 V130" marker-end="url(#mcpstd-a)"/>
+  <path class="dg-arw" d="M540 122 V130" marker-end="url(#mcpstd-a)"/>
+  <path class="dg-arw" d="M634 122 V130" marker-end="url(#mcpstd-a)"/>
+
+  <rect class="dg-lead" x="388" y="134" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="154">MCP — 하나의 규약</text>
+
+  <path class="dg-arw" d="M432 168 V176" marker-end="url(#mcpstd-a)"/>
+  <path class="dg-arw" d="M540 168 V176" marker-end="url(#mcpstd-a)"/>
+  <path class="dg-arw" d="M634 168 V176" marker-end="url(#mcpstd-a)"/>
+
+  <rect class="dg-out" x="388" y="180" width="88" height="26" rx="4"/>
+  <text class="dg-s" x="410" y="198">DB</text>
+  <rect class="dg-out" x="496" y="180" width="88" height="26" rx="4"/>
+  <text class="dg-s" x="516" y="198">API</text>
+  <rect class="dg-out" x="592" y="180" width="84" height="26" rx="4"/>
+  <text class="dg-s" x="610" y="198">파일</text>
+
+  <text class="dg-s" x="388" y="222">한 번 맞추면 서로 갈아 끼울 수 있다</text>
+
+  <text class="dg-s" x="24" y="272">USB 처럼 — 기기마다 전용 케이블을 만들 필요가 없어진 것과 같은 이야기다</text>
+</svg>
