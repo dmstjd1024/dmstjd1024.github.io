@@ -28,6 +28,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 소프트 삭제 시 — 삭제된 행이 테이블에 잔존 → **"삭제 후 같은 이름으로 재생성"이 유니크 제약에 걸림**
 - 사용자 입장 — 지운 이름을 다시 못 쓰는 이상한 동작
 
+<div class="diagram" role="img" aria-label="소프트 삭제로 전환했을 때 유니크 제약에 걸리는 구조">
+{% include diagrams/soft-delete--unique.svg %}
+</div>
+
 MySQL에는 부분 인덱스(PostgreSQL의 `WHERE is_delete = 0`) 부재. 대안은 **VIRTUAL 생성 컬럼**:
 
 ```sql
