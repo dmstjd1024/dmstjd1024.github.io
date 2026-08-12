@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="EC2 비용 지불 방법 세 가지의 비용과 유연성 비교">
+
+  <text class="dg-h" x="24" y="30">EC2 비용 지불 방법</text>
+
+  <rect class="dg-item" x="24" y="48" width="216" height="180" rx="10"/>
+  <text class="dg-t" x="44" y="80">온디맨드</text>
+  <text class="dg-v" x="44" y="106">사용한 만큼만 지불</text>
+  <text class="dg-v" x="44" y="128">약정 없음</text>
+  <text class="dg-b" x="44" y="160">비용  높음</text>
+  <text class="dg-b" x="44" y="182">유연성  높음</text>
+  <text class="dg-s" x="44" y="210">예측 불가능한 트래픽</text>
+
+  <rect class="dg-item" x="252" y="48" width="216" height="180" rx="10"/>
+  <text class="dg-t" x="272" y="80">리저브드</text>
+  <text class="dg-v" x="272" y="106">1 ~ 3년 임대</text>
+  <text class="dg-v" x="272" y="128">크기 변경 불가</text>
+  <text class="dg-b" x="272" y="160">비용  낮음</text>
+  <text class="dg-b" x="272" y="182">유연성  낮음</text>
+  <text class="dg-s" x="272" y="210">꾸준히 도는 서버</text>
+
+  <rect class="dg-item" x="480" y="48" width="216" height="180" rx="10"/>
+  <text class="dg-t" x="500" y="80">스팟 인스턴스</text>
+  <text class="dg-v" x="500" y="106">입찰로 남는 자원 사용</text>
+  <text class="dg-v" x="500" y="128">회수될 수 있음</text>
+  <text class="dg-b" x="500" y="160">비용  가장 낮음</text>
+  <text class="dg-b" x="500" y="182">중단  가능</text>
+  <text class="dg-s" x="500" y="210">단기 작업</text>
+
+  <text class="dg-s" x="24" y="262">약정을 길게 걸수록 싸지고, 그만큼 바꿀 수 있는 여지가 줄어든다</text>
+  <text class="dg-s" x="24" y="284">스팟은 가장 싸지만 AWS 가 자원을 회수하면 중단되므로 끊겨도 되는 일에만 쓴다</text>
+</svg>

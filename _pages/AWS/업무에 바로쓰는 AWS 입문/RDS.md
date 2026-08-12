@@ -30,7 +30,15 @@ thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
 - **OLTP (Online Transaction Processing)**: 데이터베이스에 삽입되자마자 바로 쿼리하여 사용될 때, 작은 규모의 데이터 불러올 때 사용되는 시스템
 - **OLAP (Online Analytical Processing)**: 대량의 데이터를 분석하고, 복잡한 쿼리를 실행하는 시스템
 
+<div class="diagram" role="img" aria-label="OLTP 와 OLAP 비교">
+{% include diagrams/rds--oltp-olap.svg %}
+</div>
+
 ## 데이터베이스 백업
+
+<div class="diagram" role="img" aria-label="자동 백업과 스냅샷 비교">
+{% include diagrams/rds--backup.svg %}
+</div>
 
 ## 작동 백업 (AB : Auto Backup)
 - 7일에서 35일 설정, 스냅샷과 트랜잭션 로그 생성
@@ -47,6 +55,10 @@ thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
 - 원본 인스턴스 (original) 이름으로 시작, 백업 인스턴스는 (restored) 이름으로 시작
 
 ## 다중 가용 영역과 읽기 전용
+
+<div class="diagram" role="img" aria-label="Multi-AZ 와 Read Replica 비교">
+{% include diagrams/rds--multi-az.svg %}
+</div>
 
 ## 다중 가용 영역 (Multi-AZ)
 - 데이터베이스에서 어떤 이벤트 발생 시, 원래 데이터베이스 인스턴스에 업데이트 하는 동시, 존재하는 가용 영역에 복제본이 생성됨
@@ -70,3 +82,7 @@ thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
 - 복잡한 데이터 타입 메모리 저장
 - 리스트와 해시 테이블로 정렬 (수많은 데이터 정렬에 필요한 비용, 시간을 줄여줌)
 - 다중 가용 영역 기능 포함
+
+<div class="diagram" role="img" aria-label="맴캐시드와 레디스 비교">
+{% include diagrams/rds--cache.svg %}
+</div>

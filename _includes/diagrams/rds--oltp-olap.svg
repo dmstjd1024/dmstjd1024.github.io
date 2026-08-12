@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="OLTP 와 OLAP 의 사용 목적과 데이터 규모 차이 비교">
+
+  <text class="dg-h" x="24" y="30">OLTP vs OLAP</text>
+
+  <rect class="dg-item" x="24" y="48" width="328" height="176" rx="10"/>
+  <text class="dg-t" x="44" y="80">OLTP</text>
+  <text class="dg-s" x="44" y="102">Online Transaction Processing</text>
+  <rect class="dg-row" x="44" y="118" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="140">목적</text>
+  <text class="dg-v" x="140" y="140">넣자마자 바로 조회</text>
+  <rect class="dg-row" x="44" y="160" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="182">데이터 규모</text>
+  <text class="dg-v" x="140" y="182">작다</text>
+  <text class="dg-s" x="44" y="212">주문 등록, 회원 조회 같은 실시간 업무</text>
+
+  <rect class="dg-item" x="368" y="48" width="328" height="176" rx="10"/>
+  <text class="dg-t" x="388" y="80">OLAP</text>
+  <text class="dg-s" x="388" y="102">Online Analytical Processing</text>
+  <rect class="dg-row" x="388" y="118" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="140">목적</text>
+  <text class="dg-v" x="484" y="140">모아둔 것을 분석</text>
+  <rect class="dg-row" x="388" y="160" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="182">데이터 규모</text>
+  <text class="dg-v" x="484" y="182">크다</text>
+  <text class="dg-s" x="388" y="212">월별 매출 집계 같은 복잡한 쿼리</text>
+
+  <text class="dg-s" x="24" y="256">같은 데이터라도 "지금 처리하려고" 읽으면 OLTP, "돌아보려고" 읽으면 OLAP 다</text>
+</svg>

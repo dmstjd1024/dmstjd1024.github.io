@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="로드밸런서를 거치면 원래 출처 IP 가 사라지고 X-Forwarded-For 헤더에만 남는 흐름">
+  <marker id="ec2xff-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">X-Forwarded-For 가 필요한 이유</text>
+
+  <rect class="dg-item" x="24" y="52" width="176" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="80">클라이언트</text>
+  <text class="dg-b" x="44" y="104">공인 IP</text>
+
+  <path class="dg-arw" d="M208 88 H264" marker-end="url(#ec2xff-a)"/>
+
+  <rect class="dg-lead" x="272" y="52" width="176" height="72" rx="8"/>
+  <text class="dg-t" x="292" y="80">로드밸런서</text>
+  <text class="dg-v" x="292" y="104">출처를 헤더에 기록</text>
+
+  <path class="dg-arw" d="M456 88 H512" marker-end="url(#ec2xff-a)"/>
+
+  <rect class="dg-item" x="520" y="52" width="176" height="72" rx="8"/>
+  <text class="dg-t" x="540" y="80">백엔드 인스턴스</text>
+  <text class="dg-v" x="540" y="104">사설 IP 만 보임</text>
+
+  <rect class="dg-warn" x="520" y="140" width="176" height="56" rx="8"/>
+  <text class="dg-s" x="540" y="164">여기서 본 출처는</text>
+  <text class="dg-s" x="540" y="184">로드밸런서의 IP 다</text>
+
+  <rect class="dg-out" x="24" y="216" width="672" height="56" rx="8"/>
+  <text class="dg-k" x="44" y="240">X-Forwarded-For</text>
+  <text class="dg-v" x="220" y="240">클라이언트의 원래 공인 IP</text>
+  <text class="dg-s" x="44" y="262">헤더를 읽어야 진짜 출처를 알 수 있다</text>
+
+  <text class="dg-s" x="24" y="300">로드밸런서가 요청을 대신 보내므로 백엔드는 클라이언트를 직접 보지 못한다</text>
+</svg>

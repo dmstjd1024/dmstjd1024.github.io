@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="다중 가용 영역 복제본과 읽기 전용 복제본의 목적 차이">
+  <marker id="rdsmaz-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">Multi-AZ vs Read Replica</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="228" rx="10"/>
+  <text class="dg-t" x="44" y="76">다중 가용 영역</text>
+  <text class="dg-s" x="44" y="96">목적 : 재해 복구</text>
+
+  <rect class="dg-lead" x="44" y="112" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="60" y="134">원본</text>
+  <text class="dg-s" x="60" y="152">가용영역 A</text>
+
+  <path class="dg-arw" d="M180 138 H212" marker-end="url(#rdsmaz-a)"/>
+
+  <rect class="dg-row" x="220" y="112" width="112" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="134">복제본</text>
+  <text class="dg-s" x="236" y="152">가용영역 B</text>
+
+  <text class="dg-v" x="44" y="192">읽기 · 쓰기는 원본만 받는다</text>
+  <text class="dg-v" x="44" y="214">복제본은 대기 상태로 있다가</text>
+  <text class="dg-v" x="44" y="236">장애가 나면 대신 올라온다</text>
+  <text class="dg-s" x="44" y="262">서울에 A, B 영역이 나뉜 이유</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="228" rx="10"/>
+  <text class="dg-t" x="388" y="76">읽기 전용 복제본</text>
+  <text class="dg-s" x="388" y="96">목적 : 성능 향상</text>
+
+  <rect class="dg-lead" x="388" y="112" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="404" y="134">원본</text>
+  <text class="dg-s" x="404" y="152">읽기 · 쓰기</text>
+
+  <path class="dg-arw" d="M524 138 H556" marker-end="url(#rdsmaz-a)"/>
+
+  <rect class="dg-row" x="564" y="112" width="112" height="52" rx="6"/>
+  <text class="dg-t" x="580" y="134">복제본</text>
+  <text class="dg-s" x="580" y="152">읽기 전용</text>
+
+  <text class="dg-v" x="388" y="192">복제본도 읽기 요청을 받는다</text>
+  <text class="dg-v" x="388" y="214">원본이 지던 조회 부담을 나눠</text>
+  <text class="dg-v" x="388" y="236">전체 처리량이 올라간다</text>
+  <text class="dg-b" x="388" y="262">최대 5개까지</text>
+
+  <text class="dg-s" x="24" y="308">둘 다 복제본을 만들지만, 하나는 쓰러졌을 때를 대비하고 하나는 평소 부하를 나눈다</text>
+  <text class="dg-s" x="24" y="330">그래서 Multi-AZ 복제본에는 평소에 조회를 보내지 않는다</text>
+</svg>

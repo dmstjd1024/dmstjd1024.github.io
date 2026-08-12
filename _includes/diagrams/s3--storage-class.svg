@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="S3 스토리지 유형 다섯 가지를 접근 빈도 순으로 비교">
+
+  <text class="dg-h" x="24" y="30">S3 스토리지 유형</text>
+  <text class="dg-s" x="24" y="50">자주 꺼내 쓸수록 위, 거의 안 꺼낼수록 아래</text>
+
+  <rect class="dg-lead" x="24" y="66" width="672" height="48" rx="8"/>
+  <text class="dg-t" x="44" y="88">일반 S3</text>
+  <text class="dg-v" x="200" y="88">데이터 손실을 거의 완전히 막아준다</text>
+  <text class="dg-s" x="200" y="106">늘 쓰는 파일</text>
+
+  <rect class="dg-item" x="24" y="124" width="672" height="48" rx="8"/>
+  <text class="dg-t" x="44" y="146">드문 접근</text>
+  <text class="dg-v" x="200" y="146">가끔 꺼내지만 꺼낼 땐 빨라야 할 때</text>
+  <text class="dg-s" x="200" y="164">재해복구 · 백업 파일</text>
+
+  <rect class="dg-item" x="24" y="182" width="672" height="48" rx="8"/>
+  <text class="dg-t" x="44" y="204">단일 존</text>
+  <text class="dg-v" x="200" y="204">가용영역 하나에만 둔다</text>
+  <text class="dg-s" x="200" y="222">그 영역이 죽으면 접근 불가</text>
+
+  <rect class="dg-item" x="24" y="240" width="672" height="48" rx="8"/>
+  <text class="dg-t" x="44" y="262">글레시어</text>
+  <text class="dg-v" x="200" y="262">몇 년에 한 번 쓸까 말까 한 것</text>
+  <text class="dg-s" x="200" y="280">꺼내는 데 4 ~ 5시간</text>
+
+  <rect class="dg-out" x="24" y="298" width="672" height="48" rx="8"/>
+  <text class="dg-t" x="44" y="320">지능적 티어링</text>
+  <text class="dg-v" x="200" y="320">접근 주기를 보고 알아서 등급을 바꾼다</text>
+  <text class="dg-s" x="200" y="338">얼마나 쓸지 모를 때</text>
+</svg>
