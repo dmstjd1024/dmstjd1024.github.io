@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="프록시를 하드코딩한 목록이 아니라 매번 새로 받는 순환 상태로 다루는 방식">
+  <marker id="crpr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">프록시를 목록이 아니라 흐르는 상태로 본다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="140" rx="10"/>
+  <text class="dg-t" x="44" y="74">하드코딩한 목록</text>
+  <rect class="dg-row" x="44" y="88" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="106">주소 몇 개를 코드에 박아둔다</text>
+  <path class="dg-arw" d="M188 118 V130" marker-end="url(#crpr-a)"/>
+  <rect class="dg-warn" x="44" y="136" width="288" height="40" rx="4"/>
+  <text class="dg-k" x="60" y="158">무료 프록시는 수명이 짧다</text>
+  <text class="dg-s" x="60" y="172">만료될 때마다 코드를 고쳐야 한다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="140" rx="10"/>
+  <text class="dg-t" x="388" y="74">API 로 그때그때 수신</text>
+  <rect class="dg-row" x="388" y="88" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="404" y="106">Webshare API 에서 최신 목록</text>
+  <path class="dg-arw" d="M532 118 V130" marker-end="url(#crpr-a)"/>
+  <rect class="dg-out" x="388" y="136" width="288" height="40" rx="4"/>
+  <text class="dg-k" x="404" y="158">만료돼도 다음 번에 새로 받는다</text>
+  <text class="dg-s" x="404" y="172">손댈 일이 없다</text>
+
+  <text class="dg-v" x="24" y="228">10분 주기로 도는 크롤러는 그 규칙성 자체가 봇으로 보인다</text>
+  <text class="dg-s" x="24" y="254">차단은 언제든 다시 걸리므로, 걸렸을 때 갈아탈 수 있는 구조가 더 중요하다</text>
+</svg>
