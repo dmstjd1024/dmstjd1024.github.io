@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="가상머신은 게스트 OS 를 저마다 갖고 컨테이너는 호스트 OS 를 공유한다">
+
+  <text class="dg-h" x="24" y="30">가상머신과 컨테이너의 차이</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="232" rx="10"/>
+  <text class="dg-t" x="44" y="74">가상머신</text>
+
+  <rect class="dg-row" x="44" y="88" width="140" height="28" rx="4"/>
+  <text class="dg-s" x="60" y="107">앱 A</text>
+  <rect class="dg-row" x="192" y="88" width="140" height="28" rx="4"/>
+  <text class="dg-s" x="208" y="107">앱 B</text>
+
+  <rect class="dg-warn" x="44" y="122" width="140" height="42" rx="4"/>
+  <text class="dg-k" x="60" y="148">게스트 OS</text>
+  <rect class="dg-warn" x="192" y="122" width="140" height="42" rx="4"/>
+  <text class="dg-k" x="208" y="148">게스트 OS</text>
+
+  <rect class="dg-row" x="44" y="170" width="288" height="30" rx="4"/>
+  <text class="dg-v" x="60" y="190">하이퍼바이저</text>
+
+  <rect class="dg-row" x="44" y="206" width="288" height="30" rx="4"/>
+  <text class="dg-v" x="60" y="226">호스트 OS</text>
+
+  <text class="dg-s" x="44" y="262">OS 를 통째로 하나씩 더 얹는다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="232" rx="10"/>
+  <text class="dg-t" x="388" y="74">컨테이너</text>
+
+  <rect class="dg-row" x="388" y="88" width="140" height="28" rx="4"/>
+  <text class="dg-s" x="404" y="107">앱 A</text>
+  <rect class="dg-row" x="536" y="88" width="140" height="28" rx="4"/>
+  <text class="dg-s" x="552" y="107">앱 B</text>
+
+  <rect class="dg-row" x="388" y="122" width="288" height="30" rx="4"/>
+  <text class="dg-v" x="404" y="142">도커 엔진</text>
+
+  <rect class="dg-out" x="388" y="158" width="288" height="42" rx="4"/>
+  <text class="dg-k" x="404" y="184">호스트 OS — 함께 쓴다</text>
+
+  <text class="dg-s" x="388" y="228">OS 가 하나뿐이라 가볍고 빠르다</text>
+  <text class="dg-s" x="388" y="262">대신 호스트와 커널을 공유한다</text>
+
+  <text class="dg-s" x="24" y="308">컨테이너가 빠른 이유는 OS 를 새로 띄우지 않기 때문이다</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="애플리케이션을 패키징하고 공유한 뒤 내려받아 실행하는 도커의 세 단계">
+  <marker id="dk1bsr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">도커가 도는 세 단계</text>
+
+  <rect class="dg-item" x="24" y="56" width="196" height="76" rx="8"/>
+  <text class="dg-n" x="44" y="82">1</text>
+  <text class="dg-t" x="68" y="82">빌드</text>
+  <text class="dg-s" x="44" y="106">앱과 필요한 것을 통째로</text>
+  <text class="dg-s" x="44" y="124">이미지로 패키징한다</text>
+
+  <path class="dg-arw" d="M228 94 H256" marker-end="url(#dk1bsr-a)"/>
+
+  <rect class="dg-lead" x="264" y="56" width="196" height="76" rx="8"/>
+  <text class="dg-n" x="284" y="82">2</text>
+  <text class="dg-t" x="308" y="82">공유</text>
+  <text class="dg-s" x="284" y="106">도커 허브 같은 곳에</text>
+  <text class="dg-s" x="284" y="124">올려 누구나 받게 한다</text>
+
+  <path class="dg-arw" d="M468 94 H496" marker-end="url(#dk1bsr-a)"/>
+
+  <rect class="dg-out" x="504" y="56" width="192" height="76" rx="8"/>
+  <text class="dg-n" x="524" y="82">3</text>
+  <text class="dg-t" x="548" y="82">실행</text>
+  <text class="dg-s" x="524" y="106">내려받아 컨테이너로</text>
+  <text class="dg-s" x="524" y="124">바로 띄운다</text>
+
+  <rect class="dg-lane" x="24" y="152" width="672" height="56" rx="8"/>
+  <text class="dg-v" x="44" y="176">받는 쪽은 언어 런타임을 따로 깔 필요가 없다 — 이미지 안에 다 들어 있다</text>
+  <text class="dg-s" x="44" y="196">"내 컴퓨터에선 되는데" 가 줄어드는 이유가 이것이다</text>
+</svg>

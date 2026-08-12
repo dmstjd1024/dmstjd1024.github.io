@@ -76,6 +76,10 @@ Node.js 런타임을 포함한 이미지가 런타임을 공유하였을 때,
 
 따라서 공유되는 레이어는 수정할 수 없어야 한다. (읽기전용으로 구현)
 
+<div class="diagram" role="img" aria-label="여러 이미지가 레이어를 공유하는 구조">
+{% include diagrams/docker2--layer-share.svg %}
+</div>
+
 ## 이미지 레이어 캐시를 이요한 Dockerfile 스크립트 최적화
  
 ```docker
@@ -85,6 +89,10 @@ docker image build -t web-ping:v2 .
 - Docker 스크립트 인스트럭션은 각 하나의 이미지 레이어와 1:1 연결
 - 결과가 이전과 같다면 이전 캐시된 레이어 사용
 따라서 잘 수정하지 않는 인스트럭션이 앞으로 오도록 작성하는 것이 좋다.
+
+<div class="diagram" role="img" aria-label="인스트럭션 순서에 따른 캐시 재사용 차이">
+{% include diagrams/docker2--layer-cache.svg %}
+</div>
 
 #### 최적화 한 스크립트 (핵심)
 

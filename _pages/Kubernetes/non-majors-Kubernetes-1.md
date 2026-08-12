@@ -54,6 +54,10 @@ spec:
 2. 파드 의 내부네트워크를 외부에서도 접속할 수 있도록 포트 포워딩 활용
 `sudo kubectl port-forward pod/nginx-pod 80:80`
 
+<div class="diagram" role="img" aria-label="파드 네트워크가 분리되어 있어 접속이 안 되는 구조">
+{% include diagrams/k8s--pod-network.svg %}
+</div>
+
 파드 삭제
 `kubectl delete pod nginx-pod`
 
@@ -99,6 +103,10 @@ yaml 을 읽어서 Pod 생성 시, 이미지를 어떻게 Pull 할 지에 대한
 
 `image` 뒤에 `version`을 명시하지 않거나, latest 태그를 사용하는 경우 `Always` 가 기본값
 `lastest` 태그를 사용하지 않는다면 `IfNotPresent` 가 기본값
+
+<div class="diagram" role="img" aria-label="이미지 풀 정책과 태그에 따른 기본값">
+{% include diagrams/k8s--image-pull-policy.svg %}
+</div>
 
 ### 해결 방법
 이미지 풀 정책을 `IfNotPresent` 로 변경

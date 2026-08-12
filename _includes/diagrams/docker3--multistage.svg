@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="멀티 스테이지 빌드에서 빌드 도구는 버리고 결과물만 최종 이미지로 옮긴다">
+  <marker id="dk3ms-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">멀티 스테이지 빌드</text>
+
+  <rect class="dg-lane" x="24" y="48" width="320" height="184" rx="10"/>
+  <text class="dg-t" x="44" y="74">builder 단계</text>
+  <text class="dg-s" x="152" y="74">FROM diamol/maven</text>
+
+  <rect class="dg-row" x="44" y="88" width="280" height="28" rx="4"/>
+  <text class="dg-v" x="60" y="107">Maven</text>
+  <rect class="dg-row" x="44" y="122" width="280" height="28" rx="4"/>
+  <text class="dg-v" x="60" y="141">JDK · 소스 코드</text>
+  <rect class="dg-row" x="44" y="156" width="280" height="28" rx="4"/>
+  <text class="dg-v" x="60" y="175">내려받은 의존 모듈</text>
+  <rect class="dg-lead" x="44" y="190" width="280" height="28" rx="4"/>
+  <text class="dg-k" x="60" y="209">빌드 결과 .jar</text>
+
+  <path class="dg-arw" d="M332 204 H420" marker-end="url(#dk3ms-a)"/>
+  <text class="dg-b" x="336" y="196">.jar 만 복사</text>
+
+  <rect class="dg-lane" x="428" y="48" width="268" height="184" rx="10"/>
+  <text class="dg-t" x="448" y="74">최종 이미지</text>
+  <text class="dg-s" x="556" y="74">FROM openjdk</text>
+
+  <rect class="dg-row" x="448" y="122" width="228" height="28" rx="4"/>
+  <text class="dg-v" x="464" y="141">JRE 런타임</text>
+  <rect class="dg-out" x="448" y="190" width="228" height="28" rx="4"/>
+  <text class="dg-k" x="464" y="209">.jar</text>
+
+  <text class="dg-s" x="448" y="172">Maven 도 소스 코드도 없다</text>
+
+  <rect class="dg-lane" x="24" y="248" width="672" height="56" rx="8"/>
+  <text class="dg-v" x="44" y="272">빌드에만 필요한 것은 최종 이미지에 남지 않는다 — 이미지가 작아지고 공격면도 줄어든다</text>
+  <text class="dg-s" x="44" y="292">의존 모듈 내려받기를 따로 떼어 둔 것도 캐시를 살리기 위해서다</text>
+</svg>
