@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="kubectl exec 의 스트리밍 연결이 끊겨도 클라이언트가 모른 채 계속 기다리는 구조">
+  <marker id="kchg-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">에러가 아니라 그냥 멈춘다</text>
+
+  <rect class="dg-row" x="24" y="56" width="160" height="60" rx="8"/>
+  <text class="dg-t" x="44" y="80">kubectl exec</text>
+  <text class="dg-s" x="44" y="100">기본 타임아웃 없음</text>
+
+  <path class="dg-arw" d="M192 86 H240" marker-end="url(#kchg-a)"/>
+  <text class="dg-s" x="196" y="76">스트리밍</text>
+
+  <rect class="dg-warn" x="248" y="56" width="180" height="60" rx="8"/>
+  <text class="dg-k" x="268" y="80">연결이 끊겼다</text>
+  <text class="dg-s" x="268" y="100">클라이언트는 모른다</text>
+
+  <rect class="dg-row" x="492" y="56" width="204" height="60" rx="8"/>
+  <text class="dg-t" x="512" y="80">API 서버</text>
+  <text class="dg-s" x="512" y="100">폐쇄망 · kind 다중 클러스터</text>
+
+  <rect class="dg-warn" x="24" y="140" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="164">기다림이 위로 전파된다</text>
+  <text class="dg-v" x="44" y="188">kubectl 이 무한 대기 → 스크립트가 그 앞에서 대기 → 애플리케이션이 스크립트를 대기</text>
+  <text class="dg-s" x="44" y="208">아무도 에러를 못 받으니 실패했다는 사실조차 알 수 없다</text>
+
+  <text class="dg-v" x="24" y="248">그래서 타임아웃을 주고, 재시도 래퍼로 감쌌다</text>
+  <text class="dg-s" x="24" y="272">타임아웃이 없으면 재시도할 기회조차 오지 않는다</text>
+</svg>

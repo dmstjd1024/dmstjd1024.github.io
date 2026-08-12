@@ -26,6 +26,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 이 연결이 끊기면 클라이언트는 그 사실을 모른 채 계속 대기
 - 스크립트는 그 앞에서 무한정 대기, 애플리케이션은 그 스크립트 종료를 대기
 
+<div class="diagram" role="img" aria-label="연결이 끊겨도 모른 채 대기하는 구조와 그 전파">
+{% include diagrams/kubectl--hang.svg %}
+</div>
+
 ## 어떻게 고쳤나
 
 ### 1. 재시도 래퍼

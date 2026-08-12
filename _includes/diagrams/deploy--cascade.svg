@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="하나를 고칠 때마다 다음 문제가 드러난 55분간의 연쇄 장애 시간 흐름">
+  <marker id="dpcs-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">고칠 때마다 다음 문제가 드러났다</text>
+
+  <rect class="dg-warn" x="24" y="56" width="120" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="80">09:41</text>
+  <text class="dg-s" x="44" y="102">배포하자마자</text>
+  <text class="dg-s" x="44" y="120">크롤링 실패</text>
+
+  <path class="dg-arw" d="M152 94 H176" marker-end="url(#dpcs-a)"/>
+
+  <rect class="dg-row" x="184" y="56" width="150" height="76" rx="8"/>
+  <text class="dg-t" x="204" y="80">10:12</text>
+  <text class="dg-s" x="204" y="102">서버 .env 에</text>
+  <text class="dg-s" x="204" y="120">토큰이 없었다</text>
+
+  <path class="dg-arw" d="M342 94 H366" marker-end="url(#dpcs-a)"/>
+
+  <rect class="dg-row" x="374" y="56" width="150" height="76" rx="8"/>
+  <text class="dg-t" x="394" y="80">10:18</text>
+  <text class="dg-s" x="394" y="102">방금 추가한 동기화</text>
+  <text class="dg-s" x="394" y="120">로직이 macOS 에서 실패</text>
+
+  <path class="dg-arw" d="M532 94 H556" marker-end="url(#dpcs-a)"/>
+
+  <rect class="dg-out" x="564" y="56" width="132" height="76" rx="8"/>
+  <text class="dg-t" x="584" y="80">10:36</text>
+  <text class="dg-s" x="584" y="102">커밋 4개 뒤</text>
+  <text class="dg-b" x="584" y="120">복구</text>
+
+  <rect class="dg-lane" x="24" y="152" width="672" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="178">코드가 새 환경변수를 쓰기 시작해도</text>
+  <text class="dg-v" x="44" y="202">배포 스크립트가 그 값을 서버까지 알아서 옮겨주지는 않는다</text>
+  <text class="dg-s" x="44" y="218">GitHub Secrets 에 있고 .env.example 에도 있는데 정작 서버에만 없었다</text>
+
+  <rect class="dg-out" x="24" y="240" width="672" height="48" rx="8"/>
+  <text class="dg-k" x="44" y="264">그래서 배포 검증 단계를 넣었다 — 실제로 동작할 때까지 헬스체크를 폴링</text>
+  <text class="dg-s" x="44" y="282">"배포 성공" 과 "기능 동작" 은 다른 사건이다</text>
+</svg>

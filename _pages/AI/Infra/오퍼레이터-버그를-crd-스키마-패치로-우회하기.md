@@ -49,6 +49,10 @@ hlf-operator v1.9.2의 문제.
 - 상태 갱신 경로 자체가 봉쇄 → 어떤 값으로도 탈출 불가
 - 스스로 만든 스키마를 스스로 못 지키는 상황
 
+<div class="diagram" role="img" aria-label="required 필드 누락으로 status 갱신이 막혀 FAILED 에 고착되는 구조">
+{% include diagrams/crd--schema-workaround.svg %}
+</div>
+
 ## 선택지를 따져봤다
 
 우리 코드가 아니므로 직접 수정 불가. 선택지 세 가지:
