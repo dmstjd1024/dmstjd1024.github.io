@@ -43,9 +43,17 @@ LLM Agent는 도구를 사용하고, 기억을 유지하며, 동적인 행동을
 
 따라서 **표준 프로토콜**의 필요성이 커졌고 해결책으로 MCP 등장
 
+<div class="diagram" role="img" aria-label="MCP 이전의 제각각 연동과 이후의 표준 규약 비교">
+{% include diagrams/mcp--standardization.svg %}
+</div>
+
 ## MCP의 기본구조
 
 Host, Client, Server
+
+<div class="diagram" role="img" aria-label="MCP 의 Host, Client, Server 구조">
+{% include diagrams/mcp--host-client-server.svg %}
+</div>
 
 ## Host
 LLM Application 자체로 통신의 중심이며 여러 개의 Client 포함하고 이들을 관리

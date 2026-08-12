@@ -38,6 +38,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 계산 기준: 가장 오래되고 낮은 값 → MDD **-18.4%**
 - 결과: 신규 매수 전면 차단
 
+<div class="diagram" role="img" aria-label="계좌 단위 최고점이 종목별로 갈라져 잘못된 MDD 가 계산된 구조">
+{% include diagrams/equity-peak--split.svg %}
+</div>
+
 ## 그런데 실제로는 수익 중이었다
 
 | 지표 | 값 |

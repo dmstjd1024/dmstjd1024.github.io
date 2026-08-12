@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="MCP 의 Host, Client, Server 구조와 Client 가 서버와 일대일로 연결되는 관계">
+  <marker id="mcphcs-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">Host · Client · Server</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="130" rx="10"/>
+  <text class="dg-t" x="44" y="74">Host</text>
+  <text class="dg-s" x="90" y="74">LLM 애플리케이션 — Claude · Cursor</text>
+
+  <rect class="dg-lead" x="44" y="88" width="200" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="110">사용자 · LLM 인터페이스</text>
+
+  <text class="dg-s" x="44" y="146">Client 들을 만들고 관리한다</text>
+  <text class="dg-s" x="44" y="164">받아온 결과를 합쳐 LLM 에 넘긴다</text>
+
+  <rect class="dg-row" x="284" y="88" width="120" height="34" rx="6"/>
+  <text class="dg-v" x="300" y="110">Client 1</text>
+  <rect class="dg-row" x="420" y="88" width="120" height="34" rx="6"/>
+  <text class="dg-v" x="436" y="110">Client 2</text>
+  <rect class="dg-row" x="556" y="88" width="120" height="34" rx="6"/>
+  <text class="dg-v" x="572" y="110">Client 3</text>
+
+  <path class="dg-arw" d="M344 130 V196" marker-end="url(#mcphcs-a)"/>
+  <path class="dg-arw" d="M480 130 V196" marker-end="url(#mcphcs-a)"/>
+  <path class="dg-arw" d="M616 130 V196" marker-end="url(#mcphcs-a)"/>
+
+  <text class="dg-b" x="230" y="170">각각 서버 하나와 1:1</text>
+
+  <rect class="dg-out" x="284" y="202" width="120" height="44" rx="6"/>
+  <text class="dg-k" x="300" y="228">Server 1</text>
+  <rect class="dg-out" x="420" y="202" width="120" height="44" rx="6"/>
+  <text class="dg-k" x="436" y="228">Server 2</text>
+  <rect class="dg-out" x="556" y="202" width="120" height="44" rx="6"/>
+  <text class="dg-k" x="572" y="228">Server 3</text>
+
+  <text class="dg-s" x="24" y="276">Client 가 서버마다 하나씩 붙으므로, 서버를 추가해도 Host 쪽 구조는 그대로다</text>
+</svg>
