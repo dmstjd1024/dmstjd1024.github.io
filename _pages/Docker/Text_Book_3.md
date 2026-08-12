@@ -40,6 +40,10 @@ ENTRYPOINT ["java", "-jar", "/app/iotd-service-0.1.0.jar"]
 ```
 FROM 인스트럭션 이 여러개 있으므로 멀티 스테이지 빌드 적용된 스크립트빌드 절차가 정의
 
+<div class="diagram" role="img" aria-label="멀티 스테이지 빌드에서 결과물만 최종 이미지로 옮기는 구조">
+{% include diagrams/docker3--multistage.svg %}
+</div>
+
 #### builder 하는 일
 - diamol/maven 메이븐 OpenJDK 포함
 - 이미지에 작업 디렉토리 만든 다음 pom.xml 파일 복사하며 시작. 메이븐 수행할 빌드절차 정의

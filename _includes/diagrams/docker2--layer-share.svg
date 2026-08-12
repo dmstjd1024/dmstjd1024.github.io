@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="여러 이미지가 같은 레이어를 공유하므로 실제 디스크 사용량은 표시된 합보다 작다">
+  <marker id="dk2ls-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">이미지 용량이 합쳐지지 않는 이유</text>
+
+  <rect class="dg-item" x="24" y="52" width="200" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="76">이미지 A</text>
+  <text class="dg-s" x="44" y="98">앱 레이어</text>
+  <text class="dg-s" x="44" y="118">+ Node.js 런타임</text>
+
+  <rect class="dg-item" x="256" y="52" width="200" height="76" rx="8"/>
+  <text class="dg-t" x="276" y="76">이미지 B</text>
+  <text class="dg-s" x="276" y="98">앱 레이어</text>
+  <text class="dg-s" x="276" y="118">+ Node.js 런타임</text>
+
+  <rect class="dg-item" x="488" y="52" width="208" height="76" rx="8"/>
+  <text class="dg-t" x="508" y="76">이미지 C</text>
+  <text class="dg-s" x="508" y="98">앱 레이어</text>
+  <text class="dg-s" x="508" y="118">+ Node.js 런타임</text>
+
+  <path class="dg-arw" d="M124 136 V160 H360 V180" marker-end="url(#dk2ls-a)"/>
+  <path class="dg-arw" d="M356 136 V180" marker-end="url(#dk2ls-a)"/>
+  <path class="dg-arw" d="M592 136 V160 H360 V180" marker-end="url(#dk2ls-a)"/>
+
+  <rect class="dg-out" x="200" y="186" width="320" height="48" rx="8"/>
+  <text class="dg-t" x="220" y="210">Node.js 레이어 — 실제로는 하나</text>
+  <text class="dg-s" x="220" y="228">디스크에 한 번만 저장된다</text>
+
+  <text class="dg-v" x="24" y="266">그래서 docker image ls 의 SIZE 를 다 더하면 실제보다 훨씬 커진다</text>
+  <text class="dg-s" x="24" y="290">진짜 사용량은 docker system df 로 봐야 하고, 공유되므로 레이어는 읽기 전용이다</text>
+</svg>
