@@ -60,6 +60,10 @@ React.createElement(
 - DOMElement : 실제 브라우저의 DOM에 존재
 - ReactDOM.render()를 통해 ReactElement를 DOMElement로 변환
 
+<div class="diagram" role="img" aria-label="Virtual DOM 이 바뀐 부분만 실제 DOM 에 반영하는 흐름">
+{% include diagrams/react1--virtual-dom.svg %}
+</div>
+
 ## Components 와 Props
 ## 컴포넌트의 정의
 - 컴포넌트는 UI를 구성하는 독립적인 재사용 가능한 코드 블록
@@ -75,6 +79,10 @@ React.createElement(
 - 모든 리액트 컴포넌트들은 그들의 Props에 관해서는 Pure(순수)함수 같은 역할을 해야한다.
   - Pure : 입력값이 동일하면 항상 동일한 출력을 반환하는 함수
 - 모든 리액트 컴포넌트는 Props를 통해 데이터를 전달받아 렌더링해야한다.
+
+<div class="diagram" role="img" aria-label="Props 가 상위에서 하위로 흐르는 구조">
+{% include diagrams/react1--props-flow.svg %}
+</div>
 
 ```jsx
 function App(pros){
