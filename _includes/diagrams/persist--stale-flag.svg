@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="localStorage 에 저장된 isAuthenticated 와 실제 토큰 만료가 서로 연결되어 있지 않다">
+  <marker id="psf-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">저장된 깃발과 실제 상태가 따로 논다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="120" rx="10"/>
+  <text class="dg-t" x="44" y="74">localStorage</text>
+  <rect class="dg-warn" x="44" y="88" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="110">isAuthenticated: true</text>
+  <text class="dg-s" x="44" y="146">한번 켜지면 알아서 꺼지지 않는다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="120" rx="10"/>
+  <text class="dg-t" x="388" y="74">실제 토큰</text>
+  <rect class="dg-row" x="388" y="88" width="288" height="34" rx="6"/>
+  <text class="dg-v" x="404" y="110">이미 만료됨</text>
+  <text class="dg-s" x="388" y="146">시간이 지나면 스스로 만료된다</text>
+
+  <text class="dg-k" x="330" y="112">↔</text>
+  <text class="dg-s" x="290" y="132">서로 모른다</text>
+
+  <rect class="dg-warn" x="24" y="188" width="672" height="68" rx="8"/>
+  <text class="dg-t" x="44" y="212">그 결과</text>
+  <text class="dg-v" x="44" y="236">"로그인돼 있다" 고 믿고 로딩 화면에 머무는데, 정작 토큰은 없다</text>
+  <text class="dg-s" x="44" y="252">localStorage 를 비워야 풀린다 — 지속된 상태가 원인이라는 신호</text>
+</svg>

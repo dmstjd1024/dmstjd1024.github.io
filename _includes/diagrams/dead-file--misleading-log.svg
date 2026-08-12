@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="도달 불가능한 죽은 파일이 살아있는 파일보다 최근에 수정돼 착각이 자기강화되는 구조">
+  <marker id="dfml-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">최근에 손댄 쪽이 현행이라는 착각</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="120" rx="10"/>
+  <text class="dg-t" x="44" y="74">죽은 파일</text>
+  <text class="dg-s" x="44" y="94">라우터가 import 하지 않음 — 도달 불가</text>
+  <rect class="dg-warn" x="44" y="106" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="128">마지막 커밋 7일 전</text>
+  <text class="dg-s" x="44" y="158">최신처럼 보인다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="120" rx="10"/>
+  <text class="dg-t" x="388" y="74">살아있는 파일</text>
+  <text class="dg-s" x="388" y="94">실제로 화면에 그려지는 쪽</text>
+  <rect class="dg-row" x="388" y="106" width="288" height="34" rx="6"/>
+  <text class="dg-v" x="404" y="128">마지막 커밋 1년 4개월 전</text>
+  <text class="dg-s" x="388" y="158">잘 돌아가서 손댈 일이 없었을 뿐</text>
+
+  <rect class="dg-warn" x="24" y="188" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="212">그리고 착각은 스스로를 강화한다</text>
+  <text class="dg-v" x="44" y="236">누군가 죽은 파일을 고친다 → 그 파일이 더 최신이 된다 → 다음 사람은 더 확신한다</text>
+  <text class="dg-s" x="44" y="254">2주 동안 같은 패턴이 5회 반복됐다</text>
+
+  <text class="dg-s" x="24" y="288">git log 는 "언제 고쳤나" 를 알려주지 "지금 쓰이나" 를 알려주지 않는다</text>
+</svg>

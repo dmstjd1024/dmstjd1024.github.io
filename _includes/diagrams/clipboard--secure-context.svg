@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="navigator.clipboard 는 HTTPS 나 localhost 에서만 동작하며 HTTP 배포 환경에서는 조용히 실패한다">
+  <marker id="clsc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">같은 코드가 로컬에선 되고 배포에선 안 됐다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="130" rx="10"/>
+  <text class="dg-t" x="44" y="74">로컬 — localhost</text>
+  <rect class="dg-out" x="44" y="88" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="110">secure context 로 인정</text>
+  <rect class="dg-out" x="44" y="130" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="152">navigator.clipboard 동작</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="130" rx="10"/>
+  <text class="dg-t" x="388" y="74">배포 — 폐쇄망 HTTP</text>
+  <rect class="dg-warn" x="388" y="88" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="110">secure context 아님</text>
+  <rect class="dg-warn" x="388" y="130" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="152">undefined 이거나 Promise reject</text>
+
+  <rect class="dg-warn" x="24" y="196" width="672" height="68" rx="8"/>
+  <text class="dg-t" x="44" y="220">그런데 아무 에러도 안 보였다</text>
+  <text class="dg-v" x="44" y="244">writeText() 가 돌려준 Promise 를 아무도 받지 않아서</text>
+  <text class="dg-s" x="44" y="260">rejection 이 어디에도 도달하지 못하고 사라졌다 — 토스트는 성공으로 떴다</text>
+</svg>

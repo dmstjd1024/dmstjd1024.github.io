@@ -27,6 +27,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 연쇄: `columnDefs` 재생성 → AG Grid가 컬럼 정의 변경으로 판단 → 전 컬럼 재적용
 - 행이 수백 개면 이게 그대로 비용
 
+<div class="diagram" role="img" aria-label="셀 편집이 identity 변경을 거쳐 전 컬럼 재적용으로 이어지는 연쇄">
+{% include diagrams/ag-grid--identity-chain.svg %}
+</div>
+
 - 해결: 이 값들을 렌더 사이에 안정적인 ref로 읽기
 
 ```ts

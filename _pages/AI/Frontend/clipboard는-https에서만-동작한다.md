@@ -44,6 +44,10 @@ const copyToken = () => {
 
 "복사되었습니다"라는 성공 메시지가 뜨면서 클립보드는 비어 있는 상태다. 무반응보다 나쁘다.
 
+<div class="diagram" role="img" aria-label="secure context 여부에 따라 clipboard API 가 갈리는 구조">
+{% include diagrams/clipboard--secure-context.svg %}
+</div>
+
 ## 1단계: async로 바꾸고 실패를 보이게
 
 - 첫 커밋의 내용 — 실패를 실패로 만들기
