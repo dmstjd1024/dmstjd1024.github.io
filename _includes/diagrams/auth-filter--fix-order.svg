@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="쿼리를 먼저 없애고 마지막에 커넥션 풀을 늘린 순서">
+  <marker id="affo-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">고친 순서가 곧 방법이었다</text>
+
+  <rect class="dg-lead" x="24" y="52" width="152" height="76" rx="8"/>
+  <text class="dg-n" x="44" y="76">1</text>
+  <text class="dg-t" x="68" y="76">비동기 분리</text>
+  <text class="dg-s" x="44" y="98">감사 로그 INSERT 를</text>
+  <text class="dg-s" x="44" y="116">응답 경로 밖으로</text>
+
+  <path class="dg-arw" d="M184 90 H204" marker-end="url(#affo-a)"/>
+
+  <rect class="dg-lead" x="212" y="52" width="152" height="76" rx="8"/>
+  <text class="dg-n" x="232" y="76">2</text>
+  <text class="dg-t" x="256" y="76">중복 제거</text>
+  <text class="dg-s" x="232" y="98">request attribute 로</text>
+  <text class="dg-s" x="232" y="116">재조회 없앰 (6줄)</text>
+
+  <path class="dg-arw" d="M372 90 H392" marker-end="url(#affo-a)"/>
+
+  <rect class="dg-lead" x="400" y="52" width="152" height="76" rx="8"/>
+  <text class="dg-n" x="420" y="76">3</text>
+  <text class="dg-t" x="444" y="76">캐싱</text>
+  <text class="dg-s" x="420" y="98">잘 안 바뀌는 조회를</text>
+  <text class="dg-s" x="420" y="116">메모리에 보관</text>
+
+  <path class="dg-arw" d="M560 90 H580" marker-end="url(#affo-a)"/>
+
+  <rect class="dg-out" x="588" y="52" width="108" height="76" rx="8"/>
+  <text class="dg-n" x="608" y="76">4</text>
+  <text class="dg-t" x="632" y="76">풀 확장</text>
+  <text class="dg-s" x="608" y="98">20 → 50</text>
+  <text class="dg-b" x="608" y="116">TPS 100</text>
+
+  <rect class="dg-warn" x="24" y="152" width="328" height="88" rx="8"/>
+  <text class="dg-t" x="44" y="176">풀부터 늘렸다면</text>
+  <text class="dg-v" x="44" y="200">쓸데없는 쿼리 네 개를 그대로 둔 채</text>
+  <text class="dg-v" x="44" y="222">커넥션만 더 태우게 된다</text>
+
+  <rect class="dg-out" x="368" y="152" width="328" height="88" rx="8"/>
+  <text class="dg-t" x="388" y="176">없애고 나서 늘렸으므로</text>
+  <text class="dg-v" x="388" y="200">남은 쿼리를 감당하기 위한</text>
+  <text class="dg-v" x="388" y="222">확장이 된다</text>
+
+  <text class="dg-s" x="24" y="272">설정값 조정은 병목을 없애는 게 아니라 더 많이 감당하게 만드는 일이라 마지막이다</text>
+</svg>
