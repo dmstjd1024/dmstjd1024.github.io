@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="모든 클래스가 Object 를 최상위 조상으로 갖는 상속 계층">
+  <marker id="ls6or-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">모든 클래스의 꼭대기에는 Object 가 있다</text>
+
+  <rect class="dg-lead" x="252" y="52" width="216" height="48" rx="8"/>
+  <text class="dg-t" x="272" y="76">Object</text>
+  <text class="dg-s" x="272" y="94">toString() · equals() · hashCode() ...</text>
+
+  <path class="dg-arw" d="M360 108 V124 H140 V148" marker-end="url(#ls6or-a)"/>
+  <path class="dg-arw" d="M360 108 V148" marker-end="url(#ls6or-a)"/>
+  <path class="dg-arw" d="M360 108 V124 H580 V148" marker-end="url(#ls6or-a)"/>
+
+  <rect class="dg-row" x="60" y="156" width="160" height="42" rx="6"/>
+  <text class="dg-k" x="80" y="182">내가 만든 클래스</text>
+
+  <rect class="dg-row" x="280" y="156" width="160" height="42" rx="6"/>
+  <text class="dg-k" x="300" y="182">String</text>
+
+  <rect class="dg-row" x="500" y="156" width="160" height="42" rx="6"/>
+  <text class="dg-k" x="520" y="182">List</text>
+
+  <text class="dg-v" x="24" y="228">extends 를 안 써도 자동으로 Object 를 상속받는다</text>
+  <text class="dg-s" x="24" y="252">그래서 어떤 객체든 toString() 을 부를 수 있다</text>
+</svg>

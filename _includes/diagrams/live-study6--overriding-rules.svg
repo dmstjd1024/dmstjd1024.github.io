@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="메서드 오버라이딩이 성립하려면 지켜야 할 조건들">
+
+  <text class="dg-h" x="24" y="30">오버라이딩의 조건</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="96" rx="10"/>
+  <text class="dg-t" x="44" y="74">선언부는 똑같아야 한다</text>
+
+  <rect class="dg-lead" x="44" y="88" width="200" height="40" rx="6"/>
+  <text class="dg-k" x="64" y="113">이름</text>
+  <rect class="dg-lead" x="260" y="88" width="200" height="40" rx="6"/>
+  <text class="dg-k" x="280" y="113">매개변수</text>
+  <rect class="dg-lead" x="476" y="88" width="200" height="40" rx="6"/>
+  <text class="dg-k" x="496" y="113">반환타입</text>
+
+  <rect class="dg-lane" x="24" y="160" width="672" height="112" rx="10"/>
+  <text class="dg-t" x="44" y="186">이 둘은 좁히거나 늘릴 수 없다</text>
+
+  <rect class="dg-row" x="44" y="200" width="308" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="220">접근 제어자 — 조상보다 좁게 못 한다</text>
+
+  <rect class="dg-row" x="368" y="200" width="308" height="30" rx="6"/>
+  <text class="dg-v" x="384" y="220">예외 — 조상보다 많이 못 던진다</text>
+
+  <rect class="dg-warn" x="44" y="238" width="632" height="26" rx="6"/>
+  <text class="dg-s" x="60" y="256">static 메서드는 오버라이딩이 아니다 — 그냥 새로 정의하는 것이다</text>
+
+  <text class="dg-s" x="24" y="292">조상 타입으로 받아 쓸 수 있어야 하므로, 조상보다 까다로워지면 안 된다</text>
+</svg>

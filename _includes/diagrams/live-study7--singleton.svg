@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="생성자를 private 로 막고 static 메서드로만 인스턴스를 얻게 하는 싱글톤 구조">
+  <marker id="ls7sg-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">생성자를 private 로 막으면</text>
+
+  <rect class="dg-warn" x="24" y="52" width="300" height="52" rx="8"/>
+  <text class="dg-k" x="44" y="76">new Singleton()</text>
+  <text class="dg-s" x="44" y="96">외부에서 만들 수 없다 — 컴파일 에러</text>
+
+  <rect class="dg-out" x="396" y="52" width="300" height="52" rx="8"/>
+  <text class="dg-k" x="416" y="76">Singleton.getInstance()</text>
+  <text class="dg-s" x="416" y="96">이 통로로만 받을 수 있다</text>
+
+  <rect class="dg-lane" x="24" y="124" width="672" height="108" rx="10"/>
+  <text class="dg-t" x="44" y="150">클래스 안쪽</text>
+
+  <rect class="dg-row" x="44" y="164" width="308" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="184">private static Singleton s = new Singleton();</text>
+
+  <rect class="dg-lead" x="368" y="164" width="308" height="30" rx="6"/>
+  <text class="dg-k" x="384" y="184">public static getInstance()</text>
+
+  <path class="dg-arw" d="M198 200 V212 H520 V200" marker-end="url(#ls7sg-a)"/>
+  <text class="dg-s" x="240" y="226">미리 만들어 둔 하나를 계속 돌려준다</text>
+
+  <text class="dg-v" x="24" y="264">몇 번을 불러도 항상 같은 인스턴스가 나온다</text>
+  <text class="dg-s" x="24" y="288">생성자가 private 이면 자손 클래스도 만들 수 없으므로 final 을 붙여 알려주는 게 좋다</text>
+</svg>

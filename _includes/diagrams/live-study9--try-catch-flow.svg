@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="try 블록에서 예외가 나면 남은 코드를 건너뛰고 catch 로 이동하며 finally 는 항상 실행된다">
+  <marker id="ls9tc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">예외가 나면 흐름이 어디로 가나</text>
+
+  <rect class="dg-lane" x="24" y="48" width="440" height="150" rx="10"/>
+  <text class="dg-t" x="44" y="74">try</text>
+
+  <rect class="dg-row" x="44" y="86" width="400" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="106">정상 실행되는 코드</text>
+
+  <rect class="dg-warn" x="44" y="122" width="400" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="142">여기서 예외 발생</text>
+
+  <rect class="dg-row" x="44" y="158" width="400" height="30" rx="6"/>
+  <text class="dg-s" x="60" y="178">이 아래는 실행되지 않는다 — 건너뛴다</text>
+
+  <path class="dg-arw" d="M464 137 H520" marker-end="url(#ls9tc-a)"/>
+
+  <rect class="dg-lead" x="528" y="114" width="168" height="46" rx="8"/>
+  <text class="dg-t" x="548" y="138">catch</text>
+  <text class="dg-s" x="548" y="154">타입이 맞는 블록으로</text>
+
+  <path class="dg-arw" d="M244 206 V228" marker-end="url(#ls9tc-a)"/>
+  <path class="dg-arw" d="M612 168 V212 H244 V228" marker-end="url(#ls9tc-a)"/>
+
+  <rect class="dg-out" x="24" y="234" width="672" height="46" rx="8"/>
+  <text class="dg-t" x="44" y="258">finally</text>
+  <text class="dg-v" x="140" y="258">예외가 나든 안 나든, return 이 있어도 반드시 실행된다</text>
+  <text class="dg-s" x="140" y="274">그래서 자원 반납(close) 을 여기 둔다</text>
+
+  <text class="dg-s" x="24" y="308">catch 는 위에서부터 순서대로 맞춰본다 — 상위 타입을 먼저 쓰면 아래는 도달할 수 없다</text>
+</svg>
