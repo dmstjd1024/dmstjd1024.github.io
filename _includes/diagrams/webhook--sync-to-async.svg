@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="동기 대기 방식과 webhook 콜백 방식에서 요청 스레드가 점유되는 시간의 차이">
+  <marker id="whsa-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">기다리는 동안 스레드가 묶여 있었다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="96" rx="10"/>
+  <text class="dg-t" x="44" y="74">이전 — 동기 대기</text>
+
+  <rect class="dg-row" x="44" y="88" width="110" height="34" rx="6"/>
+  <text class="dg-v" x="60" y="110">클라이언트</text>
+  <path class="dg-arw" d="M162 105 H186" marker-end="url(#whsa-a)"/>
+  <rect class="dg-row" x="194" y="88" width="90" height="34" rx="6"/>
+  <text class="dg-v" x="210" y="110">서버</text>
+  <path class="dg-arw" d="M292 105 H316" marker-end="url(#whsa-a)"/>
+  <rect class="dg-warn" x="324" y="88" width="352" height="34" rx="6"/>
+  <text class="dg-k" x="344" y="110">OCR 처리 — 30초 넘게 붙잡고 기다린다</text>
+
+  <text class="dg-s" x="44" y="136">페이지 수에 비례해 늘어나므로 상한을 정할 수 없다</text>
+
+  <rect class="dg-lane" x="24" y="160" width="672" height="118" rx="10"/>
+  <text class="dg-t" x="44" y="186">이후 — webhook 콜백</text>
+
+  <rect class="dg-row" x="44" y="200" width="110" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="220">클라이언트</text>
+  <path class="dg-arw" d="M162 215 H186" marker-end="url(#whsa-a)"/>
+  <rect class="dg-out" x="194" y="200" width="140" height="30" rx="6"/>
+  <text class="dg-k" x="210" y="220">jobId 즉시 반환</text>
+  <path class="dg-arw" d="M342 215 H366" marker-end="url(#whsa-a)"/>
+  <rect class="dg-row" x="374" y="200" width="302" height="30" rx="6"/>
+  <text class="dg-v" x="394" y="220">OCR 은 따로 돌고, 끝나면 /callback 으로 알린다</text>
+
+  <text class="dg-s" x="44" y="252">클라이언트는 GET /requests/{id} 로 나중에 확인한다</text>
+  <text class="dg-s" x="44" y="270">요청 스레드와 커넥션이 곧바로 풀린다</text>
+</svg>

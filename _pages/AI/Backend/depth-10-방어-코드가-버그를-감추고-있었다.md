@@ -41,6 +41,10 @@ while (currentId != null && depth < 10) {
 
 > 조상을 10개까지 모은 뒤, 아무 말 없이 멈춤
 
+<div class="diagram" role="img" aria-label="깊이 제한이 문제를 감지하지 않고 조용히 잘라내는 구조">
+{% include diagrams/depth10--concealment.svg %}
+</div>
+
 - 호출자가 받는 정보
 
 - 반환 타입 — 그냥 `List<Long>`

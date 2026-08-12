@@ -40,6 +40,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
        클라이언트 → GET /requests/{id} 로 조회
 ```
 
+<div class="diagram" role="img" aria-label="동기 대기와 webhook 콜백에서 스레드 점유 시간의 차이">
+{% include diagrams/webhook--sync-to-async.svg %}
+</div>
+
 - `jobId` 매핑 엔티티 신설
 - 저장 항목: 상태, 결과 JSON(`MEDIUMTEXT`)
 - 클라이언트는 즉시 `jobId` 수신 후 조회 엔드포인트로 진행 상태 확인

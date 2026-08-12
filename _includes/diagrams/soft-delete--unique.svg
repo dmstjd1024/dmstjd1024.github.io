@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="소프트 삭제로 바꾸면 삭제된 행이 남아 유니크 제약에 걸리는 문제와 생성 컬럼 해법">
+  <marker id="sdun-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">지운 이름을 다시 못 쓰게 됐다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="140" rx="10"/>
+  <text class="dg-t" x="44" y="74">하드 삭제일 때</text>
+  <rect class="dg-row" x="44" y="88" width="288" height="28" rx="6"/>
+  <text class="dg-v" x="60" y="107">행이 사라진다</text>
+  <path class="dg-arw" d="M188 120 V132" marker-end="url(#sdun-a)"/>
+  <rect class="dg-out" x="44" y="138" width="288" height="28" rx="6"/>
+  <text class="dg-k" x="60" y="157">같은 이름 재사용 가능</text>
+  <text class="dg-s" x="44" y="182">UNIQUE 제약이 자연스럽게 동작</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="140" rx="10"/>
+  <text class="dg-t" x="388" y="74">소프트 삭제로 바꾸면</text>
+  <rect class="dg-row" x="388" y="88" width="288" height="28" rx="6"/>
+  <text class="dg-v" x="404" y="107">is_delete = 1 로 남아 있다</text>
+  <path class="dg-arw" d="M532 120 V132" marker-end="url(#sdun-a)"/>
+  <rect class="dg-warn" x="388" y="138" width="288" height="28" rx="6"/>
+  <text class="dg-k" x="404" y="157">같은 이름으로 재생성 불가</text>
+  <text class="dg-s" x="388" y="182">사용자에게는 이상한 동작으로 보인다</text>
+
+  <rect class="dg-out" x="24" y="212" width="672" height="72" rx="8"/>
+  <text class="dg-k" x="44" y="236">MySQL 에는 부분 인덱스가 없어 VIRTUAL 생성 컬럼으로 우회했다</text>
+  <text class="dg-s" x="44" y="260">살아 있으면 이름을, 삭제됐으면 NULL 을 갖는 컬럼에 UNIQUE 를 건다</text>
+  <text class="dg-s" x="44" y="278">NULL 은 유니크 검사에서 서로 충돌하지 않으므로 삭제된 행끼리는 겹쳐도 된다</text>
+</svg>

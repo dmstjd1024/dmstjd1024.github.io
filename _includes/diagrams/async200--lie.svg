@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="비동기 작업 등록 성공을 200 으로 응답해 사용자가 완료로 오해하는 구조">
+  <marker id="as2l-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">같은 200 을 서로 다르게 읽었다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="140" rx="10"/>
+  <text class="dg-t" x="44" y="74">서버가 뜻한 것</text>
+  <rect class="dg-row" x="44" y="88" width="288" height="34" rx="6"/>
+  <text class="dg-v" x="60" y="110">비동기 작업 등록에 성공했다</text>
+  <text class="dg-s" x="44" y="146">기술적으로는 거짓말이 아니다</text>
+  <text class="dg-s" x="44" y="168">등록은 정말로 됐으니까</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="140" rx="10"/>
+  <text class="dg-t" x="388" y="74">사용자가 읽은 것</text>
+  <rect class="dg-warn" x="388" y="88" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="110">"삭제되었습니다"</text>
+  <text class="dg-s" x="388" y="146">완료 통보로 받아들인다</text>
+  <text class="dg-s" x="388" y="168">화면에도 그렇게 뜬다</text>
+
+  <path class="dg-arw" d="M360 105 H380" marker-end="url(#as2l-a)"/>
+
+  <rect class="dg-warn" x="24" y="208" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="232">실제로 벌어진 일</text>
+  <text class="dg-v" x="44" y="256">설치가 3분째 진행 중인 네트워크에 삭제를 눌렀는데, 아무 일도 일어나지 않았다</text>
+  <text class="dg-s" x="44" y="276">이미 삭제 중인 것에 다시 삭제해도 똑같이 성공이 떴다</text>
+</svg>
