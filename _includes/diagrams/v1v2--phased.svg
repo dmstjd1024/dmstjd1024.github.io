@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="배선만 깔고 동작을 바꾸지 않는 단계를 앞에 두어 롤백 가능하게 만든 6단계 이관">
+  <marker id="v1v2ph-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">아무것도 안 바꾸는 단계를 먼저 넣었다</text>
+
+  <rect class="dg-lead" x="24" y="56" width="200" height="76" rx="8"/>
+  <text class="dg-n" x="44" y="80">Phase 0-1</text>
+  <text class="dg-k" x="44" y="102">배선만 깐다</text>
+  <text class="dg-s" x="44" y="122">기본값이 false 라 동작 동일</text>
+
+  <path class="dg-arw" d="M232 94 H256" marker-end="url(#v1v2ph-a)"/>
+
+  <rect class="dg-row" x="264" y="56" width="200" height="76" rx="8"/>
+  <text class="dg-n" x="284" y="80">Phase 2-4</text>
+  <text class="dg-k" x="284" y="102">기능을 하나씩 옮긴다</text>
+  <text class="dg-s" x="284" y="122">저장 · 편집 차단 · 사이드패널</text>
+
+  <path class="dg-arw" d="M472 94 H496" marker-end="url(#v1v2ph-a)"/>
+
+  <rect class="dg-out" x="504" y="56" width="192" height="76" rx="8"/>
+  <text class="dg-n" x="524" y="80">Phase 5</text>
+  <text class="dg-k" x="524" y="102">V1 을 지운다</text>
+  <text class="dg-s" x="524" y="122">파일 6개 · 2,389줄</text>
+
+  <rect class="dg-lane" x="24" y="152" width="328" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="176">1단계의 성질</text>
+  <text class="dg-v" x="44" y="200">호출부가 값을 안 넘기면 예전 그대로 동작한다</text>
+  <text class="dg-s" x="44" y="218">배포해도 아무 변화가 없으니 되돌릴 것도 없다</text>
+
+  <rect class="dg-warn" x="368" y="152" width="328" height="72" rx="8"/>
+  <text class="dg-t" x="388" y="176">삭제할 때 조심한 것</text>
+  <text class="dg-v" x="388" y="200">V1 전용처럼 보이지만 V2 도 쓰는 부품 5개</text>
+  <text class="dg-s" x="388" y="218">그중 하나는 다른 화면 두 곳에서도 쓰고 있었다</text>
+
+  <text class="dg-s" x="24" y="264">한 번에 갈아엎지 않고, 각 단계가 그 자체로 배포 가능하게 쪼갰다</text>
+</svg>

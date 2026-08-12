@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="순수 로직과 렌더부를 나눠 라이브러리에 묶인 부분만 교체한 범위 확정">
+  <marker id="xlsbd-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">먼저 어디까지 바꿀지를 정했다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="44" y="74">순수 로직 — 그대로 둔다</text>
+
+  <rect class="dg-out" x="44" y="88" width="288" height="26" rx="4"/>
+  <text class="dg-k" x="60" y="106">resolveCellValue</text>
+  <rect class="dg-out" x="44" y="120" width="288" height="26" rx="4"/>
+  <text class="dg-k" x="60" y="138">buildSheetAoa</text>
+
+  <text class="dg-s" x="44" y="166">"headerName 있는 컬럼만" 같은</text>
+  <text class="dg-s" x="44" y="184">도메인 규칙이 여기 담겨 있다</text>
+
+  <path class="dg-arw" d="M360 120 H380" marker-end="url(#xlsbd-a)"/>
+  <text class="dg-s" x="356" y="110">2차원 배열</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="388" y="74">렌더부 — 여기만 교체</text>
+
+  <rect class="dg-lead" x="388" y="88" width="288" height="58" rx="6"/>
+  <text class="dg-k" x="404" y="112">배열을 워크북으로 만들어</text>
+  <text class="dg-k" x="404" y="134">파일로 내보낸다</text>
+
+  <text class="dg-b" x="388" y="166">라이브러리에 묶인 건 이 부분뿐</text>
+
+  <rect class="dg-out" x="24" y="220" width="672" height="48" rx="8"/>
+  <text class="dg-k" x="44" y="244">경계를 그어두니 도메인 규칙을 다시 검증할 필요가 없었다</text>
+  <text class="dg-s" x="44" y="262">기존 테스트도 절반 이상 그대로 살았다</text>
+</svg>

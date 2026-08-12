@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="SAPUI5 의 Model, View, Controller 역할 분담과 데이터 바인딩으로 얻는 것">
+  <marker id="sapmvc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">셋을 나눠서 얻는 것</text>
+
+  <rect class="dg-item" x="24" y="52" width="212" height="96" rx="10"/>
+  <text class="dg-t" x="44" y="78">View</text>
+  <text class="dg-v" x="44" y="102">화면을 그린다</text>
+  <text class="dg-s" x="44" y="128">데이터가 어디서 왔는지 모른다</text>
+
+  <rect class="dg-lead" x="252" y="52" width="212" height="96" rx="10"/>
+  <text class="dg-t" x="272" y="78">Controller</text>
+  <text class="dg-v" x="272" y="102">이벤트에 반응한다</text>
+  <text class="dg-s" x="272" y="128">View 와 1:1 로 붙는다</text>
+
+  <rect class="dg-item" x="480" y="52" width="216" height="96" rx="10"/>
+  <text class="dg-t" x="500" y="78">Model</text>
+  <text class="dg-v" x="500" y="102">데이터를 관리한다</text>
+  <text class="dg-s" x="500" y="128">화면 모양을 모른다</text>
+
+  <path class="dg-arw" d="M244 90 H248" marker-end="url(#sapmvc-a)"/>
+  <path class="dg-arw" d="M472 90 H476" marker-end="url(#sapmvc-a)"/>
+
+  <rect class="dg-lane" x="24" y="172" width="672" height="80" rx="8"/>
+  <text class="dg-t" x="44" y="198">그래서 가능해지는 것</text>
+  <text class="dg-v" x="44" y="222">비즈니스 로직을 건드리지 않고 화면만 바꿀 수 있다</text>
+  <text class="dg-v" x="44" y="242">같은 데이터를 여러 화면이 각자 다르게 보여줄 수 있다</text>
+</svg>
