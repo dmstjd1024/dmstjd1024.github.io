@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="섀도우 단계에서 읽기 경로를 그대로 두고 관찰한 뒤 전환하는 2단계 롤아웃">
+  <marker id="mtsr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">먼저 그림자로 띄우고, 나중에 갈아탄다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="44" y="74">1단계 — 섀도우</text>
+
+  <rect class="dg-row" x="44" y="88" width="288" height="28" rx="6"/>
+  <text class="dg-v" x="60" y="107">_mat 테이블 생성 · 백필 · 동기화</text>
+
+  <rect class="dg-lead" x="44" y="122" width="288" height="28" rx="6"/>
+  <text class="dg-k" x="60" y="141">읽기는 여전히 뷰</text>
+
+  <rect class="dg-out" x="44" y="156" width="288" height="42" rx="6"/>
+  <text class="dg-k" x="60" y="178">사용자 체감 변화 없음</text>
+  <text class="dg-s" x="60" y="194">_mat 이 뷰를 따라오는지 실데이터로 관찰</text>
+
+  <path class="dg-arw" d="M360 130 H388" marker-end="url(#mtsr-a)"/>
+
+  <rect class="dg-lane" x="396" y="48" width="300" height="164" rx="10"/>
+  <text class="dg-t" x="416" y="74">2단계 — 전환</text>
+
+  <rect class="dg-row" x="416" y="88" width="260" height="28" rx="6"/>
+  <text class="dg-v" x="432" y="107">엔티티 매핑만 변경</text>
+
+  <rect class="dg-out" x="416" y="122" width="260" height="28" rx="6"/>
+  <text class="dg-k" x="432" y="141">읽기가 _mat 으로</text>
+
+  <rect class="dg-out" x="416" y="156" width="260" height="42" rx="6"/>
+  <text class="dg-k" x="432" y="178">애노테이션 2줄</text>
+  <text class="dg-s" x="432" y="194">되돌리기도 2줄</text>
+
+  <text class="dg-s" x="24" y="252">1단계만 배포된 상태에서는 되돌릴 것 자체가 없다 — 읽기 경로를 안 건드렸기 때문이다</text>
+</svg>
