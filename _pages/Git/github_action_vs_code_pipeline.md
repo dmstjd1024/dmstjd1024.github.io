@@ -65,15 +65,19 @@ jobs:
           npm test
           npm build
       - name: Cache yarn dependencies
-uses: actions/cache@v1
-id: yarn-cache
-with:                           # action에 정의되는 input 파라미터 (환경 변수)
-path: node_modules
-key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-restore-keys: |               
-${{ runner.os }}-yarn-
-Code Pipeline
+        uses: actions/cache@v1
+        id: yarn-cache
+        with:                           # action에 정의되는 input 파라미터 (환경 변수)
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 ```
+
+## Code Pipeline
+
+AWS에서 제공하는 CI/CD 서비스.
+Source(CodeCommit, S3, GitHub 등) → Build(CodeBuild) → Deploy(CodeDeploy) 단계를 파이프라인으로 연결해 배포를 자동화한다.
 
 ### 가격 비교
 
