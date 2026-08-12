@@ -96,6 +96,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 공통점 — 잘 잡는 건 **파일 하나 안에서 판정 가능한 것**
 - 못 잡는 건 **실행해봐야 알거나 도메인 지식이 필요한 것**
 
+<div class="diagram" role="img" aria-label="정적 분석으로 판정 가능한 범위와 그 밖의 경계">
+{% include diagrams/review-bot--boundary.svg %}
+</div>
+
 ## 남는 교훈
 
 - AI 리뷰 봇 도입 효과 — 지적사항 수 증가
