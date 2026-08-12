@@ -20,3 +20,7 @@ alias 명령어 추가
 ```bash
 alias log="tail -f /{프로젝트 경로}/logs/{로그파일명}.log"
 ```
+
+<div class="diagram" role="img" aria-label="alias 가 실행 전에 원래 명령으로 펼쳐지는 과정">
+{% include diagrams/alias--expansion.svg %}
+</div>

@@ -125,6 +125,10 @@ d66883d  fix: validateDeviceOrgRemap currentOrgName 조회 누락 보완
 
 그러니까 이 워크플로가 준 건 "버그 없는 코드"가 아니다. **버그의 종류를 바꿔준 것**에 가깝다. 구조를 잘못 잡아 되돌아가는 일은 줄었고, 대신 잔손질 커밋이 늘었다. 되돌리는 비용이 훨씬 크니 남는 장사다.
 
+<div class="diagram" role="img" aria-label="줄어든 버그 종류와 늘어난 버그 종류의 교환">
+{% include diagrams/spec-workflow--bug-shift.svg %}
+</div>
+
 ## 남는 교훈
 
 **스펙을 커밋한다는 게 핵심이다.**
