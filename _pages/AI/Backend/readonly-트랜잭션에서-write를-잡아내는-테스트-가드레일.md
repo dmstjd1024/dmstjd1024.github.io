@@ -38,6 +38,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 "조회 메서드니까 readOnly를 붙이면 되겠지"가 통하지 않았던 것이다.
 
+<div class="diagram" role="img" aria-label="애노테이션으로 막는 방식과 테스트로 감시하는 방식의 차이">
+{% include diagrams/readonly--guardrail.svg %}
+</div>
+
 - 실태: 조회 메서드 안에서 상태를 갱신하는 GET-in-write 패턴이 여러 곳 잔존
 - 애노테이션 하나로 걷어낼 수 있는 범위 밖
 
