@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="OData 모델의 create, read, update, remove 함수가 각각 어떤 HTTP 요청으로 나가는지">
+  <marker id="odcm-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">모델 함수와 실제로 나가는 요청</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="40" rx="6"/>
+  <text class="dg-t" x="44" y="74">create()</text>
+  <path class="dg-arw" d="M180 68 H216" marker-end="url(#odcm-a)"/>
+  <rect class="dg-lead" x="224" y="54" width="120" height="28" rx="4"/>
+  <text class="dg-k" x="240" y="73">POST</text>
+  <text class="dg-v" x="376" y="73">엔티티 셋에 새로 추가한다</text>
+
+  <rect class="dg-lane" x="24" y="96" width="672" height="40" rx="6"/>
+  <text class="dg-t" x="44" y="122">read()</text>
+  <path class="dg-arw" d="M180 116 H216" marker-end="url(#odcm-a)"/>
+  <rect class="dg-lead" x="224" y="102" width="120" height="28" rx="4"/>
+  <text class="dg-k" x="240" y="121">GET</text>
+  <text class="dg-v" x="376" y="121">성공·실패 핸들러로 갈린다</text>
+
+  <rect class="dg-lane" x="24" y="144" width="672" height="40" rx="6"/>
+  <text class="dg-t" x="44" y="170">update()</text>
+  <path class="dg-arw" d="M180 164 H216" marker-end="url(#odcm-a)"/>
+  <rect class="dg-lead" x="224" y="150" width="120" height="28" rx="4"/>
+  <text class="dg-k" x="240" y="169">PUT / MERGE</text>
+  <text class="dg-v" x="376" y="169">성공하면 모델을 자동 갱신한다</text>
+
+  <rect class="dg-lane" x="24" y="192" width="672" height="40" rx="6"/>
+  <text class="dg-t" x="44" y="218">remove()</text>
+  <path class="dg-arw" d="M180 212 H216" marker-end="url(#odcm-a)"/>
+  <rect class="dg-lead" x="224" y="198" width="120" height="28" rx="4"/>
+  <text class="dg-k" x="240" y="217">DELETE</text>
+  <text class="dg-v" x="376" y="217">지울 엔트리 경로를 지정한다</text>
+
+  <text class="dg-s" x="24" y="264">모든 작업은 중단 함수를 가진 객체를 돌려주므로, 요청을 취소할 수 있다</text>
+</svg>

@@ -206,6 +206,10 @@ entity oModel.deleteCreatedEntry(oContext); // 변경 취소 시 호출
 
 ### CRUD 작동  
 
+<div class="diagram" role="img" aria-label="OData 모델 함수와 HTTP 메서드의 대응">
+{% include diagrams/odata--crud-mapping.svg %}
+</div>
+
 OData 모델은 OData Service에서 메뉴얼적인 작업을 허용한다. 메뉴얼적 작업이 데이터를 반환할 때는 Odata 모델 데이터의 캐시가 import 된다. 모든 작업들은 필수적 sPath 파라미터와 mParameters Map을 선택적으로 요구한다.
 
  또한, 생성, 수정 메소드들은 데이터 객체가 생성되거나 변경될 때 OData 파라미터를 필수적으로 요구한다. 각각의 작업은 요청 중단을 사용할 수 있는 중단함수를 포함한 객체를 반환한다. 만약 요청이 중단되어 에러 핸들러가 호출된다면, 이것은 성공 또는 에러 핸들러가 모든 요청에 대해 호출되도록 보장한다. 이것은 또한 헤더 데이터, URL 파라미터, 또는 eTag에 대해 추가적으로 보낼 수 있도록 한다.
