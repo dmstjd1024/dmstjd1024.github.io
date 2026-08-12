@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Workflow 안에 Job 이 있고 Job 안에 Step 이 있는 GitHub Actions 의 포함 관계">
+  <marker id="ghac-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">코어 개념의 포함 관계</text>
+
+  <rect class="dg-row" x="24" y="52" width="140" height="40" rx="6"/>
+  <text class="dg-k" x="44" y="77">Event</text>
+  <path class="dg-arw" d="M172 72 H196" marker-end="url(#ghac-a)"/>
+  <text class="dg-s" x="176" y="64">트리거</text>
+
+  <rect class="dg-lane" x="204" y="52" width="492" height="180" rx="10"/>
+  <text class="dg-t" x="224" y="78">Workflow</text>
+  <text class="dg-s" x="316" y="78">.github/workflows/*.yml</text>
+
+  <rect class="dg-lane" x="224" y="92" width="452" height="124" rx="8"/>
+  <text class="dg-t" x="244" y="116">Job</text>
+  <text class="dg-s" x="290" y="116">Runner 라는 머신 위에서 돈다</text>
+
+  <rect class="dg-row" x="244" y="130" width="132" height="34" rx="6"/>
+  <text class="dg-v" x="260" y="152">Step</text>
+  <rect class="dg-row" x="392" y="130" width="132" height="34" rx="6"/>
+  <text class="dg-v" x="408" y="152">Step</text>
+  <rect class="dg-lead" x="540" y="130" width="120" height="34" rx="6"/>
+  <text class="dg-k" x="556" y="152">Step</text>
+
+  <text class="dg-s" x="244" y="188">순서대로 실행된다</text>
+  <text class="dg-b" x="540" y="188">Action 을 쓸 수 있다</text>
+
+  <rect class="dg-lane" x="24" y="248" width="672" height="44" rx="8"/>
+  <text class="dg-v" x="44" y="274">Job 끼리는 병렬로 돌 수도 있고, 서로 의존 관계를 걸어 순서를 정할 수도 있다</text>
+</svg>

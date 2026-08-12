@@ -36,6 +36,10 @@ job을 구성하기 위한 step들의 조합으로 구성된 독립적인 명령
 - **Runner**
 Gitbub Action Runner 어플리케이션이 설치된 머신으로, Workflow가 실행될 인스턴스
 
+<div class="diagram" role="img" aria-label="Workflow, Job, Step 의 포함 관계">
+{% include diagrams/gha--concepts.svg %}
+</div>
+
 ex)
 ```yaml
 name: dmstjd1024-github-actions              # WorkFlow 이름
@@ -80,6 +84,10 @@ AWS에서 제공하는 CI/CD 서비스.
 Source(CodeCommit, S3, GitHub 등) → Build(CodeBuild) → Deploy(CodeDeploy) 단계를 파이프라인으로 연결해 배포를 자동화한다.
 
 ### 가격 비교
+
+<div class="diagram" role="img" aria-label="두 서비스의 과금 기준 차이">
+{% include diagrams/gha--vs-codepipeline.svg %}
+</div>
 
  
 |                | Github Action(Teams 플랜) | Code Pipeline                                                                                |

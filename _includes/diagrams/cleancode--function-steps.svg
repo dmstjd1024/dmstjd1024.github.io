@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="좋은 함수는 처음부터 나오지 않고 나열, 다듬기, 이름 바꾸기, 쪼개기를 거친다는 순서">
+  <marker id="ccfs-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">좋은 함수는 처음부터 나오지 않는다</text>
+
+  <rect class="dg-row" x="24" y="56" width="120" height="56" rx="8"/>
+  <text class="dg-n" x="44" y="80">1</text>
+  <text class="dg-k" x="68" y="80">나열</text>
+  <text class="dg-s" x="44" y="100">일단 줄줄이 쓴다</text>
+
+  <path class="dg-arw" d="M152 84 H172" marker-end="url(#ccfs-a)"/>
+
+  <rect class="dg-row" x="180" y="56" width="120" height="56" rx="8"/>
+  <text class="dg-n" x="200" y="80">2</text>
+  <text class="dg-k" x="224" y="80">다듬기</text>
+  <text class="dg-s" x="200" y="100">동작을 유지하며</text>
+
+  <path class="dg-arw" d="M308 84 H328" marker-end="url(#ccfs-a)"/>
+
+  <rect class="dg-row" x="336" y="56" width="140" height="56" rx="8"/>
+  <text class="dg-n" x="356" y="80">3</text>
+  <text class="dg-k" x="380" y="80">이름 바꾸기</text>
+  <text class="dg-s" x="356" y="100">뭘 하는지 드러나게</text>
+
+  <path class="dg-arw" d="M484 84 H504" marker-end="url(#ccfs-a)"/>
+
+  <rect class="dg-lead" x="512" y="56" width="184" height="56" rx="8"/>
+  <text class="dg-n" x="532" y="80">4</text>
+  <text class="dg-k" x="556" y="80">쪼개기</text>
+  <text class="dg-s" x="532" y="100">한 가지 일만 남을 때까지</text>
+
+  <rect class="dg-lane" x="24" y="136" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="162">기준으로 삼은 것</text>
+  <text class="dg-v" x="44" y="186">한 가지 일만 할 것 · 들여쓰기가 2단을 넘지 않을 것</text>
+  <text class="dg-s" x="44" y="204">처음부터 이 모양으로 쓰려 하지 말고, 쓴 다음에 그렇게 만든다</text>
+</svg>

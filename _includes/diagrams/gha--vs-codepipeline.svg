@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="GitHub Actions 와 Code Pipeline 의 과금 방식이 시간 기준과 파이프라인 개수 기준으로 다르다는 비교">
+  <marker id="ghavcp-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">무엇에 값을 매기느냐가 다르다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="44" y="74">GitHub Actions</text>
+
+  <rect class="dg-lead" x="44" y="88" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="110">돌린 시간만큼</text>
+
+  <text class="dg-v" x="44" y="146">월 3,000분 제공</text>
+  <text class="dg-v" x="44" y="168">넘으면 분당 과금</text>
+  <text class="dg-s" x="44" y="196">파이프라인을 몇 개 만들든 상관없다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="388" y="74">Code Pipeline</text>
+
+  <rect class="dg-lead" x="388" y="88" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="110">활성 파이프라인 개수만큼</text>
+
+  <text class="dg-v" x="388" y="146">개당 월 1 USD</text>
+  <text class="dg-v" x="388" y="168">첫 30일 무료 · 월 1개 무료</text>
+  <text class="dg-s" x="388" y="196">대신 빌드·배포 리소스 비용이 따로 붙는다</text>
+
+  <text class="dg-v" x="24" y="248">자주 돌리지만 파이프라인이 적으면 Code Pipeline 이,</text>
+  <text class="dg-v" x="24" y="270">파이프라인이 많고 실행이 짧으면 Actions 가 유리해진다</text>
+</svg>

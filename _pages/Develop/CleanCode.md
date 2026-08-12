@@ -44,6 +44,10 @@ thumbnail: "/assets/img/thumbnail/clean_code_thumbnail.png"
 - 중복제거를 위해 코드를 최대한 부모 클래스에 몰아 넣는다.
 - 함수짜는 법 → 줄줄이 나열 → 다듬기 → 이름바꾸기 → 쪼개기 → 좋은 함수
 
+<div class="diagram" role="img" aria-label="함수를 다듬어 가는 네 단계">
+{% include diagrams/cleancode--function-steps.svg %}
+</div>
+
 ## 4장 [주석]
 - 함수를 만들 때마다 주석을 달았던 기억이 났다.
 - 책에서의 저자는 주석에 대해 좋게 바라보지 않는다. but 나는 주석 자체를 나쁘게 보지 않는다. 함수가 바뀌면서 주석이 사라지는 것은, 그만큼 좋은 코드로 바뀌었다는 것이고, 허나 저자와 나의 공통점은 주석을 어떻게 적냐는 것이다.

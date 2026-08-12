@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="전달 경로를 고치는 것과 그 기능을 켤지 정하는 것을 별개 판단으로 나눈 과정">
+  <marker id="mlfe-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">고치는 것과 켜는 것은 다른 판단이다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="44" y="74">버그 수정</text>
+
+  <rect class="dg-row" x="44" y="88" width="288" height="28" rx="6"/>
+  <text class="dg-v" x="60" y="107">환경변수가 컨테이너까지 안 갔다</text>
+  <path class="dg-arw" d="M188 120 V132" marker-end="url(#mlfe-a)"/>
+  <rect class="dg-out" x="44" y="138" width="288" height="28" rx="6"/>
+  <text class="dg-k" x="60" y="157">전달 경로를 복구</text>
+  <text class="dg-s" x="44" y="186">여기까지는 명백히 고쳐야 할 일</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="388" y="74">그래서 켤 것인가</text>
+
+  <rect class="dg-row" x="388" y="88" width="288" height="28" rx="6"/>
+  <text class="dg-v" x="404" y="107">"ML 을 켜는 게 실제로 더 나은가"</text>
+  <path class="dg-arw" d="M532 120 V132" marker-end="url(#mlfe-a)"/>
+  <rect class="dg-lead" x="388" y="138" width="288" height="28" rx="6"/>
+  <text class="dg-k" x="404" y="157">기본값은 false 로 유지</text>
+  <text class="dg-s" x="388" y="186">36개 종목으로 검증한 뒤 판단</text>
+
+  <text class="dg-v" x="24" y="242">경로를 고쳤다고 해서 그 기능을 켜야 하는 건 아니다</text>
+  <text class="dg-s" x="24" y="268">세 방향으로 검증했고 셋 다 켜지 않는 쪽이 나았다 — 그래서 고친 채로 꺼 뒀다</text>
+</svg>

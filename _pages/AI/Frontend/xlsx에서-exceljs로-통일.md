@@ -47,6 +47,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 - 이 경계의 효과: 도메인 규칙 재검증 불필요, 기존 테스트 절반 이상 그대로 유효
 
+<div class="diagram" role="img" aria-label="순수 로직과 렌더부의 경계를 그어 교체 범위를 정한 구조">
+{% include diagrams/xlsx--boundary.svg %}
+</div>
+
 ## 교체
 
 ```ts
