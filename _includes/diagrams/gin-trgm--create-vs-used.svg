@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="인덱스를 만든 사건과 인덱스가 쓰이는 사건은 별개이며 자동으로 이어지지 않는다">
+  <marker id="gtcvu-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">만든 것과 쓰이는 것은 다른 사건이다</text>
+
+  <rect class="dg-lead" x="24" y="56" width="200" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="82">3월 12일</text>
+  <text class="dg-s" x="44" y="104">CREATE INDEX</text>
+  <text class="dg-s" x="44" y="122">성공했다고 나온다</text>
+
+  <rect class="dg-warn" x="260" y="56" width="200" height="72" rx="8"/>
+  <text class="dg-t" x="280" y="82">13일 동안</text>
+  <text class="dg-s" x="280" y="104">디스크만 차지</text>
+  <text class="dg-s" x="280" y="122">아무 쿼리도 타지 않음</text>
+
+  <rect class="dg-out" x="496" y="56" width="200" height="72" rx="8"/>
+  <text class="dg-t" x="516" y="82">3월 25일</text>
+  <text class="dg-s" x="516" y="104">플랜에 처음 등장</text>
+  <text class="dg-s" x="516" y="122">그제서야 빨라짐</text>
+
+  <path class="dg-arw" d="M232 92 H252" marker-end="url(#gtcvu-a)"/>
+  <path class="dg-arw" d="M468 92 H488" marker-end="url(#gtcvu-a)"/>
+
+  <rect class="dg-lane" x="24" y="148" width="672" height="72" rx="8"/>
+  <text class="dg-v" x="44" y="174">CREATE INDEX 는 "만들었다" 만 알려주지 "쓰이고 있다" 는 알려주지 않는다</text>
+  <text class="dg-k" x="44" y="200">완료 조건은 인덱스 생성이 아니라 EXPLAIN 플랜에 인덱스가 등장하는 것</text>
+
+  <text class="dg-s" x="24" y="248">커밋 전에 EXPLAIN 한 번 돌렸다면 13일이 13분이었다</text>
+</svg>

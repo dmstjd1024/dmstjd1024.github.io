@@ -38,6 +38,10 @@ WHERE c.name LIKE '%' || #{keyword} || '%'
 - 이유: 선행 문자열이 고정돼야 범위 스캔 가능
 - 결과: 매 검색이 풀스캔
 
+<div class="diagram" role="img" aria-label="선행 와일드카드가 B-tree 를 무력화하고 trigram 이 이를 푸는 방식">
+{% include diagrams/gin-trgm--leading-wildcard.svg %}
+</div>
+
 ## 1차 시도: pg_trgm + GIN 인덱스
 
 - PostgreSQL이 제공하는 도구
@@ -89,6 +93,10 @@ LOWER(c.name) LIKE LOWER('%' || #{keyword} || '%')
 - PostgreSQL 입장에서 `name`과 `LOWER(name)`은 전혀 다른 표현식
 - 인덱스 정의와 쿼리 표현식이 문자 그대로 일치해야 후보로 등록
 - 함수를 한 번 감싸는 순간 인덱스는 없는 것과 동일
+
+<div class="diagram" role="img" aria-label="함수로 감싸면 인덱스 표현식과 달라져 사용되지 않는 구조">
+{% include diagrams/gin-trgm--function-wrap.svg %}
+</div>
 
 - 선택지 둘
 
@@ -149,6 +157,10 @@ LOWER(c.name) LIKE LOWER('%' || #{keyword} || '%')
 DDL을 커밋하기 전에 `EXPLAIN`으로 대상 쿼리가 실제로 그 인덱스를 타는지 확인했다면 13일이 아니라 13분이면 끝났을 일이다.
 
 - 인덱스 작업의 완료 조건: "인덱스 생성"이 아니라 "플랜에 인덱스가 등장"
+
+<div class="diagram" role="img" aria-label="인덱스를 만든 날과 실제로 쓰인 날이 13일 떨어져 있던 흐름">
+{% include diagrams/gin-trgm--create-vs-used.svg %}
+</div>
 
 - 부수 시사점 — 함수로 감싼 조건절의 조용한 인덱스 무력화
 

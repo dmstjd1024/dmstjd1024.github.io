@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="컬럼을 함수로 감싸면 인덱스와 표현식이 달라져 인덱스를 타지 못한다">
+  <marker id="gtfw-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">인덱스는 표현식이 문자 그대로 맞아야 쓰인다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="96" rx="10"/>
+  <text class="dg-t" x="44" y="74">만들어 둔 인덱스</text>
+  <rect class="dg-lead" x="200" y="58" width="220" height="34" rx="6"/>
+  <text class="dg-key" x="220" y="80">GIN (name)</text>
+
+  <text class="dg-t" x="44" y="120">쿼리가 쓴 조건</text>
+  <rect class="dg-warn" x="200" y="102" width="220" height="34" rx="6"/>
+  <text class="dg-key" x="220" y="124">LOWER(name)</text>
+
+  <path class="dg-arw" d="M436 96 H480" marker-end="url(#gtfw-a)"/>
+
+  <rect class="dg-warn" x="488" y="72" width="188" height="48" rx="8"/>
+  <text class="dg-k" x="508" y="94">서로 다른 표현식</text>
+  <text class="dg-s" x="508" y="112">Seq Scan 으로 돈다</text>
+
+  <text class="dg-t" x="24" y="180">두 가지 해법</text>
+
+  <rect class="dg-row" x="24" y="192" width="328" height="64" rx="8"/>
+  <text class="dg-k" x="44" y="216">인덱스를 쿼리에 맞춘다</text>
+  <text class="dg-s" x="44" y="238">GIN (LOWER(name)) — 검색 컬럼마다 따로 필요</text>
+
+  <rect class="dg-out" x="368" y="192" width="328" height="64" rx="8"/>
+  <text class="dg-k" x="388" y="216">쿼리를 인덱스에 맞춘다  (채택)</text>
+  <text class="dg-s" x="388" y="238">ILIKE — 기존 인덱스를 그대로 쓴다</text>
+
+  <text class="dg-s" x="24" y="286">LOWER · CAST · COALESCE 를 조건절 좌변에 쓰면 그 컬럼 인덱스는 대체로 놀고 있다</text>
+</svg>

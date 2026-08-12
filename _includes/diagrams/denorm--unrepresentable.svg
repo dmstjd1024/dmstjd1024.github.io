@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="조인으로 조직을 유도하는 모델에서는 고객이 없는 장비의 조직을 표현할 수 없다">
+  <marker id="dnur-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">성능이 아니라 표현할 수 없어서 바꿨다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="96" rx="10"/>
+  <text class="dg-t" x="44" y="74">기존 — 조인으로 유도</text>
+
+  <rect class="dg-row" x="150" y="86" width="130" height="40" rx="6"/>
+  <text class="dg-k" x="170" y="111">장비 A</text>
+  <path class="dg-arw" d="M288 106 H326" marker-end="url(#dnur-a)"/>
+  <text class="dg-s" x="288" y="98">point_sq</text>
+  <rect class="dg-row" x="334" y="86" width="130" height="40" rx="6"/>
+  <text class="dg-k" x="354" y="111">고객 B</text>
+  <path class="dg-arw" d="M472 106 H510" marker-end="url(#dnur-a)"/>
+  <text class="dg-s" x="470" y="98">매핑</text>
+  <rect class="dg-lead" x="518" y="86" width="130" height="40" rx="6"/>
+  <text class="dg-k" x="538" y="111">조직</text>
+
+  <rect class="dg-warn" x="24" y="160" width="328" height="90" rx="8"/>
+  <text class="dg-t" x="44" y="184">표현할 수 없는 상태</text>
+  <text class="dg-v" x="44" y="208">고객에 아직 배정 안 된 장비</text>
+  <text class="dg-v" x="44" y="230">고객과 다른 조직에 속한 장비</text>
+
+  <rect class="dg-out" x="368" y="160" width="328" height="90" rx="8"/>
+  <text class="dg-t" x="388" y="184">장비에 org_id 를 직접 둔다</text>
+  <text class="dg-v" x="388" y="208">고객이 없어도 조직을 가질 수 있다</text>
+  <text class="dg-s" x="388" y="230">조인 두 단계가 컬럼 하나가 된다</text>
+
+  <text class="dg-s" x="24" y="286">A 의 조직이 B 의 조직의 함수였기 때문에, point_sq 가 NULL 이면 조직이 아예 없었다</text>
+</svg>
