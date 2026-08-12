@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="자동 백업과 스냅샷의 생성 주체와 인스턴스 삭제 시 차이">
+
+  <text class="dg-h" x="24" y="30">자동 백업 vs 스냅샷</text>
+
+  <rect class="dg-item" x="24" y="48" width="328" height="196" rx="10"/>
+  <text class="dg-t" x="44" y="80">자동 백업 (Auto Backup)</text>
+  <rect class="dg-row" x="44" y="96" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="118">생성</text>
+  <text class="dg-v" x="150" y="118">RDS 가 자동으로</text>
+  <rect class="dg-row" x="44" y="138" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="160">보관 기간</text>
+  <text class="dg-v" x="150" y="160">7 ~ 35일 설정</text>
+  <rect class="dg-warn" x="44" y="180" width="288" height="46" rx="6"/>
+  <text class="dg-k" x="60" y="202">인스턴스 삭제 시</text>
+  <text class="dg-v" x="60" y="220">백업도 함께 사라진다</text>
+
+  <rect class="dg-item" x="368" y="48" width="328" height="196" rx="10"/>
+  <text class="dg-t" x="388" y="80">스냅샷 (Snapshot)</text>
+  <rect class="dg-row" x="388" y="96" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="118">생성</text>
+  <text class="dg-v" x="494" y="118">개발자가 수동으로</text>
+  <rect class="dg-row" x="388" y="138" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="160">저장 위치</text>
+  <text class="dg-v" x="494" y="160">S3 (크기만큼 과금)</text>
+  <rect class="dg-out" x="388" y="180" width="288" height="46" rx="6"/>
+  <text class="dg-k" x="404" y="202">인스턴스 삭제 시</text>
+  <text class="dg-v" x="404" y="220">그대로 남는다</text>
+
+  <text class="dg-s" x="24" y="276">인스턴스를 지워도 남겨야 할 백업이라면 스냅샷을 따로 떠 둬야 한다</text>
+</svg>

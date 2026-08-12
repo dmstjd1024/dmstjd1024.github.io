@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="쓰기 후 읽기 일관성 모델과 최종 일관성 모델의 차이">
+  <marker id="s3cons-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">두 가지 데이터 일관성 모델</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="112" rx="10"/>
+  <text class="dg-t" x="44" y="76">쓰기 후 읽기 (강한 일관성)</text>
+  <text class="dg-s" x="44" y="96">PUT — 새로 올리기</text>
+
+  <rect class="dg-lead" x="300" y="62" width="120" height="42" rx="6"/>
+  <text class="dg-t" x="320" y="88">업로드</text>
+  <path class="dg-arw" d="M428 83 H480" marker-end="url(#s3cons-a)"/>
+  <rect class="dg-out" x="488" y="62" width="188" height="42" rx="6"/>
+  <text class="dg-t" x="508" y="88">바로 읽힌다</text>
+
+  <text class="dg-v" x="44" y="140">방금 올린 파일을 곧바로 조회해도 그대로 나온다</text>
+
+  <rect class="dg-lane" x="24" y="176" width="672" height="132" rx="10"/>
+  <text class="dg-t" x="44" y="204">최종 일관성</text>
+  <text class="dg-s" x="44" y="224">UPDATE · DELETE — 고치거나 지우기</text>
+
+  <rect class="dg-lead" x="300" y="190" width="120" height="42" rx="6"/>
+  <text class="dg-t" x="320" y="216">수정</text>
+  <path class="dg-arw" d="M428 211 H480" marker-end="url(#s3cons-a)"/>
+  <rect class="dg-warn" x="488" y="190" width="188" height="42" rx="6"/>
+  <text class="dg-t" x="508" y="216">이전 값이 나올 수 있다</text>
+
+  <text class="dg-v" x="44" y="256">한 지역에 노드가 여러 개라, 아직 반영이 안 된 노드가 응답할 수 있다</text>
+  <text class="dg-v" x="44" y="278">시간이 지나면 모든 노드가 같은 값이 된다 — 그래서 '최종' 일관성이다</text>
+  <text class="dg-s" x="44" y="298">수정 직후 바로 검증하는 코드는 실패할 수 있다</text>
+</svg>

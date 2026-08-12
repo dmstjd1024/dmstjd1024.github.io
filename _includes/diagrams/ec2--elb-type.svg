@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="ALB, NLB, CLB 가 각각 OSI 어느 계층에서 동작하는지 비교">
+  <marker id="ec2elbtype-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">ELB 타입별 동작 계층</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="64" rx="8"/>
+  <text class="dg-t" x="44" y="76">L7  애플리케이션 계층</text>
+  <text class="dg-s" x="44" y="98">HTTP / HTTPS</text>
+  <rect class="dg-sel" x="420" y="60" width="256" height="40" rx="6"/>
+  <text class="dg-t" x="440" y="85">ALB</text>
+  <text class="dg-v" x="496" y="85">URL · 호스트 기반 라우팅</text>
+
+  <rect class="dg-lane" x="24" y="128" width="672" height="64" rx="8"/>
+  <text class="dg-t" x="44" y="156">L4  전송 계층</text>
+  <text class="dg-s" x="44" y="178">TCP / UDP</text>
+  <rect class="dg-sel" x="420" y="140" width="256" height="40" rx="6"/>
+  <text class="dg-t" x="440" y="165">NLB</text>
+  <text class="dg-v" x="496" y="165">높은 성능 · 낮은 지연</text>
+
+  <rect class="dg-lane" x="24" y="208" width="672" height="64" rx="8"/>
+  <text class="dg-t" x="44" y="236">L4 + L7  혼합 (구형)</text>
+  <text class="dg-s" x="44" y="258">HTTP / HTTPS / TCP</text>
+  <rect class="dg-row" x="420" y="220" width="256" height="40" rx="6"/>
+  <text class="dg-t" x="440" y="245">CLB</text>
+  <text class="dg-v" x="496" y="245">기능 제한 · 권장하지 않음</text>
+
+  <path class="dg-arw" d="M360 288 V308" marker-end="url(#ec2elbtype-a)"/>
+
+  <text class="dg-s" x="24" y="334">계층이 높을수록 요청 내용을 들여다보고 판단할 수 있고, 낮을수록 빠르다</text>
+</svg>
