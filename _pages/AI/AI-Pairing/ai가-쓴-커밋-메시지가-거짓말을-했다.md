@@ -148,6 +148,10 @@ export async function verifySecurityAnswerForPasswordResetAPI(...)
 - 커밋 메시지의 가치 출처: 개별 정확도가 아니라 "믿고 읽어도 된다"는 전제
 - 전제 붕괴 시 — 매번 diff 열람 필요 → 메시지를 읽을 이유 소멸
 
+<div class="diagram" role="img" aria-label="커밋 메시지의 신뢰가 무너질 때의 파급">
+{% include diagrams/commit-lie--trust.svg %}
+</div>
+
 ## 방지책
 
 거창한 건 없음. 커밋 전 스테이징 내용을 직접 보는 습관 하나

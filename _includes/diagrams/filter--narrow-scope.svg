@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="기본값을 기존 동작으로 두고 특정 경로에서만 필터를 끄도록 범위를 좁힌 변경">
+  <marker id="flns-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">바뀌는 곳을 한 군데로 좁혔다</text>
+
+  <rect class="dg-lead" x="252" y="52" width="216" height="40" rx="8"/>
+  <text class="dg-k" x="272" y="77">block_negative_macd</text>
+  <text class="dg-s" x="480" y="77">기본값 True — 기존 그대로</text>
+
+  <path class="dg-arw" d="M360 100 V116 H160 V140" marker-end="url(#flns-a)"/>
+  <path class="dg-arw" d="M360 100 V116 H560 V140" marker-end="url(#flns-a)"/>
+
+  <rect class="dg-out" x="60" y="146" width="200" height="70" rx="8"/>
+  <text class="dg-t" x="80" y="170">realtime_engine</text>
+  <text class="dg-k" x="80" y="192">여기서만 끈다</text>
+  <text class="dg-s" x="80" y="210">라이브 신호 생성 경로</text>
+
+  <rect class="dg-row" x="460" y="146" width="200" height="70" rx="8"/>
+  <text class="dg-t" x="480" y="170">백테스트 · 그 외</text>
+  <text class="dg-v" x="480" y="192">손대지 않는다</text>
+  <text class="dg-s" x="480" y="210">RSI · 거래량 필터도 유지</text>
+
+  <text class="dg-v" x="24" y="252">MACD 필터가 과했다고 본 것이지, 필터링 자체가 필요 없다고 본 게 아니었다</text>
+  <text class="dg-s" x="24" y="274">기본값을 기존 동작으로 두면, 이 변경이 다른 경로를 건드릴 수 없다</text>
+</svg>

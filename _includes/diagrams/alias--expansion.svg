@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="셸이 명령어를 실행하기 전에 alias 를 원래 명령으로 펼쳐 넣는 과정">
+  <marker id="alex-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">alias 는 실행 전에 펼쳐진다</text>
+
+  <rect class="dg-item" x="24" y="56" width="150" height="56" rx="8"/>
+  <text class="dg-t" x="44" y="80">내가 친 것</text>
+  <text class="dg-key" x="44" y="102">log</text>
+
+  <path class="dg-arw" d="M182 84 H214" marker-end="url(#alex-a)"/>
+  <text class="dg-s" x="186" y="76">셸이 치환</text>
+
+  <rect class="dg-lead" x="222" y="56" width="330" height="56" rx="8"/>
+  <text class="dg-t" x="242" y="80">실제로 실행되는 것</text>
+  <text class="dg-key" x="242" y="102">tail -f /경로/logs/파일.log</text>
+
+  <path class="dg-arw" d="M560 84 H592" marker-end="url(#alex-a)"/>
+
+  <rect class="dg-out" x="600" y="56" width="96" height="56" rx="8"/>
+  <text class="dg-k" x="620" y="90">실행</text>
+
+  <rect class="dg-lane" x="24" y="140" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="166">~/.bashrc 에 적어두는 이유</text>
+  <text class="dg-v" x="44" y="190">셸이 새로 뜰 때마다 이 파일을 읽으므로, 등록이 매번 되살아난다</text>
+  <text class="dg-s" x="44" y="208">터미널에서 바로 치면 그 세션에서만 살아 있다</text>
+</svg>

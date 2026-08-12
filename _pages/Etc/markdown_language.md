@@ -13,6 +13,10 @@ thumbnail: "/assets/img/thumbnail/markdown_thumbnail.webp"
 # Markdown 문법
 게시물 작성하면서, Markdown을 많이 사용할텐데, 요약집처럼 정리해보았다.
 
+<div class="diagram" role="img" aria-label="제목을 쓰는 두 방식과 표현 가능한 단계">
+{% include diagrams/markdown--heading-styles.svg %}
+</div>
+
 제목
 ======
 ```markdown

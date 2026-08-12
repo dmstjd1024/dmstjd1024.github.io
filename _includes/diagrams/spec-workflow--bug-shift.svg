@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="스펙과 자기검토를 거치면 버그가 없어지는 게 아니라 종류가 바뀐다는 정리">
+  <marker id="swbs-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">버그가 없어진 게 아니라 종류가 바뀌었다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="44" y="74">줄어든 것</text>
+
+  <rect class="dg-warn" x="44" y="88" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="108">구조를 잘못 잡아 되돌아가기</text>
+
+  <text class="dg-v" x="44" y="142">설계 수준의 공백은</text>
+  <text class="dg-v" x="44" y="164">자기검토가 잡아낸다</text>
+  <text class="dg-s" x="44" y="188">되돌리는 비용이 큰 종류다</text>
+
+  <path class="dg-arw" d="M360 120 H380" marker-end="url(#swbs-a)"/>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="388" y="74">늘어난 것</text>
+
+  <rect class="dg-row" x="388" y="88" width="288" height="30" rx="6"/>
+  <text class="dg-v" x="404" y="108">잔손질 커밋</text>
+
+  <text class="dg-v" x="388" y="142">표시용 필드 하나 누락</text>
+  <text class="dg-v" x="388" y="164">주석과 코드의 미묘한 불일치</text>
+  <text class="dg-s" x="388" y="188">컴파일도 되고 테스트도 통과한다</text>
+
+  <rect class="dg-out" x="24" y="222" width="672" height="48" rx="8"/>
+  <text class="dg-k" x="44" y="246">자기검토가 보는 층위와 세부 누락의 층위가 다르다</text>
+  <text class="dg-s" x="44" y="264">되돌리는 비용이 훨씬 크니, 이 교환은 남는 장사다</text>
+</svg>
