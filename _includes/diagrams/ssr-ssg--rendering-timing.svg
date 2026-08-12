@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="CSR, SSR, SSG 가 HTML 을 만드는 시점이 각각 다르다는 비교">
+  <marker id="ssrrt-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">HTML 을 언제 만드느냐의 차이</text>
+
+  <text class="dg-s" x="180" y="58">빌드할 때</text>
+  <text class="dg-s" x="360" y="58">요청이 올 때</text>
+  <text class="dg-s" x="548" y="58">브라우저에서</text>
+
+  <rect class="dg-lane" x="24" y="70" width="672" height="70" rx="8"/>
+  <text class="dg-t" x="44" y="98">CSR</text>
+  <text class="dg-s" x="44" y="118">React · Vue</text>
+  <rect class="dg-row" x="150" y="82" width="150" height="44" rx="6"/>
+  <text class="dg-s" x="196" y="109">—</text>
+  <rect class="dg-row" x="316" y="82" width="150" height="44" rx="6"/>
+  <text class="dg-s" x="340" y="109">빈 div 만 보냄</text>
+  <rect class="dg-lead" x="482" y="82" width="194" height="44" rx="6"/>
+  <text class="dg-k" x="502" y="109">여기서 그린다</text>
+
+  <rect class="dg-lane" x="24" y="150" width="672" height="70" rx="8"/>
+  <text class="dg-t" x="44" y="178">SSR</text>
+  <text class="dg-s" x="44" y="198">Next · Nuxt</text>
+  <rect class="dg-row" x="150" y="162" width="150" height="44" rx="6"/>
+  <text class="dg-s" x="196" y="189">—</text>
+  <rect class="dg-lead" x="316" y="162" width="150" height="44" rx="6"/>
+  <text class="dg-k" x="336" y="189">여기서 그린다</text>
+  <rect class="dg-row" x="482" y="162" width="194" height="44" rx="6"/>
+  <text class="dg-s" x="502" y="189">받아서 보여주기만</text>
+
+  <rect class="dg-lane" x="24" y="230" width="672" height="70" rx="8"/>
+  <text class="dg-t" x="44" y="258">SSG</text>
+  <text class="dg-s" x="44" y="278">Jekyll · Hugo</text>
+  <rect class="dg-lead" x="150" y="242" width="150" height="44" rx="6"/>
+  <text class="dg-k" x="170" y="269">여기서 그린다</text>
+  <rect class="dg-row" x="316" y="242" width="150" height="44" rx="6"/>
+  <text class="dg-s" x="336" y="269">파일만 내려줌</text>
+  <rect class="dg-row" x="482" y="242" width="194" height="44" rx="6"/>
+  <text class="dg-s" x="502" y="269">받아서 보여주기만</text>
+
+  <text class="dg-s" x="24" y="326">일찍 만들수록 빠르고 검색에 잘 잡히며, 늦게 만들수록 화면이 자유롭다</text>
+</svg>

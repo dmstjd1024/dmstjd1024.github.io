@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Virtual DOM 에서 바뀐 부분만 계산해 실제 DOM 에 반영하는 흐름">
+  <marker id="rc1vd-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">왜 Virtual DOM 을 한 번 거치나</text>
+
+  <rect class="dg-lane" x="24" y="52" width="392" height="140" rx="10"/>
+  <text class="dg-t" x="44" y="78">Virtual DOM — 자바스크립트 객체</text>
+
+  <rect class="dg-row" x="44" y="92" width="164" height="82" rx="6"/>
+  <text class="dg-s" x="60" y="114">이전 상태</text>
+  <text class="dg-v" x="60" y="138">제목</text>
+  <text class="dg-v" x="60" y="160">항목 3개</text>
+
+  <rect class="dg-lead" x="232" y="92" width="164" height="82" rx="6"/>
+  <text class="dg-s" x="248" y="114">새 상태</text>
+  <text class="dg-v" x="248" y="138">제목</text>
+  <text class="dg-b" x="248" y="160">항목 4개</text>
+
+  <path class="dg-arw" d="M424 132 H480" marker-end="url(#rc1vd-a)"/>
+  <text class="dg-b" x="420" y="122">달라진 것만</text>
+
+  <rect class="dg-out" x="488" y="52" width="208" height="140" rx="10"/>
+  <text class="dg-t" x="508" y="78">실제 DOM</text>
+  <text class="dg-v" x="508" y="112">추가된 항목 하나만</text>
+  <text class="dg-v" x="508" y="134">건드린다</text>
+  <text class="dg-s" x="508" y="166">나머지는 그대로 둔다</text>
+
+  <rect class="dg-lane" x="24" y="212" width="672" height="60" rx="8"/>
+  <text class="dg-v" x="44" y="238">실제 DOM 을 고치는 일은 비싸다 — 그래서 먼저 객체끼리 비교해 최소한만 반영한다</text>
+  <text class="dg-s" x="44" y="258">Element 가 불변인 것도 이 비교를 위해서다</text>
+</svg>

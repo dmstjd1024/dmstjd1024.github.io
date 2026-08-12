@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="Jam Stack 은 정적 페이지를 CDN 으로 배포하고 동적 기능은 외부 API 에 맡긴다">
+  <marker id="ssrjam-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">Jam Stack 의 구성</text>
+
+  <rect class="dg-item" x="24" y="56" width="180" height="64" rx="8"/>
+  <text class="dg-t" x="44" y="82">빌드</text>
+  <text class="dg-s" x="44" y="104">미리 렌더링한 정적 파일</text>
+
+  <path class="dg-arw" d="M212 88 H260" marker-end="url(#ssrjam-a)"/>
+
+  <rect class="dg-lead" x="268" y="56" width="180" height="64" rx="8"/>
+  <text class="dg-t" x="288" y="82">CDN</text>
+  <text class="dg-s" x="288" y="104">전 세계에 뿌려 둔다</text>
+
+  <path class="dg-arw" d="M456 88 H504" marker-end="url(#ssrjam-a)"/>
+
+  <rect class="dg-out" x="512" y="56" width="184" height="64" rx="8"/>
+  <text class="dg-t" x="532" y="82">브라우저</text>
+  <text class="dg-s" x="532" y="104">바로 받는다</text>
+
+  <path class="dg-arw" d="M604 128 V156" marker-end="url(#ssrjam-a)"/>
+  <text class="dg-s" x="440" y="150">동적인 부분만 따로</text>
+
+  <rect class="dg-item" x="512" y="162" width="184" height="56" rx="8"/>
+  <text class="dg-t" x="532" y="186">외부 API</text>
+  <text class="dg-s" x="532" y="206">로그인 · 결제 · 댓글</text>
+
+  <rect class="dg-lane" x="24" y="150" width="440" height="68" rx="8"/>
+  <text class="dg-v" x="44" y="176">서버가 페이지를 만들지 않으니 서버를 둘 필요가 없다</text>
+  <text class="dg-s" x="44" y="198">비용이 줄고, 공격할 서버가 없으니 보안 부담도 줄어든다</text>
+
+  <text class="dg-s" x="24" y="264">이 블로그도 Jekyll 로 만든 정적 파일을 GitHub Pages 가 배포하는 같은 구조다</text>
+</svg>

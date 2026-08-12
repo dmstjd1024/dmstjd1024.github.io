@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="검색 크롤러가 받는 HTML 이 CSR 과 SSR 에서 다르다">
+  <marker id="ssrseo-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">검색 크롤러가 보는 것</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="44" y="74">CSR</text>
+
+  <rect class="dg-code" x="44" y="88" width="288" height="46" rx="6"/>
+  <text class="dg-key" x="60" y="118">&lt;div id="app"&gt;&lt;/div&gt;</text>
+
+  <path class="dg-arw" d="M188 142 V158" marker-end="url(#ssrseo-a)"/>
+
+  <rect class="dg-warn" x="44" y="164" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="60" y="186">읽을 내용이 없다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="388" y="74">SSR · SSG</text>
+
+  <rect class="dg-code" x="388" y="88" width="288" height="46" rx="6"/>
+  <text class="dg-key" x="404" y="112">&lt;h1&gt;제목&lt;/h1&gt;</text>
+  <text class="dg-key" x="404" y="128">&lt;p&gt;본문 내용...&lt;/p&gt;</text>
+
+  <path class="dg-arw" d="M532 142 V158" marker-end="url(#ssrseo-a)"/>
+
+  <rect class="dg-out" x="388" y="164" width="288" height="34" rx="6"/>
+  <text class="dg-k" x="404" y="186">제목과 본문을 색인할 수 있다</text>
+
+  <text class="dg-v" x="24" y="244">크롤러는 자바스크립트를 다 돌려주지 않는다</text>
+  <text class="dg-s" x="24" y="268">그래서 미리 렌더링해 두면 검색 결과에 노출될 가능성이 높아진다</text>
+</svg>
