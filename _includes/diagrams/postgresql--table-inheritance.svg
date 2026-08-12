@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="PostgreSQL 의 테이블 상속에서 상위 테이블 조회가 하위 테이블 자료까지 포함하는 구조">
+  <marker id="pgti-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">테이블도 상속할 수 있다</text>
+
+  <rect class="dg-lead" x="252" y="52" width="216" height="60" rx="8"/>
+  <text class="dg-t" x="272" y="76">상위 테이블</text>
+  <text class="dg-s" x="272" y="98">id · name</text>
+
+  <path class="dg-arw" d="M360 120 V136 H160 V158" marker-end="url(#pgti-a)"/>
+  <path class="dg-arw" d="M360 120 V136 H560 V158" marker-end="url(#pgti-a)"/>
+
+  <rect class="dg-row" x="60" y="164" width="200" height="66" rx="8"/>
+  <text class="dg-t" x="80" y="188">하위 A</text>
+  <text class="dg-s" x="80" y="208">id · name</text>
+  <text class="dg-b" x="80" y="224">+ 자기 칼럼</text>
+
+  <rect class="dg-row" x="460" y="164" width="200" height="66" rx="8"/>
+  <text class="dg-t" x="480" y="188">하위 B</text>
+  <text class="dg-s" x="480" y="208">id · name</text>
+  <text class="dg-b" x="480" y="224">+ 자기 칼럼</text>
+
+  <text class="dg-v" x="24" y="90">상위 테이블을</text>
+  <text class="dg-v" x="24" y="110">조회하면</text>
+
+  <text class="dg-s" x="492" y="90">하위 자료까지</text>
+  <text class="dg-s" x="492" y="110">함께 나온다</text>
+
+  <text class="dg-s" x="24" y="266">상위 칼럼은 그대로 물려받고, 하위에만 필요한 칼럼을 더 붙일 수 있다</text>
+</svg>

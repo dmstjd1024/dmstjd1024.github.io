@@ -38,6 +38,10 @@ class LikeButton extends React.Component {
     });
 ```
 
+<div class="diagram" role="img" aria-label="state 를 직접 고칠 때와 set 함수를 쓸 때의 차이">
+{% include diagrams/react2--state-rerender.svg %}
+</div>
+
 컴포넌트가 계속 존재하는게 아니라 시간에 따라 생성, 업데이트되다가 사라진다.
 
 ## Hooks
@@ -84,6 +88,10 @@ useEffect(이펙트 함수, 의존성 배열);
 useEffect(이펙트 함수);
 ```
 의존성 배열 생략 시, 컴포넌트가 업데이트 될 때마다 호출됨
+
+<div class="diagram" role="img" aria-label="의존성 배열에 따른 useEffect 실행 시점">
+{% include diagrams/react2--useeffect-deps.svg %}
+</div>
 
 useEffect와 useState를 함께 사용하여 컴포넌트의 상태를 관리할 수 있다.
 
@@ -156,6 +164,10 @@ function UserStatusWithCounter(props) {
 ```
 
 ## useMemo, useCallback, useRef
+
+<div class="diagram" role="img" aria-label="useMemo, useCallback, useRef 가 각각 기억하는 것">
+{% include diagrams/react2--memo-callback-ref.svg %}
+</div>
 
 ### useMemo
 - Memoized value를 리턴하는 Hook

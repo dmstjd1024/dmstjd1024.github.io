@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="Props 는 상위 컴포넌트에서 하위로만 흐르고 하위에서 바꿀 수 없다">
+  <marker id="rc1pf-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">Props 는 위에서 아래로만 흐른다</text>
+
+  <rect class="dg-lead" x="252" y="52" width="216" height="52" rx="8"/>
+  <text class="dg-t" x="272" y="76">App</text>
+  <text class="dg-s" x="272" y="94">name="소플"</text>
+
+  <path class="dg-arw" d="M360 112 V128 H150 V150" marker-end="url(#rc1pf-a)"/>
+  <path class="dg-arw" d="M360 112 V128 H570 V150" marker-end="url(#rc1pf-a)"/>
+
+  <rect class="dg-row" x="50" y="156" width="200" height="60" rx="8"/>
+  <text class="dg-t" x="70" y="180">Profile</text>
+  <text class="dg-s" x="70" y="200">props.name 을 읽는다</text>
+
+  <rect class="dg-row" x="470" y="156" width="200" height="60" rx="8"/>
+  <text class="dg-t" x="490" y="180">Layout</text>
+  <text class="dg-s" x="490" y="200">props 를 읽는다</text>
+
+  <rect class="dg-warn" x="284" y="156" width="152" height="60" rx="8"/>
+  <text class="dg-k" x="300" y="180">읽기 전용</text>
+  <text class="dg-s" x="300" y="200">고칠 수 없다</text>
+
+  <text class="dg-v" x="24" y="248">같은 props 를 넣으면 언제나 같은 화면이 나와야 한다 — 순수 함수처럼</text>
+  <text class="dg-s" x="24" y="272">하위가 props 를 고칠 수 있으면 어디서 바뀌었는지 추적할 수 없게 된다</text>
+</svg>
