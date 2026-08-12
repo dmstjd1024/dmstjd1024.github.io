@@ -31,6 +31,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 이유: "그럼 ML을 켜는 게 실제로 더 나은가"라는 질문이 별도로 잔존
 - 원칙: 버그 수정과, 수정 후 그 기능을 켤지 말지는 별개의 판단
 
+<div class="diagram" role="img" aria-label="전달 경로 수정과 기능 활성화를 나눈 판단">
+{% include diagrams/ml--fix-vs-enable.svg %}
+</div>
+
 ## 세 방향에서 검증하고, 셋 다 기각했다
 
 36개 종목 대상, 세 가지 방식으로 확인:

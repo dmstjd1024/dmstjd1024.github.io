@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="서버가 이미 주는 메뉴 정보를 프론트가 상수로 다시 만들어 두 곳에서 관리하던 구조">
+  <marker id="sbds-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">같은 정보를 두 곳에서 관리하고 있었다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="44" y="74">서버가 주는 것</text>
+  <rect class="dg-out" x="44" y="88" width="288" height="28" rx="6"/>
+  <text class="dg-k" x="60" y="107">메뉴 목록 · 그룹 이름 · 권한</text>
+  <rect class="dg-warn" x="44" y="126" width="288" height="52" rx="6"/>
+  <text class="dg-k" x="60" y="148">그런데 프론트가 쓴 건</text>
+  <text class="dg-s" x="60" y="168">그룹 이름 하나뿐이었다</text>
+
+  <path class="dg-arw" d="M360 120 H380" marker-end="url(#sbds-a)"/>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="388" y="74">프론트가 따로 가진 것</text>
+  <rect class="dg-warn" x="388" y="88" width="288" height="28" rx="6"/>
+  <text class="dg-k" x="404" y="107">상수 배열에 메뉴를 하드코딩</text>
+  <rect class="dg-warn" x="388" y="126" width="288" height="52" rx="6"/>
+  <text class="dg-k" x="404" y="148">항목마다 permission 문자열</text>
+  <text class="dg-s" x="404" y="168">표시 여부도 직접 판단</text>
+
+  <rect class="dg-lane" x="24" y="220" width="672" height="64" rx="8"/>
+  <text class="dg-v" x="44" y="244">권한이 바뀌면 서버와 프론트 양쪽을 맞춰야 한다 — 안 맞추면 조용히 어긋난다</text>
+  <text class="dg-s" x="44" y="268">서버가 이미 판단해서 내려주는 것을, 프론트가 한 번 더 판단하고 있었다</text>
+</svg>
