@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="EnumType ORDINAL 은 순서를 숫자로 저장하고 STRING 은 이름을 저장한다">
+  <marker id="aeen-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">enum 을 DB 에 어떻게 저장할까</text>
+
+  <rect class="dg-row" x="24" y="52" width="160" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="76">Role enum</text>
+  <text class="dg-v" x="44" y="98">USER</text>
+  <text class="dg-v" x="44" y="118">ADMIN</text>
+
+  <path class="dg-arw" d="M192 76 H248" marker-end="url(#aeen-a)"/>
+  <path class="dg-arw" d="M192 110 H248" marker-end="url(#aeen-a)"/>
+
+  <rect class="dg-warn" x="256" y="52" width="200" height="36" rx="6"/>
+  <text class="dg-k" x="276" y="76">ORDINAL (기본값)</text>
+
+  <rect class="dg-out" x="256" y="94" width="200" height="36" rx="6"/>
+  <text class="dg-k" x="276" y="118">STRING</text>
+
+  <path class="dg-arw" d="M464 70 H508" marker-end="url(#aeen-a)"/>
+  <path class="dg-arw" d="M464 112 H508" marker-end="url(#aeen-a)"/>
+
+  <rect class="dg-warn" x="516" y="52" width="180" height="36" rx="6"/>
+  <text class="dg-v" x="536" y="76">DB 에  0 · 1</text>
+
+  <rect class="dg-out" x="516" y="94" width="180" height="36" rx="6"/>
+  <text class="dg-v" x="536" y="118">DB 에  USER · ADMIN</text>
+
+  <rect class="dg-lane" x="24" y="148" width="672" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="174">ORDINAL 이 위험한 이유</text>
+  <text class="dg-v" x="44" y="198">enum 중간에 값을 하나 끼워 넣으면 뒤 번호가 전부 밀린다</text>
+  <text class="dg-s" x="44" y="214">이미 저장된 0 · 1 은 그대로인데 의미만 바뀌어 데이터가 어긋난다</text>
+
+  <text class="dg-s" x="24" y="248">DB 를 열어봤을 때 읽히기도 하므로 STRING 을 쓰는 편이 낫다</text>
+</svg>

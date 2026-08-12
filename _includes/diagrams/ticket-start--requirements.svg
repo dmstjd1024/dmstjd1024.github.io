@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="티켓 배포 프로젝트의 요구사항과 그로부터 나오는 기술 과제">
+  <marker id="tsreq-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">요구사항이 만드는 기술 과제</text>
+
+  <rect class="dg-lane" x="24" y="48" width="300" height="188" rx="10"/>
+  <text class="dg-t" x="44" y="74">요구사항</text>
+
+  <rect class="dg-row" x="44" y="88" width="260" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="108">티켓 100매 한정</text>
+  <rect class="dg-row" x="44" y="124" width="260" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="144">공인 IP 당 1회만</text>
+  <rect class="dg-row" x="44" y="160" width="260" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="180">30% 확률로 당첨</text>
+  <rect class="dg-row" x="44" y="196" width="260" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="216">WAS 2대 이상</text>
+
+  <path class="dg-arw" d="M332 103 H388" marker-end="url(#tsreq-a)"/>
+  <path class="dg-arw" d="M332 139 H388" marker-end="url(#tsreq-a)"/>
+  <path class="dg-arw" d="M332 211 H388" marker-end="url(#tsreq-a)"/>
+
+  <rect class="dg-lane" x="396" y="48" width="300" height="188" rx="10"/>
+  <text class="dg-t" x="416" y="74">그래서 풀어야 할 문제</text>
+
+  <rect class="dg-lead" x="416" y="88" width="260" height="30" rx="6"/>
+  <text class="dg-k" x="432" y="108">동시 요청에 101매가 나가면 안 된다</text>
+  <rect class="dg-lead" x="416" y="124" width="260" height="30" rx="6"/>
+  <text class="dg-k" x="432" y="144">중복 신청을 어디서 막을 것인가</text>
+  <rect class="dg-lead" x="416" y="196" width="260" height="30" rx="6"/>
+  <text class="dg-k" x="432" y="216">서버가 여러 대라 메모리는 못 쓴다</text>
+
+  <text class="dg-s" x="24" y="268">서버가 한 대라면 간단할 일이 두 대가 되는 순간 상태를 공유할 곳이 필요해진다</text>
+</svg>
