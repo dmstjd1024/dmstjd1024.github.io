@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="this 로 다른 생성자를 호출할 때 반드시 첫 줄이어야 하는 이유">
+  <marker id="ls5tc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">this() 는 왜 첫 줄에만 올 수 있나</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="44" y="76">첫 줄에 쓴 경우</text>
+
+  <rect class="dg-lead" x="44" y="90" width="288" height="32" rx="6"/>
+  <text class="dg-k" x="60" y="112">this(...) 로 초기화</text>
+  <path class="dg-arw" d="M188 126 V142" marker-end="url(#ls5tc-a)"/>
+  <rect class="dg-row" x="44" y="148" width="288" height="32" rx="6"/>
+  <text class="dg-v" x="60" y="170">그 위에 내 작업을 얹는다</text>
+  <text class="dg-b" x="44" y="200">순서가 맞는다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="388" y="76">뒤에 썼다면</text>
+
+  <rect class="dg-row" x="388" y="90" width="288" height="32" rx="6"/>
+  <text class="dg-v" x="404" y="112">door = 5 로 초기화해 뒀는데</text>
+  <path class="dg-arw" d="M532 126 V142" marker-end="url(#ls5tc-a)"/>
+  <rect class="dg-warn" x="388" y="148" width="288" height="32" rx="6"/>
+  <text class="dg-k" x="404" y="170">this(...) 가 다시 덮어쓴다</text>
+  <text class="dg-v" x="388" y="200">앞의 작업이 헛일이 된다</text>
+
+  <text class="dg-v" x="24" y="248">호출된 생성자도 멤버 변수를 초기화하기 때문이다</text>
+  <text class="dg-s" x="24" y="276">그래서 자바는 아예 첫 줄이 아니면 컴파일을 막는다</text>
+</svg>

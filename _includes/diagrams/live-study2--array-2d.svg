@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="int 배열 4행 2열에서 앞 대괄호가 행이고 뒤가 열이라는 구조">
+
+  <text class="dg-h" x="24" y="30">int[4][2] 의 모양</text>
+
+  <rect class="dg-code" x="24" y="48" width="288" height="36" rx="4"/>
+  <text class="dg-key" x="44" y="72">int[][] score = new int[4][2];</text>
+
+  <text class="dg-b" x="336" y="72">앞이 행, 뒤가 열</text>
+
+  <text class="dg-s" x="150" y="116">[0]</text>
+  <text class="dg-s" x="238" y="116">[1]</text>
+
+  <rect class="dg-lane" x="24" y="126" width="296" height="128" rx="8"/>
+
+  <text class="dg-k" x="44" y="152">[0]</text>
+  <rect class="dg-row" x="88" y="134" width="96" height="26" rx="4"/>
+  <rect class="dg-row" x="196" y="134" width="96" height="26" rx="4"/>
+
+  <text class="dg-k" x="44" y="182">[1]</text>
+  <rect class="dg-row" x="88" y="164" width="96" height="26" rx="4"/>
+  <rect class="dg-row" x="196" y="164" width="96" height="26" rx="4"/>
+
+  <text class="dg-k" x="44" y="212">[2]</text>
+  <rect class="dg-row" x="88" y="194" width="96" height="26" rx="4"/>
+  <rect class="dg-row" x="196" y="194" width="96" height="26" rx="4"/>
+
+  <text class="dg-k" x="44" y="242">[3]</text>
+  <rect class="dg-row" x="88" y="224" width="96" height="26" rx="4"/>
+  <rect class="dg-row" x="196" y="224" width="96" height="26" rx="4"/>
+
+  <text class="dg-v" x="352" y="152">행이 4개, 각 행에 열이 2개</text>
+  <text class="dg-v" x="352" y="182">score[2][1] 은 3번째 행의</text>
+  <text class="dg-v" x="352" y="202">2번째 칸을 가리킨다</text>
+  <text class="dg-s" x="352" y="234">번호는 0부터 시작하므로</text>
+  <text class="dg-s" x="352" y="252">[4][2] 는 존재하지 않는다</text>
+</svg>

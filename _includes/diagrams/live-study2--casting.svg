@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="작은 타입에서 큰 타입은 자동 형변환되고 반대는 캐스팅이 필요하다는 규칙">
+  <marker id="ls2cast-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">형변환의 방향</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="96" rx="10"/>
+  <text class="dg-t" x="44" y="76">작은 타입  →  큰 타입</text>
+  <text class="dg-b" x="280" y="76">자동 형변환 (타입 프로모션)</text>
+
+  <rect class="dg-row" x="44" y="90" width="120" height="36" rx="6"/>
+  <text class="dg-k" x="60" y="114">int</text>
+  <path class="dg-arw" d="M172 108 H228" marker-end="url(#ls2cast-a)"/>
+  <rect class="dg-out" x="236" y="90" width="120" height="36" rx="6"/>
+  <text class="dg-k" x="252" y="114">long</text>
+  <text class="dg-v" x="380" y="114">값이 다 들어가므로 그냥 넣어도 된다</text>
+
+  <rect class="dg-lane" x="24" y="160" width="672" height="96" rx="10"/>
+  <text class="dg-t" x="44" y="188">큰 타입  →  작은 타입</text>
+  <text class="dg-b" x="280" y="188">캐스팅을 직접 써야 한다</text>
+
+  <rect class="dg-row" x="44" y="202" width="120" height="36" rx="6"/>
+  <text class="dg-k" x="60" y="226">long</text>
+  <path class="dg-arw" d="M172 220 H228" marker-end="url(#ls2cast-a)"/>
+  <rect class="dg-warn" x="236" y="202" width="120" height="36" rx="6"/>
+  <text class="dg-k" x="252" y="226">int</text>
+  <text class="dg-v" x="380" y="220">넘치는 부분이 잘린다</text>
+  <text class="dg-s" x="380" y="238">(타입) 을 붙여 의도를 밝혀야 컴파일된다</text>
+
+  <text class="dg-s" x="24" y="284">규칙은 하나다 — 값을 최대한 보존하는 쪽으로는 알아서 가고, 잃는 쪽은 직접 쓰게 한다</text>
+</svg>

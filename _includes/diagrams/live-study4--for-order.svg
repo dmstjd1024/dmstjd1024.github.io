@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="for 문의 초기화, 조건식, 수행문, 증감식이 도는 순서">
+  <marker id="ls4for-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">for 문이 도는 순서</text>
+
+  <rect class="dg-code" x="24" y="48" width="300" height="36" rx="4"/>
+  <text class="dg-key" x="44" y="72">for(초기화; 조건식; 증감식)</text>
+
+  <rect class="dg-lead" x="24" y="104" width="180" height="46" rx="6"/>
+  <text class="dg-n" x="44" y="132">1</text>
+  <text class="dg-t" x="68" y="132">초기화</text>
+  <text class="dg-s" x="212" y="132">처음 한 번만</text>
+
+  <path class="dg-arw" d="M114 158 V178" marker-end="url(#ls4for-a)"/>
+
+  <rect class="dg-lead" x="24" y="186" width="180" height="46" rx="6"/>
+  <text class="dg-n" x="44" y="214">2</text>
+  <text class="dg-t" x="68" y="214">조건식</text>
+
+  <path class="dg-arw" d="M212 209 H288" marker-end="url(#ls4for-a)"/>
+  <text class="dg-b" x="216" y="200">참이면</text>
+
+  <rect class="dg-row" x="296" y="186" width="180" height="46" rx="6"/>
+  <text class="dg-n" x="316" y="214">3</text>
+  <text class="dg-t" x="340" y="214">수행문</text>
+
+  <path class="dg-arw" d="M484 209 H540" marker-end="url(#ls4for-a)"/>
+
+  <rect class="dg-row" x="548" y="186" width="148" height="46" rx="6"/>
+  <text class="dg-n" x="568" y="214">4</text>
+  <text class="dg-t" x="592" y="214">증감식</text>
+
+  <path class="dg-arw" d="M622 240 V262 H114 V240" marker-end="url(#ls4for-a)"/>
+  <text class="dg-s" x="300" y="280">다시 조건식으로 — 여기서부터 반복</text>
+
+  <path class="dg-arw" d="M114 240 V262" marker-end="url(#ls4for-a)"/>
+
+  <rect class="dg-warn" x="24" y="272" width="180" height="36" rx="6"/>
+  <text class="dg-v" x="44" y="296">거짓이면 빠져나온다</text>
+
+  <text class="dg-s" x="296" y="302">초기화는 한 번뿐이고, 2 → 3 → 4 만 계속 돈다</text>
+</svg>

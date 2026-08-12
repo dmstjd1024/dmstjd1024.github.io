@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="일반 애플리케이션과 자바 애플리케이션이 하드웨어까지 도달하는 경로 비교">
+  <marker id="lsjvmport-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">JVM 이 한 겹 더 있는 이유</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="212" rx="10"/>
+  <text class="dg-t" x="44" y="76">일반 애플리케이션</text>
+
+  <rect class="dg-row" x="44" y="92" width="288" height="38" rx="6"/>
+  <text class="dg-k" x="60" y="116">애플리케이션</text>
+  <path class="dg-arw" d="M188 134 V152" marker-end="url(#lsjvmport-a)"/>
+  <rect class="dg-row" x="44" y="158" width="288" height="38" rx="6"/>
+  <text class="dg-k" x="60" y="182">OS</text>
+  <path class="dg-arw" d="M188 200 V218" marker-end="url(#lsjvmport-a)"/>
+  <rect class="dg-row" x="44" y="224" width="288" height="26" rx="6"/>
+  <text class="dg-k" x="60" y="242">하드웨어</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="212" rx="10"/>
+  <text class="dg-t" x="388" y="76">자바 애플리케이션</text>
+
+  <rect class="dg-row" x="388" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="112">애플리케이션</text>
+  <path class="dg-arw" d="M532 126 V138" marker-end="url(#lsjvmport-a)"/>
+  <rect class="dg-lead" x="388" y="144" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="164">JVM</text>
+  <text class="dg-s" x="470" y="164">OS 마다 다른 것을 쓴다</text>
+  <path class="dg-arw" d="M532 178 V190" marker-end="url(#lsjvmport-a)"/>
+  <rect class="dg-row" x="388" y="196" width="288" height="26" rx="6"/>
+  <text class="dg-k" x="404" y="214">OS</text>
+  <path class="dg-arw" d="M532 226 V236" marker-end="url(#lsjvmport-a)"/>
+  <rect class="dg-row" x="388" y="224" width="288" height="26" rx="6"/>
+  <text class="dg-k" x="404" y="242">하드웨어</text>
+
+  <text class="dg-s" x="24" y="292">OS 마다 다른 부분을 JVM 이 흡수하므로, 위에 얹힌 코드는 그대로 둬도 된다</text>
+  <text class="dg-s" x="24" y="314">Write once, run anywhere — 한 번 짜면 어디서든 돈다는 말이 여기서 나온다</text>
+</svg>
