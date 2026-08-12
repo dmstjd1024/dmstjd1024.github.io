@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="논리 연산자가 결과가 확정되면 오른쪽을 평가하지 않고 건너뛰는 동작">
+  <marker id="ls3sc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">결과가 정해지면 나머지는 보지 않는다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="74">||  (OR)</text>
+
+  <rect class="dg-out" x="140" y="58" width="180" height="38" rx="6"/>
+  <text class="dg-k" x="160" y="82">왼쪽이 true</text>
+  <path class="dg-arw" d="M328 77 H372" marker-end="url(#ls3sc-a)"/>
+  <rect class="dg-warn" x="380" y="58" width="296" height="38" rx="6"/>
+  <text class="dg-v" x="400" y="82">오른쪽은 평가하지 않는다</text>
+  <text class="dg-s" x="140" y="114">한쪽만 참이면 이미 결과가 true 이기 때문</text>
+
+  <rect class="dg-lane" x="24" y="136" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="162">&amp;&amp;  (AND)</text>
+
+  <rect class="dg-out" x="140" y="146" width="180" height="38" rx="6"/>
+  <text class="dg-k" x="160" y="170">왼쪽이 false</text>
+  <path class="dg-arw" d="M328 165 H372" marker-end="url(#ls3sc-a)"/>
+  <rect class="dg-warn" x="380" y="146" width="296" height="38" rx="6"/>
+  <text class="dg-v" x="400" y="170">오른쪽은 평가하지 않는다</text>
+  <text class="dg-s" x="140" y="202">한쪽만 거짓이어도 결과가 false 이기 때문</text>
+
+  <text class="dg-s" x="24" y="240">그래서 왼쪽에 null 검사를 두면 오른쪽에서 NPE 가 나지 않는다</text>
+</svg>

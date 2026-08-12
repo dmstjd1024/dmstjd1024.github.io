@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="프리미티브 타입 여덟 가지를 분류와 크기별로 배치한 표">
+
+  <text class="dg-h" x="24" y="30">프리미티브 타입 8개의 크기</text>
+
+  <text class="dg-s" x="150" y="60">1 byte</text>
+  <text class="dg-s" x="288" y="60">2 byte</text>
+  <text class="dg-s" x="426" y="60">4 byte</text>
+  <text class="dg-s" x="564" y="60">8 byte</text>
+
+  <rect class="dg-lane" x="24" y="72" width="672" height="52" rx="8"/>
+  <text class="dg-t" x="44" y="104">논리형</text>
+  <rect class="dg-lead" x="132" y="82" width="128" height="32" rx="6"/>
+  <text class="dg-k" x="152" y="104">boolean</text>
+
+  <rect class="dg-lane" x="24" y="132" width="672" height="52" rx="8"/>
+  <text class="dg-t" x="44" y="164">문자형</text>
+  <rect class="dg-lead" x="270" y="142" width="128" height="32" rx="6"/>
+  <text class="dg-k" x="290" y="164">char</text>
+
+  <rect class="dg-lane" x="24" y="192" width="672" height="52" rx="8"/>
+  <text class="dg-t" x="44" y="224">정수형</text>
+  <rect class="dg-row" x="132" y="202" width="128" height="32" rx="6"/>
+  <text class="dg-k" x="152" y="224">byte</text>
+  <rect class="dg-row" x="270" y="202" width="128" height="32" rx="6"/>
+  <text class="dg-k" x="290" y="224">short</text>
+  <rect class="dg-lead" x="408" y="202" width="128" height="32" rx="6"/>
+  <text class="dg-k" x="428" y="224">int</text>
+  <rect class="dg-row" x="546" y="202" width="128" height="32" rx="6"/>
+  <text class="dg-k" x="566" y="224">long</text>
+
+  <rect class="dg-lane" x="24" y="252" width="672" height="52" rx="8"/>
+  <text class="dg-t" x="44" y="284">실수형</text>
+  <rect class="dg-row" x="408" y="262" width="128" height="32" rx="6"/>
+  <text class="dg-k" x="428" y="284">float</text>
+  <rect class="dg-lead" x="546" y="262" width="128" height="32" rx="6"/>
+  <text class="dg-k" x="566" y="284">double</text>
+</svg>

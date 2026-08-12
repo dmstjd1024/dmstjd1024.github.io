@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="삼항 연산자에서 조건에 따라 두 식 중 하나가 결과가 되는 흐름">
+  <marker id="ls3tern-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">조건식 ? 식1 : 식2</text>
+
+  <rect class="dg-code" x="24" y="48" width="240" height="36" rx="4"/>
+  <text class="dg-key" x="44" y="72">조건식 ? 식1 : 식2</text>
+
+  <rect class="dg-lead" x="284" y="48" width="140" height="36" rx="6"/>
+  <text class="dg-t" x="304" y="72">조건식 평가</text>
+
+  <path class="dg-arw" d="M354 92 V124" marker-end="url(#ls3tern-a)"/>
+  <path class="dg-arw" d="M354 92 V108 H540 V124" marker-end="url(#ls3tern-a)"/>
+  <path class="dg-arw" d="M354 92 V108 H168 V124" marker-end="url(#ls3tern-a)"/>
+
+  <rect class="dg-out" x="88" y="132" width="160" height="52" rx="6"/>
+  <text class="dg-t" x="108" y="154">true 이면</text>
+  <text class="dg-b" x="108" y="174">식1 이 결과</text>
+
+  <rect class="dg-out" x="460" y="132" width="160" height="52" rx="6"/>
+  <text class="dg-t" x="480" y="154">false 이면</text>
+  <text class="dg-b" x="480" y="174">식2 가 결과</text>
+
+  <text class="dg-s" x="24" y="216">if 문과 달리 '값' 이 나오므로 그대로 변수에 넣거나 인자로 넘길 수 있다</text>
+</svg>

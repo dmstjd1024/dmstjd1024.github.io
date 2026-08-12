@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Runtime Data Area 네 영역과 쓰레드 공유 여부, GC 대상 여부">
+
+  <text class="dg-h" x="24" y="30">Runtime Data Area</text>
+  <text class="dg-s" x="24" y="50">해석된 프로그램이 올라가 도는 공간</text>
+
+  <rect class="dg-lane" x="24" y="66" width="672" height="128" rx="10"/>
+  <text class="dg-t" x="44" y="92">모든 쓰레드가 함께 쓴다</text>
+
+  <rect class="dg-lead" x="44" y="106" width="316" height="72" rx="8"/>
+  <text class="dg-t" x="64" y="130">Method Area</text>
+  <text class="dg-v" x="64" y="152">클래스 · 인터페이스 · 메서드 · 필드 정보</text>
+  <text class="dg-b" x="64" y="170">GC 대상</text>
+
+  <rect class="dg-lead" x="376" y="106" width="300" height="72" rx="8"/>
+  <text class="dg-t" x="396" y="130">Heap</text>
+  <text class="dg-v" x="396" y="152">new 로 만든 인스턴스가 사는 곳</text>
+  <text class="dg-b" x="396" y="170">GC 대상</text>
+
+  <rect class="dg-lane" x="24" y="210" width="672" height="128" rx="10"/>
+  <text class="dg-t" x="44" y="236">쓰레드마다 따로 갖는다</text>
+
+  <rect class="dg-row" x="44" y="250" width="316" height="72" rx="8"/>
+  <text class="dg-t" x="64" y="274">JVM Stacks</text>
+  <text class="dg-v" x="64" y="296">매개변수 · 지역변수 같은 임시 데이터</text>
+  <text class="dg-s" x="64" y="314">메서드가 끝나면 바로 반환된다</text>
+
+  <rect class="dg-row" x="376" y="250" width="300" height="72" rx="8"/>
+  <text class="dg-t" x="396" y="274">PC Registers</text>
+  <text class="dg-v" x="396" y="296">다음에 실행할 명령을 기록</text>
+  <text class="dg-s" x="396" y="314">쓰레드가 생길 때 만들어진다</text>
+
+  <text class="dg-s" x="24" y="366">공유 영역은 GC 가 치우고, 쓰레드 전용 영역은 끝나면 알아서 사라진다</text>
+</svg>

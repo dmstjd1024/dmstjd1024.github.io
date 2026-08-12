@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="JDK 가 JRE 를 포함하고 JRE 가 JVM 을 포함하는 관계">
+
+  <text class="dg-h" x="24" y="30">JDK · JRE · JVM 의 포함 관계</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="180" rx="10"/>
+  <text class="dg-t" x="44" y="76">JDK</text>
+  <text class="dg-s" x="86" y="76">개발에 필요한 것 전부</text>
+
+  <rect class="dg-row" x="44" y="90" width="180" height="52" rx="6"/>
+  <text class="dg-k" x="60" y="112">javac</text>
+  <text class="dg-s" x="60" y="132">컴파일러</text>
+
+  <rect class="dg-row" x="44" y="154" width="180" height="52" rx="6"/>
+  <text class="dg-k" x="60" y="176">개발 도구</text>
+  <text class="dg-s" x="60" y="196">디버거 등</text>
+
+  <rect class="dg-lead" x="240" y="90" width="440" height="116" rx="8"/>
+  <text class="dg-t" x="260" y="116">JRE</text>
+  <text class="dg-s" x="302" y="116">실행에 필요한 것</text>
+
+  <rect class="dg-row" x="260" y="130" width="180" height="58" rx="6"/>
+  <text class="dg-k" x="276" y="152">라이브러리</text>
+  <text class="dg-s" x="276" y="172">java 명령 등</text>
+
+  <rect class="dg-out" x="456" y="130" width="204" height="58" rx="6"/>
+  <text class="dg-k" x="472" y="152">JVM</text>
+  <text class="dg-s" x="472" y="172">실제로 코드를 돌리는 것</text>
+
+  <text class="dg-s" x="24" y="256">돌리기만 하면 JRE 로 충분하고, 코드를 짜서 컴파일하려면 JDK 가 있어야 한다</text>
+</svg>

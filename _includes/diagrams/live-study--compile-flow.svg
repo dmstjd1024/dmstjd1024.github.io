@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="자바 소스 파일이 컴파일되어 JVM 에서 실행되기까지의 단계">
+  <marker id="lscompile-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">.java 가 실행되기까지</text>
+
+  <rect class="dg-item" x="24" y="52" width="150" height="64" rx="8"/>
+  <text class="dg-t" x="44" y="78">.java</text>
+  <text class="dg-s" x="44" y="100">사람이 쓴 소스</text>
+
+  <path class="dg-arw" d="M182 84 H222" marker-end="url(#lscompile-a)"/>
+  <text class="dg-b" x="180" y="74">javac</text>
+
+  <rect class="dg-lead" x="230" y="52" width="150" height="64" rx="8"/>
+  <text class="dg-t" x="250" y="78">.class</text>
+  <text class="dg-s" x="250" y="100">자바 바이트 코드</text>
+
+  <path class="dg-arw" d="M388 84 H428" marker-end="url(#lscompile-a)"/>
+  <text class="dg-s" x="386" y="74">로드</text>
+
+  <rect class="dg-item" x="436" y="52" width="150" height="64" rx="8"/>
+  <text class="dg-t" x="456" y="78">클래스 로더</text>
+  <text class="dg-s" x="456" y="100">JVM 안으로</text>
+
+  <path class="dg-arw" d="M594 84 H634" marker-end="url(#lscompile-a)"/>
+
+  <rect class="dg-out" x="546" y="140" width="150" height="64" rx="8"/>
+  <text class="dg-t" x="566" y="166">실행 엔진</text>
+  <text class="dg-s" x="566" y="188">기계어로 해석</text>
+
+  <path class="dg-arw" d="M660 120 V138" marker-end="url(#lscompile-a)"/>
+
+  <text class="dg-v" x="24" y="164">바이트 코드는 아직 기계어가 아니다</text>
+  <text class="dg-s" x="24" y="186">JVM 이 이해하는 중간 언어이고, 명령어 하나가 1바이트라</text>
+  <text class="dg-s" x="24" y="206">'바이트 코드' 라 부른다</text>
+
+  <text class="dg-s" x="24" y="240">이 중간 단계가 있어서 같은 .class 파일이 어느 OS 에서든 돌아간다</text>
+</svg>

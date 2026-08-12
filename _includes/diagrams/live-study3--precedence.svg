@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="연산자 우선순위를 높은 것부터 낮은 것까지 순서대로 나열">
+
+  <text class="dg-h" x="24" y="30">연산자 우선순위</text>
+  <text class="dg-s" x="24" y="50">위에 있을수록 먼저 계산된다</text>
+
+  <rect class="dg-lead" x="24" y="66" width="672" height="38" rx="6"/>
+  <text class="dg-t" x="44" y="90">단항</text>
+  <text class="dg-v" x="160" y="90">++  --  +  -  ~  !  (type)</text>
+  <text class="dg-s" x="560" y="90">← 오른쪽부터</text>
+
+  <rect class="dg-row" x="24" y="112" width="672" height="38" rx="6"/>
+  <text class="dg-t" x="44" y="136">산술</text>
+  <text class="dg-v" x="160" y="136">*  /  %   그다음  +  -   그다음  &lt;&lt;  &gt;&gt;</text>
+
+  <rect class="dg-row" x="24" y="158" width="672" height="38" rx="6"/>
+  <text class="dg-t" x="44" y="182">비교</text>
+  <text class="dg-v" x="160" y="182">&lt;  &gt;  &lt;=  &gt;=  instanceof   그다음  ==  !=</text>
+
+  <rect class="dg-row" x="24" y="204" width="672" height="38" rx="6"/>
+  <text class="dg-t" x="44" y="228">논리</text>
+  <text class="dg-v" x="160" y="228">&amp;   ^   |   &amp;&amp;   ||</text>
+
+  <rect class="dg-row" x="24" y="250" width="672" height="38" rx="6"/>
+  <text class="dg-t" x="44" y="274">삼항</text>
+  <text class="dg-v" x="160" y="274">? :</text>
+
+  <rect class="dg-out" x="24" y="296" width="672" height="18" rx="4"/>
+  <text class="dg-t" x="44" y="310">대입</text>
+  <text class="dg-v" x="160" y="310">=  +=  -=  *=  /=  ...</text>
+  <text class="dg-s" x="560" y="310">← 오른쪽부터</text>
+</svg>

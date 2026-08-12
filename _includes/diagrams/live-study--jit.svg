@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="인터프리터 방식과 컴파일 방식을 JIT 가 어떻게 섞는지">
+
+  <text class="dg-h" x="24" y="30">JIT 는 두 방식을 섞은 것</text>
+
+  <rect class="dg-item" x="24" y="48" width="212" height="120" rx="10"/>
+  <text class="dg-t" x="44" y="76">인터프리터</text>
+  <text class="dg-v" x="44" y="102">실행하면서 한 줄씩</text>
+  <text class="dg-v" x="44" y="122">기계어로 바꿔 돌린다</text>
+  <text class="dg-s" x="44" y="150">시작은 빠르지만 매번 번역</text>
+
+  <rect class="dg-item" x="252" y="48" width="212" height="120" rx="10"/>
+  <text class="dg-t" x="272" y="76">정적 컴파일</text>
+  <text class="dg-v" x="272" y="102">실행 전에 전부 미리</text>
+  <text class="dg-v" x="272" y="122">기계어로 바꿔 둔다</text>
+  <text class="dg-s" x="272" y="150">빠르지만 미리 다 해야 함</text>
+
+  <rect class="dg-lead" x="480" y="48" width="216" height="120" rx="10"/>
+  <text class="dg-t" x="500" y="76">JIT</text>
+  <text class="dg-v" x="500" y="102">실행 시점에 번역하되</text>
+  <text class="dg-b" x="500" y="122">결과를 캐싱한다</text>
+  <text class="dg-s" x="500" y="150">두 번째부터는 번역 없이</text>
+
+  <rect class="dg-out" x="24" y="188" width="672" height="60" rx="8"/>
+  <text class="dg-k" x="44" y="212">JVM 은 메서드가 얼마나 자주 불리는지 센다</text>
+  <text class="dg-v" x="44" y="234">자주 불리는 것만 컴파일해 캐싱하고, 한 번만 도는 코드는 그냥 해석한다</text>
+
+  <text class="dg-s" x="24" y="278">그래서 같은 코드라도 오래 돌수록 빨라진다 — 캐싱이 쌓이기 때문이다</text>
+</svg>
