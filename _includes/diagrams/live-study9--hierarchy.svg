@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="Throwable 아래 Error 와 Exception 이 갈리고 Exception 아래 RuntimeException 이 있는 계층">
+  <marker id="ls9h-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">예외 계층 구조</text>
+
+  <rect class="dg-row" x="284" y="48" width="152" height="36" rx="6"/>
+  <text class="dg-k" x="304" y="72">Object</text>
+
+  <path class="dg-arw" d="M360 92 V108" marker-end="url(#ls9h-a)"/>
+
+  <rect class="dg-lead" x="284" y="114" width="152" height="36" rx="6"/>
+  <text class="dg-k" x="304" y="138">Throwable</text>
+  <text class="dg-s" x="452" y="138">throw 로 던질 수 있는 것은 여기 아래뿐</text>
+
+  <path class="dg-arw" d="M360 158 V174 H160 V190" marker-end="url(#ls9h-a)"/>
+  <path class="dg-arw" d="M360 158 V174 H520 V190" marker-end="url(#ls9h-a)"/>
+
+  <rect class="dg-warn" x="84" y="196" width="152" height="52" rx="6"/>
+  <text class="dg-k" x="104" y="220">Error</text>
+  <text class="dg-s" x="104" y="238">손쓸 수 없다</text>
+
+  <rect class="dg-lead" x="444" y="196" width="152" height="52" rx="6"/>
+  <text class="dg-k" x="464" y="220">Exception</text>
+  <text class="dg-s" x="464" y="238">처리할 수 있다</text>
+
+  <path class="dg-arw" d="M520 256 V272 H400 V286" marker-end="url(#ls9h-a)"/>
+  <path class="dg-arw" d="M520 256 V272 H640 V286" marker-end="url(#ls9h-a)"/>
+
+  <rect class="dg-row" x="304" y="290" width="192" height="26" rx="6"/>
+  <text class="dg-v" x="320" y="308">RuntimeException</text>
+
+  <rect class="dg-row" x="544" y="290" width="152" height="26" rx="6"/>
+  <text class="dg-v" x="560" y="308">IOException 등</text>
+
+  <text class="dg-s" x="24" y="280">Error 는 잡지 않는 것이 정상이다</text>
+</svg>

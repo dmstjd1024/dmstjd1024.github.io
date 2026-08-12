@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="인터페이스에 메서드를 추가하면 구현 클래스가 모두 깨지는 문제와 디폴트 메서드의 해결">
+  <marker id="ls8dm-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">디폴트 메서드가 나온 이유</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="196" rx="10"/>
+  <text class="dg-t" x="44" y="76">그냥 추상 메서드를 추가하면</text>
+
+  <rect class="dg-row" x="44" y="90" width="288" height="30" rx="6"/>
+  <text class="dg-v" x="60" y="110">인터페이스에 newMethod() 추가</text>
+
+  <path class="dg-arw" d="M188 124 V140" marker-end="url(#ls8dm-a)"/>
+
+  <rect class="dg-warn" x="44" y="146" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="166">구현 클래스 A — 컴파일 에러</text>
+  <rect class="dg-warn" x="44" y="182" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="202">구현 클래스 B — 컴파일 에러</text>
+
+  <text class="dg-s" x="44" y="230">쓰던 곳을 전부 고쳐야 한다</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="196" rx="10"/>
+  <text class="dg-t" x="388" y="76">default 를 붙이면</text>
+
+  <rect class="dg-lead" x="388" y="90" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="110">default void newMethod() { ... }</text>
+
+  <path class="dg-arw" d="M532 124 V140" marker-end="url(#ls8dm-a)"/>
+
+  <rect class="dg-out" x="388" y="146" width="288" height="30" rx="6"/>
+  <text class="dg-v" x="404" y="166">구현 클래스 A — 그대로 동작</text>
+  <rect class="dg-out" x="388" y="182" width="288" height="30" rx="6"/>
+  <text class="dg-v" x="404" y="202">구현 클래스 B — 그대로 동작</text>
+
+  <text class="dg-s" x="388" y="230">기본 구현이 있으니 안 고쳐도 된다</text>
+
+  <text class="dg-v" x="24" y="272">이름이 겹쳐 충돌하면</text>
+  <text class="dg-s" x="24" y="296">인터페이스끼리 겹치면 구현 클래스에서 오버라이딩하고, 조상 클래스와 겹치면 조상 쪽이 이긴다</text>
+</svg>

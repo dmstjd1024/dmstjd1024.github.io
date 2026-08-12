@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="애노테이션 프로세서가 컴파일 시점에 코드를 생성하는 과정과 롬복의 예">
+  <marker id="ls12ap-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">애노테이션 프로세서가 하는 일</text>
+
+  <rect class="dg-item" x="24" y="56" width="180" height="64" rx="8"/>
+  <text class="dg-t" x="44" y="82">@Getter</text>
+  <text class="dg-s" x="44" y="104">내가 쓴 것은 이것뿐</text>
+
+  <path class="dg-arw" d="M212 88 H268" marker-end="url(#ls12ap-a)"/>
+  <text class="dg-s" x="212" y="78">컴파일 때</text>
+
+  <rect class="dg-lead" x="276" y="56" width="180" height="64" rx="8"/>
+  <text class="dg-t" x="296" y="82">프로세서</text>
+  <text class="dg-s" x="296" y="104">애노테이션을 읽고</text>
+
+  <path class="dg-arw" d="M464 88 H520" marker-end="url(#ls12ap-a)"/>
+
+  <rect class="dg-out" x="528" y="56" width="168" height="64" rx="8"/>
+  <text class="dg-t" x="548" y="82">getName()</text>
+  <text class="dg-s" x="548" y="104">코드를 만들어 넣는다</text>
+
+  <rect class="dg-lane" x="24" y="140" width="672" height="68" rx="8"/>
+  <text class="dg-t" x="44" y="166">그래서 롬복은 런타임에 아무 일도 하지 않는다</text>
+  <text class="dg-v" x="44" y="190">컴파일이 끝난 .class 에는 이미 메서드가 들어 있다 — 리플렉션과는 다른 방식이다</text>
+
+  <text class="dg-s" x="24" y="240">애노테이션을 읽는 시점이 컴파일이냐 실행이냐가 프로세서와 리플렉션을 가른다</text>
+</svg>
