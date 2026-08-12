@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="앞에 퍼센트가 붙은 LIKE 는 B-tree 인덱스를 못 쓰지만 trigram 은 가능하다">
+
+  <text class="dg-h" x="24" y="30">앞에 % 가 붙으면 왜 인덱스를 못 타나</text>
+
+  <rect class="dg-lane" x="24" y="48" width="672" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="74">B-tree</text>
+  <text class="dg-s" x="44" y="94">정렬해서 범위로 찾는다</text>
+
+  <rect class="dg-out" x="200" y="58" width="230" height="24" rx="4"/>
+  <text class="dg-key" x="216" y="76">LIKE 'abc%'</text>
+  <text class="dg-b" x="450" y="76">가능 — 앞이 고정</text>
+
+  <rect class="dg-warn" x="200" y="88" width="230" height="24" rx="4"/>
+  <text class="dg-key" x="216" y="106">LIKE '%abc%'</text>
+  <text class="dg-k" x="450" y="106">불가 — 어디서 시작할지 모름</text>
+
+  <rect class="dg-lane" x="24" y="132" width="672" height="92" rx="8"/>
+  <text class="dg-t" x="44" y="158">GIN + pg_trgm</text>
+  <text class="dg-s" x="44" y="178">3글자 단위로 쪼개 둔다</text>
+
+  <rect class="dg-row" x="200" y="142" width="90" height="26" rx="4"/>
+  <text class="dg-v" x="218" y="160">abc</text>
+  <rect class="dg-row" x="300" y="142" width="90" height="26" rx="4"/>
+  <text class="dg-v" x="318" y="160">bcd</text>
+  <rect class="dg-row" x="400" y="142" width="90" height="26" rx="4"/>
+  <text class="dg-v" x="418" y="160">cde</text>
+
+  <rect class="dg-out" x="200" y="178" width="290" height="30" rx="4"/>
+  <text class="dg-key" x="216" y="198">LIKE '%bcd%'</text>
+  <text class="dg-b" x="510" y="198">가능 — 조각으로 찾는다</text>
+
+  <text class="dg-s" x="24" y="252">가장 빠른 부분일치 검색은 부분일치를 안 하는 것 — 드롭다운으로 바꾸면 정확매칭이 된다</text>
+</svg>

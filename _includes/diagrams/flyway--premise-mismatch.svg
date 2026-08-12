@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="Flyway 가 전제하는 빈 DB 에서 쌓아 올린 스키마와 이미 존재하던 레거시 스키마의 불일치">
+  <marker id="fwpm-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">도구의 전제와 프로젝트의 현실이 어긋났다</text>
+
+  <rect class="dg-lane" x="24" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="44" y="74">Flyway 가 전제하는 것</text>
+
+  <rect class="dg-row" x="44" y="88" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="106">빈 DB</text>
+  <path class="dg-arw" d="M188 118 V128" marker-end="url(#fwpm-a)"/>
+  <rect class="dg-row" x="44" y="132" width="288" height="26" rx="4"/>
+  <text class="dg-v" x="60" y="150">V1 · V2 · V3 … 순서대로</text>
+  <path class="dg-arw" d="M188 162 V172" marker-end="url(#fwpm-a)"/>
+  <rect class="dg-out" x="44" y="176" width="288" height="26" rx="4"/>
+  <text class="dg-k" x="60" y="194">현재 스키마</text>
+
+  <rect class="dg-lane" x="368" y="48" width="328" height="164" rx="10"/>
+  <text class="dg-t" x="388" y="74">실제 프로젝트</text>
+
+  <rect class="dg-warn" x="388" y="88" width="288" height="70" rx="4"/>
+  <text class="dg-k" x="404" y="112">이미 테이블 81개가 있다</text>
+  <text class="dg-s" x="404" y="134">어떻게 만들어졌는지 기록이 없다</text>
+  <text class="dg-s" x="404" y="150">여기서부터 시작해야 한다</text>
+
+  <rect class="dg-row" x="388" y="168" width="288" height="34" rx="4"/>
+  <text class="dg-v" x="404" y="190">덤프를 V1 로 만들어 억지로 맞춤</text>
+
+  <text class="dg-v" x="24" y="248">도구가 나쁜 게 아니라, 이 프로젝트가 도구의 전제에 맞지 않았다</text>
+  <text class="dg-s" x="24" y="272">FlywayConfig 는 221줄까지 자랐고 22일 만에 통째로 지워졌다</text>
+</svg>

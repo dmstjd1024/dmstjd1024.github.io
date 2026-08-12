@@ -37,6 +37,10 @@ Flyway는 자연스러운 선택으로 보였다. 그런데 전제가 어긋나 
 - Flyway의 전제 — **빈 DB에서 시작해 마이그레이션으로 쌓아 올린 스키마**
 - 이 프로젝트의 실제 — 이미 81개 테이블이 존재하는 레거시 스키마
 
+<div class="diagram" role="img" aria-label="Flyway 의 전제와 레거시 스키마의 불일치">
+{% include diagrams/flyway--premise-mismatch.svg %}
+</div>
+
 ## 무엇이 계속 터졌나
 
 ### 1. 베이스라인 만들기부터 쉽지 않았다

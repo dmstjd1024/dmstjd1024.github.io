@@ -39,6 +39,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 따라서 "배치 사이즈 1000" 같은 고정 매직넘버는 답이 될 수 없음
 - 어떤 쿼리에서는 과하게 보수적, 어떤 쿼리에서는 여전히 터짐
 
+<div class="diagram" role="img" aria-label="행당 파라미터 수에 따라 고정 배치 사이즈가 통하지 않는 이유">
+{% include diagrams/bind-param--limit.svg %}
+</div>
+
 ## 어떻게 고쳤나
 
 - 커밋 `5e350ac`

@@ -34,6 +34,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 34개 파일 전수 검토
 - 결과: **대체 가능한 파일 0개**
 
+<div class="diagram" role="img" aria-label="ddl-auto update 가 하는 일과 하지 않는 일">
+{% include diagrams/ddl-auto--add-only.svg %}
+</div>
+
 - `update`는 **추가만** 함 — 새 테이블, 새 컬럼은 생성
 - 하지 않는 것
 
