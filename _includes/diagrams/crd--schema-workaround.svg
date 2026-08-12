@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="오퍼레이터가 자기 CRD 의 required 필드를 채우지 않아 status 갱신이 막히는 구조">
+  <marker id="crdsw-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">오퍼레이터가 자기 스키마를 못 지켰다</text>
+
+  <rect class="dg-row" x="24" y="56" width="180" height="52" rx="8"/>
+  <text class="dg-t" x="44" y="80">오퍼레이터</text>
+  <text class="dg-s" x="44" y="98">status 갱신 시도</text>
+
+  <path class="dg-arw" d="M212 82 H244" marker-end="url(#crdsw-a)"/>
+
+  <rect class="dg-warn" x="252" y="56" width="200" height="52" rx="8"/>
+  <text class="dg-k" x="272" y="80">required 필드 누락</text>
+  <text class="dg-s" x="272" y="98">conditions · message</text>
+
+  <path class="dg-arw" d="M460 82 H492" marker-end="url(#crdsw-a)"/>
+
+  <rect class="dg-warn" x="500" y="56" width="196" height="52" rx="8"/>
+  <text class="dg-k" x="520" y="80">검증 거부</text>
+  <text class="dg-s" x="520" y="98">status 가 안 바뀐다</text>
+
+  <rect class="dg-warn" x="24" y="132" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="156">그래서 FAILED 에 고착된다</text>
+  <text class="dg-v" x="44" y="180">배포는 실제로 성공했는데 STATUS 만 FAILED 로 남는다</text>
+  <text class="dg-s" x="44" y="198">애플리케이션이 그 값을 읽어 정상 체인코드를 실패로 표시한다</text>
+
+  <rect class="dg-out" x="24" y="224" width="672" height="56" rx="8"/>
+  <text class="dg-k" x="44" y="248">고칠 수 없는 남의 코드라, CRD 쪽에서 required 를 풀어 우회했다</text>
+  <text class="dg-s" x="44" y="270">스키마를 느슨하게 하는 건 최선이 아니지만, 버전을 올릴 수 없을 때의 현실적 선택이다</text>
+</svg>

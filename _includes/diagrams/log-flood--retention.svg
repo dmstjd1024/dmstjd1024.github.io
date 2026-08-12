@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="같은 상태를 매 틱마다 기록해 로그 회전이 빨라지고 보존 기간이 25분으로 줄어든 구조">
+  <marker id="lgfr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">로그가 너무 많아서 로그가 사라졌다</text>
+
+  <rect class="dg-row" x="24" y="56" width="180" height="60" rx="8"/>
+  <text class="dg-t" x="44" y="80">매 틱 · 매 종목</text>
+  <text class="dg-s" x="44" y="100">"MDD 차단 중" 재기록</text>
+
+  <path class="dg-arw" d="M212 86 H244" marker-end="url(#lgfr-a)"/>
+
+  <rect class="dg-warn" x="252" y="56" width="200" height="60" rx="8"/>
+  <text class="dg-k" x="272" y="80">25분에 127,141줄</text>
+  <text class="dg-s" x="272" y="100">초당 약 85줄</text>
+
+  <path class="dg-arw" d="M460 86 H492" marker-end="url(#lgfr-a)"/>
+
+  <rect class="dg-warn" x="500" y="56" width="196" height="60" rx="8"/>
+  <text class="dg-k" x="520" y="80">회전이 빨라진다</text>
+  <text class="dg-s" x="520" y="100">max-size 10m · max-file 3</text>
+
+  <rect class="dg-warn" x="24" y="140" width="672" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="164">진짜 잃은 것은 디스크가 아니다</text>
+  <text class="dg-v" x="44" y="188">로그 보존 기간이 25분으로 줄어, 그 앞의 기록이 밀려 나갔다</text>
+  <text class="dg-k" x="44" y="206">그날의 매도 체결 기록을 조회할 수 없게 됐다</text>
+
+  <rect class="dg-out" x="24" y="228" width="672" height="56" rx="8"/>
+  <text class="dg-k" x="44" y="252">상태는 바뀔 때만 남긴다 — 같은 상태의 반복 알림은 정보가 아니라 잡음이다</text>
+  <text class="dg-s" x="44" y="272">중요한 로그가 덜 중요한 로그에 밀려 사라지는 구조가 문제였다</text>
+</svg>
