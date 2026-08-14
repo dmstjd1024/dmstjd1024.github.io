@@ -4,7 +4,12 @@ title: "소개"
 description: "전은성 — 백엔드 중심으로 프론트엔드까지 다루는 개발자"
 ---
 
-<div class="hub" markdown="1">
+<!--
+  post-body 를 같이 붙여 글 본문의 타이포그래피(제목 간격·표·목록·링크)를
+  그대로 쓴다. 이 페이지만을 위한 CSS 를 새로 만들 이유가 없다 —
+  base.scss 에는 표 스타일이 없고 ul/ol 여백은 오히려 0으로 리셋된다.
+-->
+<div class="post-body hub" markdown="1">
 
 # 전은성
 
