@@ -117,7 +117,7 @@ visibleRows.every((r: any) => (checkedItems as number[]).includes(r.id));
 - `includes`는 배열 선형 탐색
 - 복잡도: 보이는 행 M개 × 선택 항목 N개 = O(M×N)
 - 조치: `checkedItems`를 `Set`으로 변환해 조회
-- 결과: O(M+N) (커밋 `9e508f52`)
+- 결과: O(M+N)
 
 ## 남는 교훈
 

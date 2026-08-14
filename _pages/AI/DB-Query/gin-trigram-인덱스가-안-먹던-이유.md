@@ -15,8 +15,8 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 ## 인덱스를 만든 날과 인덱스가 실제로 쓰인 날이 13일 떨어져 있다
 
-- 2026-03-12 커밋 `361bc9e` — GIN trigram 인덱스 추가
-- 2026-03-25 커밋 `4fb9cbd` — 인덱스가 쿼리 플랜에 처음 등장
+- 2026-03-12 — GIN trigram 인덱스 추가
+- 2026-03-25 — 인덱스가 쿼리 플랜에 처음 등장
 - 그 사이 13일 동안 인덱스는 디스크만 차지
 - 이 글의 주제 — 그 13일
 
@@ -49,13 +49,13 @@ WHERE c.name LIKE '%' || #{keyword} || '%'
 - `pg_trgm` 확장 — 문자열을 3글자 단위(trigram)로 분해
 - `gin_trgm_ops` 연산자 클래스 — GIN 인덱스로 `%keyword%` 지원
 
-- V149 마이그레이션 — 확장 활성화 후 인덱스 생성
+- 해당 마이그레이션 — 확장 활성화 후 인덱스 생성
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
-CREATE INDEX IF NOT EXISTS idx_meter_no_trgm
-    ON client_meter USING GIN (meter_no gin_trgm_ops)
+CREATE INDEX IF NOT EXISTS idx_device_no_trgm
+    ON tb_device USING GIN (device_no gin_trgm_ops)
     WHERE is_deleted = FALSE AND removal_date IS NULL;
 ```
 
@@ -67,7 +67,7 @@ CREATE INDEX IF NOT EXISTS idx_meter_no_trgm
 
 같은 계열 작업:
 
-- V150 — 주소 · 장비 식별자 컬럼에 GIN 인덱스 추가
+- 후속 마이그레이션 — 주소 · 장비 식별자 컬럼에 GIN 인덱스 추가
 - LATERAL JOIN이 매 행마다 실행되던 구간에 커버링 인덱스 추가
 
 - 여기까지 작업 후 커밋
@@ -113,7 +113,7 @@ LOWER(c.name) LIKE LOWER('%' || #{keyword} || '%')
 
 ## 어떻게 고쳤나
 
-커밋 `4fb9cbd`에서 일괄 전환.
+13일 뒤 커밋에서 일괄 전환.
 
 - 대상 패턴: `LOWER(...) LIKE LOWER(...)` → `ILIKE`
 - 변경 규모: 130개소 남짓
