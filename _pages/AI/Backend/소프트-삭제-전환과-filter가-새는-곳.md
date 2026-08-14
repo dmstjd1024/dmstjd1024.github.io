@@ -17,7 +17,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 ## 엔티티 14개를 하드 삭제에서 소프트 삭제로
 
 - 배경 — 보고서에서 참조하는 데이터가 삭제되면 과거 보고서가 파손
-- 작업 — 삭제를 `is_delete` 플래그로 전환 (PR #792)
+- 작업 — 삭제를 `is_delete` 플래그로 전환
 - 대상 — 엔티티 **14개**
 
 개념은 단순한데 실제로 걸린 곳은 둘 — **유니크 제약**, **@Filter 미적용 경로**
@@ -64,7 +64,7 @@ ALTER TABLE tb_xxx ADD UNIQUE KEY uk_xxx_active (company_id, active_name);
 
 ## (b) 조회 필터를 @Filter 하이브리드로
 
-`5ef40e1a`에서 조회 필터링을 Hibernate `@Filter`로 전환.
+조회 필터링을 Hibernate `@Filter`로 전환했다.
 
 - `BaseEntity`에 `@FilterDef` 단일 정의
 - 엔티티 **15종**에 `@Filter` 부착
@@ -83,7 +83,7 @@ ALTER TABLE tb_xxx ADD UNIQUE KEY uk_xxx_active (company_id, active_name);
 
 필터 비활성화 남용 방지:
 
-- `87d016f5`에서 봉인 유틸 `SoftDeleteFilterSupport` 신규
+- 봉인 유틸 `SoftDeleteFilterSupport` 신규
 - `disable → 실행 → finally enable`을 한 메서드에 격리
 - raw `session.disableFilter` 직접 호출 금지
 
@@ -102,7 +102,7 @@ ALTER TABLE tb_xxx ADD UNIQUE KEY uk_xxx_active (company_id, active_name);
 - 구현 — 성능 때문에 native `SELECT` 사용
 - 결과 — `@Filter` 미적용 → **삭제된 행까지 긁어서 물질화 테이블에 재삽입**. 소프트 삭제한 데이터가 조회 화면에 부활
 
-- `43b2346b`에서 native SELECT 2곳에 `AND ef.is_delete = 0` 명시 추가
+- 후속 조치로 native SELECT 2곳에 `AND ef.is_delete = 0` 명시 추가
 - 추정으로 끝내지 않고 DB에서 실측
 
 | 쿼리 | 삭제된 행 포함 |
