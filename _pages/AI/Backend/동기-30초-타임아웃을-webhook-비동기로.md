@@ -29,7 +29,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 페이지 수에 비례하는 작업이라 상한 설정 불가
 - 요청 스레드와 커넥션을 그동안 점유
 
-- 조치: `ba916774`(PR #768) — webhook 콜백 구조로 전환
+- 조치: webhook 콜백 구조로 전환
 
 ## 바뀐 흐름
 
@@ -62,7 +62,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - `jobId` 기준으로 기 처리된 요청이면 무시
 - `jobId`는 OCR 서비스가 발급하는 자연스러운 멱등 키 — 별도 설계 불필요
 
-후속 커밋(`dfcc927a`)에서 추가한 것:
+후속 커밋에서 추가한 것:
 
 - `jobId` null 가드
 - 이유: `findByJobId(null)` 호출 시 의도치 않은 행에 매칭될 수 있음
@@ -86,7 +86,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 외부 HTTP 호출은 응답 시간 예측 불가
 - 그동안 DB 커넥션 점유 → 커넥션 풀 고갈의 전형적 경로
 
-`dfcc927a`의 정리 내용:
+그 후속 커밋의 정리 내용:
 
 | 대상 | 변경 |
 |---|---|
