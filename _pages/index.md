@@ -248,7 +248,7 @@ layout: default
         <h3>스마트시티 블록체인 DevOps 플랫폼</h3>
         <p class="proj__stack">Java 21 · Spring Boot · Kubernetes · Hyperledger Fabric/Besu · Next.js · 폐쇄망</p>
         <p class="proj__meta">
-          2025.06 — 2026.05 · 광주광역시 스마트시티 조성사업
+          2025.07 — 2025.12 · 광주광역시 스마트시티 조성사업
           <span>백엔드 · 인프라 단독 (커밋 96%) · 프론트 협업 1명</span>
         </p>
       </header>
@@ -411,7 +411,7 @@ layout: default
         </span>
       </li>
       <li>
-        <span class="career__when">2020 — 2023</span>
+        <span class="career__when">2021 — 2023</span>
         <span class="career__what">
           <b>퓨쳐누리</b> 개발
           <em>관리자 페이지 기능 개발 · 유지보수 · 솔루션 리뉴얼(MSA) · 국방부 시스템 개발 및 유지보수</em>
