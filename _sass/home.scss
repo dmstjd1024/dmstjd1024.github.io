@@ -197,25 +197,88 @@
 // 대표 기술 아이콘 (skillicons.dev).
 //
 // 아이콘 SVG 안에 배경색이 박혀 있다. 기본(다크) 버전은 남색 배경이라
-// 흰 바탕에서 그 줄만 튀었다.
+// 흰 바탕에서 그 줄만 튀어서, theme=light 버전을 따로 받아 두 벌을 두고
+// 테마에 따라 하나만 보인다. JS 없이 CSS 로만 전환된다.
 //
-// 배경을 지우는 방법은 못 쓴다 — MySQL·Next.js·Kubernetes 처럼 로고가
-// 흰색인 아이콘이 있어 걷어내면 밝은 바탕에서 사라진다. 흐리게 만드는
-// 것도 답이 아니다. 선명하게 훑으라고 아이콘을 쓴 것이기 때문이다.
-//
-// skillicons 가 theme=light 를 지원한다. 밝은 배경(#F4F2ED) 버전을 따로
-// 받아 두 벌을 두고 테마에 따라 하나만 보인다. JS 없이 CSS 로만 전환된다.
+// 배경을 지우는 방법은 못 쓴다 — MySQL·Kubernetes 처럼 로고가 흰색인
+// 아이콘이 있어 걷어내면 밝은 바탕에서 사라진다.
 .stack__icons {
-  height:2.75rem;
-  width:auto;
-  display:block;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
 }
 
-.stack__icons--dark { display:none; }
+// 아이콘 한 칸. 이름표를 띄우려고 감싼다.
+.ic {
+  position:relative;
+  display:block;
+  line-height:0;      // img 아래 남는 여백 제거
+  cursor:default;
 
-body.dark-theme {
-  .stack__icons--light { display:none; }
-  .stack__icons--dark  { display:block; }
+  &__img {
+    height:2.75rem;
+    width:auto;
+    display:block;
+    transition:transform .15s ease;
+  }
+
+  &__img--dark { display:none; }
+
+  // 이름표.
+  //
+  // 아이콘 위에 띄운다. 아래에 두면 다음 줄 아이콘을 가린다.
+  // position:absolute 라 자리를 차지하지 않아, 떴다 사라져도 아래
+  // 내용이 밀리지 않는다.
+  &__name {
+    position:absolute;
+    bottom:calc(100% + .4rem);
+    left:50%;
+    transform:translateX(-50%) translateY(.15rem);
+    padding:.25rem .5rem;
+    border:1px solid var(--border);
+    border-radius:var(--r-sm);
+    background:var(--bg-raised);
+    box-shadow:var(--shadow-sm);
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    line-height:1.4;
+    color:var(--fg);
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .15s ease, transform .15s ease;
+    z-index:2;
+  }
+
+  // 마우스를 올리거나 키보드로 이동했을 때.
+  // 키보드 사용자도 이름을 볼 수 있어야 해서 focus 를 함께 건다.
+  &:hover &__name,
+  &:focus-visible &__name {
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+
+  &:hover &__img { transform:translateY(-2px); }
+
+  &:focus-visible {
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:var(--r-sm);
+  }
+}
+
+body.dark-theme .ic {
+  &__img--light { display:none; }
+  &__img--dark  { display:block; }
+}
+
+// 움직임을 줄이는 설정을 켠 사용자에게는 이동 효과를 빼고
+// 나타나기만 하게 한다.
+@media (prefers-reduced-motion:reduce) {
+  .ic__img, .ic__name { transition:opacity .15s ease; }
+  .ic:hover .ic__img { transform:none; }
+  .ic__name { transform:translateX(-50%); }
+  .ic:hover .ic__name, .ic:focus-visible .ic__name { transform:translateX(-50%); }
 }
 
 // 대표 아이콘에 딸린 세부 기술 (shields.io).

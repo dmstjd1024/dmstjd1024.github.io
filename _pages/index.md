@@ -40,49 +40,97 @@ layout: default
   JPA · QueryDSL · MyBatis 처럼 실무의 중심에 있는 것들이라 뺄 수 없었다.
   대신 위계로 풀었다 — 대표는 크게, 딸린 것은 작게.
 
-  아이콘은 밝은/어두운 배경 두 벌을 받아 테마에 따라 하나만 보인다.
-  기본 버전은 배경이 남색이라 흰 바탕에서 그 줄만 튄다.
+  아이콘은 낱개 파일로 둔다. 묶음(icons-backend.svg 처럼 여러 개가 한 파일)
+  이면 개별 hover 를 잡을 수 없어서다. 마우스를 올리면 이름이 뜬다.
 
-  전부 assets/img/badge/ 에 받아둔 SVG 다. 외부에서 매번 불러오면 요청이
-  남의 서버로 나가고 그쪽이 죽으면 이 화면이 같이 깨진다.
+  배경색이 SVG 안에 박혀 있어 밝은/어두운 두 벌을 받아 테마에 따라 하나만
+  보인다. 기본 버전은 남색 배경이라 흰 바탕에서 그 줄만 튄다.
 
-  바꾸려면 skillicons.dev/icons?i=...&theme=light 와 theme 없는 주소로
-  각각 받아 icons-*.svg / icons-*-dark.svg 를 덮어쓴다.
+  바꾸려면 skillicons.dev/icons?i=<슬러그>&theme=light 와 theme 없는 주소로
+  각각 받아 i-<슬러그>.svg / i-<슬러그>-dark.svg 를 덮어쓴다.
 {%- endcomment -%}
     <dl class="stack__grid">
       <div>
         <dt>백엔드</dt>
         <dd>
-          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-backend.svg" alt="Java, Spring, Python" height="44">
-          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-backend-dark.svg" alt="" aria-hidden="true" height="44">
-          <div class="stack__sub">
-            <img src="/assets/img/badge/spring-security.svg" alt="Spring Security" height="24">
-            <img src="/assets/img/badge/jpa-hibernate.svg" alt="JPA / Hibernate" height="24">
-            <img src="/assets/img/badge/querydsl.svg" alt="QueryDSL" height="24">
-            <img src="/assets/img/badge/mybatis.svg" alt="MyBatis" height="24">
-            <img src="/assets/img/badge/websocket.svg" alt="WebSocket / STOMP" height="24">
+          <div class="stack__icons">
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-java.svg" alt="Java" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-java-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">Java</span>
+          </span>
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-spring.svg" alt="Spring" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-spring-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">Spring</span>
+          </span>
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-python.svg" alt="Python" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-python-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">Python</span>
+          </span>
           </div>
         </dd>
       </div>
       <div>
         <dt>데이터베이스</dt>
         <dd>
-          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-database.svg" alt="PostgreSQL, MySQL, Redis" height="44">
-          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-database-dark.svg" alt="" aria-hidden="true" height="44">
+          <div class="stack__icons">
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-postgres.svg" alt="PostgreSQL" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-postgres-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">PostgreSQL</span>
+          </span>
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-mysql.svg" alt="MySQL" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-mysql-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">MySQL</span>
+          </span>
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-redis.svg" alt="Redis" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-redis-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">Redis</span>
+          </span>
+          </div>
         </dd>
       </div>
       <div>
         <dt>프론트엔드</dt>
         <dd>
-          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-frontend.svg" alt="React" height="44">
-          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-frontend-dark.svg" alt="" aria-hidden="true" height="44">
+          <div class="stack__icons">
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-react.svg" alt="React" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-react-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">React</span>
+          </span>
+          </div>
         </dd>
       </div>
       <div>
         <dt>인프라</dt>
         <dd>
-          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-infra.svg" alt="Kubernetes, Docker, GitHub Actions, Linux" height="44">
-          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-infra-dark.svg" alt="" aria-hidden="true" height="44">
+          <div class="stack__icons">
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-kubernetes.svg" alt="Kubernetes" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-kubernetes-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">Kubernetes</span>
+          </span>
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-docker.svg" alt="Docker" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-docker-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">Docker</span>
+          </span>
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-githubactions.svg" alt="GitHub Actions" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-githubactions-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">GitHub Actions</span>
+          </span>
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-linux.svg" alt="Linux" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-linux-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">Linux</span>
+          </span>
+          </div>
           <div class="stack__sub">
             <img src="/assets/img/badge/hyperledger-fabric.svg" alt="Hyperledger Fabric" height="24">
           </div>
