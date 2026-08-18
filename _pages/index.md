@@ -36,21 +36,24 @@ layout: default
     - 아이콘(skillicons.dev) — 대표 기술. 한눈에 훑는 용도
     - 배지(shields.io) — 그 아래 딸린 세부 기술
 
-  섞은 이유는 skillicons 에 없는 기술이 9개나 되기 때문이다. Spring Security ·
-  JPA · QueryDSL · MyBatis 처럼 이 사람 실무의 중심에 있는 것들이라 뺄 수 없었다.
+  섞은 이유는 skillicons 에 없는 기술이 여럿이기 때문이다. Spring Security ·
+  JPA · QueryDSL · MyBatis 처럼 실무의 중심에 있는 것들이라 뺄 수 없었다.
   대신 위계로 풀었다 — 대표는 크게, 딸린 것은 작게.
+
+  아이콘은 밝은/어두운 배경 두 벌을 받아 테마에 따라 하나만 보인다.
+  기본 버전은 배경이 남색이라 흰 바탕에서 그 줄만 튄다.
 
   전부 assets/img/badge/ 에 받아둔 SVG 다. 외부에서 매번 불러오면 요청이
   남의 서버로 나가고 그쪽이 죽으면 이 화면이 같이 깨진다.
 
-  아이콘을 바꾸려면 skillicons.dev/icons?i=... 로 새로 받아 icons-*.svg 를
-  덮어쓴다. 배지는 img.shields.io 에서 같은 파일명으로 받는다.
+  바꾸려면 skillicons.dev/icons?i=...&theme=light 와 theme 없는 주소로
+  각각 받아 icons-*.svg / icons-*-dark.svg 를 덮어쓴다.
 {%- endcomment -%}
     <dl class="stack__grid">
       <div>
         <dt>백엔드</dt>
         <dd>
-          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-backend.svg" alt="Java, Spring" height="44">
+          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-backend.svg" alt="Java, Spring, Python" height="44">
           <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-backend-dark.svg" alt="" aria-hidden="true" height="44">
           <div class="stack__sub">
             <img src="/assets/img/badge/spring-security.svg" alt="Spring Security" height="24">
@@ -71,12 +74,8 @@ layout: default
       <div>
         <dt>프론트엔드</dt>
         <dd>
-          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-frontend.svg" alt="React, Next.js, TypeScript, Redux" height="44">
+          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-frontend.svg" alt="React" height="44">
           <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-frontend-dark.svg" alt="" aria-hidden="true" height="44">
-          <div class="stack__sub">
-            <img src="/assets/img/badge/tanstack-query.svg" alt="TanStack Query" height="24">
-            <img src="/assets/img/badge/rtk-query.svg" alt="RTK Query" height="24">
-          </div>
         </dd>
       </div>
       <div>
@@ -90,11 +89,9 @@ layout: default
         </dd>
       </div>
       <div>
-        <dt>그 외</dt>
+        <dt>AI</dt>
         <dd>
-          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-etc.svg" alt="Python" height="44">
-          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-etc-dark.svg" alt="" aria-hidden="true" height="44">
-          <div class="stack__sub">
+          <div class="stack__sub stack__sub--alone">
             <img src="/assets/img/badge/claude-code.svg" alt="Claude Code" height="24">
           </div>
         </dd>
