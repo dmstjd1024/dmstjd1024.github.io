@@ -24,7 +24,15 @@
   Liquid 에는 배열에 항목을 추가하는 필터가 없어서, 개수는 먼저 세고
   출력은 루프 안에서 같은 조건으로 거른다.
 {%- endcomment -%}
-{%- assign here = page.url | remove: 'index.html' -%}
+{%- comment -%}
+  전체 목록(inc_level == 1)은 "/글/" 아래가 아니라 사이트 전체를 모은다.
+  글은 각 카테고리 디렉터리에 있고 "/글/" 밑에는 아무것도 없기 때문이다.
+{%- endcomment -%}
+{%- if include.inc_level == 1 -%}
+  {%- assign here = '/' -%}
+{%- else -%}
+  {%- assign here = page.url | remove: 'index.html' -%}
+{%- endif -%}
 {%- assign cand = site.pages
       | where_exp: "p", "p.url contains here"
       | sort: "date" | reverse -%}
@@ -37,30 +45,18 @@
 {%- endfor -%}
 
 {%- comment -%}
-  첫 화면에는 최근 글만 싣는다. 전부 그리면 눈에 보이지도 않는 카드
-  수십 개의 HTML 을 매번 내려받게 된다. 나머지는 카테고리에서 본다.
+  예전에는 첫 화면이 이 목록이라 최근 30편만 실었다. 지금은 홈이
+  포트폴리오이고 이 페이지는 "전체 글" 이라 이름대로 전부 그린다.
 {%- endcomment -%}
-{%- if include.inc_level == 1 -%}
-  {%- assign show_max = 30 -%}
-{%- else -%}
-  {%- assign show_max = 9999 -%}
-{%- endif -%}
+{%- assign show_max = 9999 -%}
 
 <div class="wrap wrap--list">
   <header class="list-head">
     {%- if include.inc_level == 1 -%}
-      <p class="list-head__eyebrow">{{ site.description }}</p>
-      <h1 class="list-head__title">{{ site.title }}</h1>
-      {%- comment -%}
-        첫 화면에만 짧은 소개를 둔다. 주소를 직접 치고 들어온 사람에게는
-        글 목록만으로는 "이게 누구 블로그인지" 가 전달되지 않는다.
-        상세는 /소개/ 로 넘긴다 — 여기서 길어지면 글 목록이 밀린다.
-      {%- endcomment -%}
-      <p class="list-head__intro">
-        레거시 개선 · 성능 문제 · 데이터 모델 전환처럼 이미 돌아가는 시스템을 고치는 일을
-        주로 합니다. 여기 글은 대부분 그 과정에서 나왔습니다.
-        <a href="{{ '/소개/index.html' | prepend: site.baseurl }}">프로젝트 보기 →</a>
+      <p class="list-head__eyebrow">
+        <a href="{{ '/' | prepend: site.baseurl }}">{{ site.title }}</a>
       </p>
+      <h1 class="list-head__title">전체 글</h1>
     {%- else -%}
       {%- comment -%}
         서브 카테고리(AI/Backend)에서는 바로 위(AI)로 올라갈 수 있게 한다.
