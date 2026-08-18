@@ -14,10 +14,18 @@
 
   {% include nav.html %}
 
+  {%- comment -%}
+    홈(포트폴리오)은 자체 폭·리듬을 갖는다. 본문 폭(52rem)에 가두면
+    카드와 그리드가 눌린다. 그 외(404 등)는 지금까지처럼 본문 폭을 쓴다.
+  {%- endcomment -%}
   <main id="content">
-    <div class="wrap wrap--post">
+    {%- if page.url == '/' or page.url == '/index.html' -%}
       {{ content }}
-    </div>
+    {%- else -%}
+      <div class="wrap wrap--post">
+        {{ content }}
+      </div>
+    {%- endif -%}
   </main>
 
   {% include footer.html %}

@@ -24,7 +24,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 ## (a) fetch join을 못 쓸 때 — @BatchSize
 
-- 첫 케이스 — `f6fd21ef`
+- 첫 케이스
 
 - 위치: 제품 목록 조회
 - 증상: `product.getLcaList()` 지연 로딩으로 제품당 1쿼리
@@ -49,18 +49,18 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 private List<Lca> lcaList;
 ```
 
-- `511ea939`에서도 동일 판단
+- 다른 조회 경로에서도 동일 판단
 
 - 임계 경로 `cfResults` → fetch join
 - 두 번째 컬렉션 `lciaCfMonthlyMetaList` → `@BatchSize(100)`
 - 둘 다 fetch join 시 역시 `MultipleBagFetchException`
-- 직전 커밋 `122be661`에 월별 메타를 fetch join으로 시도했다 되돌린 흔적 잔존
+- 직전 커밋에 월별 메타를 fetch join으로 시도했다 되돌린 흔적 잔존
 
 - 정리: **컬렉션 1개면 fetch join, 2개 이상이면 하나만 fetch join + 나머지 @BatchSize**
 
 ## (b) 루프 안의 집계 쿼리 — 집합을 넓혀 1회 호출
 
-- 최대 효과 구간 — `94dea13c`, `fe2e2c56`(PR #688)
+- 최대 효과 구간 — 커밋 2개에 걸친 작업
 
 - 유형: 엔티티 연관관계 N+1 아님
 - 실제 형태: **애플리케이션 코드가 루프를 돌며 집계 쿼리 반복 호출**
@@ -101,7 +101,7 @@ private List<Lca> lcaList;
 
 ## (c) 전체 로드 후 Java 합산 — SQL SUM
 
-- `f6fd21ef`에 포함된 또 하나의 케이스
+- (a)의 첫 케이스 커밋에 포함된 또 하나의 사례
 
 - 증상: 기간별 총량 메서드가 해당 기간 행을 전부 엔티티로 로드 후 Java에서 합산
 - 조치: `SUM(kgAmount)` 집계 쿼리로 전환
@@ -111,7 +111,7 @@ private List<Lca> lcaList;
 
 ## (d) DTO 매퍼가 유발한 N+1 — @EntityGraph 배치 조회
 
-- `c633557b` — 조금 다른 형태
+- 조금 다른 형태
 
 - 위치: 사용자 목록 조회
 - 증상: DTO 매퍼가 `rg.getRoleGroup().getName()`으로 LAZY 프록시를 **목록 사용자 수만큼** 접근
@@ -126,7 +126,7 @@ private List<Lca> lcaList;
 
 ## 곁들여 — dev 로깅 끄기
 
-- `fe2e2c56`에 포함된 성능 수정 하나 추가
+- (b)의 최대 효과 구간 커밋에 포함된 성능 수정 하나 추가
 
 - 조치: dev 환경 P6Spy SQL 로깅 비활성화
 - 이유: 요청당 10여 개 쿼리를 전부 문자열 포매팅해 로깅하는 고정 오버헤드

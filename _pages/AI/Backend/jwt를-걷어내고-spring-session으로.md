@@ -16,7 +16,6 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 ## 전환 자체는 하루였다
 
-- 커밋 `a1837d49`(PR #557)
 - 내용: JWT 기반 인증 → Redis 기반 Spring Session
 - 삭제: `JwtFilter`, `JwtProvider` 등 클래스 6개, 374줄
 - 커밋 하나로 종료
@@ -27,7 +26,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 ## (a) API 호출을 세션 갱신 신호로 쓰기
 
 - 세션 기반 전환 → 만료 관리 필요
-- `4162f9be`(PR #586)에서 `SessionSyncResponseAdvice` 신설
+- 후속 작업에서 `SessionSyncResponseAdvice` 신설
 
 - 핵심 아이디어: **별도의 갱신 엔드포인트를 두지 않는 것**
 
@@ -51,7 +50,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 ## (b) 동시 요청과 Redis 장애
 
-- `191dd914`에서 수정한 두 가지
+- 한 커밋에서 수정한 두 가지
 
 **원자적 연산으로 전환**
 
@@ -74,7 +73,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 ## (c) 배포하니 로그인이 500
 
-- `73f52ed3` — 가장 고전적인 함정
+- 가장 고전적인 함정
 
 - Redis 저장 세션 = 자바 객체의 직렬화 결과
 - 배포로 세션에 담기는 클래스 구조 변경 → **이전 버전이 만든 세션은 역직렬화 실패**
@@ -109,7 +108,7 @@ HTTP는 요청마다 세션을 확인하지만 **WebSocket은 연결이 한 번 
 - 문제: 관리자가 권한을 낮춰도 해당 사용자 세션이 살아있으면 즉시 미반영
 - 조치: 권한 변경 이벤트 발생 시 강제 로그아웃 이벤트 전송
 
-- 관련 커밋 `e9acfb6a` — 캐시 무효화 버그 수정
+- 관련 커밋 — 캐시 무효화 버그 수정
 - 기존 동작: 권한 변경 시 Spring `CacheManager`의 사용자 캐시만 삭제
 - 누락: **Redis에 따로 둔 권한 캐시 키**
 

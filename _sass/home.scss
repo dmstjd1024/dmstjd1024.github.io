@@ -1,0 +1,688 @@
+// ---------------------------------------------------------------------------
+// 홈 (포트폴리오)
+//
+// 글 화면(post-body)의 타이포그래피를 재사용하면 워드 문서처럼 보인다.
+// 여기는 읽는 화면이 아니라 3초 안에 판단되는 화면이라 리듬을 따로 잡는다.
+//
+// 색은 새로 만들지 않고 vars.scss 의 의미 토큰만 쓴다 — 그래야 다크모드가
+// 자동으로 따라온다.
+//
+// 이 페이지의 성격: 이 사람의 일은 "이미 돌아가는 시스템을 고치는 것"이고
+// 글의 설득력은 측정값에서 나온다. 그래서 화면의 중심을 큰 타이포가 아니라
+// 사례마다 붙는 결과값 한 줄(.case__out)에 뒀다. 모노스페이스로 못박아
+// 훑을 때 그 줄만 읽어도 무엇을 했는지 알 수 있게 한다.
+// ---------------------------------------------------------------------------
+
+.home {
+  max-width:$listwd;
+  margin-inline:auto;
+  padding:0 1.25rem 6rem;
+}
+
+// --- 히어로 -----------------------------------------------------------------
+//
+// 큰 이름 하나로 화면을 채우는 대신, 이름 + 한 줄 정의 + 숫자 세 개를 묶어
+// 첫 화면에서 "누가 / 뭘 하고 / 얼마나" 가 동시에 읽히게 한다.
+
+.hero {
+  padding:5rem 0 3.5rem;
+  border-bottom:1px solid var(--border);
+
+  // 왼쪽은 정체성, 오른쪽은 지표판.
+  //
+  // 한 덩어리로 두면 화면 왼쪽 1/4 에만 텍스트가 몰리고 나머지가 빈다.
+  // 지표를 오른쪽에 세우면 빈 공간이 채워지고, 이 사람의 설득력이 어디서
+  // 나오는지(측정값)가 첫 화면에서 바로 드러난다.
+  display:grid;
+  grid-template-columns:minmax(0, 1fr) minmax(0, 22rem);
+  gap:3rem;
+  align-items:center;
+
+  &__eyebrow {
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    letter-spacing:.14em;
+    color:var(--fg-subtle);
+    text-transform:uppercase;
+  }
+
+  &__name {
+    margin-top:.9rem;
+    font-size:clamp(3rem, 8vw, 4.75rem);
+    line-height:1;
+    letter-spacing:-.05em;
+  }
+
+  // 직무 + 전문영역. 검증 가능한 사실만 둔다.
+  //
+  // 이름 바로 아래 자리라 슬로건을 넣기 쉬운데, 그 자리에 명사구를 둔다.
+  // 아래 서술문보다 작게 잡아 '사실 → 설명' 순서로 읽히게 한다.
+  &__role {
+    margin-top:1.25rem;
+    font-family:var(--font-mono);
+    font-size:.875rem;
+    line-height:1.5;
+    color:var(--fg-muted);
+  }
+
+  &__line {
+    margin-top:.75rem;
+    font-size:clamp(1.125rem, 2.2vw, 1.5rem);
+    line-height:1.45;
+    letter-spacing:-.02em;
+    color:var(--fg);
+  }
+
+  &__links {
+    margin-top:2rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+
+    a {
+      padding:.45rem .9rem;
+      border:1px solid var(--border);
+      border-radius:var(--r-sm);
+      font-family:var(--font-mono);
+      font-size:.8125rem;
+      color:var(--fg-muted);
+      transition:border-color .15s ease, color .15s ease, background-color .15s ease;
+
+      &:hover {
+        border-color:var(--border-strong);
+        background:var(--bg-sunken);
+        color:var(--fg);
+      }
+    }
+  }
+
+  // 지표판.
+  //
+  // 숫자를 크게 세우고 단위를 작게 붙인다. 세 칸을 가로선으로만 나눠
+  // 카드 테두리를 여러 겹 두르지 않는다 — 이 페이지는 선이 얇은 편이라
+  // 상자를 겹치면 그 부분만 무거워진다.
+  &__facts {
+    margin:0;
+    padding:1.5rem;
+    border:1px solid var(--border);
+    border-radius:var(--r);
+    background:var(--bg-sunken);
+
+    > div {
+      padding:1rem 0;
+      border-top:1px solid var(--border);
+
+      &:first-child { padding-top:0; border-top:0; }
+      &:last-child  { padding-bottom:0; }
+    }
+
+    dt {
+      font-size:.75rem;
+      color:var(--fg-subtle);
+      letter-spacing:.02em;
+    }
+
+    dd {
+      margin:.15rem 0 0;
+      display:flex;
+      align-items:baseline;
+      gap:.15rem;
+    }
+
+    b {
+      font-family:var(--font-mono);
+      font-size:2.25rem;
+      font-weight:600;
+      line-height:1;
+      letter-spacing:-.04em;
+      font-variant-numeric:tabular-nums;
+      color:var(--fg);
+    }
+
+    i {
+      font-style:normal;
+      font-family:var(--font-mono);
+      font-size:.9375rem;
+      color:var(--fg-muted);
+    }
+
+    p {
+      margin-top:.35rem;
+      font-size:.75rem;
+      line-height:1.5;
+      color:var(--fg-subtle);
+    }
+  }
+}
+
+// 좁은 화면에서는 두 열이 눌린다. 지표판을 아래로 내리고 가로로 편다.
+@media (max-width:$bp-tablet) {
+  .hero {
+    grid-template-columns:1fr;
+    gap:2.5rem;
+    padding:3.5rem 0 2.5rem;
+
+    &__facts {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(9rem, 1fr));
+      gap:0 1.5rem;
+
+      > div {
+        border-top:0;
+        padding:0;
+
+        // 가로로 펴지면 칸 사이를 세로선으로 나눈다
+        padding-left:1rem;
+        border-left:1px solid var(--border);
+
+        &:first-child { padding-left:0; border-left:0; }
+      }
+
+      b { font-size:1.75rem; }
+    }
+  }
+}
+
+@media (max-width:$bp-mobile) {
+  .hero__facts {
+    grid-template-columns:1fr;
+    gap:0;
+
+    > div {
+      padding:.9rem 0 !important;
+      border-left:0 !important;
+      border-top:1px solid var(--border);
+
+      &:first-child { padding-top:0 !important; border-top:0; }
+    }
+  }
+}
+
+// --- 섹션 공통 ---------------------------------------------------------------
+
+.sec__title {
+  font-size:.8125rem;
+  font-family:var(--font-mono);
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--fg-subtle);
+}
+
+.sec__note {
+  margin-top:.5rem;
+  font-size:.9375rem;
+  color:var(--fg-muted);
+  line-height:1.7;
+}
+
+.stack, .work, .how, .career { padding-top:3.5rem; }
+
+// --- 경력 -------------------------------------------------------------------
+//
+// 프로젝트 카드로 다루기엔 근거 글이 없는 구간. 기간과 내용을 두 칸으로
+// 나란히 둬서 훑을 때 연도만 따라 읽을 수 있게 한다.
+
+.career__list {
+  margin-top:1.5rem;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+
+  > li {
+    display:grid;
+    grid-template-columns:9.5rem 1fr;
+    gap:1rem;
+    padding-bottom:1rem;
+    border-bottom:1px solid var(--border);
+
+    &:last-child { border-bottom:0; padding-bottom:0; }
+  }
+}
+
+.career__when {
+  font-family:var(--font-mono);
+  font-size:.8125rem;
+  color:var(--fg-subtle);
+  padding-top:.15rem;
+  font-variant-numeric:tabular-nums;
+}
+
+.career__what {
+  font-size:.9375rem;
+  line-height:1.6;
+
+  b { font-weight:600; }
+
+  em {
+    display:block;
+    margin-top:.2rem;
+    font-style:normal;
+    font-size:.875rem;
+    color:var(--fg-subtle);
+  }
+}
+
+@media (max-width:$bp-mobile) {
+  .career__list > li { grid-template-columns:1fr; gap:.25rem; }
+}
+
+// --- 기술 스택 ---------------------------------------------------------------
+//
+// 표를 쓰지 않는다. 5행짜리 표는 읽는 물건이라 훑기에 나쁘다.
+// 라벨 + 칩으로 두면 시선이 한 번에 지나간다. 칩은 목록 페이지의 .chip 과
+// 같은 각진 모양이라 사이트 안에서 낯설지 않다.
+
+.stack__grid {
+  margin-top:1.5rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(15rem, 1fr));
+  gap:1.5rem 2rem;
+
+  > div {
+    display:flex;
+    flex-direction:column;
+    gap:.6rem;
+  }
+
+  dt {
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+  }
+
+  dd {
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.6rem;
+  }
+}
+
+// 대표 기술 아이콘 (skillicons.dev).
+//
+// 아이콘 SVG 안에 배경색이 박혀 있다. 기본(다크) 버전은 남색 배경이라
+// 흰 바탕에서 그 줄만 튀어서, theme=light 버전을 따로 받아 두 벌을 두고
+// 테마에 따라 하나만 보인다. JS 없이 CSS 로만 전환된다.
+//
+// 배경을 지우는 방법은 못 쓴다 — MySQL·Kubernetes 처럼 로고가 흰색인
+// 아이콘이 있어 걷어내면 밝은 바탕에서 사라진다.
+.stack__icons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+}
+
+// 아이콘 한 칸. 이름표를 띄우려고 감싼다.
+.ic {
+  position:relative;
+  display:block;
+  line-height:0;      // img 아래 남는 여백 제거
+  cursor:default;
+
+  &__img {
+    height:2.75rem;
+    width:auto;
+    display:block;
+    transition:transform .15s ease;
+  }
+
+  &__img--dark { display:none; }
+
+  // 이름표.
+  //
+  // 아이콘 위에 띄운다. 아래에 두면 다음 줄 아이콘을 가린다.
+  // position:absolute 라 자리를 차지하지 않아, 떴다 사라져도 아래
+  // 내용이 밀리지 않는다.
+  &__name {
+    position:absolute;
+    bottom:calc(100% + .4rem);
+    left:50%;
+    transform:translateX(-50%) translateY(.15rem);
+    padding:.25rem .5rem;
+    border:1px solid var(--border);
+    border-radius:var(--r-sm);
+    background:var(--bg-raised);
+    box-shadow:var(--shadow-sm);
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    line-height:1.4;
+    color:var(--fg);
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .15s ease, transform .15s ease;
+    z-index:2;
+  }
+
+  // 마우스를 올리거나 키보드로 이동했을 때.
+  // 키보드 사용자도 이름을 볼 수 있어야 해서 focus 를 함께 건다.
+  &:hover &__name,
+  &:focus-visible &__name {
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+
+  &:hover &__img { transform:translateY(-2px); }
+
+  &:focus-visible {
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:var(--r-sm);
+  }
+}
+
+body.dark-theme .ic {
+  &__img--light { display:none; }
+  &__img--dark  { display:block; }
+}
+
+// 움직임을 줄이는 설정을 켠 사용자에게는 이동 효과를 빼고
+// 나타나기만 하게 한다.
+@media (prefers-reduced-motion:reduce) {
+  .ic__img, .ic__name { transition:opacity .15s ease; }
+  .ic:hover .ic__img { transform:none; }
+  .ic__name { transform:translateX(-50%); }
+  .ic:hover .ic__name, .ic:focus-visible .ic__name { transform:translateX(-50%); }
+}
+
+// 대표 아이콘에 딸린 세부 기술 (shields.io).
+//
+// skillicons 에 없는 기술들이다. 아이콘보다 작게 두고 왼쪽에 규칙선을 붙여
+// "이 위 아이콘의 하위" 로 읽히게 한다. 같은 크기로 두면 위계가 사라진다.
+.stack__sub {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.35rem;
+  padding-left:.6rem;
+  border-left:2px solid var(--border);
+
+  img {
+    height:1.5rem;
+    width:auto;
+    border-radius:var(--r-sm);
+    display:block;
+  }
+
+  // 상위 아이콘 없이 배지만 있는 그룹(AI). 규칙선은 "이 위의 하위" 라는
+  // 뜻인데 위에 아무것도 없으면 가리킬 대상이 없다. 대신 다른 그룹의
+  // 아이콘 높이만큼 위를 띄워 같은 선에서 시작하게 맞춘다.
+  &--alone {
+    padding-left:0;
+    border-left:0;
+    padding-top:.6rem;
+  }
+}
+
+// 다크모드에서 배지 색이 너무 튀지 않게 채도만 살짝 낮춘다.
+// 아이콘은 원래 어두운 배경이라 건드리지 않는다.
+body.dark-theme .stack__sub img { filter:saturate(.9); }
+
+// --- 프로젝트 ---------------------------------------------------------------
+
+.proj {
+  margin-top:2.5rem;
+  padding-top:2.5rem;
+  border-top:1px solid var(--border);
+
+  > header h3 {
+    font-size:1.375rem;
+    letter-spacing:-.02em;
+
+    // "레거시", "개인" 같은 꼬리표
+    em {
+      margin-left:.5rem;
+      padding:.15rem .45rem;
+      border:1px solid var(--border);
+      border-radius:var(--r-sm);
+      font-family:var(--font-mono);
+      font-size:.6875rem;
+      font-style:normal;
+      font-weight:400;
+      color:var(--fg-subtle);
+      vertical-align:middle;
+    }
+  }
+
+  &__stack {
+    margin-top:.4rem;
+    font-family:var(--font-mono);
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+  }
+
+  &__what {
+    margin-top:1rem;
+    max-width:44rem;
+    font-size:.9375rem;
+    line-height:1.75;
+    color:var(--fg-muted);
+  }
+
+  // 기간 · 발주처 · 역할. 제목 바로 아래에 붙는 사실 줄이라
+  // 본문보다 작고 옅게 둬서 제목과 경쟁하지 않게 한다.
+  &__meta {
+    margin-top:.5rem;
+    font-size:.8125rem;
+    line-height:1.6;
+    color:var(--fg-subtle);
+
+    span {
+      display:block;
+      font-family:var(--font-mono);
+    }
+  }
+
+  // 규모 수치. 카드 맨 아래에 한 줄로 깔아 "얼마나 큰 일이었나" 만
+  // 남긴다. 본문에 섞으면 읽는 흐름을 끊는다.
+  &__scale {
+    margin-top:1.75rem;
+    padding-top:1rem;
+    border-top:1px dashed var(--border);
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    line-height:1.8;
+    color:var(--fg-subtle);
+    font-variant-numeric:tabular-nums;
+  }
+}
+
+// 사례 목록
+//
+// 왼쪽 규칙선으로 묶는다. 번호를 붙이지 않는 이유 — 사례는 순서가 있는
+// 절차가 아니라 서로 독립적인 사건이다. 번호는 없는 위계를 만든다.
+.cases {
+  margin-top:1.75rem;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:1.75rem;
+
+  > li {
+    padding-left:1.25rem;
+    border-left:2px solid var(--border);
+    transition:border-color .15s ease;
+  }
+
+  > li:hover { border-left-color:var(--accent); }
+
+  h4 {
+    font-size:1rem;
+    letter-spacing:-.01em;
+  }
+
+  p {
+    margin-top:.5rem;
+    max-width:44rem;
+    font-size:.9375rem;
+    line-height:1.75;
+    color:var(--fg-muted);
+  }
+
+  code {
+    background:var(--bg-sunken);
+    padding:.1em .35em;
+    border-radius:var(--r-sm);
+    font-family:var(--font-mono);
+    font-size:.875em;
+  }
+}
+
+// 결과 한 줄 — 이 페이지의 시그니처.
+// 사례마다 "그래서 무엇이 달라졌나" 를 한 줄로 못박는다.
+.case__out {
+  margin-top:.75rem;
+
+  code {
+    display:inline-block;
+    padding:.4rem .7rem;
+    border:1px solid var(--border-strong);
+    border-left:3px solid var(--accent);
+    border-radius:0 var(--r-sm) var(--r-sm) 0;
+    background:var(--bg-sunken);
+    font-size:.8125rem;
+    color:var(--fg);
+    font-variant-numeric:tabular-nums;
+  }
+}
+
+// 성과 줄에 붙는 단서.
+//
+// "이 수치가 뜻하지 않는 것" 을 적는 자리다. 주장보다 낮은 톤이어야 해서
+// 성과 박스와 달리 테두리 없이 옅은 글자로만 둔다.
+.case__note {
+  margin-top:.5rem;
+  max-width:44rem;
+  font-size:.8125rem;
+  line-height:1.7;
+  color:var(--fg-subtle);
+}
+
+// 근거 링크 줄
+.case__src {
+  margin-top:.75rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem 1rem;
+  font-size:.8125rem;
+
+  a {
+    color:var(--accent);
+    text-decoration:underline;
+    text-underline-offset:.2em;
+    text-decoration-thickness:1px;
+    text-decoration-color:var(--border-strong);
+
+    &:hover { text-decoration-color:currentColor; }
+  }
+}
+
+// --- 일하는 방식 -------------------------------------------------------------
+
+.how__list {
+  margin-top:1.5rem;
+  padding-left:1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  max-width:44rem;
+  font-size:.9375rem;
+  line-height:1.75;
+  color:var(--fg-muted);
+
+  li::marker { color:var(--fg-subtle); }
+  b { color:var(--fg); font-weight:600; }
+}
+
+// --- 푸터 -------------------------------------------------------------------
+//
+// 포폴을 다 읽은 사람이 글로 넘어가는 자리. "요즘"(갱신되는 유일한 곳)과
+// 글 목록 입구를 나란히 둔다.
+
+.home__foot {
+  margin-top:4rem;
+  padding-top:2.5rem;
+  border-top:1px solid var(--border);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;
+  align-items:start;
+}
+
+.now {
+  h2 {
+    font-size:.8125rem;
+    font-family:var(--font-mono);
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--fg-subtle);
+  }
+
+  ul {
+    margin-top:.75rem;
+    padding-left:1.1rem;
+    display:flex;
+    flex-direction:column;
+    gap:.35rem;
+    font-size:.9375rem;
+    line-height:1.7;
+    color:var(--fg-muted);
+
+    li::marker { color:var(--fg-subtle); }
+  }
+
+  &__date {
+    margin-top:.75rem;
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    color:var(--fg-subtle);
+  }
+}
+
+.allposts {
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+  padding:1rem 1.25rem;
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  background:var(--bg-sunken);
+  transition:border-color .15s ease, background-color .15s ease;
+
+  b {
+    font-family:var(--font-mono);
+    font-size:1rem;
+    font-weight:600;
+    font-variant-numeric:tabular-nums;
+  }
+
+  span {
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+  }
+
+  &:hover {
+    border-color:var(--border-strong);
+    background:var(--bg-raised);
+  }
+}
+
+// --- 좁은 화면 ---------------------------------------------------------------
+
+@media (max-width:$bp-mobile) {
+  .hero {
+    padding:3rem 0 2.5rem;
+
+    &__facts { gap:1.5rem; }
+  }
+
+  .home__foot {
+    grid-template-columns:1fr;
+  }
+
+  .allposts { align-items:flex-start; }
+}

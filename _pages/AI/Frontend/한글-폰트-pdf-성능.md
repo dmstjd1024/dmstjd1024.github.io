@@ -45,7 +45,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 줄바꿈 옵션 조정 — 무효
 - hyphenation 비활성화 — 무효
 - 라이브러리 버전업 — 4.x가 이미 최신이라 올릴 곳 없음
-- 텍스트 자체 축약(커밋 `dadecf37`) — PDF 서문과 notes 문구를 한글로 축약해 layout 대상 글자 수 감축. 체감할 만큼 미감소
+- 텍스트 자체 축약 — PDF 서문과 notes 문구를 한글로 축약해 layout 대상 글자 수 감축. 체감할 만큼 미감소
 
 - 결론: 글자 수에 선형 비례하는 문제가 아님
 
@@ -89,7 +89,7 @@ const img = canvas.toDataURL('image/jpeg', JPEG_QUALITY);
 - 신규 라이브러리 추가 — 0개 (`html2canvas`, `jspdf` 모두 기존 의존성)
 - 서버 변경 — 0
 
-- 부수 작업 — 캡처 대상 차트들의 애니메이션 비활성화(커밋 `7344d9f4`)
+- 부수 작업 — 캡처 대상 차트들의 애니메이션 비활성화
 - 이유: 캡처 시점에 애니메이션 진행 중이면 절반쯤 그려진 차트가 그대로 PDF에 고정
 
 ### 훅 인터페이스도 다시 설계했다
