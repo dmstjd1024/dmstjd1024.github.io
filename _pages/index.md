@@ -278,27 +278,24 @@ layout: default
   </section>
 
 {%- comment -%}
-  경력 — 프로젝트 카드로 다루기엔 기록이 남아 있지 않은 구간을 한 줄씩 적는다.
-  위 "프로젝트" 는 글로 근거를 댈 수 있는 것만 올렸고, 여기는 그 밖의 이력이다.
-
-  ※ TODO(전은성): 아래 회사명·기간·한 줄 설명을 실제 값으로 채울 것.
-    블로그 글에는 소속과 기간이 없어 채워 넣지 않았다.
+  경력 — 프로젝트 카드로 다루기엔 근거 글이 없는 구간까지 포함한 전체 이력.
+  위 "프로젝트" 는 글로 근거를 댈 수 있는 것만 올렸다.
 {%- endcomment -%}
   <section class="career" aria-labelledby="h-career">
     <h2 class="sec__title" id="h-career">경력</h2>
     <p class="sec__note">위 프로젝트는 글로 근거를 댈 수 있는 것만 골랐습니다. 전체 이력은 아래와 같습니다.</p>
     <ol class="career__list">
       <li>
-        <span class="career__when">2022 — 현재</span>
+        <span class="career__when">2023 — 2026</span>
         <span class="career__what">
-          <b>(회사명)</b> 백엔드 개발
+          <b>그리너리</b> 백엔드 개발
           <em>탄소배출 산정 웹앱 · 블록체인 관리 플랫폼 · 장비 관리 시스템</em>
         </span>
       </li>
       <li>
-        <span class="career__when">(기간)</span>
+        <span class="career__when">2020 — 2023</span>
         <span class="career__what">
-          <b>(회사명)</b> (직무)
+          <b>퓨쳐누리</b> 개발
           <em>SAP UI5 · OData 기반 기업용 화면 개발</em>
         </span>
       </li>
