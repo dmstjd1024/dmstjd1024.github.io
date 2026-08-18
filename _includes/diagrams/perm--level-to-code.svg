@@ -20,7 +20,7 @@
   <text class="dg-t" x="388" y="74">권한 코드 기반</text>
 
   <rect class="dg-out" x="388" y="88" width="288" height="26" rx="4"/>
-  <text class="dg-k" x="404" y="106">PERM_METER_DELETE 같은 코드</text>
+  <text class="dg-k" x="404" y="106">PERM_리소스_행위 형태의 코드</text>
 
   <rect class="dg-row" x="388" y="122" width="288" height="26" rx="4"/>
   <text class="dg-v" x="404" y="140">역할에 코드를 매핑</text>
