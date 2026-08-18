@@ -247,6 +247,33 @@ body.dark-theme .stack__grid img { filter:saturate(.9); }
     line-height:1.75;
     color:var(--fg-muted);
   }
+
+  // 기간 · 발주처 · 역할. 제목 바로 아래에 붙는 사실 줄이라
+  // 본문보다 작고 옅게 둬서 제목과 경쟁하지 않게 한다.
+  &__meta {
+    margin-top:.5rem;
+    font-size:.8125rem;
+    line-height:1.6;
+    color:var(--fg-subtle);
+
+    span {
+      display:block;
+      font-family:var(--font-mono);
+    }
+  }
+
+  // 규모 수치. 카드 맨 아래에 한 줄로 깔아 "얼마나 큰 일이었나" 만
+  // 남긴다. 본문에 섞으면 읽는 흐름을 끊는다.
+  &__scale {
+    margin-top:1.75rem;
+    padding-top:1rem;
+    border-top:1px dashed var(--border);
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    line-height:1.8;
+    color:var(--fg-subtle);
+    font-variant-numeric:tabular-nums;
+  }
 }
 
 // 사례 목록
@@ -307,6 +334,18 @@ body.dark-theme .stack__grid img { filter:saturate(.9); }
     color:var(--fg);
     font-variant-numeric:tabular-nums;
   }
+}
+
+// 성과 줄에 붙는 단서.
+//
+// "이 수치가 뜻하지 않는 것" 을 적는 자리다. 주장보다 낮은 톤이어야 해서
+// 성과 박스와 달리 테두리 없이 옅은 글자로만 둔다.
+.case__note {
+  margin-top:.5rem;
+  max-width:44rem;
+  font-size:.8125rem;
+  line-height:1.7;
+  color:var(--fg-subtle);
 }
 
 // 근거 링크 줄

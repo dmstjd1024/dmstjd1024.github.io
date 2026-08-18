@@ -92,7 +92,7 @@ layout: default
 
   <section class="work" aria-labelledby="h-work">
     <h2 class="sec__title" id="h-work">프로젝트</h2>
-    <p class="sec__note">각 항목의 과정은 글에 남아 있습니다. 여기엔 결론만 적었습니다.</p>
+    <p class="sec__note">여기엔 결론만 적었습니다. 대부분 과정이 글에 남아 있습니다.</p>
 
 {%- comment -%}
   프로젝트 카드. 제목 / 스택 / 사례 2~3개.
@@ -155,55 +155,99 @@ layout: default
 
     <article class="proj">
       <header>
-        <h3>블록체인 관리 플랫폼</h3>
-        <p class="proj__stack">Hyperledger Fabric/Besu · Kubernetes · Next.js · 폐쇄망</p>
+        <h3>스마트시티 블록체인 DevOps 플랫폼</h3>
+        <p class="proj__stack">Java 21 · Spring Boot · Kubernetes · Hyperledger Fabric/Besu · Next.js · 폐쇄망</p>
+        <p class="proj__meta">
+          2025.06 — 2026.05 · 광주광역시 스마트시티 조성사업
+          <span>백엔드 · 인프라 단독 (커밋 96%) · 프론트 협업 1명</span>
+        </p>
       </header>
       <p class="proj__what">
-        웹에서 버튼을 눌러 블록체인 네트워크를 Kubernetes에 배포하는 플랫폼.
-        관리자·사용자 포털 두 벌이 같은 백엔드를 씁니다.
+        기관마다 격리된 Kubernetes 클러스터와 블록체인 네트워크를 REST API 한 번으로
+        만들어 주는 멀티테넌시 BaaS 플랫폼입니다. 공공 SI라 감리·인수인계·폐쇄망이
+        전제였고, 그 제약이 기술 선택을 대부분 규정했습니다.
       </p>
       <ul class="cases">
         <li>
-          <h4>한 건이 아니라 버그 클래스를 제거</h4>
+          <h4>기관 온보딩을 API 한 번으로</h4>
           <p>
-            SFTP 디렉터리 생성에서 TOCTOU(확인과 사용 사이에 상태가 바뀌는 문제)가
-            났습니다. 예외로 감싸는 대신 명령 자체에 위임해 틈을 없앴고, 이어서
-            같은 형태가 상위 계층에도 있는 것을 찾았습니다. 낙관적 재시도와 비관적
-            락은 기준을 정리한 뒤 이 경우엔 맞지 않다고 판단했습니다.
+            신규 기관 1곳을 올리려면 클러스터 생성부터 Operator·Istio·Ingress 설치까지
+            약 157회의 CLI 조작과 설정 파일 5종 수작성이 필요했습니다. 단계마다 수 분씩
+            대기가 걸리는데 그 대기가 끝날 때마다 사람이 다음 명령을 쳐야 해서, 실제로는
+            하루가 통째로 묶였습니다.
           </p>
-          <p class="case__out"><code>35줄 → 20줄, 같은 클래스 상위 계층까지</code></p>
+          <p>
+            전 과정을 단일 진입점 스크립트로 통합하고 WAS가 SSH로 원격 실행하게 했습니다.
+            프로비저닝이 20~43분 걸리므로 <b>트랜잭션 커밋 이후 비동기로 돌려</b> HTTP 요청을
+            붙잡지 않게 했고, 전용 스레드풀을 분리해 다른 요청과 격리했습니다. 원격 실행
+            파라미터는 화이트리스트로 검증해 셸 인젝션을 막고, 상태를 PROVISIONING /
+            ACTIVE / ERROR로 남겨 실패 시점을 DB에서 확인할 수 있게 했습니다.
+          </p>
+          <p class="case__out"><code>운영자 조작 157회 → 1회 · 개입 시간 수 시간 → 0분</code></p>
+          <p class="case__note">
+            벽시계 시간이 준 것은 아닙니다. Kind·Istio·Helm의 물리적 대기 20~43분은
+            자동화 전후가 같고, 줄어든 것은 사람이 붙어 있어야 하는 시간입니다.
+          </p>
+        </li>
+        <li>
+          <h4>격리를 네임스페이스가 아니라 클러스터 단위로</h4>
+          <p>
+            기관 간 데이터 격리가 감리 요구사항이었습니다. 네임스페이스 격리는 커널과
+            API 서버를 공유해서, 블록체인 노드처럼 상태를 가진 워크로드에는 부족하다고
+            보고 <b>기관당 독립 클러스터</b>를 택했습니다.
+          </p>
+          <p>
+            포트는 기관마다 10개 블록을 오프셋으로 배정하되 <b>재사용을 전면 금지</b>했습니다
+            — 삭제된 기관의 포트를 다시 쓰면 잔여 연결과 충돌하는데, 최대값 +1로만
+            할당하면 그 경우가 구조적으로 생기지 않습니다. 오프셋은 Java enum으로 타입화해
+            셸과 Java 양쪽 계산이 어긋나지 않게 했습니다.
+          </p>
+          <p class="case__out"><code>기관당 독립 클러스터 · 포트 재사용 0</code></p>
+          <p class="case__note">
+            대가는 자원입니다. 기관 1곳당 약 0.9 core · 2.4GiB · PVC 28Gi가 필요해
+            수용 가능한 기관 수가 제한됩니다. 격리 수준과 집적도를 맞바꾼 선택이었습니다.
+          </p>
+        </li>
+        <li>
+          <h4>인터넷이 없는 환경에서 전체 스택 구동</h4>
+          <p>
+            공공기관 인프라라 외부 접근이 차단돼 있었습니다. Fabric·Besu·Istio·Prometheus
+            이미지를 로컬 레지스트리에 미리 적재하고, 클러스터 내부에 미러 설정을 스크립트가
+            직접 써 넣어 외부 pull 시도 자체를 막았습니다. 노드 이미지는 설치된 것 중 최신을
+            자동으로 고르게 해, 버전 하드코딩 때문에 환경마다 깨지던 문제를 없앴습니다.
+          </p>
+          <p class="case__out"><code>서버 최초 구축 3단계 → setup.sh 1회</code></p>
+          <p class="case__src">
+            <a href="/AI/Infra/오퍼레이터-버그를-crd-스키마-패치로-우회하기.html">오퍼레이터 버그를 CRD 패치로</a>
+            <a href="/AI/Infra/kubectl-exec-타임아웃과-재시도.html">kubectl exec은 왜 멈추는가</a>
+            <a href="/AI/Frontend/clipboard는-https에서만-동작한다.html">폐쇄망에서 clipboard가 안 될 때</a>
+          </p>
+        </li>
+        <li>
+          <h4>성격이 다른 두 블록체인을 같은 API로</h4>
+          <p>
+            Fabric(허가형·체인코드·인증서)과 Besu(EVM·스마트 컨트랙트·계정)는 배포와 운영
+            방식이 완전히 다릅니다. 그대로 두면 사용자가 두 체인의 CLI를 각각 배워야 했습니다.
+            원격 실행 계층을 추상 클래스로 두고 체인별 구현을 분리해, 네트워크 생성과 컨트랙트
+            배포·호출을 같은 REST 인터페이스로 제공했습니다.
+          </p>
+          <p>
+            Pod 기동 지연 때문에 산발적으로 실패하던 부분은 대기·재시도를 공통 헬퍼로
+            뽑아 흡수했습니다. 실패가 그때그때 다른 지점에서 나는 종류라 개별 대응으로는
+            끝나지 않았습니다.
+          </p>
+          <p class="case__out"><code>Fabric 네트워크 생성 20단계 자동화 · 스크립트 1,178줄</code></p>
           <p class="case__src">
             <a href="/AI/Backend/toctou-버그-클래스-제거.html">TOCTOU 한 건 대신 버그 클래스를</a>
             <a href="/AI/Backend/비동기-api가-무조건-200을-반환했다.html">비동기 API의 거짓 성공</a>
-          </p>
-        </li>
-        <li>
-          <h4>오퍼레이터 버그를 CRD 스키마 패치로</h4>
-          <p>
-            포크 · 다운그레이드 · 스키마 패치를 비교했습니다. 폐쇄망이라 커스텀 이미지
-            파이프라인 부담이 크고 업스트림 리베이스가 영구 비용이 된다는 점에서
-            스키마 패치를 택했고, 우회 조치에는 버전과 증상을 주석으로 남겼습니다.
-          </p>
-          <p class="case__out"><code>업스트림 수정 대기 없이 배포 재개</code></p>
-          <p class="case__src">
-            <a href="/AI/Infra/오퍼레이터-버그를-crd-스키마-패치로-우회하기.html">CRD 스키마 패치로 우회하기</a>
-            <a href="/AI/Infra/kubectl-exec-타임아웃과-재시도.html">kubectl exec은 왜 멈추는가</a>
-          </p>
-        </li>
-        <li>
-          <h4>장애가 사용자에게 닿는 방식</h4>
-          <p>
-            게이트웨이가 죽었을 때 F5 연타가 폭주로 이어졌습니다. sessionStorage
-            기반 서킷 브레이커로 끊었고, HTTP 환경이라 clipboard API가 동작하지 않는
-            문제도 폴백으로 처리했습니다.
-          </p>
-          <p class="case__out"><code>장애 시 요청 폭주 차단 · 폐쇄망 복사 기능 복구</code></p>
-          <p class="case__src">
             <a href="/AI/Frontend/브라우저-서킷-브레이커.html">사용자가 F5를 누른다</a>
-            <a href="/AI/Frontend/로그아웃은-토큰만-지우는게-아니다.html">로그아웃은 토큰만 지우는 게 아니다</a>
           </p>
         </li>
       </ul>
+      <p class="proj__scale">
+        백엔드 655파일 · 63,828줄 &nbsp;/&nbsp; 인프라 셸 49개 · 8,831줄(전량 작성)
+        &nbsp;/&nbsp; REST 컨트롤러 123개 &nbsp;/&nbsp; 프론트 536파일 &nbsp;/&nbsp; 커밋 1,083
+      </p>
     </article>
 
     <article class="proj">
@@ -300,7 +344,7 @@ layout: default
         <span class="career__when">2023 — 현재</span>
         <span class="career__what">
           <b>그리너리</b> 백엔드 개발
-          <em>탄소배출 산정 웹앱 · 블록체인 관리 플랫폼 · 장비 관리 시스템</em>
+          <em>탄소배출 산정 웹앱 · 스마트시티 블록체인 DevOps 플랫폼 · 장비 관리 시스템</em>
         </span>
       </li>
       <li>
