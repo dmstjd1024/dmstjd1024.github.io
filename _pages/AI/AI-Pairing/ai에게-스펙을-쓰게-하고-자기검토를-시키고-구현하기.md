@@ -16,18 +16,11 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 ## 커밋 히스토리가 곧 작업 기록이다
 
 - 기간: 넉 달
-- 총 커밋: 201건
-- AI 도구 트레일러가 붙은 커밋: 185건 (92%)
+- 커밋마다 어떤 도구로 작업했는지 트레일러를 남겼다
+  — `Made-with: Cursor`, `Co-Authored-By: Claude <모델>`
 
-| 트레일러 | 건수 |
-|---|---|
-| `Made-with: Cursor` | 147 |
-| `Co-Authored-By: Claude Sonnet 4.6` | 25 |
-| `Co-Authored-By: Claude Opus 4.6` | 10 |
-| `Co-Authored-By: Claude Sonnet 4.5` | 2 |
-| `Co-Authored-By: Claude Opus 4.6 (1M context)` | 1 |
-
-두 도구의 성격별 분담:
+트레일러를 남긴 덕에 나중에 "이 코드를 어떤 방식으로 짰더라"를 되짚을 수 있었다.
+집계해 보니 두 도구를 성격에 따라 나눠 쓰고 있었다:
 
 - **Cursor** — 파일이 눈에 보이고 편집 범위가 좁은 작업
   - 마이그레이션 SQL 작성
