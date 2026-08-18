@@ -24,7 +24,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 구멍 두 가지
 
 - stg 환경은 `ddl-auto: validate` → 테이블·컬럼을 만들어주지 않음
-- 보완 DDL은 담당자가 stg에 같은 SQL을 손으로 1회씩 적용
+- 보완 DDL은 스테이징에 같은 SQL을 손으로 1회씩 적용해야 함
 
 - 조치: PR 2건으로 둘을 자동화
 
