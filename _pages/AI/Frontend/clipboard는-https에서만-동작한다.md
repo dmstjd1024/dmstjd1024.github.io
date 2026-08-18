@@ -108,7 +108,7 @@ function execCommandCopy(text: string) {
 
 ## 클라이맥스: 왜 opacity를 버렸나
 
-- 관리자 포털 — 여기서 한 번 더 수정
+- 같은 관리 화면 — 여기서 한 번 더 수정
 - 두 번째 커밋 diff의 핵심 줄
 
 ```diff
