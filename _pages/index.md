@@ -72,6 +72,11 @@ layout: default
 
   바꾸려면 skillicons.dev/icons?i=<슬러그>&theme=light 와 theme 없는 주소로
   각각 받아 i-<슬러그>.svg / i-<슬러그>-dark.svg 를 덮어쓴다.
+
+  예외: i-claude(-dark).svg 는 손으로 만든 것이다. skillicons 에 claude
+  슬러그가 없어 빈 SVG 를 돌려주므로, simple-icons 의 로고를 같은 타일
+  규격(256x256, rx=60)에 얹었다. 배경은 브랜드색이라 두 벌이 같은 내용이다.
+  위 주소로 다시 받으면 빈 파일로 덮인다 — 받지 말 것.
 {%- endcomment -%}
     <dl class="stack__grid">
       <div>
@@ -163,8 +168,12 @@ layout: default
       <div>
         <dt>AI</dt>
         <dd>
-          <div class="stack__sub stack__sub--alone">
-            <img src="/assets/img/badge/claude-code.svg" alt="Claude Code" height="24">
+          <div class="stack__icons">
+          <span class="ic" tabindex="0">
+            <img class="ic__img ic__img--light" src="/assets/img/badge/i-claude.svg" alt="Claude Code" height="44">
+            <img class="ic__img ic__img--dark" src="/assets/img/badge/i-claude-dark.svg" alt="" aria-hidden="true" height="44">
+            <span class="ic__name">Claude Code</span>
+          </span>
           </div>
         </dd>
       </div>
