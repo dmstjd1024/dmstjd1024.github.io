@@ -13,7 +13,7 @@
   <text class="dg-k" x="60" y="152">navigator.clipboard 동작</text>
 
   <rect class="dg-lane" x="368" y="48" width="328" height="130" rx="10"/>
-  <text class="dg-t" x="388" y="74">배포 — 폐쇄망 HTTP</text>
+  <text class="dg-t" x="388" y="74">배포 — HTTP</text>
   <rect class="dg-warn" x="388" y="88" width="288" height="34" rx="6"/>
   <text class="dg-k" x="404" y="110">secure context 아님</text>
   <rect class="dg-warn" x="388" y="130" width="288" height="34" rx="6"/>
