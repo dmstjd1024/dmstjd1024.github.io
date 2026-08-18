@@ -26,7 +26,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - stg 환경은 `ddl-auto: validate` → 테이블·컬럼을 만들어주지 않음
 - 보완 DDL은 담당자가 stg에 같은 SQL을 손으로 1회씩 적용
 
-- 조치: PR #898/#899에서 둘을 자동화
+- 조치: PR 2건으로 둘을 자동화
 
 ## 먼저 확인한 것 — update가 manual SQL을 대체할 수 있나
 
@@ -54,14 +54,14 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 - 관계 정리 — 대체가 아니라 상호 보완
 
-- `7a5efb9c` — stg의 `ddl-auto`를 `validate` → `update`
+- 첫 번째 PR — stg의 `ddl-auto`를 `validate` → `update`
 - manual SQL 경로는 그대로 유지
 - 효과: local·dev·stg 세 환경의 스키마 적용 경로 동일
 - prod는 `validate` 유지, 사람이 통제
 
 ## 어떻게 자동 적용하나
 
-- `63d54cfc` — `ManualSqlRunner`를 `ApplicationRunner`로 구현
+- 두 번째 PR — `ManualSqlRunner`를 `ApplicationRunner`로 구현
 
 ```java
 @Component

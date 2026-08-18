@@ -27,6 +27,21 @@
     color:var(--fg-subtle);
     font-variant-numeric:tabular-nums;
   }
+
+  // 첫 화면 소개문. 제목과 글 목록 사이에 두 줄만 끼우는 자리라
+  // max-width 를 걸어 한 줄이 너무 길어지지 않게 한다.
+  &__intro {
+    margin-top:1rem;
+    max-width:44rem;
+    font-size:.9375rem;
+    line-height:1.7;
+    color:var(--fg-muted);
+
+    a {
+      color:var(--accent);
+      white-space:nowrap;   // "프로젝트 보기 →" 가 화살표만 다음 줄로 넘어가지 않게
+    }
+  }
 }
 
 // 하위 카테고리 칩
