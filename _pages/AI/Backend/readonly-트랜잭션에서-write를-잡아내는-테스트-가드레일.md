@@ -17,7 +17,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 ## 조회 API가 매번 write 트랜잭션을 만들고 있었다
 
 - 발단 — 대시보드 조회 API 응답 지연
-- 확인 결과(`f6fd21ef`) — eco-view의 배출원 조회 경로가 `lcaStepService.updateStepOnly(write)`를 부수효과로 호출
+- 확인 결과 — eco-view의 배출원 조회 경로가 `lcaStepService.updateStepOnly(write)`를 부수효과로 호출
 - 즉 대시보드를 열 때마다 write 트랜잭션 생성
 
 조치:
@@ -30,7 +30,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 ## 먼저 실패한 시도 — readOnly=true를 붙였다 떼기
 
-- 시간을 조금 앞으로 돌리면, `58134b6d`(2026-05-29)에서 이미 한 번 실패
+- 시간을 조금 앞으로 돌리면, 2026-05-29에 이미 한 번 실패
 
 - 대상 — `getCutOffIoList`·`getFinalIoList` 두 메서드에 `@Transactional(readOnly = true)` 부착
 - 충돌 — 이 메서드들이 내부적으로 호출하는 `updateStepAndSubStepOnly`가 쓰기 트랜잭션
@@ -55,7 +55,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 ## 가드레일을 만들었다
 
-- `9723219b`에서 `ReadOnlyTxGuardConfig` 추가 (약 200줄)
+- 두 번째 시도에서 `ReadOnlyTxGuardConfig` 추가 (약 200줄)
 - 목적 — readOnly 트랜잭션 안에서 write SQL 실행 시 테스트 실패
 
 동작 방식:
@@ -110,8 +110,8 @@ SQL 레벨을 택한 건 **거기가 마지막 관문이기 때문**이다.
 
 - 이 작업의 핵심: 같은 문제를 두 번 다르게 처리
 
-- `58134b6d` — `readOnly = true`를 붙여 "선언". 되돌려짐
-- `9723219b` — 위반을 **검출**하는 쪽으로 방향 전환
+- 1차 시도(5월 29일) — `readOnly = true`를 붙여 "선언". 되돌려짐
+- 2차 시도 — 위반을 **검출**하는 쪽으로 방향 전환
 
 선언은 코드베이스가 이미 그 규약을 지키고 있을 때만 통한다. 지키지 않는 코드가 남아 있는 상태에서 선언부터 붙이면 런타임에 터진다. 검출 장치는 반대다 — 지키지 않는 곳이 어디인지 먼저 알려주고, 정리된 영역부터 규약을 확대할 수 있게 해준다.
 
