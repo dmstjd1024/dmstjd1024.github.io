@@ -50,7 +50,8 @@ layout: default
       <div>
         <dt>백엔드</dt>
         <dd>
-          <img class="stack__icons" src="/assets/img/badge/icons-backend.svg" alt="Java, Spring" height="44">
+          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-backend.svg" alt="Java, Spring" height="44">
+          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-backend-dark.svg" alt="" aria-hidden="true" height="44">
           <div class="stack__sub">
             <img src="/assets/img/badge/spring-security.svg" alt="Spring Security" height="24">
             <img src="/assets/img/badge/jpa-hibernate.svg" alt="JPA / Hibernate" height="24">
@@ -63,13 +64,15 @@ layout: default
       <div>
         <dt>데이터베이스</dt>
         <dd>
-          <img class="stack__icons" src="/assets/img/badge/icons-database.svg" alt="PostgreSQL, MySQL, Redis" height="44">
+          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-database.svg" alt="PostgreSQL, MySQL, Redis" height="44">
+          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-database-dark.svg" alt="" aria-hidden="true" height="44">
         </dd>
       </div>
       <div>
         <dt>프론트엔드</dt>
         <dd>
-          <img class="stack__icons" src="/assets/img/badge/icons-frontend.svg" alt="React, Next.js, TypeScript, Redux" height="44">
+          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-frontend.svg" alt="React, Next.js, TypeScript, Redux" height="44">
+          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-frontend-dark.svg" alt="" aria-hidden="true" height="44">
           <div class="stack__sub">
             <img src="/assets/img/badge/tanstack-query.svg" alt="TanStack Query" height="24">
             <img src="/assets/img/badge/rtk-query.svg" alt="RTK Query" height="24">
@@ -79,7 +82,8 @@ layout: default
       <div>
         <dt>인프라</dt>
         <dd>
-          <img class="stack__icons" src="/assets/img/badge/icons-infra.svg" alt="Kubernetes, Docker, GitHub Actions, Linux" height="44">
+          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-infra.svg" alt="Kubernetes, Docker, GitHub Actions, Linux" height="44">
+          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-infra-dark.svg" alt="" aria-hidden="true" height="44">
           <div class="stack__sub">
             <img src="/assets/img/badge/hyperledger-fabric.svg" alt="Hyperledger Fabric" height="24">
           </div>
@@ -88,7 +92,8 @@ layout: default
       <div>
         <dt>그 외</dt>
         <dd>
-          <img class="stack__icons" src="/assets/img/badge/icons-etc.svg" alt="Python" height="44">
+          <img class="stack__icons stack__icons--light" src="/assets/img/badge/icons-etc.svg" alt="Python" height="44">
+          <img class="stack__icons stack__icons--dark" src="/assets/img/badge/icons-etc-dark.svg" alt="" aria-hidden="true" height="44">
           <div class="stack__sub">
             <img src="/assets/img/badge/claude-code.svg" alt="Claude Code" height="24">
           </div>
