@@ -1,0 +1,381 @@
+// ---------------------------------------------------------------------------
+// 홈 (포트폴리오)
+//
+// 글 화면(post-body)의 타이포그래피를 재사용하면 워드 문서처럼 보인다.
+// 여기는 읽는 화면이 아니라 3초 안에 판단되는 화면이라 리듬을 따로 잡는다.
+//
+// 색은 새로 만들지 않고 vars.scss 의 의미 토큰만 쓴다 — 그래야 다크모드가
+// 자동으로 따라온다.
+//
+// 이 페이지의 성격: 이 사람의 일은 "이미 돌아가는 시스템을 고치는 것"이고
+// 글의 설득력은 측정값에서 나온다. 그래서 화면의 중심을 큰 타이포가 아니라
+// 사례마다 붙는 결과값 한 줄(.case__out)에 뒀다. 모노스페이스로 못박아
+// 훑을 때 그 줄만 읽어도 무엇을 했는지 알 수 있게 한다.
+// ---------------------------------------------------------------------------
+
+.home {
+  max-width:$listwd;
+  margin-inline:auto;
+  padding:0 1.25rem 6rem;
+}
+
+// --- 히어로 -----------------------------------------------------------------
+//
+// 큰 이름 하나로 화면을 채우는 대신, 이름 + 한 줄 정의 + 숫자 세 개를 묶어
+// 첫 화면에서 "누가 / 뭘 하고 / 얼마나" 가 동시에 읽히게 한다.
+
+.hero {
+  padding:4.5rem 0 3rem;
+  border-bottom:1px solid var(--border);
+
+  &__eyebrow {
+    font-family:var(--font-mono);
+    font-size:.8125rem;
+    letter-spacing:.08em;
+    color:var(--fg-subtle);
+    text-transform:uppercase;
+  }
+
+  &__name {
+    margin-top:.75rem;
+    font-size:clamp(2.5rem, 7vw, 4rem);
+    line-height:1.05;
+    letter-spacing:-.045em;
+  }
+
+  &__line {
+    margin-top:1.25rem;
+    max-width:34rem;
+    font-size:clamp(1.0625rem, 2vw, 1.25rem);
+    line-height:1.6;
+    color:var(--fg);
+
+    span {
+      display:block;
+      margin-top:.35rem;
+      font-family:var(--font-mono);
+      font-size:.875rem;
+      color:var(--fg-subtle);
+    }
+  }
+
+  // 숫자 세 개. 세로 규칙선으로 묶어 표가 아니라 지표로 읽히게 한다.
+  &__facts {
+    display:flex;
+    flex-wrap:wrap;
+    gap:2.5rem;
+    margin-top:2.5rem;
+    padding:0;
+    list-style:none;
+
+    li {
+      display:flex;
+      flex-direction:column;
+      gap:.15rem;
+      padding-left:.875rem;
+      border-left:2px solid var(--border-strong);
+    }
+
+    b {
+      font-family:var(--font-mono);
+      font-size:1.375rem;
+      font-weight:600;
+      letter-spacing:-.02em;
+      font-variant-numeric:tabular-nums;
+    }
+
+    span {
+      font-size:.8125rem;
+      color:var(--fg-subtle);
+    }
+  }
+}
+
+// --- 섹션 공통 ---------------------------------------------------------------
+
+.sec__title {
+  font-size:.8125rem;
+  font-family:var(--font-mono);
+  font-weight:600;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--fg-subtle);
+}
+
+.sec__note {
+  margin-top:.5rem;
+  font-size:.9375rem;
+  color:var(--fg-muted);
+  line-height:1.7;
+}
+
+.stack, .work, .how { padding-top:3.5rem; }
+
+// --- 기술 스택 ---------------------------------------------------------------
+//
+// 표를 쓰지 않는다. 5행짜리 표는 읽는 물건이라 훑기에 나쁘다.
+// 라벨 + 칩으로 두면 시선이 한 번에 지나간다. 칩은 목록 페이지의 .chip 과
+// 같은 각진 모양이라 사이트 안에서 낯설지 않다.
+
+.stack__grid {
+  margin-top:1.5rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(15rem, 1fr));
+  gap:1.5rem 2rem;
+
+  > div {
+    display:flex;
+    flex-direction:column;
+    gap:.6rem;
+  }
+
+  dt {
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+  }
+
+  dd {
+    margin:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.4rem;
+  }
+
+  span {
+    padding:.3rem .6rem;
+    border:1px solid var(--border);
+    border-radius:var(--r-sm);
+    background:var(--bg-sunken);
+    font-family:var(--font-mono);
+    font-size:.8125rem;
+    color:var(--fg-muted);
+  }
+}
+
+// --- 프로젝트 ---------------------------------------------------------------
+
+.proj {
+  margin-top:2.5rem;
+  padding-top:2.5rem;
+  border-top:1px solid var(--border);
+
+  > header h3 {
+    font-size:1.375rem;
+    letter-spacing:-.02em;
+
+    // "레거시", "개인" 같은 꼬리표
+    em {
+      margin-left:.5rem;
+      padding:.15rem .45rem;
+      border:1px solid var(--border);
+      border-radius:var(--r-sm);
+      font-family:var(--font-mono);
+      font-size:.6875rem;
+      font-style:normal;
+      font-weight:400;
+      color:var(--fg-subtle);
+      vertical-align:middle;
+    }
+  }
+
+  &__stack {
+    margin-top:.4rem;
+    font-family:var(--font-mono);
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+  }
+
+  &__what {
+    margin-top:1rem;
+    max-width:44rem;
+    font-size:.9375rem;
+    line-height:1.75;
+    color:var(--fg-muted);
+  }
+}
+
+// 사례 목록
+//
+// 왼쪽 규칙선으로 묶는다. 번호를 붙이지 않는 이유 — 사례는 순서가 있는
+// 절차가 아니라 서로 독립적인 사건이다. 번호는 없는 위계를 만든다.
+.cases {
+  margin-top:1.75rem;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:1.75rem;
+
+  > li {
+    padding-left:1.25rem;
+    border-left:2px solid var(--border);
+    transition:border-color .15s ease;
+  }
+
+  > li:hover { border-left-color:var(--accent); }
+
+  h4 {
+    font-size:1rem;
+    letter-spacing:-.01em;
+  }
+
+  p {
+    margin-top:.5rem;
+    max-width:44rem;
+    font-size:.9375rem;
+    line-height:1.75;
+    color:var(--fg-muted);
+  }
+
+  code {
+    background:var(--bg-sunken);
+    padding:.1em .35em;
+    border-radius:var(--r-sm);
+    font-family:var(--font-mono);
+    font-size:.875em;
+  }
+}
+
+// 결과 한 줄 — 이 페이지의 시그니처.
+// 사례마다 "그래서 무엇이 달라졌나" 를 한 줄로 못박는다.
+.case__out {
+  margin-top:.75rem;
+
+  code {
+    display:inline-block;
+    padding:.4rem .7rem;
+    border:1px solid var(--border-strong);
+    border-left:3px solid var(--accent);
+    border-radius:0 var(--r-sm) var(--r-sm) 0;
+    background:var(--bg-sunken);
+    font-size:.8125rem;
+    color:var(--fg);
+    font-variant-numeric:tabular-nums;
+  }
+}
+
+// 근거 링크 줄
+.case__src {
+  margin-top:.75rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem 1rem;
+  font-size:.8125rem;
+
+  a {
+    color:var(--accent);
+    text-decoration:underline;
+    text-underline-offset:.2em;
+    text-decoration-thickness:1px;
+    text-decoration-color:var(--border-strong);
+
+    &:hover { text-decoration-color:currentColor; }
+  }
+}
+
+// --- 일하는 방식 -------------------------------------------------------------
+
+.how__list {
+  margin-top:1.5rem;
+  padding-left:1.1rem;
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  max-width:44rem;
+  font-size:.9375rem;
+  line-height:1.75;
+  color:var(--fg-muted);
+
+  li::marker { color:var(--fg-subtle); }
+  b { color:var(--fg); font-weight:600; }
+}
+
+// --- 푸터 -------------------------------------------------------------------
+//
+// 포폴을 다 읽은 사람이 글로 넘어가는 자리. "요즘"(갱신되는 유일한 곳)과
+// 글 목록 입구를 나란히 둔다.
+
+.home__foot {
+  margin-top:4rem;
+  padding-top:2.5rem;
+  border-top:1px solid var(--border);
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:2rem;
+  align-items:start;
+}
+
+.now {
+  h2 {
+    font-size:.8125rem;
+    font-family:var(--font-mono);
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--fg-subtle);
+  }
+
+  ul {
+    margin-top:.75rem;
+    padding-left:1.1rem;
+    display:flex;
+    flex-direction:column;
+    gap:.35rem;
+    font-size:.9375rem;
+    line-height:1.7;
+    color:var(--fg-muted);
+
+    li::marker { color:var(--fg-subtle); }
+  }
+
+  &__date {
+    margin-top:.75rem;
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    color:var(--fg-subtle);
+  }
+}
+
+.allposts {
+  display:flex;
+  flex-direction:column;
+  gap:.25rem;
+  padding:1rem 1.25rem;
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  background:var(--bg-sunken);
+  transition:border-color .15s ease, background-color .15s ease;
+
+  b {
+    font-family:var(--font-mono);
+    font-size:1rem;
+    font-weight:600;
+    font-variant-numeric:tabular-nums;
+  }
+
+  span {
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+  }
+
+  &:hover {
+    border-color:var(--border-strong);
+    background:var(--bg-raised);
+  }
+}
+
+// --- 좁은 화면 ---------------------------------------------------------------
+
+@media (max-width:$bp-mobile) {
+  .hero {
+    padding:3rem 0 2.5rem;
+
+    &__facts { gap:1.5rem; }
+  }
+
+  .home__foot {
+    grid-template-columns:1fr;
+  }
+
+  .allposts { align-items:flex-start; }
+}

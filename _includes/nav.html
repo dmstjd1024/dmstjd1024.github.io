@@ -22,10 +22,19 @@
 
     <nav class="nav__menu" aria-label="카테고리">
       <ul>
+        {%- comment -%}
+          "글"(전체 목록)은 카테고리 13개보다 상위 개념이라 맨 앞에 고정한다.
+          아래 루프는 path 순 정렬이라 한글이 ASCII 뒤로 밀려 끝에 오는데,
+          그 자리는 전체 목록이 있을 자리가 아니다. 루프에서는 건너뛴다.
+        {%- endcomment -%}
+        <li>
+          <a href="{{ '/글/index.html' | prepend: site.baseurl }}"
+             {% if here == '글' %}aria-current="page"{% endif %}>글</a>
+        </li>
         {%- for cat in nav_cats -%}
           {%- assign seg = cat.path | remove_first: '_pages/' | split: '/' -%}
           {%- comment -%} 최상위 카테고리만 메뉴에 올린다(깊이 2 = 이름/index.md) {%- endcomment -%}
-          {%- if seg.size == 2 -%}
+          {%- if seg.size == 2 and seg[0] != '글' -%}
             {%- assign name = seg[0] -%}
             <li>
               <a href="{{ cat.url | prepend: site.baseurl }}"

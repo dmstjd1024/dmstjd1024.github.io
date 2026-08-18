@@ -18,6 +18,14 @@
 {%- if page_tree.last == "index.md" -%}
   {%- assign page_type = "category" -%}
   {%- assign category_title = page.path | remove: '/index.md' | split: "/" | last -%}
+  {%- comment -%}
+    "글" 은 카테고리가 아니라 전체 글 목록이다. 홈이 포트폴리오로 바뀌면서
+    시간순 전체 목록이 갈 곳이 없어져 만든 자리다. 깊이는 2 지만 전체를
+    모아야 하므로 최상위(1)와 같게 취급한다.
+  {%- endcomment -%}
+  {%- if category_title == "글" -%}
+    {%- assign page_level = 1 -%}
+  {%- endif -%}
 {%- else -%}
   {%- assign page_type = "post" -%}
 {%- endif -%}
