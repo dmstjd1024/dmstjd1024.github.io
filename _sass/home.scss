@@ -235,6 +235,15 @@ body.dark-theme {
     border-radius:var(--r-sm);
     display:block;
   }
+
+  // 상위 아이콘 없이 배지만 있는 그룹(AI). 규칙선은 "이 위의 하위" 라는
+  // 뜻인데 위에 아무것도 없으면 가리킬 대상이 없다. 대신 다른 그룹의
+  // 아이콘 높이만큼 위를 띄워 같은 선에서 시작하게 맞춘다.
+  &--alone {
+    padding-left:0;
+    border-left:0;
+    padding-top:.6rem;
+  }
 }
 
 // 다크모드에서 배지 색이 너무 튀지 않게 채도만 살짝 낮춘다.
