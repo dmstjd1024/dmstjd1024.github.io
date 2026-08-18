@@ -296,7 +296,6 @@ layout: default
         <span class="career__when">2020 — 2023</span>
         <span class="career__what">
           <b>퓨쳐누리</b> 개발
-          <em>SAP UI5 · OData 기반 기업용 화면 개발</em>
         </span>
       </li>
     </ol>
