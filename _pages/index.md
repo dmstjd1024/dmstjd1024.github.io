@@ -49,6 +49,7 @@ layout: default
           <img src="/assets/img/badge/querydsl.svg" alt="QueryDSL" height="28">
           <img src="/assets/img/badge/mybatis.svg" alt="MyBatis" height="28">
           <img src="/assets/img/badge/java.svg" alt="Java" height="28">
+          <img src="/assets/img/badge/websocket.svg" alt="WebSocket / STOMP" height="28">
         </dd>
       </div>
       <div>
@@ -76,6 +77,14 @@ layout: default
           <img src="/assets/img/badge/docker.svg" alt="Docker" height="28">
           <img src="/assets/img/badge/github-actions.svg" alt="GitHub Actions" height="28">
           <img src="/assets/img/badge/linux.svg" alt="Linux" height="28">
+          <img src="/assets/img/badge/hyperledger-fabric.svg" alt="Hyperledger Fabric" height="28">
+        </dd>
+      </div>
+      <div>
+        <dt>그 외</dt>
+        <dd>
+          <img src="/assets/img/badge/python.svg" alt="Python" height="28">
+          <img src="/assets/img/badge/claude-code.svg" alt="Claude Code" height="28">
         </dd>
       </div>
     </dl>
