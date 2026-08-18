@@ -20,7 +20,7 @@ layout: default
       <span>레거시 개선 · 성능 · 데이터 모델 전환</span>
     </p>
     <ul class="hero__facts">
-      <li><b>4년</b><span>실무</span></li>
+      <li><b>6년차</b><span>실무</span></li>
       <li><b>79편</b><span>기술 글</span></li>
       <li><b>3개</b><span>운영 시스템</span></li>
     </ul>
@@ -29,27 +29,52 @@ layout: default
   <section class="stack" aria-labelledby="h-stack">
     <h2 class="sec__title" id="h-stack">기술 스택</h2>
     <p class="sec__note">문제를 겪고 판단을 내린 것만. 학습만 한 것은 뺐습니다.</p>
+{%- comment -%}
+  shields.io 배지. 로고가 있는 것은 공식 브랜드 색을, 없는 것(QueryDSL·
+  RTK Query 등)은 사이트 회색 계열을 쓴다 — 없는 로고를 억지로 끼우면
+  엉뚱한 아이콘이 붙는다.
+
+  외부 이미지라 로딩 실패에 대비해 alt 를 채워둔다. 폭·높이를 지정해
+  뒤늦게 그려질 때 레이아웃이 밀리는 것(CLS)도 막는다.
+{%- endcomment -%}
     <dl class="stack__grid">
       <div>
         <dt>백엔드</dt>
         <dd>
-          <span>Spring</span><span>Spring Security</span><span>JPA/Hibernate</span>
-          <span>QueryDSL</span><span>MyBatis</span>
+          <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white" alt="Spring Security" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white" alt="JPA / Hibernate" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/QueryDSL-4B5563?style=for-the-badge" alt="QueryDSL" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/MyBatis-4B5563?style=for-the-badge" alt="MyBatis" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" height="28" loading="lazy">
         </dd>
       </div>
       <div>
         <dt>데이터베이스</dt>
-        <dd><span>PostgreSQL</span><span>MySQL</span></dd>
+        <dd>
+          <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/Redis-FF4438?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" height="28" loading="lazy">
+        </dd>
       </div>
       <div>
         <dt>프론트엔드</dt>
         <dd>
-          <span>React</span><span>Next.js</span><span>TanStack Query</span><span>RTK Query</span>
+          <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white" alt="TanStack Query" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="RTK Query" height="28" loading="lazy">
         </dd>
       </div>
       <div>
         <dt>인프라</dt>
-        <dd><span>Kubernetes</span><span>Docker</span><span>배포 자동화</span></dd>
+        <dd>
+          <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" height="28" loading="lazy">
+          <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" height="28" loading="lazy">
+        </dd>
       </div>
     </dl>
   </section>
@@ -250,6 +275,34 @@ layout: default
         </li>
       </ul>
     </article>
+  </section>
+
+{%- comment -%}
+  경력 — 프로젝트 카드로 다루기엔 기록이 남아 있지 않은 구간을 한 줄씩 적는다.
+  위 "프로젝트" 는 글로 근거를 댈 수 있는 것만 올렸고, 여기는 그 밖의 이력이다.
+
+  ※ TODO(전은성): 아래 회사명·기간·한 줄 설명을 실제 값으로 채울 것.
+    블로그 글에는 소속과 기간이 없어 채워 넣지 않았다.
+{%- endcomment -%}
+  <section class="career" aria-labelledby="h-career">
+    <h2 class="sec__title" id="h-career">경력</h2>
+    <p class="sec__note">위 프로젝트는 글로 근거를 댈 수 있는 것만 골랐습니다. 전체 이력은 아래와 같습니다.</p>
+    <ol class="career__list">
+      <li>
+        <span class="career__when">2022 — 현재</span>
+        <span class="career__what">
+          <b>(회사명)</b> 백엔드 개발
+          <em>탄소배출 산정 웹앱 · 블록체인 관리 플랫폼 · 장비 관리 시스템</em>
+        </span>
+      </li>
+      <li>
+        <span class="career__when">(기간)</span>
+        <span class="career__what">
+          <b>(회사명)</b> (직무)
+          <em>SAP UI5 · OData 기반 기업용 화면 개발</em>
+        </span>
+      </li>
+    </ol>
   </section>
 
   <section class="how" aria-labelledby="h-how">

@@ -109,7 +109,58 @@
   line-height:1.7;
 }
 
-.stack, .work, .how { padding-top:3.5rem; }
+.stack, .work, .how, .career { padding-top:3.5rem; }
+
+// --- 경력 -------------------------------------------------------------------
+//
+// 프로젝트 카드로 다루기엔 근거 글이 없는 구간. 기간과 내용을 두 칸으로
+// 나란히 둬서 훑을 때 연도만 따라 읽을 수 있게 한다.
+
+.career__list {
+  margin-top:1.5rem;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+
+  > li {
+    display:grid;
+    grid-template-columns:9.5rem 1fr;
+    gap:1rem;
+    padding-bottom:1rem;
+    border-bottom:1px solid var(--border);
+
+    &:last-child { border-bottom:0; padding-bottom:0; }
+  }
+}
+
+.career__when {
+  font-family:var(--font-mono);
+  font-size:.8125rem;
+  color:var(--fg-subtle);
+  padding-top:.15rem;
+  font-variant-numeric:tabular-nums;
+}
+
+.career__what {
+  font-size:.9375rem;
+  line-height:1.6;
+
+  b { font-weight:600; }
+
+  em {
+    display:block;
+    margin-top:.2rem;
+    font-style:normal;
+    font-size:.875rem;
+    color:var(--fg-subtle);
+  }
+}
+
+@media (max-width:$bp-mobile) {
+  .career__list > li { grid-template-columns:1fr; gap:.25rem; }
+}
 
 // --- 기술 스택 ---------------------------------------------------------------
 //
@@ -139,18 +190,22 @@
     display:flex;
     flex-wrap:wrap;
     gap:.4rem;
+    align-items:center;
   }
 
-  span {
-    padding:.3rem .6rem;
-    border:1px solid var(--border);
+  // shields.io 배지.
+  //
+  // 외부 SVG 라 사이트 색 토큰이 안 먹는다. 대신 다크모드에서 배지가
+  // 너무 튀지 않게 채도만 아주 살짝 낮춘다.
+  img {
+    height:1.75rem;
+    width:auto;
     border-radius:var(--r-sm);
-    background:var(--bg-sunken);
-    font-family:var(--font-mono);
-    font-size:.8125rem;
-    color:var(--fg-muted);
+    display:block;
   }
 }
+
+body.dark-theme .stack__grid img { filter:saturate(.9); }
 
 // --- 프로젝트 ---------------------------------------------------------------
 
