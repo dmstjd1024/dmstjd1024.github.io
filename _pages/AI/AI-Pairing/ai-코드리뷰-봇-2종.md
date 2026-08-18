@@ -25,8 +25,8 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 - 두 달 운영 결과 — 봇이 잘 잡는 클래스와 전혀 못 잡는 클래스가 뚜렷하게 갈림
 
-- 참고 수치: 해당 기간 커밋 1708건 중 **1212건(71%)**에 `Co-Authored-By: Claude` 서명
-- 모델 세대도 커밋 메시지에 기록 — Sonnet 4.6 → Opus 4.8 → Opus 4.8 1M → Opus 5
+- 커밋 메시지에 `Co-Authored-By` 서명과 모델 세대를 남겨 두었다
+  — Sonnet 4.6 → Opus 4.8 → Opus 4.8 1M → Opus 5
 
 ## 봇이 잡은 것
 

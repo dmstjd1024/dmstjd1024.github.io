@@ -20,24 +20,10 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 - 커밋 접두사: 압도적으로 `fix`
 - 국면: 통합테스트 + QA 대응
 
-그 기간의 AI 협업 표기 집계
-
-| | 관리자 포털 | 사용자 포털 |
-|---|---|---|
-| 전체 커밋 | 205 | 193 |
-| `Co-Authored-By: Claude` | 62 | 61 |
-| `Made-with: Cursor` | 20 | 23 |
-
-- 절반 가까이가 AI 협업 커밋
-- Claude 표기를 모델별로 분해 → 티어를 갈아 쓴 흔적
-
-| 모델 | 관리자 | 사용자 |
-|---|---|---|
-| Sonnet 4.6 | 49 | 51 |
-| Opus 4.6 (1M context) | 7 | 1 |
-| Haiku 4.5 | 4 | 7 |
-| Opus 4.6 | 1 | 1 |
-| Opus 4.7 (1M context) | 1 | 1 |
+그 기간의 AI 협업 표기를 집계해 보니, 두 저장소 모두 AI 협업 커밋이
+전체의 절반에 조금 못 미쳤다. Claude 표기를 모델별로 분해하면 티어를
+갈아 쓴 흔적이 남아 있다 — Sonnet 4.6 이 대부분이고, Opus(1M context) 와
+Haiku 4.5 가 소수 섞인 형태다.
 
 모델 배분
 
