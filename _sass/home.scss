@@ -196,13 +196,26 @@
 
 // 대표 기술 아이콘 (skillicons.dev).
 //
-// 아이콘 자체에 어두운 배경과 둥근 모서리가 들어 있어 border-radius 를
-// 따로 주지 않는다. 밝은 모드에서는 배경이 그대로 남색으로 뜨는데,
-// 그게 이 아이콘 세트의 생김새다.
+// 아이콘 SVG 안에 배경색이 박혀 있다. 기본(다크) 버전은 남색 배경이라
+// 흰 바탕에서 그 줄만 튀었다.
+//
+// 배경을 지우는 방법은 못 쓴다 — MySQL·Next.js·Kubernetes 처럼 로고가
+// 흰색인 아이콘이 있어 걷어내면 밝은 바탕에서 사라진다. 흐리게 만드는
+// 것도 답이 아니다. 선명하게 훑으라고 아이콘을 쓴 것이기 때문이다.
+//
+// skillicons 가 theme=light 를 지원한다. 밝은 배경(#F4F2ED) 버전을 따로
+// 받아 두 벌을 두고 테마에 따라 하나만 보인다. JS 없이 CSS 로만 전환된다.
 .stack__icons {
   height:2.75rem;
   width:auto;
   display:block;
+}
+
+.stack__icons--dark { display:none; }
+
+body.dark-theme {
+  .stack__icons--light { display:none; }
+  .stack__icons--dark  { display:block; }
 }
 
 // 대표 아이콘에 딸린 세부 기술 (shields.io).
