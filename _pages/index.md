@@ -20,7 +20,7 @@ layout: default
       <p class="hero__line">멈추면 안 되는 시스템을 바꾸는 일을 합니다.</p>
       <p class="hero__links">
         <a href="https://github.com/dmstjd1024">GitHub</a>
-        <a href="/글/index.html">기술 글 79편</a>
+        <a href="/글/index.html">기술 글</a>
       </p>
     </div>
 
@@ -58,11 +58,11 @@ layout: default
 
   두 가지를 섞어 쓴다:
     - 아이콘(skillicons.dev) — 대표 기술. 한눈에 훑는 용도
-    - 배지(shields.io) — 그 아래 딸린 세부 기술
+    - 배지(shields.io) — 아이콘이 없는 기술 (지금은 Hyperledger Fabric 하나)
 
-  섞은 이유는 skillicons 에 없는 기술이 여럿이기 때문이다. Spring Security ·
-  JPA · QueryDSL · MyBatis 처럼 실무의 중심에 있는 것들이라 뺄 수 없었다.
-  대신 위계로 풀었다 — 대표는 크게, 딸린 것은 작게.
+  아이콘이 있는 기술만 남기고 나머지(Spring Security · JPA · QueryDSL ·
+  MyBatis 등)는 뺐다. 나열이 길어지면 훑는 용도라는 목적 자체가 사라진다.
+  자세한 스택은 아래 프로젝트 카드의 proj__stack 줄에 적혀 있다.
 
   아이콘은 낱개 파일로 둔다. 묶음(icons-backend.svg 처럼 여러 개가 한 파일)
   이면 개별 hover 를 잡을 수 없어서다. 마우스를 올리면 이름이 뜬다.
@@ -453,10 +453,9 @@ layout: default
         <li>자동매매 시스템의 전략 검증 방법을 다듬는 중</li>
         <li>관심사 — 마이그레이션 안전성, 검증 장치를 코드에 심는 방법</li>
       </ul>
-      <p class="now__date">2026년 8월</p>
     </div>
     <a class="allposts" href="/글/index.html">
-      <b>기술 글 79편</b>
+      <b>기술 글</b>
       <span>문제 · 원인 · 해결 기록 →</span>
     </a>
   </footer>
