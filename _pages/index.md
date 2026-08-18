@@ -30,61 +30,68 @@ layout: default
     <h2 class="sec__title" id="h-stack">기술 스택</h2>
     <p class="sec__note">문제를 겪고 판단을 내린 것만. 학습만 한 것은 뺐습니다.</p>
 {%- comment -%}
-  기술 스택 배지. shields.io 에서 받아 assets/img/badge/ 에 넣어둔 SVG 다.
-  외부에서 매번 불러오면 요청 18개가 남의 서버로 나가고, 그쪽이 느리거나
-  죽으면 이 화면이 같이 깨진다. 같은 도메인에서 서빙하는 편이 빠르고 안전하다.
+  기술 스택.
 
-  로고가 있는 것은 공식 브랜드 색을, 없는 것(QueryDSL·MyBatis)은 회색을 쓴다 —
-  없는 로고를 억지로 끼우면 엉뚱한 아이콘이 붙는다.
+  두 가지를 섞어 쓴다:
+    - 아이콘(skillicons.dev) — 대표 기술. 한눈에 훑는 용도
+    - 배지(shields.io) — 그 아래 딸린 세부 기술
 
-  배지를 바꾸려면 shields.io 에서 새로 받아 같은 파일명으로 덮어쓴다.
+  섞은 이유는 skillicons 에 없는 기술이 9개나 되기 때문이다. Spring Security ·
+  JPA · QueryDSL · MyBatis 처럼 이 사람 실무의 중심에 있는 것들이라 뺄 수 없었다.
+  대신 위계로 풀었다 — 대표는 크게, 딸린 것은 작게.
+
+  전부 assets/img/badge/ 에 받아둔 SVG 다. 외부에서 매번 불러오면 요청이
+  남의 서버로 나가고 그쪽이 죽으면 이 화면이 같이 깨진다.
+
+  아이콘을 바꾸려면 skillicons.dev/icons?i=... 로 새로 받아 icons-*.svg 를
+  덮어쓴다. 배지는 img.shields.io 에서 같은 파일명으로 받는다.
 {%- endcomment -%}
     <dl class="stack__grid">
       <div>
         <dt>백엔드</dt>
         <dd>
-          <img src="/assets/img/badge/spring.svg" alt="Spring" height="28">
-          <img src="/assets/img/badge/spring-security.svg" alt="Spring Security" height="28">
-          <img src="/assets/img/badge/jpa-hibernate.svg" alt="JPA / Hibernate" height="28">
-          <img src="/assets/img/badge/querydsl.svg" alt="QueryDSL" height="28">
-          <img src="/assets/img/badge/mybatis.svg" alt="MyBatis" height="28">
-          <img src="/assets/img/badge/java.svg" alt="Java" height="28">
-          <img src="/assets/img/badge/websocket.svg" alt="WebSocket / STOMP" height="28">
+          <img class="stack__icons" src="/assets/img/badge/icons-backend.svg" alt="Java, Spring" height="44">
+          <div class="stack__sub">
+            <img src="/assets/img/badge/spring-security.svg" alt="Spring Security" height="24">
+            <img src="/assets/img/badge/jpa-hibernate.svg" alt="JPA / Hibernate" height="24">
+            <img src="/assets/img/badge/querydsl.svg" alt="QueryDSL" height="24">
+            <img src="/assets/img/badge/mybatis.svg" alt="MyBatis" height="24">
+            <img src="/assets/img/badge/websocket.svg" alt="WebSocket / STOMP" height="24">
+          </div>
         </dd>
       </div>
       <div>
         <dt>데이터베이스</dt>
         <dd>
-          <img src="/assets/img/badge/postgresql.svg" alt="PostgreSQL" height="28">
-          <img src="/assets/img/badge/mysql.svg" alt="MySQL" height="28">
-          <img src="/assets/img/badge/redis.svg" alt="Redis" height="28">
+          <img class="stack__icons" src="/assets/img/badge/icons-database.svg" alt="PostgreSQL, MySQL, Redis" height="44">
         </dd>
       </div>
       <div>
         <dt>프론트엔드</dt>
         <dd>
-          <img src="/assets/img/badge/react.svg" alt="React" height="28">
-          <img src="/assets/img/badge/nextjs.svg" alt="Next.js" height="28">
-          <img src="/assets/img/badge/typescript.svg" alt="TypeScript" height="28">
-          <img src="/assets/img/badge/tanstack-query.svg" alt="TanStack Query" height="28">
-          <img src="/assets/img/badge/rtk-query.svg" alt="RTK Query" height="28">
+          <img class="stack__icons" src="/assets/img/badge/icons-frontend.svg" alt="React, Next.js, TypeScript, Redux" height="44">
+          <div class="stack__sub">
+            <img src="/assets/img/badge/tanstack-query.svg" alt="TanStack Query" height="24">
+            <img src="/assets/img/badge/rtk-query.svg" alt="RTK Query" height="24">
+          </div>
         </dd>
       </div>
       <div>
         <dt>인프라</dt>
         <dd>
-          <img src="/assets/img/badge/kubernetes.svg" alt="Kubernetes" height="28">
-          <img src="/assets/img/badge/docker.svg" alt="Docker" height="28">
-          <img src="/assets/img/badge/github-actions.svg" alt="GitHub Actions" height="28">
-          <img src="/assets/img/badge/linux.svg" alt="Linux" height="28">
-          <img src="/assets/img/badge/hyperledger-fabric.svg" alt="Hyperledger Fabric" height="28">
+          <img class="stack__icons" src="/assets/img/badge/icons-infra.svg" alt="Kubernetes, Docker, GitHub Actions, Linux" height="44">
+          <div class="stack__sub">
+            <img src="/assets/img/badge/hyperledger-fabric.svg" alt="Hyperledger Fabric" height="24">
+          </div>
         </dd>
       </div>
       <div>
         <dt>그 외</dt>
         <dd>
-          <img src="/assets/img/badge/python.svg" alt="Python" height="28">
-          <img src="/assets/img/badge/claude-code.svg" alt="Claude Code" height="28">
+          <img class="stack__icons" src="/assets/img/badge/icons-etc.svg" alt="Python" height="44">
+          <div class="stack__sub">
+            <img src="/assets/img/badge/claude-code.svg" alt="Claude Code" height="24">
+          </div>
         </dd>
       </div>
     </dl>
