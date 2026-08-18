@@ -16,15 +16,15 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 ## 문제: 복사 버튼이 아무 반응이 없다
 
-- 화면: 관리자 포털 대시보드
-- 기능: 토큰 복사 버튼
+- 화면: 관리 화면
+- 기능: 값 복사 버튼
 - 로컬: 정상 동작
 - 배포 환경: 버튼 눌러도 무반응
 - 에러 토스트 없음, 콘솔 출력 없음
 
 - 원인 위치 — 코드가 아니라 배포 환경
 
-- 배포 환경: 폐쇄망 HTTP
+- 조건: HTTPS가 아닌 환경에서 서비스되는 경우
 - `navigator.clipboard`는 secure context 전용 — HTTPS 또는 localhost
 - HTTP 서비스 시 브라우저에 따라 `navigator.clipboard` 자체가 `undefined`
 - 또는 객체는 존재하되 `writeText()`가 rejected Promise 반환
@@ -181,6 +181,6 @@ secure context를 요구하는 API:
 
 - localhost는 secure context로 취급됨
 - 따라서 로컬 개발에서는 이 제약이 전부 투명해짐
-- 폐쇄망 HTTP 배포가 전제라면 이 목록은 처음부터 확인 대상
+- HTTPS를 쓸 수 없는 배포 환경이라면 이 목록은 처음부터 확인 대상
 
 그리고 이 두 번의 커밋은 같은 얘기를 반복한다. **1단계는 실패를 감지 가능하게 만들었고, 2단계는 감지 가능해진 실패를 실제로 고쳤다.** 순서가 반대였으면 `opacity: 0` 버전이 여전히 실패하고 있다는 사실조차 몰랐을 것이다.
