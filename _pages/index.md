@@ -13,17 +13,41 @@ layout: default
 <div class="home">
 
   <header class="hero">
-    <p class="hero__eyebrow">백엔드 · 풀스택</p>
-    <h1 class="hero__name">전은성</h1>
-    <p class="hero__line">
-      이미 돌아가는 시스템을 고칩니다.
-      <span>레거시 개선 · 성능 · 데이터 모델 전환</span>
-    </p>
-    <ul class="hero__facts">
-      <li><b>6년차</b><span>실무</span></li>
-      <li><b>79편</b><span>기술 글</span></li>
-      <li><b>3개</b><span>운영 시스템</span></li>
-    </ul>
+    <div class="hero__main">
+      <p class="hero__eyebrow">백엔드 · 풀스택</p>
+      <h1 class="hero__name">전은성</h1>
+      <p class="hero__line">이미 돌아가는 시스템을 고칩니다.</p>
+      <p class="hero__tags">레거시 개선 · 성능 · 데이터 모델 전환</p>
+      <p class="hero__links">
+        <a href="https://github.com/dmstjd1024">GitHub</a>
+        <a href="/글/index.html">기술 글 79편</a>
+      </p>
+    </div>
+
+{%- comment -%}
+  오른쪽 지표판.
+
+  왼쪽 텍스트 뭉치만 두면 화면의 3/4 이 빈다. 이 사람의 설득력은 측정값에서
+  나오므로(블로그 글도 전부 문제→진단→결과 구조다) 그 성격을 첫 화면에
+  그대로 세운다. 숫자를 크게, 단위를 작게, 한 줄 설명을 붙인다.
+{%- endcomment -%}
+    <dl class="hero__facts">
+      <div>
+        <dt>실무</dt>
+        <dd><b>6</b><i>년차</i></dd>
+        <p>Java · Spring 중심, 프론트까지</p>
+      </div>
+      <div>
+        <dt>기술 글</dt>
+        <dd><b>79</b><i>편</i></dd>
+        <p>문제 · 원인 · 해결 기록</p>
+      </div>
+      <div>
+        <dt>운영 시스템</dt>
+        <dd><b>3</b><i>개</i></dd>
+        <p>탄소배출 · 블록체인 · 장비 관리</p>
+      </div>
+    </dl>
   </header>
 
   <section class="stack" aria-labelledby="h-stack">
