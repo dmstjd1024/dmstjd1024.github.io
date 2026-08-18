@@ -30,50 +30,52 @@ layout: default
     <h2 class="sec__title" id="h-stack">기술 스택</h2>
     <p class="sec__note">문제를 겪고 판단을 내린 것만. 학습만 한 것은 뺐습니다.</p>
 {%- comment -%}
-  shields.io 배지. 로고가 있는 것은 공식 브랜드 색을, 없는 것(QueryDSL·
-  RTK Query 등)은 사이트 회색 계열을 쓴다 — 없는 로고를 억지로 끼우면
-  엉뚱한 아이콘이 붙는다.
+  기술 스택 배지. shields.io 에서 받아 assets/img/badge/ 에 넣어둔 SVG 다.
+  외부에서 매번 불러오면 요청 18개가 남의 서버로 나가고, 그쪽이 느리거나
+  죽으면 이 화면이 같이 깨진다. 같은 도메인에서 서빙하는 편이 빠르고 안전하다.
 
-  외부 이미지라 로딩 실패에 대비해 alt 를 채워둔다. 폭·높이를 지정해
-  뒤늦게 그려질 때 레이아웃이 밀리는 것(CLS)도 막는다.
+  로고가 있는 것은 공식 브랜드 색을, 없는 것(QueryDSL·MyBatis)은 회색을 쓴다 —
+  없는 로고를 억지로 끼우면 엉뚱한 아이콘이 붙는다.
+
+  배지를 바꾸려면 shields.io 에서 새로 받아 같은 파일명으로 덮어쓴다.
 {%- endcomment -%}
     <dl class="stack__grid">
       <div>
         <dt>백엔드</dt>
         <dd>
-          <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white" alt="Spring" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/Spring_Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white" alt="Spring Security" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=hibernate&logoColor=white" alt="JPA / Hibernate" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/QueryDSL-4B5563?style=for-the-badge" alt="QueryDSL" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/MyBatis-4B5563?style=for-the-badge" alt="MyBatis" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" height="28" loading="lazy">
+          <img src="/assets/img/badge/spring.svg" alt="Spring" height="28">
+          <img src="/assets/img/badge/spring-security.svg" alt="Spring Security" height="28">
+          <img src="/assets/img/badge/jpa-hibernate.svg" alt="JPA / Hibernate" height="28">
+          <img src="/assets/img/badge/querydsl.svg" alt="QueryDSL" height="28">
+          <img src="/assets/img/badge/mybatis.svg" alt="MyBatis" height="28">
+          <img src="/assets/img/badge/java.svg" alt="Java" height="28">
         </dd>
       </div>
       <div>
         <dt>데이터베이스</dt>
         <dd>
-          <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/Redis-FF4438?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" height="28" loading="lazy">
+          <img src="/assets/img/badge/postgresql.svg" alt="PostgreSQL" height="28">
+          <img src="/assets/img/badge/mysql.svg" alt="MySQL" height="28">
+          <img src="/assets/img/badge/redis.svg" alt="Redis" height="28">
         </dd>
       </div>
       <div>
         <dt>프론트엔드</dt>
         <dd>
-          <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white" alt="TanStack Query" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="RTK Query" height="28" loading="lazy">
+          <img src="/assets/img/badge/react.svg" alt="React" height="28">
+          <img src="/assets/img/badge/nextjs.svg" alt="Next.js" height="28">
+          <img src="/assets/img/badge/typescript.svg" alt="TypeScript" height="28">
+          <img src="/assets/img/badge/tanstack-query.svg" alt="TanStack Query" height="28">
+          <img src="/assets/img/badge/rtk-query.svg" alt="RTK Query" height="28">
         </dd>
       </div>
       <div>
         <dt>인프라</dt>
         <dd>
-          <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Kubernetes" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" height="28" loading="lazy">
-          <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" height="28" loading="lazy">
+          <img src="/assets/img/badge/kubernetes.svg" alt="Kubernetes" height="28">
+          <img src="/assets/img/badge/docker.svg" alt="Docker" height="28">
+          <img src="/assets/img/badge/github-actions.svg" alt="GitHub Actions" height="28">
+          <img src="/assets/img/badge/linux.svg" alt="Linux" height="28">
         </dd>
       </div>
     </dl>

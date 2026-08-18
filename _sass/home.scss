@@ -193,10 +193,10 @@
     align-items:center;
   }
 
-  // shields.io 배지.
+  // 기술 스택 배지 (assets/img/badge/*.svg).
   //
-  // 외부 SVG 라 사이트 색 토큰이 안 먹는다. 대신 다크모드에서 배지가
-  // 너무 튀지 않게 채도만 아주 살짝 낮춘다.
+  // shields.io 가 만든 SVG 라 색이 파일 안에 박혀 있고 사이트 색 토큰이
+  // 안 먹는다. 대신 다크모드에서 배지가 너무 튀지 않게 채도만 살짝 낮춘다.
   img {
     height:1.75rem;
     width:auto;
