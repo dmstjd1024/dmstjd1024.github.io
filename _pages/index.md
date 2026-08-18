@@ -296,6 +296,7 @@ layout: default
         <span class="career__when">2020 — 2023</span>
         <span class="career__what">
           <b>퓨쳐누리</b> 개발
+          <em>관리자 페이지 기능 개발 · 유지보수 · 솔루션 리뉴얼(MSA) · 국방부 시스템 개발 및 유지보수</em>
         </span>
       </li>
     </ol>
