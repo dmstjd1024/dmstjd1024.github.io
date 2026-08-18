@@ -180,7 +180,7 @@ layout: default
           </p>
           <p class="case__out"><code>운영자 조작 157회 → 1회 · 개입 시간 수 시간 → 0분</code></p>
           <p class="case__note">
-            벽시계 시간이 준 것은 아닙니다. Kind·Istio·Helm의 물리적 대기 20~43분은
+            전체 소요 시간이 준 것은 아닙니다. Kind·Istio·Helm의 물리적 대기 20~43분은
             자동화 전후가 같고, 줄어든 것은 사람이 붙어 있어야 하는 시간입니다.
           </p>
         </li>
