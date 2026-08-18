@@ -245,11 +245,11 @@ layout: default
 
     <article class="proj">
       <header>
-        <h3>스마트시티 블록체인 DevOps 플랫폼</h3>
+        <h3>블록체인 DevOps 플랫폼 <em>공공</em></h3>
         <p class="proj__stack">Java 21 · Spring Boot · Kubernetes · Hyperledger Fabric/Besu · Next.js · 폐쇄망</p>
         <p class="proj__meta">
-          2025.07 — 2025.12 · 광주광역시 스마트시티 조성사업
-          <span>백엔드 · 인프라 단독 (커밋 96%) · 프론트 협업 1명</span>
+          공공 스마트시티 사업 · 약 6개월
+          <span>백엔드 · 인프라 담당 · 프론트 협업 1명</span>
         </p>
       </header>
       <p class="proj__what">
@@ -406,15 +406,15 @@ layout: default
       <li>
         <span class="career__when">2023 — 현재</span>
         <span class="career__what">
-          <b>그리너리</b> 백엔드 개발
-          <em>탄소배출 산정 웹앱 · 스마트시티 블록체인 DevOps 플랫폼 · 장비 관리 시스템</em>
+          <b>탄소배출 산정 SaaS 기업</b> 백엔드 개발
+          <em>탄소배출 산정 웹앱 · 블록체인 DevOps 플랫폼 · 장비 관리 시스템</em>
         </span>
       </li>
       <li>
         <span class="career__when">2021 — 2023</span>
         <span class="career__what">
-          <b>퓨쳐누리</b> 개발
-          <em>관리자 페이지 기능 개발 · 유지보수 · 솔루션 리뉴얼(MSA) · 국방부 시스템 개발 및 유지보수</em>
+          <b>SI·솔루션 기업</b> 개발
+          <em>관리자 페이지 기능 개발 · 유지보수 · 솔루션 리뉴얼(MSA) · 공공기관 시스템 개발 및 유지보수</em>
         </span>
       </li>
     </ol>
