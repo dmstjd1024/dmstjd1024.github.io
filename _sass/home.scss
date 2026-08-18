@@ -53,19 +53,24 @@
     letter-spacing:-.05em;
   }
 
+  // 직무 + 전문영역. 검증 가능한 사실만 둔다.
+  //
+  // 이름 바로 아래 자리라 슬로건을 넣기 쉬운데, 그 자리에 명사구를 둔다.
+  // 아래 서술문보다 작게 잡아 '사실 → 설명' 순서로 읽히게 한다.
+  &__role {
+    margin-top:1.25rem;
+    font-family:var(--font-mono);
+    font-size:.875rem;
+    line-height:1.5;
+    color:var(--fg-muted);
+  }
+
   &__line {
-    margin-top:1.5rem;
+    margin-top:.75rem;
     font-size:clamp(1.125rem, 2.2vw, 1.5rem);
     line-height:1.45;
     letter-spacing:-.02em;
     color:var(--fg);
-  }
-
-  &__tags {
-    margin-top:.6rem;
-    font-family:var(--font-mono);
-    font-size:.8125rem;
-    color:var(--fg-subtle);
   }
 
   &__links {

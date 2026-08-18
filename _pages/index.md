@@ -16,8 +16,8 @@ layout: default
     <div class="hero__main">
       <p class="hero__eyebrow">백엔드 · 풀스택</p>
       <h1 class="hero__name">전은성</h1>
-      <p class="hero__line">이미 돌아가는 시스템을 고칩니다.</p>
-      <p class="hero__tags">레거시 개선 · 성능 · 데이터 모델 전환</p>
+      <p class="hero__role">6년차 백엔드 개발자 · 레거시 개선과 데이터 모델 전환</p>
+      <p class="hero__line">멈추면 안 되는 시스템을 바꾸는 일을 합니다.</p>
       <p class="hero__links">
         <a href="https://github.com/dmstjd1024">GitHub</a>
         <a href="/글/index.html">기술 글 79편</a>
