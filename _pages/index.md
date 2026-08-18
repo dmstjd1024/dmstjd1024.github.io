@@ -288,7 +288,7 @@ layout: default
     <p class="sec__note">위 프로젝트는 글로 근거를 댈 수 있는 것만 골랐습니다. 전체 이력은 아래와 같습니다.</p>
     <ol class="career__list">
       <li>
-        <span class="career__when">2023 — 2026</span>
+        <span class="career__when">2023 — 현재</span>
         <span class="career__what">
           <b>그리너리</b> 백엔드 개발
           <em>탄소배출 산정 웹앱 · 블록체인 관리 플랫폼 · 장비 관리 시스템</em>
