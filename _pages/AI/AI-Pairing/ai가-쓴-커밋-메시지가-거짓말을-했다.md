@@ -87,7 +87,7 @@ feat: 네트워크 삭제 안전화 완성 - 폴링/캐시/에러 처리 (P0/P1/
  src/app/_components/form/find/FindPasswordForm.tsx | 47 ++++++++++++-----
  src/app/_components/modal/ResetPasswordModal.tsx   | 32 ++++++++++++-
  src/app/_utils/generateRandomPassword.ts           | 39 ++++++++++++++++
- src/app/oauth/iam/_components/IamForm.tsx          | 49 +++++++++++++++--
+ src/app/<계정관리>/_components/AccountForm.tsx      | 49 +++++++++++++++--
  6 files changed, 198 insertions(+), 18 deletions(-)
 ```
 
