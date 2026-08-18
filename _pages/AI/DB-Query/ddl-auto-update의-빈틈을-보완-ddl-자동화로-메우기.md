@@ -16,7 +16,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 ## Flyway를 걷어낸 뒤 남은 숙제
 
-- 이전 글: [Flyway를 도입하고 3주 만에 걷어낸 이야기](/AI/flyway를-도입하고-3주-만에-걷어낸-이야기.html)
+- 이전 글: [Flyway를 도입하고 3주 만에 걷어낸 이야기](/AI/DB-Query/flyway를-도입하고-3주-만에-걷어낸-이야기.html)
 - 걷어낸 뒤 스키마 관리 방식
   - JPA `ddl-auto`
   - 사람이 손으로 적용하는 SQL 파일 묶음(`db/manual/*.sql`)
