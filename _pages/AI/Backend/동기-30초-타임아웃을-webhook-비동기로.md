@@ -71,7 +71,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 보안 처리:
 
 - 콜백 경로는 세션 인증 대상 아님 → `SecurityConfig`에서 인증 예외
-- 대신 `X-Internal-API-Key` 헤더 검증 추가
+- 대신 내부 전용 API 키 헤더 검증 추가
 
 - 원칙: 인증 예외로 열어둔 엔드포인트에는 반드시 다른 형태의 검증 동반
 
@@ -110,7 +110,7 @@ thumbnail: "/assets/img/thumbnail/sample.png"
 
 기존 동기 엔드포인트를 **그대로 남겼다.**
 
-- 신규 추가: `/mds/parse/async`, `/process/async`
+- 신규 추가: 기존 경로에 `/async` 를 붙인 비동기 엔드포인트 2개
 - 함께 배치: 조회 · 콜백 엔드포인트
 
 - 이유: 프런트엔드 준비 전 서버가 응답 형태를 바꾸면 그 시점부터 화면 파손
