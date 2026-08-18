@@ -406,7 +406,7 @@ layout: default
       <li>
         <span class="career__when">2023 — 현재</span>
         <span class="career__what">
-          <b>탄소배출 산정 SaaS 기업</b> 백엔드 개발
+          <b>ESG 컨설팅 기업</b> 백엔드 개발
           <em>탄소배출 산정 웹앱 · 블록체인 DevOps 플랫폼 · 장비 관리 시스템</em>
         </span>
       </li>
@@ -414,7 +414,7 @@ layout: default
         <span class="career__when">2021 — 2023</span>
         <span class="career__what">
           <b>SI·솔루션 기업</b> 개발
-          <em>관리자 페이지 기능 개발 · 유지보수 · 솔루션 리뉴얼(MSA) · 공공기관 시스템 개발 및 유지보수</em>
+          <em>관리자 페이지 기능 개발 · 유지보수 · 솔루션 리뉴얼(MSA) · 국방부 시스템 개발 및 유지보수</em>
         </span>
       </li>
     </ol>
