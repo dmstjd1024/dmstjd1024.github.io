@@ -7,6 +7,10 @@
 
   page.url 로 현재 위치를 표시한다. 앞에서 자른 뒤 비교하므로 하위 글에
   들어가 있어도 상위 카테고리에 표시가 남는다.
+
+  좁은 화면(900px 이하)에서는 이 목록이 왼쪽에서 밀려 들어오는 세로
+  서랍(drawer)이 된다. 그때는 하위 카테고리까지 함께 펼쳐 보여준다 —
+  가로 바에서는 자리가 없어 최상위만 올리지만, 세로로 쌓이면 여유가 있다.
 {%- endcomment -%}
 {%- assign nav_cats = site.pages | where_exp: "p", "p.path contains 'index.md'" | sort: "path" -%}
 {%- assign here = page.url | remove_first: '/' | split: '/' | first -%}
@@ -36,9 +40,28 @@
           {%- comment -%} 최상위 카테고리만 메뉴에 올린다(깊이 2 = 이름/index.md) {%- endcomment -%}
           {%- if seg.size == 2 and seg[0] != '글' -%}
             {%- assign name = seg[0] -%}
+            {%- comment -%}
+              이 카테고리의 하위 카테고리(깊이 3 = 이름/하위/index.md)를 모은다.
+              접두어에 슬래시까지 붙여 비교하므로 "Java" 가 "JavaScript" 를
+              집어삼키지 않는다. 서랍에서만 보여준다.
+            {%- endcomment -%}
+            {%- assign prefix = '_pages/' | append: name | append: '/' -%}
+            {%- assign subs = nav_cats | where_exp: "s", "s.path contains prefix" -%}
             <li>
               <a href="{{ cat.url | prepend: site.baseurl }}"
                  {% if here == name %}aria-current="page"{% endif %}>{{ name }}</a>
+              {%- if subs.size > 0 -%}
+                <ul class="nav__sub">
+                  {%- for sub in subs -%}
+                    {%- assign sseg = sub.path | remove_first: '_pages/' | split: '/' -%}
+                    {%- if sseg.size == 3 -%}
+                      <li>
+                        <a href="{{ sub.url | prepend: site.baseurl }}">{{ sseg[1] }}</a>
+                      </li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ul>
+              {%- endif -%}
             </li>
           {%- endif -%}
         {%- endfor -%}
@@ -58,3 +81,9 @@
     </div>
   </div>
 </header>
+
+{%- comment -%}
+  서랍이 열렸을 때 본문을 덮는 막. 여기를 누르면 닫힌다.
+  좁은 화면에서만 보인다(스타일 쪽에서 통제).
+{%- endcomment -%}
+<div class="nav__scrim" hidden></div>
