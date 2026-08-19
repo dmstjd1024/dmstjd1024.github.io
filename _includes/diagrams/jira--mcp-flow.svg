@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="개발 도구가 MCP 서버를 거쳐 지라 이슈를 읽고 쓰는 연결 구조와 권한 경고">
+  <marker id="jiramcp-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">MCP — 개발 도구에서 이슈를 직접 읽고 쓴다</text>
+
+  <rect class="dg-item" x="24" y="60" width="176" height="88" rx="8"/>
+  <text class="dg-t" x="44" y="84">개발 도구</text>
+  <text class="dg-s" x="44" y="106">Claude Code</text>
+  <text class="dg-s" x="44" y="124">Cursor · VS Code</text>
+  <text class="dg-s" x="44" y="142">Claude Desktop</text>
+
+  <path class="dg-arw" d="M208 104 H244" marker-end="url(#jiramcp-a)"/>
+
+  <rect class="dg-lead" x="252" y="60" width="204" height="88" rx="8"/>
+  <text class="dg-t" x="272" y="84">Rovo MCP 서버</text>
+  <text class="dg-s" x="272" y="106">mcp.atlassian.com</text>
+  <text class="dg-b" x="272" y="128">OAuth 2.1 로 인증</text>
+  <text class="dg-s" x="272" y="144">무료 플랜도 사용 가능</text>
+
+  <path class="dg-arw" d="M464 104 H500" marker-end="url(#jiramcp-a)"/>
+
+  <rect class="dg-out" x="508" y="60" width="188" height="88" rx="8"/>
+  <text class="dg-t" x="528" y="84">JIRA</text>
+  <text class="dg-s" x="528" y="106">이슈 조회 · 생성</text>
+  <text class="dg-s" x="528" y="124">수정 · 검색</text>
+  <text class="dg-s" x="528" y="142">Confluence 도 함께</text>
+
+  <rect class="dg-code" x="24" y="166" width="672" height="40" rx="8"/>
+  <text class="dg-v" x="44" y="192">claude mcp add --transport http atlassian https://mcp.atlassian.com/v1/mcp/authv2</text>
+
+  <rect class="dg-warn" x="24" y="222" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="246">주의 — 권한이 그대로 넘어간다</text>
+  <text class="dg-v" x="44" y="268">AI 가 &quot;당신 권한으로&quot; 이슈를 만들고 고친다. 계정 권한이 넓으면 AI 권한도 넓다</text>
+  <text class="dg-s" x="44" y="288">감사 로그에 Rovo MCP User Actions 로 남는다 · FedRAMP · HIPAA 는 지원하지 않는다</text>
+</svg>

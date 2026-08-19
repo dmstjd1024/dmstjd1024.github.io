@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="이슈 키가 브랜치와 커밋, PR 을 거쳐 지라 이슈로 연결되는 흐름">
+  <marker id="jiragl-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">이슈 키 하나가 코드와 이슈를 잇는다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="404" height="152" rx="10"/>
+  <text class="dg-t" x="44" y="78">Git 쪽</text>
+
+  <rect class="dg-code" x="44" y="90" width="364" height="34" rx="6"/>
+  <text class="dg-v" x="60" y="112">feature/SHOP-101-card-payment</text>
+
+  <rect class="dg-code" x="44" y="132" width="364" height="34" rx="6"/>
+  <text class="dg-v" x="60" y="154">git commit -m &quot;SHOP-101 결제 연동&quot;</text>
+
+  <text class="dg-b" x="44" y="188">SHOP-101 — 이 키가 열쇠다</text>
+
+  <path class="dg-arw" d="M436 128 H472" marker-end="url(#jiragl-a)"/>
+
+  <rect class="dg-out" x="480" y="52" width="216" height="152" rx="10"/>
+  <text class="dg-t" x="500" y="78">JIRA 이슈 SHOP-101</text>
+  <rect class="dg-row" x="500" y="90" width="176" height="96" rx="6"/>
+  <text class="dg-t" x="516" y="112">개발 (Development)</text>
+  <text class="dg-s" x="516" y="134">브랜치 1</text>
+  <text class="dg-s" x="516" y="152">커밋 3</text>
+  <text class="dg-s" x="516" y="170">PR 열림</text>
+
+  <rect class="dg-warn" x="24" y="222" width="672" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="246">연결이 안 될 때 대부분의 원인</text>
+  <text class="dg-v" x="44" y="268">JIRA 계정과 Git 호스팅 계정의 이메일이 다르다</text>
+  <text class="dg-s" x="44" y="288">키를 깜빡하는 게 문제라면 commit-msg 훅으로 막는다</text>
+</svg>

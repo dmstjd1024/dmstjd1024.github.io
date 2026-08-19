@@ -195,10 +195,9 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 
 ## 규칙의 3단 구조
 
-```
-트리거(Trigger)  →  조건(Condition)  →  액션(Action)
-  언제?              맞으면?             무엇을?
-```
+<div class="diagram" role="img" aria-label="자동화 규칙이 트리거, 조건, 액션 세 단계로 흐르는 구조">
+{% include diagrams/jira--automation-rule.svg %}
+</div>
 
 - **트리거**: 규칙이 실행되는 시점 (이슈 생성됨, 상태 변경됨, 매일 오전 9시 ...)
 - **조건**: 실행할지 말지 판단 (이슈 타입이 버그일 때만, 우선순위가 High일 때만 ...)
@@ -337,6 +336,10 @@ git switch -c bugfix/SHOP-205-order-status
 ```
 
 이슈 화면의 **개발(Development)** 영역에서 연결된 브랜치, 커밋, PR, 빌드 상태가 한 번에 보인다.
+
+<div class="diagram" role="img" aria-label="이슈 키가 브랜치와 커밋을 거쳐 지라 이슈로 연결되는 흐름">
+{% include diagrams/jira--git-link.svg %}
+</div>
 
 ## 이슈 키 강제하기
 

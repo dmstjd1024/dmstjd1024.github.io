@@ -54,6 +54,10 @@ JIRA를 처음 열면 생소한 단어가 쏟아진다. 계층 구조부터 잡�
 - 위에서 아래로 갈수록 작업 단위가 잘게 쪼개진다
 - 버그(Bug)와 태스크(Task)는 스토리와 같은 레벨에 위치한다
 
+<div class="diagram" role="img" aria-label="에픽에서 스토리, 서브태스크로 내려가며 작업 단위가 잘게 쪼개지는 구조">
+{% include diagrams/jira--issue-hierarchy.svg %}
+</div>
+
 ## 프로젝트(Project)
 이슈를 담는 가장 큰 그릇
 - 보통 팀 단위 또는 서비스 단위로 하나씩 만든다
@@ -85,6 +89,11 @@ JIRA에서 관리하는 **일 하나의 단위**
 ```
 할 일(To Do) → 진행 중(In Progress) → 리뷰 중(In Review) → 완료(Done)
 ```
+
+<div class="diagram" role="img" aria-label="워크플로우가 상태 사이의 이동 경로를 정해두어 건너뛰기를 막는 구조">
+{% include diagrams/jira--workflow.svg %}
+</div>
+
 - 워크플로우가 있으면 `할 일`에서 바로 `완료`로 건너뛰는 것을 막을 수 있다
 - 상태를 바꾸는 행위를 **전환(Transition)** 이라고 부른다
 
