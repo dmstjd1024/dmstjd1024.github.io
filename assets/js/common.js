@@ -54,6 +54,24 @@
       if (e.target.closest('.nav__menu a')) setMenu(false);
     });
 
+    // --- 하위 카테고리 접기/펴기 ---------------------------------------
+    //
+    // 화살표만 토글이다. 카테고리 이름은 링크로 남겨 둔다 — 이름까지
+    // 토글로 만들면 그 카테고리 페이지에 갈 방법이 없어진다.
+    nav.addEventListener('click', function (e) {
+      var btn = e.target.closest('.nav__toggle');
+      if (!btn) return;
+
+      e.preventDefault();
+      e.stopPropagation();          // 위의 "링크 누르면 닫기" 로 새지 않게
+
+      var li = btn.closest('.has-sub');
+      if (!li) return;
+
+      var open = li.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
     document.addEventListener('keydown', function (e) {
       if (!nav.classList.contains('is-open')) return;
 
@@ -71,8 +89,11 @@
       var menu = nav.querySelector('.nav__menu');
       if (!menu) return;
 
+      // 접기 버튼도 탭 순서에 포함한다. 링크만 세면 화살표를 건너뛴다.
       var items = [menuBtn].concat(
-        Array.prototype.slice.call(menu.querySelectorAll('a[href]'))
+        Array.prototype.slice.call(
+          menu.querySelectorAll('a[href], button:not([disabled])')
+        )
       );
       if (!items.length) return;
 
