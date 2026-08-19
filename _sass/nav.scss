@@ -95,6 +95,55 @@
 // 메뉴 버튼은 모바일에서만 쓴다
 #btn-menu { display:none; }
 
+// ---------------------------------------------------------------------------
+// 접기/펴기
+//
+// 하위가 있는 카테고리만 화살표 버튼을 단다. 이름 자체는 여전히 링크라
+// 누르면 그 카테고리로 가고, 접었다 펴는 것은 화살표로만 한다 — 이름을
+// 토글로 만들면 카테고리 페이지에 갈 방법이 없어진다.
+// ---------------------------------------------------------------------------
+.nav__row {
+  display:flex;
+  align-items:center;
+
+  a { flex:1; min-width:0; }
+}
+
+.nav__toggle {
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  width:1.5rem;
+  height:1.5rem;
+  border-radius:var(--r-sm);
+  color:var(--fg-subtle);
+  transition:background-color .15s ease, color .15s ease;
+
+  svg {
+    width:14px;
+    height:14px;
+    transition:transform .2s ease;
+  }
+
+  &:hover { background:var(--bg-sunken); color:var(--fg); }
+}
+
+// 펼친 상태에서 화살표가 아래를 향한다
+.has-sub.is-open > .nav__row > .nav__toggle svg { transform:rotate(90deg); }
+
+// 접힌 상태 — 높이를 0 으로 눌러 스르륵 닫는다.
+// display:none 으로 껐다 켜면 애니메이션이 걸리지 않는다.
+.has-sub > .nav__sub {
+  overflow:hidden;
+  max-height:0;
+  opacity:0;
+  transition:max-height .25s ease, opacity .2s ease;
+}
+.has-sub.is-open > .nav__sub {
+  max-height:32rem;
+  opacity:1;
+}
+
 // 하위 카테고리는 좁은 화면의 세로 서랍에서만 쓴다.
 // 가로 바에서는 자리가 없어 최상위만 보여준다.
 .nav__sub { display:none; }
@@ -246,6 +295,10 @@
     > ul > li > a { font-weight:600; color:var(--fg); }
     > ul > li + li { margin-top:.15rem; }
   }
+
+  // 메뉴가 fixed 로 빠지면서 상단바의 flex 흐름에서 사라졌다. 그러면
+  // 남은 항목(로고·도구)이 왼쪽에 몰리므로, 도구는 직접 오른쪽으로 민다.
+  .nav__tools { margin-left:auto; }
 
   // 하위 카테고리 — 좁은 화면 서랍과 같은 모양
   .nav__sub {

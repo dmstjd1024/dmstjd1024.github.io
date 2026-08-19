@@ -19,7 +19,16 @@
 
 // 상단바는 모든 페이지에서 같다. 이름을 붙여 전환 대상에서 분리하면
 // 페이드되지 않고 제자리에 남는다 — 본문만 바뀌는 것처럼 보인다.
-.nav { view-transition-name: site-nav; }
+//
+// 이름은 상단바 안쪽(.nav__inner)에 붙인다. .nav 에 붙이면 그 안의
+// .nav__menu 까지 한 덩어리로 스냅샷되는데, 넓은 화면에서 메뉴는
+// position:fixed 로 빠져나와 왼쪽 열에 따로 서 있다. 그래서 스냅샷 상자가
+// 상단바+메뉴를 아우르는 큰 사각형이 되고, 전환 중 그 덩어리가 잠깐
+// 겹쳐 보인다(글자가 오른쪽 위에 중복돼 뜨는 현상).
+.nav__inner { view-transition-name: site-nav; }
+
+// 왼쪽 카테고리 열도 페이지마다 같다. 따로 이름을 줘 제자리에 남긴다.
+.nav__menu { view-transition-name: site-menu; }
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -36,7 +45,9 @@
 // 고정 영역은 움직이지 않는다. 위치가 같으므로 애니메이션이 필요 없고,
 // 굳이 넣으면 오히려 미세하게 떨린다.
 ::view-transition-old(site-nav),
-::view-transition-new(site-nav) {
+::view-transition-new(site-nav),
+::view-transition-old(site-menu),
+::view-transition-new(site-menu) {
   animation:none;
   mix-blend-mode:normal;
 }
