@@ -62,17 +62,22 @@
               {%- if ss.size == 3 -%}{%- assign child_count = child_count | plus: 1 -%}{%- endif -%}
             {%- endfor -%}
             {%- comment -%}
-              지금 보고 있는 카테고리는 펼친 채로 그린다. 안쪽 글을 읽는
-              중에도 here 는 최상위 이름이라 그대로 열려 있다.
+              펼침 상태는 여기서 넣지 않고 common.js 가 페이지 로드 뒤에 넣는다.
+
+              지금 보고 있는 카테고리를 서버에서 미리 펼쳐 두면 페이지마다
+              메뉴 높이가 달라진다(/AI/ 는 5줄 열림, /Docker/ 는 0줄).
+              페이지 전환 때 브라우저가 옛 화면과 새 화면을 겹쳐 맞추는데
+              높이가 다르니 아래 항목들이 밀렸다 돌아온다 — 메뉴가 흔들려
+              보이던 원인이다. 마크업을 모든 페이지에서 똑같이 두면 그
+              흔들림 자체가 생기지 않는다.
             {%- endcomment -%}
-            {%- if here == name -%}{%- assign open = true -%}{%- else -%}{%- assign open = false -%}{%- endif -%}
-            <li{% if child_count > 0 %} class="has-sub{% if open %} is-open{% endif %}"{% endif %}>
+            <li{% if child_count > 0 %} class="has-sub"{% endif %}>
               <div class="nav__row">
                 <a href="{{ cat.url | prepend: site.baseurl }}"
                    {% if here == name %}aria-current="page"{% endif %}>{{ name }}</a>
                 {%- if child_count > 0 -%}
                   <button type="button" class="nav__toggle"
-                          aria-expanded="{{ open }}"
+                          aria-expanded="false"
                           aria-label="{{ name }} 하위 메뉴 펼치기">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
                   </button>
