@@ -17,21 +17,84 @@
     });
   }
 
-  // --- 모바일 메뉴 --------------------------------------------------------
+  // --- 모바일 메뉴(왼쪽 서랍) ---------------------------------------------
+  //
+  // 좁은 화면에서 왼쪽에서 밀려 들어오는 세로 메뉴. 열려 있는 동안에는
+  // 뒤쪽 본문이 같이 스크롤되지 않도록 <body> 를 잠근다.
   var menuBtn = document.getElementById('btn-menu');
   var nav = document.querySelector('.nav');
+  var scrim = document.querySelector('.nav__scrim');
+
   if (menuBtn && nav) {
+    var setMenu = function (open) {
+      nav.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.classList.toggle('nav-locked', open);
+
+      // 막은 닫힐 때 서서히 사라져야 하므로 전환이 끝난 뒤에 감춘다.
+      if (!scrim) return;
+      if (open) {
+        scrim.hidden = false;
+      } else {
+        window.setTimeout(function () {
+          if (!nav.classList.contains('is-open')) scrim.hidden = true;
+        }, 250);
+      }
+    };
+
     menuBtn.addEventListener('click', function (e) {
       e.stopPropagation();
-      var open = nav.classList.toggle('is-open');
-      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      setMenu(!nav.classList.contains('is-open'));
     });
 
-    // 바깥을 누르면 닫는다
-    document.addEventListener('click', function (e) {
-      if (!nav.classList.contains('is-open') || nav.contains(e.target)) return;
-      nav.classList.remove('is-open');
-      menuBtn.setAttribute('aria-expanded', 'false');
+    if (scrim) scrim.addEventListener('click', function () { setMenu(false); });
+
+    // 링크를 고르면 이동하면서 닫는다
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('.nav__menu a')) setMenu(false);
     });
+
+    document.addEventListener('keydown', function (e) {
+      if (!nav.classList.contains('is-open')) return;
+
+      if (e.key === 'Escape') {
+        setMenu(false);
+        menuBtn.focus();               // 닫은 뒤 돌아갈 자리를 잃지 않게
+        return;
+      }
+
+      // 열려 있는 동안 Tab 이 뒤쪽 본문으로 새어나가지 않도록 서랍 안에 가둔다.
+      // 서랍은 막으로 본문을 덮고 있어서, 안 보이는 곳에 포커스가 가면
+      // 키보드 사용자는 자기가 어디 있는지 알 수 없다.
+      if (e.key !== 'Tab') return;
+
+      var menu = nav.querySelector('.nav__menu');
+      if (!menu) return;
+
+      var items = [menuBtn].concat(
+        Array.prototype.slice.call(menu.querySelectorAll('a[href]'))
+      );
+      if (!items.length) return;
+
+      var first = items[0];
+      var last = items[items.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
+
+    // 넓은 화면으로 돌아가면 서랍 상태를 털어낸다.
+    // 열어둔 채 창을 넓히면 body 잠금만 남아 스크롤이 안 되는 일이 생긴다.
+    var wide = window.matchMedia('(min-width:901px)');
+    var onWide = function (e) { if (e.matches) setMenu(false); };
+
+    // addEventListener 는 Safari 14 부터다. 그 이전은 addListener 로 받는다.
+    if (wide.addEventListener) wide.addEventListener('change', onWide);
+    else if (wide.addListener) wide.addListener(onWide);
   }
 })();
