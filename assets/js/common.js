@@ -54,6 +54,35 @@
       if (e.target.closest('.nav__menu a')) setMenu(false);
     });
 
+    // --- 지금 보고 있는 카테고리를 펼쳐 둔다 ----------------------------
+    //
+    // 서버에서 미리 펼치지 않는 이유: 페이지마다 메뉴 높이가 달라지면
+    // 페이지 전환 때 옛/새 화면을 겹쳐 맞추는 과정에서 아래 항목이 밀렸다
+    // 돌아온다(메뉴가 흔들려 보인다). 마크업은 모든 페이지에서 동일하게
+    // 두고, 열림 상태만 여기서 얹는다.
+    //
+    // no-anim 을 잠깐 걸어 첫 펼침이 스르륵 열리지 않게 한다. 페이지를
+    // 옮길 때마다 메뉴가 열리는 연출이 반복되면 그것대로 산만하다.
+    (function () {
+      var current = nav.querySelector('.nav__menu a[aria-current="page"]');
+      if (!current) return;
+
+      var li = current.closest('.has-sub');
+      if (!li) return;
+
+      li.classList.add('no-anim', 'is-open');
+      var t = li.querySelector('.nav__toggle');
+      if (t) t.setAttribute('aria-expanded', 'true');
+
+      // 다음 프레임에 애니메이션을 되돌려 준다 — 이후 사용자가 직접
+      // 접었다 펴는 것은 정상적으로 부드럽게 동작한다.
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          li.classList.remove('no-anim');
+        });
+      });
+    })();
+
     // --- 하위 카테고리 접기/펴기 ---------------------------------------
     //
     // 화살표만 토글이다. 카테고리 이름은 링크로 남겨 둔다 — 이름까지

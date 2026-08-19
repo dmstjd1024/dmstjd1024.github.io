@@ -144,6 +144,11 @@
   opacity:1;
 }
 
+// 페이지를 열자마자 현재 카테고리를 펼칠 때는 연출을 건너뛴다.
+// (common.js 가 한 프레임만 걸었다 뗀다)
+.has-sub.no-anim > .nav__sub,
+.has-sub.no-anim > .nav__row > .nav__toggle svg { transition:none; }
+
 // 하위 카테고리는 좁은 화면의 세로 서랍에서만 쓴다.
 // 가로 바에서는 자리가 없어 최상위만 보여준다.
 .nav__sub { display:none; }
