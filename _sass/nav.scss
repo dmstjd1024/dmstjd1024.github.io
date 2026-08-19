@@ -44,7 +44,10 @@
     flex:1;
     min-width:0;
 
-    ul {
+    // 최상위 목록만 가로로 늘어놓는다.
+    // 자손 선택자(ul)로 두면 하위 목록(.nav__sub)까지 잡아서, 그쪽의
+    // display:none 을 특정도로 이겨버린다 — 가로 바에 하위 항목이 쏟아진다.
+    > ul {
       display:flex;
       align-items:center;
       gap:.25rem;
@@ -131,7 +134,7 @@
       transition:transform .25s ease;
       visibility:hidden;                   // 닫혔을 때 포커스가 들어가지 않도록
 
-      ul {
+      > ul {
         display:block;                     // 가로 바의 flex 를 세로로 되돌린다
         overflow:visible;
       }
