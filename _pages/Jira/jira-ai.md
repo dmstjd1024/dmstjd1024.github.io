@@ -66,6 +66,10 @@ Rovo는 세 덩어리로 구성된다.
 | Rovo Chat 단답 / Rovo Agent 실행 | 10 |
 | Deep Research | **100** |
 
+<div class="diagram" role="img" aria-label="Rovo 크레딧이 무료 기능과 소모 기능으로 나뉘고 요금제별 월 할당량이 다른 구조">
+{% include diagrams/jira--rovo-credits.svg %}
+</div>
+
 이 표가 이 글에서 가장 실용적인 부분이다. 계산해보면 답이 나온다.
 
 - Standard 사용자 1인의 월 크레딧은 **25** → **Deep Research(100)는 한 번도 못 돌린다**
@@ -153,6 +157,10 @@ MCP로 Claude에 붙이기,
 여기가 개발자에게 가장 쓸모 있는 부분이다.
 
 **MCP(Model Context Protocol)** 는 AI 도구가 외부 시스템에 접근하는 표준 규격이다. Atlassian이 **공식 MCP 서버**를 제공하므로, Claude Code 같은 도구에서 JIRA 이슈를 직접 읽고 쓸 수 있다.
+
+<div class="diagram" role="img" aria-label="개발 도구가 MCP 서버를 거쳐 지라 이슈를 읽고 쓰는 연결 구조">
+{% include diagrams/jira--mcp-flow.svg %}
+</div>
 
 ## 상태와 접근 권한
 

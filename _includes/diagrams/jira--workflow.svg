@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="워크플로우가 상태 사이의 이동 경로를 정해두어 건너뛰기를 막는 구조">
+  <marker id="jiraw-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">워크플로우 — 상태 사이의 정해진 길</text>
+
+  <rect class="dg-item" x="24" y="60" width="140" height="48" rx="6"/>
+  <text class="dg-k" x="44" y="90">할 일</text>
+
+  <path class="dg-arw" d="M172 84 H204" marker-end="url(#jiraw-a)"/>
+
+  <rect class="dg-lead" x="212" y="60" width="140" height="48" rx="6"/>
+  <text class="dg-k" x="232" y="90">진행 중</text>
+
+  <path class="dg-arw" d="M360 84 H392" marker-end="url(#jiraw-a)"/>
+
+  <rect class="dg-lead" x="400" y="60" width="140" height="48" rx="6"/>
+  <text class="dg-k" x="420" y="90">리뷰 중</text>
+
+  <path class="dg-arw" d="M548 84 H580" marker-end="url(#jiraw-a)"/>
+
+  <rect class="dg-out" x="588" y="60" width="108" height="48" rx="6"/>
+  <text class="dg-k" x="608" y="90">완료</text>
+
+  <path class="dg-arw" d="M470 116 V138 H282 V116" marker-end="url(#jiraw-a)"/>
+  <text class="dg-s" x="316" y="156">반려되면 되돌아간다</text>
+
+  <text class="dg-t" x="24" y="192">상태(Status)</text>
+  <text class="dg-s" x="24" y="212">지금 어디쯤 와 있는지</text>
+
+  <text class="dg-t" x="248" y="192">전환(Transition)</text>
+  <text class="dg-s" x="248" y="212">상태를 바꾸는 행위 — 화살표 하나하나</text>
+
+  <rect class="dg-warn" x="24" y="230" width="672" height="44" rx="8"/>
+  <text class="dg-v" x="44" y="257">길이 없으면 못 간다 — &quot;할 일&quot;에서 &quot;완료&quot;로 건너뛰는 것을 막는 게 워크플로우의 역할</text>
+</svg>

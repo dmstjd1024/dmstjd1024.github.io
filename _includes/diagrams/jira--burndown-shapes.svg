@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="번다운 차트의 정상 모양과 절벽형, 평평한 구간, 중간 증가 세 가지 문제 모양 비교">
+
+  <text class="dg-h" x="24" y="30">번다운 차트 — 모양이 곧 증상이다</text>
+
+  <!-- 1. 정상 -->
+  <rect class="dg-lane" x="24" y="52" width="156" height="140" rx="10"/>
+  <text class="dg-t" x="40" y="76">정상</text>
+  <path class="dg-arw" d="M48 92 V168 H164"/>
+  <path class="dg-join" d="M48 96 L164 164" stroke-dasharray="3 3"/>
+  <path class="dg-arw" d="M48 98 L72 112 L96 124 L120 140 L144 154 L160 164" stroke-width="2"/>
+  <text class="dg-s" x="40" y="186">이상선을 따라 내려간다</text>
+
+  <!-- 2. 절벽형 -->
+  <rect class="dg-lane" x="196" y="52" width="156" height="140" rx="10"/>
+  <text class="dg-t" x="212" y="76">절벽형</text>
+  <path class="dg-arw" d="M220 92 V168 H336"/>
+  <path class="dg-join" d="M220 96 L336 164" stroke-dasharray="3 3"/>
+  <path class="dg-arw" d="M220 98 H308 L316 164" stroke-width="2"/>
+  <text class="dg-s" x="212" y="186">마지막 날 한꺼번에</text>
+
+  <!-- 3. 평평한 구간 -->
+  <rect class="dg-lane" x="368" y="52" width="156" height="140" rx="10"/>
+  <text class="dg-t" x="384" y="76">평평한 구간</text>
+  <path class="dg-arw" d="M392 92 V168 H508"/>
+  <path class="dg-join" d="M392 96 L508 164" stroke-dasharray="3 3"/>
+  <path class="dg-arw" d="M392 98 L416 116 H468 L492 156 L504 164" stroke-width="2"/>
+  <text class="dg-s" x="384" y="186">며칠간 안 줄어든다</text>
+
+  <!-- 4. 중간 증가 -->
+  <rect class="dg-lane" x="540" y="52" width="156" height="140" rx="10"/>
+  <text class="dg-t" x="556" y="76">중간에 증가</text>
+  <path class="dg-arw" d="M564 92 V168 H680"/>
+  <path class="dg-join" d="M564 96 L680 164" stroke-dasharray="3 3"/>
+  <path class="dg-arw" d="M564 104 L588 116 L604 96 L636 134 L664 164" stroke-width="2"/>
+  <text class="dg-s" x="556" y="186">일이 추가됐다</text>
+
+  <!-- 해석 -->
+  <rect class="dg-row" x="24" y="208" width="328" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="232">절벽형 · 평평한 구간</text>
+  <text class="dg-v" x="44" y="254">상태를 그때그때 안 옮겼거나</text>
+  <text class="dg-s" x="44" y="272">이슈가 너무 커서 중간 진척이 안 보인다</text>
+
+  <rect class="dg-row" x="368" y="208" width="328" height="72" rx="8"/>
+  <text class="dg-t" x="388" y="232">중간에 증가</text>
+  <text class="dg-v" x="388" y="254">스프린트 도중에 일이 밀려 들어왔다</text>
+  <text class="dg-s" x="388" y="272">매번 그러면 계획 방식을 다시 본다</text>
+
+  <text class="dg-s" x="24" y="312">점선은 이상선(매일 균등하게 줄어드는 가상선), 실선은 실제 남은 양이다</text>
+  <text class="dg-s" x="24" y="336">보드가 현실과 다르면 이 차트도 거짓말을 한다 — 상태를 제때 옮기는 게 먼저다</text>
+</svg>
