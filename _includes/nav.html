@@ -83,26 +83,22 @@
                   </button>
                 {%- endif -%}
               </div>
-              {%- if child_count > 0 -%}
-                {%- comment -%}
-                  안쪽 래퍼(nav__sub__inner)가 하나 더 있는 이유는 접기 때문이다.
-                  접기는 grid 트랙을 0fr 로 눌러 닫는데, 트랙은 하나뿐이라
-                  li 를 직접 얹으면 두 번째 항목부터는 눌리지 않는다.
-                  목록 전체를 이 래퍼 하나에 담아 한 트랙에 앉힌다.
-                {%- endcomment -%}
-                <div class="nav__sub">
-                  <ul class="nav__sub__inner">
-                    {%- for sub in subs -%}
-                      {%- assign sseg = sub.path | remove_first: '_pages/' | split: '/' -%}
-                      {%- if sseg.size == 3 -%}
-                        <li>
-                          <a href="{{ sub.url | prepend: site.baseurl }}">{{ sseg[1] }}</a>
-                        </li>
-                      {%- endif -%}
-                    {%- endfor -%}
-                  </ul>
-                </div>
-              {%- endif -%}
+              {%- comment -%}
+                깊이는 여기서 고정하지 않는다. nav-sub.html 이 자기 자신을 다시
+                불러 _pages 아래에 실제로 있는 만큼만 단을 내려간다 — 3단짜리
+                디렉터리를 새로 넣어도 이 파일은 고칠 것이 없다.
+
+                안쪽 래퍼(nav__sub__inner)가 한 단마다 하나씩 더 있는 이유는
+                접기 때문이다. 접기는 grid 트랙을 0fr 로 눌러 닫는데, 트랙은
+                하나뿐이라 li 를 직접 얹으면 두 번째 항목부터는 눌리지 않는다.
+                목록 전체를 이 래퍼 하나에 담아 한 트랙에 앉힌다.
+
+                _pfx 를 따로 두는 이유: include 인자에는 필터를 쓸 수 없다.
+                바로 앞 줄에서 넣고 바로 넘긴다(assign 은 전역이라 미리
+                올려 두면 재귀 도중 값이 바뀐다).
+              {%- endcomment -%}
+              {%- assign _pfx = prefix -%}
+              {%- include nav-sub.html cats=nav_cats prefix=_pfx depth=3 -%}
             </li>
           {%- endif -%}
         {%- endfor -%}
