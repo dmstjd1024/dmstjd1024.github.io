@@ -215,6 +215,8 @@ sh: can't create /app/data/should-fail.txt: Read-only file system
 
 마운트는 편리하지만 알아둬야 할 동작이 있다.
 
+{% include diagrams/docker6--mount-shadow.svg %}
+
 ### 1. 마운트하면 원래 있던 내용이 가려진다
 
 컨테이너에 원래 있던 디렉터리 위에 마운트하면 어떻게 될까?

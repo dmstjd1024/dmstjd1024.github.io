@@ -64,6 +64,8 @@ spec:
 
 이 둘이 서로 다르면 매니페스트 적용 자체가 안 된다. **자주 하는 실수다.**
 
+{% include diagrams/k8s--deploy-service.svg %}
+
 ### 실행
 
 ```bash
