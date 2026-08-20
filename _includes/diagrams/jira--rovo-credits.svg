@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="Rovo 크레딧이 무료 기능과 소모 기능으로 나뉘고 요금제별 월 할당량이 다른 구조">
+
+  <text class="dg-h" x="24" y="30">Rovo 크레딧 — 무엇이 공짜인지부터 본다</text>
+
+  <rect class="dg-out" x="24" y="52" width="328" height="124" rx="10"/>
+  <text class="dg-t" x="44" y="78">크레딧을 쓰지 않는다</text>
+  <text class="dg-v" x="44" y="102">Rovo Search — 통합 검색</text>
+  <text class="dg-v" x="44" y="124">요약 — 긴 댓글 스레드 정리</text>
+  <text class="dg-v" x="44" y="146">용어 정의 · 차트 인사이트</text>
+  <text class="dg-s" x="44" y="166">여기부터 쓰면 부담이 없다</text>
+
+  <rect class="dg-warn" x="368" y="52" width="328" height="124" rx="10"/>
+  <text class="dg-t" x="388" y="78">크레딧을 쓴다</text>
+  <text class="dg-v" x="388" y="102">Rovo Chat 단답 — 10</text>
+  <text class="dg-v" x="388" y="124">Rovo Agent 실행 — 10</text>
+  <text class="dg-k" x="388" y="146">Deep Research — 100</text>
+  <text class="dg-s" x="388" y="166">100 은 Standard 한 달치를 넘는다</text>
+
+  <text class="dg-t" x="24" y="212">요금제별 월 할당 (사용자당, 조직 단위로 합산)</text>
+
+  <rect class="dg-item" x="24" y="224" width="160" height="56" rx="8"/>
+  <text class="dg-k" x="44" y="248">Free</text>
+  <text class="dg-s" x="44" y="268">크레딧 없음</text>
+
+  <rect class="dg-row" x="196" y="224" width="160" height="56" rx="8"/>
+  <text class="dg-k" x="216" y="248">Standard</text>
+  <text class="dg-v" x="216" y="268">25</text>
+
+  <rect class="dg-row" x="368" y="224" width="160" height="56" rx="8"/>
+  <text class="dg-k" x="388" y="248">Premium</text>
+  <text class="dg-v" x="388" y="268">70</text>
+
+  <rect class="dg-lead" x="540" y="224" width="156" height="56" rx="8"/>
+  <text class="dg-k" x="560" y="248">Enterprise</text>
+  <text class="dg-v" x="560" y="268">150</text>
+
+  <text class="dg-s" x="24" y="308">매월 초기화되고 이월되지 않는다 — 검색·요약 위주로 쓰고 Chat 은 아껴 쓰는 편이 낫다</text>
+</svg>

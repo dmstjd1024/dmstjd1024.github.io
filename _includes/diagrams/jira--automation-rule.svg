@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="자동화 규칙이 트리거, 조건, 액션 세 단계로 흐르는 구조">
+  <marker id="jiraar-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">자동화 규칙은 세 단계로 읽는다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="208" height="100" rx="10"/>
+  <text class="dg-t" x="44" y="78">트리거 (Trigger)</text>
+  <text class="dg-b" x="44" y="100">언제?</text>
+  <text class="dg-s" x="44" y="122">이슈가 만들어졌을 때</text>
+  <text class="dg-s" x="44" y="140">매일 오전 10시</text>
+
+  <path class="dg-arw" d="M240 100 H268" marker-end="url(#jiraar-a)"/>
+
+  <rect class="dg-lane" x="276" y="52" width="180" height="100" rx="10"/>
+  <text class="dg-t" x="296" y="78">조건 (Condition)</text>
+  <text class="dg-b" x="296" y="100">맞으면?</text>
+  <text class="dg-s" x="296" y="122">이슈 타입 = 버그</text>
+  <text class="dg-s" x="296" y="140">생략 가능하다</text>
+
+  <path class="dg-arw" d="M464 100 H492" marker-end="url(#jiraar-a)"/>
+
+  <rect class="dg-out" x="500" y="52" width="196" height="100" rx="10"/>
+  <text class="dg-t" x="520" y="78">액션 (Action)</text>
+  <text class="dg-b" x="520" y="100">무엇을?</text>
+  <text class="dg-s" x="520" y="122">담당자 지정 · 댓글</text>
+  <text class="dg-s" x="520" y="140">Slack 알림 전송</text>
+
+  <text class="dg-t" x="24" y="188">예약 트리거는 JQL 과 짝을 이룬다</text>
+
+  <rect class="dg-code" x="24" y="200" width="672" height="52" rx="8"/>
+  <text class="dg-v" x="44" y="222">매일 오전 10시  +  status = &quot;In Progress&quot; AND status CHANGED BEFORE -3d</text>
+  <text class="dg-s" x="44" y="242">→ 사흘 넘게 진행 중인 이슈만 골라 알린다</text>
+
+  <text class="dg-s" x="24" y="278">JQL 로 &quot;누구를&quot;을 정하고, 자동화가 &quot;무엇을&quot;을 한다 — 둘을 붙일 때 위력이 나온다</text>
+  <text class="dg-s" x="24" y="300">처음에는 알림만 하는 규칙부터 만든다. 상태를 바꾸는 규칙은 되돌리기 번거롭다</text>
+</svg>

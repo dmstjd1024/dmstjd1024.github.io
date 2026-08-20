@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="누적 흐름도에서 리뷰 중 띠가 두꺼워지며 병목을 드러내는 구조">
+  <marker id="jiracfd-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">누적 흐름도 — 두꺼워지는 띠가 병목이다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="428" height="188" rx="10"/>
+
+  <path class="dg-arw" d="M56 76 V216 H428"/>
+  <text class="dg-s" x="30" y="70">이슈</text>
+  <text class="dg-s" x="396" y="234">시간</text>
+
+  <!-- 할 일 (맨 아래) -->
+  <path class="dg-item" d="M56 216 L160 208 L264 202 L368 198 L420 196 L420 216 Z"/>
+  <text class="dg-s" x="300" y="212">할 일</text>
+
+  <!-- 진행 중 -->
+  <path class="dg-row" d="M56 216 L160 208 L264 202 L368 198 L420 196 L420 176 L368 176 L264 178 L160 186 L56 200 Z"/>
+  <text class="dg-s" x="292" y="192">진행 중</text>
+
+  <!-- 리뷰 중 : 점점 두꺼워진다 -->
+  <path class="dg-warn" d="M56 200 L160 186 L264 178 L368 176 L420 176 L420 116 L368 124 L264 144 L160 168 L56 188 Z"/>
+  <text class="dg-k" x="280" y="160">리뷰 중</text>
+
+  <!-- 완료 (맨 위) -->
+  <path class="dg-out" d="M56 188 L160 168 L264 144 L368 124 L420 116 L420 84 L368 88 L264 104 L160 132 L56 180 Z"/>
+  <text class="dg-s" x="300" y="118">완료</text>
+
+  <path class="dg-arw" d="M436 146 H468" marker-end="url(#jiracfd-a)"/>
+
+  <rect class="dg-row" x="480" y="52" width="216" height="92" rx="8"/>
+  <text class="dg-t" x="500" y="76">리뷰 띠가 두꺼워진다</text>
+  <text class="dg-v" x="500" y="100">= 리뷰가 밀리고 있다</text>
+  <text class="dg-s" x="500" y="122">들어오는 속도 &gt; 처리 속도</text>
+
+  <rect class="dg-out" x="480" y="156" width="216" height="84" rx="8"/>
+  <text class="dg-t" x="500" y="180">대응</text>
+  <text class="dg-s" x="500" y="202">리뷰 우선순위를 올린다</text>
+  <text class="dg-s" x="500" y="222">또는 WIP 제한을 건다</text>
+
+  <text class="dg-s" x="24" y="272">완료 띠의 기울기가 팀의 실제 처리 속도다 — 완만해지면 느려지고 있다는 뜻</text>
+  <text class="dg-s" x="24" y="296">어느 띠가 두꺼워지는지만 봐도 어디를 손봐야 하는지 나온다</text>
+</svg>
