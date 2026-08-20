@@ -27,19 +27,21 @@
 // 겹쳐 보인다(글자가 오른쪽 위에 중복돼 뜨는 현상).
 .nav__inner { view-transition-name: site-nav; }
 
-// 왼쪽 카테고리 열은 페이지마다 "같지 않다".
+// 왼쪽 카테고리 열도 상단바와 같이 전환에서 뺀다.
 //
-// 지금 보고 있는 카테고리를 펼친 채로 그리므로 /AI/ 에서는 하위 5줄이
-// 열려 있고 /Docker/ 에서는 아무것도 열려 있지 않다. 두 스냅샷의 높이가
-// 다르니 전환 중 브라우저가 옛 모습과 새 모습을 겹쳐 맞추면서 아래
-// 항목들이 밀렸다 돌아온다 — 메뉴 글자가 흔들려 보이는 원인이다.
+// 한동안은 반대로 했다 — 이름을 주지 않아 루트 스냅샷에 섞이게 뒀다.
+// 페이지마다 펼침 높이가 달라서(/AI/ 는 하위 5줄, /Docker/ 는 0줄) 이름을
+// 주면 옛/새 스냅샷이 어긋난 채 교차돼 항목이 밀렸기 때문이다.
 //
-// 이름을 주고 애니메이션만 끄는 방식으로는 막을 수 없다. 이름이 붙는 순간
-// 그 요소는 전환에 참여해 옛/새 스냅샷이 교차되기 때문이다. 아예 참여시키지
-// 않아야 한다 — 이름을 주지 않으면 루트 스냅샷의 일부로만 그려지고,
-// 메뉴는 fixed 라 스크롤·레이아웃 영향 없이 제자리에 남는다.
+// 그 전제가 사라졌다. 펼침 상태를 sessionStorage 로 이어받으므로
+// (_includes/nav_state.html) 이제 페이지가 바뀌어도 메뉴 높이가 같다.
 //
-// (아래 ::view-transition-old/new(site-menu) 규칙도 함께 지웠다.)
+// 반면 이름을 안 주는 쪽의 대가가 남아 있었다. 메뉴가 루트 스냅샷 안에
+// 있으면 옛/새 두 벌이 vt-out/vt-in 의 translateY 만큼 어긋나 겹쳐 그려진다.
+// 글자가 두 겹으로 번져 전부 굵어 보이던 것이 이것이다.
+//
+// 이름을 주고 애니메이션을 끄면 한 벌만 제자리에 남는다.
+.nav__menu { view-transition-name: site-menu; }
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
@@ -55,11 +57,20 @@
 
 // 고정 영역은 움직이지 않는다. 위치가 같으므로 애니메이션이 필요 없고,
 // 굳이 넣으면 오히려 미세하게 떨린다.
+//
+// mix-blend-mode:normal 이 특히 중요하다. 기본값은 두 벌을 섞어 그리는데,
+// 같은 글자가 겹치면 획이 진해져 굵어 보인다.
 ::view-transition-old(site-nav),
-::view-transition-new(site-nav) {
+::view-transition-new(site-nav),
+::view-transition-old(site-menu),
+::view-transition-new(site-menu) {
   animation:none;
   mix-blend-mode:normal;
 }
+
+// 옛 메뉴는 아예 그리지 않는다. 애니메이션을 꺼도 두 벌이 같은 자리에
+// 겹쳐 있으면 안티에일리어싱이 더해져 여전히 살짝 두꺼워진다.
+::view-transition-old(site-menu) { display:none; }
 
 @media (prefers-reduced-motion:reduce) {
   ::view-transition-old(*),
