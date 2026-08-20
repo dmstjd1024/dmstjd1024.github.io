@@ -140,15 +140,29 @@
 //
 // grid-template-rows 를 0fr -> 1fr 로 두면 브라우저가 내용의 실제 높이를
 // 기준으로 보간한다. 항목이 1개든 5개든 같은 속도로 자연스럽게 열린다.
+// 트랙은 반드시 하나여야 한다. grid-template-rows 는 트랙을 하나만 정의하는데
+// 하위 항목이 2개 이상이면 나머지는 "암시적 트랙"으로 생기고, 그 트랙에는
+// 0fr 이 걸리지 않아 제 높이 그대로 남는다. 하위가 5개인 AI 는 접은 상태에서
+// 4줄이 그대로 펼쳐져 보였다 — 메뉴 한가운데가 뻥 비어 보이던 원인이다.
+//
+// 그래서 li 를 직접 트랙에 앉히지 않고, 목록 전체를 한 트랙에 넣는다.
+// grid-auto-rows:0 으로 혹시 생길 암시적 트랙까지 눌러 둔다.
 .has-sub > .nav__sub {
   display:grid;
   grid-template-rows:0fr;
+  grid-auto-rows:0;
   opacity:0;
   transition:grid-template-rows .22s ease, opacity .18s ease;
 
   // fr 이 실제로 줄어들려면 자식이 min-height:auto 를 벗어나야 한다.
   // 안 그러면 내용 높이가 하한이 되어 0fr 이 먹지 않는다.
-  > li {
+  //
+  // 항목이 몇 개든 이 래퍼 하나만 트랙을 차지하므로 0fr 이 전부를 덮는다.
+  // min-width 도 함께 풀어야 한다. 그리드 항목의 기본값은 min-width:auto 라
+  // 내용보다 좁아지지 못하는데, "처음 만난 리액트" 처럼 긴 이름이 들어오면
+  // 그 폭이 하한이 되어 레일(12rem) 밖으로 삐져나온다.
+  > .nav__sub__inner {
+    min-width:0;
     min-height:0;
     overflow:hidden;
   }
@@ -163,9 +177,13 @@
 .has-sub.no-anim > .nav__sub,
 .has-sub.no-anim > .nav__row > .nav__toggle svg { transition:none; }
 
-// 하위 카테고리는 좁은 화면의 세로 서랍에서만 쓴다.
-// 가로 바에서는 자리가 없어 최상위만 보여준다.
-.nav__sub { display:none; }
+// 하위 카테고리는 좁은 화면의 세로 서랍과 넓은 화면의 왼쪽 레일에서만 쓴다.
+// 그 사이(가로 바로 남는 구간)에서는 자리가 없어 최상위만 보여준다.
+//
+// .has-sub > .nav__sub (0,2,0) 가 위에서 display:grid 를 이미 걸어 뒀으므로
+// 여기서 .nav__sub (0,1,0) 로 덮으려 하면 특정도에서 져 아무 효과가 없다.
+// 실제로 감추려면 같은 형태로 맞받아야 한다.
+.has-sub > .nav__sub { display:none; }
 
 // 서랍 바깥을 덮는 막. 넓은 화면에서는 아예 쓰지 않는다.
 .nav__scrim { display:none; }
@@ -227,18 +245,20 @@
   // 여백·세로선은 .nav__sub 가 아니라 안쪽 li 에 준다. 접기 애니메이션이
   // grid 0fr 로 눌러 닫는데, 바깥에 margin/border 가 있으면 다 접힌 뒤에도
   // 그 선이 남아 얇은 자국이 보인다.
+  .has-sub > .nav__sub { display:grid; }
+
   .nav__sub {
     margin:0;
     padding:0;
     border-left:0;
 
-    > li {
+    > .nav__sub__inner > li {
       margin-left:.75rem;
       padding-left:.6rem;
       border-left:1px solid var(--border);
     }
-    > li:first-child { padding-top:.1rem; }
-    > li:last-child  { padding-bottom:.35rem; }
+    > .nav__sub__inner > li:first-child { padding-top:.1rem; }
+    > .nav__sub__inner > li:last-child  { padding-bottom:.35rem; }
 
     a {
       padding:.4rem .6rem;
@@ -332,18 +352,20 @@
 
   // 하위 카테고리 — 좁은 화면 서랍과 같은 모양
   // (여백·세로선을 안쪽 li 에 두는 이유는 위 서랍 쪽 주석 참고)
+  .has-sub > .nav__sub { display:grid; }
+
   .nav__sub {
     margin:0;
     padding:0;
     border-left:0;
 
-    > li {
+    > .nav__sub__inner > li {
       margin-left:.6rem;
       padding-left:.55rem;
       border-left:1px solid var(--border);
     }
-    > li:first-child { padding-top:.1rem; }
-    > li:last-child  { padding-bottom:.4rem; }
+    > .nav__sub__inner > li:first-child { padding-top:.1rem; }
+    > .nav__sub__inner > li:last-child  { padding-bottom:.4rem; }
 
     a {
       padding:.25rem .5rem;
