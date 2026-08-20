@@ -84,16 +84,24 @@
                 {%- endif -%}
               </div>
               {%- if child_count > 0 -%}
-                <ul class="nav__sub">
-                  {%- for sub in subs -%}
-                    {%- assign sseg = sub.path | remove_first: '_pages/' | split: '/' -%}
-                    {%- if sseg.size == 3 -%}
-                      <li>
-                        <a href="{{ sub.url | prepend: site.baseurl }}">{{ sseg[1] }}</a>
-                      </li>
-                    {%- endif -%}
-                  {%- endfor -%}
-                </ul>
+                {%- comment -%}
+                  안쪽 래퍼(nav__sub__inner)가 하나 더 있는 이유는 접기 때문이다.
+                  접기는 grid 트랙을 0fr 로 눌러 닫는데, 트랙은 하나뿐이라
+                  li 를 직접 얹으면 두 번째 항목부터는 눌리지 않는다.
+                  목록 전체를 이 래퍼 하나에 담아 한 트랙에 앉힌다.
+                {%- endcomment -%}
+                <div class="nav__sub">
+                  <ul class="nav__sub__inner">
+                    {%- for sub in subs -%}
+                      {%- assign sseg = sub.path | remove_first: '_pages/' | split: '/' -%}
+                      {%- if sseg.size == 3 -%}
+                        <li>
+                          <a href="{{ sub.url | prepend: site.baseurl }}">{{ sseg[1] }}</a>
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                </div>
               {%- endif -%}
             </li>
           {%- endif -%}
