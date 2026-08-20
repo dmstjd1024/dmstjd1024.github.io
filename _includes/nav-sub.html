@@ -1,0 +1,54 @@
+{%- comment -%}
+  하위 카테고리 한 단(段)을 그린다. 자기 자신을 다시 불러 더 깊은 단까지 내려간다.
+
+  파라미터: cats(전체 index.md 목록) / prefix(부모 경로, 슬래시로 끝난다) / depth(이 단의 seg.size)
+
+  주의 1. Liquid 의 assign 은 전역이다. 재귀 호출이 끝나고 돌아오면 지역 변수처럼
+     보이던 값이 자식이 넣은 값으로 바뀌어 있다. 그래서 prefix/depth 는 절대
+     지역 변수에 복사해 두고 쓰지 않고, include.* 를 그때그때 직접 읽는다.
+  주의 2. comment 블록 안에도 진짜 태그를 쓰면 Liquid 가 파싱한다. 예시를 적을 때
+     중괄호 태그를 그대로 넣지 않는다.
+{%- endcomment -%}
+{%- assign subs = include.cats | where_exp: "s", "s.path contains include.prefix" -%}
+{%- assign child_count = 0 -%}
+{%- for s in subs -%}
+  {%- assign ss = s.path | remove_first: '_pages/' | split: '/' -%}
+  {%- if ss.size == include.depth -%}{%- assign child_count = child_count | plus: 1 -%}{%- endif -%}
+{%- endfor -%}
+{%- if child_count > 0 -%}
+<div class="nav__sub">
+                  <ul class="nav__sub__inner">
+                    {%- for sub in subs -%}
+                      {%- assign sseg = sub.path | remove_first: '_pages/' | split: '/' -%}
+                      {%- if sseg.size == include.depth -%}
+                        {%- assign ni = include.depth | minus: 2 -%}
+                        {%- assign nm = sseg[ni] -%}
+                        {%- assign cp = include.prefix | append: nm | append: '/' -%}
+                        {%- assign cd = include.depth | plus: 1 -%}
+                        {%- assign gc = 0 -%}
+                        {%- if include.depth < 8 -%}
+                          {%- for g in subs -%}
+                            {%- assign gs = g.path | remove_first: '_pages/' | split: '/' -%}
+                            {%- if gs.size == cd and g.path contains cp -%}{%- assign gc = gc | plus: 1 -%}{%- endif -%}
+                          {%- endfor -%}
+                        {%- endif -%}
+                        <li{% if gc > 0 %} class="has-sub"{% endif %}>
+                          {%- if gc > 0 -%}
+                          <div class="nav__row">
+                          <a href="{{ sub.url | prepend: site.baseurl }}">{{ nm }}</a>
+                          <button type="button" class="nav__toggle" aria-expanded="false" aria-label="{{ nm }} 하위 메뉴 펼치기">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
+                          </button>
+                          </div>
+                          {%- assign cp2 = include.prefix | append: nm | append: '/' -%}
+                          {%- assign cd2 = include.depth | plus: 1 -%}
+                          {%- include nav-sub.html cats=include.cats prefix=cp2 depth=cd2 -%}
+                          {%- else %}
+                          <a href="{{ sub.url | prepend: site.baseurl }}">{{ nm }}</a>
+                        {%- endif %}
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                </div>
+{%- endif -%}
