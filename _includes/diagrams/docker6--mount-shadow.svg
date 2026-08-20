@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="디렉터리를 마운트하면 원래 있던 내용이 가려지지만 파일 하나만 마운트하면 나머지는 그대로 남는다">
+  <marker id="dk6ms-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">마운트하면 원래 있던 파일은 어떻게 되나</text>
+
+  <text class="dg-t" x="24" y="62">디렉터리를 통째로 마운트</text>
+
+  <rect class="dg-item" x="24" y="76" width="150" height="80" rx="8"/>
+  <text class="dg-k" x="44" y="100">내 폴더</text>
+  <text class="dg-s" x="44" y="122">config.json</text>
+  <text class="dg-s" x="44" y="142">1개뿐</text>
+
+  <path class="dg-arw" d="M182 116 H222" marker-end="url(#dk6ms-a)"/>
+
+  <rect class="dg-warn" x="234" y="76" width="220" height="80" rx="8"/>
+  <text class="dg-k" x="254" y="100">컨테이너의 /etc</text>
+  <text class="dg-s" x="254" y="122">원래 있던 수십 개 파일이</text>
+  <text class="dg-s" x="254" y="142">전부 안 보이게 된다</text>
+
+  <rect class="dg-out" x="482" y="76" width="214" height="80" rx="8"/>
+  <text class="dg-k" x="502" y="100">결과</text>
+  <text class="dg-s" x="502" y="122">config.json 만 남는다</text>
+  <text class="dg-s" x="502" y="142">지워진 건 아니고 가려진 것</text>
+
+  <text class="dg-t" x="24" y="196">파일 하나만 마운트</text>
+
+  <rect class="dg-item" x="24" y="210" width="150" height="80" rx="8"/>
+  <text class="dg-k" x="44" y="234">내 파일</text>
+  <text class="dg-s" x="44" y="256">config.json</text>
+  <text class="dg-s" x="44" y="276">하나만 지정</text>
+
+  <path class="dg-arw" d="M182 250 H222" marker-end="url(#dk6ms-a)"/>
+
+  <rect class="dg-row" x="234" y="210" width="220" height="80" rx="8"/>
+  <text class="dg-k" x="254" y="234">컨테이너의 /etc</text>
+  <text class="dg-s" x="254" y="256">나머지 파일은</text>
+  <text class="dg-s" x="254" y="276">그대로 보인다</text>
+
+  <rect class="dg-out" x="482" y="210" width="214" height="80" rx="8"/>
+  <text class="dg-k" x="502" y="234">결과</text>
+  <text class="dg-s" x="502" y="256">그 파일만 바뀌고</text>
+  <text class="dg-s" x="502" y="276">나머지는 유지된다</text>
+
+  <text class="dg-v" x="24" y="314">설정 파일 하나만 갈아끼울 때 디렉터리째 마운트하면 컨테이너가 망가지는 이유다</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="docker image tag 는 이미지를 복사하지 않고 같은 실체에 이름표를 하나 더 단다">
+  <marker id="dk5tn-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">태그를 달아도 이미지는 늘지 않는다</text>
+
+  <rect class="dg-item" x="24" y="56" width="300" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="82">diamol/node:latest</text>
+  <text class="dg-s" x="44" y="104">IMAGE ID  8e0eeb0a11b3</text>
+  <text class="dg-s" x="44" y="120">원래 있던 이름</text>
+
+  <rect class="dg-item" x="396" y="56" width="300" height="72" rx="8"/>
+  <text class="dg-t" x="416" y="82">myaccount/verify-demo:v1</text>
+  <text class="dg-s" x="416" y="104">IMAGE ID  8e0eeb0a11b3</text>
+  <text class="dg-s" x="416" y="120">tag 로 새로 단 이름</text>
+
+  <path class="dg-arw" d="M174 136 V162 H360 V182" marker-end="url(#dk5tn-a)"/>
+  <path class="dg-arw" d="M546 136 V162 H360 V182" marker-end="url(#dk5tn-a)"/>
+
+  <rect class="dg-out" x="200" y="188" width="320" height="52" rx="8"/>
+  <text class="dg-t" x="220" y="212">가리키는 실체는 하나</text>
+  <text class="dg-s" x="220" y="232">디스크에 한 번만 저장돼 있다</text>
+
+  <text class="dg-v" x="24" y="270">docker image ls 에는 2줄로 보이고 SIZE 도 각각 찍히지만</text>
+  <text class="dg-s" x="24" y="292">IMAGE ID 가 같다 — docker system df 로 보면 사용량이 늘지 않은 게 확인된다</text>
+</svg>
