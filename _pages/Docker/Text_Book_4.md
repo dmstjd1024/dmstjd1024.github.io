@@ -61,6 +61,8 @@ docker image tag image-gallery [계정명]/image-gallery:v1
 `tag` 명령은 이미지를 복사하는 게 아니라 **같은 이미지에 이름표를 하나 더 다는 것**이다.
 직접 확인해보면 명확하다.
 
+{% include diagrams/docker5--tag-not-copy.svg %}
+
 ```docker
 docker image tag diamol/node myaccount/verify-demo:v1
 docker image ls

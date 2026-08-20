@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="디플로이먼트와 서비스가 각각 라벨을 보고 같은 파드 묶음을 찾아내는 구조">
+  <marker id="k8sds-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">둘은 파드를 이름이 아니라 라벨로 찾는다</text>
+
+  <rect class="dg-item" x="24" y="56" width="300" height="76" rx="8"/>
+  <text class="dg-t" x="44" y="80">디플로이먼트</text>
+  <text class="dg-s" x="44" y="102">개수를 맞춰 놓는다</text>
+  <text class="dg-v" x="44" y="122">selector: app=nginx</text>
+
+  <rect class="dg-item" x="396" y="56" width="300" height="76" rx="8"/>
+  <text class="dg-t" x="416" y="80">서비스</text>
+  <text class="dg-s" x="416" y="102">들어온 요청을 나눠 준다</text>
+  <text class="dg-v" x="416" y="122">selector: app=nginx</text>
+
+  <path class="dg-arw" d="M174 140 V166 H360 V186" marker-end="url(#k8sds-a)"/>
+  <path class="dg-arw" d="M546 140 V166 H360 V186" marker-end="url(#k8sds-a)"/>
+
+  <rect class="dg-lane" x="24" y="192" width="672" height="90" rx="10"/>
+  <text class="dg-t" x="44" y="216">라벨이 app=nginx 인 파드들</text>
+
+  <rect class="dg-row" x="44" y="228" width="196" height="40" rx="6"/>
+  <text class="dg-v" x="60" y="253">nginx-7d9c...-a1b2</text>
+
+  <rect class="dg-row" x="262" y="228" width="196" height="40" rx="6"/>
+  <text class="dg-v" x="278" y="253">nginx-7d9c...-c3d4</text>
+
+  <rect class="dg-row" x="480" y="228" width="196" height="40" rx="6"/>
+  <text class="dg-v" x="496" y="253">nginx-7d9c...-e5f6</text>
+
+  <text class="dg-v" x="24" y="308">파드 이름은 만들어질 때마다 바뀌지만 라벨은 그대로다</text>
+  <text class="dg-s" x="24" y="326">그래서 파드가 죽고 새로 떠도 서비스는 다시 설정할 필요가 없다</text>
+</svg>
