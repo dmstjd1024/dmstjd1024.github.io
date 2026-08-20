@@ -44,7 +44,10 @@
     flex:1;
     min-width:0;
 
-    ul {
+    // 최상위 목록만 가로로 늘어놓는다.
+    // 자손 선택자(ul)로 두면 하위 목록(.nav__sub)까지 잡아서, 그쪽의
+    // display:none 을 특정도로 이겨버린다 — 가로 바에 하위 항목이 쏟아진다.
+    > ul {
       display:flex;
       align-items:center;
       gap:.25rem;
@@ -92,29 +95,278 @@
 // 메뉴 버튼은 모바일에서만 쓴다
 #btn-menu { display:none; }
 
+// ---------------------------------------------------------------------------
+// 접기/펴기
+//
+// 하위가 있는 카테고리만 화살표 버튼을 단다. 이름 자체는 여전히 링크라
+// 누르면 그 카테고리로 가고, 접었다 펴는 것은 화살표로만 한다 — 이름을
+// 토글로 만들면 카테고리 페이지에 갈 방법이 없어진다.
+// ---------------------------------------------------------------------------
+.nav__row {
+  display:flex;
+  align-items:center;
+
+  a { flex:1; min-width:0; }
+}
+
+.nav__toggle {
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  width:1.5rem;
+  height:1.5rem;
+  border-radius:var(--r-sm);
+  color:var(--fg-subtle);
+  transition:background-color .15s ease, color .15s ease;
+
+  svg {
+    width:14px;
+    height:14px;
+    transition:transform .2s ease;
+  }
+
+  &:hover { background:var(--bg-sunken); color:var(--fg); }
+}
+
+// 펼친 상태에서 화살표가 아래를 향한다
+.has-sub.is-open > .nav__row > .nav__toggle svg { transform:rotate(90deg); }
+
+// 접기/펴기 — grid 로 "내용의 실제 높이"까지만 움직인다.
+//
+// max-height 로 하면 안 된다. 접힌 값(0)과 펼친 값을 숫자로 못 박아야 하는데
+// 내용 높이를 미리 알 수 없어 넉넉한 값(32rem=512px)을 넣게 된다. 하위가
+// 1개(약 26px)인 카테고리는 애니메이션의 95%를 눈에 보이지 않는 빈 공간에
+// 쓰다가 마지막에 툭 끊긴다 — 펼치고 접을 때 흔들려 보이던 원인이다.
+//
+// grid-template-rows 를 0fr -> 1fr 로 두면 브라우저가 내용의 실제 높이를
+// 기준으로 보간한다. 항목이 1개든 5개든 같은 속도로 자연스럽게 열린다.
+.has-sub > .nav__sub {
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  transition:grid-template-rows .22s ease, opacity .18s ease;
+
+  // fr 이 실제로 줄어들려면 자식이 min-height:auto 를 벗어나야 한다.
+  // 안 그러면 내용 높이가 하한이 되어 0fr 이 먹지 않는다.
+  > li {
+    min-height:0;
+    overflow:hidden;
+  }
+}
+.has-sub.is-open > .nav__sub {
+  grid-template-rows:1fr;
+  opacity:1;
+}
+
+// 페이지를 열자마자 현재 카테고리를 펼칠 때는 연출을 건너뛴다.
+// (common.js 가 한 프레임만 걸었다 뗀다)
+.has-sub.no-anim > .nav__sub,
+.has-sub.no-anim > .nav__row > .nav__toggle svg { transition:none; }
+
+// 하위 카테고리는 좁은 화면의 세로 서랍에서만 쓴다.
+// 가로 바에서는 자리가 없어 최상위만 보여준다.
+.nav__sub { display:none; }
+
+// 서랍 바깥을 덮는 막. 넓은 화면에서는 아예 쓰지 않는다.
+.nav__scrim { display:none; }
+
+// ---------------------------------------------------------------------------
+// 좁은 화면: 왼쪽에서 밀려 들어오는 세로 서랍
+//
+// 위에서 아래로 펼치던 방식은 카테고리가 13개라 화면을 거의 다 덮었고,
+// 하위 카테고리까지 넣을 자리가 없었다. 세로로 쌓으면 스크롤로 감당되고
+// "상위 ▸ 하위" 계층도 그대로 보인다.
+//
+// 화면 밖(translateX(-100%))에 두고 열릴 때 제자리로 밀어 넣는다.
+// display 를 껐다 켜면 애니메이션이 걸리지 않기 때문이다.
+// ---------------------------------------------------------------------------
 @media (max-width:$bp-tablet) {
   .nav {
     &__menu {
-      // 접혀 있다가 버튼을 누르면 아래로 펼쳐진다
-      position:absolute;
-      top:var(--nav-h);
+      position:fixed;
+      top:0;
       left:0;
-      right:0;
-      background:var(--bg-raised);
-      border-bottom:1px solid var(--border);
-      box-shadow:var(--shadow);
-      padding:.5rem 1rem 1rem;
-      display:none;
+      bottom:0;
+      width:min(17rem, 82vw);
+      z-index:60;
 
-      ul { flex-wrap:wrap; overflow:visible; }
+      background:var(--bg-raised);
+      border-right:1px solid var(--border);
+      box-shadow:var(--shadow-lg);
+
+      padding:1rem .75rem calc(1rem + env(safe-area-inset-bottom));
+      overflow-y:auto;
+      overscroll-behavior:contain;         // 서랍 끝에서 본문이 딸려 스크롤되지 않게
+
+      transform:translateX(-100%);
+      transition:transform .25s ease;
+      visibility:hidden;                   // 닫혔을 때 포커스가 들어가지 않도록
+
+      > ul {
+        display:block;                     // 가로 바의 flex 를 세로로 되돌린다
+        overflow:visible;
+      }
+
+      a {
+        padding:.6rem .75rem;
+        font-size:.95rem;
+      }
+
+      // 최상위 카테고리 — 하위가 딸린 줄이라 조금 더 또렷하게
+      > ul > li > a { font-weight:600; color:var(--fg); }
     }
 
-    &.is-open &__menu { display:block; }
+    &.is-open &__menu {
+      transform:none;
+      visibility:visible;
+    }
   }
+
+  // 하위 카테고리: 한 단 들여쓰고 세로선을 그어 소속을 드러낸다.
+  //
+  // 여백·세로선은 .nav__sub 가 아니라 안쪽 li 에 준다. 접기 애니메이션이
+  // grid 0fr 로 눌러 닫는데, 바깥에 margin/border 가 있으면 다 접힌 뒤에도
+  // 그 선이 남아 얇은 자국이 보인다.
+  .nav__sub {
+    margin:0;
+    padding:0;
+    border-left:0;
+
+    > li {
+      margin-left:.75rem;
+      padding-left:.6rem;
+      border-left:1px solid var(--border);
+    }
+    > li:first-child { padding-top:.1rem; }
+    > li:last-child  { padding-bottom:.35rem; }
+
+    a {
+      padding:.4rem .6rem;
+      font-size:.875rem;
+      color:var(--fg-subtle);
+
+      &:hover { color:var(--fg); }
+    }
+  }
+
+  .nav__scrim {
+    display:block;
+    position:fixed;
+    inset:0;
+    z-index:55;
+    background:rgba(1,4,9,.4);
+    opacity:0;
+    transition:opacity .25s ease;
+
+    &[hidden] { display:none; }
+  }
+  .nav.is-open ~ .nav__scrim { opacity:1; }
 
   #btn-menu { display:grid; }
 }
 
+// 움직임을 줄여달라고 설정한 사용자에게는 미끄러지는 연출을 끈다
+@media (prefers-reduced-motion:reduce) {
+  .nav__menu,
+  .nav__scrim { transition:none; }
+}
+
 @media (max-width:$bp-mobile) {
   .nav__brand span { display:none; }
+}
+
+// ---------------------------------------------------------------------------
+// 넓은 화면: 메뉴를 본문 왼쪽에 세로로 세운다
+//
+// 화면 끝에 붙는 전면 사이드바가 아니다. 기존 레이아웃 폭($widewd)을 그대로
+// 쓰고, 그 안에서 왼쪽 열에 메뉴가 들어간다. 그래서 상단바·본문·푸터의
+// 좌우 여백이 지금까지와 똑같이 맞물린다.
+//
+// 상단바는 로고와 도구 버튼만 남기고(높이 유지), 카테고리 목록만 아래
+// 왼쪽 열로 내려보낸다. sticky 라 본문을 따라 내려오되 화면을 다 먹지 않는다.
+// ---------------------------------------------------------------------------
+@media (min-width:#{$bp-tablet + 1}) {
+  :root { --rail-w:12rem; }
+
+  // 상단바에서 카테고리 목록을 빼낸다. 로고·검색·테마는 그대로 위에 남는다.
+  .nav__menu {
+    position:fixed;
+    top:calc(var(--nav-h) + 2.5rem);
+    width:var(--rail-w);
+    max-height:calc(100vh - var(--nav-h) - 5rem);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+
+    // 레이아웃 폭 안쪽 왼쪽 열에 세운다.
+    //
+    // 기준이 되는 열은 "본문이 놓인 열"이다. body 가 레일만큼 밀려 있으므로
+    // 그 안에서 가운데 정렬된 폭($widewd)의 왼쪽 끝은
+    //   레일 + (남은폭 - 레이아웃폭)/2
+    // 이고, 메뉴는 거기서 레일 폭만큼 왼쪽에 선다. 결과적으로 메뉴 오른쪽
+    // 끝과 컨텐츠 왼쪽 끝이 정확히 맞물린다(겹치지 않는다).
+    //
+    // 화면이 좁아 그 값이 화면 밖으로 나가면 왼쪽 여백에 붙인다.
+    left:max(
+      1.25rem,
+      calc(50% + var(--rail-w) / 2 - #{$widewd} / 2 - var(--rail-w) + 1.25rem)
+    );
+
+    > ul {
+      display:block;                  // 가로 나열을 세로 쌓기로
+      overflow:visible;
+    }
+
+    a {
+      padding:.35rem .6rem;
+      white-space:normal;             // 긴 한글 카테고리가 잘리지 않게
+      font-size:.875rem;
+    }
+
+    > ul > li > a { font-weight:600; color:var(--fg); }
+    > ul > li + li { margin-top:.15rem; }
+  }
+
+  // 메뉴가 fixed 로 빠지면서 상단바의 flex 흐름에서 사라졌다. 그러면
+  // 남은 항목(로고·도구)이 왼쪽에 몰리므로, 도구는 직접 오른쪽으로 민다.
+  .nav__tools { margin-left:auto; }
+
+  // 하위 카테고리 — 좁은 화면 서랍과 같은 모양
+  // (여백·세로선을 안쪽 li 에 두는 이유는 위 서랍 쪽 주석 참고)
+  .nav__sub {
+    margin:0;
+    padding:0;
+    border-left:0;
+
+    > li {
+      margin-left:.6rem;
+      padding-left:.55rem;
+      border-left:1px solid var(--border);
+    }
+    > li:first-child { padding-top:.1rem; }
+    > li:last-child  { padding-bottom:.4rem; }
+
+    a {
+      padding:.25rem .5rem;
+      font-size:.8125rem;
+      color:var(--fg-subtle);
+
+      &:hover { color:var(--fg); }
+    }
+  }
+
+  // 메뉴가 왼쪽 열을 쓰므로 본문을 그만큼 오른쪽으로 밀어준다.
+  // body 에 주면 목차(.toc)의 중앙(50%) 기준이 함께 밀려 정렬이 유지된다.
+  body { padding-left:var(--rail-w); }
+
+  // 상단바는 밀린 본문 위가 아니라 화면 전체 폭을 쓰던 그대로 둔다.
+  // (body 패딩만큼 되돌려 로고가 원래 자리에 남는다)
+  .nav {
+    margin-left:calc(var(--rail-w) * -1);
+    padding-left:var(--rail-w);
+  }
+}
+
+// 사이드 메뉴가 자리를 차지하는 만큼 목차를 띄울 여유가 줄어든다
+@media (max-width:#{$bp-desktop + 200px}) {
+  .toc { display:none; }
 }
