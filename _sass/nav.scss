@@ -140,15 +140,29 @@
 //
 // grid-template-rows 를 0fr -> 1fr 로 두면 브라우저가 내용의 실제 높이를
 // 기준으로 보간한다. 항목이 1개든 5개든 같은 속도로 자연스럽게 열린다.
+// 트랙은 반드시 하나여야 한다. grid-template-rows 는 트랙을 하나만 정의하는데
+// 하위 항목이 2개 이상이면 나머지는 "암시적 트랙"으로 생기고, 그 트랙에는
+// 0fr 이 걸리지 않아 제 높이 그대로 남는다. 하위가 5개인 AI 는 접은 상태에서
+// 4줄이 그대로 펼쳐져 보였다 — 메뉴 한가운데가 뻥 비어 보이던 원인이다.
+//
+// 그래서 li 를 직접 트랙에 앉히지 않고, 목록 전체를 한 트랙에 넣는다.
+// grid-auto-rows:0 으로 혹시 생길 암시적 트랙까지 눌러 둔다.
 .has-sub > .nav__sub {
   display:grid;
   grid-template-rows:0fr;
+  grid-auto-rows:0;
   opacity:0;
   transition:grid-template-rows .22s ease, opacity .18s ease;
 
   // fr 이 실제로 줄어들려면 자식이 min-height:auto 를 벗어나야 한다.
   // 안 그러면 내용 높이가 하한이 되어 0fr 이 먹지 않는다.
-  > li {
+  //
+  // 항목이 몇 개든 이 래퍼 하나만 트랙을 차지하므로 0fr 이 전부를 덮는다.
+  // min-width 도 함께 풀어야 한다. 그리드 항목의 기본값은 min-width:auto 라
+  // 내용보다 좁아지지 못하는데, "처음 만난 리액트" 처럼 긴 이름이 들어오면
+  // 그 폭이 하한이 되어 레일(12rem) 밖으로 삐져나온다.
+  > .nav__sub__inner {
+    min-width:0;
     min-height:0;
     overflow:hidden;
   }
@@ -163,9 +177,13 @@
 .has-sub.no-anim > .nav__sub,
 .has-sub.no-anim > .nav__row > .nav__toggle svg { transition:none; }
 
-// 하위 카테고리는 좁은 화면의 세로 서랍에서만 쓴다.
-// 가로 바에서는 자리가 없어 최상위만 보여준다.
-.nav__sub { display:none; }
+// 하위 카테고리는 좁은 화면의 세로 서랍과 넓은 화면의 왼쪽 레일에서만 쓴다.
+// 그 사이(가로 바로 남는 구간)에서는 자리가 없어 최상위만 보여준다.
+//
+// .has-sub > .nav__sub (0,2,0) 가 위에서 display:grid 를 이미 걸어 뒀으므로
+// 여기서 .nav__sub (0,1,0) 로 덮으려 하면 특정도에서 져 아무 효과가 없다.
+// 실제로 감추려면 같은 형태로 맞받아야 한다.
+.has-sub > .nav__sub { display:none; }
 
 // 서랍 바깥을 덮는 막. 넓은 화면에서는 아예 쓰지 않는다.
 .nav__scrim { display:none; }
@@ -227,18 +245,20 @@
   // 여백·세로선은 .nav__sub 가 아니라 안쪽 li 에 준다. 접기 애니메이션이
   // grid 0fr 로 눌러 닫는데, 바깥에 margin/border 가 있으면 다 접힌 뒤에도
   // 그 선이 남아 얇은 자국이 보인다.
+  .has-sub > .nav__sub { display:grid; }
+
   .nav__sub {
     margin:0;
     padding:0;
     border-left:0;
 
-    > li {
+    > .nav__sub__inner > li {
       margin-left:.75rem;
       padding-left:.6rem;
       border-left:1px solid var(--border);
     }
-    > li:first-child { padding-top:.1rem; }
-    > li:last-child  { padding-bottom:.35rem; }
+    > .nav__sub__inner > li:first-child { padding-top:.1rem; }
+    > .nav__sub__inner > li:last-child  { padding-bottom:.35rem; }
 
     a {
       padding:.4rem .6rem;
@@ -332,18 +352,20 @@
 
   // 하위 카테고리 — 좁은 화면 서랍과 같은 모양
   // (여백·세로선을 안쪽 li 에 두는 이유는 위 서랍 쪽 주석 참고)
+  .has-sub > .nav__sub { display:grid; }
+
   .nav__sub {
     margin:0;
     padding:0;
     border-left:0;
 
-    > li {
+    > .nav__sub__inner > li {
       margin-left:.6rem;
       padding-left:.55rem;
       border-left:1px solid var(--border);
     }
-    > li:first-child { padding-top:.1rem; }
-    > li:last-child  { padding-bottom:.4rem; }
+    > .nav__sub__inner > li:first-child { padding-top:.1rem; }
+    > .nav__sub__inner > li:last-child  { padding-bottom:.4rem; }
 
     a {
       padding:.25rem .5rem;
@@ -363,6 +385,43 @@
   .nav {
     margin-left:calc(var(--rail-w) * -1);
     padding-left:var(--rail-w);
+  }
+
+  // 푸터가 레일을 피해 간다.
+  //
+  // 메뉴는 fixed 라 문서 흐름 밖에 있다. 그래서 푸터는 메뉴가 거기 있다는
+  // 사실 자체를 모르고, 글이 짧은 페이지에서 위로 올라오면 그대로 겹친다
+  // (실측: /Database/ 92px, /Linux/ 58px, /Etc/ 29px).
+  //
+  // body 의 padding-left 만으로는 부족하다. .foot__inner 가 max-width +
+  // margin-inline:auto 라, 밀린 body 안에서 "남은 폭 기준으로 다시" 가운데
+  // 정렬되어 왼쪽으로 되돌아오기 때문이다. 그래서 메뉴 오른쪽 끝(228px)이
+  // 푸터 안쪽 시작(208px)보다 오른쪽에 있었다.
+  //
+  // 가운데 정렬을 끄지는 않는다 — 넓은 화면에서 푸터가 본문과 같은 열에
+  // 서야 하므로, 본문이 쓰는 것과 같은 폭 계산을 그대로 준다.
+  .foot__inner {
+    max-width:calc(#{$widewd} - var(--rail-w));
+  }
+
+  // 푸터 구분선이 메뉴를 가로지르지 않게 한다.
+  //
+  // 안쪽 글자를 밀어내도 .foot 의 border-top 은 화면을 가로지른다. 글이
+  // 짧은 페이지에서는 메뉴가 푸터보다 아래까지 내려와 있어서(실측
+  // /Database/ 는 메뉴 끝 700px, 푸터 시작 604px) 그 선이 메뉴를 지나간다.
+  //
+  // 고칠 대상은 메뉴가 아니라 본문이다. 겹치는 페이지는 메뉴가 넘쳐서가
+  // 아니라(596px < 한계 756px) 본문이 짧아 푸터가 올라온 것이고, 실제로
+  // 그런 페이지는 스크롤 자체가 없다(docH 900 = vh 900). 그래서 본문이
+  // 메뉴 끝까지 자리를 차지하게 하면 푸터는 자연히 그 아래로 내려간다.
+  //
+  // 메뉴는 상단바 아래 2.5rem 에서 시작하고 본문은 상단바 바로 아래에서
+  // 시작하므로, 본문이 메뉴 끝까지 닿으려면 그 2.5rem 을 더 확보해야 한다.
+  //
+  // 셀렉터는 #content 여야 한다. base.scss 에 이미 #content{min-height:60vh}
+  // 가 있어서 main{...} 으로 쓰면 특정도에서 밀려 적용되지 않는다.
+  #content {
+    min-height:calc(100vh - var(--nav-h) - 2.5rem);
   }
 }
 

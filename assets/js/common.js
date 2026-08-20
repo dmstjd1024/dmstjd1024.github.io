@@ -54,34 +54,11 @@
       if (e.target.closest('.nav__menu a')) setMenu(false);
     });
 
-    // --- 지금 보고 있는 카테고리를 펼쳐 둔다 ----------------------------
-    //
-    // 서버에서 미리 펼치지 않는 이유: 페이지마다 메뉴 높이가 달라지면
-    // 페이지 전환 때 옛/새 화면을 겹쳐 맞추는 과정에서 아래 항목이 밀렸다
-    // 돌아온다(메뉴가 흔들려 보인다). 마크업은 모든 페이지에서 동일하게
-    // 두고, 열림 상태만 여기서 얹는다.
-    //
-    // no-anim 을 잠깐 걸어 첫 펼침이 스르륵 열리지 않게 한다. 페이지를
-    // 옮길 때마다 메뉴가 열리는 연출이 반복되면 그것대로 산만하다.
-    (function () {
-      var current = nav.querySelector('.nav__menu a[aria-current="page"]');
-      if (!current) return;
-
-      var li = current.closest('.has-sub');
-      if (!li) return;
-
-      li.classList.add('no-anim', 'is-open');
-      var t = li.querySelector('.nav__toggle');
-      if (t) t.setAttribute('aria-expanded', 'true');
-
-      // 다음 프레임에 애니메이션을 되돌려 준다 — 이후 사용자가 직접
-      // 접었다 펴는 것은 정상적으로 부드럽게 동작한다.
-      window.requestAnimationFrame(function () {
-        window.requestAnimationFrame(function () {
-          li.classList.remove('no-anim');
-        });
-      });
-    })();
+    // 펼침 상태(현재 카테고리 펼치기 + 이전 페이지에서 이어받기)는 여기서
+    // 다루지 않는다. _includes/nav_state.html 이 nav 바로 뒤에서 동기로
+    // 처리한다 — 이 파일은 defer 라 첫 페인트 뒤에 도는데, 그때 펼치면
+    // 높이가 그려진 다음에 바뀌어 페이지 전환 때 메뉴가 밀린다.
+    // (실측으로 확인한 내용이라 옮기면 흔들림이 되살아난다. 그쪽 주석 참고.)
 
     // --- 하위 카테고리 접기/펴기 ---------------------------------------
     //

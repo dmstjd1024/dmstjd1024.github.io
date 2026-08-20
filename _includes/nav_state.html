@@ -1,0 +1,118 @@
+{%- comment -%}
+  메뉴 펼침 상태 복원 — 첫 페인트 "전에" 동기로 실행한다.
+
+  === 왜 필요한가 ===
+
+  마크업은 모든 페이지에서 동일하다(그건 nav.html 이 보장한다). 그런데 펼친
+  뒤의 최종 높이는 페이지마다 다르다. /Database/Postgresql/ 은 Database 가
+  열려 596px, /Docker/ 는 열 것이 없어 558px 다.
+
+  둘 다 정상 상태인데 높이가 다르므로, 2단계 글에서 1단계 카테고리로 넘어가면
+  View Transitions 가 596px 스냅샷과 558px 화면을 겹쳐 맞추면서 아래 항목이
+  통째로 밀린다 — 실측 -38.1px, 하위가 많은 AI 에서는 -158.5px 였다.
+
+  즉 "서버 마크업이 같을 것"은 필요조건이었지 충분조건이 아니었다.
+  높이를 맞추려면 펼침 상태 자체가 페이지를 건너 이어져야 한다.
+
+  === 어떻게 ===
+
+  사용자가 접고 편 결과를 sessionStorage 에 담아 두고, 다음 페이지에서 그대로
+  되살린다. 그래서 떠날 때 열려 있던 것은 도착해서도 열려 있고, 높이가 보존돼
+  겹쳐 맞출 구간이 사라진다.
+
+  탭을 닫으면 지워지는 sessionStorage 를 쓴다. localStorage 로 두면 몇 달 전
+  펼쳐 둔 상태가 되살아나 오히려 낯설다.
+
+  === 왜 common.js(defer) 가 아니라 여기인가 ===
+
+  defer 는 첫 페인트 뒤에 돈다. 그때 펼치면 높이가 "그려진 다음에" 바뀌므로
+  스냅샷과 어긋나는 것은 똑같다. 실제로 그 방식을 시도해 측정했더니 -38.1px 이
+  그대로 남았다. 페인트에 포함시키려면 nav 바로 뒤 인라인 동기여야 한다.
+
+  키는 링크 주소를 쓴다. 마크업에 새 속성을 넣지 않아도 되고(넣으면 페이지마다
+  달라질 위험이 생긴다), 카테고리가 옮겨지면 키가 자연히 무효가 된다.
+{%- endcomment -%}
+<script>
+  (function () {
+    var KEY = 'nav-open';
+    var menu = document.querySelector('.nav__menu');
+    if (!menu) return;
+
+    // 이 행을 가리키는 키. .nav__row 바로 아래 링크의 주소를 쓴다.
+    var keyOf = function (li) {
+      var a = li.querySelector(':scope > .nav__row > a');
+      return a ? a.getAttribute('href') : null;
+    };
+
+    var open = {};
+    try {
+      open = JSON.parse(sessionStorage.getItem(KEY)) || {};
+    } catch (e) {
+      open = {};
+    }
+
+    // --- 1. 저장된 상태를 되살린다 ---------------------------------------
+    var rows = menu.querySelectorAll('.has-sub');
+    for (var i = 0; i < rows.length; i++) {
+      var k = keyOf(rows[i]);
+      if (k && open[k]) {
+        rows[i].classList.add('is-open');
+        var t = rows[i].querySelector(':scope > .nav__row > .nav__toggle');
+        if (t) t.setAttribute('aria-expanded', 'true');
+      }
+    }
+
+    // --- 2. 지금 보고 있는 카테고리는 항상 펼쳐 둔다 ----------------------
+    //
+    // 저장된 상태보다 우선한다. 어떤 글을 보고 있는데 그 글이 속한 갈래가
+    // 접혀 있으면 자기 위치를 알 수 없다.
+    var cur = menu.querySelector('a[aria-current="page"]');
+    if (cur) {
+      var li = cur.closest('.has-sub');
+      while (li) {
+        li.classList.add('is-open');
+        var tt = li.querySelector(':scope > .nav__row > .nav__toggle');
+        if (tt) tt.setAttribute('aria-expanded', 'true');
+        var ck = keyOf(li);
+        if (ck) open[ck] = 1;
+        li = li.parentElement ? li.parentElement.closest('.has-sub') : null;
+      }
+    }
+
+    // 현재 위치 때문에 새로 열린 것이 있으면 그것도 저장해 둔다. 그래야
+    // 다음 페이지에서도 같은 높이로 이어진다.
+    try {
+      sessionStorage.setItem(KEY, JSON.stringify(open));
+    } catch (e) {}
+
+    // --- 3. 사용자가 접고 펴면 그때그때 기록한다 --------------------------
+    //
+    // 토글 처리 자체는 common.js 가 한다. 여기서는 결과만 받아 적는다.
+    //
+    // 언제 읽느냐가 중요하다. common.js 는 .nav(바깥)에 리스너를 달고
+    // stopPropagation() 을 부르므로, 안쪽 .nav__menu 에서 들으면 이벤트가
+    // 거기서 멈춰 버린다. 그렇다고 같은 .nav 에 붙여도 이 스크립트가 먼저
+    // 등록되니 여전히 우리가 먼저 실행된다 — 어느 쪽이든 아직 바뀌지 않은
+    // is-open 을 읽게 된다.
+    //
+    // 그래서 자리를 옮기는 대신 읽는 시점을 미룬다. setTimeout(0) 으로
+    // 지금 이벤트 처리가 다 끝난 뒤에 상태를 훑으면, common.js 가 토글을
+    // 마친 결과를 본다.
+    var navEl = menu.closest('.nav') || menu;
+    navEl.addEventListener('click', function (e) {
+      if (!e.target.closest('.nav__toggle')) return;
+
+      window.setTimeout(function () {
+        var state = {};
+        var all = menu.querySelectorAll('.has-sub');
+        for (var j = 0; j < all.length; j++) {
+          var key = keyOf(all[j]);
+          if (key && all[j].classList.contains('is-open')) state[key] = 1;
+        }
+        try {
+          sessionStorage.setItem(KEY, JSON.stringify(state));
+        } catch (e2) {}
+      }, 0);
+    });
+  })();
+</script>
