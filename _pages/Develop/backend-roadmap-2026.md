@@ -1,5 +1,5 @@
 ---
-title: "백엔드 로드맵이 조용히 바뀌었다 - 2026년판을 Mermaid로 그려보기"
+title: "백엔드 개발자 로드맵 2026 — 전체 구조 한눈에 보기"
 
 categories:
   - Develop
@@ -7,43 +7,46 @@ tags:
   - Develop
   - Roadmap
   - Backend
-  - Mermaid
 
 date: 2026-08-22
 thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 mermaid: true
 ---
 
-몇 년 전에 저장해둔 백엔드 로드맵 이미지가 있었다.
-그걸 다시 꺼내 보다가 문득 궁금해졌다. **지금 roadmap.sh 는 같은 말을 하고 있을까?**
+[roadmap.sh/backend](https://roadmap.sh/backend) 의 백엔드 개발자 로드맵을 그대로 옮겨 그렸다.
+원본은 가로로 넓은 한 장짜리 마인드맵이라 화면에서 훑기가 불편해서, **단계별로 쪼개서** 정리했다.
 
-결론부터 쓴다.
+기준 데이터는 2026-02-07 갱신본이고 **토픽 23개 · 세부 항목 132개**다.
 
-- **뼈대는 안 바뀌었다.** 인터넷 기초 → 언어 → Git → DB → API → 캐싱 → 테스트 → CI/CD → 아키텍처. 이 순서는 그대로다.
-- **AI 섹션이 통째로 새로 생겼다.** 예전 이미지엔 단 한 칸도 없던 영역이다.
-- **뒷부분이 두꺼워졌다.** 실시간 데이터·DB 확장·관측성이 각각 독립 토픽으로 올라왔다.
+먼저 색부터 짚고 간다. 로드맵의 색은 장식이 아니라 **분류**다.
 
-아래 그림은 전부 [roadmap.sh/backend](https://roadmap.sh/backend) 의 실제 데이터
-(2026-02-07 갱신, 토픽 23개·세부 항목 132개)를 기준으로 그렸다.
+| 색 | 의미 | 개수 |
+|---|---|---|
+| 🟣 보라 | 추천 — 기본으로 이걸 고르면 된다 | 71개 |
+| 🟢 초록 | 대안 — 보라색 대신 **택1**, 둘 다 할 필요 없다 | 25개 |
+| ⚪ 회색 | 순서 무관 — 아무 때나 배워도 된다 | 11개 |
+
+이걸 모르면 로드맵이 **'다 해야 하는 목록'** 으로 보인다.
+초록색은 택1이다. MySQL 과 PostgreSQL 을 둘 다 파야 하는 게 아니다.
 
 ---
 
-전체 뼈대
+전체 흐름
 =====
 -----
 
-먼저 큰 흐름이다. 세부 항목을 다 넣으면 그림이 벽이 되어버려서, **토픽 단위로만** 그렸다.
+세부 항목을 다 넣으면 그림이 벽이 되므로, 큰 단계만 먼저 본다.
 
 ```mermaid
 flowchart TD
     A[인터넷 기초] --> B[프론트엔드 기초]
     B --> C[백엔드 언어 선택]
-    C --> D[버전 관리 Git]
+    C --> D[버전 관리]
     D --> E[관계형 DB]
     E --> F[API]
     F --> G[캐싱]
     G --> H[웹 서버]
-    H --> I[["AI 섹션 · 신규"]]
+    H --> I[AI]
     I --> J[CI / CD]
     J --> K[테스트 · DB 심화]
     K --> L[메시지 브로커 · 검색엔진]
@@ -52,122 +55,228 @@ flowchart TD
     N --> O[대규모 서비스 대응]
 ```
 
-여기서 눈여겨볼 건 `AI 섹션` 의 **위치**다.
-맨 뒤에 부록처럼 붙은 게 아니라, 웹 서버와 CI/CD 사이 —
-즉 **기본기를 뗀 직후, 심화로 넘어가기 전**에 들어가 있다.
-
 ---
 
-새로 생긴 AI 섹션
+1단계 · 기초
 =====
 -----
 
-예전 이미지와 가장 크게 갈리는 지점이다. 이 영역만 따로 그리면 이렇다.
+```mermaid
+flowchart TD
+    subgraph NET["인터넷 기초"]
+        direction LR
+        N1[인터넷 동작 원리] --- N2[HTTP] --- N3[도메인 · 호스팅] --- N4[DNS] --- N5[브라우저 동작 원리]
+    end
+
+    subgraph FE["프론트엔드 기초"]
+        direction LR
+        F1[HTML] --- F2[CSS] --- F3[JavaScript]
+    end
+
+    NET --> FE
+```
+
+백엔드를 하더라도 **HTML·CSS·JS 는 기초까지는 본다.**
+내가 만든 API 를 결국 프론트가 쓰기 때문이다.
+
+---
+
+2단계 · 언어와 버전 관리
+=====
+-----
 
 ```mermaid
 flowchart TD
-    subgraph BASIC["1 · 기초"]
+    subgraph LANG["백엔드 언어 · 하나만 고른다"]
+        direction LR
+        L1["JavaScript · Python · Go<br/>(추천)"] --- L2["Java · C# · PHP<br/>Ruby · Rust (대안)"]
+    end
+
+    subgraph VCS["버전 관리"]
+        direction LR
+        V1[Git] --- V2["GitHub (추천)"] --- V3["GitLab (대안)"]
+    end
+
+    LANG --> VCS
+```
+
+여기가 초보자가 가장 많이 헤매는 지점인데, **언어는 하나만 고르면 된다.**
+로드맵이 여러 개를 나열한 건 선택지를 보여준 것이지 다 하라는 뜻이 아니다.
+
+---
+
+3단계 · 데이터베이스와 API
+=====
+-----
+
+```mermaid
+flowchart TD
+    subgraph DB["관계형 DB"]
+        direction LR
+        D1["PostgreSQL (추천)"] --- D2["MySQL · MariaDB<br/>SQLite · MS SQL · Oracle (대안)"]
+    end
+
+    subgraph CONCEPT["같이 익히는 개념"]
+        direction LR
+        C1[마이그레이션] --- C2[N+1 문제]
+    end
+
+    subgraph API["API 스타일"]
+        direction LR
+        A1["REST · JSON API<br/>(추천)"] --- A2["GraphQL · gRPC · SOAP<br/>(순서 무관)"]
+    end
+
+    subgraph AUTH["인증"]
+        direction LR
+        T1[JWT] --- T2[OAuth] --- T3[Basic · Token · Cookie] --- T4["OpenID · SAML<br/>(순서 무관)"]
+    end
+
+    DB --> CONCEPT --> API --> AUTH
+```
+
+DB 는 **PostgreSQL 하나가 추천**이고 나머지는 전부 대안이다.
+`N+1 문제` 가 세부 항목으로 따로 박혀 있는 게 눈에 띈다. 그만큼 자주 터진다는 뜻이다.
+
+---
+
+4단계 · 캐싱, 웹 서버, 보안
+=====
+-----
+
+```mermaid
+flowchart TD
+    subgraph CACHE["캐싱"]
+        direction LR
+        K1["Redis (추천)"] --- K2["Memcached (대안)"] --- K3[HTTP 캐싱]
+    end
+
+    subgraph WEB["웹 서버"]
+        direction LR
+        W1["Nginx (추천)"] --- W2["Apache · Caddy · MS IIS<br/>(대안)"]
+    end
+
+    subgraph SEC["웹 보안"]
+        direction LR
+        S1[HTTPS · SSL/TLS] --- S2[CORS · CSP] --- S3[OWASP Top 10] --- S4["해시: bcrypt · scrypt<br/>MD5 · SHA"]
+    end
+
+    CACHE --> WEB --> SEC
+```
+
+---
+
+5단계 · AI (2026년 신규)
+=====
+-----
+
+예전 로드맵에는 **한 칸도 없던 영역**이다.
+위치도 눈여겨볼 만한데, 맨 뒤 부록이 아니라 **기본기 직후 · 심화 직전**에 들어가 있다.
+
+```mermaid
+flowchart TD
+    subgraph BASIC["기초"]
         direction LR
         A1[LLM 동작 원리] --- A2[임베딩 · 벡터] --- A3[RAG]
     end
 
-    subgraph TOOL["2 · AI 코딩 도구"]
+    subgraph TOOL["AI 코딩 도구"]
         direction LR
-        B1[Claude Code] --- B2[Cursor · Copilot] --- B3[프롬프팅 기법]
+        B1["Claude Code (추천)"] --- B2["Cursor · Copilot<br/>(대안)"] --- B3[프롬프팅 기법]
     end
 
-    subgraph BUILD["3 · AI 기능 개발"]
+    subgraph BUILD["AI 기능 개발"]
         direction LR
-        C1[Agents · MCP] --- C2[스트리밍] --- C3[구조화된 출력 · Function Calling]
+        C1[Agents · MCP] --- C2[스트리밍] --- C3["구조화된 출력<br/>Function Calling"]
     end
 
     BASIC --> TOOL --> BUILD
 ```
 
-중요한 건 **도구를 쓰는 것과 AI 기능을 만드는 것이 분리돼 있다**는 점이다.
-`Cursor 를 쓴다` 와 `스트리밍·Function Calling 으로 기능을 만든다` 는 다른 칸에 있다.
-백엔드 개발자에게 요구되는 건 결국 **뒤쪽**이다.
+**도구를 쓰는 것과 AI 기능을 만드는 것이 분리돼 있다.**
+`Cursor 를 쓴다` 와 `스트리밍·Function Calling 으로 기능을 만든다` 는 다른 칸이고,
+백엔드 개발자에게 요구되는 건 결국 뒤쪽이다.
 
 ---
 
-색깔이 곧 우선순위다
+6단계 · 심화
 =====
 -----
-
-로드맵의 색은 장식이 아니라 **분류**다. 실제 데이터에 그대로 들어 있다.
 
 ```mermaid
 flowchart TD
-    R[항목 132개] --> P[보라 · 추천 71개]
-    R --> G[초록 · 대안 25개]
-    R --> W[회색 · 순서 무관 11개]
+    subgraph T["테스트"]
+        direction LR
+        T1[단위] --- T2[통합] --- T3[기능]
+    end
 
-    P --> P1["기본으로 이걸 고르면 된다"]
-    G --> G1["보라색 것 대신 택1<br/>둘 다 할 필요 없다"]
-    W --> W1["아무 때나 배워도 된다"]
+    subgraph DB2["DB 심화"]
+        direction LR
+        D1[트랜잭션 · ACID] --- D2[정규화] --- D3[ORM] --- D4[인덱스]
+    end
+
+    subgraph MQ["메시지 브로커 · 검색엔진"]
+        direction LR
+        M1["Kafka (추천)"] --- M2["RabbitMQ (대안)"] --- M3["Elasticsearch (추천)"] --- M4["Solr (대안)"]
+    end
+
+    subgraph ARCH["아키텍처 패턴"]
+        direction LR
+        R1[모놀리식] --- R2[마이크로서비스] --- R3[SOA · 서버리스] --- R4[서비스 메시] --- R5[12 Factor App]
+    end
+
+    T --> DB2 --> MQ --> ARCH
 ```
-
-이걸 모르면 로드맵이 **'다 해야 하는 목록'** 으로 보인다.
-초록색은 **택1** 이다. MySQL 과 PostgreSQL 을 둘 다 파야 하는 게 아니다.
-
-참고로 **Docker 와 Kubernetes 는 이 로드맵 안의 항목이 아니다.**
-각각 독립된 로드맵으로 빠지는 **버튼**이라, "여기서 갈라져 나가라"는 표시에 가깝다.
 
 ---
 
-Mermaid 를 이 블로그에 붙이면서
+7단계 · 규모 대응
 =====
 -----
 
-한 가지 짚고 갈 게 있다.
-**GitHub Pages 는 ` ```mermaid ` 펜스를 자동으로 렌더해주지 않는다.**
+```mermaid
+flowchart TD
+    subgraph RT["실시간 데이터"]
+        direction LR
+        E1[WebSocket] --- E2[SSE] --- E3[롱/숏 폴링]
+    end
 
-`github.com` 저장소 화면에서 마크다운을 볼 때 다이어그램이 그려지는 건 맞다.
-하지만 그건 GitHub 의 마크다운 뷰어가 해주는 것이고,
-**Jekyll 로 빌드해서 배포하는 블로그는 경로가 다르다.**
-Jekyll(kramdown)은 그냥 이렇게 내보낸다.
+    subgraph SCALE["DB 확장"]
+        direction LR
+        S1[인덱스] --- S2[복제] --- S3[샤딩] --- S4[CAP 정리]
+    end
 
-```html
-<pre><code class="language-mermaid">flowchart TD ...</code></pre>
+    subgraph NOSQL["NoSQL"]
+        direction LR
+        N1["MongoDB · Redis<br/>(추천)"] --- N2["DynamoDB · Cassandra<br/>Neo4j · ClickHouse (대안)"]
+    end
+
+    subgraph OPS["대규모 서비스 대응"]
+        direction LR
+        O1[관측성 · 모니터링] --- O2[서킷 브레이커] --- O3[스로틀링] --- O4[우아한 성능 저하]
+    end
+
+    RT --> SCALE --> NOSQL --> OPS
 ```
 
-그래서 스크립트를 붙여주지 않으면 다이어그램이 아니라 **소스 코드가 그대로 노출된다.**
-레이아웃에 이 정도만 넣으면 된다.
+마지막 칸이 요즘 로드맵에서 눈에 띄게 두꺼워진 부분이다.
+`관측성(Observability)`, `서킷 브레이커`, `백프레셔` 같은 항목이 새로 올라왔다.
 
-```html
-{% raw %}{% if page.mermaid %}
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.17.0/dist/mermaid.esm.min.mjs';
+---
 
-  document.querySelectorAll('code.language-mermaid').forEach((code) => {
-    const div = document.createElement('div');
-    div.className = 'mermaid';
-    div.textContent = code.textContent;
-    code.closest('pre').replaceWith(div);
-  });
+Docker 와 Kubernetes 는?
+=====
+-----
 
-  mermaid.initialize({ startOnLoad: false });
-  await mermaid.run();
-</script>
-{% endif %}{% endraw %}
+로드맵을 보면 컨테이너 자리에 Docker·Kubernetes 가 있는데,
+이 둘은 **로드맵 안의 학습 항목이 아니라 별도 로드맵으로 빠지는 버튼**이다.
+
+```mermaid
+flowchart LR
+    B[백엔드 로드맵] --> D["Docker 로드맵<br/>roadmap.sh/docker"]
+    B --> K["쿠버네티스 로드맵<br/>roadmap.sh/kubernetes"]
 ```
 
-`page.mermaid` 로 감싼 이유는 **필요한 글에서만 불러오기 위해서**다.
-모든 페이지에서 CDN 스크립트를 받아올 이유가 없다.
-쓰는 쪽은 프론트매터에 한 줄만 넣으면 된다.
-
-```yaml
-mermaid: true
-```
-
-**버전을 `@11` 이 아니라 `@11.17.0` 으로 박아둔 것도 의도**다.
-`@11` 로 두면 jsDelivr 가 요청 시점의 최신 11.x 를 내려준다. 편해 보이지만,
-**그 자바스크립트는 내 블로그에서 그대로 실행된다.** 언젠가 올라올 11.x 를 미리 검토할 방법이 없으니
-버전을 고정해두고, 올릴 때 커밋으로 올려 diff 를 보는 편이 낫다.
-
-`mermaid.initialize()` 에 **테마를 지정하지 않은 것도 의도**다.
-`theme: 'dark'` 를 주면 노드 배경은 밝은 색 그대로인데 글자만 밝아져서
-다크 모드에서 오히려 대비가 무너진다. 기본값이 양쪽 모두에서 무난하다.
+"여기서 갈라져 나가라"는 표시에 가깝다. 그만큼 각각이 하나의 큰 주제라는 뜻이다.
 
 ---
 
@@ -175,9 +284,10 @@ mermaid: true
 =====
 -----
 
-- 예전에 받아둔 로드맵 이미지가 **틀린 건 아니다.** 뼈대는 지금도 유효하다.
-- 다만 **AI 영역이 통째로 비어 있다.** 그리고 그 자리는 부록이 아니라 기본기 바로 다음이다.
-- 로드맵을 볼 땐 **색을 먼저 본다.** 초록은 택1이지 전부 해야 할 목록이 아니다.
+- 뼈대는 **인터넷 기초 → 언어 → Git → DB → API → 캐싱 → 웹 서버** 까지가 기본기다.
+- **AI 가 기본기 바로 다음**에 들어왔다. 예전 로드맵에는 없던 영역이다.
+- 색을 먼저 본다. **초록은 택1**이지 전부 해야 할 목록이 아니다.
+- Docker·쿠버네티스는 각자 다른 로드맵으로 빠진다.
 
 로드맵은 체크리스트가 아니라 지도에 가깝다.
 다 밟아야 하는 게 아니라, **지금 내가 어디쯤 서 있는지** 확인하는 용도로 보는 게 맞다고 생각한다.
