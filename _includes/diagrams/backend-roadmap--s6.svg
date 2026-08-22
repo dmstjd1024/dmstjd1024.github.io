@@ -8,16 +8,18 @@
     </marker>
   </defs>
 
-  <!-- 테스트 -->
+  <!-- 테스트 · 배포 -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="41" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">테스트</text>
-  <rect class="dg-item" x="195" y="56" width="99" height="52" rx="6"/>
-  <text class="dg-t" x="244" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">통합 테스트</text>
-  <rect class="dg-item" x="310" y="56" width="99" height="52" rx="6"/>
-  <text class="dg-t" x="359" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">단위 테스트</text>
-  <rect class="dg-item" x="425" y="56" width="99" height="52" rx="6"/>
-  <text class="dg-t" x="474" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기능 테스트</text>
+  <rect class="dg-mask" x="40" y="26" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">테스트 · 배포</text>
+  <rect class="dg-item" x="139" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="188" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">통합 테스트</text>
+  <rect class="dg-item" x="254" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="303" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">단위 테스트</text>
+  <rect class="dg-item" x="369" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="418" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기능 테스트</text>
+  <rect class="dg-item" x="484" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="532" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI/CD</text>
   <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
   <!-- DB 심화 -->
