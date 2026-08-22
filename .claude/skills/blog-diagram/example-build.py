@@ -57,7 +57,7 @@ D = [
                 {"t": 'REST'}, {"t": 'JSON API'}, {"t": 'SOAP', "s": '순서 무관'},
                 {"t": 'gRPC', "s": '순서 무관'}, {"t": 'GraphQL', "s": '순서 무관'}, {"t": 'OpenAPI 명세', "s": '순서 무관'},
             ]},
-            {"name": '인증', "nodes": [
+            {"name": '인증 · 인가', "nodes": [
                 {"t": '인증'}, {"t": 'JWT'}, {"t": 'OAuth'},
                 {"t": 'Basic 인증'}, {"t": 'Token 인증'}, {"t": 'Cookie 인증'},
                 {"t": 'OpenID', "s": '순서 무관'}, {"t": 'SAML', "s": '순서 무관'},
@@ -75,7 +75,7 @@ D = [
                 {"t": 'Nginx'}, {"t": 'Apache', "s": '대안'}, {"t": 'Caddy', "s": '대안'},
                 {"t": 'MS IIS', "s": '대안'},
             ]},
-            {"name": '웹 보안', "nodes": [
+            {"name": '보안 · 암호화', "nodes": [
                 {"t": '웹 보안'}, {"t": 'MD5'}, {"t": 'SHA'},
                 {"t": 'scrypt'}, {"t": 'bcrypt'}, {"t": 'HTTPS'},
                 {"t": 'OWASP 위험'}, {"t": 'CORS'}, {"t": 'SSL/TLS'},

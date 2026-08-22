@@ -38,10 +38,10 @@
   <text class="dg-s" x="528" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
   <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <!-- 웹 보안 -->
+  <!-- 보안 · 암호화 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="232" rx="8"/>
-  <rect class="dg-mask" x="40" y="314" width="45" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">웹 보안</text>
+  <rect class="dg-mask" x="40" y="314" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">보안 · 암호화</text>
   <rect class="dg-item" x="88" y="344" width="96" height="52" rx="6"/>
   <text class="dg-t" x="136" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">웹 보안</text>
   <rect class="dg-item" x="200" y="344" width="96" height="52" rx="6"/>

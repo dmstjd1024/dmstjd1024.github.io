@@ -57,10 +57,10 @@
   <text class="dg-s" x="360" y="371" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
   <path class="dg-arw" d="M360,408 V446" marker-end="url(#br-arw)"/>
 
-  <!-- 인증 -->
+  <!-- 인증 · 인가 -->
   <rect class="dg-zone" x="24" y="452" width="672" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="446" width="32" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="455" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">인증</text>
+  <rect class="dg-mask" x="40" y="446" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="455" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">인증 · 인가</text>
   <rect class="dg-item" x="88" y="476" width="96" height="52" rx="6"/>
   <text class="dg-t" x="136" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인증</text>
   <rect class="dg-item" x="200" y="476" width="96" height="52" rx="6"/>
