@@ -30,46 +30,30 @@ mermaid: true
 세부 항목을 제외한 큰 단계만 표시한다.
 
 ```mermaid
-flowchart LR
-    subgraph S1["1 · 기초"]
-        direction TB
-        A[인터넷 기초] --> B[프론트엔드 기초]
+flowchart TD
+    subgraph ROW1[" "]
+        direction LR
+        A[인터넷 기초] --> B[프론트엔드 기초] --> C[백엔드 언어 선택] --> D[버전 관리]
     end
 
-    subgraph S2["2 · 언어 · 버전 관리"]
-        direction TB
-        C[백엔드 언어 선택] --> D[버전 관리]
+    subgraph ROW2[" "]
+        direction LR
+        E[관계형 DB] --> F[API] --> G[캐싱] --> H[웹 서버]
     end
 
-    subgraph S3["3 · DB · API"]
-        direction TB
-        E[관계형 DB] --> F[API]
+    subgraph ROW3[" "]
+        direction LR
+        I[AI] --> J[CI / CD] --> K[테스트] --> L[DB 심화]
     end
 
-    subgraph S4["4 · 캐싱 · 웹 서버"]
-        direction TB
-        G[캐싱] --> H[웹 서버]
+    subgraph ROW4[" "]
+        direction LR
+        M[메시지 브로커<br/>검색엔진] --> N[아키텍처 패턴] --> O[실시간 데이터<br/>DB 확장] --> P[대규모 서비스 대응]
     end
 
-    subgraph S5["5 · AI"]
-        direction TB
-        I[AI]
-    end
-
-    subgraph S6["6 · 심화"]
-        direction TB
-        J[CI / CD] --> K[테스트 · DB 심화]
-        K --> L[메시지 브로커 · 검색엔진]
-        L --> M[아키텍처 패턴]
-    end
-
-    subgraph S7["7 · 규모 대응"]
-        direction TB
-        N[실시간 데이터 · DB 확장] --> O[대규모 서비스 대응]
-    end
-
-    S1 --> S2 --> S3 --> S4
-    S4 --> S5 --> S6 --> S7
+    ROW1 ~~~ ROW2
+    ROW2 ~~~ ROW3
+    ROW3 ~~~ ROW4
 ```
 
 ---
