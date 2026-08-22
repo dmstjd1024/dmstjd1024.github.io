@@ -13,7 +13,7 @@ date: 2026-08-19
 thumbnail: "/assets/img/thumbnail/empty.jpg"
 ---
 
-JIRA 란,
+JIRA 란
 =====
 -----
 Atlassian(아틀라시안)에서 만든 **이슈 트래커(Issue Tracker, 할 일을 등록하고 추적하는 도구)**
@@ -39,7 +39,7 @@ Atlassian(아틀라시안)에서 만든 **이슈 트래커(Issue Tracker, 할 �
 - 개발자가 "지라"라고 하면 보통 **Jira Software**를 뜻한다
 - 이 글도 Jira Software 기준으로 설명한다
 
-핵심 개념과 용어,
+핵심 개념과 용어
 =====
 -----
 JIRA를 처음 열면 생소한 단어가 쏟아진다. 계층 구조부터 잡고 가면 쉽다.
@@ -124,7 +124,7 @@ JIRA에서 관리하는 **일 하나의 단위**
 - **버전(Fix Version)**: 이 이슈가 어느 릴리스에 포함되는지
 - **컴포넌트(Component)**: 프로젝트 내부를 나눈 하위 영역 (예: `backend`, `frontend`)
 
-팀원 관점 - 기본 사용법,
+팀원 관점 - 기본 사용법
 =====
 -----
 실제로 매일 하게 되는 작업 순서대로 정리한다.
@@ -212,7 +212,7 @@ project = SHOP AND assignee is EMPTY AND status = "To Do"
 
 자주 쓰는 검색은 **필터(Filter)로 저장**해두고, 대시보드에 올려서 쓴다.
 
-관리자 관점 - 프로젝트 세팅,
+관리자 관점 - 프로젝트 세팅
 =====
 -----
 프로젝트를 처음 만들거나 팀 규칙을 JIRA에 반영할 때 건드리는 부분이다.
@@ -283,7 +283,7 @@ project = SHOP AND assignee is EMPTY AND status = "To Do"
 - **속도 차트(Velocity Chart)**: 스프린트마다 완료한 스토리 포인트. 다음 스프린트 계획의 근거
 - **누적 흐름도(Cumulative Flow Diagram)**: 어느 상태에 이슈가 쌓여 있는지(=병목 지점) 확인
 
-처음 쓸 때 자주 하는 실수,
+처음 쓸 때 자주 하는 실수
 =====
 -----
 - **이슈를 너무 크게 만든다**: 일주일 넘게 걸리는 이슈는 쪼갠다. 진행 상황이 안 보인다
@@ -293,7 +293,7 @@ project = SHOP AND assignee is EMPTY AND status = "To Do"
 - **필드를 과하게 만든다**: 채우기 귀찮아지면 아무도 안 채운다
 - **커밋에 이슈 키를 안 붙인다**: 코드와 이슈의 연결이 끊어진다
 
-용어 정리,
+용어 정리
 =====
 -----
 
