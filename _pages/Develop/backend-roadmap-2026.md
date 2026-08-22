@@ -29,32 +29,9 @@ mermaid: true
 
 세부 항목을 제외한 큰 단계만 표시한다.
 
-```mermaid
-flowchart TD
-    subgraph ROW1[" "]
-        direction LR
-        A[인터넷 기초] --> B[프론트엔드 기초] --> C[백엔드 언어 선택] --> D[버전 관리]
-    end
-
-    subgraph ROW2[" "]
-        direction LR
-        E[관계형 DB] --> F[API] --> G[캐싱] --> H[웹 서버]
-    end
-
-    subgraph ROW3[" "]
-        direction LR
-        I[AI] --> J[CI / CD] --> K[테스트] --> L[DB 심화]
-    end
-
-    subgraph ROW4[" "]
-        direction LR
-        M[메시지 브로커<br/>검색엔진] --> N[아키텍처 패턴] --> O[실시간 데이터<br/>DB 확장] --> P[대규모 서비스 대응]
-    end
-
-    ROW1 ~~~ ROW2
-    ROW2 ~~~ ROW3
-    ROW3 ~~~ ROW4
-```
+<div class="diagram">
+{% include diagrams/backend-roadmap--stages.svg %}
+</div>
 
 ---
 

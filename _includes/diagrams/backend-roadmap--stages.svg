@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="48 0 656 448" role="img" aria-labelledby="brstages-title brstages-desc">
+  <title id="brstages-title">백엔드 로드맵 6단계</title>
+  <desc id="brstages-desc">기초부터 대규모 서비스 대응까지 여섯 단계로 쌓인 백엔드 학습 순서. AI 단계가 기본기 직후에 새로 들어와 있다.</desc>
+
+  <!-- L1 기초 -->
+  <rect class="dg-item" x="72" y="24" width="616" height="64" rx="6"/>
+  <text class="dg-m" x="92" y="52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.10em">L1</text>
+  <text class="dg-t" x="140" y="52" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif">기초</text>
+  <text class="dg-m" x="140" y="72" font-size="10" font-family="'Geist Mono', ui-monospace, monospace">인터넷 · HTTP · DNS · HTML · CSS · JS</text>
+  <text class="dg-m" x="668" y="52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">6+2</text>
+
+  <!-- L2 언어 · 버전 관리 -->
+  <rect class="dg-item" x="72" y="88" width="616" height="64" rx="6"/>
+  <text class="dg-m" x="92" y="116" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.10em">L2</text>
+  <text class="dg-t" x="140" y="116" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif">언어 · 버전 관리</text>
+  <text class="dg-m" x="140" y="136" font-size="10" font-family="'Geist Mono', ui-monospace, monospace">언어 1개 택 · Git · GitHub</text>
+  <text class="dg-m" x="668" y="116" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">택 1</text>
+
+  <!-- L3 데이터 · API -->
+  <rect class="dg-item" x="72" y="152" width="616" height="64" rx="6"/>
+  <text class="dg-m" x="92" y="180" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.10em">L3</text>
+  <text class="dg-t" x="140" y="180" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif">데이터 · API</text>
+  <text class="dg-m" x="140" y="200" font-size="10" font-family="'Geist Mono', ui-monospace, monospace">PostgreSQL · REST · 인증 · 마이그레이션</text>
+  <text class="dg-m" x="668" y="180" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">기본기</text>
+
+  <!-- L4 운영 기초 -->
+  <rect class="dg-item" x="72" y="216" width="616" height="64" rx="6"/>
+  <text class="dg-m" x="92" y="244" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.10em">L4</text>
+  <text class="dg-t" x="140" y="244" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif">캐싱 · 웹 서버 · 보안</text>
+  <text class="dg-m" x="140" y="264" font-size="10" font-family="'Geist Mono', ui-monospace, monospace">Redis · Nginx · HTTPS · OWASP</text>
+  <text class="dg-m" x="668" y="244" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">기본기</text>
+
+  <!-- L5 AI — 포컬 -->
+  <rect class="dg-hl" x="72" y="280" width="616" height="64" rx="6"/>
+  <text class="dg-n" x="92" y="308" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.10em">L5</text>
+  <text class="dg-n" x="140" y="308" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif">AI</text>
+  <text class="dg-n" x="140" y="328" font-size="10" font-family="'Geist Mono', ui-monospace, monospace">LLM · RAG · Agents · MCP · Function Calling</text>
+  <text class="dg-n" x="668" y="308" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">2026 신규</text>
+
+  <!-- L6 심화 · 규모 대응 -->
+  <rect class="dg-item" x="72" y="344" width="616" height="64" rx="6"/>
+  <text class="dg-m" x="92" y="372" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.10em">L6</text>
+  <text class="dg-t" x="140" y="372" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif">심화 · 규모 대응</text>
+  <text class="dg-m" x="140" y="392" font-size="10" font-family="'Geist Mono', ui-monospace, monospace">CI/CD · 테스트 · Kafka · 아키텍처 · 관측성</text>
+  <text class="dg-m" x="668" y="372" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">확장</text>
+
+  <!-- 범례 -->
+  <line class="dg-arw" x1="72" y1="424" x2="688" y2="424" stroke-width="0.8"/>
+  <rect class="dg-hl" x="72" y="434" width="10" height="10" rx="2"/>
+  <text class="dg-m" x="90" y="443" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.10em">예전 로드맵에는 없던 단계</text>
+</svg>
