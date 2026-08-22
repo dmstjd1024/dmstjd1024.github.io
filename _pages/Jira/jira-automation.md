@@ -17,7 +17,7 @@ thumbnail: "/assets/img/thumbnail/empty.jpg"
 > [JIRA 입문 - 개념부터 기본 사용법까지](/Jira/jira-basic.html)에서 이어지는 글이다.
 > 1편이 "JIRA가 무엇이고 어떻게 쓰는가"였다면, 이 글은 "손으로 하던 일을 어떻게 줄이는가"에 대한 글이다.
 
-들어가며,
+들어가며
 =====
 -----
 JIRA를 며칠 써보면 반복 작업이 눈에 띄기 시작한다.
@@ -30,7 +30,7 @@ JIRA를 며칠 써보면 반복 작업이 눈에 띄기 시작한다.
 2. **자동화(Automation)** — 조건이 맞으면 JIRA가 알아서 처리하게 만드는 규칙
 3. **연동(Integration)** — GitHub, Slack과 붙여서 JIRA에 들어가지 않고도 흐름이 이어지게 만들기
 
-JQL 심화,
+JQL 심화
 =====
 -----
 JQL(Jira Query Language)은 이슈를 조건으로 걸러내는 검색 문법이다. SQL의 `WHERE` 절과 비슷하지만, `SELECT`나 `FROM`은 없다. **조건과 정렬만 쓴다.**
@@ -186,7 +186,7 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 
 **생성 대 해결** 차트는 팀 상태를 판단하는 데 유용하다. 생성 곡선이 해결 곡선보다 계속 위에 있으면 일이 쌓이고 있다는 뜻이다.
 
-자동화(Automation),
+자동화(Automation)
 =====
 -----
 반복 작업을 규칙으로 만들어 JIRA가 대신 처리하게 한다. **코드 없이 화면에서 설정**한다.
@@ -297,7 +297,7 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 - **실행 횟수 제한**이 요금제별로 있다. 예약 규칙을 너무 잦은 주기로 만들면 금방 소진된다
 - **처음엔 알림만 하는 규칙부터** 만든다. 상태를 바꾸거나 이슈를 옮기는 규칙은 잘못 만들면 되돌리기 번거롭다
 
-Git 연동,
+Git 연동
 =====
 -----
 1편에서 커밋 메시지에 이슈 키를 넣으면 연결된다고 했다. 여기서는 그 이상을 다룬다.
@@ -405,7 +405,7 @@ jobs:
 - `JIRA_API_TOKEN`은 Atlassian 계정 설정에서 발급받아 GitHub Secrets에 등록한다
 - `transition` 값은 **워크플로우에 정의된 전환 이름과 정확히 일치**해야 한다
 
-Slack 연동,
+Slack 연동
 =====
 -----
 개발자가 하루 종일 보는 곳은 JIRA가 아니라 Slack이다. 알림을 Slack으로 보내면 확인율이 올라간다.
@@ -450,7 +450,7 @@ Slack에서 Incoming Webhook URL을 발급받고, 자동화 액션에 아래처�
 - 팀 전체가 알아야 하는 것(긴급 버그, 배포 완료)만 채널로
 - 정기 요약(매일 아침 오늘 할 일)은 하루 1회로 묶어서
 
-정리,
+정리
 =====
 -----
 
