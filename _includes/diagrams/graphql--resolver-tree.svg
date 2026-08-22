@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="쿼리 트리를 따라 필드마다 리졸버가 차례로 호출되고 부모 리졸버의 결과가 자식 리졸버의 입력으로 전달되는 구조">
+  <marker id="gqlrt-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">리졸버는 필드마다 하나씩 불린다</text>
+  <text class="dg-s" x="24" y="50">위 리졸버가 돌려준 값이 아래 리졸버의 입력이 된다</text>
+
+  <rect class="dg-lane" x="24" y="68" width="672" height="212" rx="10"/>
+
+  <rect class="dg-lead" x="44" y="88" width="228" height="42" rx="6"/>
+  <text class="dg-n" x="60" y="114">1</text>
+  <text class="dg-k" x="80" y="114">Query.user</text>
+
+  <text class="dg-s" x="292" y="106">id 로 사용자 한 명을 찾는다</text>
+  <text class="dg-s" x="292" y="124">결과 : User 객체 하나</text>
+
+  <path class="dg-arw" d="M158 134 V150" marker-end="url(#gqlrt-a)"/>
+
+  <rect class="dg-row" x="64" y="154" width="208" height="42" rx="6"/>
+  <text class="dg-n" x="80" y="180">2</text>
+  <text class="dg-t" x="100" y="180">User.name</text>
+
+  <text class="dg-s" x="292" y="172">User 객체에서 그냥 꺼낸다</text>
+  <text class="dg-s" x="292" y="190">리졸버를 직접 안 짜도 된다</text>
+
+  <path class="dg-arw" d="M158 200 V216" marker-end="url(#gqlrt-a)"/>
+
+  <rect class="dg-lead" x="64" y="220" width="208" height="42" rx="6"/>
+  <text class="dg-n" x="80" y="246">3</text>
+  <text class="dg-k" x="100" y="246">User.posts</text>
+
+  <text class="dg-s" x="292" y="238">글을 따로 조회해 와야 한다</text>
+  <text class="dg-s" x="292" y="256">직접 짜야 하는 건 이런 필드다</text>
+
+  <rect class="dg-warn" x="24" y="296" width="672" height="52" rx="8"/>
+  <text class="dg-v" x="44" y="320">사용자가 10명이면 3번 리졸버가 10번 불린다 — N+1 이 여기서 나온다</text>
+  <text class="dg-s" x="44" y="340">리졸버는 부모 하나씩만 받으므로, 모아서 처리하려면 DataLoader 가 필요하다</text>
+</svg>

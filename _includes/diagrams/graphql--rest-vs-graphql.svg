@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="REST 는 화면 하나를 그리려고 세 번 왕복하며 안 쓰는 필드까지 받는 반면 GraphQL 은 한 번 왕복으로 필요한 필드만 받는 구조">
+  <marker id="gqlrvg-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">화면 하나를 그리는 데 드는 왕복</text>
+  <text class="dg-s" x="24" y="50">사용자 이름 + 글 제목 + 댓글 수가 필요한 화면</text>
+
+  <rect class="dg-lane" x="24" y="68" width="330" height="230" rx="10"/>
+  <text class="dg-k" x="44" y="94">REST — 왕복 3번</text>
+
+  <rect class="dg-row" x="44" y="108" width="290" height="46" rx="6"/>
+  <text class="dg-v" x="60" y="128">GET /users/1</text>
+  <text class="dg-s" x="60" y="146">이름 외에 주소·전화·가입일도 함께 온다</text>
+
+  <path class="dg-arw" d="M189 158 V172" marker-end="url(#gqlrvg-a)"/>
+
+  <rect class="dg-row" x="44" y="176" width="290" height="46" rx="6"/>
+  <text class="dg-v" x="60" y="196">GET /users/1/posts</text>
+  <text class="dg-s" x="60" y="214">첫 응답을 받아야 무엇을 부를지 안다</text>
+
+  <path class="dg-arw" d="M189 226 V240" marker-end="url(#gqlrvg-a)"/>
+
+  <rect class="dg-row" x="44" y="244" width="290" height="46" rx="6"/>
+  <text class="dg-v" x="60" y="264">GET /posts/9/comments</text>
+  <text class="dg-s" x="60" y="282">글마다 또 불러야 한다</text>
+
+  <rect class="dg-lane" x="374" y="68" width="322" height="230" rx="10"/>
+  <text class="dg-k" x="394" y="94">GraphQL — 왕복 1번</text>
+
+  <rect class="dg-lead" x="394" y="108" width="282" height="182" rx="6"/>
+  <text class="dg-v" x="410" y="130">POST /graphql</text>
+  <text class="dg-s" x="410" y="154">query {</text>
+  <text class="dg-s" x="426" y="174">user(id: "1") {</text>
+  <text class="dg-s" x="442" y="194">name</text>
+  <text class="dg-s" x="442" y="214">posts { title commentCount }</text>
+  <text class="dg-s" x="426" y="234">}</text>
+  <text class="dg-s" x="410" y="254">}</text>
+  <text class="dg-s" x="410" y="278">적은 필드만 정확히 돌아온다</text>
+
+  <rect class="dg-lane" x="24" y="314" width="672" height="66" rx="8"/>
+  <text class="dg-v" x="44" y="338">REST 의 두 문제 — 안 쓰는 필드까지 받고(오버페칭), 모자라서 또 부른다(언더페칭)</text>
+  <text class="dg-s" x="44" y="360">왕복이 줄어드는 대신, 서버는 어떤 쿼리가 올지 미리 알 수 없게 된다</text>
+</svg>
