@@ -39,7 +39,20 @@ layout: default
       </div>
       <div>
         <dt>기술 글</dt>
-        <dd><b>79</b><i>편</i></dd>
+{%- comment -%}
+  글 수는 세어서 쓴다. 손으로 박아두면 글을 올릴 때마다 같이 고쳐야 하고,
+  실제로 79 로 적힌 채 86 편이 될 때까지 아무도 눈치채지 못했다.
+  측정하지 않은 숫자를 쓰지 않는다는 이 블로그의 원칙이 첫 화면에서
+  먼저 깨져 있던 셈이다.
+
+  기준을 thumbnail 로 잡은 이유:
+  카테고리 인덱스(_pages/*/index.md)는 frontmatter 가 비어 있어 글이 아닌데,
+  title 로는 걸러지지 않는다 — Jekyll 이 파일명에서 "Index" 를 자동으로
+  채워 넣기 때문이다. categories·tags 도 안 된다. 인덱스에서 빈 배열이
+  되는데 Liquid 에서 빈 배열은 참이라 where_exp 를 그냥 통과한다(113개 전부).
+  thumbnail 은 글에만 있고 인덱스에는 아예 없는 유일한 필드다.
+{%- endcomment -%}
+        <dd><b>{{ site.pages | where_exp: "p", "p.thumbnail" | size }}</b><i>편</i></dd>
         <p>문제 · 원인 · 해결 기록</p>
       </div>
       <div>
