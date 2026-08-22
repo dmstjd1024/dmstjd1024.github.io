@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 580" role="img" aria-labelledby="backend-roadmap--s7-title backend-roadmap--s7-desc">
+  <title id="backend-roadmap--s7-title">7단계 규모 대응</title>
+  <desc id="backend-roadmap--s7-desc">실시간 데이터에서 DB 확장, NoSQL 을 거쳐 대규모 서비스 대응으로 이어지는 구간.</desc>
+
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 실시간 데이터 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">실시간 데이터</text>
+  <rect class="dg-item" x="200" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">WebSocket</text>
+  <rect class="dg-item" x="312" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SSE</text>
+  <rect class="dg-item" x="424" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">롱/숏 폴링</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+
+  <!-- DB 확장 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">DB 확장</text>
+  <rect class="dg-item" x="144" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="192" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인덱스</text>
+  <rect class="dg-item" x="256" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="304" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">복제</text>
+  <rect class="dg-item" x="368" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="416" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">샤딩</text>
+  <rect class="dg-item" x="480" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="528" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CAP 정리</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+
+  <!-- NoSQL -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="37" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">NoSQL</text>
+  <rect class="dg-item" x="141" y="344" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="201" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MongoDB · Redis</text>
+  <text class="dg-s" x="201" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">추천</text>
+  <rect class="dg-item" x="278" y="344" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="352" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DynamoDB · Cassandra</text>
+  <text class="dg-s" x="352" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="442" y="344" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="510" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Neo4j · ClickHouse</text>
+  <text class="dg-s" x="510" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <path class="dg-arw" d="M360,420 V458" marker-end="url(#br-arw)"/>
+
+  <!-- 대규모 서비스 대응 -->
+  <rect class="dg-zone" x="24" y="464" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="458" width="91" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="467" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">대규모 서비스 대응</text>
+  <rect class="dg-item" x="104" y="488" width="131" height="52" rx="6"/>
+  <text class="dg-t" x="169" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">관측성 · 모니터링</text>
+  <rect class="dg-item" x="251" y="488" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="306" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서킷 브레이커</text>
+  <rect class="dg-item" x="377" y="488" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="425" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스로틀링</text>
+  <rect class="dg-item" x="489" y="488" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="552" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">우아한 성능 저하</text>
+</svg>

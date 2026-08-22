@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 208" role="img" aria-labelledby="brcontainers-title brcontainers-desc">
+  <title id="brcontainers-title">컨테이너는 별도 로드맵으로 분기</title>
+  <desc id="brcontainers-desc">백엔드 로드맵의 컨테이너 자리에서 Docker 로드맵과 쿠버네티스 로드맵으로 각각 갈라져 나가는 구조. 두 항목은 로드맵 내부의 학습 항목이 아니다.</desc>
+
+  <defs>
+    <marker id="brc-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 분기선: 백엔드 로드맵 오른쪽에서 두 갈래로 -->
+  <path class="dg-arw" d="M264,104 H316 Q324,104 324,96 V60 Q324,52 332,52 H396" marker-end="url(#brc-arw)"/>
+  <path class="dg-arw" d="M264,104 H316 Q324,104 324,112 V148 Q324,156 332,156 H396" marker-end="url(#brc-arw)"/>
+
+  <!-- 출발점 -->
+  <rect class="dg-item" x="56" y="76" width="208" height="56" rx="6"/>
+  <text class="dg-t" x="160" y="100" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백엔드 로드맵</text>
+  <text class="dg-s" x="160" y="118" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">컨테이너 자리</text>
+
+  <!-- 갈라져 나가는 두 로드맵 -->
+  <rect class="dg-item" x="396" y="24" width="268" height="56" rx="6"/>
+  <text class="dg-t" x="530" y="48" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Docker 로드맵</text>
+  <text class="dg-s" x="530" y="66" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/docker</text>
+
+  <rect class="dg-item" x="396" y="128" width="268" height="56" rx="6"/>
+  <text class="dg-t" x="530" y="152" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿠버네티스 로드맵</text>
+  <text class="dg-s" x="530" y="170" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/kubernetes</text>
+</svg>
