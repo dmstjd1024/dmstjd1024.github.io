@@ -13,12 +13,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 mermaid: true
 ---
 
-[roadmap.sh/backend](https://roadmap.sh/backend) 의 백엔드 개발자 로드맵을 그대로 옮겨 그렸다.
-원본은 가로로 넓은 한 장짜리 마인드맵이라 화면에서 훑기가 불편해서, **단계별로 쪼개서** 정리했다.
-
-기준 데이터는 2026-02-07 갱신본이고 **토픽 23개 · 세부 항목 132개**다.
-
-먼저 색부터 짚고 간다. 로드맵의 색은 장식이 아니라 **분류**다.
+로드맵의 색은 장식이 아니라 **분류**다.
 
 | 색 | 의미 | 개수 |
 |---|---|---|
@@ -291,3 +286,12 @@ flowchart LR
 
 로드맵은 체크리스트가 아니라 지도에 가깝다.
 다 밟아야 하는 게 아니라, **지금 내가 어디쯤 서 있는지** 확인하는 용도로 보는 게 맞다고 생각한다.
+
+---
+
+참고
+=====
+-----
+
+- [roadmap.sh/backend](https://roadmap.sh/backend) — 원본 로드맵 (2026-02-07 갱신본 기준, 토픽 23개 · 세부 항목 132개)
+- [roadmap.sh/docker](https://roadmap.sh/docker) · [roadmap.sh/kubernetes](https://roadmap.sh/kubernetes) — 컨테이너 쪽에서 갈라져 나가는 로드맵
