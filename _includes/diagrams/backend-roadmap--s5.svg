@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="backend-roadmap--s5-title backend-roadmap--s5-desc">
+  <title id="backend-roadmap--s5-title">5단계 AI</title>
+  <desc id="backend-roadmap--s5-desc">LLM 기초에서 AI 코딩 도구를 거쳐 AI 기능 개발로 이어지는 구간. 2026년에 새로 들어온 단계다.</desc>
+
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 기초 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="32" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">기초</text>
+  <rect class="dg-item" x="186" y="56" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="241" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LLM 동작 원리</text>
+  <rect class="dg-item" x="312" y="56" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="367" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">임베딩 · 벡터</text>
+  <rect class="dg-item" x="438" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="486" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RAG</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+
+  <!-- AI 코딩 도구 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="66" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">AI 코딩 도구</text>
+  <rect class="dg-item" x="176" y="200" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="225" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Claude Code</text>
+  <text class="dg-s" x="225" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">추천</text>
+  <rect class="dg-item" x="291" y="200" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="354" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Cursor · Copilot</text>
+  <text class="dg-s" x="354" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="433" y="200" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="488" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">프롬프팅 기법</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+
+  <!-- AI 기능 개발 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="66" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">AI 기능 개발</text>
+  <rect class="dg-item" x="138" y="344" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="190" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Agents · MCP</text>
+  <rect class="dg-item" x="258" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="306" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스트리밍</text>
+  <rect class="dg-item" x="370" y="344" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="476" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구조화된 출력 · Function Calling</text>
+</svg>
