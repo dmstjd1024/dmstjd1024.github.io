@@ -137,7 +137,7 @@ Jekyll(kramdown)은 그냥 이렇게 내보낸다.
 ```html
 {% raw %}{% if page.mermaid %}
 <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.17.0/dist/mermaid.esm.min.mjs';
 
   document.querySelectorAll('code.language-mermaid').forEach((code) => {
     const div = document.createElement('div');
@@ -159,6 +159,11 @@ Jekyll(kramdown)은 그냥 이렇게 내보낸다.
 ```yaml
 mermaid: true
 ```
+
+**버전을 `@11` 이 아니라 `@11.17.0` 으로 박아둔 것도 의도**다.
+`@11` 로 두면 jsDelivr 가 요청 시점의 최신 11.x 를 내려준다. 편해 보이지만,
+**그 자바스크립트는 내 블로그에서 그대로 실행된다.** 언젠가 올라올 11.x 를 미리 검토할 방법이 없으니
+버전을 고정해두고, 올릴 때 커밋으로 올려 diff 를 보는 편이 낫다.
 
 `mermaid.initialize()` 에 **테마를 지정하지 않은 것도 의도**다.
 `theme: 'dark'` 를 주면 노드 배경은 밝은 색 그대로인데 글자만 밝아져서

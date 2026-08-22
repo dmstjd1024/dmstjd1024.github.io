@@ -80,7 +80,9 @@
   {%- endcomment -%}
   {%- if page.mermaid %}
   <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    // 버전을 고정한다. @11 처럼 범위로 두면 jsDelivr 가 그때그때 최신 11.x 를 내려주는데,
+    // 그 코드는 이 블로그에서 그대로 실행된다. 올릴 때는 커밋으로 올려 검토를 거친다.
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.17.0/dist/mermaid.esm.min.mjs';
 
     document.querySelectorAll('code.language-mermaid').forEach((code) => {
       const div = document.createElement('div');
