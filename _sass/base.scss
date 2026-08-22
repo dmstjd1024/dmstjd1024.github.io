@@ -50,6 +50,21 @@ button {
 
 svg { width:18px; height:18px; fill:currentColor; display:block; }
 
+// 위 규칙은 인라인 아이콘용이다. mermaid 가 그리는 다이어그램까지 18px 로 눌리므로
+// 다이어그램에서만 해제한다. 넓은 그림은 가로 스크롤로 흘려보낸다.
+.mermaid {
+  overflow-x:auto;
+  margin:2rem 0;
+  text-align:center;
+
+  svg {
+    width:auto; height:auto;
+    max-width:100%;
+    fill:none;
+    display:inline-block;
+  }
+}
+
 hr { border:0; border-top:1px solid var(--border); margin:2.5rem 0; }
 
 code, pre, kbd, samp { font-family:var(--font-mono); }

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-labelledby="backend-roadmap--s1-title backend-roadmap--s1-desc">
+  <title id="backend-roadmap--s1-title">1단계 기초</title>
+  <desc id="backend-roadmap--s1-desc">인터넷 동작 원리와 HTTP, DNS 를 익힌 뒤 HTML·CSS·JavaScript 기초로 이어지는 구간.</desc>
+
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 인터넷 기초 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">인터넷 기초</text>
+  <rect class="dg-item" x="116" y="56" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인터넷 동작 원리</text>
+  <path class="dg-arw" d="M242,82 H255" marker-end="url(#br-arw)"/>
+  <rect class="dg-item" x="258" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="306" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">HTTP</text>
+  <path class="dg-arw" d="M354,82 H367" marker-end="url(#br-arw)"/>
+  <rect class="dg-item" x="370" y="56" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="430" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">도메인 · 호스팅</text>
+  <path class="dg-arw" d="M491,82 H504" marker-end="url(#br-arw)"/>
+  <rect class="dg-item" x="507" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="555" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DNS</text>
+  <rect class="dg-item" x="291" y="122" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">브라우저 동작 원리</text>
+  <path class="dg-arw" d="M360,198 V236" marker-end="url(#br-arw)"/>
+
+  <!-- 프론트엔드 기초 -->
+  <rect class="dg-zone" x="24" y="242" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="79" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">프론트엔드 기초</text>
+  <rect class="dg-item" x="200" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">HTML</text>
+  <path class="dg-arw" d="M296,292 H309" marker-end="url(#br-arw)"/>
+  <rect class="dg-item" x="312" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CSS</text>
+  <path class="dg-arw" d="M408,292 H421" marker-end="url(#br-arw)"/>
+  <rect class="dg-item" x="424" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JavaScript</text>
+</svg>

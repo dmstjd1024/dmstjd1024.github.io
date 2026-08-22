@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 528" role="img" aria-labelledby="brstages-title brstages-desc">
+  <title id="brstages-title">백엔드 로드맵 전체 구조</title>
+  <desc id="brstages-desc">기본기(인터넷·언어·DB·API·캐싱)를 거쳐 AI 단계로 들어가고, 그 뒤 심화와 규모 대응으로 이어지는 백엔드 학습 경로. AI 는 2026년에 새로 들어온 단계다.</desc>
+
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+    <marker id="br-arw-a" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path class="br-head-a" d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- ================= 존 1 · 기본기 ================= -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="216" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="52" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">기본기</text>
+
+  <!-- 1행: 인터넷 → 언어 → Git -->
+  <path class="dg-arw" d="M160,92 H196" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M324,92 H360" marker-end="url(#br-arw)"/>
+  <!-- 1행 끝 → 2행 첫 칸 (아래로 꺾어 내려감) -->
+  <path class="dg-arw" d="M488,116 V140 Q488,148 480,148 H120 Q112,148 112,156 V172" marker-end="url(#br-arw)"/>
+
+  <rect class="dg-item" x="48" y="64" width="112" height="56" rx="6"/>
+  <text class="dg-t" x="104" y="88" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인터넷 기초</text>
+  <text class="dg-s" x="104" y="106" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">HTTP · DNS</text>
+
+  <rect class="dg-item" x="196" y="64" width="128" height="56" rx="6"/>
+  <text class="dg-t" x="260" y="88" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">언어 1개</text>
+  <text class="dg-s" x="260" y="106" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Python · Java …</text>
+
+  <rect class="dg-item" x="360" y="64" width="128" height="56" rx="6"/>
+  <text class="dg-t" x="424" y="88" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">버전 관리</text>
+  <text class="dg-s" x="424" y="106" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Git · GitHub</text>
+
+  <!-- 2행: DB → API → 캐싱·웹서버 -->
+  <path class="dg-arw" d="M176,200 H212" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M340,200 H376" marker-end="url(#br-arw)"/>
+
+  <rect class="dg-item" x="64" y="172" width="112" height="56" rx="6"/>
+  <text class="dg-t" x="120" y="196" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">관계형 DB</text>
+  <text class="dg-s" x="120" y="214" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">PostgreSQL</text>
+
+  <rect class="dg-item" x="212" y="172" width="128" height="56" rx="6"/>
+  <text class="dg-t" x="276" y="196" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">API · 인증</text>
+  <text class="dg-s" x="276" y="214" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">REST · JWT</text>
+
+  <rect class="dg-item" x="376" y="172" width="152" height="56" rx="6"/>
+  <text class="dg-t" x="452" y="196" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">캐싱 · 웹 서버</text>
+  <text class="dg-s" x="452" y="214" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Redis · Nginx</text>
+
+  <!-- 기본기 → AI -->
+  <path class="dg-arw-a" d="M360,248 V288" marker-end="url(#br-arw-a)"/>
+  <rect class="dg-mask" x="368" y="258" width="64" height="12" rx="2"/>
+  <text class="dg-n" x="372" y="267" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em">기본기 다음</text>
+
+  <!-- ================= 존 2 · AI (신규) ================= -->
+  <rect class="dg-zone-a" x="24" y="288" width="672" height="112" rx="8"/>
+  <rect class="dg-mask" x="40" y="282" width="96" height="12" rx="2"/>
+  <text class="dg-n" x="44" y="291" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">AI · 2026 신규</text>
+
+  <path class="dg-arw" d="M216,348 H252" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M416,348 H452" marker-end="url(#br-arw)"/>
+
+  <rect class="dg-hl" x="48" y="320" width="168" height="56" rx="6"/>
+  <text class="dg-n" x="132" y="344" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기초</text>
+  <text class="dg-n" x="132" y="362" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">LLM · 임베딩 · RAG</text>
+
+  <rect class="dg-hl" x="252" y="320" width="164" height="56" rx="6"/>
+  <text class="dg-n" x="334" y="344" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">코딩 도구</text>
+  <text class="dg-n" x="334" y="362" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Claude Code · Cursor</text>
+
+  <rect class="dg-hl" x="452" y="320" width="196" height="56" rx="6"/>
+  <text class="dg-n" x="550" y="344" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기능 개발</text>
+  <text class="dg-n" x="550" y="362" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Agents · MCP · 스트리밍</text>
+
+  <!-- AI → 심화 -->
+  <path class="dg-arw" d="M360,400 V440" marker-end="url(#br-arw)"/>
+
+  <!-- ================= 존 3 · 심화 ================= -->
+  <rect class="dg-zone" x="24" y="440" width="672" height="72" rx="8"/>
+  <rect class="dg-mask" x="40" y="434" width="76" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="443" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">심화 · 확장</text>
+
+  <path class="dg-arw" d="M208,480 H244" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M404,480 H440" marker-end="url(#br-arw)"/>
+
+  <rect class="dg-item" x="48" y="460" width="160" height="40" rx="6"/>
+  <text class="dg-t" x="128" y="485" font-size="11" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI/CD · 테스트</text>
+
+  <rect class="dg-item" x="244" y="460" width="160" height="40" rx="6"/>
+  <text class="dg-t" x="324" y="485" font-size="11" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">아키텍처 · Kafka</text>
+
+  <rect class="dg-item" x="440" y="460" width="208" height="40" rx="6"/>
+  <text class="dg-t" x="544" y="485" font-size="11" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">규모 대응 · 관측성</text>
+</svg>
