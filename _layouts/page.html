@@ -71,5 +71,28 @@
     <script defer src="{{ '/assets/js/post.js' | prepend: site.baseurl }}"></script>
   {%- endif %}
   {% include search_event.html %}
+
+  {%- comment -%}
+    프론트매터에 mermaid: true 가 있는 글에서만 불러온다.
+    Jekyll(kramdown)은 ```mermaid 펜스를 <code class="language-mermaid"> 로 내보낼 뿐이라,
+    이 스크립트가 없으면 다이어그램 대신 소스가 그대로 보인다.
+    (github.com 저장소 화면에서 렌더되는 것과는 다른 경로다.)
+  {%- endcomment -%}
+  {%- if page.mermaid %}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+    document.querySelectorAll('code.language-mermaid').forEach((code) => {
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = code.textContent;
+      code.closest('pre').replaceWith(div);
+    });
+
+    // 테마를 지정하지 않는다. dark 를 주면 노드 배경은 그대로인데 글자만 밝아져 대비가 무너진다.
+    mermaid.initialize({ startOnLoad: false });
+    await mermaid.run();
+  </script>
+  {%- endif %}
 </body>
 </html>
