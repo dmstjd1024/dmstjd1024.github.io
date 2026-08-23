@@ -17,7 +17,7 @@
 
   <rect class="dg-row" x="44" y="172" width="290" height="42" rx="6"/>
   <text class="dg-v" x="60" y="192">재고 서비스</text>
-  <text class="dg-s" x="60" y="208">이 사이 주문 서비스의 스레드는 묶여 있다</text>
+  <text class="dg-s" x="60" y="208">이 사이 주문 서비스 스레드는 묶여 있다</text>
 
   <path class="dg-arw" d="M189 218 V232" marker-end="url(#msgsva-a)"/>
 
