@@ -176,12 +176,17 @@ spring:
     consumer:
       group-id: order-mail
       auto-offset-reset: earliest
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "com.example"
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 ```
 - `group-id` 가 앞에서 본 컨슈머 그룹이다. 이 값이 같은 인스턴스끼리 메시지를 나눠 갖는다
 - `auto-offset-reset: earliest` 는 "읽은 기록이 없으면 맨 앞부터"라는 뜻이다. `latest` 로 두면 붙기 전 메시지는 건너뛴다
+- **`value-deserializer` 를 빼먹으면 안 된다.** 스프링 부트의 기본값은 `StringDeserializer` 라서, 지정하지 않으면 객체로 받지 못하고 실행 중에 깨진다
+- `trusted.packages` 는 역직렬화를 허용할 패키지다. 기본은 `java.util`·`java.lang` 뿐이라 내 클래스를 넣어 줘야 한다
 
 ## 메시지 정의
 ```java
@@ -225,7 +230,9 @@ public class MailConsumer {
 }
 ```
 - `@KafkaListener` 하나면 끝난다. 스프링이 폴링 루프와 오프셋 커밋을 대신 해 준다
-- 메서드가 예외 없이 끝나면 스프링이 오프셋을 커밋한다. **예외가 나면 커밋하지 않아 다시 받는다**
+- 커밋 시점은 `poll()` 로 가져온 묶음을 다 처리했을 때다. 레코드 하나마다가 아니다 (기본값 `AckMode.BATCH`)
+- 예외가 나면 그 레코드부터 다시 읽어 **기본 10회까지 재시도한다.** 여기까지는 흔히 아는 대로다
+- **그런데 재시도를 다 쓰면 기본 설정은 로그만 남기고 건너뛴 뒤 오프셋을 커밋한다.** 즉 메시지가 사라진다. "예외를 던지면 안전하다"가 아니다. 뒤의 DLQ 를 붙여야 비로소 남는다
 
 ## 구독자 추가하기
 통계를 붙인다고 해 보자. 생산자 코드는 **한 줄도 고치지 않는다.**
@@ -262,10 +269,11 @@ Kafka 는 **파티션(Partition, 토픽을 나눠 담는 단위) 안에서만** 
 - Kafka 의 `enable.idempotence` 는 **생산자가 재시도할 때 중복 발행을 막는 것**이지 소비자 쪽 중복까지 막아주지 않는다. 이름 때문에 자주 오해한다
 
 ## 실패한 메시지 - DLQ
-계속 실패하는 메시지 하나가 뒤 메시지를 전부 막을 수 있다. 오프셋이 진행되지 않기 때문이다.
+계속 실패하는 메시지를 어떻게 할 것이냐는 문제다. 붙들고 재시도하면 뒤 메시지가 막히고, 건너뛰면 사라진다.
 
-- 몇 번 재시도한 뒤 별도 토픽으로 보낸다. 이걸 **DLQ(Dead Letter Queue)** 라고 한다
-- 스프링에서는 `DefaultErrorHandler` 와 `DeadLetterPublishingRecoverer` 로 붙인다
+- 앞서 본 대로 **스프링의 기본값은 건너뛰는 쪽**이다. 재시도를 다 쓰면 로그만 남는다
+- 그래서 몇 번 재시도한 뒤 **별도 토픽으로 옮긴다.** 이걸 **DLQ(Dead Letter Queue)** 라고 한다. 막히지도 사라지지도 않게 하는 절충이다
+- 스프링에서는 `DefaultErrorHandler` 에 `DeadLetterPublishingRecoverer` 를 끼워 붙인다
 - DLQ 는 만들어 두는 것보다 **쌓인 걸 누가 언제 보느냐**가 실제 문제다. 보지 않는 DLQ 는 조용한 유실이다
 
 ## 컨슈머 랙

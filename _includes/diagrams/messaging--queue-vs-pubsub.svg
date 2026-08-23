@@ -17,8 +17,8 @@
   <rect class="dg-row" x="44" y="180" width="130" height="38" rx="6"/>
   <text class="dg-v" x="58" y="204">소비자 A</text>
 
-  <rect class="dg-row" x="204" y="180" width="130" height="38" rx="6"/>
-  <text class="dg-s" x="218" y="204">소비자 B — 못 받음</text>
+  <rect class="dg-row" x="196" y="180" width="146" height="38" rx="6"/>
+  <text class="dg-s" x="210" y="204">소비자 B — 못 받음</text>
 
   <text class="dg-s" x="44" y="244">소비자를 늘리면 처리량이 나뉜다</text>
   <text class="dg-s" x="44" y="266">주문 처리처럼 두 번 하면 안 되는 일</text>
