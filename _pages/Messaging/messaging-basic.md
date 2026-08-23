@@ -104,6 +104,13 @@ Kafka 에는 큐와 토픽이 따로 있지 않다. **토픽 하나에 컨슈머
 -----
 "넣고 바로 돌아온다"는 건 **넣은 뒤에 무슨 일이 생겼는지 모른다**는 뜻이기도 하다. 메시징에서 가장 많은 고민이 여기에 몰려 있다.
 
+<div class="diagram">
+{% include diagrams/messaging--ack-flow.svg %}
+</div>
+
+아래 세 절이 이 그림의 각 부분이다. ack 이 정상 흐름을, 전달 보장이 재전달을,
+멱등성이 마지막 칸을 설명한다.
+
 ## ack - 처리했다는 신호
 소비자가 메시지를 꺼내 갔다고 해서 브로커가 바로 지우면 안 된다. 처리 도중에 소비자가 죽으면 그 메시지는 사라진다.
 
@@ -154,15 +161,26 @@ services:
   kafka:
     image: apache/kafka:3.9.0
     ports:
-      - "9092:9092"
+      - "9092:9092"          # 애플리케이션이 붙는 포트
     environment:
+      # 브로커를 구분하는 번호. 1대만 띄우므로 1
       KAFKA_NODE_ID: 1
+      # 한 프로세스가 브로커와 컨트롤러를 겸한다.
+      # 예전에는 주키퍼가 하던 일을 카프카가 직접 한다(KRaft 모드)
       KAFKA_PROCESS_ROLES: broker,controller
+      # 실제로 열어 둘 포트. 9092 는 클라이언트용, 9093 은 컨트롤러끼리 쓰는 통로
       KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      # 클라이언트에게 "나한테 오려면 이 주소로 와라"라고 알려 줄 주소.
+      # 컨테이너 밖에서 붙으므로 localhost 다 — 여기를 잘못 쓰면 연결이 안 된다
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      # 컨트롤러 투표에 참여할 노드 목록. {노드번호}@{주소} 형식이고 지금은 자기 자신뿐
       KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      # 위 리스너 중 어느 것이 컨트롤러용인지 지정
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      # 각 리스너가 쓸 보안 방식. PLAINTEXT 는 암호화 없음 — 로컬이라 그냥 둔다
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
+      # 내부 오프셋 토픽을 몇 벌 복제할지. 브로커가 1대라 1 이어야 한다.
+      # 기본값 3 으로 두면 복제할 곳이 없어 기동에 실패한다
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 ```
 
@@ -171,14 +189,20 @@ services:
 # application.yml
 spring:
   kafka:
+    # 처음 접속할 브로커 주소. 나머지 브로커 목록은 여기서 받아 온다
     bootstrap-servers: localhost:9092
     consumer:
+      # 컨슈머 그룹 이름. 이 값이 같으면 메시지를 나눠 갖고, 다르면 각자 다 받는다
       group-id: order-mail
+      # 읽은 기록이 없을 때 어디부터 읽을지. earliest 는 맨 앞부터
       auto-offset-reset: earliest
+      # 받은 바이트를 객체로 되돌리는 방법. 안 쓰면 문자열로만 받는다
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
+        # 역직렬화를 허용할 패키지. 아무 클래스나 만들어지지 않게 막는 장치다
         spring.json.trusted.packages: "com.example"
     producer:
+      # 보낼 때 키·값을 바이트로 바꾸는 방법. 키는 문자열, 값은 JSON 으로 보낸다
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 ```
