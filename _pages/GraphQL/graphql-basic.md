@@ -4,15 +4,14 @@ title: "GraphQL 입문 - REST와 무엇이 다른가"
 categories:
  - GraphQL
 tags:
- - graphql
- - api
- - spring
- - backend
+  - graphql
+  - api
+  - Spring
+  - Backend
 
 date: 2026-08-22
 thumbnail: "/assets/img/thumbnail/empty.jpg"
 ---
-
 GraphQL 이란
 =====
 -----

@@ -17,8 +17,15 @@
     </div>
     <h1 class="post-head__title">{{ page.title }}</h1>
     {%- if page.tags and page.tags.size > 0 -%}
+      {%- comment -%}
+        slug 규칙은 _plugins/tag_pages.rb 의 slug_for 와 같아야 한다.
+        소문자로 낮추고 공백만 하이픈으로 — 기본 slugify 는 한글을 지운다.
+      {%- endcomment -%}
       <ul class="post-head__tags">
-        {%- for tag in page.tags -%}<li>#{{ tag }}</li>{%- endfor -%}
+        {%- for tag in page.tags -%}
+          {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
+          <li><a href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
+        {%- endfor -%}
       </ul>
     {%- endif -%}
   </header>
