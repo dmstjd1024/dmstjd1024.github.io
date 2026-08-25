@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="앞 필터가 조회한 엔티티를 뒤 필터가 재사용하게 바꿨더니, 두 쿼리의 fetch 범위가 달라 권한 검사가 깨진 과정">
+  <marker id="tps-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">재사용한 것은 객체였지, 로딩 상태가 아니었다</text>
+
+  <text class="dg-s" x="24" y="58">이전 — 각자 조회한다. 느리지만 맞다.</text>
+
+  <rect class="dg-row" x="24" y="70" width="200" height="54" rx="8"/>
+  <text class="dg-t" x="44" y="93">인증 필터</text>
+  <text class="dg-s" x="44" y="112">역할 없는 쿼리</text>
+
+  <rect class="dg-row" x="248" y="70" width="220" height="54" rx="8"/>
+  <text class="dg-t" x="268" y="93">권한 필터</text>
+  <text class="dg-s" x="268" y="112">역할 fetch join 쿼리 — 직접</text>
+
+  <rect class="dg-lead" x="492" y="70" width="204" height="54" rx="8"/>
+  <text class="dg-t" x="512" y="93">권한 검사 통과</text>
+  <text class="dg-s" x="512" y="112">역할 목록이 채워져 있다</text>
+
+  <text class="dg-s" x="24" y="164">최적화 후 — DB 왕복은 줄었는데 권한이 깨졌다</text>
+
+  <rect class="dg-row" x="24" y="176" width="200" height="54" rx="8"/>
+  <text class="dg-t" x="44" y="199">인증 필터</text>
+  <text class="dg-s" x="44" y="218">역할 없는 쿼리 그대로</text>
+
+  <path class="dg-arw" d="M232 203 H288" marker-end="url(#tps-a)"/>
+  <text class="dg-s" x="234" y="194">넘겨줌</text>
+
+  <rect class="dg-warn" x="296" y="176" width="220" height="54" rx="8"/>
+  <text class="dg-k" x="316" y="199">권한 필터 — 재조회 제거</text>
+  <text class="dg-s" x="316" y="218">받은 객체를 그대로 쓴다</text>
+
+  <path class="dg-arw" d="M524 203 H568" marker-end="url(#tps-a)"/>
+
+  <rect class="dg-warn" x="576" y="176" width="120" height="54" rx="8"/>
+  <text class="dg-k" x="596" y="199">역할 목록이</text>
+  <text class="dg-k" x="596" y="218">비어 있다</text>
+
+  <rect class="dg-lead" x="24" y="252" width="672" height="70" rx="8"/>
+  <text class="dg-t" x="44" y="278">2분 52초 뒤 — 앞 필터의 쿼리를 뒤 필터가 쓰던 것으로 승격</text>
+  <text class="dg-v" x="44" y="302">엔티티를 넘겨줄 때는 "무엇을 넘기나"가 아니라 "어떤 쿼리로 가져왔나"가 계약이다</text>
+</svg>
