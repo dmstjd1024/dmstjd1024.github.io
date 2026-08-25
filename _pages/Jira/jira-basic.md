@@ -4,15 +4,14 @@ title: "JIRA 입문 - 개념부터 기본 사용법까지"
 categories:
  - Jira
 tags:
- - jira
- - atlassian
- - 협업
- - 이슈트래커
+  - Jira
+  - atlassian
+  - 협업
+  - 이슈트래커
 
 date: 2026-08-19
 thumbnail: "/assets/img/thumbnail/empty.jpg"
 ---
-
 JIRA 란
 =====
 -----

@@ -4,14 +4,16 @@ title: "엔티티 설정"
 categories:
   - spring
 tags:
-  - [spring, JPA, entity, TICKET-EXPEDITIONARY-FORCE]
+  - Spring
+  - JPA
+  - entity
+  - TICKET-EXPEDITIONARY-FORCE
 
 date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
 redirect_from:
   - /spring/SETTING-ACCOUNT-ENTITY/
 ---
-
 ## 고민
 
 과연 Account 객체를 생성할 때 필요한 column명을 찾아서 적어봤다.

@@ -4,12 +4,11 @@ title: "도커 교과서 4장"
 categories:
  - Docker
 tags:
- - docker
+  - Docker
 
 date: 2025-07-06
 thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 ---
-
 ## 애플리케이션 소스 코드에서 도커 이미지까지
 
 ## Dockerfile 가 있는데 빌드서버가 필요할까?

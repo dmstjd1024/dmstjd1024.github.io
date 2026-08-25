@@ -4,12 +4,11 @@ title: "쿠버네티스 - 디플로이먼트(Deployment), 서비스(Service)"
 categories:
  - Kubernetes
 tags:
- - kubernetes
+  - Kubernetes
 
 date: 2026-08-19
 thumbnail: "/assets/img/thumbnail/kubernetes_thumbnail.png"
 ---
-
 디플로이먼트(Deployment) 란?
 =====
 -----

@@ -4,7 +4,7 @@ title:  "JVM, 자바 코드 실행 과정"
 categories:
   - java
 tags:
-  - java
+  - Java
   - 백기선 Live Study
 
 date: 2023-01-06
@@ -12,7 +12,6 @@ thumbnail: "/assets/img/thumbnail/java_thumbnail.png"
 redirect_from:
   - /java/live-study/
 ---
-
 ## 목적
 
 ---

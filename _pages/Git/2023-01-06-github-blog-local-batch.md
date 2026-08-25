@@ -4,7 +4,7 @@ title:  "깃허브 블로그 로컬로 돌리기"
 categories:
   - git
 tags:
-  - git
+  - Git
   - github
   - jekyll
 
@@ -13,7 +13,6 @@ thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
 redirect_from:
   - /git/github-blog-local-batch/
 ---
-
 ## 깃허브 블로그 실행 파일
  처음엔 남들 github.io에 개발 관련 블로그가 많이 보이길래 저건 어떻게 만들지 하며
   찾아보니깐 깃허브로 무료 호스팅을 제공하는거라 한다.  

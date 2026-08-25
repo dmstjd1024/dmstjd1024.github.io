@@ -4,7 +4,7 @@ title:  "Github Action VS Code Pipeline"
 categories:
   - git
 tags:
-  - git 
+  - Git
   - github
   - github action
   - code Pipeline
@@ -12,8 +12,6 @@ tags:
 date: 2025-05-27
 thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
 ---
-
-
 ## Github action 이란
 - Github에서 공식적으로 제공하는 CI / CD 툴
 - 코드 변경 문제사항 검사
