@@ -39,6 +39,15 @@
           <a href="{{ '/글/index.html' | prepend: site.baseurl }}"
              {% if here == '글' %}aria-current="page"{% endif %}>전체</a>
         </li>
+        {%- comment -%}
+          태그도 카테고리 13개보다 상위 개념이라 앞에 고정한다. 카테고리가
+          "이 글이 어느 주제인가" 하나만 답한다면, 태그는 도구·작업 방식처럼
+          카테고리를 가로지르는 축을 맡는다.
+        {%- endcomment -%}
+        <li>
+          <a href="{{ '/tags/' | prepend: site.baseurl }}"
+             {% if here == 'tags' %}aria-current="page"{% endif %}>태그</a>
+        </li>
         {%- for cat in nav_cats -%}
           {%- assign seg = cat.path | remove_first: '_pages/' | split: '/' -%}
           {%- comment -%} 최상위 카테고리만 메뉴에 올린다(깊이 2 = 이름/index.md) {%- endcomment -%}

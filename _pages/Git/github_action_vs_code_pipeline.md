@@ -6,7 +6,7 @@ categories:
 tags:
   - Git
   - github
-  - github action
+  - GitHub Actions
   - code Pipeline
 
 date: 2025-05-27

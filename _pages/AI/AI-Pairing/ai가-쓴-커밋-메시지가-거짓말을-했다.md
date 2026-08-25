@@ -7,7 +7,7 @@ tags:
   - AI
   - Claude Code
   - Git
-  - 개발 문화
+  - 개발문화
 
 date: 2026-05-15
 thumbnail: "/assets/img/thumbnail/sample.png"
