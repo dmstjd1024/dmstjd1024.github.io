@@ -15,7 +15,14 @@
 {%- endcomment -%}
 {%- assign page_tree = page.path | remove_first: "_pages/" | split: "/" -%}
 {%- assign page_level = page_tree.size -%}
-{%- if page_tree.last == "index.md" -%}
+{%- comment -%}
+  태그 페이지는 _plugins/tag_pages.rb 가 만든다. 디스크에 파일이 없어
+  아래의 path 기반 판별이 통하지 않으므로 먼저 가려낸다. 생성 시 data 에
+  tag 키를 넣어두므로 그 존재 여부로 구분한다(빈 문자열이면 태그 목록).
+{%- endcomment -%}
+{%- if page.tag != nil -%}
+  {%- assign page_type = "tag" -%}
+{%- elsif page_tree.last == "index.md" -%}
   {%- assign page_type = "category" -%}
   {%- assign category_title = page.path | remove: '/index.md' | split: "/" | last -%}
   {%- comment -%}
@@ -55,7 +62,9 @@
   {% include nav_state.html %}
 
   <main id="content">
-    {%- if page_type == "category" -%}
+    {%- if page_type == "tag" -%}
+      {% include tag-list.html inc_tag=page.tag %}
+    {%- elsif page_type == "category" -%}
       {% include post-list.html inc_level=page_level inc_title=category_title %}
     {%- else -%}
       {% include post.html %}
