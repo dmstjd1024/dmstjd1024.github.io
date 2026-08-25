@@ -13,9 +13,10 @@
 
   <path class="dg-arw" d="M228 96 H284" marker-end="url(#vlk-a)"/>
 
-  <rect class="dg-warn" x="292" y="68" width="404" height="56" rx="8"/>
-  <text class="dg-k" x="312" y="92">이름에 클러스터명이 든 볼륨만 매칭</text>
-  <text class="dg-s" x="312" y="112">익명 볼륨은 이름이 sha256 해시 — 안 걸린다. 그대로 남는다</text>
+  <rect class="dg-warn" x="292" y="60" width="404" height="72" rx="8"/>
+  <text class="dg-k" x="312" y="84">이름에 클러스터명이 든 볼륨만 매칭</text>
+  <text class="dg-s" x="312" y="104">익명 볼륨은 이름이 sha256 해시라 안 걸린다</text>
+  <text class="dg-s" x="312" y="122">그대로 남는다</text>
 
   <text class="dg-s" x="24" y="164">수정 — 지우기 전에 목록을 확보한다</text>
 
