@@ -2,7 +2,7 @@
 title:  "GROUP BY 축이 한 줄 달라서 배출량이 2배가 됐다"
 
 categories:
-  - AI
+  - Database
 tags:
   - AI
   - Claude Code
