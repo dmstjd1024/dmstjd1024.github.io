@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="스냅샷이 배열만 새로 만들고 행 객체는 참조를 공유해 나중 편집이 과거 스냅샷의 값까지 바꾼다">
+  <marker id="dss-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">배열만 복사하면 과거가 바뀐다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="328" height="118" rx="10"/>
+  <text class="dg-t" x="44" y="78">undoStack 스냅샷</text>
+  <rect class="dg-out" x="44" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="112">[ ... ] — 배열은 새로 만들었다</text>
+  <text class="dg-s" x="44" y="146">그러나 안의 행 객체는 같은 것</text>
+
+  <rect class="dg-lane" x="368" y="52" width="328" height="118" rx="10"/>
+  <text class="dg-t" x="388" y="78">현재 rows</text>
+  <rect class="dg-out" x="388" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="112">행2 객체 — valueSetter 가 제자리 변형</text>
+  <text class="dg-s" x="388" y="146">ag-grid 가 params.data 를 직접 고친다</text>
+
+  <path class="dg-arw" d="M532 176 V196 H360 V214" marker-end="url(#dss-a)"/>
+  <path class="dg-arw" d="M188 176 V196 H360 V214" marker-end="url(#dss-a)"/>
+
+  <rect class="dg-warn" x="140" y="220" width="440" height="30" rx="6"/>
+  <text class="dg-k" x="156" y="240">같은 객체를 가리키므로 과거 스냅샷도 함께 바뀐다</text>
+
+  <text class="dg-v" x="24" y="278">Ctrl+Z 2 회 — 행1 은 0 으로 복원되는데 행2 가 22 로 되살아난다</text>
+</svg>
