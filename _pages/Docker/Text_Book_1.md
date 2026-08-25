@@ -4,12 +4,11 @@ title: "도커 교과서 2장"
 categories:
  - Docker
 tags:
- - docker
+  - Docker
 
 date: 2025-05-28
 thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 ---
-
 ## 도커의 기본적인 사용법
 ### 컨테이너 실행
 - 컨테이너로 애플리케이션 실행 명령어

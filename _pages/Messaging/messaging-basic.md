@@ -4,15 +4,14 @@ title: "비동기 메시징 입문 - 동기 호출과 무엇이 다른가"
 categories:
  - Messaging
 tags:
- - messaging
- - kafka
- - spring
- - backend
+  - messaging
+  - kafka
+  - Spring
+  - Backend
 
 date: 2026-08-22
 thumbnail: "/assets/img/thumbnail/empty.jpg"
 ---
-
 비동기 메시징 이란
 =====
 -----

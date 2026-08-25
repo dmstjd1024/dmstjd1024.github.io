@@ -4,12 +4,12 @@ title: "쿠버네티스"
 categories:
  - Kubernetes, Docker
 tags:
- - kubernetes, docker
+  - Kubernetes
+  - Docker
 
 date: 2025-05-28
 thumbnail: "/assets/img/thumbnail/kubernetes_thumbnail.png"
 ---
-
 ## 쿠버네티스란,
 다수의 컨테이너를 효율적으로 배포, 확장 및 관리 하기 위한 오픈소스 시스템
 Docker Compose의 확장판이라고 생각
