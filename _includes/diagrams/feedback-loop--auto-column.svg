@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="차트가 컨테이너를 재고 그린 결과가 max-content 컬럼을 밀어 컨테이너가 넓어지고 차트가 다시 재측정하는 순환">
+  <marker id="fac-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">그린 결과가 그릴 공간을 넓힌다</text>
+
+  <rect class="dg-out" x="248" y="56" width="224" height="34" rx="6"/>
+  <text class="dg-k" x="264" y="78">① 차트가 컨테이너 폭을 잰다</text>
+  <path class="dg-arw" d="M472 73 H560 V126" marker-end="url(#fac-a)"/>
+
+  <rect class="dg-out" x="456" y="132" width="240" height="34" rx="6"/>
+  <text class="dg-k" x="472" y="154">② SVG 고유 너비가 생긴다</text>
+  <path class="dg-arw" d="M576 168 V206" marker-end="url(#fac-a)"/>
+
+  <rect class="dg-warn" x="416" y="212" width="280" height="34" rx="6"/>
+  <text class="dg-k" x="432" y="234">③ auto 컬럼 트랙이 밀려난다</text>
+  <path class="dg-arw" d="M416 229 H300" marker-end="url(#fac-a)"/>
+
+  <rect class="dg-warn" x="24" y="212" width="268" height="34" rx="6"/>
+  <text class="dg-k" x="40" y="234">④ 컨테이너가 넓어진다</text>
+  <path class="dg-arw" d="M144 212 V168" marker-end="url(#fac-a)"/>
+
+  <rect class="dg-out" x="24" y="132" width="240" height="34" rx="6"/>
+  <text class="dg-k" x="40" y="154">⑤ 넓어진 폭을 재측정</text>
+  <path class="dg-arw" d="M144 132 V90 H248" marker-end="url(#fac-a)"/>
+
+  <text class="dg-v" x="24" y="284">매 사이클 약 3.1 배 — 폭이 약 1,200 만 px 까지 갔다</text>
+  <text class="dg-v" x="24" y="306">해법 — grid-template-columns: minmax(0, 1fr) 로 내용 기반 크기를 끊는다</text>
+</svg>

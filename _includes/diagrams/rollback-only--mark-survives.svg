@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="같은 트랜잭션에 참여한 조회에서 난 예외가 rollback-only 마크를 남기고 호출자가 예외를 잡아도 커밋 시점에 UnexpectedRollbackException 이 터진다">
+  <marker id="rom-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">catch 는 마크를 지우지 못한다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="672" height="180" rx="10"/>
+  <text class="dg-t" x="44" y="78">승인 트랜잭션 (하나뿐)</text>
+
+  <rect class="dg-out" x="44" y="92" width="300" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="112">① 승인 로직 시작</text>
+
+  <rect class="dg-warn" x="44" y="130" width="300" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="150">② readOnly 조회가 같은 TX 에 참여</text>
+
+  <rect class="dg-warn" x="44" y="168" width="300" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="188">③ 예외 → rollback-only 마크</text>
+
+  <path class="dg-arw" d="M352 183 H388" marker-end="url(#rom-a)"/>
+
+  <rect class="dg-out" x="396" y="130" width="284" height="30" rx="6"/>
+  <text class="dg-k" x="412" y="150">④ catch — 예외는 잡혔다</text>
+
+  <rect class="dg-warn" x="396" y="168" width="284" height="30" rx="6"/>
+  <text class="dg-k" x="412" y="188">⑤ 커밋 시도 → 마크가 남아 있다</text>
+
+  <text class="dg-s" x="396" y="218">잡은 것은 예외지 마크가 아니다</text>
+
+  <path class="dg-arw" d="M360 240 V266" marker-end="url(#rom-a)"/>
+
+  <rect class="dg-warn" x="188" y="272" width="344" height="30" rx="6"/>
+  <text class="dg-k" x="204" y="292">UnexpectedRollbackException — 승인 통째로 소멸</text>
+
+  <text class="dg-v" x="24" y="326">해법 — 조회를 REQUIRES_NEW 별도 빈으로 분리해 마크가 옮겨붙지 않게 한다</text>
+</svg>

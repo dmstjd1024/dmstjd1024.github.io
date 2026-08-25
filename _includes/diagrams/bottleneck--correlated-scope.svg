@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="바깥 WHERE 에는 테넌트 스코프가 있지만 ORDER BY 안의 상관 서브쿼리에는 없어 결과 행마다 전체 테넌트를 다시 스캔한다">
+  <marker id="bcs-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">스코프가 바깥에만 걸려 있었다</text>
+
+  <rect class="dg-lead" x="24" y="52" width="672" height="40" rx="8"/>
+  <text class="dg-t" x="44" y="78">운송 원데이터 목록 조회</text>
+
+  <rect class="dg-lane" x="24" y="106" width="328" height="128" rx="10"/>
+  <text class="dg-t" x="44" y="132">바깥 WHERE</text>
+  <rect class="dg-out" x="44" y="146" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="166">company_id · year · category</text>
+  <text class="dg-s" x="44" y="196">이 회사 행만 선택된다</text>
+  <text class="dg-s" x="44" y="218">반환 행은 정상 — 유출 아님</text>
+
+  <rect class="dg-lane" x="368" y="106" width="328" height="128" rx="10"/>
+  <text class="dg-t" x="388" y="132">ORDER BY 안의 서브쿼리</text>
+  <rect class="dg-warn" x="388" y="146" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="166">조건 없음 — 전 테넌트 스캔</text>
+  <text class="dg-s" x="388" y="196">상관 서브쿼리라 행마다 1회</text>
+  <text class="dg-s" x="388" y="218">100 행 정렬 = 전체 스캔 100 회</text>
+
+  <path class="dg-arw" d="M532 240 V266" marker-end="url(#bcs-a)"/>
+
+  <rect class="dg-warn" x="368" y="272" width="328" height="30" rx="6"/>
+  <text class="dg-k" x="384" y="292">다른 회사가 늘어도 내 화면이 느려진다</text>
+
+  <text class="dg-v" x="24" y="292">수정 — 서브쿼리에도 같은 세 조건을 건다 (3 줄)</text>
+</svg>
