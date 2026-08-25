@@ -4,12 +4,11 @@ title: "도커 교과서 5장"
 categories:
  - Docker
 tags:
- - docker
+  - Docker
 
 date: 2026-08-19
 thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 ---
-
 도커 허브 등 레지스트리에 이미지 공유하기
 =====
 -----

@@ -5,14 +5,13 @@ categories:
   - database
 tags:
   - Database
-  - Postgresql
+  - PostgreSQL
 
 date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
 redirect_from:
   - /database/postgresql/
 ---
-
 ## PostgreSQL
 오픈 소스 객체 관계형 데이터베이스  
 새로운 하나의 프로그래밍처럼 구현하는 기능을 제공한다.
