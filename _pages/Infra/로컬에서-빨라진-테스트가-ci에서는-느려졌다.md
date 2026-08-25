@@ -2,7 +2,7 @@
 title:  "로컬에서 빨라진 테스트가 CI에서는 느려졌다"
 
 categories:
-  - AI
+  - Infra
 tags:
   - AI
   - Claude Code

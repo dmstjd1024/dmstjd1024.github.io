@@ -2,7 +2,7 @@
 title:  "undo 하나 넣었다가 4단 도미노"
 
 categories:
-  - AI
+  - React
 tags:
   - AI
   - Claude Code
