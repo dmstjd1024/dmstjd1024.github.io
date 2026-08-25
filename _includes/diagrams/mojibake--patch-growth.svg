@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="원인은 저장 시점에서 이미 고쳤는데, 조회 시점에 복구 단계를 다섯 번 덧댄 뒤 전부 삭제한 과정">
+  <marker id="mjb-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">원인은 여기, 덧댄 곳은 저기</text>
+
+  <rect class="dg-sel" x="24" y="52" width="200" height="62" rx="8"/>
+  <text class="dg-t" x="44" y="76">저장 시점</text>
+  <text class="dg-s" x="44" y="96">charset 명시 — 한 번에 끝</text>
+
+  <path class="dg-arw" d="M232 83 H288" marker-end="url(#mjb-a)"/>
+
+  <rect class="dg-row" x="296" y="52" width="160" height="62" rx="8"/>
+  <text class="dg-t" x="316" y="76">DB</text>
+  <text class="dg-s" x="316" y="96">이미 깨진 과거 데이터</text>
+
+  <path class="dg-arw" d="M464 83 H520" marker-end="url(#mjb-a)"/>
+
+  <rect class="dg-warn" x="528" y="52" width="168" height="62" rx="8"/>
+  <text class="dg-k" x="548" y="76">조회 시점</text>
+  <text class="dg-s" x="548" y="96">여기를 다섯 번 고쳤다</text>
+
+  <rect class="dg-warn" x="24" y="138" width="672" height="112" rx="8"/>
+  <text class="dg-t" x="44" y="162">덧댄 순서 — 뒤로 갈수록 조건이 넓어진다</text>
+  <text class="dg-v" x="44" y="186">① latin1 재해석 후 한글이 늘면 성공으로 침 (휴리스틱)</text>
+  <text class="dg-v" x="44" y="206">② \u00XX 이스케이프 해제 단계를 앞에 추가</text>
+  <text class="dg-v" x="44" y="226">③ 탐지 문자 4개 → U+00C0~U+00FF 범위 전체로 확대</text>
+  <text class="dg-s" x="44" y="244">④ 그 정규식이 개행에서 안 걸리던 것을 다시 수정 · ⑤ 전부 삭제</text>
+
+  <rect class="dg-lead" x="24" y="266" width="672" height="44" rx="8"/>
+  <text class="dg-t" x="44" y="294">87줄을 2줄로 되돌렸다 — 살아남은 건 맨 처음의 저장 시점 수정뿐</text>
+</svg>
