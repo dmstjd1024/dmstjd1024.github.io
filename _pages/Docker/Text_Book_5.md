@@ -4,12 +4,11 @@ title: "도커 교과서 6장"
 categories:
  - Docker
 tags:
- - docker
+  - Docker
 
 date: 2026-08-19
 thumbnail: "/assets/img/thumbnail/docker_thumbnail.png"
 ---
-
 도커 볼륨을 이용한 퍼시스턴트 스토리지
 =====
 -----

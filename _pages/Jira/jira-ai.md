@@ -4,16 +4,15 @@ title: "JIRA 활용 - AI 붙여서 쓰기 (Rovo와 MCP)"
 categories:
  - Jira
 tags:
- - jira
- - atlassian
- - rovo
- - ai
- - mcp
+  - Jira
+  - atlassian
+  - rovo
+  - AI
+  - MCP
 
 date: 2026-08-20
 thumbnail: "/assets/img/thumbnail/empty.jpg"
 ---
-
 > [JIRA 입문](/Jira/jira-basic.html), [JQL 심화와 자동화](/Jira/jira-automation.html), [스프린트 운영과 차트](/Jira/jira-team.html)에서 이어지는 글이다.
 >
 > ⚠️ **이 분야는 변화가 빠르다.** 이 글은 2026년 8월 기준으로 확인한 내용이며,
