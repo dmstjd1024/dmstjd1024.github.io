@@ -11,7 +11,7 @@ tags:
   - JPA
   - 성능
 
-date: 2026-08-25
+date: 2026-05-07
 thumbnail: "/assets/img/thumbnail/sample.png"
 ---
 
