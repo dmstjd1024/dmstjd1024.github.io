@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="같은 포트 할당 함수에서 성격이 다른 버그가 네 번 연속 발생한 과정과, 마지막에 드러난 다른 층위의 누락">
+  <text class="dg-h" x="24" y="30">한 함수, 네 번의 수정 — 매번 다른 이유</text>
+
+  <rect class="dg-row" x="24" y="52" width="330" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="76">① 소프트 삭제된 기업을 뺐다</text>
+  <text class="dg-s" x="44" y="96">DB엔 지웠지만 클러스터는 살아서</text>
+  <text class="dg-s" x="44" y="114">포트를 쥐고 있었다</text>
+
+  <rect class="dg-row" x="366" y="52" width="330" height="72" rx="8"/>
+  <text class="dg-t" x="386" y="76">② 7분 뒤 — 아직 INACTIVE를 뺐다</text>
+  <text class="dg-s" x="386" y="96">예약은 기업당 1000개, 실사용은 10개</text>
+  <text class="dg-s" x="386" y="114">범위를 10으로 줄이고 재사용 금지</text>
+
+  <rect class="dg-row" x="24" y="136" width="330" height="72" rx="8"/>
+  <text class="dg-t" x="44" y="160">③ 같은 날 저녁 — 쿼리를 분리</text>
+  <text class="dg-s" x="44" y="180">findAll()이 다른 화면의 삭제 필터와</text>
+  <text class="dg-s" x="44" y="198">얽혀 포트 전용 쿼리로 떼어냄</text>
+
+  <rect class="dg-warn" x="366" y="136" width="330" height="72" rx="8"/>
+  <text class="dg-k" x="386" y="160">④ 다음날 — 층위가 달랐다</text>
+  <text class="dg-s" x="386" y="180">①~③은 기업 사이의 충돌</text>
+  <text class="dg-s" x="386" y="198">이건 한 기업 안에서의 충돌</text>
+
+  <rect class="dg-lead" x="24" y="220" width="672" height="96" rx="8"/>
+  <text class="dg-t" x="44" y="246">결국 고른 것 — 포트 재사용을 아예 포기</text>
+  <text class="dg-v" x="44" y="270">항상 max(마지막 포트) + 1 부터 할당한다. 충돌은 근본적으로 사라진다.</text>
+  <text class="dg-s" x="44" y="292">대가: 중간에 삭제된 기업의 범위는 영영 안 메워진다 — 구멍이 남는 단조 증가</text>
+  <text class="dg-s" x="44" y="310">지금 규모에선 맞는 선택이지만, 그건 규모가 작아서지 설계가 옳아서가 아니다</text>
+</svg>
