@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="1차로 고친 두 지점은 재방문과 버튼 클릭 경로였고 사용자가 느리다고 한 첫 로딩 경로와 겹치지 않았다">
+  <marker id="bwt-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">고친 곳과 아픈 곳이 달랐다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="44" y="78">내가 고친 경로</text>
+
+  <rect class="dg-out" x="44" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="112">탭 재방문 — 상세조회 5분 캐시</text>
+
+  <rect class="dg-out" x="44" y="130" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="150">일괄 매핑 버튼 — 순차를 병렬로</text>
+
+  <text class="dg-s" x="44" y="182">둘 다 그 자체로는 옳은 수정</text>
+
+  <rect class="dg-lane" x="368" y="52" width="328" height="150" rx="10"/>
+  <text class="dg-t" x="388" y="78">사용자가 느린 경로</text>
+
+  <rect class="dg-warn" x="388" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="112">목록을 처음 여는 순간</text>
+
+  <text class="dg-s" x="388" y="150">= 운송 원데이터 목록 쿼리</text>
+  <text class="dg-s" x="388" y="182">이 쿼리는 한 번도 열어보지 않았다</text>
+
+  <path class="dg-arw" d="M188 208 V240 H360 V262" marker-end="url(#bwt-a)"/>
+  <path class="dg-arw" d="M532 208 V240 H360 V262" marker-end="url(#bwt-a)"/>
+
+  <rect class="dg-warn" x="204" y="268" width="312" height="30" rx="6"/>
+  <text class="dg-k" x="220" y="288">체감 변화 없음 — 겹치는 구간이 없다</text>
+</svg>
