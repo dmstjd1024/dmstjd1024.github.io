@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="긴 단일 트랜잭션의 쓰기 경합이 두 번째 run 을 넘어뜨려 우연히 중복을 막고 있었는데 청크 커밋으로 그 마찰이 사라졌다">
+  <text class="dg-h" x="24" y="30">버그는 원래 있었다 — 느려서 안 터졌을 뿐</text>
+
+  <rect class="dg-lane" x="24" y="52" width="328" height="180" rx="10"/>
+  <text class="dg-t" x="44" y="78">이전 — 긴 단일 트랜잭션</text>
+
+  <rect class="dg-out" x="44" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="112">run B 가 쓰기 경합에 걸려 죽는다</text>
+
+  <text class="dg-s" x="44" y="146">이중 과금 경로 자체는 열려 있었다</text>
+  <text class="dg-s" x="44" y="170">외부 호출은 늘 트랜잭션 밖이었으므로</text>
+  <text class="dg-s" x="44" y="200">락 경합이 우연히 막아주고 있었다</text>
+  <text class="dg-s" x="44" y="222">— 아무도 그렇게 설계하지 않았다</text>
+
+  <rect class="dg-lane" x="368" y="52" width="328" height="180" rx="10"/>
+  <text class="dg-t" x="388" y="78">이후 — 200 건 청크 커밋</text>
+
+  <rect class="dg-out" x="388" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="112">경합이 사라져 run B 가 끝까지 돈다</text>
+
+  <text class="dg-s" x="388" y="146">트랜잭션 분할은 옳은 변경이다</text>
+  <text class="dg-s" x="388" y="170">되돌리지 않았고 되돌려서도 안 된다</text>
+  <rect class="dg-warn" x="388" y="186" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="206">가려져 있던 결함이 드러났다</text>
+
+  <text class="dg-v" x="24" y="266">느려서 안 터지던 것은 빨라지면 터진다 — 성능 작업의 리뷰 포인트는 동시성이다</text>
+</svg>

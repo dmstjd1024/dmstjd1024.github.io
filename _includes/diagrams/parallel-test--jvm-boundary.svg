@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="포크 병렬은 JVM 이 분리돼 인메모리 DB 도 따로 생기지만 스레드 병렬은 같은 JVM 안에서 같은 DB 를 공유한다">
+  <text class="dg-h" x="24" y="30">같은 병렬이라도 경계가 다르다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="328" height="196" rx="10"/>
+  <text class="dg-t" x="44" y="78">포크 병렬 — JVM 을 나눈다</text>
+
+  <rect class="dg-out" x="44" y="92" width="136" height="56" rx="6"/>
+  <text class="dg-k" x="60" y="114">JVM 1</text>
+  <text class="dg-s" x="60" y="136">h2:mem:test</text>
+
+  <rect class="dg-out" x="196" y="92" width="136" height="56" rx="6"/>
+  <text class="dg-k" x="212" y="114">JVM 2</text>
+  <text class="dg-s" x="212" y="136">h2:mem:test</text>
+
+  <text class="dg-s" x="44" y="180">이름은 같지만 JVM 이 달라 서로 다른 DB</text>
+  <text class="dg-k" x="44" y="206">→ @DataJpaTest 가 오히려 격리된다</text>
+  <text class="dg-s" x="44" y="232">대신 포크마다 JVM · 스프링 기동 비용</text>
+
+  <rect class="dg-lane" x="368" y="52" width="328" height="196" rx="10"/>
+  <text class="dg-t" x="388" y="78">스레드 병렬 — JVM 하나</text>
+
+  <rect class="dg-out" x="388" y="92" width="288" height="56" rx="6"/>
+  <text class="dg-k" x="404" y="114">JVM 1 — 스레드 A · 스레드 B</text>
+  <text class="dg-s" x="404" y="136">h2:mem:test (하나뿐)</text>
+
+  <text class="dg-s" x="388" y="180">같은 프로세스라 같은 인메모리 DB</text>
+  <rect class="dg-warn" x="388" y="192" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="212">→ 테스트끼리 서로를 깨뜨린다</text>
+  <text class="dg-s" x="388" y="240">그래서 켜지 않았다</text>
+</svg>
