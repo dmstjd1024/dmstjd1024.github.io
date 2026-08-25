@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="run A 와 run B 가 트랜잭션 밖에서 같은 pending 집합을 스냅샷하고 B 가 상태 확인 없이 다시 로드해 외부 API 를 두 번 호출한다">
+  <marker id="cdc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">버튼을 두 번 누르면</text>
+
+  <rect class="dg-lead" x="188" y="52" width="344" height="40" rx="8"/>
+  <text class="dg-t" x="208" y="78">pending 스냅샷 — 트랜잭션 밖에서 1 회</text>
+
+  <path class="dg-arw" d="M360 100 V116 H160 V140" marker-end="url(#cdc-a)"/>
+  <path class="dg-arw" d="M360 100 V116 H560 V140" marker-end="url(#cdc-a)"/>
+
+  <rect class="dg-lane" x="24" y="146" width="328" height="104" rx="10"/>
+  <text class="dg-t" x="44" y="172">run A</text>
+  <rect class="dg-out" x="44" y="186" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="206">외부 API 호출 → 청크 커밋 (success)</text>
+  <text class="dg-s" x="44" y="238">같은 id 집합을 잡았다</text>
+
+  <rect class="dg-lane" x="368" y="146" width="328" height="104" rx="10"/>
+  <text class="dg-t" x="388" y="172">run B</text>
+  <rect class="dg-warn" x="388" y="186" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="206">findAllById — 상태를 확인하지 않는다</text>
+  <text class="dg-s" x="388" y="238">이미 success 인데 또 처리한다</text>
+
+  <path class="dg-arw" d="M532 256 V282" marker-end="url(#cdc-a)"/>
+  <rect class="dg-warn" x="368" y="288" width="328" height="30" rx="6"/>
+  <text class="dg-k" x="384" y="308">같은 구간 이중 과금 + A 결과 덮어씀</text>
+
+  <text class="dg-v" x="24" y="308">수정 — 청크 트랜잭션 안에서 pending 을 다시 확인한다</text>
+</svg>

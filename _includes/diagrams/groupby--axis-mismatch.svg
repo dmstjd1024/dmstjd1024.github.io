@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="산출은 공정별로 묶이고 투입은 LCA 전역으로 묶여 투입 1 행이 두 산출 공정에 각각 붙어 전액 중복 계상된다">
+  <marker id="gam-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">묶는 축이 다르면 1 행이 N 번 붙는다</text>
+
+  <rect class="dg-lane" x="24" y="52" width="328" height="126" rx="10"/>
+  <text class="dg-t" x="44" y="78">산출 — GROUP BY 공정</text>
+  <rect class="dg-out" x="44" y="92" width="136" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="112">UP1 · 100kg</text>
+  <rect class="dg-out" x="196" y="92" width="136" height="30" rx="6"/>
+  <text class="dg-k" x="212" y="112">UP2 · 100kg</text>
+  <text class="dg-s" x="44" y="146">공정마다 1 행 — 총 200kg 산출</text>
+  <text class="dg-s" x="44" y="166">match_key 가 같다</text>
+
+  <rect class="dg-lane" x="368" y="52" width="328" height="126" rx="10"/>
+  <text class="dg-t" x="388" y="78">투입 — GROUP BY LCA 전역</text>
+  <rect class="dg-warn" x="388" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="112">match_key 당 단 1 행 · 100kg</text>
+  <text class="dg-s" x="388" y="146">UP3 가 실제로 소비한 양</text>
+  <text class="dg-s" x="388" y="166">공정 구분이 없다</text>
+
+  <path class="dg-arw" d="M532 184 V206 H112 V228" marker-end="url(#gam-a)"/>
+  <path class="dg-arw" d="M532 184 V206 H264 V228" marker-end="url(#gam-a)"/>
+
+  <rect class="dg-warn" x="24" y="234" width="328" height="30" rx="6"/>
+  <text class="dg-k" x="40" y="254">LEFT JOIN — 두 공정이 각각 전액 계상</text>
+
+  <rect class="dg-warn" x="188" y="284" width="344" height="30" rx="6"/>
+  <text class="dg-k" x="204" y="304">귀속 200kg — 실제 소비 100kg 의 2 배</text>
+</svg>

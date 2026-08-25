@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="deps 를 rows 로 바꾸자 매 keystroke 마다 콜백 identity 가 바뀌고 useMemo 사슬을 거쳐 ag-grid cellRenderer 재생성과 input 재마운트로 이어진다">
+  <marker id="dic-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">deps 한 줄이 DOM 까지 갔다</text>
+
+  <rect class="dg-lead" x="24" y="52" width="672" height="40" rx="8"/>
+  <text class="dg-t" x="44" y="78">useCallback deps 를 [] → [rows] 로 (undo 스냅샷을 찍으려고)</text>
+
+  <path class="dg-arw" d="M360 100 V118" marker-end="url(#dic-a)"/>
+
+  <rect class="dg-out" x="140" y="124" width="440" height="30" rx="6"/>
+  <text class="dg-k" x="156" y="144">① 매 keystroke 마다 handleRowUpdate identity 변경</text>
+
+  <path class="dg-arw" d="M360 156 V174" marker-end="url(#dic-a)"/>
+
+  <rect class="dg-out" x="140" y="180" width="440" height="30" rx="6"/>
+  <text class="dg-k" x="156" y="200">② emsColumn(useMemo) → columnDefs(useMemo) 로 전파</text>
+
+  <path class="dg-arw" d="M360 212 V230" marker-end="url(#dic-a)"/>
+
+  <rect class="dg-out" x="140" y="236" width="440" height="30" rx="6"/>
+  <text class="dg-k" x="156" y="256">③ ag-grid 가 cellRenderer 재생성</text>
+
+  <path class="dg-arw" d="M360 268 V286" marker-end="url(#dic-a)"/>
+
+  <rect class="dg-warn" x="140" y="292" width="440" height="30" rx="6"/>
+  <text class="dg-k" x="156" y="312">④ 안의 &lt;input&gt; 언마운트·재마운트 → 포커스·IME 유실</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="기본 브랜치 main 에는 빌드 워크플로가 없고 CI 는 PR 로만 돌아 어느 워크플로도 캐시를 채울 자격을 갖지 못한다">
+  <marker id="cns-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">채울 자격이 있는 곳에 빌드가 없었다</text>
+
+  <rect class="dg-lead" x="140" y="52" width="440" height="40" rx="8"/>
+  <text class="dg-t" x="160" y="78">기본값 — ref_name 이 기본 브랜치일 때만 캐시를 쓴다</text>
+
+  <path class="dg-arw" d="M360 100 V116 H160 V140" marker-end="url(#cns-a)"/>
+  <path class="dg-arw" d="M360 100 V116 H560 V140" marker-end="url(#cns-a)"/>
+
+  <rect class="dg-lane" x="24" y="146" width="328" height="112" rx="10"/>
+  <text class="dg-t" x="44" y="172">main — 기본 브랜치</text>
+  <rect class="dg-warn" x="44" y="186" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="206">자격은 있지만 빌드 워크플로가 없다</text>
+  <text class="dg-s" x="44" y="238">개발은 dev 기준이라 아무것도 안 돈다</text>
+
+  <rect class="dg-lane" x="368" y="146" width="328" height="112" rx="10"/>
+  <text class="dg-t" x="388" y="172">PR — refs/pull/&lt;n&gt;/merge</text>
+  <rect class="dg-warn" x="388" y="186" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="206">빌드는 돌지만 자격이 없다</text>
+  <text class="dg-s" x="388" y="238">ref_name 이 기본 브랜치와 절대 같지 않다</text>
+
+  <rect class="dg-warn" x="188" y="274" width="344" height="30" rx="6"/>
+  <text class="dg-k" x="204" y="294">아무도 캐시를 채우지 못한다 — 계속 0 개</text>
+</svg>
