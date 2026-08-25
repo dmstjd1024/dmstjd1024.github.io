@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="10 코어 로컬에서는 포크 병렬이 179 초를 104 초로 줄였지만 2 코어 러너에서는 179 초가 195 초로 늘었다">
+  <text class="dg-h" x="24" y="30">같은 변경, 반대 결과</text>
+
+  <rect class="dg-lane" x="24" y="52" width="328" height="180" rx="10"/>
+  <text class="dg-t" x="44" y="78">로컬 — 10 코어</text>
+
+  <rect class="dg-out" x="44" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="60" y="112">179s → 104.6s</text>
+
+  <text class="dg-s" x="44" y="146">포크를 늘릴 코어가 남아 있다</text>
+  <text class="dg-s" x="44" y="170">JVM 기동 비용 &lt; 병렬 이득</text>
+  <text class="dg-s" x="44" y="208">여기서 재고 "성공" 이라 판단했다</text>
+
+  <rect class="dg-lane" x="368" y="52" width="328" height="180" rx="10"/>
+  <text class="dg-t" x="388" y="78">CI — GitHub 무료 러너 2 코어</text>
+
+  <rect class="dg-warn" x="388" y="92" width="288" height="30" rx="6"/>
+  <text class="dg-k" x="404" y="112">179s → 195.8s (17 초 악화)</text>
+
+  <text class="dg-s" x="388" y="146">포크를 늘려도 돌릴 코어가 없다</text>
+  <text class="dg-s" x="388" y="170">JVM 기동 비용 &gt; 병렬 이득</text>
+  <text class="dg-s" x="388" y="208">적용되는 곳은 이쪽이었다</text>
+
+  <rect class="dg-warn" x="140" y="250" width="440" height="30" rx="6"/>
+  <text class="dg-k" x="156" y="270">환경 의존적 최적화는 적용할 환경에서 재야 한다</text>
+</svg>
