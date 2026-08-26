@@ -10,7 +10,7 @@ tags:
   - 모니터링
 
 date: 2026-08-26
-thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
+thumbnail: "/assets/img/thumbnail/redis_thumbnail.png"
 ---
 관리자 화면에 "통계 API 평균 응답시간" 을 띄워야 했다. 통계 API 는 집계 쿼리가 무거워
 느려지면 먼저 티가 나는 쪽이라, 지금 얼마나 걸리는지를 화면에서 보고 싶었다.
