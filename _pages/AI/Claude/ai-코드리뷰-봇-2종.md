@@ -12,6 +12,8 @@ tags:
 date: 2026-07-13
 thumbnail: "/assets/img/thumbnail/claude_thumbnail.png"
 card_thumbnail: "/assets/img/thumbnail/claude_card.png"
+redirect_from:
+  - /AI/ai-코드리뷰-봇-2종.html
 ---
 ## 배경
 
