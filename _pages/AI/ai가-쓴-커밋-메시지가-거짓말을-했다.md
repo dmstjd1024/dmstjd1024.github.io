@@ -10,8 +10,8 @@ tags:
   - 개발문화
 
 date: 2026-05-15
-thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
-card_thumbnail: "/assets/img/thumbnail/github_card.png"
+thumbnail: "/assets/img/thumbnail/claude_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/claude_card.png"
 ---
 ## 배경: 커밋의 절반이 AI 협업이다
 
