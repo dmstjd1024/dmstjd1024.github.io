@@ -229,6 +229,19 @@
             </div>
             {% include thumb.html inc_page=p %}
           </a>
+          {%- comment -%}
+            태그는 card__link 바깥에 둔다. 카드 전체가 이미 <a> 라서 안에
+            넣으면 <a> 안의 <a> 가 되고, 브라우저가 바깥 링크를 끊어버린다.
+            같은 이유로 좌우 패딩은 card__link 와 따로 맞춘다.
+          {%- endcomment -%}
+          {%- if p.tags and p.tags.size > 0 -%}
+            <ul class="card__tags">
+              {%- for tag in p.tags -%}
+                {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
+                <li><a href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
         </li>
       {%- endfor -%}
     </ul>

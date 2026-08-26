@@ -156,6 +156,42 @@
     overflow:hidden;
   }
 
+  // 카드 하단 태그 줄.
+  //
+  // card__link 바깥에 있다(링크 중첩을 피하려고). 그래서 링크의 padding
+  // 을 물려받지 못하고, 좌우를 여기서 같은 값으로 맞춰야 제목과 세로선이
+  // 어긋나지 않는다. 위쪽은 링크의 아래 패딩이 이미 있어 조금만 준다.
+  &__tags {
+    display:flex;
+    flex-wrap:wrap;
+    gap:.3rem;
+    padding:0 1.25rem 1rem;
+    margin-top:-.5rem;
+    list-style:none;
+
+    a {
+      display:inline-block;
+      font-family:var(--font-mono);
+      font-size:.6875rem;
+      color:var(--fg-subtle);
+      border:1px solid var(--border);
+      padding:.1rem .4rem;
+      border-radius:var(--r-sm);
+      transition:border-color .15s ease, color .15s ease;
+
+      &:hover {
+        color:var(--fg);
+        border-color:var(--border-strong);
+      }
+
+      // 태그 페이지에서, 지금 보고 있는 그 태그
+      &.is-on {
+        color:var(--category);
+        border-color:var(--category);
+      }
+    }
+  }
+
   &__thumb {
     flex-shrink:0;
     width:7rem;
