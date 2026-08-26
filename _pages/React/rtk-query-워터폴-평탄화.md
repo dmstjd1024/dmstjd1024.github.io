@@ -10,7 +10,7 @@ tags:
   - RTK Query
 
 date: 2026-06-12
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 ## 문제
 

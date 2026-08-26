@@ -10,7 +10,7 @@ tags:
   - MyBatis
 
 date: 2026-03-21
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
 ---
 ## 문제
 

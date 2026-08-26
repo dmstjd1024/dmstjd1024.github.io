@@ -10,7 +10,7 @@ tags:
   - 리팩터링
 
 date: 2026-03-25
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/java_thumbnail.png"
 ---
 ## 문제의 코드
 

@@ -10,9 +10,8 @@ tags:
   - 개발문화
 
 date: 2026-07-13
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/mcp_thumbnail.jpg"
 ---
-
 ## 배경
 
 - 대상: 프론트엔드 저장소 1곳

@@ -11,7 +11,7 @@ tags:
   - Next.js
 
 date: 2026-05-07
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 ## 문제: mutation 후 목록이 즉시 안 바뀐다
 

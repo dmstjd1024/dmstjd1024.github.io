@@ -11,7 +11,7 @@ tags:
   - QueryDSL
 
 date: 2026-06-12
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
 ---
 ## N+1은 하나의 문제가 아니다
 

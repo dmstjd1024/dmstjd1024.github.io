@@ -10,7 +10,7 @@ tags:
   - 성능
 
 date: 2026-05-07
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
 ---
 ## 문제: TPS가 안 나온다
 

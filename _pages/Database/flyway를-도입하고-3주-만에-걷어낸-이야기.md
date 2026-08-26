@@ -11,7 +11,7 @@ tags:
   - 멀티모듈
 
 date: 2026-05-13
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
 ---
 ## 도입과 철수 사이 22일
 

@@ -10,9 +10,8 @@ tags:
   - 개발문화
 
 date: 2026-05-15
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/mcp_thumbnail.jpg"
 ---
-
 ## 배경: 커밋의 절반이 AI 협업이다
 
 - 대상: 같은 백엔드를 공유하는 쌍둥이 Next.js 프론트엔드

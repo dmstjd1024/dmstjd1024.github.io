@@ -11,7 +11,7 @@ tags:
   - TypeScript
 
 date: 2026-04-19
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 ## 문제: 사이드 메뉴로 이동하면 탭이 안 바뀐다
 

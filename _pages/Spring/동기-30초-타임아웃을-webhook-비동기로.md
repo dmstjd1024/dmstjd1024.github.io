@@ -11,7 +11,7 @@ tags:
   - API설계
 
 date: 2026-07-02
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
 ---
 ## 30초로는 부족했다
 

@@ -11,7 +11,7 @@ tags:
   - 브라우저 API
 
 date: 2026-04-20
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 ## 문제: 복사 버튼이 아무 반응이 없다
 

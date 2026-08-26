@@ -10,7 +10,7 @@ tags:
   - TypeScript
 
 date: 2026-07-16
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 ## 문제
 

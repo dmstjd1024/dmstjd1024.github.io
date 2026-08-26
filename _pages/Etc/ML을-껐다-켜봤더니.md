@@ -10,7 +10,7 @@ tags:
   - 머신러닝
 
 date: 2026-07-29
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 ---
 ## 발단: 단순한 설정 누락
 

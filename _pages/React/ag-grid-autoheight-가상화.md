@@ -10,7 +10,7 @@ tags:
   - 성능최적화
 
 date: 2026-06-02
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 ## 문제
 

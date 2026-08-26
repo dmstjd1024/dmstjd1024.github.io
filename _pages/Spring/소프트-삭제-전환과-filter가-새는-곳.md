@@ -11,7 +11,7 @@ tags:
   - 데이터베이스
 
 date: 2026-07-07
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
 ---
 ## 엔티티 14개를 하드 삭제에서 소프트 삭제로
 

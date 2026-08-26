@@ -10,7 +10,7 @@ tags:
   - Spring
 
 date: 2026-05-10
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
 ---
 ## 문제: SFTP 업로드가 동시에 들어오면 터졌다
 

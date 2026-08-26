@@ -10,7 +10,7 @@ tags:
   - 트러블슈팅
 
 date: 2026-07-30
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 ---
 ## 문제: 손실이 없는데 손절 모드였다
 

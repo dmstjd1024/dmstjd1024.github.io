@@ -10,7 +10,7 @@ tags:
   - 성능최적화
 
 date: 2026-03-25
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
 ---
 ## 인덱스를 만든 날과 인덱스가 실제로 쓰인 날이 13일 떨어져 있다
 

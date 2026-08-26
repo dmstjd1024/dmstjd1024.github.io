@@ -11,7 +11,7 @@ tags:
   - Next.js
 
 date: 2026-05-09
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 ## 문제: 로그인 페이지가 "로딩 중..."에서 안 넘어간다
 
