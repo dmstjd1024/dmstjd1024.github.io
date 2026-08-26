@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="Redis 안에 내가 만든 장부 키와 Spring Session 이 관리하는 세션 키가 따로 있는데, 강제 로그인에서 장부만 지우면 세션 키가 남아 다른 기기의 요청이 그대로 통과하고, 두 키를 모두 지워야 인증이 끊기는 구조">
+  <marker id="rsess-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+  <marker id="rsess-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path class="br-head-a" d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">Redis 안에 키가 둘이다</text>
+  <text class="dg-s" x="24" y="50">인증을 들고 있는 것은 아래쪽이고, 내가 만든 것은 위쪽이다</text>
+
+  <!-- Redis 안의 두 키 -->
+  <rect class="dg-lane" x="24" y="68" width="672" height="132" rx="10"/>
+  <text class="dg-k" x="44" y="94">Redis</text>
+
+  <rect class="dg-row" x="44" y="108" width="300" height="72" rx="6"/>
+  <text class="dg-t" x="60" y="130">user:sessions:{userId}</text>
+  <text class="dg-v" x="60" y="149">내가 만든 장부 — 기기 정보를 담은 Hash</text>
+  <text class="dg-v" x="60" y="167">개수를 세는 데는 이것으로 충분했다</text>
+
+  <rect class="dg-row" x="376" y="108" width="300" height="72" rx="6"/>
+  <text class="dg-t" x="392" y="130">icbm:session:sessions:{sessionId}</text>
+  <text class="dg-v" x="392" y="149">Spring Session 이 만든 진짜 세션</text>
+  <text class="dg-v" x="392" y="167">요청을 통과시킬지 여기서 결정된다</text>
+
+  <!-- 1차 시도 -->
+  <rect class="dg-lane" x="24" y="216" width="330" height="160" rx="10"/>
+  <text class="dg-k" x="44" y="242">1차 — 장부만 지웠다</text>
+
+  <rect class="dg-row" x="44" y="256" width="290" height="46" rx="6"/>
+  <text class="dg-v" x="60" y="284">delete(user:sessions:{userId})</text>
+
+  <path class="dg-arw" d="M189 306 V330" marker-end="url(#rsess-a)"/>
+
+  <rect class="dg-hl" x="44" y="334" width="290" height="28" rx="6"/>
+  <text class="dg-v" x="60" y="353">다른 기기는 그대로 쓰였다</text>
+
+  <!-- 고친 뒤 -->
+  <rect class="dg-lane" x="366" y="216" width="330" height="160" rx="10"/>
+  <text class="dg-k" x="386" y="242">고친 뒤 — 세션부터 지운다</text>
+
+  <rect class="dg-row" x="386" y="256" width="290" height="46" rx="6"/>
+  <text class="dg-v" x="402" y="277">장부에서 세션 ID 를 꺼내</text>
+  <text class="dg-v" x="402" y="294">세션 본체와 역인덱스를 지운다</text>
+
+  <path class="dg-arw-a" d="M531 306 V330" marker-end="url(#rsess-b)"/>
+
+  <rect class="dg-row" x="386" y="334" width="290" height="28" rx="6"/>
+  <text class="dg-v" x="402" y="353">다음 요청에서 인증이 끊긴다</text>
+</svg>

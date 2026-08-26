@@ -12,6 +12,7 @@ tags:
 
 date: 2026-08-20
 thumbnail: "/assets/img/thumbnail/jira_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/jira_card.png"
 ---
 > [JIRA 입문 - 개념부터 기본 사용법까지](/Jira/jira-basic.html)에서 이어지는 글이다.
 > 1편이 "JIRA가 무엇이고 어떻게 쓰는가"였다면, 이 글은 "손으로 하던 일을 어떻게 줄이는가"에 대한 글이다.

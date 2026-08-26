@@ -9,6 +9,7 @@ tags:
 
 date: 2025-06-03
 thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
+card_thumbnail: "/assets/img/thumbnail/aws_card.jpeg"
 ---
 ## EC2 란
 

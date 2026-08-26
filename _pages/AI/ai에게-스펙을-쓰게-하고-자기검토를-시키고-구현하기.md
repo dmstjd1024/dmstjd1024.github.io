@@ -10,7 +10,8 @@ tags:
   - 개발방법론
 
 date: 2026-04-15
-thumbnail: "/assets/img/thumbnail/mcp_thumbnail.jpg"
+thumbnail: "/assets/img/thumbnail/clean_code_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/clean_code_thumbnail.png"
 ---
 ## 커밋 히스토리가 곧 작업 기록이다
 

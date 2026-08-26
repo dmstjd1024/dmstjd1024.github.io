@@ -11,6 +11,7 @@ tags:
 
 date: 2026-08-22
 thumbnail: "/assets/img/thumbnail/kafka_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/kafka_card.png"
 ---
 비동기 메시징 이란
 =====

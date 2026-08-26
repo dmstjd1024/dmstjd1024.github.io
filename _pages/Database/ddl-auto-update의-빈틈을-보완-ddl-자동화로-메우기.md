@@ -12,6 +12,7 @@ tags:
 
 date: 2026-07-30
 thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/postgresql_card.png"
 ---
 ## Flyway를 걷어낸 뒤 남은 숙제
 

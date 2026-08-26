@@ -11,6 +11,7 @@ tags:
 
 date: 2026-08-22
 thumbnail: "/assets/img/thumbnail/graphql_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/graphql_card.png"
 ---
 GraphQL 이란
 =====

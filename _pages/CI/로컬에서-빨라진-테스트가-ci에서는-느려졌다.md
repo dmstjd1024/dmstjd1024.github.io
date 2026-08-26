@@ -12,6 +12,7 @@ tags:
 
 date: 2026-08-06
 thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/github_card.png"
 ---
 ## 문제: PR마다 CI가 8분
 

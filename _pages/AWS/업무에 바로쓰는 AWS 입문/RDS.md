@@ -10,6 +10,7 @@ tags:
 
 date: 2025-06-05
 thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
+card_thumbnail: "/assets/img/thumbnail/aws_card.jpeg"
 ---
 ## RDS 란
 

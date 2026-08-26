@@ -10,7 +10,8 @@ tags:
   - 개발문화
 
 date: 2026-07-13
-thumbnail: "/assets/img/thumbnail/mcp_thumbnail.jpg"
+thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/github_card.png"
 ---
 ## 배경
 
