@@ -10,7 +10,7 @@ tags:
   - Backend
 
 date: 2026-08-22
-thumbnail: "/assets/img/thumbnail/empty.jpg"
+thumbnail: "/assets/img/thumbnail/kafka_thumbnail.png"
 ---
 비동기 메시징 이란
 =====
