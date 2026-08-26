@@ -2,7 +2,7 @@
 title: "쿠버네티스"
 
 categories:
- - Kubernetes, Docker
+  - Kubernetes
 tags:
   - Kubernetes
   - Docker

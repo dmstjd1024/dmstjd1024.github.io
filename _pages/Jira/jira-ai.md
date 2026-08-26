@@ -11,7 +11,7 @@ tags:
   - MCP
 
 date: 2026-08-20
-thumbnail: "/assets/img/thumbnail/empty.jpg"
+thumbnail: "/assets/img/thumbnail/jira_thumbnail.png"
 ---
 > [JIRA 입문](/Jira/jira-basic.html), [JQL 심화와 자동화](/Jira/jira-automation.html), [스프린트 운영과 차트](/Jira/jira-team.html)에서 이어지는 글이다.
 >

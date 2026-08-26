@@ -2,7 +2,7 @@
 title: "Alias 명령어 처리"
 
 categories:
-  - linux
+  - Linux
 tags:
   - linux
   - ubuntu
@@ -10,7 +10,6 @@ tags:
 date: 2025-07-06
 thumbnail: "/assets/img/thumbnail/linux_thumbnail.jpg"
 ---
-
 ## Alias 명령어 처리
 bash 접근
 ```shell

@@ -11,9 +11,8 @@ tags:
   - 성능최적화
 
 date: 2026-08-22
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
-
 ## 시작: undo 스냅샷이 과거를 바꿨다
 
 그리드에 Ctrl+Z를 붙였다. 그런데 되돌리면 엉뚱한 값이 되살아났다.

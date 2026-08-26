@@ -2,7 +2,7 @@
 title: "엔티티 설정"
 
 categories:
-  - spring
+  - Spring
 tags:
   - Spring
   - JPA

@@ -86,6 +86,19 @@
               </div>
               {% include thumb.html inc_page=p %}
             </a>
+            {%- comment -%}
+              post-list.html 과 같은 이유로 card__link 바깥에 둔다.
+              지금 보고 있는 태그는 굵게 표시해 어느 것으로 들어왔는지 남긴다.
+            {%- endcomment -%}
+            {%- if p.tags and p.tags.size > 0 -%}
+              <ul class="card__tags">
+                {%- for tag in p.tags -%}
+                  {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
+                  <li><a class="{% if tag == want %}is-on{% endif %}"
+                         href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
           </li>
         {%- endfor -%}
       </ul>

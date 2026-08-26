@@ -10,7 +10,7 @@ tags:
   - 이슈트래커
 
 date: 2026-08-19
-thumbnail: "/assets/img/thumbnail/empty.jpg"
+thumbnail: "/assets/img/thumbnail/jira_thumbnail.png"
 ---
 JIRA 란
 =====

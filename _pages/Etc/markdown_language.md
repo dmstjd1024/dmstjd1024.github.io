@@ -2,14 +2,13 @@
 title:  "Markdown 문법"
 
 categories:
-  - etc
+  - Etc
 tags:
   - markdown
 
 date: 2025-05-30
 thumbnail: "/assets/img/thumbnail/markdown_thumbnail.webp"
 ---
-
 # Markdown 문법
 게시물 작성하면서, Markdown을 많이 사용할텐데, 요약집처럼 정리해보았다.
 
