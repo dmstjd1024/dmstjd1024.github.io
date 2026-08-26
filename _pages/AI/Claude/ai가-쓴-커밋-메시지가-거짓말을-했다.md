@@ -12,6 +12,8 @@ tags:
 date: 2026-05-15
 thumbnail: "/assets/img/thumbnail/claude_thumbnail.png"
 card_thumbnail: "/assets/img/thumbnail/claude_card.png"
+redirect_from:
+  - /AI/ai가-쓴-커밋-메시지가-거짓말을-했다.html
 ---
 ## 배경: 커밋의 절반이 AI 협업이다
 
