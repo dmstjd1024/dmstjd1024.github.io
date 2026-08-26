@@ -104,7 +104,7 @@ Kafka 에는 큐와 토픽이 따로 있지 않다. **토픽 하나에 컨슈머
 -----
 "넣고 바로 돌아온다"는 건 **넣은 뒤에 무슨 일이 생겼는지 모른다**는 뜻이기도 하다. 메시징에서 가장 많은 고민이 여기에 몰려 있다.
 
-<div class="diagram">
+<div class="diagram" role="img" aria-label="정상 흐름은 소비자가 처리 후 ack 을 보내면 브로커가 메시지를 지우고, ack 이 오지 않으면 브로커가 다른 소비자에게 다시 주어 중복이 생기며 그 중복을 멱등성이 받아내는 구조">
 {% include diagrams/messaging--ack-flow.svg %}
 </div>
 
