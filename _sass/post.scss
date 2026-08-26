@@ -61,6 +61,25 @@
   }
 }
 
+// 제목과 본문 사이의 썸네일.
+//
+// 대부분 기술 로고라 cover 로 꽉 채우면 로고가 잘린다. contain 으로
+// 원본 비율을 지키고, 높이만 묶어 세로로 긴 그림이 화면을 다 먹지
+// 않게 한다. 배경을 깔아 두면 로고의 여백과 카드 배경이 이어져 보인다.
+.post-hero {
+  margin-bottom:2.5rem;
+
+  img {
+    display:block;
+    width:100%;
+    max-height:16rem;
+    object-fit:contain;
+    background:var(--bg-sunken);
+    border:1px solid var(--border);
+    border-radius:var(--r);
+  }
+}
+
 .post-body {
   font-size:1.0625rem;
   line-height:1.85;
