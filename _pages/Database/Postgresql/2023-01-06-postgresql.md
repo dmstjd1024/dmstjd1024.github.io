@@ -2,7 +2,7 @@
 title:  "PostgreSQL이란"
 
 categories:
-  - database
+  - Database
 tags:
   - Database
   - PostgreSQL

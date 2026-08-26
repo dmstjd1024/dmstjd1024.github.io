@@ -2,7 +2,7 @@
 title:  "RDS 란"
 
 categories:
-  - aws
+  - AWS
 tags:
   - AWS
   - RDS
@@ -11,7 +11,6 @@ tags:
 date: 2025-06-05
 thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
 ---
-
 ## RDS 란
 
 - 관계형 데이터 베이스 서비스

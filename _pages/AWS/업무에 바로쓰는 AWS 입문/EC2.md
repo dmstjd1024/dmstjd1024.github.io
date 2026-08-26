@@ -2,7 +2,7 @@
 title:  "EC2 란"
 
 categories:
-  - aws
+  - AWS
 tags:
   - AWS
   - EC2
@@ -10,7 +10,6 @@ tags:
 date: 2025-06-03
 thumbnail: "/assets/img/thumbnail/aws_thumbnail.jpeg"
 ---
-
 ## EC2 란
 
 - 클라우드 공간에 크기가 유연하게 변경되는 가상 서버 기능 제공
