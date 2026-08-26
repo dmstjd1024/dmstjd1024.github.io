@@ -11,6 +11,7 @@ tags:
 
 date: 2026-08-19
 thumbnail: "/assets/img/thumbnail/jira_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/jira_card.png"
 ---
 JIRA 란
 =====

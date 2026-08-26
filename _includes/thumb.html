@@ -8,10 +8,15 @@
   Liquid 에는 해시 함수가 없어서 길이 값들을 조합해 0~7 을 만든다.
   같은 글은 언제 빌드해도 같은 색이 나온다.
 
+  card_thumbnail 이 있으면 그것을 먼저 쓴다. 카드 상자는 데스크톱 1.4,
+  모바일 1.0 두 비율이고 object-fit:cover 라 넘치는 쪽이 잘리는데,
+  글 상단 히어로는 원본 비율 그대로 흐른다. 요구가 서로 달라 한 벌로는
+  양쪽을 맞출 수 없어, 잘려도 되는 목록용을 따로 둔다.
+
   받는 변수: inc_page (반드시 include. 접두사로 읽어야 한다)
 {%- endcomment -%}
 {%- assign t = include.inc_page -%}
-{%- assign img = t.thumbnail -%}
+{%- assign img = t.card_thumbnail | default: t.thumbnail -%}
 {%- comment -%} sample.png 는 "지정 없음"과 같게 본다 {%- endcomment -%}
 {%- if img contains 'sample.png' -%}{%- assign img = nil -%}{%- endif -%}
 

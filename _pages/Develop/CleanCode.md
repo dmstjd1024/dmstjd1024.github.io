@@ -8,7 +8,8 @@ tags:
   - Clean Code
 
 date: 2025-05-27
-thumbnail: "/assets/img/thumbnail/clean_code_thumbnail.png"
+thumbnail: "/assets/img/thumbnail/clean_code_cover.jpg"
+card_thumbnail: "/assets/img/thumbnail/clean_code_thumbnail.png"
 ---
 
 ## 1장 [깨끗한 코드]

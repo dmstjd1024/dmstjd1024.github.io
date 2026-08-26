@@ -10,6 +10,7 @@ tags:
 
 date: 2025-06-04
 thumbnail: "/assets/img/thumbnail/mcp_thumbnail.jpg"
+card_thumbnail: "/assets/img/thumbnail/mcp_card.jpg"
 ---
 
 ## MCP 란

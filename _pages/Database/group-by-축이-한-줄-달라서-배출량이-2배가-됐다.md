@@ -12,6 +12,7 @@ tags:
 
 date: 2026-08-18
 thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/postgresql_card.png"
 ---
 ## 문제: 같은 투입량이 공정마다 전액 계상됐다
 

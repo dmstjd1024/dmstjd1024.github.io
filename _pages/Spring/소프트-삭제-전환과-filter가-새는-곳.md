@@ -12,6 +12,7 @@ tags:
 
 date: 2026-07-07
 thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
+card_thumbnail: "/assets/img/thumbnail/spring_card.webp"
 ---
 ## 엔티티 14개를 하드 삭제에서 소프트 삭제로
 

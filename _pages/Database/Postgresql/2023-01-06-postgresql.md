@@ -9,6 +9,7 @@ tags:
 
 date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/postgresql_card.png"
 redirect_from:
   - /database/postgresql/
 ---
