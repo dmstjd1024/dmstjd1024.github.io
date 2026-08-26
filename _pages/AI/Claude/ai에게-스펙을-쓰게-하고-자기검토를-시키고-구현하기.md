@@ -12,6 +12,8 @@ tags:
 date: 2026-04-15
 thumbnail: "/assets/img/thumbnail/claude_thumbnail.png"
 card_thumbnail: "/assets/img/thumbnail/claude_card.png"
+redirect_from:
+  - /AI/ai에게-스펙을-쓰게-하고-자기검토를-시키고-구현하기.html
 ---
 ## 커밋 히스토리가 곧 작업 기록이다
 
