@@ -2,7 +2,7 @@
 title:  "리액트 시작하기 (6 ~ 장)"
 
 categories:
-  - frontend, react
+  - React
 tags:
   - Frontend
   - React
@@ -10,7 +10,6 @@ tags:
 date: 2025-07-12
 thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
-
 ## State
 - 리액트 Component의 상태를 관리하는 객체
 - state는 개발자가 정의한다.

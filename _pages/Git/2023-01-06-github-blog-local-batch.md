@@ -2,7 +2,7 @@
 title:  "깃허브 블로그 로컬로 돌리기"
 
 categories:
-  - git
+  - Git
 tags:
   - Git
   - github

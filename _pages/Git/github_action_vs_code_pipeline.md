@@ -2,7 +2,7 @@
 title:  "Github Action VS Code Pipeline"
 
 categories:
-  - git
+  - Git
 tags:
   - Git
   - github

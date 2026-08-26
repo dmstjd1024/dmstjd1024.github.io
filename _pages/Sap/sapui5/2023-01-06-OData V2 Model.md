@@ -2,7 +2,7 @@
 title: "OData V2 Model"
 
 categories:
-  - sap
+  - Sap
 tags:
   - SAP
   - SAP-ui5
@@ -13,7 +13,6 @@ thumbnail: "/assets/img/thumbnail/sap_thumbnail.png"
 redirect_from:
   - "/sap/OData V2 Model/"
 ---
-
 ## oData V2 model
 
 oData V2 모델을 사용하면 oData Service로 부터 데이터 제어를 가져올 수 있다.

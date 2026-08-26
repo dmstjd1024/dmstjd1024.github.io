@@ -46,7 +46,7 @@
         {%- endcomment -%}
         <li>
           <a href="{{ '/tags/' | prepend: site.baseurl }}"
-             {% if here == 'tags' %}aria-current="page"{% endif %}>태그</a>
+             {% if here == 'tags' %}aria-current="page"{% endif %}>#태그</a>
         </li>
         {%- for cat in nav_cats -%}
           {%- assign seg = cat.path | remove_first: '_pages/' | split: '/' -%}
