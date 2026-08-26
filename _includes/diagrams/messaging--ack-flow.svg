@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="생산자가 브로커에 메시지를 넣고 소비자가 처리한 뒤 ack 을 보내면 브로커가 메시지를 지우는 흐름과, ack 이 오지 않으면 브로커가 같은 메시지를 다시 보내 중복이 생기고 소비자의 멱등성이 그것을 받아내는 갈래">
+  <marker id="msgack-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+  <marker id="msgack-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path class="br-head-a" d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">메시지 하나가 지워지기까지</text>
+  <text class="dg-s" x="24" y="50">브로커는 ack 을 받은 뒤에야 메시지를 끝난 것으로 본다</text>
+
+  <!-- 정상 흐름 -->
+  <rect class="dg-lane" x="24" y="68" width="672" height="150" rx="10"/>
+  <text class="dg-k" x="44" y="94">정상 — 처리하고 ack 을 보낸다</text>
+
+  <rect class="dg-row" x="44" y="110" width="150" height="56" rx="6"/>
+  <text class="dg-t" x="60" y="132">생산자</text>
+  <text class="dg-v" x="60" y="150">넣고 바로 돌아온다</text>
+
+  <path class="dg-arw" d="M198 138 H240" marker-end="url(#msgack-a)"/>
+  <text class="dg-v" x="204" y="130">발행</text>
+
+  <rect class="dg-row" x="244" y="110" width="150" height="56" rx="6"/>
+  <text class="dg-t" x="260" y="132">브로커</text>
+  <text class="dg-v" x="260" y="150">메시지를 들고 있다</text>
+
+  <path class="dg-arw" d="M398 138 H440" marker-end="url(#msgack-a)"/>
+  <text class="dg-v" x="404" y="130">전달</text>
+
+  <rect class="dg-row" x="444" y="110" width="150" height="56" rx="6"/>
+  <text class="dg-t" x="460" y="132">소비자</text>
+  <text class="dg-v" x="460" y="150">처리한다</text>
+
+  <!-- ack 은 소비자에서 브로커로 되돌아간다 -->
+  <path class="dg-arw" d="M519 170 V190 H319 V170" marker-end="url(#msgack-a)"/>
+  <rect class="dg-mask" x="382" y="182" width="74" height="14" rx="2"/>
+  <text class="dg-v" x="390" y="193">ack — 처리 완료</text>
+
+  <text class="dg-s" x="612" y="142">→ 브로커가</text>
+  <text class="dg-s" x="612" y="158">메시지를 지운다</text>
+
+  <!-- 실패 흐름 -->
+  <rect class="dg-lane" x="24" y="242" width="672" height="196" rx="10"/>
+  <text class="dg-k" x="44" y="268">ack 이 오지 않으면 — 브로커가 다시 준다</text>
+
+  <rect class="dg-row" x="44" y="284" width="150" height="56" rx="6"/>
+  <text class="dg-t" x="60" y="306">소비자</text>
+  <text class="dg-v" x="60" y="324">처리 후 ack 직전에 죽음</text>
+
+  <path class="dg-arw-a" d="M198 312 H240" marker-end="url(#msgack-b)"/>
+
+  <rect class="dg-row" x="244" y="284" width="150" height="56" rx="6"/>
+  <text class="dg-t" x="260" y="306">브로커</text>
+  <text class="dg-v" x="260" y="324">ack 을 못 받았다</text>
+
+  <path class="dg-arw-a" d="M398 312 H466" marker-end="url(#msgack-b)"/>
+  <rect class="dg-mask" x="406" y="298" width="42" height="14" rx="2"/>
+  <text class="dg-n" x="409" y="309">재전달</text>
+
+  <rect class="dg-hl" x="470" y="284" width="204" height="56" rx="6"/>
+  <text class="dg-n" x="484" y="306" font-size="13">다른 소비자에게 같은 메시지</text>
+  <text class="dg-n" x="484" y="324" font-size="13">→ 중복 처리가 일어난다</text>
+
+  <path class="dg-arw" d="M572 344 V368" marker-end="url(#msgack-a)"/>
+
+  <rect class="dg-row" x="244" y="372" width="430" height="48" rx="6"/>
+  <text class="dg-t" x="260" y="392">멱등성 — 받는 쪽이 감당한다</text>
+  <text class="dg-v" x="260" y="410">처리한 메시지 ID 를 기억해 두었다가 이미 있으면 건너뛴다</text>
+
+  <text class="dg-s" x="44" y="398">중복은 장애가 아니라</text>
+  <text class="dg-s" x="44" y="414">정상 동작이다</text>
+</svg>
