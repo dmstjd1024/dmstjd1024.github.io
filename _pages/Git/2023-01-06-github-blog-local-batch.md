@@ -10,6 +10,7 @@ tags:
 
 date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/github_card.png"
 redirect_from:
   - /git/github-blog-local-batch/
 ---

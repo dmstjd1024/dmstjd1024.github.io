@@ -12,6 +12,7 @@ tags:
 
 date: 2026-05-13
 thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/postgresql_card.png"
 ---
 ## 도입과 철수 사이 22일
 

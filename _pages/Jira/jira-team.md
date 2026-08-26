@@ -12,6 +12,7 @@ tags:
 
 date: 2026-08-20
 thumbnail: "/assets/img/thumbnail/jira_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/jira_card.png"
 ---
 > [JIRA 입문](/Jira/jira-basic.html), [JQL 심화와 자동화](/Jira/jira-automation.html)에서 이어지는 글이다.
 > 이 글은 도구 사용법이 아니라 **팀을 어떻게 굴리느냐**에 대한 글이다.

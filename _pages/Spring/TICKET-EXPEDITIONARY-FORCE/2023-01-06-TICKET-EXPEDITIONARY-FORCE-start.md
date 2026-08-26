@@ -11,6 +11,7 @@ tags:
 
 date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
+card_thumbnail: "/assets/img/thumbnail/spring_card.webp"
 redirect_from:
   - /spring/TICKET-EXPEDITIONARY-FORCE-start/
 ---

@@ -11,6 +11,7 @@ tags:
 
 date: 2026-05-07
 thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
+card_thumbnail: "/assets/img/thumbnail/spring_card.webp"
 ---
 ## 문제: TPS가 안 나온다
 

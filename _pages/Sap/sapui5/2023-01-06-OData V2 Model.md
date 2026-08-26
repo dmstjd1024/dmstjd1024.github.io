@@ -10,6 +10,7 @@ tags:
 
 date: 2023-01-06
 thumbnail: "/assets/img/thumbnail/sap_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/sap_card.png"
 redirect_from:
   - "/sap/OData V2 Model/"
 ---
