@@ -12,9 +12,8 @@ tags:
   - 성능
 
 date: 2026-05-07
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/bricks.webp"
 ---
-
 ## 3분 만에 되돌린 최적화
 
 인증 경로에서 DB를 네 번 때리던 걸 걷어낸 이야기는 [인증 필터가 매 요청 DB를 네 번 때리고 있었다](/AI/Backend/인증-필터가-매-요청-db를-네번-때렸다)에 썼다. 감사 로그 비동기화, 커넥션 풀, 인메모리 캐시까지 29분 동안 커밋 여섯 개가 나갔다.

@@ -2,7 +2,7 @@
 title:  "JVM, 자바 코드 실행 과정"
 
 categories:
-  - java
+  - Java
 tags:
   - Java
   - 백기선 Live Study

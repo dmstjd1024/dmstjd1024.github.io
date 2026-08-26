@@ -2,7 +2,7 @@
 title:  "리액트 시작하기 (1 ~ 5장)"
 
 categories:
-  - frontend, react
+  - React
 tags:
   - Frontend
   - React
@@ -10,7 +10,6 @@ tags:
 date: 2025-06-03
 thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
-
 ## 리액트 설치 방법
 
 - npm 설치

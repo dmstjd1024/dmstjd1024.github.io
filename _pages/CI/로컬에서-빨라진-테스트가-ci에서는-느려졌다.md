@@ -11,9 +11,8 @@ tags:
   - 테스트
 
 date: 2026-08-06
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
 ---
-
 ## 문제: PR마다 CI가 8분
 
 - 구성 — 빌드 2분 51초 + 테스트 5분 08초

@@ -11,9 +11,8 @@ tags:
   - 테스트
 
 date: 2026-08-18
-thumbnail: "/assets/img/thumbnail/sample.png"
+thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
 ---
-
 ## 문제: 같은 투입량이 공정마다 전액 계상됐다
 
 두 CTE의 `GROUP BY` 축이 달랐다.
