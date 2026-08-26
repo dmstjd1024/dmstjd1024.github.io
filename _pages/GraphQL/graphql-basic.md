@@ -10,7 +10,7 @@ tags:
   - Backend
 
 date: 2026-08-22
-thumbnail: "/assets/img/thumbnail/empty.jpg"
+thumbnail: "/assets/img/thumbnail/graphql_thumbnail.png"
 ---
 GraphQL 이란
 =====
