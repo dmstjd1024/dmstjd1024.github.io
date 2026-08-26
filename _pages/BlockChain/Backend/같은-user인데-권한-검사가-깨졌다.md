@@ -12,7 +12,8 @@ tags:
   - 성능
 
 date: 2026-05-07
-thumbnail: "/assets/img/thumbnail/bricks.webp"
+thumbnail: "/assets/img/thumbnail/besu_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/besu_card.png"
 ---
 ## 3분 만에 되돌린 최적화
 
