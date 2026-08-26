@@ -12,6 +12,7 @@ tags:
 
 date: 2026-07-02
 thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
+card_thumbnail: "/assets/img/thumbnail/spring_card.webp"
 ---
 ## 30초로는 부족했다
 

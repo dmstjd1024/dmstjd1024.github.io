@@ -11,6 +11,7 @@ tags:
 
 date: 2025-05-27
 thumbnail: "/assets/img/thumbnail/github_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/github_card.png"
 ---
 ## Github action 이란
 - Github에서 공식적으로 제공하는 CI / CD 툴

@@ -11,6 +11,7 @@ tags:
 
 date: 2026-03-21
 thumbnail: "/assets/img/thumbnail/postgresql_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/postgresql_card.png"
 ---
 ## 문제
 

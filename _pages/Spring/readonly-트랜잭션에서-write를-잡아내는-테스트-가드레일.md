@@ -12,6 +12,7 @@ tags:
 
 date: 2026-06-01
 thumbnail: "/assets/img/thumbnail/spring_thumbnail.webp"
+card_thumbnail: "/assets/img/thumbnail/spring_card.webp"
 ---
 ## 조회 API가 매번 write 트랜잭션을 만들고 있었다
 
