@@ -222,8 +222,8 @@ layout: default
           </p>
           <p class="case__out"><code>도입 22일 → 철수, 필요한 부분만 자동화로 대체</code></p>
           <p class="case__src">
-            <a href="/AI/DB-Query/flyway를-도입하고-3주-만에-걷어낸-이야기.html">Flyway를 3주 만에 걷어낸 이야기</a>
-            <a href="/AI/DB-Query/ddl-auto-update의-빈틈을-보완-ddl-자동화로-메우기.html">그 뒤 빈틈을 메운 방법</a>
+            <a href="/Database/flyway를-도입하고-3주-만에-걷어낸-이야기.html">Flyway를 3주 만에 걷어낸 이야기</a>
+            <a href="/Database/ddl-auto-update의-빈틈을-보완-ddl-자동화로-메우기.html">그 뒤 빈틈을 메운 방법</a>
           </p>
         </li>
         <li>
@@ -235,9 +235,9 @@ layout: default
           </p>
           <p class="case__out"><code>PDF 생성 6.4s → 0.7s</code></p>
           <p class="case__src">
-            <a href="/AI/DB-Query/뷰를-물질화-테이블로-읽기-비용을-쓰기-시점으로-옮기기.html">뷰를 물질화 테이블로</a>
-            <a href="/AI/Backend/n+1-제거-4종-세트-fetch-join이-답이-아닐-때.html">N+1 제거 4종 세트</a>
-            <a href="/AI/Frontend/한글-폰트-pdf-성능.html">PDF 7초의 범인</a>
+            <a href="/Database/뷰를-물질화-테이블로-읽기-비용을-쓰기-시점으로-옮기기.html">뷰를 물질화 테이블로</a>
+            <a href="/Spring/n+1-제거-4종-세트-fetch-join이-답이-아닐-때.html">N+1 제거 4종 세트</a>
+            <a href="/React/한글-폰트-pdf-성능.html">PDF 7초의 범인</a>
           </p>
         </li>
         <li>
@@ -249,8 +249,8 @@ layout: default
           </p>
           <p class="case__out"><code>2,389줄 삭제 · 죽은 파일 102개 정리</code></p>
           <p class="case__src">
-            <a href="/AI/Frontend/v1-v2-이중-스택-정리.html">같은 버그를 두 번 고친 날</a>
-            <a href="/AI/Frontend/죽은-파일이-더-최신이었다.html">죽은 파일이 더 최신이었다</a>
+            <a href="/Develop/v1-v2-이중-스택-정리.html">같은 버그를 두 번 고친 날</a>
+            <a href="/Develop/죽은-파일이-더-최신이었다.html">죽은 파일이 더 최신이었다</a>
           </p>
         </li>
       </ul>
@@ -313,10 +313,10 @@ layout: default
           </p>
           <p class="case__out"><code>Fabric 네트워크 생성 20단계 자동화 · 스크립트 1,178줄</code></p>
           <p class="case__src">
-            <a href="/AI/Backend/toctou-버그-클래스-제거.html">TOCTOU 한 건 대신 버그 클래스를</a>
-            <a href="/AI/Backend/비동기-api가-무조건-200을-반환했다.html">비동기 API의 거짓 성공</a>
-            <a href="/AI/Infra/오퍼레이터-버그를-crd-스키마-패치로-우회하기.html">오퍼레이터 버그를 CRD 패치로</a>
-            <a href="/AI/Infra/kubectl-exec-타임아웃과-재시도.html">kubectl exec은 왜 멈추는가</a>
+            <a href="/Spring/toctou-버그-클래스-제거.html">TOCTOU 한 건 대신 버그 클래스를</a>
+            <a href="/Spring/비동기-api가-무조건-200을-반환했다.html">비동기 API의 거짓 성공</a>
+            <a href="/Infra/오퍼레이터-버그를-crd-스키마-패치로-우회하기.html">오퍼레이터 버그를 CRD 패치로</a>
+            <a href="/Infra/kubectl-exec-타임아웃과-재시도.html">kubectl exec은 왜 멈추는가</a>
           </p>
         </li>
       </ul>
@@ -346,7 +346,7 @@ layout: default
           </p>
           <p class="case__out"><code>전환 중에도 화면이 깨지지 않는 구간 확보</code></p>
           <p class="case__src">
-            <a href="/AI/DB-Query/정규화된-조인을-버리고-역정규화하기.html">정규화된 조인을 버리고</a>
+            <a href="/Database/정규화된-조인을-버리고-역정규화하기.html">정규화된 조인을 버리고</a>
           </p>
         </li>
         <li>
@@ -359,9 +359,9 @@ layout: default
           </p>
           <p class="case__out"><code>130개소 ILIKE 전환 · 매 검색 풀스캔 해소</code></p>
           <p class="case__src">
-            <a href="/AI/DB-Query/gin-trigram-인덱스가-안-먹던-이유.html">왜 안 빨라지지?</a>
-            <a href="/AI/Backend/인증-필터가-매-요청-db를-네번-때렸다.html">인증 필터가 DB를 네 번</a>
-            <a href="/AI/Backend/depth-10-방어-코드가-버그를-감추고-있었다.html">방어 코드가 감춘 버그</a>
+            <a href="/Database/gin-trigram-인덱스가-안-먹던-이유.html">왜 안 빨라지지?</a>
+            <a href="/Spring/인증-필터가-매-요청-db를-네번-때렸다.html">인증 필터가 DB를 네 번</a>
+            <a href="/Java/depth-10-방어-코드가-버그를-감추고-있었다.html">방어 코드가 감춘 버그</a>
           </p>
         </li>
       </ul>
@@ -387,7 +387,7 @@ layout: default
           </p>
           <p class="case__out"><code>세금 상대오차 1.250% → 0.068%</code></p>
           <p class="case__src">
-            <a href="/AI/AI-Pairing/수수료율-4배-오차.html">4.1배짜리 수수료 오차</a>
+            <a href="/Etc/수수료율-4배-오차.html">4.1배짜리 수수료 오차</a>
           </p>
         </li>
         <li>
@@ -400,8 +400,8 @@ layout: default
           </p>
           <p class="case__out"><code>A/B · 분류 · 회귀 3방향 검증 → 전부 기각</code></p>
           <p class="case__src">
-            <a href="/AI/AI-Pairing/ML을-껐다-켜봤더니.html">ML을 켜는 게 맞나</a>
-            <a href="/AI/AI-Pairing/필터-기여도-계측으로-찾은-무거래-원인.html">체결이 0건인 이유</a>
+            <a href="/Etc/ML을-껐다-켜봤더니.html">ML을 켜는 게 맞나</a>
+            <a href="/Etc/필터-기여도-계측으로-찾은-무거래-원인.html">체결이 0건인 이유</a>
           </p>
         </li>
       </ul>
@@ -453,9 +453,9 @@ layout: default
       </li>
     </ul>
     <p class="case__src">
-      <a href="/AI/AI-Pairing/ai에게-스펙을-쓰게-하고-자기검토를-시키고-구현하기.html">스펙을 쓰게 하고 자기검토를</a>
-      <a href="/AI/AI-Pairing/에이전트-72개-메모리-누수-감사.html">에이전트 72개로 누수 감사</a>
-      <a href="/AI/AI-Pairing/ai가-쓴-커밋-메시지가-거짓말을-했다.html">커밋 메시지가 거짓말을 했다</a>
+      <a href="/AI/Claude/ai에게-스펙을-쓰게-하고-자기검토를-시키고-구현하기.html">스펙을 쓰게 하고 자기검토를</a>
+      <a href="/AI/Claude/에이전트-72개-메모리-누수-감사.html">에이전트 72개로 누수 감사</a>
+      <a href="/AI/Claude/ai가-쓴-커밋-메시지가-거짓말을-했다.html">커밋 메시지가 거짓말을 했다</a>
     </p>
   </section>
 

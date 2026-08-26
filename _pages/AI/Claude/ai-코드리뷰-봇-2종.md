@@ -77,7 +77,7 @@ redirect_from:
 
 가장 큰 성능 문제는 봇이 하나도 못 잡았다.
 
-- 사례: [PDF 다운로드가 7초 걸리던 문제](/AI/Frontend/한글-폰트-pdf-성능.html)
+- 사례: [PDF 다운로드가 7초 걸리던 문제](/React/한글-폰트-pdf-성능.html)
 - 코드만 보면 이상한 구석 없음 — react-pdf로 PDF를 만드는 평범한 코드
 - 실제 병목: 한글 폰트의 텍스트 layout
 - 발견 경로: chrome-devtools로 직접 계측, 20여 종의 조합 실험
