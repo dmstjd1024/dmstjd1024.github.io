@@ -73,7 +73,12 @@
 // 기준으로 본문 44rem 을 그대로 쓰면 534px 까지 커져 첫 화면의 44% 를
 // 먹는다. 26rem 이면 그 그림도 313px 안에 들어온다.
 .post-hero {
-  margin-bottom:2.5rem;
+  // 로고형 썸네일은 배경이 흰색이라 여백이 없으면 구분선·본문에 바로 붙는다.
+  // 위쪽은 지정값이 없어 브라우저 기본 margin(16px) 에 기대고 있었다.
+  //
+  // 위 값이 아래보다 큰 이유: .post-head 의 margin-bottom(2.5rem) 과 병합돼
+  // 둘 중 큰 값만 남는다. 2.5rem 을 주면 실제 간격이 그대로 2.5rem 이다.
+  margin:4rem 0 3.5rem;
 
   img {
     display:block;
