@@ -44,8 +44,15 @@ card_thumbnail: "/assets/img/thumbnail/claude_card.png"
 
 앱을 깔았더니 **24분 뒤에 스킬이 저절로 생겼다.** 내가 만든 게 아니다.
 
-그 증거가 하나 더 있다. 내 스킬 24개 중 **22개는 dotfiles 로 가는 심링크(원본을 가리키는
-바로가기 파일)** 인데, `aside-browser` 는 진짜 디렉터리다.
+그 증거가 하나 더 있다. 내 스킬 24개를 실체별로 세면 이렇게 갈린다.
+
+| 실체 | 개수 |
+|---|---:|
+| 심링크(원본을 가리키는 바로가기 파일) → dotfiles | 19 |
+| 심링크 → `~/.agents/skills/` | 3 |
+| **진짜 디렉터리** | **2** (`aside-browser`, `omc-reference`) |
+
+`aside-browser` 는 저 마지막 칸에 있다.
 
 ```
 SYMLINK  artifact-diagram -> /Users/.../dotfiles/claude/skills/artifact-diagram/
@@ -53,8 +60,11 @@ REAL     aside-browser
 SYMLINK  chrome-mcp -> /Users/.../dotfiles/claude/skills/chrome-mcp/
 ```
 
-심링크가 아니라는 건 **dotfiles 관리 밖**이라는 뜻이고, 곧 **맥 4대에 동기화되지 않는다**는
-뜻이다. 앱을 깐 머신에만 있다.
+**dotfiles 심링크가 아니라는 건 dotfiles 관리 밖**이라는 뜻이고, 곧 **맥 4대에 동기화되지
+않는다**는 뜻이다. 앱을 깐 머신에만 있다.
+
+(`~/.agents` 쪽 3개도 dotfiles 밖이라 사정은 같다. 그래서
+[스킬 목록 글](/AI/Claude/스킬-24개-전체-목록.html)에서 이 5개를 "순수 외부" 로 묶었다.)
 
 ## 두 개의 입구 — exec 과 repl
 
