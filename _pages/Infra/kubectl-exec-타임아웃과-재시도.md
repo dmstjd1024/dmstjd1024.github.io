@@ -11,6 +11,7 @@ tags:
 
 date: 2026-05-11
 thumbnail: "/assets/img/thumbnail/kubernetes_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/kubernetes_card.png"
 ---
 ## 문제: 스크립트가 멈춘다
 

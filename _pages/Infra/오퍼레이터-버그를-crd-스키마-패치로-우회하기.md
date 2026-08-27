@@ -11,6 +11,7 @@ tags:
 
 date: 2026-05-08
 thumbnail: "/assets/img/thumbnail/kubernetes_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/kubernetes_card.png"
 ---
 ## 문제: 체인코드 상태가 FAILED에서 안 나온다
 
