@@ -10,8 +10,8 @@ tags:
   - 멀티테넌시
 
 date: 2026-08-28
-thumbnail: "/assets/img/thumbnail/kubernetes_thumbnail.png"
-card_thumbnail: "/assets/img/thumbnail/kubernetes_card.png"
+thumbnail: "/assets/img/thumbnail/nginx_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/nginx_card.png"
 ---
 ## 한 줄로
 

@@ -10,8 +10,8 @@ tags:
   - 폐쇄망
 
 date: 2026-08-28
-thumbnail: "/assets/img/thumbnail/kubernetes_thumbnail.png"
-card_thumbnail: "/assets/img/thumbnail/kubernetes_card.png"
+thumbnail: "/assets/img/thumbnail/istio_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/istio_card.png"
 ---
 ## 한 줄로
 

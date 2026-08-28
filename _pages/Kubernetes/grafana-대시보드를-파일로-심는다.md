@@ -10,8 +10,8 @@ tags:
   - 모니터링
 
 date: 2026-08-28
-thumbnail: "/assets/img/thumbnail/kubernetes_thumbnail.png"
-card_thumbnail: "/assets/img/thumbnail/kubernetes_card.png"
+thumbnail: "/assets/img/thumbnail/grafana_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/grafana_card.png"
 ---
 ## 한 줄로
 
