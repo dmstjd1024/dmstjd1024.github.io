@@ -140,4 +140,4 @@ Grafana 는 떴는데 대시보드만 비어 있는 상태가 되고, 로그에�
 같이 읽을 글:
 [Prometheus 는 한 덩어리로 깔린다](/Kubernetes/모니터링은-한-덩어리로-깔린다.html) ·
 [Ingress 로 포트 3개를 1개로 줄였다](/Kubernetes/ingress로-포트-3개를-1개로-줄였다.html) ·
-[쿠버 대시보드만 정직하게 실패한다](/Kubernetes/쿠버-대시보드만-정직하게-실패한다.html)
+[쿠버네티스 대시보드란](/Kubernetes/쿠버네티스-대시보드란.html)
