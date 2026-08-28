@@ -1,5 +1,5 @@
 ---
-title:  "registry:2 — 자기 자신을 담고 있는 레지스트리"
+title:  "사설 레지스트리(registry:2) 란? — 이름이 둘이라 클러스터가 이미지를 못 받았다"
 
 categories:
   - Docker
@@ -101,6 +101,71 @@ localhost:5001  →  kind-registry:5000
 사설망이고 인증서를 발급할 방법도 마땅치 않아 예외로 열어둔 것이다. 외부에 노출되지 않는다는
 전제 위에서만 성립하는 선택이다.
 
+## 겪은 이슈 — 이름을 잘못 알려줘서 이미지를 못 받았다
+
+앞 절의 "이름이 두 개" 가 **실제로 사고를 냈다.**
+
+```
+fix(cluster): containerd registry 설정 보완 및 mirrors 추가   (2026-04-19)
+```
+
+무엇이 틀렸는지는 변경 내용에 그대로 남아 있다.
+
+```diff
+- server = "http://localhost:5001"
++ server = "http://kind-registry:5000"
+```
+
+**클러스터 안에서 `localhost:5001` 을 가리키고 있었다.**
+
+이게 왜 안 되는지는 `localhost` 의 의미를 생각하면 명확하다. `localhost` 는 절대 주소가
+아니라 **"말하는 사람 자신"** 이다. 서버에서 치면 서버이고, 클러스터 노드 안에서 해석하면
+**그 노드 자신**이다. 레지스트리는 노드 안이 아니라 옆 컨테이너에 있으니 닿을 리가 없다.
+
+```
+[ 서버 ]              localhost:5001  →  레지스트리 ✅
+[ 클러스터 노드 ]      localhost:5001  →  노드 자신   ❌
+```
+
+같은 문자열이 어디서 해석되느냐에 따라 다른 곳을 가리킨다. **이미지 이름에 박힌
+`localhost:5001` 은 그대로 두되, 노드 안에서는 `kind-registry:5000` 으로 바꿔 부르도록**
+매핑을 고친 것이 해결책이다.
+
+`mirrors` 설정을 함께 넣은 것도 같은 맥락이다. 두 이름을 **모두** 등록해서 어느 쪽으로
+불러도 같은 곳에 닿게 했다.
+
+```toml
+[plugins."...".registry.mirrors."localhost:5001"]
+  endpoint = ["http://kind-registry:5000"]
+[plugins."...".registry.mirrors."kind-registry:5000"]
+  endpoint = ["http://kind-registry:5000"]
+```
+
+### 고치면서 검증을 붙였다
+
+이 커밋에서 더 눈여겨볼 건 **확인 절차를 새로 넣었다**는 점이다.
+
+```bash
+# 3. hosts.toml 기록 검증
+if ! docker exec ... cat .../hosts.toml | grep -q "kind-registry"; then
+  echo "❌ hosts.toml write failed"; exit 1
+fi
+
+# 4. Kind 노드에서 레지스트리 접근 확인
+if ! docker exec ... curl -sf "http://kind-registry:5000/v2/_catalog" > /dev/null; then
+  echo "❌ Cannot reach kind-registry:5000 from Kind node"; exit 1
+fi
+```
+
+**설정 파일을 썼다는 것과 그게 실제로 동작한다는 것은 다르다.** 그래서 두 가지를 나눠서
+확인한다 — 파일이 제대로 쓰였는지, 그리고 **노드에서 실제로 레지스트리에 닿는지**.
+
+이 검증이 없으면 증상이 한참 뒤에 나타난다. 클러스터는 정상으로 만들어지고, 나중에 파드가
+뜰 때 `ImagePullBackOff` 로 실패한다. 그때는 원인이 레지스트리 설정이라는 걸 알기 어렵다.
+
+**설치 시점에 확인할 수 있는 것은 설치 시점에 확인하는 게 낫다.** 실패를 뒤로 미룰수록
+원인과 증상의 거리가 멀어진다.
+
 ## 자기 자신을 담고 있다
 
 이미지 시딩(레지스트리 채우기) 목록의 마지막 줄이 이렇다.
@@ -169,6 +234,10 @@ Docker Hub. 이걸 전부 `localhost:5001` 아래로 **평평하게** 모은다.
 - 클러스터는 회사마다 따로지만 **레지스트리는 하나**를 공유한다
 - 주소가 두 개다 — 호스트에서 `localhost:5001`, **클러스터 안에서 `kind-registry:5000`**.
   containerd 매핑으로 이어붙인다
+- ⚠️ 이 매핑을 **틀리게 적어 사고가 났다.** 노드 안에서 `localhost` 는 노드 자신이라
+  레지스트리에 닿지 않는다. `mirrors` 로 두 이름을 모두 등록해 해결
+- 고치면서 **검증 두 단계**를 붙였다 — 설정 파일이 쓰였는지, 노드에서 실제로 닿는지.
+  **설치 시점에 확인 안 하면 나중에 `ImagePullBackOff` 로 뒤늦게 터진다**
 - `REGISTRY_STORAGE_DELETE_ENABLED=true` 는 기본값이 아니다. 디스크가 한정적이라 연 것
 - **레지스트리가 자기 자신을 담고 있다.** 재건할 씨앗은 오프라인 번들로 따로 보관해야 한다
 - ⚠️ **시딩 목록과 백업 목록이 어긋나 있다.** 백업으로 복원해도 원래 상태가 안 된다
