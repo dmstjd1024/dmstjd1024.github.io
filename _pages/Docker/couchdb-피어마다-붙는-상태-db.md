@@ -1,5 +1,5 @@
 ---
-title:  "couchdb — Fabric 피어마다 하나씩 붙는 상태 DB"
+title:  "CouchDB 란? — Fabric 상태 DB 로 고른 대가는 파드 두 배"
 
 categories:
   - Docker

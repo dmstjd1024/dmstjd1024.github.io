@@ -1,5 +1,5 @@
 ---
-title:  "busybox — 1초 살고 사라지는 컨테이너가 하는 일"
+title:  "busybox 란? — 1초 살고 사라지는 컨테이너가 하는 일"
 
 categories:
   - Docker
