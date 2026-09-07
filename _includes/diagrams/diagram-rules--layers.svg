@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="diagram-rules--layers-title diagram-rules--layers-desc">
+  <title id="diagram-rules--layers-title">도식 규칙이 놓인 세 층</title>
+  <desc id="diagram-rules--layers-desc">색은 CSS 가, 좌표는 코드가 자동으로 강제한다. 가운데 규칙 문서 층만 강제력이 없고, 실제로 새어 나간 도식 3개가 전부 이 층의 항목이었다.</desc>
+
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 1층 · CSS 계약 — 자동 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="108" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">1층 · CSS 계약 — 자동</text>
+  <rect class="dg-item" x="212" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="280" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">_sass/diagram.scss</text>
+  <text class="dg-s" x="280" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">테마 토큰으로 칠함</text>
+  <rect class="dg-item" x="365" y="56" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="436" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">색을 파일에 못 박음</text>
+  <text class="dg-s" x="436" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">위반 0건</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+
+  <!-- 2층 · 규칙 문서 — 읽어야 함 -->
+  <rect class="dg-zone-a" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="133" height="12" rx="2"/>
+  <text class="dg-n" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">2층 · 규칙 문서 — 읽어야 함</text>
+  <rect class="dg-hl" x="129" y="200" width="128" height="52" rx="6"/>
+  <text class="dg-n" x="193" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SKILL.md</text>
+  <text class="dg-n" x="193" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">.diagram 으로 감싼다</text>
+  <rect class="dg-hl" x="273" y="200" width="148" height="52" rx="6"/>
+  <text class="dg-n" x="347" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">항목을 합치지 않는다</text>
+  <rect class="dg-hl" x="437" y="200" width="153" height="52" rx="6"/>
+  <text class="dg-n" x="513" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다수인 표시는 안 단다</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+
+  <!-- 3층 · 결정론적 계산 — 자동 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="129" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">3층 · 결정론적 계산 — 자동</text>
+  <rect class="dg-item" x="221" y="344" width="97" height="52" rx="6"/>
+  <text class="dg-t" x="269" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">gen.py</text>
+  <text class="dg-s" x="269" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">좌표를 계산함</text>
+  <rect class="dg-item" x="334" y="344" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="416" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">seq=True 없으면 안 이음</text>
+  <text class="dg-s" x="416" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">없는 순서 방지</text>
+</svg>
