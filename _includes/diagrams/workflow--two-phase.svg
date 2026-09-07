@@ -1,0 +1,54 @@
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="work-start 의 2단계 구조: Phase A 는 최신화만 하고 멈추며, 작업 설명을 받은 뒤 Phase B 에서 브랜치 이름을 짓는다">
+  <defs>
+    <marker id="w2p-ah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z"/>
+    </marker>
+  </defs>
+
+  <rect class="dg-zone" x="14" y="30" width="692" height="128" rx="10"/>
+  <rect class="dg-mask" x="35" y="24" width="192" height="15" rx="2"/>
+  <text class="dg-s" x="40" y="35">Phase A — 브랜치는 아직 안 만든다</text>
+
+  <rect class="dg-item" x="38" y="64" width="150" height="72" rx="8"/>
+  <text class="dg-t" x="113" y="94" text-anchor="middle">fetch</text>
+  <text class="dg-s" x="113" y="114" text-anchor="middle">dev 존재 확인</text>
+
+  <rect class="dg-item" x="212" y="64" width="150" height="72" rx="8"/>
+  <text class="dg-t" x="287" y="94" text-anchor="middle">eunseong 확보</text>
+  <text class="dg-s" x="287" y="114" text-anchor="middle">없으면 dev 기준 생성</text>
+
+  <rect class="dg-item" x="386" y="64" width="150" height="72" rx="8"/>
+  <text class="dg-t" x="461" y="94" text-anchor="middle">rebase</text>
+  <text class="dg-s" x="461" y="114" text-anchor="middle">origin/dev 를 그 위에</text>
+
+  <rect class="dg-item dg-hl" x="560" y="64" width="122" height="72" rx="8"/>
+  <text class="dg-n" x="621" y="94" text-anchor="middle">멈춘다</text>
+  <text class="dg-s" x="621" y="114" text-anchor="middle">작업을 묻는다</text>
+
+  <line class="dg-arw" x1="194" y1="100" x2="206" y2="100" marker-end="url(#w2p-ah)"/>
+  <line class="dg-arw" x1="368" y1="100" x2="380" y2="100" marker-end="url(#w2p-ah)"/>
+  <line class="dg-arw" x1="542" y1="100" x2="554" y2="100" marker-end="url(#w2p-ah)"/>
+
+  <rect class="dg-item" x="212" y="192" width="296" height="52" rx="8"/>
+  <text class="dg-t" x="360" y="215" text-anchor="middle">사용자: "무슨 작업을 할지"</text>
+  <text class="dg-s" x="360" y="234" text-anchor="middle">이 프롬프트가 이름의 근거다</text>
+
+  <path class="dg-arw-a" d="M 621 142 L 621 218 L 514 218" fill="none" marker-end="url(#w2p-ah)"/>
+
+  <rect class="dg-zone dg-zone-a" x="14" y="266" width="692" height="118" rx="10"/>
+  <rect class="dg-mask" x="35" y="260" width="166" height="15" rx="2"/>
+  <text class="dg-n" x="40" y="271">Phase B — 이제 이름을 짓는다</text>
+
+  <rect class="dg-item" x="38" y="298" width="304" height="72" rx="8"/>
+  <text class="dg-t" x="190" y="326" text-anchor="middle">브랜치 이름 결정</text>
+  <text class="dg-s" x="190" y="346" text-anchor="middle">feature/ITS-63-lca-result-pdf</text>
+
+  <rect class="dg-item" x="378" y="298" width="304" height="72" rx="8"/>
+  <text class="dg-t" x="530" y="326" text-anchor="middle">FE · BE 두 repo 생성</text>
+  <text class="dg-s" x="530" y="346" text-anchor="middle">같은 이름 · eunseong 위</text>
+
+  <line class="dg-arw" x1="190" y1="250" x2="190" y2="292" marker-end="url(#w2p-ah)"/>
+  <line class="dg-arw" x1="348" y1="334" x2="372" y2="334" marker-end="url(#w2p-ah)"/>
+</svg>
