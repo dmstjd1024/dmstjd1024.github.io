@@ -1,0 +1,51 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="같은 한 줄이 두 번 틀린 경로: 처음엔 근거가 틀렸고, 나중엔 가리키던 대상이 사라졌다">
+  <defs>
+    <marker id="rdc-ah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z"/>
+    </marker>
+  </defs>
+
+  <rect class="dg-item" x="24" y="46" width="200" height="86" rx="8"/>
+  <text class="dg-t" x="124" y="72" text-anchor="middle">2026-07-07</text>
+  <text class="dg-s" x="124" y="93" text-anchor="middle">독립 작업 다수 → ultrawork</text>
+  <text class="dg-s" x="124" y="112" text-anchor="middle">단일 목표 → ralph</text>
+
+  <rect class="dg-item" x="260" y="46" width="200" height="86" rx="8"/>
+  <text class="dg-t" x="360" y="72" text-anchor="middle">2026-08-10</text>
+  <text class="dg-s" x="360" y="93" text-anchor="middle">완료 시점을 누가 판단하나</text>
+  <text class="dg-s" x="360" y="112" text-anchor="middle">ralph = ultrawork 포함</text>
+
+  <rect class="dg-item dg-hl" x="496" y="46" width="200" height="86" rx="8"/>
+  <text class="dg-n" x="596" y="72" text-anchor="middle">2026-08-27</text>
+  <text class="dg-s" x="596" y="93" text-anchor="middle">ultrawork → execute</text>
+  <text class="dg-s" x="596" y="112" text-anchor="middle">모드가 삭제됨</text>
+
+  <line class="dg-arw" x1="224" y1="89" x2="254" y2="89" marker-end="url(#rdc-ah)"/>
+  <line class="dg-arw-a" x1="460" y1="89" x2="490" y2="89" marker-end="url(#rdc-ah)"/>
+
+  <rect class="dg-zone" x="24" y="176" width="436" height="150" rx="10"/>
+  <rect class="dg-mask" x="45" y="170" width="132" height="15" rx="2"/>
+  <text class="dg-s" x="50" y="181">틀린 이유가 서로 다르다</text>
+
+  <rect class="dg-item" x="48" y="208" width="180" height="94" rx="8"/>
+  <text class="dg-t" x="138" y="234" text-anchor="middle">근거가 틀렸다</text>
+  <text class="dg-s" x="138" y="255" text-anchor="middle">병렬성은 선택 기준이</text>
+  <text class="dg-s" x="138" y="273" text-anchor="middle">될 수 없었다</text>
+  <text class="dg-s" x="138" y="292" text-anchor="middle">— 동작은 맞았다</text>
+
+  <rect class="dg-item" x="256" y="208" width="180" height="94" rx="8"/>
+  <text class="dg-t" x="346" y="234" text-anchor="middle">대상이 사라졌다</text>
+  <text class="dg-s" x="346" y="255" text-anchor="middle">스킬 41 → 31</text>
+  <text class="dg-s" x="346" y="273" text-anchor="middle">없는 모드로 라우팅</text>
+  <text class="dg-s" x="346" y="292" text-anchor="middle">— 동작이 깨졌다</text>
+
+  <rect class="dg-zone dg-zone-a" x="496" y="176" width="200" height="150" rx="10"/>
+  <rect class="dg-mask" x="517" y="170" width="43" height="15" rx="2"/>
+  <text class="dg-n" x="522" y="181">공통점</text>
+  <text class="dg-s" x="596" y="222" text-anchor="middle">둘 다 에러가</text>
+  <text class="dg-s" x="596" y="242" text-anchor="middle">나지 않았다</text>
+  <text class="dg-s" x="596" y="276" text-anchor="middle">읽어보기 전까지</text>
+  <text class="dg-s" x="596" y="296" text-anchor="middle">몰랐다</text>
+</svg>
