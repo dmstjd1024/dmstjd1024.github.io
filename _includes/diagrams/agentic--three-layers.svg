@@ -1,0 +1,51 @@
+<svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="에이전틱 워크플로우 3계층: 프로세스(superpowers), 오케스트레이션(OMC), 지식(ECC rules)이 각각 다른 층을 맡고 컨텍스트 계층이 그 아래를 받친다">
+  <defs>
+    <marker id="a3l-ah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z"/>
+    </marker>
+  </defs>
+
+  <rect class="dg-zone" x="14" y="30" width="692" height="150" rx="10"/>
+  <rect class="dg-mask" x="35" y="24" width="99" height="15" rx="2"/>
+  <text class="dg-s" x="40" y="35">역할이 다른 세 층</text>
+
+  <rect class="dg-item" x="38" y="62" width="196" height="94" rx="8"/>
+  <text class="dg-t" x="136" y="88" text-anchor="middle">superpowers</text>
+  <text class="dg-s" x="136" y="108" text-anchor="middle">프로세스 — 절차 규율</text>
+  <text class="dg-s" x="136" y="128" text-anchor="middle">코드를 쓰기 전에</text>
+  <text class="dg-s" x="136" y="146" text-anchor="middle">멈추게 한다</text>
+
+  <rect class="dg-item" x="262" y="62" width="196" height="94" rx="8"/>
+  <text class="dg-t" x="360" y="88" text-anchor="middle">OMC</text>
+  <text class="dg-s" x="360" y="108" text-anchor="middle">오케스트레이션</text>
+  <text class="dg-s" x="360" y="128" text-anchor="middle">에이전트 여럿을</text>
+  <text class="dg-s" x="360" y="146" text-anchor="middle">붙여 실행한다</text>
+
+  <rect class="dg-item" x="486" y="62" width="196" height="94" rx="8"/>
+  <text class="dg-t" x="584" y="88" text-anchor="middle">ECC rules</text>
+  <text class="dg-s" x="584" y="108" text-anchor="middle">지식 — 언어별 규칙</text>
+  <text class="dg-s" x="584" y="128" text-anchor="middle">해당 언어 파일일 때만</text>
+  <text class="dg-s" x="584" y="146" text-anchor="middle">로드된다</text>
+
+  <line class="dg-arw" x1="136" y1="180" x2="136" y2="222" marker-end="url(#a3l-ah)"/>
+  <line class="dg-arw" x1="360" y1="180" x2="360" y2="222" marker-end="url(#a3l-ah)"/>
+  <line class="dg-arw" x1="584" y1="180" x2="584" y2="222" marker-end="url(#a3l-ah)"/>
+
+  <rect class="dg-zone dg-zone-a" x="14" y="228" width="692" height="180" rx="10"/>
+  <rect class="dg-mask" x="35" y="222" width="151" height="15" rx="2"/>
+  <text class="dg-n" x="40" y="233">그 아래 — 내가 쓴 컨텍스트</text>
+
+  <rect class="dg-item dg-hl" x="38" y="262" width="644" height="52" rx="8"/>
+  <text class="dg-n" x="360" y="284" text-anchor="middle">CLAUDE.md — 항상 참인 규칙만</text>
+  <text class="dg-s" x="360" y="303" text-anchor="middle">모든 대화에 실린다 · 11,823B</text>
+
+  <rect class="dg-item" x="38" y="330" width="310" height="58" rx="8"/>
+  <text class="dg-t" x="193" y="353" text-anchor="middle">스킬 25개</text>
+  <text class="dg-s" x="193" y="372" text-anchor="middle">그 작업을 할 때만 읽힌다</text>
+
+  <rect class="dg-item" x="372" y="330" width="310" height="58" rx="8"/>
+  <text class="dg-t" x="527" y="353" text-anchor="middle">훅</text>
+  <text class="dg-s" x="527" y="372" text-anchor="middle">모델 협조 없이 코드가 막는다</text>
+</svg>
