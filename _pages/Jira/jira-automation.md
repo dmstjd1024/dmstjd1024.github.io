@@ -278,17 +278,17 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 
 ## 스마트 값(Smart Values)
 
-액션 안에서 `{{ }}` 문법으로 이슈 정보를 꺼내 쓴다. 템플릿 변수라고 생각하면 된다.
+{% raw %}액션 안에서 `{{ }}` 문법으로 이슈 정보를 꺼내 쓴다. 템플릿 변수라고 생각하면 된다.{% endraw %}
 
 | 스마트 값 | 의미 |
 |---|---|
-| `{{issue.key}}` | 이슈 키 (SHOP-101) |
-| `{{issue.summary}}` | 제목 |
-| `{{issue.assignee.displayName}}` | 담당자 이름 |
-| `{{issue.status.name}}` | 현재 상태 |
-| `{{issue.url}}` | 이슈 링크 |
-| `{{now}}` | 현재 시각 |
-| `{{initiator.displayName}}` | 규칙을 발동시킨 사람 |
+{% raw %}| `{{issue.key}}` | 이슈 키 (SHOP-101) |{% endraw %}
+{% raw %}| `{{issue.summary}}` | 제목 |{% endraw %}
+{% raw %}| `{{issue.assignee.displayName}}` | 담당자 이름 |{% endraw %}
+{% raw %}| `{{issue.status.name}}` | 현재 상태 |{% endraw %}
+{% raw %}| `{{issue.url}}` | 이슈 링크 |{% endraw %}
+{% raw %}| `{{now}}` | 현재 시각 |{% endraw %}
+{% raw %}| `{{initiator.displayName}}` | 규칙을 발동시킨 사람 |{% endraw %}
 
 ## 자동화 만들 때 주의할 점
 
@@ -368,6 +368,7 @@ chmod +x .git/hooks/commit-msg
 
 PR이 머지되면 이슈를 완료로 바꾸는 것은 JIRA 자동화보다 GitHub Actions 쪽이 편할 때가 있다.
 
+{% raw %}
 ```yaml
 name: JIRA 이슈 완료 처리
 
@@ -401,6 +402,7 @@ jobs:
           issue: ${{ steps.issue.outputs.key }}
           transition: "완료"
 ```
+{% endraw %}
 
 - `JIRA_API_TOKEN`은 Atlassian 계정 설정에서 발급받아 GitHub Secrets에 등록한다
 - `transition` 값은 **워크플로우에 정의된 전환 이름과 정확히 일치**해야 한다

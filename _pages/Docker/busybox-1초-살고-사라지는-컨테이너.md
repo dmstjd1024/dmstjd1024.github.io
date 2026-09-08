@@ -89,9 +89,11 @@ busybox 는 리눅스 기본 명령 수백 개를 **하나의 실행 파일**에
 
 이 컨테이너는 항상 뜨지 않는다. 차트에 조건이 걸려 있다.
 
+{% raw %}
 ```yaml
 {{- if has .Values.cluster.provider .Values.volumePermissionsFix }}
 ```
+{% endraw %}
 
 `volumePermissionsFix` 목록에 현재 provider 가 있을 때만 넣는다.
 
