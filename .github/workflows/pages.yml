@@ -31,7 +31,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: ruby/setup-ruby@v1
         with:
@@ -41,7 +41,7 @@ jobs:
           # Gemfile.lock 에 적힌 버전 그대로 설치하고 결과를 캐시한다.
           bundler-cache: true
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
 
       - name: Build
         # JEKYLL_ENV=production 이어야 jekyll-seo-tag 등이 실제 도메인을
@@ -54,7 +54,7 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
 
   deploy:
     needs: build
@@ -64,4 +64,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
