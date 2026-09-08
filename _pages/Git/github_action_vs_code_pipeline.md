@@ -40,6 +40,7 @@ Gitbub Action Runner 어플리케이션이 설치된 머신으로, Workflow가 �
 </div>
 
 ex)
+{% raw %}
 ```yaml
 name: dmstjd1024-github-actions              # WorkFlow 이름
 on:                                     # 트리거 하는 이벤트 명시
@@ -76,6 +77,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 ```
+{% endraw %}
 
 ## Code Pipeline
 

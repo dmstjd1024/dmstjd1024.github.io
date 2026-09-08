@@ -238,9 +238,11 @@ CMD ["node", "/app/index.js"]
 
 `LABEL` 로 넣은 메타데이터는 아래 명령으로 확인한다.
 
+{% raw %}
 ```docker
 docker image inspect --format='{{.Config.Labels}}' golden-node:1.0.0
 ```
+{% endraw %}
 
 ```
 map[maintainer:jeon-eunseong version:1.0.0]
