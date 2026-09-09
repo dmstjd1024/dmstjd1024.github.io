@@ -10,6 +10,8 @@ tags:
   - zsh
 
 date: 2026-09-08
+thumbnail: "/assets/img/thumbnail/herdr_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/herdr_card.png"
 ---
 
 ## 한 줄로
