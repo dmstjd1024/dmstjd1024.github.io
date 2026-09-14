@@ -267,6 +267,7 @@ if is_subagent:
 - `herdr server stop` 은 판의 프로세스까지 죽인다. 함부로 치지 않는다
 
 같이 읽을 글:
+[폰에서 에이전트를 조종했다 — Collie](/AI/Claude/collie-폰에서-에이전트-조종.html) ·
 [SSH 로는 되는데 Herdr 만 못 찾는다](/Linux/zshenv-비대화식-ssh-path.html) ·
 [Aside 란](/AI/Claude/aside란.html) ·
 [내가 돌리는 워크플로우 설계](/AI/Claude/내가-돌리는-워크플로우-설계.html)
