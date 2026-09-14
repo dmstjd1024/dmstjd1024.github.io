@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 474" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Herdr 의 구조: 하나의 배경 서버가 세션을 들고 있고, 그 아래 워크스페이스 · 탭 · 판이 계층으로 놓인다. 판 안의 에이전트만 상태를 갖는다">
+  <defs>
+    <marker id="hh-ah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z"/>
+    </marker>
+  </defs>
+
+  <rect class="dg-zone" x="14" y="30" width="692" height="106" rx="10"/>
+  <rect class="dg-mask" x="35" y="24" width="187" height="15" rx="2"/>
+  <text class="dg-s" x="40" y="35">배경에 늘 떠 있는 것 — 서버 하나</text>
+
+  <rect class="dg-item" x="38" y="60" width="644" height="60" rx="8"/>
+  <text class="dg-t" x="360" y="84" text-anchor="middle">herdr server</text>
+  <text class="dg-s" x="360" y="105" text-anchor="middle">세션을 들고 있다 — 창을 닫아도 여기 남는다</text>
+
+  <line class="dg-arw" x1="360" y1="136" x2="360" y2="168" marker-end="url(#hh-ah)"/>
+
+  <rect class="dg-zone" x="14" y="174" width="692" height="126" rx="10"/>
+  <rect class="dg-mask" x="35" y="168" width="139" height="15" rx="2"/>
+  <text class="dg-s" x="40" y="179">터미널의 위치 — tmux 도 아는 것</text>
+
+  <rect class="dg-item" x="38" y="204" width="196" height="76" rx="8"/>
+  <text class="dg-t" x="136" y="230" text-anchor="middle">워크스페이스</text>
+  <text class="dg-s" x="136" y="251" text-anchor="middle">w9</text>
+  <text class="dg-s" x="136" y="270" text-anchor="middle">일 단위로 가른다</text>
+
+  <rect class="dg-item" x="262" y="204" width="196" height="76" rx="8"/>
+  <text class="dg-t" x="360" y="230" text-anchor="middle">탭</text>
+  <text class="dg-s" x="360" y="251" text-anchor="middle">w9:t1</text>
+  <text class="dg-s" x="360" y="270" text-anchor="middle">워크스페이스에 속한다</text>
+
+  <rect class="dg-item" x="486" y="204" width="196" height="76" rx="8"/>
+  <text class="dg-t" x="584" y="230" text-anchor="middle">판(pane)</text>
+  <text class="dg-s" x="584" y="251" text-anchor="middle">w9:p2</text>
+  <text class="dg-s" x="584" y="270" text-anchor="middle">실제 터미널 하나</text>
+
+  <line class="dg-arw" x1="234" y1="242" x2="258" y2="242" marker-end="url(#hh-ah)"/>
+  <line class="dg-arw" x1="458" y1="242" x2="482" y2="242" marker-end="url(#hh-ah)"/>
+
+  <line class="dg-arw-a" x1="584" y1="300" x2="584" y2="332" marker-end="url(#hh-ah)"/>
+
+  <rect class="dg-zone dg-zone-a" x="14" y="338" width="692" height="118" rx="10"/>
+  <rect class="dg-mask" x="35" y="332" width="163" height="15" rx="2"/>
+  <text class="dg-n" x="40" y="343">여기부터가 Herdr 만 아는 것</text>
+
+  <rect class="dg-item dg-hl" x="38" y="360" width="644" height="76" rx="8"/>
+  <text class="dg-t" x="360" y="386" text-anchor="middle">판 안의 에이전트</text>
+  <text class="dg-n" x="360" y="408" text-anchor="middle">idle · working · blocked · done · unknown</text>
+  <text class="dg-s" x="360" y="428" text-anchor="middle">판은 에이전트 없이도 있지만, 상태는 에이전트에만 있다</text>
+</svg>
