@@ -1,0 +1,55 @@
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Herdr 의 두 가지 API 표면 비교: 공식 문서는 명령 세 개만 적어두었지만, 바이너리에 번들된 스키마를 꺼내면 메서드 102개와 타입 정의 121개가 나온다. 그 스키마를 보고 유닉스 소켓에 JSON Lines 로 직접 요청을 넣을 수 있다">
+  <defs>
+    <marker id="as-ah" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z"/>
+    </marker>
+  </defs>
+
+  <rect class="dg-zone" x="14" y="30" width="692" height="92" rx="10"/>
+  <rect class="dg-mask" x="35" y="24" width="185" height="15" rx="2"/>
+  <text class="dg-s" x="40" y="35">공식 문서가 적어둔 것</text>
+
+  <rect class="dg-item" x="38" y="56" width="206" height="50" rx="8"/>
+  <text class="dg-t" x="141" y="78" text-anchor="middle">server · client · update</text>
+  <text class="dg-s" x="141" y="96" text-anchor="middle">명령 3개</text>
+
+  <rect class="dg-item" x="257" y="56" width="425" height="50" rx="8"/>
+  <text class="dg-t" x="469" y="78" text-anchor="middle">&#34;CLI 와 소켓 API 는 같은 표면&#34;</text>
+  <text class="dg-s" x="469" y="96" text-anchor="middle">엔드포인트 기재 0개 — 여기서 막힌다</text>
+
+  <line class="dg-arw" x1="360" y1="122" x2="360" y2="158" marker-end="url(#as-ah)"/>
+  <rect class="dg-mask" x="372" y="132" width="213" height="15" rx="2"/>
+  <text class="dg-s" x="377" y="143">herdr api schema --json · 275KB</text>
+
+  <rect class="dg-hl" x="14" y="186" width="692" height="128" rx="10"/>
+  <rect class="dg-mask" x="35" y="180" width="219" height="15" rx="2"/>
+  <text class="dg-n" x="40" y="191">바이너리에 번들된 스키마</text>
+
+  <rect class="dg-item" x="38" y="212" width="206" height="50" rx="8"/>
+  <text class="dg-t" x="141" y="234" text-anchor="middle">pane · 36</text>
+  <text class="dg-s" x="141" y="252" text-anchor="middle">split · send_keys · read</text>
+
+  <rect class="dg-item" x="257" y="212" width="206" height="50" rx="8"/>
+  <text class="dg-t" x="360" y="234" text-anchor="middle">agent · 12</text>
+  <text class="dg-s" x="360" y="252" text-anchor="middle">start · prompt · wait</text>
+
+  <rect class="dg-item" x="476" y="212" width="206" height="50" rx="8"/>
+  <text class="dg-t" x="579" y="234" text-anchor="middle">plugin · 11</text>
+  <text class="dg-s" x="579" y="252" text-anchor="middle">link · action.invoke</text>
+
+  <text class="dg-n" x="360" y="292" text-anchor="middle">나머지 13계열 22개 — 메서드 102개 · 타입 정의 121개</text>
+
+  <line class="dg-arw" x1="360" y1="314" x2="360" y2="350" marker-end="url(#as-ah)"/>
+  <rect class="dg-mask" x="372" y="324" width="215" height="15" rx="2"/>
+  <text class="dg-s" x="377" y="335">JSON Lines · 핸드셰이크 없음</text>
+
+  <rect class="dg-zone" x="14" y="378" width="692" height="78" rx="10"/>
+  <rect class="dg-mask" x="35" y="372" width="163" height="15" rx="2"/>
+  <text class="dg-s" x="40" y="383">돌고 있는 서버</text>
+
+  <rect class="dg-item" x="38" y="400" width="644" height="44" rx="8"/>
+  <text class="dg-t" x="360" y="420" text-anchor="middle">~/.config/herdr/herdr.sock</text>
+  <text class="dg-s" x="360" y="437" text-anchor="middle">권한 600 · 내 계정만 · protocol 22</text>
+</svg>
