@@ -396,7 +396,7 @@ skipped: agent-sessions   the bridge did not answer `/api/snapshot`,
 
 ```bash
 $ dscl . -list /Users UniqueID | awk '$2>=500 && $2<1000'
-jeon-eunseong  501          # 일반 사용자는 나 하나뿐
+<내-계정>       501          # 일반 사용자는 나 하나뿐
 
 $ lsof -nP -iTCP:8787 -sTCP:LISTEN
 collie … TCP 127.0.0.1:8787 (LISTEN)   # 루프백에만
@@ -432,8 +432,8 @@ PWA 라 없는 경로는 전부 `index.html` 을 200 으로 돌려준다.
 09-10 에 붙였다. 로그상 10분 만에 들어왔다.
 
 ```
-09:10:46  crew.enroll  jeon-eunseong-ui-macmini-local
-09:21:41  crew.remove  jeon-eunseong-ui-macmini-local
+09:10:46  crew.enroll  <내-맥미니>
+09:21:41  crew.remove  <내-맥미니>
 ```
 
 **11분 만에 뺐다.** 붙는 중에 이미 다른 문제가 하나 드러났다.
@@ -451,9 +451,9 @@ PWA 라 없는 경로는 전부 `index.html` 을 200 으로 돌려준다.
 09-12 에 다시 붙였다. 이번엔 다른 데서 막혔다.
 
 ```
-[crew] jeon-eunseong-ui-macmini-local: unreachable (snapshot: timed out after 5000ms)
-[crew] jeon-eunseong-ui-macmini-local: dropped a stale hello reply, dial 104 of 105
-[crew] jeon-eunseong-ui-macmini-local: dropped a stale hello reply, dial 113 of 114
+[crew] <내-맥미니>: unreachable (snapshot: timed out after 5000ms)
+[crew] <내-맥미니>: dropped a stale hello reply, dial 104 of 105
+[crew] <내-맥미니>: dropped a stale hello reply, dial 113 of 114
 ```
 
 **114번을 걸어서 붙지 못했다.** lead 가 member 를 불러서(dial) 가져오는 구조라
