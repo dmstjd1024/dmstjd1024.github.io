@@ -56,24 +56,130 @@ flowchart LR
 
 ### Archify로 그린 것
 
+같은 흐름을 Archify로 그리면 아래 "타입 5종"의 `workflow` 예시가 된다.
+레인으로 나뉘고, 노드를 검색하고, 경로를 추적할 수 있다.
+먼저 어떻게 쓰는지부터 보자.
+
+## 어떻게 그리나 — JSON을 쓰면 렌더러가 그린다
+
+좌표를 직접 찍지 않는다. 격자 번호와 관계만 쓰면 배치는 렌더러가 맡는다.
+위 흐름도의 실제 소스 일부다.
+
+```json
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": { "title": "...", "quality_profile": "showcase" },
+  "lanes": [
+    { "id": "gate", "label": "검증 게이트" },
+    { "id": "geo",  "label": "기하 조정 시도", "variant": "exception" }
+  ],
+  "nodes": [
+    { "id": "validate", "lane": "gate", "col": 1,
+      "type": "security", "label": "validate", "sublabel": "검사 9개" }
+  ],
+  "edges": [
+    { "from": "validate", "to": "reject", "label": "실패", "variant": "security" }
+  ]
+}
+```
+
+- `lane` × `col` 이 격자다. 픽셀이 아니라 칸 번호다
+- `type` 은 `frontend` `backend` `database` `cloud` `security` `messagebus` `external` 7종
+- `variant` 로 강조·보안·점선을 준다
+- 선이 어디로 돌아갈지는 **쓰지 않는다** — 렌더러가 정하고, 겹치면 반려한다
+
+만든 뒤 두 명령을 거친다.
+
+```bash
+node bin/archify.mjs validate workflow foo.json --quality showcase --json
+node bin/archify.mjs deliver  workflow foo.json foo.html --quality showcase --json
+```
+
+`validate` 가 통과해야 `deliver` 가 HTML을 내놓는다.
+실패하면 이전 산출물이 그대로 남는다 — 깨진 그림으로 덮어쓰지 않는다.
+
+## 타입 5종 — 같은 블로그를 다섯 각도로
+
+타입마다 필드가 다르다. 격자를 주는 방식이 다르기 때문이다.
+
+| 타입 | 좌표를 주는 법 | 쓰는 곳 |
+|---|---|---|
+| `workflow` | `lane` × `col` | 프로세스, 승인, CI/CD |
+| `architecture` | `pos [x,y]` 절대좌표 | 시스템 구성, 인프라 |
+| `sequence` | `y` (세로가 시간) | API 호출, 요청 생애주기 |
+| `dataflow` | `stage` × `row` | 파이프라인, ETL, 계보 |
+| `lifecycle` | `lane` × `col` + 상태 타입 | 상태 전이, 재시도 |
+
+`workflow` 는 위에서 봤다. 나머지 넷을 이 블로그 자신을 소재로 그렸다.
+
+### architecture — 배포 구조
+
 <div class="archify"
-     data-src="/assets/diagrams/archify-install-block.html"
-     style="--archify-h: 700px">
+     data-src="/assets/diagrams/type-architecture.html"
+     style="--archify-h: 620px">
 </div>
 
-레인 4개로 나뉘고, <kbd>/</kbd> 로 노드를 검색하고,
-<kbd>T</kbd> 로 테마를 바꿀 수 있다. 노드를 클릭하면 상·하류가 추적된다.
+절대좌표를 직접 준다. `boundaries` 로 "GitHub 인프라" 같은 영역을 감쌀 수 있다.
+
+### sequence — 독자가 글을 열 때
+
+<div class="archify"
+     data-src="/assets/diagrams/type-sequence.html"
+     style="--archify-h: 620px">
+</div>
+
+세로축이 시간이다. 지연 로드가 언제 일어나는지 이 타입이 가장 잘 보여준다.
+
+### dataflow — 마크다운이 HTML이 되기까지
+
+<div class="archify"
+     data-src="/assets/diagrams/type-dataflow.html"
+     style="--archify-h: 520px">
+</div>
+
+`stage`(열) × `row`(행)로 준다. 변환 단계가 명확할 때 쓴다.
+
+### lifecycle — 글 한 편의 상태
+
+<div class="archify"
+     data-src="/assets/diagrams/type-lifecycle.html"
+     style="--archify-h: 560px">
+</div>
+
+`type` 이 `start` / `active` / `success` / `failure` 로 나뉜다.
+**`failure` 에서 활성 상태로 돌아가는 전이가 있어야 "복구 가능"으로 읽힌다** —
+빠뜨리면 막다른 길이 된다.
+
+## 독자가 만질 수 있는 것
+
+생성된 HTML에 뷰어가 들어 있다. 저자가 따로 만들지 않는다.
+
+| 조작 | 키 |
+|---|---|
+| 노드 검색 | <kbd>/</kbd> |
+| 경로 탐침 (A에서 B까지) | <kbd>R</kbd> |
+| 역할 비교 렌즈 | <kbd>L</kbd> |
+| 전체 지도 | <kbd>M</kbd> |
+| 테마 전환 | <kbd>T</kbd> |
+| 도식 안내 | <kbd>?</kbd> |
+
+노드를 클릭하면 `Upstream` / `Downstream` 으로 상·하류가 추적된다.
+**저자가 쓴 관계만 따라간다** — 없는 연결을 지어내지 않는다.
+
+주소로도 상태를 고정할 수 있다. `#focus=<id>`, `#route=<a>~<b>`, `#view=<id>` 같은
+프래그먼트가 붙으면 그 상태로 열린다. 글에서 특정 지점을 링크로 가리킬 수 있다는 뜻이다.
 
 ## 실측 비교
 
-브라우저로 직접 띄워 잰 값이다.
+맨 위 흐름도를 두 방식으로 그렸을 때의 값이다. 브라우저에서 직접 쟀다.
 
 | | Mermaid | Archify |
 |---|---|---|
 | 노드 / 화살표 | 9 / 8 | **9 / 8** |
-| 소스 | 9줄 | JSON 40줄 |
-| 렌더 크기 | 1600 × 384 | 1390 × 990 |
-| 파일 | 2.4KB | 812KB |
+| 소스 | 9줄 | JSON 약 90줄 |
+| 렌더 크기 | 792 × 199 | 1390 × 924 |
+| 파일 | 2.4KB | 약 810KB |
 | 외부 의존 | mermaid CDN | **0개** |
 | 겹침 검사 | 없음 | 있음 |
 
@@ -81,7 +187,7 @@ flowchart LR
 lane·phase·group 같은 배치 장치와 하단 카드 때문이지, 내용이 많아서가 아니다.
 
 높이 차이도 같은 이유다. Mermaid는 `LR`로 한 줄에 늘어놓고,
-Archify는 4개 레인으로 층층이 쌓는다.
+Archify는 레인으로 층층이 쌓는다. 같은 9개 노드인데 세로가 4배 넘게 차이 난다.
 
 ## 겹침을 기계가 잡는다는 것
 
