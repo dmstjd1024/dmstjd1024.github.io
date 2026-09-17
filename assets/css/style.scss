@@ -59,5 +59,6 @@ $baseurl: "{{ site.baseurl }}";
 @import "post";
 @import "syntax";
 @import "diagram";
+@import "archify";
 @import "search";
 @import "transitions";
