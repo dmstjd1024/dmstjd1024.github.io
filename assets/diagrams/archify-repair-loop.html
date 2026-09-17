@@ -4973,6 +4973,64 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       svg [data-node-id], svg [data-edge-from], svg [data-detail], svg [data-detail-anchor], svg [data-legend-hit], svg { transition: none !important; }
     }
   </style>
+
+<style data-archify-blog-theme>
+  /* ── 색: _sass/vars.scss 와 같은 값 ───────────────────────── */
+  [data-theme="dark"] {
+    --bg: #0d1117;
+    --panel: rgba(21, 27, 35, 0.6);
+    --panel-border: #3d444d;
+    --grid: #21262d;
+    --lane-fill: rgba(22, 27, 34, 0.35);
+    --lane-stroke: #3d444d;
+    --text: #e6edf3;
+    --text-muted: #b7bfc8;
+    --text-dim: #9198a1;
+    --text-faint: #9198a1;
+    --mask: #161b22;
+    --arrow: #6e7681;
+    --arrow-emphasis: #4493f8;   /* 초록 → 블로그 파랑 */
+    --toolbar-bg: rgba(21, 27, 35, 0.92);
+    --toolbar-border: #3d444d;
+    --toolbar-text: #e6edf3;
+    --toolbar-menu-bg: #151b23;
+  }
+  [data-theme="light"] {
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --panel-border: #d1d9e0;
+    --grid: #eaeef2;
+    --lane-fill: rgba(246, 248, 250, 0.7);
+    --lane-stroke: #d1d9e0;
+    --text: #1f2328;
+    --text-muted: #59636e;
+    --text-dim: #818b98;
+    --text-faint: #59636e;
+    --mask: #ffffff;
+    --arrow: #818b98;
+    --arrow-emphasis: #0969da;
+    --toolbar-bg: rgba(255, 255, 255, 0.92);
+    --toolbar-border: #d1d9e0;
+    --toolbar-text: #1f2328;
+    --toolbar-menu-bg: #ffffff;
+  }
+
+  /* ── 밀도: 글 안에 박히는 도식이라 저자용 컨트롤은 뺀다 ────── */
+  /* 남기는 것 — 테마(도식만 따로 열어볼 때 필요), 검색, 경로, 렌즈,
+     상·하류 추적. 글에서 "노드를 클릭해보라"고 안내하는 기능들이다. */
+  #btn-preset,        /* 시각 프리셋 순환: 저자가 정할 일 */
+  #btn-motion,        /* 모션: 정적 도식이라 쓸 일 없음 */
+  #btn-present,       /* 프레젠테이션: iframe 안에서 의미 없음 */
+  #btn-export,        /* 내보내기: sandbox 가 다운로드를 막는다 */
+  #export-menu,
+  .preset-menu,
+  .overview-map-hint {
+    display: none !important;
+  }
+
+  /* 툴바가 도식을 가리지 않게 살짝 줄인다 */
+  .toolbar { transform: scale(0.92); transform-origin: top right; }
+</style>
 </head>
 <body>
   <!-- Toolbar: theme, live visual style, trace motion, presentation stage, and export.
