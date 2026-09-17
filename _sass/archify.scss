@@ -1,0 +1,33 @@
+// 탐색형 도식(Archify 산출물)을 담는 iframe 컨테이너.
+//
+// 인라인 SVG 인 .diagram 과 달리 이쪽은 iframe 이다. 산출물이 자체 테마와
+// 뷰어 런타임을 통째로 들고 있어 본문에 심을 수 없기 때문이다.
+//
+// 그래서 .diagram 처럼 CSS 토큰으로 색을 물려줄 수 없다. 대신 iframe 주소에
+// ?theme= 을 붙여 넘긴다 — Archify 뷰어가 그 값을 localStorage·OS 설정보다
+// 먼저 본다. 전환은 archify.js 가 맡는다(giscus 와 같은 방식).
+.archify {
+  margin: 1.75rem 0;
+
+  iframe {
+    display: block;
+    width: 100%;
+    height: var(--archify-h, 640px);
+    max-width: 46rem;        // .diagram svg 와 같은 본문 폭
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-sunken);
+  }
+
+  // 아직 로드되지 않은 자리. 높이를 미리 잡아 스크롤이 튀지 않게 한다.
+  &:not([data-loaded]) {
+    min-height: var(--archify-h, 640px);
+  }
+
+  noscript a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+}
