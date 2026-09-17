@@ -1,0 +1,22 @@
+{%- comment -%}
+탐색이 필요한 큰 도식(Archify 산출물)을 글에 끼운다.
+
+기존 _includes/diagrams/*.svg 는 그대로 둔다. 이 include 는 정적 SVG 로는
+읽기 어려운 도식 — 노드 검색·경로 추적이 필요한 것 — 에만 쓴다.
+
+  {% include archify.html src="install-block" height="640"
+     title="dotfiles install.sh 의 archify 설치 블록" %}
+
+src    : assets/diagrams/<src>.html 의 파일명(확장자 제외)
+height : iframe 높이 px (기본 640)
+title  : iframe 제목. 스크린리더가 읽으므로 반드시 채운다
+{%- endcomment -%}
+<div class="archify"
+     data-src="{{ site.baseurl }}/assets/diagrams/{{ include.src }}.html"
+     style="--archify-h: {{ include.height | default: 640 }}px">
+  <noscript>
+    <a href="{{ site.baseurl }}/assets/diagrams/{{ include.src }}.html">
+      {{ include.title }} — 도식을 새 창에서 엽니다
+    </a>
+  </noscript>
+</div>

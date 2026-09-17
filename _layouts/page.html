@@ -79,6 +79,13 @@
   {%- if page_type == "post" %}
     <script defer src="{{ '/assets/js/post.js' | prepend: site.baseurl }}"></script>
   {%- endif %}
+  {%- comment -%}
+    프론트매터에 archify: true 가 있는 글에서만 불러온다.
+    아래 mermaid 와 같은 방식이다 — 쓰지 않는 글에 스크립트를 보내지 않는다.
+  {%- endcomment -%}
+  {%- if page.archify %}
+    <script defer src="{{ '/assets/js/archify.js' | prepend: site.baseurl }}"></script>
+  {%- endif %}
   {% include search_event.html %}
 
   {%- comment -%}
