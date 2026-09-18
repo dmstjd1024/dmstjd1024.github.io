@@ -1,5 +1,5 @@
 ---
-title:  "Mermaid vs Archify — 같은 도식을 두 방식으로 그려봤다"
+title:  "Mermaid vs Archify"
 
 categories:
   - Develop
@@ -20,7 +20,7 @@ card_thumbnail: "/assets/img/thumbnail/claude_thumbnail.png"
 
 - 정보량은 **같았다** — 노드 9개, 화살표 8개
 - 차이는 **검증**이다. Archify는 선이 겹치면 반려하고, Mermaid는 그냥 그린다
-- 대신 Archify는 **812KB**, Mermaid는 2.4KB + CDN
+- 대신 Archify는 **약 800KB**, Mermaid는 2.4KB + CDN
 
 아래에 같은 도식을 두 방식으로 나란히 놓았다. 직접 비교해보시면 된다.
 
@@ -185,7 +185,7 @@ node bin/archify.mjs deliver  workflow foo.json foo.html --quality showcase --js
 | 노드 / 화살표 | 9 / 8 | **9 / 8** |
 | 소스 | 9줄 | JSON 약 90줄 |
 | 렌더 크기 | 792 × 199 | 1390 × 924 |
-| 파일 | 2.4KB | 약 810KB |
+| 파일 | 2.4KB | 약 800KB |
 | 외부 의존 | mermaid CDN | **0개** |
 | 겹침 검사 | 없음 | 있음 |
 
@@ -247,7 +247,7 @@ iframe 안쪽에서는 그 클래스를 볼 수 없다. 넘겨주지 않으면 �
 
 - Archify 뷰어는 주소의 `?theme=` 를 localStorage·OS설정보다 **먼저** 본다
 - 테마 버튼을 누르면 `iframe.src` 를 갈아끼운다
-- 로드는 `IntersectionObserver` 로 미룬다 — 812KB를 글 첫 로딩에 받지 않는다
+- 로드는 `IntersectionObserver` 로 미룬다 — 약 800KB를 글 첫 로딩에 받지 않는다
 
 색도 맞춰야 했다. 기본 팔레트가 Slate 계열(`#020617`, 강조 초록)이라
 이 블로그(`#0d1117`, 강조 파랑) 본문에 나란히 두면 도식만 따로 논다.
@@ -289,7 +289,7 @@ archify: true
 
 - 같은 도식에서 **정보량은 동일**했다 — 9노드 8엣지
 - 차이는 검증이다. Archify는 픽셀 단위로 겹침을 잡고 수정 가능한 항목을 같이 준다
-- 대가는 크기(812KB)와 작성 비용(JSON + 검증 루프)이다
+- 대가는 크기(도식 하나에 약 800KB)와 작성 비용(JSON + 검증 루프)이다
 - **기하를 만지기 전에 배치를 의심하라** — 세 번 헛발질하고 배웠다
 
 Mermaid를 버릴 이유는 없다. 이 글의 첫 도식도 Mermaid다.
