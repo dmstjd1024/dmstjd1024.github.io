@@ -56,9 +56,15 @@ flowchart LR
 
 ### Archify로 그린 것
 
-같은 흐름을 Archify로 그리면 아래 "타입 5종"의 `workflow` 예시가 된다.
-레인으로 나뉘고, 노드를 검색하고, 경로를 추적할 수 있다.
-먼저 어떻게 쓰는지부터 보자.
+같은 9개 노드, 같은 8개 화살표다.
+
+<div class="archify"
+     data-src="/assets/diagrams/type-workflow.html"
+     style="--archify-h: 700px">
+</div>
+
+레인 4개로 나뉜다. <kbd>/</kbd> 로 노드를 찾고, 노드를 클릭하면 상·하류가 추적된다.
+정보는 위 Mermaid와 같은데 읽는 방식이 다르다.
 
 ## 어떻게 그리나 — JSON을 쓰면 렌더러가 그린다
 
@@ -111,7 +117,7 @@ node bin/archify.mjs deliver  workflow foo.json foo.html --quality showcase --js
 | `dataflow` | `stage` × `row` | 파이프라인, ETL, 계보 |
 | `lifecycle` | `lane` × `col` + 상태 타입 | 상태 전이, 재시도 |
 
-`workflow` 는 위에서 봤다. 나머지 넷을 이 블로그 자신을 소재로 그렸다.
+`workflow` 는 맨 위 설치 흐름도가 그 예다. 나머지 넷을 하나씩 그렸다.
 
 ### architecture — 배포 구조
 
