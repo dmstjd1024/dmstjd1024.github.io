@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 408" role="img" aria-label="소비자가 처리 도중 죽었을 때 Pub/Sub은 메시지가 사라지고 List는 꺼낸 메시지만 사라지며 Streams는 PEL에 남아 재처리되는 구조">
+  <marker id="rmsgdp-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">소비자가 처리 도중 죽으면 메시지는 어디 있나</text>
+  <text class="dg-s" x="24" y="50">세 방식의 차이는 이 한 장면에서 갈린다</text>
+
+  <!-- Pub/Sub -->
+  <rect class="dg-lane" x="24" y="68" width="216" height="254" rx="10"/>
+  <text class="dg-k" x="40" y="94">Pub/Sub</text>
+
+  <rect class="dg-row" x="40" y="108" width="184" height="34" rx="6"/>
+  <text class="dg-v" x="54" y="130">PUBLISH</text>
+
+  <path class="dg-arw" d="M132 146 V172" marker-end="url(#rmsgdp-a)"/>
+
+  <rect class="dg-row" x="40" y="176" width="184" height="34" rx="6"/>
+  <text class="dg-v" x="54" y="198">구독자에게 즉시 밀어냄</text>
+
+  <path class="dg-arw" d="M132 214 V240" marker-end="url(#rmsgdp-a)"/>
+
+  <rect class="dg-row" x="40" y="244" width="184" height="34" rx="6"/>
+  <text class="dg-s" x="54" y="266">서버에 남는 것 없음</text>
+
+  <text class="dg-s" x="40" y="294">유실 — 재시도 근거가 없다</text>
+
+  <!-- List -->
+  <rect class="dg-lane" x="252" y="68" width="216" height="254" rx="10"/>
+  <text class="dg-k" x="268" y="94">List</text>
+
+  <rect class="dg-row" x="268" y="108" width="184" height="34" rx="6"/>
+  <text class="dg-v" x="282" y="130">LPUSH</text>
+
+  <path class="dg-arw" d="M360 146 V172" marker-end="url(#rmsgdp-a)"/>
+
+  <rect class="dg-row" x="268" y="176" width="184" height="34" rx="6"/>
+  <text class="dg-v" x="282" y="198">키에 쌓여 대기</text>
+
+  <path class="dg-arw" d="M360 214 V240" marker-end="url(#rmsgdp-a)"/>
+
+  <rect class="dg-row" x="268" y="244" width="184" height="34" rx="6"/>
+  <text class="dg-s" x="282" y="266">RPOP 한 1건만 증발</text>
+
+  <text class="dg-s" x="268" y="294">뒤의 대기열은 살아 있다</text>
+
+  <!-- Streams -->
+  <rect class="dg-lane" x="480" y="68" width="216" height="254" rx="10"/>
+  <text class="dg-k" x="496" y="94">Streams</text>
+
+  <rect class="dg-row" x="496" y="108" width="184" height="34" rx="6"/>
+  <text class="dg-v" x="510" y="130">XADD</text>
+
+  <path class="dg-arw" d="M588 146 V172" marker-end="url(#rmsgdp-a)"/>
+
+  <rect class="dg-row" x="496" y="176" width="184" height="34" rx="6"/>
+  <text class="dg-v" x="510" y="198">append 되고 안 지워짐</text>
+
+  <path class="dg-arw" d="M588 214 V240" marker-end="url(#rmsgdp-a)"/>
+
+  <rect class="dg-lead" x="496" y="244" width="184" height="34" rx="6"/>
+  <text class="dg-b" x="510" y="266">PEL 에 미처리로 남음</text>
+
+  <text class="dg-s" x="496" y="294">다른 소비자가 인수한다</text>
+  <text class="dg-s" x="496" y="310">XAUTOCLAIM</text>
+
+  <rect class="dg-lane" x="24" y="338" width="672" height="46" rx="8"/>
+  <text class="dg-v" x="44" y="362">갈림길은 "서버가 기억하는가" 하나다 — 기억하지 않으면 재시도라는 선택지가 없다</text>
+</svg>
