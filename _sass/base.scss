@@ -101,7 +101,7 @@ code, pre, kbd, samp { font-family:var(--font-mono); }
   padding-inline:1.25rem;
 }
 .wrap--list { max-width:$listwd; }
-.wrap--post { max-width:$contentwd; }
+.wrap--post { max-width:var(--content-w); }
 
 #content {
   min-height:60vh;

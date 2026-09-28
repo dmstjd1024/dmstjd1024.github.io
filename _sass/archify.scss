@@ -13,7 +13,10 @@
     display: block;
     width: 100%;
     height: var(--archify-h, 640px);
-    max-width: 46rem;        // .diagram svg 와 같은 본문 폭
+    // .diagram svg 는 52rem 까지 넓어지지만 이쪽은 46rem 으로 둔다.
+    // 저쪽은 SVG 라 넓히면 전체가 비율대로 커지는데, 여기는 높이가 640px 로
+    // 고정된 iframe 이라 넓히면 가로만 늘어나 비율이 틀어진다.
+    max-width: 46rem;
     margin: 0 auto;
     border: 1px solid var(--border);
     border-radius: 10px;
