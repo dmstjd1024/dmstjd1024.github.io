@@ -11,8 +11,8 @@ tags:
   - 폐쇄망
 
 date: 2026-08-28
-thumbnail: "/assets/img/thumbnail/besu_thumbnail.png"
-card_thumbnail: "/assets/img/thumbnail/besu_card.png"
+thumbnail: "/assets/img/thumbnail/fabric_thumbnail.png"
+card_thumbnail: "/assets/img/thumbnail/fabric_card.png"
 ---
 ## 한 줄로
 
