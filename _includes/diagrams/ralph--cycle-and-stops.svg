@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" aria-label="셸 루프가 매 사이클 claude -p 를 새로 띄우고, 세션은 태스크 하나를 처리한 뒤 마지막 줄로 결과를 알리며 죽고, 셸은 그 줄과 다섯 가지 조건을 보고 다시 돌지 멈출지 정하는 구조">
+  <marker id="rcs-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">한 사이클이 돌고, 셸이 계속할지 정한다</text>
+  <text class="dg-s" x="24" y="50">세션은 매번 죽는다 — 다음 사이클에 넘기는 것은 파일과 마지막 한 줄뿐이다</text>
+
+  <!-- 셸 루프 존 -->
+  <rect class="dg-zone-a" x="24" y="72" width="300" height="236" rx="10"/>
+  <rect class="dg-mask" x="40" y="66" width="86" height="12" rx="2"/>
+  <text class="dg-n" x="44" y="75" font-size="7" letter-spacing="0.14em">SHELL — 계속 산다</text>
+
+  <rect class="dg-hl" x="44" y="92" width="260" height="38" rx="6"/>
+  <text class="dg-n" x="60" y="116">셸 루프</text>
+
+  <path class="dg-arw-a" d="M174 134 V158" marker-end="url(#rcs-a)"/>
+  <rect class="dg-mask" x="180" y="139" width="96" height="12" rx="2"/>
+  <text class="dg-n" x="184" y="148" font-size="8">claude -p 새로 띄움</text>
+
+  <rect class="dg-hl" x="44" y="162" width="260" height="52" rx="6"/>
+  <text class="dg-n" x="60" y="184">마지막 줄만 읽는다</text>
+  <text class="dg-s" x="60" y="203">중간에 언급된 같은 문자열은 무시</text>
+
+  <path class="dg-arw-a" d="M174 218 V242" marker-end="url(#rcs-a)"/>
+
+  <rect class="dg-hl" x="44" y="246" width="260" height="46" rx="6"/>
+  <text class="dg-n" x="60" y="266">다섯 조건을 본다</text>
+  <text class="dg-s" x="60" y="283">하나라도 걸리면 종료</text>
+
+  <!-- 세션 존 -->
+  <rect class="dg-zone" x="356" y="72" width="340" height="236" rx="10"/>
+  <rect class="dg-mask" x="372" y="66" width="96" height="12" rx="2"/>
+  <text class="dg-s" x="376" y="75" font-size="7" letter-spacing="0.14em">SESSION — 매번 죽는다</text>
+
+  <rect class="dg-row" x="376" y="92" width="300" height="38" rx="6"/>
+  <text class="dg-v" x="392" y="116">파일에서 할 일 하나를 집는다</text>
+
+  <path class="dg-arw" d="M526 134 V158" marker-end="url(#rcs-a)"/>
+
+  <rect class="dg-row" x="376" y="162" width="300" height="52" rx="6"/>
+  <text class="dg-v" x="392" y="184">구현하고 게이트를 통과시킨다</text>
+  <text class="dg-s" x="392" y="203">판정은 CLI 가 낸다 — 스스로 못 정한다</text>
+
+  <path class="dg-arw" d="M526 218 V242" marker-end="url(#rcs-a)"/>
+
+  <rect class="dg-row" x="376" y="246" width="300" height="46" rx="6"/>
+  <text class="dg-v" x="392" y="266">마지막 줄에 결과를 적고 죽는다</text>
+  <text class="dg-s" x="392" y="283">상태는 파일에 남는다 — 기억은 사라진다</text>
+
+  <!-- 좌우 연결 -->
+  <path class="dg-arw-a" d="M308 111 H370" marker-end="url(#rcs-a)"/>
+  <path class="dg-arw" d="M372 276 H340 V196 H310" marker-end="url(#rcs-a)"/>
+  <rect class="dg-mask" x="318" y="322" width="60" height="12" rx="2"/>
+
+  <!-- 멈춤 조건 -->
+  <rect class="dg-lane" x="24" y="330" width="672" height="60" rx="8"/>
+  <text class="dg-k" x="44" y="352">멈추는 다섯 가지</text>
+  <text class="dg-s" x="44" y="374">사이클 시간 초과 · 사이클 수 상한 · 무진전 반복 · 태스크 재시도 초과 · 막힌 비율 초과</text>
+
+  <rect class="dg-lane" x="24" y="400" width="672" height="56" rx="8"/>
+  <text class="dg-v" x="44" y="422">멈출 때는 이유를 한 단어로 남긴다 — finished / idle / halt / cycle_timeout / max_cycles</text>
+  <text class="dg-s" x="44" y="442">"다 했다"와 "못 하고 있다"를 가르지 않으면 아침에 로그를 뒤져야 한다</text>
+</svg>
