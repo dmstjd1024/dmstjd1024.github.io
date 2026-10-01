@@ -1,6 +1,7 @@
 ---
 title:  "CLAUDE.md 에 무엇을 썼나"
 subtitle: "4개월간 쌓인 규칙 14개"
+description: "4개월간 쌓인 규칙 14개"
 categories:
   - AI
 tags:

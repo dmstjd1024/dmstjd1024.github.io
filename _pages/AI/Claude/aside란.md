@@ -1,6 +1,7 @@
 ---
-title:  "로그인한 채로 브라우저를 조종한다"
-subtitle: "Aside — 로그인 상태를 물려받는 AI 브라우저"
+title:  "Aside 는 로그인한 채로 브라우저를 조종한다"
+subtitle: "로그인 상태를 물려받는 AI 브라우저"
+description: "로그인 상태를 물려받는 AI 브라우저"
 categories:
   - AI
 tags:

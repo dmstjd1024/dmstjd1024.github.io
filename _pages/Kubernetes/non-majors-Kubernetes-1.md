@@ -1,6 +1,7 @@
 ---
 title:  "쿠버네티스"
 subtitle: "파드로 띄운 프로그램에 접속이 안 되는 이유"
+description: "파드로 띄운 프로그램에 접속이 안 되는 이유"
 categories:
   - Kubernetes
 tags:

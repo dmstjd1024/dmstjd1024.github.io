@@ -1,6 +1,7 @@
 ---
 title:  "OData V2 Model"
 subtitle: "모델 인스턴스 생성과 URL 파라미터"
+description: "모델 인스턴스 생성과 URL 파라미터"
 categories:
   - Sap
 tags:

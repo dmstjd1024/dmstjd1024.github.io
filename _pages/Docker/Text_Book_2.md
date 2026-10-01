@@ -1,6 +1,7 @@
 ---
 title:  "도커 교과서 3장"
 subtitle: "이미지 만들기와 Dockerfile 작성"
+description: "이미지 만들기와 Dockerfile 작성"
 categories:
  - Docker
 tags:

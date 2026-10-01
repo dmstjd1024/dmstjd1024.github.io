@@ -1,6 +1,7 @@
 ---
 title:  "Markdown 문법"
 subtitle: "자주 쓰는 문법 한 장 정리"
+description: "자주 쓰는 문법 한 장 정리"
 categories:
   - Etc
 tags:

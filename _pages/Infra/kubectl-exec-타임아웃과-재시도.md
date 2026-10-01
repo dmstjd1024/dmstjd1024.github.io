@@ -1,6 +1,7 @@
 ---
 title:  "kubectl exec 은 왜 멈추는가"
 subtitle: "셸 스크립트에 타임아웃과 재시도 넣기"
+description: "셸 스크립트에 타임아웃과 재시도 넣기"
 categories:
   - Infra
 tags:

@@ -1,6 +1,7 @@
 ---
 title:  "RDS 란"
 subtitle: "Aurora·OLTP/OLAP·백업 정리"
+description: "Aurora·OLTP/OLAP·백업 정리"
 categories:
   - AWS
 tags:

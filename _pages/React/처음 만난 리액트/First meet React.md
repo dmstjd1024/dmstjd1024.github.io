@@ -1,6 +1,7 @@
 ---
 title:  "리액트 시작하기 (1 ~ 5장)"
 subtitle: "JSX 문법과 렌더링 원리"
+description: "JSX 문법과 렌더링 원리"
 categories:
   - React
 tags:

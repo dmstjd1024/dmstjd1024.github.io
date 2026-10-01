@@ -26,7 +26,7 @@
 <title>{{ page_title }}</title>
 
 {%- comment -%}
-  카테고리 페이지에만 설명을 붙인다(글은 jekyll-seo-tag 가 처리).
+  카테고리 페이지는 seo 태그가 제목을 못 채우므로 여기서 직접 넣는다.
   이 값은 아래 og:description 에도 그대로 쓴다.
 {%- endcomment -%}
 {%- if seg.last == 'index.md' -%}
@@ -84,6 +84,12 @@
   {%- comment -%}
     글 페이지는 seo 태그가 canonical·og:url 까지 다 넣는다.
     여기서 또 넣으면 같은 태그가 두 번 나가므로 이미지만 보탠다.
+
+    ⚠️ 설명(description)은 각 글의 front matter 에 둔다 — subtitle 과 같은 값이다.
+    seo 태그는 `page["description"] || page["excerpt"]` 순으로만 보고
+    태그 인자(description=)는 받지 않는다(drop.rb:107). front matter 에 없으면
+    excerpt, 즉 본문 첫 덩어리가 들어가는데 이 블로그 글은 대개 `## 한 줄로`
+    같은 H2 로 시작해서 그 제목이 검색 스니펫으로 나갔다(실측).
   {%- endcomment -%}
   {% seo title=false %}
   <meta property="og:image" content="{{ site.image | absolute_url }}">

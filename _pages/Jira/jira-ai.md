@@ -1,6 +1,7 @@
 ---
 title:  "AI 붙여서 쓰기 (Rovo 와 MCP)"
 subtitle: "JIRA 활용"
+description: "JIRA 활용"
 categories:
  - Jira
 tags:

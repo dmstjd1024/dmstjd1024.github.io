@@ -1,6 +1,7 @@
 ---
 title:  "탭 상태를 useState에 두지 마라"
 subtitle: "URL 파생 상태로 바꾸기"
+description: "URL 파생 상태로 바꾸기"
 categories:
   - React
 tags:

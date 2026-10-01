@@ -1,6 +1,7 @@
 ---
 title:  "MCP 12개, 도구 251개"
 subtitle: "무엇을 왜 붙였나"
+description: "무엇을 왜 붙였나"
 categories:
   - AI
 tags:

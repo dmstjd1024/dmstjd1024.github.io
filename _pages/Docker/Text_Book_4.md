@@ -1,6 +1,7 @@
 ---
 title:  "도커 교과서 5장"
 subtitle: "레지스트리·리포지터리·이미지 태그"
+description: "레지스트리·리포지터리·이미지 태그"
 categories:
  - Docker
 tags:

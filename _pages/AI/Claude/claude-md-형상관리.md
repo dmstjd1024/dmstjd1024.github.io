@@ -1,6 +1,7 @@
 ---
 title:  "팀 설정 파일을 내 것처럼 고칠 수 없다"
 subtitle: "skip-worktree 로 흡수하기"
+description: "skip-worktree 로 흡수하기"
 categories:
   - AI
 tags:

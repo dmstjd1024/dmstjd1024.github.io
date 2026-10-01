@@ -1,6 +1,7 @@
 ---
 title:  "CouchDB 를 고른 대가는 파드 두 배였다"
 subtitle: "Fabric 상태 DB 를 LevelDB 대신 CouchDB 로"
+description: "Fabric 상태 DB 를 LevelDB 대신 CouchDB 로"
 categories:
   - Docker
 tags:

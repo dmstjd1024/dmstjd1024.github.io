@@ -1,6 +1,7 @@
 ---
 title:  "디플로이먼트와 서비스"
 subtitle: "쿠버네티스 기본 오브젝트"
+description: "쿠버네티스 기본 오브젝트"
 categories:
  - Kubernetes
 tags:

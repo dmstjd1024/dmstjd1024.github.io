@@ -1,6 +1,7 @@
 ---
 title:  "Alias 명령어 처리"
 subtitle: "자주 쓰는 명령을 줄여 쓰기"
+description: "자주 쓰는 명령을 줄여 쓰기"
 categories:
   - Linux
 tags:

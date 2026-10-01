@@ -1,6 +1,7 @@
 ---
 title:  "AG Grid의 autoHeight는 행 가상화를 끈다"
-
+subtitle: "columnDefs 재생성과 전체 remap 두 가지 원인"
+description: "columnDefs 재생성과 전체 remap 두 가지 원인"
 categories:
   - React
 tags:

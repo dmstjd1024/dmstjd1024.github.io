@@ -1,6 +1,7 @@
 ---
 title:  "개념부터 기본 사용법까지"
 subtitle: "JIRA 입문"
+description: "JIRA 입문"
 categories:
  - Jira
 tags:
