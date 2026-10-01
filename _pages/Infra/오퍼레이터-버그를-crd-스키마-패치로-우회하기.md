@@ -1,6 +1,6 @@
 ---
-title:  "오픈소스 오퍼레이터 버그를 CRD 스키마 패치로 우회하기"
-
+title:  "오퍼레이터 버그를 CRD 패치로 우회했다"
+subtitle: "오픈소스를 포크하지 않고 고치기"
 categories:
   - Infra
 tags:

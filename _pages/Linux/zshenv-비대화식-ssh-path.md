@@ -1,6 +1,6 @@
 ---
-title:  "SSH 로는 되는데 Herdr 만 못 찾는다 — .zshrc 가 아니라 .zshenv 였던 이유"
-
+title:  "SSH 로는 되는데 Herdr 만 못 찾는다"
+subtitle: ".zshrc 가 아니라 .zshenv 였던 이유"
 categories:
   - Linux
 tags:

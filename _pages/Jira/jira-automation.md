@@ -1,6 +1,6 @@
 ---
-title: "JIRA 활용 - JQL 심화와 자동화, 그리고 연동"
-
+title:  "JQL 심화와 자동화, 그리고 연동"
+subtitle: "JIRA 활용"
 categories:
  - Jira
 tags:

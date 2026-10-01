@@ -1,6 +1,6 @@
 ---
-title:  "readOnly 트랜잭션에서 write를 잡아내는 테스트 가드레일"
-
+title:  "readOnly 에서 write 를 잡아냈다"
+subtitle: "테스트 가드레일 만들기"
 categories:
   - Spring
 tags:

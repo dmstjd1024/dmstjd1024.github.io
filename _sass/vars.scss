@@ -42,6 +42,29 @@ $bp-tablet:900px;
   --c-blue-bright:#218bff; // 호버, 다크모드
   --c-green:#1a7f37;       // 카테고리
 
+  // 태그 색조.
+  //
+  // 기준은 "그 기술의 브랜드색" 이다 — Redis 는 빨강, Java 는 주황, Docker 는
+  // 파랑. 이미 아는 색이라 글자를 읽기 전에 무엇인지 짐작이 된다.
+  // 브랜드가 없는 개념 태그(성능최적화, 협업 …)는 성격이 가까운 색을 나눠 쓴다.
+  //
+  // 채도를 본문 파랑(#0969da)보다 낮췄다. 태그는 글당 4~5개가 한 줄에 서므로
+  // 원색을 그대로 쓰면 본문보다 태그가 먼저 눈에 들어온다.
+  //
+  // 대비는 흰 바탕이 아니라 태그 배경(이 색 8% + 흰색, tag.scss) 기준으로
+  // 4.5:1 을 넘긴다. 흰 바탕 기준으로 고르면 주황·황토·청록이 4.40~4.46 에
+  // 걸렸다 — 그 셋만 명도를 1~2% 낮췄다.
+  --c-tag-red:#c4382f;     // Redis, 트러블슈팅
+  --c-tag-orange:#b1540f;  // Java, JPA, Gradle (#bc5a12 는 흰 바탕에서 4.4:1 이라 낮췄다)
+  --c-tag-amber:#986500;   // 자동매매, 성능
+  --c-tag-green:#1a7f37;   // Spring, 테스트
+  --c-tag-teal:#1b7a81;    // Database, SQL, PostgreSQL
+  --c-tag-blue:#0969da;    // Docker, Kubernetes, AWS
+  --c-tag-cyan:#0a6e8a;    // React, TypeScript, Frontend
+  --c-tag-purple:#8250df;  // AI, Claude Code, MCP
+  --c-tag-pink:#bf3989;    // Git, GitHub Actions, CI
+  --c-tag-slate:#4a5568;   // 그 밖 — 1편짜리 태그가 여기로 온다
+
   // 의미 토큰 — 컴포넌트는 항상 이쪽만 쓴다
   --bg:var(--c-paper);
   --bg-raised:var(--c-paper);
@@ -79,6 +102,10 @@ $bp-tablet:900px;
 
   // 레이아웃
   --nav-h:4rem;
+
+  // 본문 폭. 좁은 화면에서는 .wrap 이 알아서 100% 를 쓰므로 하한만 있으면 되고,
+  // 넓은 화면에서 실제로 유동하는 값은 레일이 생기는 구간에서 다시 정의한다.
+  --content-w:#{$contentwd};
 }
 
 // 다크모드는 의미 토큰만 다시 정의한다. 컴포넌트 규칙은 손대지 않는다.
@@ -99,9 +126,18 @@ body.dark-theme {
   --link:#e6edf3;
   --category:#3fb950;
 
-  // 본문 폭. 좁은 화면에서는 .wrap 이 알아서 100% 를 쓰므로 하한만 있으면 되고,
-  // 넓은 화면에서 실제로 유동하는 값은 레일이 생기는 구간에서 다시 정의한다.
-  --content-w:#{$contentwd};
+  // 태그 색조 — 같은 색상 계열을 유지하되 명도를 올린다.
+  // 밝은 쪽 값을 그대로 쓰면 #0d1117 바탕에서 거의 검게 가라앉는다.
+  --c-tag-red:#ff7b72;
+  --c-tag-orange:#ffa657;
+  --c-tag-amber:#d29922;
+  --c-tag-green:#3fb950;
+  --c-tag-teal:#39c5cf;
+  --c-tag-blue:#4493f8;
+  --c-tag-cyan:#56d4dd;
+  --c-tag-purple:#bc8cff;
+  --c-tag-pink:#f778ba;
+  --c-tag-slate:#9198a1;
 
   --shadow-sm:0 1px 2px rgba(1,4,9,.4);
   --shadow:0 2px 8px rgba(1,4,9,.5);

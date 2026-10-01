@@ -1,6 +1,6 @@
 ---
-title:  "localStorage에 남은 isAuthenticated: true가 로그인을 막았다"
-
+title:  "localStorage 에 남은 플래그가 로그인을 막았다"
+subtitle: "isAuthenticated: true 하나가 남긴 것"
 categories:
   - React
 tags:

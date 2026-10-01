@@ -1,6 +1,6 @@
 ---
-title: "캐시가 아니라 자로 쓴 Redis"
-
+title:  "캐시가 아니라 자로 쓴 Redis"
+subtitle: "통계 API 응답시간을 직접 재기"
 categories:
  - Database
 tags:

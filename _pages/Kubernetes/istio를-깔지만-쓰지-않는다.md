@@ -1,6 +1,6 @@
 ---
-title:  "Istio 란? — 깔아는 뒀지만 트래픽은 안 보내는 이유"
-
+title:  "Istio 를 깔아두고 트래픽은 안 보냈다"
+subtitle: "서비스 메시를 넣되 아직 태우지 않은 이유"
 categories:
   - Kubernetes
 tags:

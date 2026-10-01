@@ -1,6 +1,6 @@
 ---
 title:  "소프트 삭제 전환과 @Filter가 새는 곳"
-
+subtitle: "엔티티 14개를 하드 삭제에서 바꾸며"
 categories:
   - Spring
 tags:

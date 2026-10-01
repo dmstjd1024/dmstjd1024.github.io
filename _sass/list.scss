@@ -143,9 +143,25 @@
     transition:color .15s ease;
   }
 
-  &__summary {
+  // 부제. 요약(아래)과 둘 다 회색이라 층을 갈라야 한다 —
+  // 부제는 내가 고른 한 줄이고 요약은 본문에서 기계로 뽑은 것이므로,
+  // 부제를 더 진하게 두고 요약을 한 단계 더 흐리게 뒀다.
+  &__subtitle {
     font-size:.9375rem;
     color:var(--fg-muted);
+    line-height:1.5;
+    margin-bottom:.4rem;
+
+    // 한 줄만. 넘치면 제목처럼 보여서 카드 위쪽이 무거워진다.
+    display:-webkit-box;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+  }
+
+  &__summary {
+    font-size:.9375rem;
+    color:var(--fg-subtle);
     line-height:1.6;
 
     // 두 줄까지만 — 여기서 자르는 건 보기 위한 것이고,
@@ -185,9 +201,13 @@
       }
 
       // 태그 페이지에서, 지금 보고 있는 그 태그
+      //
+      // 색은 태그 색(tag.scss) 그대로 두고 굵기와 테두리로만 구분한다.
+      // 카테고리 초록으로 칠하면 초록 계열 태그(#Spring, #Backend)와 같아
+      // 보여 강조가 사라졌다.
       &.is-on {
-        color:var(--category);
-        border-color:var(--category);
+        font-weight:700;
+        border-color:currentColor;
       }
     }
   }
@@ -255,6 +275,10 @@ $tones:
     &__link { gap:.875rem; padding:1rem .5rem; align-items:flex-start; }
     &__thumb { width:4.5rem; height:4.5rem; }
     &__title { font-size:1rem; }
+    // 좁은 화면에서 회색 줄이 셋(부제+요약 2줄)이면 카드가 글자 벽이 된다.
+    // 부제가 있는 글은 그게 대표 한 줄이므로 요약을 한 줄로 줄인다.
+    &__subtitle { font-size:.875rem; }
     &__summary { -webkit-line-clamp:2; font-size:.875rem; }
+    &__subtitle + &__summary { -webkit-line-clamp:1; }
   }
 }

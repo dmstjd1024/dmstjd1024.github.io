@@ -1,6 +1,6 @@
 ---
-title:  "폰에서 에이전트를 조종했다 — Collie 로 승인 대기를 풀어낸 3일"
-
+title:  "폰에서 에이전트를 조종했다"
+subtitle: "Collie 로 승인 대기를 풀어낸 3일"
 categories:
   - AI
 tags:

@@ -1,6 +1,6 @@
 ---
-title:  "OMC 란 — 에이전트 19개를 부리는 오케스트레이션 층"
-
+title:  "에이전트 19개를 부린다"
+subtitle: "oh-my-claudecode 오케스트레이션 층"
 categories:
   - AI
 tags:

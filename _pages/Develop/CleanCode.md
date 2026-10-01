@@ -1,6 +1,6 @@
 ---
 title:  "Clean Code 후기"
-
+subtitle: "1장부터 끝까지 읽고 남은 것"
 categories:
   - Develop
 tags:

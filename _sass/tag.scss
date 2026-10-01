@@ -1,0 +1,55 @@
+// ---------------------------------------------------------------------------
+// 태그 색
+//
+// 모양(크기·여백)은 쓰는 자리마다 다르므로 각 파일(post.scss, list.scss)에
+// 그대로 두고, 여기서는 색만 준다. 그래서 선택자가 `.tag--red` 하나뿐이다.
+//
+// 어느 태그가 어느 색인지는 _includes/tag-hue.html 이 정한다.
+// 색값은 _sass/vars.scss 의 --c-tag-* 이고 다크모드에서 다시 정의된다.
+// ---------------------------------------------------------------------------
+
+// 글자와 테두리에 그 색을, 배경에는 아주 옅게 섞어 깐다.
+//
+// 배경을 12% 로 묶은 이유: 태그는 글 하나에 4~5개가 한 줄에 선다. 진하게
+// 칠하면 본문보다 태그 줄이 먼저 눈에 들어온다. 읽기를 방해하지 않는 선에서
+// 구분만 되게 한다.
+@mixin tag-hue($c) {
+  color:$c;
+  border-color:color-mix(in srgb, #{$c} 35%, transparent);
+  background:color-mix(in srgb, #{$c} 8%, var(--bg));
+
+  &:hover {
+    color:$c;
+    border-color:color-mix(in srgb, #{$c} 70%, transparent);
+    background:color-mix(in srgb, #{$c} 16%, var(--bg));
+  }
+}
+
+// ⚠️ 선택자를 `a.tag--red` 로 쓴다. 클래스 하나(0,1,0)로는 쓰는 쪽의
+// `.card__tags a`(0,2,1)·`.post-head__tags a` 를 못 이겨서 글자색과
+// 테두리가 회색으로 덮인다. 배경만 색이 들어가고 글자는 안 바뀌는 증상이
+// 실제로 나왔다 — 그쪽 규칙에 background 가 없어서 그것만 통과했다.
+a.tag {
+  &--red    { @include tag-hue(var(--c-tag-red));    }
+  &--orange { @include tag-hue(var(--c-tag-orange)); }
+  &--amber  { @include tag-hue(var(--c-tag-amber));  }
+  &--green  { @include tag-hue(var(--c-tag-green));  }
+  &--teal   { @include tag-hue(var(--c-tag-teal));   }
+  &--blue   { @include tag-hue(var(--c-tag-blue));   }
+  &--cyan   { @include tag-hue(var(--c-tag-cyan));   }
+  &--purple { @include tag-hue(var(--c-tag-purple)); }
+  &--pink   { @include tag-hue(var(--c-tag-pink));   }
+
+  // 색을 주지 않은 태그. 1편짜리가 81개라 이쪽이 오히려 기본값이다.
+  // 기존과 같은 회색이되, 테두리만 있던 목록 칩에도 배경을 줘 모양을 맞춘다.
+  &--slate {
+    color:var(--fg-subtle);
+    border-color:var(--border);
+    background:var(--bg-sunken);
+
+    &:hover {
+      color:var(--fg);
+      border-color:var(--border-strong);
+    }
+  }
+}

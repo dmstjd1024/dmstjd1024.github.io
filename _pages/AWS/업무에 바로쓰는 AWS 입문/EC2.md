@@ -1,6 +1,6 @@
 ---
 title:  "EC2 란"
-
+subtitle: "요금제와 EBS, 가용영역까지"
 categories:
   - AWS
 tags:

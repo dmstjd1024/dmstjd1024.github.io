@@ -1,6 +1,6 @@
 ---
 title:  "리액트 시작하기 (6 ~ 장)"
-
+subtitle: "State 와 Hooks — useState 부터 useRef 까지"
 categories:
   - React
 tags:
