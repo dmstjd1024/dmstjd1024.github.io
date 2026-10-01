@@ -1,6 +1,6 @@
 ---
-title:  "AI 코드리뷰 봇 2종을 파이프라인에 넣고, 봇이 못 잡는 걸 배웠다"
-
+title:  "AI 코드리뷰 봇이 못 잡는 것이 있었다"
+subtitle: "봇 2종을 파이프라인에 넣고 배운 것"
 categories:
   - AI
 tags:

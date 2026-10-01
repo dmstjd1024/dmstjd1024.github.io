@@ -9,6 +9,7 @@
 ```yaml
 ---
 title:  "TOCTOU 한 건을 고치는 대신 버그 클래스를 없앴다"
+subtitle: "SFTP 한 건이 아니라 check-then-act 패턴 전체를"
 
 categories:
   - Spring
@@ -24,6 +25,7 @@ card_thumbnail: "/assets/img/thumbnail/spring_card.webp"
 ---
 ```
 
+- `subtitle` 은 **제목에서 덜어낸 구체적 사실**을 담는다. 선택이지만 새 글에는 넣는다 — 제목을 40자 안에 묶는 대신 잘려나간 정보가 여기로 온다. 목록 카드와 글 머리 양쪽에 회색으로 붙는다. **제목에 이미 있는 말을 되풀이하지 않는다.**
 - `categories` 는 **하나만** 쓴다. 디렉토리 이름과 일치해야 한다.
 - `date` 는 작성일. 파일명에 날짜를 넣지 않는다 (옛 글 일부만 `2023-01-06-` 형식).
 - 도식에 Mermaid 를 쓰면 `mermaid: true`, Archify 산출물을 넣으면 `archify: true` 를 추가한다.

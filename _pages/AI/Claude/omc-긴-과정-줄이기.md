@@ -1,6 +1,6 @@
 ---
-title:  "승인 단계를 없애고 탈출구를 남겼다 — OMC 자동 실행 규칙"
-
+title:  "승인 단계를 없애고 탈출구를 남겼다"
+subtitle: "OMC 자동 실행 규칙"
 categories:
   - AI
 tags:

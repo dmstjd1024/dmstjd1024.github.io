@@ -1,6 +1,6 @@
 ---
-title: "엔티티 설정"
-
+title:  "엔티티 설정"
+subtitle: "Account 엔티티를 두고 한 고민"
 categories:
   - Spring
 tags:

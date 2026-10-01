@@ -1,6 +1,6 @@
 ---
-title:  "Herdr 란 — 에이전트가 자기 옆자리를 알아보는 터미널"
-
+title:  "에이전트가 자기 옆자리를 알아본다"
+subtitle: "Herdr — 코딩 에이전트를 위한 터미널 멀티플렉서"
 categories:
   - AI
 tags:

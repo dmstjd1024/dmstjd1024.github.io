@@ -1,6 +1,6 @@
 ---
-title:  "PostgreSQL 란? — 블록 탐색기 하나를 위한 전용 DB"
-
+title:  "블록 탐색기 하나 때문에 전용 DB 를 띄웠다"
+subtitle: "PostgreSQL 을 클러스터 안에 두기"
 categories:
   - Docker
 tags:

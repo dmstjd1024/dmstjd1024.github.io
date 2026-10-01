@@ -203,6 +203,9 @@
                 {%- endif -%}
               </div>
               <h2 class="card__title">{{ p.title }}</h2>
+              {%- if p.subtitle -%}
+                <p class="card__subtitle">{{ p.subtitle }}</p>
+              {%- endif -%}
               {%- comment -%}
                 p.content 는 Liquid 가 처리되기 전의 원본이라 도식 삽입에 쓰는
                 include 태그가 문자 그대로 남는다. strip_html 은 이걸 못 지우므로
@@ -238,7 +241,9 @@
             <ul class="card__tags">
               {%- for tag in p.tags -%}
                 {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
-                <li><a href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
+                {%- assign hue = tag | downcase | strip -%}
+                <li><a class="tag tag--{% include tag-hue.html inc_tag=hue %}"
+                       href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
               {%- endfor -%}
             </ul>
           {%- endif -%}

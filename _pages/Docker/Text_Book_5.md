@@ -1,6 +1,6 @@
 ---
-title: "도커 교과서 6장"
-
+title:  "도커 교과서 6장"
+subtitle: "볼륨과 파일 시스템 마운트, 그 한계"
 categories:
  - Docker
 tags:

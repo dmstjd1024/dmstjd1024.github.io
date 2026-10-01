@@ -1,6 +1,6 @@
 ---
-title:  "Hyperledger Fabric 이란? — kubectl hlf 20단계와 조용히 실패한 채널 조인"
-
+title:  "Fabric 채널 조인이 조용히 실패했다"
+subtitle: "kubectl hlf 20단계로 Hyperledger Fabric 을 올린 기록"
 categories:
   - BlockChain
 tags:

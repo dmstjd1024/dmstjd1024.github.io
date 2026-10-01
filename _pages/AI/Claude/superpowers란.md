@@ -1,6 +1,6 @@
 ---
-title:  "Superpowers 란 — 코드를 쓰기 전에 멈추게 만드는 플러그인"
-
+title:  "코드를 쓰기 전에 멈추게 만든다"
+subtitle: "Superpowers 플러그인이 강제하는 절차"
 categories:
   - AI
 tags:

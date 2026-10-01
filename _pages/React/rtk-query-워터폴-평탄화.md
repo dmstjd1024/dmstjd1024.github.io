@@ -1,6 +1,6 @@
 ---
-title:  "RTK Query 워터폴을 평탄화하고, 캐시를 켜자 stale이 드러났다"
-
+title:  "워터폴을 없애자 stale 이 드러났다"
+subtitle: "RTK Query 캐시를 켠 대가"
 categories:
   - React
 tags:

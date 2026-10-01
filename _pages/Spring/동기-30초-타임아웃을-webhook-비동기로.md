@@ -1,6 +1,6 @@
 ---
-title:  "동기 30초 타임아웃을 webhook 비동기로"
-
+title:  "30초 타임아웃으로는 부족했다"
+subtitle: "OCR 파싱을 webhook 비동기로 옮기기"
 categories:
   - Spring
 tags:

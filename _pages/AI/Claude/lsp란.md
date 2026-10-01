@@ -1,6 +1,6 @@
 ---
-title:  "LSP 란 — AI 가 코드를 글자가 아니라 뜻으로 읽는 법"
-
+title:  "AI 는 코드를 뜻으로 읽는다"
+subtitle: "LSP 가 에이전트에게 주는 것"
 categories:
   - AI
 tags:
