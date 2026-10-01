@@ -1,6 +1,7 @@
 ---
-title:  "mutation 후 목록이 즉시 안 바뀐다"
+title:  "TanStack Query 에서 mutation 후 목록이 안 바뀐다"
 subtitle: "invalidate 가 lazy 해서 생긴 일"
+description: "invalidate 가 lazy 해서 생긴 일"
 categories:
   - React
 tags:

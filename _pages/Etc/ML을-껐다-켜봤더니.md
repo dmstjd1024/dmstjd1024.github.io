@@ -1,6 +1,7 @@
 ---
 title:  "설정 버그를 고치니 다음 질문이 남았다"
 subtitle: "'ML 을 켜는 게 맞나'"
+description: "'ML 을 켜는 게 맞나'"
 categories:
   - Etc
 tags:

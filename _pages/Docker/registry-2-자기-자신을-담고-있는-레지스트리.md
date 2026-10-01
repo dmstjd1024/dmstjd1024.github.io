@@ -1,6 +1,7 @@
 ---
 title:  "레지스트리 이름이 둘이라 이미지를 못 받았다"
 subtitle: "사설 레지스트리(registry:2)를 클러스터에 붙이기"
+description: "사설 레지스트리(registry:2)를 클러스터에 붙이기"
 categories:
   - Docker
 tags:

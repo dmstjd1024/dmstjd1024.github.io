@@ -1,6 +1,7 @@
 ---
 title:  "1초 살고 사라지는 컨테이너가 하는 일"
 subtitle: "busybox 를 초기화 작업에 쓰는 법"
+description: "busybox 를 초기화 작업에 쓰는 법"
 categories:
   - Docker
 tags:

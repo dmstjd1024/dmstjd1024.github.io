@@ -1,6 +1,7 @@
 ---
 title:  "AI 에게 스펙과 자기검토까지 시켰다"
 subtitle: "구현은 그 다음이다"
+description: "구현은 그 다음이다"
 categories:
   - AI
 tags:

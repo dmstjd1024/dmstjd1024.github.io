@@ -1,6 +1,7 @@
 ---
 title:  "PDF 다운로드가 7초 걸렸는데, 범인은 한글 폰트였다"
-
+subtitle: "폰트 로딩을 들여다본 기록"
+description: "폰트 로딩을 들여다본 기록"
 categories:
   - React
 tags:
