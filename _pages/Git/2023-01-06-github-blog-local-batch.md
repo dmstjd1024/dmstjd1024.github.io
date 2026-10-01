@@ -1,6 +1,6 @@
 ---
 title:  "깃허브 블로그 로컬로 돌리기"
-
+subtitle: "실행 스크립트 만들어 두기"
 categories:
   - Git
 tags:

@@ -1,6 +1,6 @@
 ---
-title:  "invalidateQueries를 refetchQueries로 바꿨더니"
-
+title:  "mutation 후 목록이 즉시 안 바뀐다"
+subtitle: "invalidate 가 lazy 해서 생긴 일"
 categories:
   - React
 tags:

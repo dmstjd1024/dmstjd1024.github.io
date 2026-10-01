@@ -1,6 +1,6 @@
 ---
-title: "GraphQL 입문 - REST와 무엇이 다른가"
-
+title:  "REST 와 무엇이 다른가"
+subtitle: "GraphQL 입문"
 categories:
  - GraphQL
 tags:

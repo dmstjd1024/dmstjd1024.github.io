@@ -64,6 +64,9 @@
                   {%- endif -%}
                 </div>
                 <h2 class="card__title">{{ p.title }}</h2>
+                {%- if p.subtitle -%}
+                  <p class="card__subtitle">{{ p.subtitle }}</p>
+                {%- endif -%}
                 {%- comment -%}
                   요약에서 include 태그를 걷어낸다. 이유는 post-list.html 의
                   같은 자리 주석 참조 — p.content 는 Liquid 처리 전 원본이다.
@@ -94,7 +97,8 @@
               <ul class="card__tags">
                 {%- for tag in p.tags -%}
                   {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
-                  <li><a class="{% if tag == want %}is-on{% endif %}"
+                  {%- assign hue = tag | downcase | strip -%}
+                  <li><a class="tag tag--{% include tag-hue.html inc_tag=hue %}{% if tag == want %} is-on{% endif %}"
                          href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
                 {%- endfor -%}
               </ul>

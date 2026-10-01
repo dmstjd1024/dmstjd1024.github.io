@@ -1,6 +1,6 @@
 ---
 title:  "Github Action VS Code Pipeline"
-
+subtitle: "코어 개념과 가격 비교"
 categories:
   - Git
 tags:

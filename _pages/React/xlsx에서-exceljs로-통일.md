@@ -1,6 +1,6 @@
 ---
-title:  "엑셀 라이브러리가 두 개였다 — xlsx에서 exceljs로 통일하기"
-
+title:  "엑셀 라이브러리가 두 개였다"
+subtitle: "xlsx에서 exceljs로 통일하기"
 categories:
   - React
 tags:

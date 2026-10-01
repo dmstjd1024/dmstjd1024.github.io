@@ -1,6 +1,6 @@
 ---
-title:  "Mermaid vs Archify"
-
+title:  "같은 도식을 두 방식으로 그려봤다"
+subtitle: "Mermaid 와 Archify 를 나란히 비교하기"
 categories:
   - Develop
 tags:

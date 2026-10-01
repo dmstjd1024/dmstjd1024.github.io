@@ -16,6 +16,14 @@
       {%- endif -%}
     </div>
     <h1 class="post-head__title">{{ page.title }}</h1>
+    {%- comment -%}
+      부제. 제목에서 덜어낸 구체적 사실이 여기로 온다 — 목록에서는 제목만
+      짧게 보이고, 글을 열면 무엇을 다루는지가 한 줄 더 붙는다.
+      없으면 아무것도 그리지 않는다(대부분의 옛 글에는 없다).
+    {%- endcomment -%}
+    {%- if page.subtitle -%}
+      <p class="post-head__subtitle">{{ page.subtitle }}</p>
+    {%- endif -%}
     {%- if page.tags and page.tags.size > 0 -%}
       {%- comment -%}
         slug 규칙은 _plugins/tag_pages.rb 의 slug_for 와 같아야 한다.
@@ -24,7 +32,9 @@
       <ul class="post-head__tags">
         {%- for tag in page.tags -%}
           {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
-          <li><a href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
+          {%- assign hue = tag | downcase | strip -%}
+          <li><a class="tag tag--{% include tag-hue.html inc_tag=hue %}"
+                 href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
         {%- endfor -%}
       </ul>
     {%- endif -%}

@@ -1,6 +1,6 @@
 ---
-title:  "AI에게 스펙을 쓰게 하고, 자기검토를 시키고, 그 다음 구현하기"
-
+title:  "AI 에게 스펙과 자기검토까지 시켰다"
+subtitle: "구현은 그 다음이다"
 categories:
   - AI
 tags:

@@ -1,6 +1,6 @@
 ---
-title:  "JWT를 걷어내고 Spring Session으로 — 그 뒤에 온 것들"
-
+title:  "전환은 하루, 그 뒤가 문제였다"
+subtitle: "JWT 를 걷어내고 Spring Session 으로"
 categories:
   - Spring
 tags:

@@ -1,6 +1,6 @@
 ---
-title:  "CLAUDE.md 를 git 으로 관리하기 — 설정 파일이 내 것이 아닐 때"
-
+title:  "팀 설정 파일을 내 것처럼 고칠 수 없다"
+subtitle: "skip-worktree 로 흡수하기"
 categories:
   - AI
 tags:

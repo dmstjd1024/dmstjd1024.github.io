@@ -1,6 +1,6 @@
 ---
 title:  "MCP 란"
-
+subtitle: "LLM 에이전트 개발이 왜 표준을 필요로 했나"
 categories:
   - AI
 tags:

@@ -1,6 +1,6 @@
 ---
-title:  "Flyway를 도입하고 3주 만에 걷어낸 이야기"
-
+title:  "Flyway 를 22일 만에 걷어냈다"
+subtitle: "도입보다 철수에서 배운 것"
 categories:
   - Database
 tags:

@@ -1,6 +1,6 @@
 ---
-title:  "설정 버그를 고쳤더니, 그다음엔 'ML을 켜는 게 맞나'라는 질문이 남았다"
-
+title:  "설정 버그를 고치니 다음 질문이 남았다"
+subtitle: "'ML 을 켜는 게 맞나'"
 categories:
   - Etc
 tags:

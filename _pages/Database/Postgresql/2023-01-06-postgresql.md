@@ -1,6 +1,6 @@
 ---
 title:  "PostgreSQL이란"
-
+subtitle: "구조와 기능, 그리고 내 생각"
 categories:
   - Database
 tags:

@@ -1,6 +1,6 @@
 ---
-title:  "Hyperledger Besu 란? — Helm 5번으로 깔고 검증자 2개의 함정을 만났다"
-
+title:  "Besu 검증자 2개가 함정이었다"
+subtitle: "Helm 5번으로 Hyperledger Besu 네트워크를 올리기"
 categories:
   - BlockChain
 tags:

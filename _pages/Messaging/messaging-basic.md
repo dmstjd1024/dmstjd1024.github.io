@@ -1,6 +1,6 @@
 ---
-title: "비동기 메시징 입문 - 동기 호출과 무엇이 다른가"
-
+title:  "동기 호출과 무엇이 다른가"
+subtitle: "비동기 메시징 입문"
 categories:
  - Messaging
 tags:

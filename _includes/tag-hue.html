@@ -1,0 +1,40 @@
+{%- comment -%}
+  태그 이름 → 색 이름 하나를 출력한다. 출력이 곧 CSS 클래스 접미사가 된다
+  (`tag--red` 처럼). 색 정의는 _sass/vars.scss, 모양은 _sass/tag.scss 에 있다.
+
+  받는 변수: inc_tag — 소문자로 낮춘 태그 이름
+
+  기준은 "그 기술의 브랜드색" 이다. Redis 는 빨강, Java 는 주황처럼 이미
+  아는 색이면 글자를 읽기 전에 무엇인지 짐작이 된다. 브랜드가 없는 개념
+  태그는 성격이 가까운 색을 나눠 쓴다.
+
+  여기 없는 태그는 전부 slate(회색)로 떨어진다. 태그 148개 중 81개가
+  1편짜리라(2026-09 실측) 전부 칠하면 색이 의미를 잃는다 — 자주 쓰는
+  것에만 색을 준다.
+
+  ⚠️ 목록은 쉼표로 감싸 비교한다(`,redis,`). 그냥 contains 로 하면
+  `git` 이 `github` 에 걸려 둘이 같은 색이 된다.
+{%- endcomment -%}
+{%- assign t = ',' | append: include.inc_tag | append: ',' -%}
+
+{%- assign c_red    = ',redis,트러블슈팅,장애,동시성,' -%}
+{%- assign c_orange = ',java,jpa,gradle,entity,spring boot,백기선 live study,sap,sap-ui5,' -%}
+{%- assign c_amber  = ',자동매매,성능,성능최적화,모니터링,v2-model,' -%}
+{%- assign c_green  = ',spring,테스트,spring security,리팩터링,api설계,api,backend,' -%}
+{%- assign c_teal   = ',database,sql,postgresql,데이터베이스,트랜잭션,세션,messaging,' -%}
+{%- assign c_blue   = ',docker,kubernetes,aws,helm,폐쇄망,멀티테넌시,배포,infra,tailscale,' -%}
+{%- assign c_cyan   = ',react,typescript,javascript,frontend,next.js,tanstack query,zustand,브라우저 api,' -%}
+{%- assign c_purple = ',ai,claude code,mcp,omc,에이전틱 워크플로우,herdr,자동화,blockchain,hyperledger fabric,hyperledger besu,' -%}
+{%- assign c_pink   = ',git,github,github actions,ci,jekyll,dotfiles,개발환경,셸스크립트,jira,atlassian,협업,개발문화,' -%}
+
+{%- if c_red contains t -%}red
+{%- elsif c_orange contains t -%}orange
+{%- elsif c_amber contains t -%}amber
+{%- elsif c_green contains t -%}green
+{%- elsif c_teal contains t -%}teal
+{%- elsif c_blue contains t -%}blue
+{%- elsif c_cyan contains t -%}cyan
+{%- elsif c_purple contains t -%}purple
+{%- elsif c_pink contains t -%}pink
+{%- else -%}slate
+{%- endif -%}
