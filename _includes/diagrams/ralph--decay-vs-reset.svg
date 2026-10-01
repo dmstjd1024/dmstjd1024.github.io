@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="한 세션으로 계속 가면 성공률이 걸음마다 곱해져 바닥으로 내려가지만, 매 사이클 세션을 새로 띄우면 걸음 수가 0으로 돌아가 높은 구간만 반복해서 쓰는 비교">
+  <text class="dg-h" x="24" y="30">곱셈은 바닥으로 간다 — 그래서 걸음 수를 끊는다</text>
+  <text class="dg-s" x="24" y="50">걸음당 신뢰도 0.85 를 가정한 모양. 논문 실측은 에이전트형 과제에서 16걸음 안에 거의 0 이었다</text>
+
+  <!-- 축 -->
+  <path class="dg-arw" d="M88 216 H660"/>
+  <path class="dg-arw" d="M88 88 V216"/>
+
+  <text class="dg-s" x="80" y="100" text-anchor="end">1.0</text>
+  <text class="dg-s" x="80" y="160" text-anchor="end">0.5</text>
+  <text class="dg-s" x="80" y="220" text-anchor="end">0</text>
+  <text class="dg-s" x="30" y="150">성공률</text>
+
+  <text class="dg-s" x="88" y="234" text-anchor="middle">0</text>
+  <text class="dg-s" x="275" y="234" text-anchor="middle">8</text>
+  <text class="dg-s" x="461" y="234" text-anchor="middle">16</text>
+  <text class="dg-s" x="648" y="234" text-anchor="middle">24</text>
+  <text class="dg-s" x="648" y="250" text-anchor="middle">걸음 수</text>
+
+  <!-- 한 세션으로 계속 -->
+  <polyline class="dg-arw" fill="none" points="88,96 111,114 135,129 158,142 181,153 205,163 228,171 251,178 275,183 298,188 321,192 345,196 368,199 391,201 415,204 438,206 461,207 485,208 508,210 531,211 555,211 578,212 601,213 625,213 648,214"/>
+  <rect class="dg-mask" x="470" y="194" width="122" height="12" rx="2"/>
+  <text class="dg-s" x="474" y="203">한 세션으로 계속 — 바닥</text>
+
+  <!-- 매 사이클 리셋 -->
+  <polyline class="dg-arw-a" fill="none" points="88,96 111,114 135,129 158,142 181,153 205,163"/>
+  <polyline class="dg-arw-a" fill="none" points="228,96 251,114 275,129 298,142 321,153 345,163"/>
+  <polyline class="dg-arw-a" fill="none" points="368,96 391,114 415,129 438,142 461,153 485,163"/>
+  <polyline class="dg-arw-a" fill="none" points="508,96 531,114 555,129 578,142 601,153 625,163"/>
+
+  <path class="dg-arw-a" d="M205 166 V96" stroke-dasharray="3 3"/>
+  <path class="dg-arw-a" d="M345 166 V96" stroke-dasharray="3 3"/>
+  <path class="dg-arw-a" d="M485 166 V96" stroke-dasharray="3 3"/>
+
+  <rect class="dg-mask" x="196" y="82" width="108" height="12" rx="2"/>
+  <text class="dg-n" x="200" y="91">세션을 새로 띄운다</text>
+
+  <rect class="dg-lane" x="24" y="262" width="672" height="46" rx="8"/>
+  <text class="dg-v" x="44" y="284">컨텍스트를 줄이는 것은 대책이 아니다 — 논문은 그게 감쇠를 더 가파르게 만든다고 측정했다</text>
+  <text class="dg-s" x="44" y="302">원인이 길이가 아니라 걸음 수이기 때문이다. 끊어야 할 것은 걸음 수다</text>
+</svg>
