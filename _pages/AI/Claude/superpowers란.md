@@ -1,6 +1,7 @@
 ---
-title:  "코드를 쓰기 전에 멈추게 만든다"
-subtitle: "Superpowers 플러그인이 강제하는 절차"
+title:  "Superpowers 는 코드를 쓰기 전에 멈추게 만든다"
+subtitle: "플러그인이 강제하는 절차"
+description: "플러그인이 강제하는 절차"
 categories:
   - AI
 tags:

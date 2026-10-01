@@ -1,6 +1,7 @@
 ---
 title:  "밤새 도는 에이전트 루프는 멈추는 법이 절반이다"
 subtitle: "Ralph 패턴과 무인 루프의 멈춤 조건"
+description: "Ralph 패턴과 무인 루프의 멈춤 조건"
 categories:
  - AI
 tags:

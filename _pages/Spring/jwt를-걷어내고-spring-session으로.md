@@ -1,6 +1,7 @@
 ---
-title:  "전환은 하루, 그 뒤가 문제였다"
-subtitle: "JWT 를 걷어내고 Spring Session 으로"
+title:  "JWT 에서 Spring Session 으로 바꾼 뒤가 문제였다"
+subtitle: "전환 자체는 하루였다"
+description: "전환 자체는 하루였다"
 categories:
   - Spring
 tags:

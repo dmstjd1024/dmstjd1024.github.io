@@ -1,6 +1,7 @@
 ---
 title:  "Besu 검증자 2개가 함정이었다"
 subtitle: "Helm 5번으로 Hyperledger Besu 네트워크를 올리기"
+description: "Helm 5번으로 Hyperledger Besu 네트워크를 올리기"
 categories:
   - BlockChain
 tags:

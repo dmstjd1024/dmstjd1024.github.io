@@ -1,6 +1,7 @@
 ---
 title:  "Fabric 채널 조인이 조용히 실패했다"
 subtitle: "kubectl hlf 20단계로 Hyperledger Fabric 을 올린 기록"
+description: "kubectl hlf 20단계로 Hyperledger Fabric 을 올린 기록"
 categories:
   - BlockChain
 tags:

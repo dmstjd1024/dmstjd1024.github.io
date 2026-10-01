@@ -1,6 +1,7 @@
 ---
 title:  "AI 코드리뷰 봇이 못 잡는 것이 있었다"
 subtitle: "봇 2종을 파이프라인에 넣고 배운 것"
+description: "봇 2종을 파이프라인에 넣고 배운 것"
 categories:
   - AI
 tags:

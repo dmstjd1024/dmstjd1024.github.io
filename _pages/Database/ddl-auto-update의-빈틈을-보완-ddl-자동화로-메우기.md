@@ -1,6 +1,7 @@
 ---
 title:  "ddl-auto: update 의 빈틈을 메웠다"
 subtitle: "보완 DDL 자동화로 채운 것"
+description: "보완 DDL 자동화로 채운 것"
 categories:
   - Database
 tags:

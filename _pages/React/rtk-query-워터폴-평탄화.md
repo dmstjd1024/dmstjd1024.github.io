@@ -1,6 +1,7 @@
 ---
-title:  "워터폴을 없애자 stale 이 드러났다"
-subtitle: "RTK Query 캐시를 켠 대가"
+title:  "RTK Query 워터폴을 없애자 stale 이 드러났다"
+subtitle: "캐시를 켠 대가"
+description: "캐시를 켠 대가"
 categories:
   - React
 tags:

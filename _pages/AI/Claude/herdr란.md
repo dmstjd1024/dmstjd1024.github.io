@@ -1,6 +1,7 @@
 ---
-title:  "에이전트가 자기 옆자리를 알아본다"
-subtitle: "Herdr — 코딩 에이전트를 위한 터미널 멀티플렉서"
+title:  "Herdr 는 에이전트의 옆자리를 알아본다"
+subtitle: "코딩 에이전트를 위한 터미널 멀티플렉서"
+description: "코딩 에이전트를 위한 터미널 멀티플렉서"
 categories:
   - AI
 tags:

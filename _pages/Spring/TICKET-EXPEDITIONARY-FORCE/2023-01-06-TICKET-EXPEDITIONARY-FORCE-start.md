@@ -1,6 +1,7 @@
 ---
 title:  "티켓 원정대 출발!"
 subtitle: "프로젝트 시작 — 기술 선택과 파트 나누기"
+description: "프로젝트 시작 — 기술 선택과 파트 나누기"
 categories:
   - Spring
 tags:

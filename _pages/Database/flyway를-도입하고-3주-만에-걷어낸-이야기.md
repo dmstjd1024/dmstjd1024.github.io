@@ -1,6 +1,7 @@
 ---
 title:  "Flyway 를 22일 만에 걷어냈다"
 subtitle: "도입보다 철수에서 배운 것"
+description: "도입보다 철수에서 배운 것"
 categories:
   - Database
 tags:

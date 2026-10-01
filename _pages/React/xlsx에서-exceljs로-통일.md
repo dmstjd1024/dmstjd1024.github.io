@@ -1,6 +1,7 @@
 ---
-title:  "엑셀 라이브러리가 두 개였다"
-subtitle: "xlsx에서 exceljs로 통일하기"
+title:  "엑셀 라이브러리가 xlsx·exceljs 두 개였다"
+subtitle: "하나로 통일하기"
+description: "하나로 통일하기"
 categories:
   - React
 tags:

@@ -1,6 +1,7 @@
 ---
-title:  "AI 는 코드를 뜻으로 읽는다"
-subtitle: "LSP 가 에이전트에게 주는 것"
+title:  "LSP 는 코드를 글자가 아니라 뜻으로 읽는다"
+subtitle: "에이전트에게 무엇을 주는가"
+description: "에이전트에게 무엇을 주는가"
 categories:
   - AI
 tags:

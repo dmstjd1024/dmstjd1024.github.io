@@ -1,6 +1,7 @@
 ---
 title:  "같은 User인데 권한 검사가 깨졌다"
 subtitle: "재사용의 숨은 계약"
+description: "재사용의 숨은 계약"
 categories:
   - BlockChain
 tags:

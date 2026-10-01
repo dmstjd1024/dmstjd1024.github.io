@@ -1,6 +1,7 @@
 ---
 title:  "스프린트 운영과 차트 읽는 법"
 subtitle: "JIRA 활용"
+description: "JIRA 활용"
 categories:
  - Jira
 tags:

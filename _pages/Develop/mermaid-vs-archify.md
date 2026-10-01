@@ -1,6 +1,7 @@
 ---
-title:  "같은 도식을 두 방식으로 그려봤다"
-subtitle: "Mermaid 와 Archify 를 나란히 비교하기"
+title:  "같은 도식을 Mermaid 와 Archify 로 그려봤다"
+subtitle: "둘을 나란히 비교하기"
+description: "둘을 나란히 비교하기"
 categories:
   - Develop
 tags:

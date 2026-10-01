@@ -1,6 +1,7 @@
 ---
 title:  "대시보드를 파일로 심었더니 로그인 루프에 빠졌다"
 subtitle: "Grafana 를 코드로 관리하기"
+description: "Grafana 를 코드로 관리하기"
 categories:
   - Kubernetes
 tags:

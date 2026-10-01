@@ -1,6 +1,7 @@
 ---
 title:  "Claude Code 설정을 맥 4대에 나눠 담았다"
 subtitle: "계층, 플러그인, 그리고 상시 로드 비용"
+description: "계층, 플러그인, 그리고 상시 로드 비용"
 categories:
   - AI
 tags:

@@ -1,6 +1,7 @@
 ---
 title:  "JVM, 자바 코드 실행 과정"
 subtitle: "백기선 Live Study 1주차"
+description: "백기선 Live Study 1주차"
 categories:
   - Java
 tags:

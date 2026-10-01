@@ -1,6 +1,7 @@
 ---
 title:  "N+1 은 하나의 문제가 아니었다"
 subtitle: "fetch join 이 답이 아닐 때 네 가지"
+description: "fetch join 이 답이 아닐 때 네 가지"
 categories:
   - Spring
 tags:

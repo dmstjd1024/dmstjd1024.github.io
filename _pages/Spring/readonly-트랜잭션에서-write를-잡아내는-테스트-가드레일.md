@@ -1,6 +1,7 @@
 ---
 title:  "readOnly 에서 write 를 잡아냈다"
 subtitle: "테스트 가드레일 만들기"
+description: "테스트 가드레일 만들기"
 categories:
   - Spring
 tags:

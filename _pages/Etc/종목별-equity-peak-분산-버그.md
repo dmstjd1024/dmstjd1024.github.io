@@ -1,6 +1,7 @@
 ---
 title:  "멀쩡한 계좌가 손절 모드로 밀려났다"
 subtitle: "종목마다 따로 놀던 최고점 때문에"
+description: "종목마다 따로 놀던 최고점 때문에"
 categories:
   - Etc
 tags:

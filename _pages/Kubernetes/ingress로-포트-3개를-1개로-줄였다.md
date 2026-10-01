@@ -1,6 +1,7 @@
 ---
 title:  "포트 3개를 1개로 줄이자 무한 리다이렉트가 났다"
 subtitle: "Ingress 로 클러스터 입구를 하나로 모으기"
+description: "Ingress 로 클러스터 입구를 하나로 모으기"
 categories:
   - Kubernetes
 tags:

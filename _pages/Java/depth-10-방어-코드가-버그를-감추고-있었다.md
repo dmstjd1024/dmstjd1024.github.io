@@ -1,6 +1,7 @@
 ---
 title:  "depth < 10 방어 코드가 버그를 감추고 있었다"
-
+subtitle: "두 문제가 한 숫자에 뭉개져 있었다"
+description: "두 문제가 한 숫자에 뭉개져 있었다"
 categories:
   - Java
 tags:

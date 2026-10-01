@@ -26,6 +26,16 @@ card_thumbnail: "/assets/img/thumbnail/spring_card.webp"
 ```
 
 - `subtitle` 은 **제목에서 덜어낸 구체적 사실**을 담는다. 선택이지만 새 글에는 넣는다 — 제목을 40자 안에 묶는 대신 잘려나간 정보가 여기로 온다. 목록 카드와 글 머리 양쪽에 회색으로 붙는다. **제목에 이미 있는 말을 되풀이하지 않는다.**
+- `description` 은 **`subtitle` 과 같은 값을 그대로 적는다.** 검색결과 스니펫에 쓰인다.
+
+  ⚠️ **이걸 빠뜨리면 본문 첫 H2 가 검색 설명으로 나간다.** `jekyll-seo-tag` 는
+  `page["description"] || page["excerpt"]` 순으로만 보고 태그 인자는 받지 않는다
+  (`drop.rb:107`). 이 블로그 글은 대개 `## 문제:` 같은 H2 로 시작하므로,
+  없으면 `"한 줄로"`, `"문제의 코드"` 같은 토막이 스니펫이 된다 (실측 2026-10).
+
+  구글이 이 값을 반드시 쓴다는 보장은 없다 — 본문보다 더 정확하다고 판단할 때만
+  쓴다고 [공식 문서](https://developers.google.com/search/docs/appearance/snippet)가
+  밝힌다. 그래도 잘린 H2 보다는 낫다.
 - `categories` 는 **하나만** 쓴다. 디렉토리 이름과 일치해야 한다.
 - `date` 는 작성일. 파일명에 날짜를 넣지 않는다 (옛 글 일부만 `2023-01-06-` 형식).
 - 도식에 Mermaid 를 쓰면 `mermaid: true`, Archify 산출물을 넣으면 `archify: true` 를 추가한다.

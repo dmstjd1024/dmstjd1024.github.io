@@ -1,6 +1,7 @@
 ---
 title:  "Redis Pub/Sub 은 메시지를 보관하지 않는다"
 subtitle: "Pub/Sub · List · Streams 중 무엇을 고르나"
+description: "Pub/Sub · List · Streams 중 무엇을 고르나"
 categories:
  - Database
 tags:

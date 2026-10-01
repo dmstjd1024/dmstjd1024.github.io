@@ -1,6 +1,7 @@
 ---
 title:  "바인드 파라미터 65,535개 한도에 부딪혔다"
 subtitle: "PostgreSQL 이 한 번에 받는 값의 상한"
+description: "PostgreSQL 이 한 번에 받는 값의 상한"
 categories:
   - Database
 tags:

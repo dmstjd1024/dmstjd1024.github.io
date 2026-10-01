@@ -1,6 +1,7 @@
 ---
 title:  "도커 교과서 4장"
 subtitle: "소스 코드에서 이미지까지, 멀티 스테이지 빌드"
+description: "소스 코드에서 이미지까지, 멀티 스테이지 빌드"
 categories:
  - Docker
 tags:
