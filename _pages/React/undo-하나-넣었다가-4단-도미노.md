@@ -1,5 +1,6 @@
 ---
 title:  "undo 하나 넣었다가 4단 도미노"
+description: "되돌렸더니 엉뚱한 값이 살아났다"
 
 categories:
   - React

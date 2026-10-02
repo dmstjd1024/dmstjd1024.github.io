@@ -1,5 +1,6 @@
 ---
 title:  "로컬에서 빨라진 테스트가 CI에서는 느려졌다"
+description: "추측 대신 run 로그를 구간별로 쟀다"
 
 categories:
   - CI

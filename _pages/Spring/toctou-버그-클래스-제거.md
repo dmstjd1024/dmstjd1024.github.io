@@ -1,5 +1,6 @@
 ---
 title:  "TOCTOU 한 건을 고치는 대신 버그 클래스를 없앴다"
+description: "SFTP 한 건이 아니라 check-then-act 패턴 전체를"
 
 categories:
   - Spring
