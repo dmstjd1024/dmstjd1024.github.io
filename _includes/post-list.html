@@ -37,10 +37,29 @@
       | where_exp: "p", "p.url contains here"
       | sort: "date" | reverse -%}
 
+{%- comment -%}
+  글을 두 묶음으로 가른다 — 실무 글과, 책·강의를 따라 적은 학습 노트.
+
+  가르는 기준은 날짜(2026-01-01)지만 임의로 고른 선이 아니다. 2026 이전
+  35편은 `## 남는 교훈`·`## 정리` 가 하나도 없고, 2026 이후 108편은 95편에
+  있다 (실측 2026-10-02). 날짜 경계와 글의 성격 경계가 같은 자리다.
+
+  섞어 놓으면 "자바의 패키지" 같은 교과서 목차가 최신 글 사이에 끼어
+  목록의 밀도를 떨어뜨린다. 지우지 않고 아래로 내린다.
+{%- endcomment -%}
+{%- assign split_date = '2026-01-01' -%}
 {%- assign total = 0 -%}
+{%- assign n_main = 0 -%}
+{%- assign n_note = 0 -%}
 {%- for p in cand -%}
   {%- unless p.url contains 'index.html' -%}
     {%- assign total = total | plus: 1 -%}
+    {%- assign pd = p.date | date: '%Y-%m-%d' -%}
+    {%- if pd < split_date -%}
+      {%- assign n_note = n_note | plus: 1 -%}
+    {%- else -%}
+      {%- assign n_main = n_main | plus: 1 -%}
+    {%- endif -%}
   {%- endunless -%}
 {%- endfor -%}
 
@@ -85,6 +104,7 @@
     <p class="list-head__count">
       글 {{ total }}편
       {%- if shown < total %} · 최근 {{ shown }}편{% endif -%}
+      {%- if n_note > 0 and n_main > 0 %} · 학습 노트 {{ n_note }}편 포함{% endif -%}
     </p>
   </header>
 
@@ -185,70 +205,39 @@
   {%- if total == 0 -%}
     <p class="empty">아직 글이 없습니다.</p>
   {%- else -%}
-    <ul class="cards">
-      {%- assign drawn = 0 -%}
-      {%- for p in cand -%}
-        {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
-        {%- if drawn >= show_max -%}{%- break -%}{%- endif -%}
-        {%- assign drawn = drawn | plus: 1 -%}
-        {%- assign seg = p.path | remove_first: '_pages/' | split: '/' -%}
-        <li class="card">
-          <a class="card__link" href="{{ p.url | prepend: site.baseurl }}">
-            <div class="card__body">
-              <div class="card__meta">
-                <span class="card__cat">{{ seg[0] }}</span>
-                {%- assign d = p.date | date: "%Y-%m-%d" -%}
-                {%- if d != "1900-01-01" -%}
-                  <time datetime="{{ d }}">{{ p.date | date: "%Y.%m.%d" }}</time>
-                {%- endif -%}
-              </div>
-              <h2 class="card__title">{{ p.title }}</h2>
-              {%- if p.subtitle -%}
-                <p class="card__subtitle">{{ p.subtitle }}</p>
-              {%- endif -%}
-              {%- comment -%}
-                p.content 는 Liquid 가 처리되기 전의 원본이라 도식 삽입에 쓰는
-                include 태그가 문자 그대로 남는다. strip_html 은 이걸 못 지우므로
-                요약을 만들기 전에 걷어낸다. 도식이 글 앞부분에 있으면 요약
-                160자 안에 태그가 그대로 노출되기 때문이다.
+    {%- comment -%} 실무 글 {%- endcomment -%}
+    {%- if n_main > 0 -%}
+      <ul class="cards">
+        {%- for p in cand -%}
+          {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
+          {%- assign pd = p.date | date: '%Y-%m-%d' -%}
+          {%- if pd < split_date -%}{%- continue -%}{%- endif -%}
+          {% include post-card.html inc_page=p %}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
 
-                태그 문법을 직접 쓸 수 없으므로 여는 기호를 조각내 만든다.
-              {%- endcomment -%}
-              {%- assign lq_open = "{" | append: "%" -%}
-              {%- assign lq_close = "%" | append: "}" -%}
-              {%- assign summary_src = "" -%}
-              {%- assign chunks = p.content | split: lq_open -%}
-              {%- for chunk in chunks -%}
-                {%- if forloop.first -%}
-                  {%- assign summary_src = chunk -%}
-                {%- else -%}
-                  {%- assign rest = chunk | split: lq_close -%}
-                  {%- if rest.size > 1 -%}
-                    {%- assign summary_src = summary_src | append: rest[1] -%}
-                  {%- endif -%}
-                {%- endif -%}
-              {%- endfor -%}
-              <p class="card__summary">{{ summary_src | markdownify | strip_html | normalize_whitespace | truncate: 160 }}</p>
-            </div>
-            {% include thumb.html inc_page=p %}
-          </a>
-          {%- comment -%}
-            태그는 card__link 바깥에 둔다. 카드 전체가 이미 <a> 라서 안에
-            넣으면 <a> 안의 <a> 가 되고, 브라우저가 바깥 링크를 끊어버린다.
-            같은 이유로 좌우 패딩은 card__link 와 따로 맞춘다.
-          {%- endcomment -%}
-          {%- if p.tags and p.tags.size > 0 -%}
-            <ul class="card__tags">
-              {%- for tag in p.tags -%}
-                {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
-                {%- assign hue = tag | downcase | strip -%}
-                <li><a class="tag tag--{% include tag-hue.html inc_tag=hue %}"
-                       href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
-              {%- endfor -%}
-            </ul>
-          {%- endif -%}
-        </li>
-      {%- endfor -%}
-    </ul>
+    {%- comment -%}
+      학습 노트. 묶음이 둘 다 있을 때만 머리말을 붙인다 — 한쪽만 있는
+      카테고리(예: Java/Live-Study)에서 제목만 덩그러니 남지 않게 한다.
+    {%- endcomment -%}
+    {%- if n_note > 0 -%}
+      {%- if n_main > 0 -%}
+        <header class="list-split">
+          <h2 class="list-split__title">학습 노트</h2>
+          <p class="list-split__desc">
+            책·강의를 따라 적은 정리 {{ n_note }}편. 2026 이전에 쓴 것이다.
+          </p>
+        </header>
+      {%- endif -%}
+      <ul class="cards cards--note">
+        {%- for p in cand -%}
+          {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
+          {%- assign pd = p.date | date: '%Y-%m-%d' -%}
+          {%- unless pd < split_date -%}{%- continue -%}{%- endunless -%}
+          {% include post-card.html inc_page=p %}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
   {%- endif -%}
 </div>

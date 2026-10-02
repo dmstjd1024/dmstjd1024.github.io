@@ -1,0 +1,65 @@
+{%- comment -%}
+  목록 카드 한 장. post-list.html 의 두 묶음(실무 글 / 학습 노트)과
+  tag-list.html 이 같은 모양을 써야 해서 따로 뺐다.
+
+  받는 변수:
+    inc_page - 그릴 글 (Jekyll 은 include 인자를 include. 접두사로 읽는다)
+{%- endcomment -%}
+{%- assign p = include.inc_page -%}
+{%- assign seg = p.path | remove_first: '_pages/' | split: '/' -%}
+<li class="card">
+  <a class="card__link" href="{{ p.url | prepend: site.baseurl }}">
+    <div class="card__body">
+      <div class="card__meta">
+        <span class="card__cat">{{ seg[0] }}</span>
+        {%- assign d = p.date | date: "%Y-%m-%d" -%}
+        {%- if d != "1900-01-01" -%}
+          <time datetime="{{ d }}">{{ p.date | date: "%Y.%m.%d" }}</time>
+        {%- endif -%}
+      </div>
+      <h2 class="card__title">{{ p.title }}</h2>
+      {%- if p.subtitle -%}
+        <p class="card__subtitle">{{ p.subtitle }}</p>
+      {%- endif -%}
+      {%- comment -%}
+        p.content 는 Liquid 가 처리되기 전의 원본이라 도식 삽입에 쓰는
+        include 태그가 문자 그대로 남는다. strip_html 은 이걸 못 지우므로
+        요약을 만들기 전에 걷어낸다. 도식이 글 앞부분에 있으면 요약
+        160자 안에 태그가 그대로 노출되기 때문이다.
+
+        태그 문법을 직접 쓸 수 없으므로 여는 기호를 조각내 만든다.
+      {%- endcomment -%}
+      {%- assign lq_open = "{" | append: "%" -%}
+      {%- assign lq_close = "%" | append: "}" -%}
+      {%- assign summary_src = "" -%}
+      {%- assign chunks = p.content | split: lq_open -%}
+      {%- for chunk in chunks -%}
+        {%- if forloop.first -%}
+          {%- assign summary_src = chunk -%}
+        {%- else -%}
+          {%- assign rest = chunk | split: lq_close -%}
+          {%- if rest.size > 1 -%}
+            {%- assign summary_src = summary_src | append: rest[1] -%}
+          {%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+      <p class="card__summary">{{ summary_src | markdownify | strip_html | normalize_whitespace | truncate: 160 }}</p>
+    </div>
+    {% include thumb.html inc_page=p %}
+  </a>
+  {%- comment -%}
+    태그는 card__link 바깥에 둔다. 카드 전체가 이미 <a> 라서 안에
+    넣으면 <a> 안의 <a> 가 되고, 브라우저가 바깥 링크를 끊어버린다.
+    같은 이유로 좌우 패딩은 card__link 와 따로 맞춘다.
+  {%- endcomment -%}
+  {%- if p.tags and p.tags.size > 0 -%}
+    <ul class="card__tags">
+      {%- for tag in p.tags -%}
+        {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
+        {%- assign hue = tag | downcase | strip -%}
+        <li><a class="tag tag--{% include tag-hue.html inc_tag=hue %}"
+               href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</li>

@@ -27,10 +27,26 @@
 {%- if include.inc_tag and include.inc_tag != "" -%}
   {%- comment -%} ── 특정 태그의 글 목록 ── {%- endcomment -%}
   {%- assign want = include.inc_tag -%}
+  {%- comment -%}
+    post-list.html 과 같은 기준으로 실무 글과 학습 노트를 가른다.
+    태그 페이지도 섞이면 똑같이 희석된다 — #java 는 실무 2편이 노트 11편에
+    묻혀 있었다 (실측 2026-10-02).
+  {%- endcomment -%}
+  {%- assign split_date = '2026-01-01' -%}
   {%- assign total = 0 -%}
+  {%- assign n_main = 0 -%}
+  {%- assign n_note = 0 -%}
   {%- for p in posts -%}
     {%- unless p.url contains 'index.html' -%}
-      {%- if p.tags contains want -%}{%- assign total = total | plus: 1 -%}{%- endif -%}
+      {%- if p.tags contains want -%}
+        {%- assign total = total | plus: 1 -%}
+        {%- assign pd = p.date | date: '%Y-%m-%d' -%}
+        {%- if pd < split_date -%}
+          {%- assign n_note = n_note | plus: 1 -%}
+        {%- else -%}
+          {%- assign n_main = n_main | plus: 1 -%}
+        {%- endif -%}
+      {%- endif -%}
     {%- endunless -%}
   {%- endfor -%}
 
@@ -42,70 +58,43 @@
         <a href="{{ '/tags/' | prepend: site.baseurl }}">태그</a>
       </p>
       <h1 class="list-head__title">#{{ want }}</h1>
-      <p class="list-head__count">글 {{ total }}편</p>
+      <p class="list-head__count">글 {{ total }}편{%- if n_note > 0 and n_main > 0 %} · 학습 노트 {{ n_note }}편 포함{% endif -%}</p>
     </header>
 
     {%- if total == 0 -%}
       <p class="empty">아직 글이 없습니다.</p>
     {%- else -%}
-      <ul class="cards">
-        {%- for p in posts -%}
-          {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
-          {%- unless p.tags contains want -%}{%- continue -%}{%- endunless -%}
-          {%- assign seg = p.path | remove_first: '_pages/' | split: '/' -%}
-          <li class="card">
-            <a class="card__link" href="{{ p.url | prepend: site.baseurl }}">
-              <div class="card__body">
-                <div class="card__meta">
-                  <span class="card__cat">{{ seg[0] }}</span>
-                  {%- assign d = p.date | date: "%Y-%m-%d" -%}
-                  {%- if d != "1900-01-01" -%}
-                    <time datetime="{{ d }}">{{ p.date | date: "%Y.%m.%d" }}</time>
-                  {%- endif -%}
-                </div>
-                <h2 class="card__title">{{ p.title }}</h2>
-                {%- if p.subtitle -%}
-                  <p class="card__subtitle">{{ p.subtitle }}</p>
-                {%- endif -%}
-                {%- comment -%}
-                  요약에서 include 태그를 걷어낸다. 이유는 post-list.html 의
-                  같은 자리 주석 참조 — p.content 는 Liquid 처리 전 원본이다.
-                {%- endcomment -%}
-                {%- assign lq_open = "{" | append: "%" -%}
-                {%- assign lq_close = "%" | append: "}" -%}
-                {%- assign summary_src = "" -%}
-                {%- assign chunks = p.content | split: lq_open -%}
-                {%- for chunk in chunks -%}
-                  {%- if forloop.first -%}
-                    {%- assign summary_src = chunk -%}
-                  {%- else -%}
-                    {%- assign rest = chunk | split: lq_close -%}
-                    {%- if rest.size > 1 -%}
-                      {%- assign summary_src = summary_src | append: rest[1] -%}
-                    {%- endif -%}
-                  {%- endif -%}
-                {%- endfor -%}
-                <p class="card__summary">{{ summary_src | markdownify | strip_html | normalize_whitespace | truncate: 160 }}</p>
-              </div>
-              {% include thumb.html inc_page=p %}
-            </a>
-            {%- comment -%}
-              post-list.html 과 같은 이유로 card__link 바깥에 둔다.
-              지금 보고 있는 태그는 굵게 표시해 어느 것으로 들어왔는지 남긴다.
-            {%- endcomment -%}
-            {%- if p.tags and p.tags.size > 0 -%}
-              <ul class="card__tags">
-                {%- for tag in p.tags -%}
-                  {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
-                  {%- assign hue = tag | downcase | strip -%}
-                  <li><a class="tag tag--{% include tag-hue.html inc_tag=hue %}{% if tag == want %} is-on{% endif %}"
-                         href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">#{{ tag }}</a></li>
-                {%- endfor -%}
-              </ul>
-            {%- endif -%}
-          </li>
-        {%- endfor -%}
-      </ul>
+      {%- if n_main > 0 -%}
+        <ul class="cards">
+          {%- for p in posts -%}
+            {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
+            {%- unless p.tags contains want -%}{%- continue -%}{%- endunless -%}
+            {%- assign pd = p.date | date: '%Y-%m-%d' -%}
+            {%- if pd < split_date -%}{%- continue -%}{%- endif -%}
+            {% include post-card.html inc_page=p %}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if n_note > 0 -%}
+        {%- if n_main > 0 -%}
+          <header class="list-split">
+            <h2 class="list-split__title">학습 노트</h2>
+            <p class="list-split__desc">
+              책·강의를 따라 적은 정리 {{ n_note }}편. 2026 이전에 쓴 것이다.
+            </p>
+          </header>
+        {%- endif -%}
+        <ul class="cards cards--note">
+          {%- for p in posts -%}
+            {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
+            {%- unless p.tags contains want -%}{%- continue -%}{%- endunless -%}
+            {%- assign pd = p.date | date: '%Y-%m-%d' -%}
+            {%- unless pd < split_date -%}{%- continue -%}{%- endunless -%}
+            {% include post-card.html inc_page=p %}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
     {%- endif -%}
   </div>
 
