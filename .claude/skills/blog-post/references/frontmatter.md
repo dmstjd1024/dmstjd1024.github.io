@@ -38,6 +38,10 @@ card_thumbnail: "/assets/img/thumbnail/spring_card.webp"
   밝힌다. 그래도 잘린 H2 보다는 낫다.
 - `categories` 는 **하나만** 쓴다. 디렉토리 이름과 일치해야 한다.
 - `date` 는 작성일. 파일명에 날짜를 넣지 않는다 (옛 글 일부만 `2023-01-06-` 형식).
+
+  ⚠️ **날짜가 목록에서 글의 자리를 가른다.** `2026-01-01` 이전이면 목록 아래쪽
+  "학습 노트" 묶음으로 내려간다 (`_includes/post-list.html`). 새 글은 당연히
+  위 묶음이지만, **옛 글의 날짜를 임의로 올리면 노트가 실무 글 사이로 섞인다.**
 - 도식에 Mermaid 를 쓰면 `mermaid: true`, Archify 산출물을 넣으면 `archify: true` 를 추가한다.
 
 ## 카테고리
