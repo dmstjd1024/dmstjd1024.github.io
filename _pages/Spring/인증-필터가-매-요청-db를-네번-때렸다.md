@@ -1,5 +1,6 @@
 ---
 title:  "인증 필터가 매 요청 DB를 네 번 때리고 있었다"
+description: "병목은 비즈니스 코드가 아니라 공통 경로였다"
 
 categories:
   - Spring
