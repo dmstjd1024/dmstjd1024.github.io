@@ -1,5 +1,7 @@
 ---
 title:  "Kafka 멱등 소비자란?"
+subtitle: "중복은 소비자가 막고, 유실은 감수한 이유"
+description: "중복은 소비자가 막고, 유실은 감수한 이유"
 
 categories:
   - Messaging
