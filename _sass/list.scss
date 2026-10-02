@@ -282,3 +282,34 @@ $tones:
     &__subtitle + &__summary { -webkit-line-clamp:1; }
   }
 }
+
+// ---------------------------------------------------------------------------
+// 목록 안의 묶음 구분 (실무 글 / 학습 노트)
+//
+// 학습 노트 35편은 2026 이전에 책·강의를 따라 적은 것이라 최신 글과 성격이
+// 다르다. 지우지 않고 아래로 내리면서, 경계를 선 하나로 알려준다.
+// ---------------------------------------------------------------------------
+.list-split {
+  margin:3rem 0 1.25rem;
+  padding-top:1.5rem;
+  border-top:1px solid var(--border);
+
+  &__title {
+    font-size:1.125rem;
+    letter-spacing:-.02em;
+    color:var(--fg-muted);
+  }
+
+  &__desc {
+    margin-top:.375rem;
+    font-size:.875rem;
+    color:var(--fg-subtle);
+  }
+}
+
+// 학습 노트 카드는 한 톤 가라앉힌다. 목록에서 눈이 위쪽 실무 글에
+// 먼저 가도록 하되, 읽을 수 없을 만큼 흐리게 하지는 않는다.
+.cards--note .card {
+  &__title { color:var(--fg-muted); }
+  &__link:hover .card__title { color:var(--accent); }
+}

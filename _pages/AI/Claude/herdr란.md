@@ -79,11 +79,11 @@ $ herdr workspace list
 ```
 1  홈                 pane 2  idle
 2  dotfiles 환경설정    pane 1  idle
-3  기존 엔비온          pane 2  idle
+3  레거시 서비스        pane 2  idle
 4  블로그              pane 1  working   ← 지금 이 글
-5  POPLE              pane 1  idle
+5  사내 서비스 A        pane 1  idle
 ...
-10 pople              pane 2  done
+10 사내 서비스 B        pane 2  done
 ```
 
 (원본은 JSON 이다. 읽기 좋게 줄인 것이고 워크스페이스는 10개다.)
@@ -99,7 +99,7 @@ $ herdr workspace list
 | 살아 있는 에이전트 | 14 |
 | 종류 | 전부 `claude` |
 | 상태 | `idle` 12 · `working` 1 · `done` 1 |
-| 이름 붙은 것 | `dotfiles` · `envion-gh` · `esg` · `gm-report` |
+| 이름 붙은 것 | `dotfiles` · `svc-a` · `svc-b` · `report` |
 
 이름은 붙여도 되고 안 붙여도 된다. 붙이면 `w9:p2` 대신 `dotfiles` 로 부를 수 있다.
 다만 **그 이름은 판이 아니라 지금 그 판에 있는 에이전트를 따라간다.** 에이전트가
