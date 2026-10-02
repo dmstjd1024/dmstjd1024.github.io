@@ -1,5 +1,6 @@
 ---
 title:  "GIN trigram 인덱스를 만들었는데 왜 안 빨라지지?"
+description: "인덱스가 쿼리 플랜에 오르기까지 13일"
 
 categories:
   - Database

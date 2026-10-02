@@ -1,5 +1,6 @@
 ---
 title:  "GROUP BY 축이 한 줄 달라서 배출량이 2배가 됐다"
+description: "두 CTE 의 집계 축이 어긋나 있었다"
 
 categories:
   - Database

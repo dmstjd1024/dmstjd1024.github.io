@@ -1,5 +1,6 @@
 ---
 title:  "navigator.clipboard는 HTTPS에서만 동작한다"
+description: "로컬은 되는데 배포 환경에서만 안 된 이유"
 
 categories:
   - React

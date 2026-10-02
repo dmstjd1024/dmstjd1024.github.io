@@ -1,5 +1,6 @@
 ---
 title:  "git status 가 깨끗하다고 지워도 되는 게 아니었다"
+description: "두 벌로 clone 된 저장소를 지우기 전에 볼 것"
 
 categories:
   - Git

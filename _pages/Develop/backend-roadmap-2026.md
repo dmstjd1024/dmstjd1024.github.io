@@ -1,5 +1,6 @@
 ---
 title: "백엔드 개발자 로드맵 2026"
+description: "원본 로드맵 132개 항목을 합치지 않고 전부 그렸다"
 
 categories:
   - Develop

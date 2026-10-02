@@ -1,5 +1,6 @@
 ---
 title:  "AI가 쓴 커밋 메시지가 거짓말을 했다"
+description: "접두사가 전부 fix 였던 한 달치 커밋"
 
 categories:
   - AI
