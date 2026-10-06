@@ -1,5 +1,7 @@
 ---
-title:  "RSI 과매수 필터란? — 임계값 50이 매수 신호를 막은 사례"
+title:  "RSI 임계값 50 이 매수 신호를 통째로 막았다"
+subtitle: "중립값이 과매수 기준으로 쓰이고 있었다"
+description: "중립값이 과매수 기준으로 쓰이고 있었다"
 
 categories:
   - Develop

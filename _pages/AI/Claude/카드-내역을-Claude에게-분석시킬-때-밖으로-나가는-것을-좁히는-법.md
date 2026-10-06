@@ -1,5 +1,7 @@
 ---
-title:  "카드 내역을 Claude에게 분석시킬 때 밖으로 나가는 것을 좁히는 법"
+title:  "카드 내역을 Claude 에게 보낼 때 무엇을 뺐나"
+subtitle: "가장 큰 구멍은 프롬프트가 아니라 환경변수였다"
+description: "가장 큰 구멍은 프롬프트가 아니라 환경변수였다"
 
 categories:
   - AI
