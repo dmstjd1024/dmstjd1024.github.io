@@ -28,7 +28,7 @@ card_thumbnail: "/assets/img/thumbnail/claude_thumbnail.png"
 ## 소재 — dotfiles 설치 스크립트의 분기
 
 `install.sh` 에 다이어그램 도구를 설치하는 블록을 넣었다.
-무인 실행(launchd)에서도 죽지 않아야 해서 가드가 두 겹이다.
+무인 실행(launchd)에서도 죽지 않아야 해서 가드를 세 겹 뒀다.
 
 - 이미 설치돼 있으면 건너뛴다 — 매번 네트워크를 타지 않도록
 - `npx` 가 PATH에 없으면 생략한다 — launchd 환경엔 nvm이 안 잡힌다
