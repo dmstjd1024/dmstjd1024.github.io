@@ -128,10 +128,10 @@ $ for b in redact-a redact-b redact-c redact-d redact-e; do
 
 ```
 $ git ls-remote origin "refs/heads/redact-a"
-3580454...   로컬 3580454 와 일치
+3580454...	refs/heads/redact-a
 ```
 
-다섯 개 전부 일치했다. 그리고 미푸시 커밋을 다시 셌다.
+찍힌 해시를 로컬 것과 눈으로 대조했다. 다섯 개 전부 일치했다. 그리고 미푸시 커밋을 다시 셌다.
 
 ```
 $ git log --branches --not --remotes --oneline
