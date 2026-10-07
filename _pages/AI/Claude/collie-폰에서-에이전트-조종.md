@@ -279,11 +279,13 @@ if (!this.cfg.vapidPublic || !this.cfg.vapidPrivate) {
 사람까지 기동 실패로 막지 않으려면 이 선택이 맞다. 대신 **쓰려던 사람은 조용히
 놓친다** — 내가 그 경우였고, 알아챈 건 이틀 뒤 폰에서 물어봤을 때였다.
 
+키를 넣고 다시 띄우면 `enabled` 로 바뀐다. 다만 아직 구독한 기기가 없다.
+
 ```
 [push] enabled (0 saved subscription(s))
 ```
 
-지금은 폰 하나가 구독에 올라와 있다.
+폰에서 알림을 허용하면 그때 구독이 하나 생긴다. 지금은 올라와 있다.
 
 ```json
 {"endpoint":"https://web.push.apple.com/QEMZ…",
