@@ -61,7 +61,7 @@ herdr: installed remote binary to ~/.local/bin/herdr, but the remote shell does 
 Saved SSH machine <ID>. Remote server is ready.
 ```
 
-첫 줄의 `could not parse remote server status JSON from ``` 는 빈 문자열(``` `` ```)을
+첫 줄의 `` could not parse remote server status JSON from ` `` 는 **아무것도 없는 응답**을
 JSON 으로 파싱하려다 난 것이다. **원격에 Herdr 가 아예 없어서 상태를 되돌려줄 서버가 없었다.**
 그래서 바로 다음 줄에서 설치 여부를 물어본다. 정상 흐름이고, 마지막 줄도 `Remote server is ready` 다.
 
