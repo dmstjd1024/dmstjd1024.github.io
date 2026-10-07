@@ -47,8 +47,9 @@ RSI(상대강도지수)는 최근 가격이 얼마나 강하게 오르고 내렸
 
 원인 위치는 `autotrading/realtime_engine.py` L247이다.
 
-python
+```python
 SignalFilter(rsi_threshold=50.0, ...)
+```
 
 
 중립값인 RSI 50이 과매수 기준으로 쓰이고 있다. HybridQuantAI가 BUY를 내는 구간은 RSI 50~70의 모멘텀 구간이다. 필터는 RSI가 50을 넘으면 막으므로, 전략이 사려는 구간과 필터가 막는 구간이 그대로 겹친다. 그래서 이 구간의 BUY가 통째로 막힌다고 판단했다.
@@ -76,8 +77,8 @@ SignalFilter(rsi_threshold=50.0, ...)
 
 `rsi_threshold`를 `50.0`에서 `65.0`으로 올리자는 제안이다. 바꿀 코드는 다음과 같다.
 
-python
+```python
 SignalFilter(volume_multiplier=1.0, rsi_threshold=65.0, block_negative_macd=False)
-
+```
 
 이 제안을 실제로 적용하려면 수정 허용 목록에 `autotrading/realtime_engine.py`나 `strategies/signal_filter.py`를 넣어야 한다.
