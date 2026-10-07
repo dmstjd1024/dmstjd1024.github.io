@@ -83,9 +83,9 @@ installed remote binary to ~/.local/bin/herdr, but the remote shell does not res
 Herdr 가 접속할 때와 같은 조건, 즉 비대화식으로 직접 확인해 봤다.
 
 ```
-$ ssh -o BatchMode=yes <맥미니> 'echo $PATH; command -v herdr'
-PATH=/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:...
-which: NOT_FOUND
+$ ssh -o BatchMode=yes <맥미니> 'echo $PATH; command -v herdr || echo NOT_FOUND'
+/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:...
+NOT_FOUND
 ```
 
 `~/.local/bin` 이 PATH 에 없다. 그런데 `.zshrc` 에는 넣어 뒀다.
