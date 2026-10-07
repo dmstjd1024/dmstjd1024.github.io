@@ -15,7 +15,7 @@ thumbnail: "/assets/img/thumbnail/redis_thumbnail.png"
 card_thumbnail: "/assets/img/thumbnail/redis_card.png"
 ---
 Redis 로 메시지를 나르는 방법은 세 가지다. Pub/Sub, List, Streams.
-셋 다 "A 가 보내고 B 가 받는다"를 하지만, 고르는 기준은 성능도 문법도 아니다.
+셋 다 "A 가 보내고 B 가 받는다"를 해내지만, 고르는 기준은 성능도 문법도 아니다.
 
 공식 문서에는 [자료구조 선택 가이드](https://redis.io/docs/latest/develop/data-types/compare-data-types/)
 가 따로 있는데, 거기서 Pub/Sub 은 다뤄지지 않는다. **Pub/Sub 은 자료구조가 아니기 때문이다.**
@@ -127,7 +127,8 @@ RPOP  bikes:repairs            # 오른쪽에서 꺼낸다 → FIFO
 > when you need to transfer items without race conditions
 > — [Redis 공식 문서, Lists](https://redis.io/docs/latest/develop/data-types/lists/)
 
-꺼내면서 동시에 "처리중" 리스트로 옮긴다. 원자적 연산이라 그 사이에 죽을 수 없다.
+꺼내면서 동시에 "처리중" 리스트로 옮긴다. 원자적 연산이라 **꺼냈는데 어디에도 없는**
+상태는 생기지 않는다. 다만 옮긴 **뒤에** 워커가 죽는 것은 막지 못한다.
 처리가 끝나면 처리중 리스트에서 지우고, 안 지워진 채 오래 남아 있는 것은
 죽은 워커가 쥐고 있던 일로 보고 회수한다.
 
@@ -232,6 +233,7 @@ public class RedisPubSubConfig {
     }
 }
 
+@Slf4j
 @Component
 public class RoomSubscriber implements MessageListener {
 

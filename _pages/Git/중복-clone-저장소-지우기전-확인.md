@@ -64,14 +64,14 @@ f6f8ceb chore: 익명화 (2/5)
 ```
 $ git branch -vv
 * main       [origin/main]
-  redact-a   [origin/redact-a: ahead 1]
-  redact-b   [origin/redact-b: ahead 1]
-  redact-c   [origin/redact-c: ahead 1]
-  redact-d   [origin/redact-d: ahead 1]
-  redact-e   [origin/redact-e: ahead 2]
+  redact-a
+  redact-b
+  redact-c
+  redact-d
+  redact-e
 ```
 
-브랜치 다섯 개에 하나씩, 하나는 둘씩 흩어져 있었다.
+브랜치 다섯 개에 하나씩 흩어져 있었다.
 
 `git log --branches --not --remotes` 는 범위가 다르다. `--branches` 로 로컬 브랜치 전부를
 모으고, `--not --remotes` 로 원격 추적 브랜치에서 닿을 수 있는 것을 빼므로, **어느 브랜치에
