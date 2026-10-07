@@ -158,7 +158,8 @@ git log --branches --not --remotes --oneline
 git branch -vv
 ```
 
-`ahead N` 이 붙은 브랜치가 대상이다.
+원격에 없는 커밋을 가진 브랜치가 대상이다. 업스트림이 있으면 `ahead N` 으로,
+없으면 위 `git log --branches --not --remotes` 로 확인한다.
 
 **3. 다른 clone 에 이미 있는지 해시로 조회한다**
 
