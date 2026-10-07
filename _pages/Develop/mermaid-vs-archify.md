@@ -23,7 +23,7 @@ card_thumbnail: "/assets/img/thumbnail/claude_thumbnail.png"
 - 차이는 **검증**이다. Archify는 선이 겹치면 반려하고, Mermaid는 그냥 그린다
 - 대신 Archify는 **약 800KB**, Mermaid는 2.4KB + CDN
 
-아래에 같은 도식을 두 방식으로 나란히 놓았다. 직접 비교해보시면 된다.
+아래에 같은 도식을 두 방식으로 나란히 놓았다. 직접 비교해보면 된다.
 
 ## 소재 — dotfiles 설치 스크립트의 분기
 
