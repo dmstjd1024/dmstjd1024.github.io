@@ -128,8 +128,9 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshenv
 검증은 다시 **같은 비대화식 조건**으로 했다.
 
 ```
-which: /Users/<user>/.local/bin/herdr
-ver: herdr 0.9.0
+$ ssh -o BatchMode=yes <맥미니> 'command -v herdr; herdr --version'
+/Users/<user>/.local/bin/herdr
+herdr 0.9.0
 ```
 
 ---
