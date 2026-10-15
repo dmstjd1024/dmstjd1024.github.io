@@ -39,14 +39,14 @@ card_thumbnail: "/assets/img/thumbnail/postgresql_card.png"
 {% include diagrams/ddl-auto--add-only.svg %}
 </div>
 
-- `update`는 **추가만** 함 — 새 테이블, 새 컬럼은 생성
+- `update`는 새 테이블·컬럼을 생성하며, **버전·방언에 따라 기존 컬럼 타입·길이도 변경할 수 있음**
 - 하지 않는 것
 
 | 작업 | ddl-auto: update | manual SQL |
 |---|---|---|
 | 새 테이블·컬럼 추가 | O | 불필요 |
 | ENUM 값 확장 | X | 필요 |
-| 컬럼 타입 MODIFY | X | 필요 |
+| 컬럼 타입 MODIFY | 버전·방언에 따라 가능 | 별도 검증 필요 |
 | nullable·DEFAULT 변경 | X | 필요 |
 | 인덱스 교체 | X | 필요 |
 | DROP COLUMN | X | 필요 |
