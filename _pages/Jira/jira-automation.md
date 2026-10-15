@@ -134,7 +134,7 @@ ORDER BY created ASC
 status = "In Progress" AND created <= -3d AND NOT (status CHANGED AFTER -3d)
 ORDER BY updated ASC
 
--- 5. 이번 스프린트에서 새로 들어온 이슈 (스프린트 중간 추가분)
+-- 5. 진행 중인 스프린트에 속하며 이번 주 생성된 이슈
 sprint IN openSprints() AND created >= startOfWeek()
 
 -- 6. 이번 릴리스에 포함될 미완료 이슈
