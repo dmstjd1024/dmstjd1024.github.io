@@ -32,7 +32,7 @@ Workflow를 트리거(실행)하는 특정 활동이나 규칙. ex) pull request
 - **Step**
 Job 안에서 순차적으로 실행되는 프로세스 단위. step에서 명령을 내리거나, action을 실행할 수 있다.
 - **Action**
-job을 구성하기 위한 step들의 조합으로 구성된 독립적인 명령. workflow의 가장 작은 빌드 단위이다. workflow에서 action을 사용하기 위해서는 action이 step을 포함해야 한다. action을 구성하기 위해서 레포지토리와 상호작용하는 커스텀 코드를 만들 수도 있다. 사용자가 직접 커스터마이징하거나, 마켓플레이스에 있는 action을 가져다 사용할 수도 있다.
+job의 step에서 `uses`로 호출하는 재사용 작업이다. Docker·JavaScript·Composite 세 형태가 있으며, 여러 step을 묶는 것은 Composite Action이다. action을 구성하기 위해서 레포지토리와 상호작용하는 커스텀 코드를 만들 수도 있다. 사용자가 직접 커스터마이징하거나, 마켓플레이스에 있는 action을 가져다 사용할 수도 있다.
 - **Runner**
 Gitbub Action Runner 어플리케이션이 설치된 머신으로, Workflow가 실행될 인스턴스
 
