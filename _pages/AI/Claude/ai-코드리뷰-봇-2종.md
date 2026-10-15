@@ -40,7 +40,7 @@ redirect_from:
 | 관용구 위반 | 차트 `option` 객체를 매 렌더 재생성 (useMemo 누락) |
 | 누락된 cleanup | 메모리 누수 3건 추가 발견 |
 | 레이스 컨디션 | 민감도 분석 로딩 순서 |
-| 가드 비대칭 | heatmap의 x축은 가드가 있는데 y축만 있음 |
+| 가드 비대칭 | heatmap의 y축에는 가드가 있으나 x축에는 없음 |
 | 중복 방어 | `escapeHtml`이 이미 정규화하는데 바깥에 `String()` 래퍼 |
 | 부작용 혼입 | `setGridRows` 업데이터 함수 안에서 다른 setState 호출 |
 | 도달 불가능한 분기 | `crumbOf`의 구분선 처리 |
