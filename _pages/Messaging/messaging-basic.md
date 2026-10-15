@@ -6,7 +6,7 @@ categories:
  - Messaging
 tags:
   - messaging
-  - kafka
+  - Kafka
   - Spring
   - Backend
 
