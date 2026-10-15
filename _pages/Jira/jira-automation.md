@@ -245,7 +245,7 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 트리거: 예약 (매일 오전 10시)
        JQL: status = "In Progress" AND created <= -3d AND NOT (status CHANGED AFTER -3d)
 액션: Slack 메시지 전송
-      "3일 넘게 진행 중: {{issue.key}} {{issue.summary}}"
+{% raw %}      "3일 넘게 진행 중: {{issue.key}} {{issue.summary}}"{% endraw %}
 ```
 
 앞에서 만든 4번 JQL을 그대로 쓴다. **JQL과 자동화는 이렇게 붙여 쓸 때 위력이 나온다.**
@@ -435,7 +435,7 @@ Slack에서 Incoming Webhook URL을 발급받고, 자동화 액션에 아래처�
       "type": "section",
       "text": {
         "type": "mrkdwn",
-        "text": "*<{{issue.url}}|{{issue.key}}: {{issue.summary}}>*\n담당자: {{issue.assignee.displayName}}"
+{% raw %}        "text": "*<{{issue.url}}|{{issue.key}}: {{issue.summary}}>*\n담당자: {{issue.assignee.displayName}}"{% endraw %}
       }
     }
   ]
