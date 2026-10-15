@@ -34,8 +34,8 @@ docker container run diamol/ch02-hello-diamol
 ### 컨테이너를 원격 컴퓨터처럼 사용하기
 
 `--tty` : 터미널 세션을 통해 컨테이너 조작
-`--ìnteractive` : 컨테이너에 접속된 상태
-`docker container run —interactive —ty diamol/base`
+`--interactive` : 컨테이너에 접속된 상태
+`docker container run --interactive --tty diamol/base`
 
 #### 실행중인 모든 컨테이너 정보
 `docker container ls`
@@ -51,11 +51,11 @@ docker container run diamol/ch02-hello-diamol
 
 ### 컨테이너 사용해 웹사이트 호스팅하기
 #### 상태 상관없이 모든 컨테이너의 목록 확인
-`docker container ls —all`
+`docker container ls --all`
 
 컨테이너 실행하고 백그라운드에서 계속 동작하게 하려면
 #### 간단한 웹사이트 호스팅
-`docker container run —detach —publish 8088:80 diamol/ch02-hello-diamol-web`
+`docker container run --detach --publish 8088:80 diamol/ch02-hello-diamol-web`
 - `--detach` : 컨테이너 백그라운드에서 실행
 - `--publish` : 컨테이너의 포트를 호스트 컴퓨터에 공개
 
