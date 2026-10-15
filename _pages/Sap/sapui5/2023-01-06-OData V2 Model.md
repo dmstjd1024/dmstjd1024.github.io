@@ -180,9 +180,9 @@ oModel.getProperty("/Customer('ALFKI')/Address")
 이 메소드들로 싱글엔티티들과 속성들을 엑세스 할 수 있다. 엔티티 집합들을 엑세스하면, 바인딩 목록으로 읽기 전용 엔티티들을 바인딩 컨텍스트로 가져올 수 있다. 이 메서드가 리턴한 값들은 JSON 모델 안에서 참조된 것이 아닌 카피된 데이터이다.
 
 ### 엔티티 생성
-`createEntity()` 메서드를 호출하면 명시된 엔티티 집합에 대한 엔티티들을 호출한다. 이 메서드는 새로 만들어진 엔티티를 가리키는 컨텍스트 객체를 반환한다.
+`createEntry()` 메서드를 호출하면 명시된 엔티티 집합에 대한 엔티티들을 호출한다. 이 메서드는 새로 만들어진 엔티티를 가리키는 컨텍스트 객체를 반환한다.
 
-이 어플리케이션은 이러한 객체들을 바인딩 할 수 있고 양뱡향으로 데이터들을 변경할 수 있다. `submitChanges()` 라고 불리는 메서드를 호출하면, OData 백앤드 안에 엔티티들을 저장한다. 변경을 초기화하려면 `deleteCreateEntry()` 함수를 부르면 된다. 
+이 어플리케이션은 이러한 객체들을 바인딩 할 수 있고 양뱡향으로 데이터들을 변경할 수 있다. `submitChanges()` 라고 불리는 메서드를 호출하면, OData 백앤드 안에 엔티티들을 저장한다. 변경을 초기화하려면 `deleteCreatedEntry()` 함수를 부르면 된다.
 ```
 var oContext = oModel.createEntry(
         "/Products",
@@ -201,7 +201,7 @@ oForm.setBindingContext(oContext); // 엔티티 바인딩
 
 oModel.submitChanges({success: mySuccessHandler, error: myErrorHandler}); // Odata 백앤드 안에 엔티티 저장
 
-entity oModel.deleteCreatedEntry(oContext); // 변경 취소 시 호출
+oModel.deleteCreatedEntry(oContext); // 변경 취소 시 호출
 ```
 만약 엔티티들을 submit 하면 컨텍스트는 모델에 import 된 새로운 데이터를 모델로 가져온다. 새로운 엔티티를 가리킨다.
 
@@ -283,7 +283,7 @@ OData는 optimistic한 동시성 제어를 HTTP ETags를 사용한다. ETag는 �
 
 ### XSRF Token
 
-CSRF 를 해결하기 위해 OData 서비스는 데이터 변경 시 XSRF 토큰을 필요로 한다. 이 경우 서버에서 가져온 토큰을 같이 서버에 보내야 하며 OData 모델은 메타데이터를 읽을때, XSRF 토큰을 가져와 header에 넣어 자동으로 토큰을 전송한다. 토큰이 유효하지 않을때엔, OData Model에서 refreshToken 함수를 호출하여 패치될 수 있다. 이 토큰은 루트 URL 서비스의 호출과 함께 가져오며 서비스 다큐먼트와 함께 응답한다. 유효한 토큰을 가져오려면 응답이 캐싱되지 않았는지 확인해야한다.
+CSRF 를 해결하기 위해 OData 서비스는 데이터 변경 시 XSRF 토큰을 필요로 한다. 이 경우 서버에서 가져온 토큰을 같이 서버에 보내야 하며 OData 모델은 메타데이터를 읽을때, XSRF 토큰을 가져와 header에 넣어 자동으로 토큰을 전송한다. 토큰이 유효하지 않을때엔, OData Model에서 refreshSecurityToken 함수를 호출하여 패치될 수 있다. 이 토큰은 루트 URL 서비스의 호출과 함께 가져오며 서비스 다큐먼트와 함께 응답한다. 유효한 토큰을 가져오려면 응답이 캐싱되지 않았는지 확인해야한다.
 
 ### 모델의 새로고침
 
@@ -299,7 +299,7 @@ ODataModel v2는 2가지 다른 방법으로 batch processing을 지원한다.
 
 모델이 요청을 다루는 방법은 결정할 수 없다. 그래서 SAPUI5는 groupId를 제공한다. 각각의 컨텍스트와 바인딩 리스트 그리고 각각 메뉴얼 요청들에 그룹 아이디를 지정할 수 있다. 같은 그룹안에 속하는 모든 요청들은 하나의 요청 안에서 다뤄질 수 있다. 그룹아이디가 없는 요청은 기본 배치 그룹 안에서 다뤄진다. 변경을 위해 chageSetId 를 사용할 수 있다. 같은 changeSetId에 포함된 각 변경들은 배치 요청안에서 하나의 changeSet으로 다뤄진다. 기본적으로, 모든 변화들은 고유의 changeSet을 가진다.
 
-`setDefiredGroup()` 메서드를 사용하여 이전에 정의된 그룹의 서브셋을 지연으로 설정할 수 있다. (`setChangeGroups()` , `getChangeGroups()` 에도 동일 시 적용)
+`setDeferredGroups()` 메서드를 사용하여 이전에 정의된 그룹의 서브셋을 지연으로 설정할 수 있다. (`setChangeGroups()` , `getChangeGroups()` 에도 동일 시 적용)
 
 그룹에 속한 모든 요청들은 요청 queue안에 저장된다. 
 지연된 배치 그룹은 `submitChanges()` 메소드를 통해 메뉴얼적으로 전송되어야한다. 만약 `submitChanges()`를 호출할 때 배치 그룹아이디를 명시하지 않으면, 모든 지연된 배치 그룹들이 전송된다.
@@ -315,7 +315,7 @@ ODataModel v2는 2가지 다른 방법으로 batch processing을 지원한다.
 	1. 그룹 가져오기
 		var aDeferredGroups = oModel.getDeferredGroups();
 	2. 리스트에 그룹 아이디 추가
-		aDeferredGroups = aaDeferredGroups.concat(["myId"]);
+		aDeferredGroups = aDeferredGroups.concat(["myId"]);
 	3. 지연된 모든 그룹들을 설정
 		oModel.setDeferredGroups(aDeferredGroups);
 	4. 지연된 모든 그룹 전송
@@ -460,7 +460,7 @@ ODataModel은 `callFunction()` 메소드에 의해 임포트나 또는 액션 �
 oModel.callFunction("/GetProductsByRating",{method:"GET", urlParameters:{"rating":3}, success:fnSuccess, error: fnError})
 ```
 
-만약 `callFunction()` 요청이 지연되면, `submitChangesmethod()`를 통해 전송되어 질 수 있다.
+만약 `callFunction()` 요청이 지연되면, `submitChanges()`를 통해 전송되어 질 수 있다.
 
 #### 파라미터를 가져오는 함수의 바인딩
 
