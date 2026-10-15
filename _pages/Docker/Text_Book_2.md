@@ -33,30 +33,35 @@ docker container run --env TARGET=google.com diamol/ch03-web-ping
 ## Dockerfile 작성하기
 web-ping 애플리케이션 Dockerfile 스크립트
 ```docker
-FROM diamol/node -- 이미지 시작점 (web-ping 어플리케이션 실행위한 런타임 Node.js)
+# 이미지 시작점 (web-ping 어플리케이션 실행위한 런타임 Node.js)
+FROM diamol/node
 
-ENV TARGET="도메인" -- 환경 변수 값을 지정하기 위한 인스크럭션
+# 환경 변수 값을 지정하기 위한 인스크럭션
+ENV TARGET="도메인"
 ENV METHOD="HEAD"
 ENV INTERVAL="3000"
 
-WORKDIR /web-ping -- 해당 디렉터리를 작업 디렉토리로 지정
-COPY app.js . -- 로컬 파일 시스템의 파일 혹은 디렉터리를 컨테이너 이미지로 복사하는 인스트럭션
+# 해당 디렉터리를 작업 디렉토리로 지정
+WORKDIR /web-ping
+# 로컬 파일 시스템의 파일 혹은 디렉터리를 컨테이너 이미지로 복사하는 인스트럭션
+COPY app.js .
 
-CMD ["node", "/web-ping/app.js"] -- 컨테이너가 시작될 때 실행할 명령어를 지정하는 인스트럭션
+# 컨테이너가 시작될 때 실행할 명령어를 지정하는 인스트럭션
+CMD ["node", "/web-ping/app.js"]
 ```
 
 ## 컨테이너 이미지 빌드하기
 이미지 빌드를 위해선, 이미지 이름, 파일 경로 추가 지정해줘야함
 ```docker
 docker image build --tag web-ping .
--- tag 옵션은 이미지 이름을 지정하는 옵션
--- .은 현재 디렉터리에서 Dockerfile을 찾겠다는 의미
+# tag 옵션은 이미지 이름을 지정하는 옵션
+# .은 현재 디렉터리에서 Dockerfile을 찾겠다는 의미
 ```
 ※문제 발생 시, 도커 엔진 -> 현재 작업 디렉토리 -> build 명령어 정확한지 확인
 
 이미지 목록 확인
 ```docker
-docker image ls 'w*' -- w로 시작하는 이미지 목록
+docker image ls 'w*' # w로 시작하는 이미지 목록
 ```
 
 ## 도커 이미지와 이미지 레이어 이해하기
@@ -106,5 +111,6 @@ ENV TARGET="도메인"
     INTERVAL="3000"
 
 WORKDIR /web-ping
-COPY app.js . ## 현재 명령어 빼고 모든 레이어를 캐시에서 재사용
+# 현재 명령어 빼고 모든 레이어를 캐시에서 재사용
+COPY app.js .
 ```
