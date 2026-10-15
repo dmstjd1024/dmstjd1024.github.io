@@ -35,8 +35,8 @@ card_thumbnail: "/assets/img/thumbnail/nginx_card.png"
 | +3~5 | 대시보드 · Grafana · Prometheus |
 | +6~9 | Besu RPC · WS · Blockscout · Fabric Explorer |
 
-블록체인 쪽(+6~9)은 프로토콜이 제각각이라 포트를 따로 써야 한다. 줄일 수 있는 건
-**관측 도구 3종**뿐이었다.
+이 프로젝트에서는 블록체인 쪽(+6~9)을 별도 포트로 노출하고,
+**관측 도구 3종**을 Ingress로 모았다.
 
 ## NodePort 대신 Ingress
 
@@ -48,8 +48,8 @@ card_thumbnail: "/assets/img/thumbnail/nginx_card.png"
 | 3종 노출 시 | 포트 3개 | **포트 1개** |
 | 필요한 것 | 없음 | Ingress 컨트롤러 |
 
-Ingress 는 **HTTP 레벨에서 경로를 보고 뒤로 넘겨주는** 문지기다. 웹(HTTP)이라 가능한 방식이고,
-그래서 관측 도구 3종에는 되지만 블록체인 RPC 에는 안 맞는다.
+Ingress 는 **HTTP 레벨에서 경로를 보고 뒤로 넘겨주는** 문지기다. Besu RPC도 HTTP·WebSocket을
+지원하므로 프로토콜상 불가능한 것은 아니다. 여기서는 관측 도구 3종에만 적용했다.
 
 결과적으로 이렇게 들어간다.
 
@@ -221,7 +221,7 @@ bash "$SCRIPT_DIR/12-install-ingress-controller.sh" ... || {
 ## 정리
 
 - 포트가 회사당 10개뿐이라 **관측 도구 3종을 Ingress 경로로 몰았다** — 포트 3개 → 1개
-- 블록체인 RPC 는 HTTP 가 아니라 이 방식을 못 쓴다. 그래서 포트를 따로 갖는다
+- Besu RPC도 HTTP·WebSocket을 지원하지만, 이 프로젝트에서는 별도 포트로 노출했다
 - **경로 재작성이 필수다.** 뒷단 앱은 자기가 `/` 아래 있다고 생각하기 때문
 - `(/|$)` 로 **슬래시 없는 요청**까지 받고, `pathType: ImplementationSpecific` 이라야
   정규식이 해석된다
