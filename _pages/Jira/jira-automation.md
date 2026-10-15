@@ -131,7 +131,7 @@ project = SHOP AND assignee IS EMPTY AND status = "To Do"
 ORDER BY created ASC
 
 -- 4. 3일 넘게 진행 중인 이슈 (막혀 있을 가능성)
-status = "In Progress" AND status CHANGED BEFORE -3d
+status = "In Progress" AND created <= -3d AND NOT (status CHANGED AFTER -3d)
 ORDER BY updated ASC
 
 -- 5. 이번 스프린트에서 새로 들어온 이슈 (스프린트 중간 추가분)
@@ -154,7 +154,7 @@ reporter = currentUser() AND resolution = Unresolved
 assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 ```
 
-4번 쿼리가 특히 쓸모 있다. `status CHANGED BEFORE -3d`는 "3일 전에 이미 진행 중으로 바뀌었고 아직 그대로"라는 뜻이라, **막혀 있는 작업**을 찾아준다.
+4번 쿼리는 생성된 지 3일 이상 지났고, 현재 진행 중이면서 최근 3일 동안 상태 변경이 없던 이슈를 찾는다. `status CHANGED BEFORE -3d`만 쓰면 과거의 오래된 변경 이력 때문에 오늘 다시 진행 중이 된 이슈도 포함될 수 있다.
 
 ## 필터로 저장하기
 
@@ -243,7 +243,7 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 
 ```
 트리거: 예약 (매일 오전 10시)
-       JQL: status = "In Progress" AND status CHANGED BEFORE -3d
+       JQL: status = "In Progress" AND created <= -3d AND NOT (status CHANGED AFTER -3d)
 액션: Slack 메시지 전송
       "3일 넘게 진행 중: {{issue.key}} {{issue.summary}}"
 ```
