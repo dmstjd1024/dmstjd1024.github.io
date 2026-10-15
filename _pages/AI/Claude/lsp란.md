@@ -204,6 +204,6 @@ Dart 는 사정이 또 달랐다. Flutter 를 지우면 같이 사라지는데, 
 - 켜져 있어도 **평소엔 안 돈다.** 그 언어 파일을 열 때만 뜬다
 
 같이 읽을 글:
-[MCP 12개, 도구 251개](/AI/Claude/mcp-12개-무엇을-왜-붙였나.html) ·
+[MCP 12개, 도구 281개](/AI/Claude/mcp-12개-무엇을-왜-붙였나.html) ·
 [OMC 란](/AI/Claude/omc란.html) ·
 [Claude Code 설정을 맥 4대에 나눠 담기](/AI/Claude/claude-code-셋업-계층과-플러그인.html)
