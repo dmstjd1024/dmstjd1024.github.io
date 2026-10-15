@@ -65,10 +65,10 @@ jobs:
         uses: actions/checkout@v2       # Step에서 사용할 액션 (Github 마켓플레이스 action 사용가능)
 
       - name: My First Step             # step 이름
-        run:                            # job에 할당된 자원 shell 이용하여 커맨드 라인 실행
+        run: |                          # job에 할당된 자원 shell 이용하여 커맨드 라인 실행
           npm install
           npm test
-          npm build
+          npm run build
       - name: Cache yarn dependencies
         uses: actions/cache@v1
         id: yarn-cache
