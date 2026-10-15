@@ -307,9 +307,9 @@ function UserListItem(props) {
 
 ```jsx
 function CheckUserStatus(props) {
-    / ** Custom Hook을 사용하여 사용자 상태를 관리하는 예시
+    // Custom Hook을 사용하여 사용자 상태를 관리하는 예시
     const [userId, setUserId] = useState(1);
     const isUserOnline = useUserStatus(userId);
-    / ** 으로 하면, 이전에 선택된 사용자를 취소하고, 새로운 사람의 상태를 다시 구독한다.
+    // userId가 바뀌면 이전 사용자의 구독을 해제하고 새 사용자를 구독하도록 훅을 구현한다.
 }
 ```
