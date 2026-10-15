@@ -56,7 +56,7 @@ card_thumbnail: "/assets/img/thumbnail/aws_card.jpeg"
 - 개발자가 라우팅 커스터마이징 가능
 
 ### NLB(네트워크 로드 밸런서)
-- Network OSI Layer 에서 작동. TCP/UDP 트래픽을 처리하며, 높은 성능과 낮은 지연 시간 제공
+- Transport OSI Layer(L4) 에서 작동. TCP/UDP 트래픽을 처리하며, 높은 성능과 낮은 지연 시간 제공
 
 ### CLB(클래식 로드 밸런서)
 - 가장 오래된 로드 밸런서로, HTTP/HTTPS 및 TCP 트래픽을 처리. ALB와 NLB에 비해 기능이 제한적이며, 현재는 사용이 권장되지 않음
