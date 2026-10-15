@@ -6,8 +6,8 @@ description: "GIT_CONFIG_* 로 덮어써도 textconv·filter·gpg.program 이 �
 categories:
   - AI
 tags:
-  - codex
-  - git
+  - Codex
+  - Git
   - 코드리뷰
   - Docker
   - 보안
