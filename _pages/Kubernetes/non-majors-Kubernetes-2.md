@@ -126,8 +126,8 @@ kubectl get services      # 축약: kubectl get svc
 kubectl port-forward service/spring-service 8080:8080
 ```
 
-파드에 직접 걸었을 때와 다른 점은, **파드가 죽었다 살아나도 그대로 동작한다**는 것이다.
-서비스는 파드가 바뀌어도 같은 주소를 유지해주기 때문이다.
+서비스 주소는 파드가 바뀌어도 유지된다. 다만 **`port-forward`는 서비스가 고른 파드 하나에 연결**하므로,
+그 파드가 종료되면 명령을 다시 실행해야 한다.
 
 ### 포트 2개가 헷갈릴 때
 
