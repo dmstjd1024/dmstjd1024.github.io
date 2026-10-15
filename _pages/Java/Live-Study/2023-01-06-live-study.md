@@ -111,7 +111,7 @@ class loader를 통해 배치된 클래스를 실행시킨다.
 
 - Runtime Data Area
 
-Excution Engine에게 해석된 프로그램은 Runtime Data Area에 배치되어 돌아간다. 이 때 Runtime Data Area는 3가지 구조를 갖는다.
+Excution Engine에게 해석된 프로그램은 Runtime Data Area에 배치되어 돌아간다. 아래에서는 Runtime Data Area의 네 영역을 정리한다.
 
 1. Method Area : 클래스영역으로 인터페이스, 클래스, 메소드, 필드 등의 모든 정보가 들어가 있다. 여기는 모든 쓰레드들이 공유하며 new를 통해 동적으로 생성 시 저장되므로 Garbage Collector 의 대상이다.
 2. Heap : 클래스 인스턴스와 배열을 할당하는 공간으로 Garbage Collector의 대상이다. 모든 쓰레드가 공유하며, JVM 명세는 내부 배치나 수거 알고리즘을 지정하지 않는다.
