@@ -76,7 +76,7 @@ kubectl_with_retry() {
 
 - 일괄 단일값의 문제: 짧은 쪽은 실패 인지 지연, 긴 쪽은 정상 작업 중단
 
-### 3. heredoc이 범인이었다
+### 3. heredoc을 printf로 바꿨다
 
 - 가장 뜻밖의 발견 — pod 안 설정 파일 생성을 위해 `kubectl exec`에 heredoc 사용 중
 
@@ -90,9 +90,9 @@ CONFIGEOF
 "
 ```
 
-- `kubectl exec`의 stdin 스트리밍 + heredoc 조합 → hang 발생 가능
-- heredoc은 종료 마커를 만날 때까지 stdin을 읽음
-- 원격 셸이 그 stdin 스트림을 언제 닫을지 미보장
+- 위 코드는 heredoc 본문까지 `sh -c`의 문자열 인수로 전달
+- 원격 셸이 그 문자열에서 종료 마커를 읽으므로 `kubectl`의 stdin 스트리밍을 사용하지 않음
+- 따라서 이 코드만으로 stdin 종료 신호가 hang의 원인이었다고 단정할 수는 없음
 
 - 조치: `printf` 한 줄로 변경
 
@@ -101,9 +101,9 @@ printf 'NodeOUs:\n  Enable: true\n  ClientOUIdentifier:\n    Certificate: cacert
 ```
 
 - 대가: 가독성 저하
-- 이득: stdin 미사용 → hang 여지 소멸
+- 변경 사실: 같은 내용을 `printf`로 생성하도록 전환
 
-스크립트가 멈추는 것보다는 한 줄이 긴 게 낫다.
+명령을 바꾼 사실과 hang의 원인 설명은 구분해야 한다.
 
 ### 4. 재시도에 검증을 붙였다
 
