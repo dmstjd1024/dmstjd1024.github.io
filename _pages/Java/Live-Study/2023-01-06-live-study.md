@@ -116,7 +116,7 @@ Excution Engine에게 해석된 프로그램은 Runtime Data Area에 배치되�
 1. Method Area : 클래스영역으로 인터페이스, 클래스, 메소드, 필드 등의 모든 정보가 들어가 있다. 여기는 모든 쓰레드들이 공유하며 new를 통해 동적으로 생성 시 저장되므로 Garbage Collector 의 대상이다.
 2. Heap : 클래스 인스턴스와 배열을 할당하는 공간으로 Garbage Collector의 대상이다. 모든 쓰레드가 공유하며, JVM 명세는 내부 배치나 수거 알고리즘을 지정하지 않는다.
 3. JVM Stacks : 호출스택이라 불리며 메소드가 실행 시 필요한 공간을 제공, 매개변수나 지역변수 등의 임시데이터를 저장한다. 메소드가 끝나면 메모리공간은 반환된다. 쓰레드마다 1개 씩 갖는다.
-4. PC Registers : 일종의 스택으로서 Thread 생성될 때의 공간으로 Thread가 어떠한 명령을 실행하게 될지에 대한 부분을 기록한다. Java는 Stacks-Base 방식으로 작동하는데 JVM은 CPU에 직접 Instruction을 수행하지 않고 Stack에서 Operand를 뽑아내 이를 별도의 메모리 공간에 저장하는 방식을 취하는데 이 공간을 PC라고 한다.
+4. PC Registers : 쓰레드마다 하나씩 가지며, 현재 실행 중인 JVM 명령의 주소를 기록한다. native 메서드를 실행 중이면 값은 정의되지 않는다. 피연산자는 각 프레임의 operand stack에서 다룬다.
 
 <div class="diagram" role="img" aria-label="Runtime Data Area 네 영역의 공유 여부와 GC 대상 여부">
 {% include diagrams/live-study--runtime-data-area.svg %}

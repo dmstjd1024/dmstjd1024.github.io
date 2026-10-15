@@ -26,7 +26,7 @@
 
   <rect class="dg-row" x="376" y="250" width="300" height="72" rx="8"/>
   <text class="dg-t" x="396" y="274">PC Registers</text>
-  <text class="dg-v" x="396" y="296">다음에 실행할 명령을 기록</text>
+  <text class="dg-v" x="396" y="296">현재 실행 중인 JVM 명령 주소</text>
   <text class="dg-s" x="396" y="314">쓰레드가 생길 때 만들어진다</text>
 
   <text class="dg-s" x="24" y="366">공유 영역은 GC 가 치우고, 쓰레드 전용 영역은 끝나면 알아서 사라진다</text>
