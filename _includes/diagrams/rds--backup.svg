@@ -9,7 +9,7 @@
   <text class="dg-v" x="150" y="118">RDS 가 자동으로</text>
   <rect class="dg-row" x="44" y="138" width="288" height="34" rx="6"/>
   <text class="dg-k" x="60" y="160">보관 기간</text>
-  <text class="dg-v" x="150" y="160">7 ~ 35일 설정</text>
+  <text class="dg-v" x="150" y="160">0~35일 (0: 끔)</text>
   <rect class="dg-warn" x="44" y="180" width="288" height="46" rx="6"/>
   <text class="dg-k" x="60" y="202">인스턴스 삭제 시</text>
   <text class="dg-v" x="60" y="220">백업도 함께 사라진다</text>
