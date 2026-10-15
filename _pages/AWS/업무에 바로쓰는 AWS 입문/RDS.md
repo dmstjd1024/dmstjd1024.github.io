@@ -45,7 +45,7 @@ card_thumbnail: "/assets/img/thumbnail/aws_card.jpeg"
 - 0~35일 설정(0은 자동 백업 비활성화, 콘솔 기본값은 7일), 스냅샷과 트랜잭션 로그 생성
 - (RDS 백업 크기 == S3 백업 크기) = 무료
 - 백업중 I/O 작업 suspension
-- RDS 인스턴스 삭제 시, 백업 정보 모두 삭제
+- RDS 인스턴스 삭제 시, 자동 백업은 유지 여부를 선택하며 수동·최종 스냅샷은 남음
 
 ## 스냅샷 (Snapshot)
 - 수동으로 생성, 백업 크기만큼 S3에 저장
