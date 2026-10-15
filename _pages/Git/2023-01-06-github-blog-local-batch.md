@@ -31,7 +31,7 @@ redirect_from:
 ### 코드
 
 ```sh
-cd C:\Ruby26-x64\bin\setrbvars.cmd
+cd /d C:\Ruby26-x64\bin
 call setrbvars.cmd
 cd 클론해온 리포지터리경로\리포지터리 이름
 bundle exec jekyll serve
