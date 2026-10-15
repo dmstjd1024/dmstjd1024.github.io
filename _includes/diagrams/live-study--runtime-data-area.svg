@@ -9,7 +9,7 @@
   <rect class="dg-lead" x="44" y="106" width="316" height="72" rx="8"/>
   <text class="dg-t" x="64" y="130">Method Area</text>
   <text class="dg-v" x="64" y="152">클래스 · 인터페이스 · 메서드 · 필드 정보</text>
-  <text class="dg-b" x="64" y="170">GC 대상</text>
+  <text class="dg-b" x="64" y="170">GC 정책은 구현별</text>
 
   <rect class="dg-lead" x="376" y="106" width="300" height="72" rx="8"/>
   <text class="dg-t" x="396" y="130">Heap</text>
@@ -29,5 +29,5 @@
   <text class="dg-v" x="396" y="296">현재 실행 중인 JVM 명령 주소</text>
   <text class="dg-s" x="396" y="314">쓰레드가 생길 때 만들어진다</text>
 
-  <text class="dg-s" x="24" y="366">공유 영역은 GC 가 치우고, 쓰레드 전용 영역은 끝나면 알아서 사라진다</text>
+  <text class="dg-s" x="24" y="366">Method Area 관리는 구현별이며, Heap 은 GC 가 관리한다</text>
 </svg>
