@@ -68,7 +68,7 @@ card_thumbnail: "/assets/img/thumbnail/aws_card.jpeg"
 
 ## 읽기 전용 (Read Replica)
 - 읽기 전용 인스턴스 생성, 원본 인스턴스에 대한 읽기 작업을 분산시켜 성능 향상
-- 복제본 개수는 최대 5개
+- 복제본 개수는 엔진별로 다르며, MySQL·MariaDB·PostgreSQL은 최대 15개
 
 ## 캐시로 성능 향상(엘라스틱캐시)
 
