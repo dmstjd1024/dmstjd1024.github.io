@@ -121,17 +121,17 @@ function Counter(props) {
 ```jsx
 import React, {useState, useEffect} from "react";
 
-function UserStatus(pros) {
+function UserStatus(props) {
     const [isOnline, setIsOnline] = useState(null);
     
     function handleStatusChange(status) {
-        seInOnline(status.isOnline);
+        setIsOnline(status.isOnline);
     }
     
     useEffect( () => {
         ServerAPI.subscribeUserStatus(props.userId, handleStatusChange);
         return () => {
-            ServerAPI.unsubscribeUserStatus(props.user.id, handleStatusChange);
+            ServerAPI.unsubscribeUserStatus(props.userId, handleStatusChange);
         };
     });
     
@@ -151,7 +151,7 @@ function UserStatusWithCounter(props) {
     
     const [isOnline, setIsOnline] = useState(null);
     useEffect(() => {
-    ServerAPI.subscribeUserStatus(props.userId, handleStatusChange);)
+    ServerAPI.subscribeUserStatus(props.userId, handleStatusChange);
         return () => {
             ServerAPI.unsubscribeUserStatus(props.userId, handleStatusChange);
         };
