@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="차트가 컨테이너를 재고 그린 결과가 max-content 컬럼을 밀어 컨테이너가 넓어지고 차트가 다시 재측정하는 순환">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="차트가 컨테이너를 재고 그린 결과가 auto 컬럼을 밀어 컨테이너가 넓어지고 차트가 다시 재측정하는 순환">
   <marker id="fac-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
     <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
   </marker>
