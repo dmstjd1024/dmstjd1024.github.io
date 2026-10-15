@@ -222,7 +222,7 @@ const memoizedCallback = useCallback(
 ```jsx
 const refContainer = useRef(null);
 ```
-컴포넌트가 mount 되기 전까지 계속 유지된다.
+같은 컴포넌트가 마운트된 동안 리렌더 사이에서 동일한 ref 객체가 유지된다.
 ```jsx
 function TextInputWithFocusButton() {
     const inputEl = useRef(null);
