@@ -124,8 +124,7 @@ $ ls -la /usr/bin/clangd /usr/bin/sourcekit-lsp
 -rwxr-xr-x  root  13 Aug 11:51  /usr/bin/sourcekit-lsp
 ```
 
-Dart 는 더 명확했다. `brew list | grep dart` 의 결과가 **`flutter`** 였다. Dart 를 깐 게
-아니라 Flutter 가 Dart 로 만들어져서 딸려온 것이다.
+Dart SDK는 **Flutter SDK에 포함**돼 함께 설치된 것이었다.
 
 **"내가 쓰는 언어" 가 아니라 "내 컴퓨터에 이미 있던 것" 이 켜져 있었다.**
 
