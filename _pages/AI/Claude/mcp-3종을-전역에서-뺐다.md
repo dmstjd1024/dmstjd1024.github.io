@@ -125,7 +125,7 @@ Claude 바깥 터미널에서 다시 띄워 해결했다.
 herdr server stop && zsh -lc 'nohup herdr server >/tmp/herdr-server.log 2>&1 &'
 ```
 
-`zsh -lc` 로 로그인 셸을 거치는 건 그 세션의 환경을 물려받지 않기 위해서다.
+해결한 조건은 Claude 바깥 터미널에서 실행한 것이었다. `zsh -lc`로 로그인 셸을 거쳐도 부모가 내보낸 환경변수는 그대로 상속한다.
 
 하나 더 있었다. 작업 폴더가 홈인 판은 복원할 때 **폴더 신뢰 확인창**이 뜬다.
 기본 선택이 "No, exit" 라서 **Enter 를 누르면 Claude 가 꺼진다.**
