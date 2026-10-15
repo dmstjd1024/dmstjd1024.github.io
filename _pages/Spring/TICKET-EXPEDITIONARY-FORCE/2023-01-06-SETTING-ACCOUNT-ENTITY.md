@@ -83,10 +83,10 @@ Lob은 Large Obejct란 뜻으로 프로필사진같은 경우 데이터가 크�
   데이터를 안정성 때문이다. -> 만약 이미지 경로로 지정해놨을 때 실수로 이미지 경로의 파일들이
   사라지는 경우 이미지파일을 찾을 수 없게되기 때문이다.
 
-@Enumerated(EnumType.String)
+@Enumerated(EnumType.STRING)
 
-Entity에선 enum을 db에 저장할 땐 default로 EnumType.ORIGINAL로 지정되있다. 이때 ORIGINAL로 저장하면
-DB에 순서 enum의 순서를 정수로 저장하는데 이는 나중에 db를 볼때 1, 2, 3 등등으로 저장되기에
+Entity에선 enum을 db에 저장할 땐 default로 EnumType.ORDINAL로 지정되있다. 이때 ORDINAL로 저장하면
+DB에 enum의 순서를 0부터 시작하는 정수로 저장하는데 이는 나중에 db를 볼때 0, 1, 2 등등으로 저장되기에
 식별하기가 어려워 enum의 이름을 직접 저장하도록 string을 사용했다.
 
 <div class="diagram" role="img" aria-label="EnumType ORDINAL 과 STRING 의 저장 방식 차이">
