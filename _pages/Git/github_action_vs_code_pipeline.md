@@ -51,8 +51,8 @@ on:                                     # 트리거 하는 이벤트 명시
     branches: [ master ]
     paths:                            # 특정 패턴을 설정하여 변경되었을 때 이벤트 실행
       - "**.js"
-    schedule:
-        - cron: '0 01 * * *'              # 새벽 1시 (https://crontab.guru 참조)
+  schedule:
+    - cron: '0 01 * * *'                  # UTC 01:00 (한국 시간 10:00)
 jobs:
   build:
     strategy:
