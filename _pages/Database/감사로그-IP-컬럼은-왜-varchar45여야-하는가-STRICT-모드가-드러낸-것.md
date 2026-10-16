@@ -56,9 +56,9 @@ aws rds modify-db-parameter-group --region ap-northeast-2 \
 
 마지막 줄의 `ApplyMethod=immediate`가 "재부팅 기다리지 말고 지금 바꾼다"는 뜻이다. 되돌릴 때 값 목록에서 `STRICT_TRANS_TABLES`만 빼면 된다.
 
-## 켜기 전에 폭 여유를 조사했다
+## dev의 varchar 컬럼을 조사했다
 
-STRICT를 켜면 지금까지 조용히 잘리던 INSERT가 전부 에러로 바뀐다. 그래서 dev의 varchar 컬럼 305개를 엔티티 매핑과 교차해서 훑었다.
+확인 당시 dev에는 STRICT_TRANS_TABLES가 설정돼 있었고, IPv6 INSERT 테스트에서 ERROR 1406이 났다. dev의 varchar 컬럼 305개를 엔티티 매핑과 교차해 훑었다.
 
 | 방어선 | 개수 | STRICT에서 |
 |---|---|---|
