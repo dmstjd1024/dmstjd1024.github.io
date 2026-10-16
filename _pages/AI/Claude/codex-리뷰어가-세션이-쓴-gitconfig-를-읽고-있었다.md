@@ -50,7 +50,7 @@ git 설정 파일에는 값만 들어 있지 않다. 몇몇 키는 git 이 작�
 
 먼저 안전 설정 인자 `_GIT_SAFE_ARGS` 를 `_git_args_as_env` 로 바꿔, `GIT_CONFIG_*` 환경변수(`GIT_CONFIG_COUNT`·`GIT_CONFIG_KEY_n`·`GIT_CONFIG_VALUE_n` 으로 설정을 넘기는 방식)로 codex 에 넘겼다. 이렇게 넘긴 설정은 `-c` 와 같은 수준이라 저장소 설정보다 우선한다.
 
-그런데 textconv·filter·gpg.program 경로가 아직 남는다는 지적이 다시 나왔다. 이 경로들이 남는 구체적인 이유는 정리 노트에 기록하지 않았다.
+그런데 textconv·filter·gpg.program 경로가 아직 남는다는 지적이 다시 나왔다. 이 경로들이 왜 남는지는 그 자리에서 따로 확인하지 않았다.
 
 ### 2차 대응: diff 를 리뷰어 바깥에서 만든다
 
