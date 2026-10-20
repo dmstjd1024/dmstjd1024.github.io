@@ -85,6 +85,18 @@
     color:var(--fg);
   }
 
+  &__snip {
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+    line-height:1.5;
+
+    mark {
+      background:none;
+      color:var(--fg);
+      font-weight:600;
+    }
+  }
+
   &__hint {
     padding:.6rem 1rem;
     border-top:1px solid var(--border);

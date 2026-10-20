@@ -60,13 +60,22 @@
     timer = setTimeout(run, 120);
   });
 
+  // 맞은 자리 앞뒤를 잘라내고, 맞은 말만 강조한다.
+  function excerpt(body, pos, len) {
+    var start = Math.max(0, pos - 40);
+    var head = (start > 0 ? '…' : '') + body.slice(start, pos);
+    var tail = body.slice(pos + len, pos + len + 60);
+    if (pos + len + 60 < body.length) tail += '…';
+    return esc(head) + '<mark>' + esc(body.slice(pos, pos + len)) + '</mark>' + esc(tail);
+  }
+
   function run() {
     var q = input.value.trim().toLowerCase();
     if (!q) { out.innerHTML = ''; hint.textContent = '제목과 본문에서 찾습니다.'; return; }
     if (!index) { hint.textContent = '불러오는 중…'; load().then(run); return; }
 
-    // 인덱스에는 제목/경로/태그만 있다. 본문까지 넣으면 인덱스가 수백 KB 로
-    // 커져서, 검색 대상은 이 셋으로 둔다.
+    // 제목 > 태그 > 경로 > 본문 순으로 매긴다. 본문은 코드블록을 뺀 것이고,
+    // 맞은 자리 앞뒤를 잘라 결과에 함께 보여준다.
     var hits = [];
     for (var i = 0; i < index.length && hits.length < 20; i++) {
       var it = index[i];
@@ -74,7 +83,9 @@
       var pos = it.title.toLowerCase().indexOf(q);
       if (pos > -1) { hits.push({ it: it, rank: pos === 0 ? 0 : 1 }); continue; }
       if ((it.tags || '').toLowerCase().indexOf(q) > -1) { hits.push({ it: it, rank: 2 }); continue; }
-      if ((it.path || '').toLowerCase().indexOf(q) > -1) hits.push({ it: it, rank: 3 });
+      if ((it.path || '').toLowerCase().indexOf(q) > -1) { hits.push({ it: it, rank: 3 }); continue; }
+      var bpos = (it.body || '').toLowerCase().indexOf(q);
+      if (bpos > -1) hits.push({ it: it, rank: 4, snip: excerpt(it.body, bpos, q.length) });
     }
     hits.sort(function (a, b) { return a.rank - b.rank; });
 
@@ -82,7 +93,9 @@
     out.innerHTML = hits.map(function (h) {
       return '<li><a href="' + h.it.url + '">' +
              '<span class="search__cat">' + esc(h.it.path || '') + '</span>' +
-             '<span class="search__title">' + esc(h.it.title) + '</span></a></li>';
+             '<span class="search__title">' + esc(h.it.title) + '</span>' +
+             (h.snip ? '<span class="search__snip">' + h.snip + '</span>' : '') +
+             '</a></li>';
     }).join('');
   }
 })();

@@ -36,6 +36,22 @@ sitemap: false
 
   {%- unless first -%},{%- endunless -%}
   {%- assign first = false -%}
-{"title":{{ p.title | jsonify }},"path":{{ p_link | jsonify }},"type":"{{ p_type }}","tags":{{ p.tags | join: ', ' | jsonify }},"url":{{ p.url | prepend: site.baseurl | jsonify }},"image":{{ thumbnail_url | jsonify }},"date":"{{ p.date | date: '%Y-%m-%d' }}"}
+  {%- assign p_body = '' -%}
+  {%- if p_type != 'category' -%}
+    {%- assign fence_split = p.content | split: '<div class="highlight">' -%}
+    {%- for chunk in fence_split -%}
+      {%- if forloop.first -%}
+        {%- assign p_body = p_body | append: chunk -%}
+      {%- else -%}
+        {%- assign after_fence = chunk | split: '</pre></div></div>' -%}
+        {%- if after_fence.size > 1 -%}
+          {%- assign p_body = p_body | append: ' ' | append: after_fence.last -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- assign p_body = p_body | strip_html | replace: '&gt;', ' ' | replace: '&lt;', ' ' | replace: '&amp;', ' ' | replace: '&quot;', ' ' | replace: '&#39;', ' ' | newline_to_br | replace: '<br />', ' ' | normalize_whitespace | strip -%}
+  {%- endif -%}
+
+{"title":{{ p.title | jsonify }},"path":{{ p_link | jsonify }},"type":"{{ p_type }}","tags":{{ p.tags | join: ', ' | jsonify }},"url":{{ p.url | prepend: site.baseurl | jsonify }},"image":{{ thumbnail_url | jsonify }},"date":"{{ p.date | date: '%Y-%m-%d' }}","body":{{ p_body | jsonify }}}
 {%- endfor -%}
 ]
