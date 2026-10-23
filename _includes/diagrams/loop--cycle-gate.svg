@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="세션은 구현과 커밋만 하고, 태스크를 잡는 일과 done 을 찍는 일은 양쪽 끝에서 CLI 가 맡는다">
+  <marker id="lcg-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+    <path d="M0 0 L10 5 L0 10 z"/>
+  </marker>
+
+  <text class="dg-h" x="24" y="30">판정 권한은 세션 밖에 있다</text>
+
+  <rect class="dg-zone" x="24" y="48" width="216" height="300" rx="10"/>
+  <text class="dg-t" x="44" y="74">CLI 가 한다</text>
+
+  <rect class="dg-item" x="44" y="92" width="176" height="62" rx="6"/>
+  <text class="dg-v" x="60" y="115">next</text>
+  <text class="dg-s" x="60" y="133">태스크를 고르고</text>
+  <text class="dg-s" x="60" y="149">브랜치를 판다</text>
+
+  <rect class="dg-hl" x="44" y="256" width="176" height="80" rx="6"/>
+  <text class="dg-n" x="60" y="279">complete</text>
+  <text class="dg-s" x="60" y="297">게이트 재검증 · 머지</text>
+  <text class="dg-s" x="60" y="313">git 에 물어</text>
+  <text class="dg-s" x="60" y="329">done 을 찍는다</text>
+
+  <rect class="dg-zone-a" x="264" y="48" width="200" height="300" rx="10"/>
+  <text class="dg-t" x="284" y="74">세션이 한다</text>
+
+  <rect class="dg-item" x="284" y="92" width="160" height="52" rx="6"/>
+  <text class="dg-v" x="300" y="115">구현</text>
+  <text class="dg-s" x="300" y="133">코드를 쓰고 커밋한다</text>
+
+  <rect class="dg-item" x="284" y="172" width="160" height="52" rx="6"/>
+  <text class="dg-v" x="300" y="195">게이트 1 요청</text>
+  <text class="dg-s" x="300" y="213">스스로 확인할 때</text>
+
+  <rect class="dg-zone" x="488" y="48" width="208" height="300" rx="10"/>
+  <text class="dg-t" x="508" y="74">통과하지 못하면</text>
+
+  <rect class="dg-item" x="508" y="92" width="168" height="62" rx="6"/>
+  <text class="dg-v" x="524" y="115">fail</text>
+  <text class="dg-s" x="524" y="133">시도를 하나 태운다</text>
+  <text class="dg-s" x="524" y="149">세 번이면 보류</text>
+
+  <rect class="dg-item" x="508" y="178" width="168" height="62" rx="6"/>
+  <text class="dg-v" x="524" y="201">block</text>
+  <text class="dg-s" x="524" y="219">시도를 안 태운다</text>
+  <text class="dg-s" x="524" y="235">사람에게 넘긴다</text>
+
+  <path class="dg-arw" d="M220 118 H278" marker-end="url(#lcg-a)"/>
+  <path class="dg-arw" d="M364 144 V166" marker-end="url(#lcg-a)"/>
+  <path class="dg-arw-a" d="M364 224 V242 H132 V250" marker-end="url(#lcg-a)"/>
+  <path class="dg-arw" d="M444 198 H502" marker-end="url(#lcg-a)"/>
+
+  <text class="dg-v" x="24" y="378">세션은 구현과 커밋만 한다. 태스크를 잡는 일과 done 을 찍는 일은 양쪽 끝에서 CLI 가 맡는다</text>
+  <text class="dg-s" x="24" y="402">게이트 1 은 구조 검사(브랜치·미커밋·보호 파일·범위)를 먼저 보고, 걸리면 테스트를 돌리지 않는다</text>
+</svg>
