@@ -112,6 +112,22 @@ Mermaid 도 살아 있다. 프론트매터에 `mermaid: true` 를 넣으면
 bundle exec jekyll serve --port 4000 --livereload
 ```
 
+### 잘린 글자는 재서 찾는다
+
+**글자 폭은 소스를 읽어서 알 수 없다.** 글자 수로 추정하면 거짓 양성이 절반이다
+(실측 2026-10-26: 추정 146건 → 브라우저 실측 48건). 서버를 띄운 뒤 돌린다:
+
+```bash
+python3 script/check-diagram-overflow.py --base http://127.0.0.1:4000
+```
+
+`getBBox()` 로 실제 렌더링 폭을 재고 `dg-zone`·`dg-lane`·`dg-mask` 는 뺀다
+— 묶음 라벨이 테두리 위로 걸치고 마스크가 글자보다 좁은 것은 설계다.
+
+⚠️ **이 검사가 통과한 것이 멀쩡하다는 뜻은 아니다.** 추정에서 1위로 올라온
+넘침 101px 은 상자 안 글자가 아니라 화살표 옆 라벨이었다 — 상자에 속한다고
+짝지은 것 자체가 틀렸고, 그건 스크린샷을 봐야 보인다. 후보를 좁히는 도구다.
+
 다크모드는 `localStorage.setItem('theme','dark')` 로 켠다
 (`body.dark-theme` 클래스로 동작하므로 OS 설정과는 별개다).
 
