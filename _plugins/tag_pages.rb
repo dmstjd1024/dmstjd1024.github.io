@@ -24,7 +24,7 @@ module TagPages
       self.data = {
         "layout"   => "page",
         "tag"      => tag,
-        "title"    => "##{tag}",
+        "title"    => tag,
         # 목록 페이지는 사이트맵에 넣지 않는다. 글이 아니라 색인이고,
         # 태그마다 한 장씩 늘어 사이트맵이 본문보다 커진다.
         "sitemap"  => false,

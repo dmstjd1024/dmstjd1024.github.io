@@ -313,3 +313,36 @@ $tones:
   &__title { color:var(--fg-muted); }
   &__link:hover .card__title { color:var(--accent); }
 }
+
+// --- 태그 목록 ---------------------------------------------------------------
+//
+// 칩을 줄줄이 세우면 찾을 기준이 없다. 카테고리 이름 아래에 태그를 쉼표로
+// 이어 붙인 사전식 색인으로 둔다.
+
+.tag-index {
+  margin-top:2rem;
+
+  &__group {
+    padding:1.5rem 0;
+    border-top:1px solid var(--border);
+
+    h2 {
+      font-family:var(--font-mono);
+      font-size:.8125rem;
+      font-weight:600;
+      letter-spacing:.06em;
+      color:var(--fg-subtle);
+    }
+
+    p {
+      margin-top:.6rem;
+      line-height:2;
+      color:var(--fg-subtle);
+    }
+
+    a {
+      color:var(--fg);
+      &:hover { color:var(--accent); }
+    }
+  }
+}

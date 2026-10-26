@@ -21,181 +21,130 @@
 
 // --- 히어로 -----------------------------------------------------------------
 //
-// 큰 이름 하나로 화면을 채우는 대신, 이름 + 한 줄 정의 + 숫자 세 개를 묶어
-// 첫 화면에서 "누가 / 뭘 하고 / 얼마나" 가 동시에 읽히게 한다.
+// 연차·글 수 같은 숫자판 대신 한 문장으로 "무슨 일을 하는 사람인지"를 먼저
+// 말한다. 숫자는 바로 아래 대표 사례의 결과값 줄이 맡는다.
 
 .hero {
-  padding:5rem 0 3.5rem;
-  border-bottom:1px solid var(--border);
-
-  // 왼쪽은 정체성, 오른쪽은 지표판.
-  //
-  // 한 덩어리로 두면 화면 왼쪽 1/4 에만 텍스트가 몰리고 나머지가 빈다.
-  // 지표를 오른쪽에 세우면 빈 공간이 채워지고, 이 사람의 설득력이 어디서
-  // 나오는지(측정값)가 첫 화면에서 바로 드러난다.
-  display:grid;
-  grid-template-columns:minmax(0, 1fr) minmax(0, 22rem);
-  gap:3rem;
-  align-items:center;
+  padding:6rem 0 3.5rem;
 
   &__eyebrow {
     font-family:var(--font-mono);
-    font-size:.75rem;
-    letter-spacing:.14em;
+    font-size:.8125rem;
     color:var(--fg-subtle);
-    text-transform:uppercase;
   }
 
-  &__name {
-    margin-top:.9rem;
-    font-size:clamp(3rem, 8vw, 4.75rem);
-    line-height:1;
-    letter-spacing:-.05em;
-  }
-
-  // 직무 + 전문영역. 검증 가능한 사실만 둔다.
-  //
-  // 이름 바로 아래 자리라 슬로건을 넣기 쉬운데, 그 자리에 명사구를 둔다.
-  // 아래 서술문보다 작게 잡아 '사실 → 설명' 순서로 읽히게 한다.
-  &__role {
+  &__title {
     margin-top:1.25rem;
-    font-family:var(--font-mono);
-    font-size:.875rem;
-    line-height:1.5;
-    color:var(--fg-muted);
+    font-size:clamp(2.25rem, 6vw, 3.25rem);
+    line-height:1.2;
+    letter-spacing:-.035em;
   }
 
   &__line {
-    margin-top:.75rem;
-    font-size:clamp(1.125rem, 2.2vw, 1.5rem);
-    line-height:1.45;
-    letter-spacing:-.02em;
-    color:var(--fg);
+    margin-top:1.5rem;
+    max-width:34em;
+    font-size:1.125rem;
+    line-height:1.65;
+    color:var(--fg-muted);
   }
 
   &__links {
     margin-top:2rem;
     display:flex;
     flex-wrap:wrap;
-    gap:.5rem;
+    gap:.75rem;
 
     a {
-      padding:.45rem .9rem;
+      padding:.7rem 1.35rem;
       border:1px solid var(--border);
       border-radius:var(--r-sm);
-      font-family:var(--font-mono);
-      font-size:.8125rem;
-      color:var(--fg-muted);
-      transition:border-color .15s ease, color .15s ease, background-color .15s ease;
+      font-size:.9375rem;
+      color:var(--fg);
+      transition:border-color .15s ease, background-color .15s ease;
 
       &:hover {
         border-color:var(--border-strong);
         background:var(--bg-sunken);
-        color:var(--fg);
       }
     }
-  }
 
-  // 지표판.
-  //
-  // 숫자를 크게 세우고 단위를 작게 붙인다. 세 칸을 가로선으로만 나눠
-  // 카드 테두리를 여러 겹 두르지 않는다 — 이 페이지는 선이 얇은 편이라
-  // 상자를 겹치면 그 부분만 무거워진다.
-  &__facts {
-    margin:0;
-    padding:1.5rem;
-    border:1px solid var(--border);
-    border-radius:var(--r);
-    background:var(--bg-sunken);
+    .hero__cta {
+      border-color:var(--fg);
+      background:var(--fg);
+      color:var(--bg);
 
-    > div {
-      padding:1rem 0;
-      border-top:1px solid var(--border);
-
-      &:first-child { padding-top:0; border-top:0; }
-      &:last-child  { padding-bottom:0; }
-    }
-
-    dt {
-      font-size:.75rem;
-      color:var(--fg-subtle);
-      letter-spacing:.02em;
-    }
-
-    dd {
-      margin:.15rem 0 0;
-      display:flex;
-      align-items:baseline;
-      gap:.15rem;
-    }
-
-    b {
-      font-family:var(--font-mono);
-      font-size:2.25rem;
-      font-weight:600;
-      line-height:1;
-      letter-spacing:-.04em;
-      font-variant-numeric:tabular-nums;
-      color:var(--fg);
-    }
-
-    i {
-      font-style:normal;
-      font-family:var(--font-mono);
-      font-size:.9375rem;
-      color:var(--fg-muted);
-    }
-
-    p {
-      margin-top:.35rem;
-      font-size:.75rem;
-      line-height:1.5;
-      color:var(--fg-subtle);
+      &:hover { background:var(--fg); opacity:.85; }
     }
   }
 }
 
-// 좁은 화면에서는 두 열이 눌린다. 지표판을 아래로 내리고 가로로 편다.
-@media (max-width:$bp-tablet) {
-  .hero {
-    grid-template-columns:1fr;
-    gap:2.5rem;
-    padding:3.5rem 0 2.5rem;
+// --- 대표 사례 · 최근 글 ------------------------------------------------------
 
-    &__facts {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(9rem, 1fr));
-      gap:0 1.5rem;
+.featured, .recent { padding-top:3.5rem; }
 
-      > div {
-        border-top:0;
-        padding:0;
+.featured__list, .recent__list {
+  margin:.75rem 0 0;
+  padding:0;
+  list-style:none;
+  border-bottom:1px solid var(--border);
 
-        // 가로로 펴지면 칸 사이를 세로선으로 나눈다
-        padding-left:1rem;
-        border-left:1px solid var(--border);
-
-        &:first-child { padding-left:0; border-left:0; }
-      }
-
-      b { font-size:1.75rem; }
-    }
-  }
+  > li { border-top:1px solid var(--border); }
 }
 
-@media (max-width:$bp-mobile) {
-  .hero__facts {
-    grid-template-columns:1fr;
-    gap:0;
+.featured__list a {
+  display:block;
+  padding:1.75rem 0;
+  color:var(--fg);
 
-    > div {
-      padding:.9rem 0 !important;
-      border-left:0 !important;
-      border-top:1px solid var(--border);
-
-      &:first-child { padding-top:0 !important; border-top:0; }
-    }
+  b {
+    display:block;
+    font-size:1.25rem;
+    letter-spacing:-.02em;
+    transition:color .15s ease;
   }
+
+  span {
+    display:block;
+    margin-top:.6rem;
+    max-width:44rem;
+    line-height:1.7;
+    color:var(--fg-muted);
+  }
+
+  code {
+    display:inline-block;
+    margin-top:.9rem;
+    font-family:var(--font-mono);
+    font-size:.875rem;
+    color:var(--accent);
+    font-variant-numeric:tabular-nums;
+  }
+
+  &:hover b { color:var(--accent); }
+}
+
+.recent__list a {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:.25rem 1.5rem;
+  padding:1rem 0;
+  color:var(--fg);
+
+  i {
+    font-style:normal;
+    font-size:.875rem;
+    color:var(--fg-subtle);
+  }
+
+  &:hover span { color:var(--accent); }
+}
+
+.recent__more {
+  margin-top:.9rem;
+  font-size:.875rem;
+
+  a { color:var(--fg-muted); &:hover { color:var(--accent); } }
 }
 
 // --- 섹션 공통 ---------------------------------------------------------------

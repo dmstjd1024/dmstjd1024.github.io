@@ -57,7 +57,7 @@
         <span class="sep">›</span>
         <a href="{{ '/tags/' | prepend: site.baseurl }}">태그</a>
       </p>
-      <h1 class="list-head__title">#{{ want }}</h1>
+      <h1 class="list-head__title">{{ want }}</h1>
       <p class="list-head__count">글 {{ total }}편{%- if n_note > 0 and n_main > 0 %} · 학습 노트 {{ n_note }}편 포함{% endif -%}</p>
     </header>
 
@@ -100,14 +100,28 @@
 
 {%- else -%}
   {%- comment -%} ── 태그 전체 목록 ── {%- endcomment -%}
-  {%- capture joined -%}
+  {%- comment -%}
+    카테고리(= _pages 아래 첫 폴더)별로 그 폴더 글에 달린 태그를 모은다.
+    분류를 손으로 관리하지 않아도 되고, 두 폴더에 걸친 태그는 양쪽에 나온다.
+  {%- endcomment -%}
+  {%- capture cat_joined -%}
+    {%- for p in posts -%}
+      {%- unless p.url contains 'index.html' -%}
+        {%- assign seg = p.path | remove_first: '_pages/' | split: '/' -%}
+        {{ seg[0] }}|
+      {%- endunless -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign cats = cat_joined | split: '|' | sort_natural | uniq -%}
+
+  {%- capture all_joined -%}
     {%- for p in posts -%}
       {%- unless p.url contains 'index.html' -%}
         {%- for t in p.tags -%}{{ t }}|{%- endfor -%}
       {%- endunless -%}
     {%- endfor -%}
   {%- endcapture -%}
-  {%- assign all_tags = joined | strip | split: '|' | sort_natural | uniq -%}
+  {%- assign all_tags = all_joined | split: '|' | uniq -%}
 
   <div class="wrap wrap--list">
     <header class="list-head">
@@ -118,24 +132,34 @@
       <p class="list-head__count">태그 {{ all_tags.size }}개</p>
     </header>
 
-    <nav class="chips chips--tags" aria-label="태그 목록">
-      {%- for t in all_tags -%}
-        {%- assign n = 0 -%}
-        {%- for p in posts -%}
-          {%- unless p.url contains 'index.html' -%}
-            {%- if p.tags contains t -%}{%- assign n = n | plus: 1 -%}{%- endif -%}
-          {%- endunless -%}
-        {%- endfor -%}
-        {%- comment -%}
-          _plugins/tag_pages.rb 의 slug_for 와 같은 규칙이어야 한다.
-          소문자로 낮추고 공백만 하이픈으로 바꾼다 — 기본 slugify 는 한글을
-          통째로 지워 서로 다른 태그가 같은 주소가 된다.
-        {%- endcomment -%}
-        {%- assign slug = t | downcase | strip | replace: ' ', '-' | url_encode -%}
-        <a class="chip" href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">
-          {{ t }} <span class="chip__n">{{ n }}</span>
-        </a>
+    <div class="tag-index">
+      {%- for c in cats -%}
+        {%- capture joined -%}
+          {%- for p in posts -%}
+            {%- unless p.url contains 'index.html' -%}
+              {%- assign seg = p.path | remove_first: '_pages/' | split: '/' -%}
+              {%- if seg[0] == c -%}{%- for t in p.tags -%}{{ t }}|{%- endfor -%}{%- endif -%}
+            {%- endunless -%}
+          {%- endfor -%}
+        {%- endcapture -%}
+        {%- assign ctags = joined | split: '|' | sort_natural | uniq -%}
+        {%- if ctags.size > 0 -%}
+          <section class="tag-index__group">
+            <h2>{{ c }}</h2>
+            <p>
+              {%- for t in ctags -%}
+                {%- comment -%}
+                  _plugins/tag_pages.rb 의 slug_for 와 같은 규칙이어야 한다.
+                  소문자로 낮추고 공백만 하이픈으로 바꾼다 — 기본 slugify 는 한글을
+                  통째로 지워 서로 다른 태그가 같은 주소가 된다.
+                {%- endcomment -%}
+                {%- assign slug = t | downcase | strip | replace: ' ', '-' | url_encode -%}
+                <a href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">{{ t }}</a>{% unless forloop.last %}, {% endunless %}
+              {%- endfor -%}
+            </p>
+          </section>
+        {%- endif -%}
       {%- endfor -%}
-    </nav>
+    </div>
   </div>
 {%- endif -%}
