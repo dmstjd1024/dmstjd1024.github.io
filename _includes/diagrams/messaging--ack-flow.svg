@@ -44,8 +44,9 @@
   <text class="dg-k" x="44" y="268">ack 이 오지 않으면 — 브로커가 다시 준다</text>
 
   <rect class="dg-row" x="44" y="284" width="150" height="56" rx="6"/>
-  <text class="dg-t" x="60" y="306">소비자</text>
-  <text class="dg-v" x="60" y="324">처리 후 ack 직전에 죽음</text>
+  <text class="dg-t" x="60" y="304">소비자</text>
+  <text class="dg-v" x="60" y="320">처리 후 ack 직전에</text>
+  <text class="dg-v" x="60" y="334">죽음</text>
 
   <path class="dg-arw-a" d="M198 312 H240" marker-end="url(#msgack-b)"/>
 

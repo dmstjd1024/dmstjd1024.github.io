@@ -17,19 +17,19 @@
   <text class="dg-s" x="204" y="102">서버 .env 에</text>
   <text class="dg-s" x="204" y="120">토큰이 없었다</text>
 
-  <path class="dg-arw" d="M342 94 H366" marker-end="url(#dpcs-a)"/>
+  <path class="dg-arw" d="M342 94 H362" marker-end="url(#dpcs-a)"/>
 
-  <rect class="dg-row" x="374" y="56" width="150" height="76" rx="8"/>
-  <text class="dg-t" x="394" y="80">10:18</text>
-  <text class="dg-s" x="394" y="102">방금 추가한 동기화</text>
-  <text class="dg-s" x="394" y="120">로직이 macOS 에서 실패</text>
+  <rect class="dg-row" x="370" y="56" width="182" height="76" rx="8"/>
+  <text class="dg-t" x="388" y="80">10:18</text>
+  <text class="dg-s" x="388" y="102">방금 추가한 동기화</text>
+  <text class="dg-s" x="388" y="120">로직이 macOS 에서 실패</text>
 
-  <path class="dg-arw" d="M532 94 H556" marker-end="url(#dpcs-a)"/>
+  <path class="dg-arw" d="M560 94 H580" marker-end="url(#dpcs-a)"/>
 
-  <rect class="dg-out" x="564" y="56" width="132" height="76" rx="8"/>
-  <text class="dg-t" x="584" y="80">10:36</text>
-  <text class="dg-s" x="584" y="102">커밋 4개 뒤</text>
-  <text class="dg-b" x="584" y="120">복구</text>
+  <rect class="dg-out" x="588" y="56" width="108" height="76" rx="8"/>
+  <text class="dg-t" x="606" y="80">10:36</text>
+  <text class="dg-s" x="606" y="102">커밋 4개 뒤</text>
+  <text class="dg-b" x="606" y="120">복구</text>
 
   <rect class="dg-lane" x="24" y="152" width="672" height="72" rx="8"/>
   <text class="dg-t" x="44" y="178">코드가 새 환경변수를 쓰기 시작해도</text>
