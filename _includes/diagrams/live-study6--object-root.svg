@@ -5,9 +5,9 @@
 
   <text class="dg-h" x="24" y="30">모든 클래스의 꼭대기에는 Object 가 있다</text>
 
-  <rect class="dg-lead" x="252" y="52" width="216" height="48" rx="8"/>
-  <text class="dg-t" x="272" y="76">Object</text>
-  <text class="dg-s" x="272" y="94">toString() · equals() · hashCode() ...</text>
+  <rect class="dg-lead" x="212" y="52" width="296" height="48" rx="8"/>
+  <text class="dg-t" x="232" y="76">Object</text>
+  <text class="dg-s" x="232" y="94">toString() · equals() · hashCode() ...</text>
 
   <path class="dg-arw" d="M360 108 V124 H140 V148" marker-end="url(#ls6or-a)"/>
   <path class="dg-arw" d="M360 108 V148" marker-end="url(#ls6or-a)"/>

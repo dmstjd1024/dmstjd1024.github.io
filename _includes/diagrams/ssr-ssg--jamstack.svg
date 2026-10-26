@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="Jam Stack 은 정적 페이지를 CDN 으로 배포하고 동적 기능은 외부 API 에 맡긴다">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Jam Stack 은 정적 페이지를 CDN 으로 배포하고 동적 기능은 외부 API 에 맡긴다">
   <marker id="ssrjam-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
     <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
   </marker>
@@ -28,9 +28,10 @@
   <text class="dg-t" x="532" y="186">외부 API</text>
   <text class="dg-s" x="532" y="206">로그인 · 결제 · 댓글</text>
 
-  <rect class="dg-lane" x="24" y="150" width="440" height="68" rx="8"/>
-  <text class="dg-v" x="44" y="176">서버가 페이지를 만들지 않으니 서버를 둘 필요가 없다</text>
-  <text class="dg-s" x="44" y="198">비용이 줄고, 공격할 서버가 없으니 보안 부담도 줄어든다</text>
+  <rect class="dg-lane" x="24" y="150" width="440" height="88" rx="8"/>
+  <text class="dg-v" x="44" y="176">요청마다 HTML을 만드는 애플리케이션 서버는 필요 없다</text>
+  <text class="dg-s" x="44" y="198">정적 제공은 운영 부담을 줄인다</text>
+  <text class="dg-s" x="44" y="220">API·인증 보안은 별도로 필요하다</text>
 
-  <text class="dg-s" x="24" y="264">이 블로그도 Jekyll 로 만든 정적 파일을 GitHub Pages 가 배포하는 같은 구조다</text>
+  <text class="dg-s" x="24" y="282">이 블로그도 Jekyll 로 만든 정적 파일을 GitHub Pages 가 배포하는 같은 구조다</text>
 </svg>
