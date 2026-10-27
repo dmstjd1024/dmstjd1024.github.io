@@ -14,7 +14,7 @@ layout: default
 
   <header class="hero">
     <p class="hero__eyebrow">6년 차 · Java · Spring</p>
-    <h1 class="hero__title">백엔드 개발자<br>전은성입니다.</h1>
+    <h1 class="hero__title">백엔드 개발자<br>전은성입니다<span class="dot">.</span></h1>
     <p class="hero__line">Java와 Spring으로 서비스를 개발합니다. 데이터 모델 변경, 조회 성능 개선, 배포 자동화를 맡아 왔습니다.</p>
     <p class="hero__links">
       <a class="hero__cta" href="#featured">주요 작업 보기</a>

@@ -167,6 +167,38 @@
 
 .stack, .work, .how, .career { padding-top:3.5rem; }
 
+// --- 섹션 2열 -----------------------------------------------------------------
+//
+// 라벨은 왼쪽, 내용은 오른쪽. 세로로만 쌓으면 섹션이 6개라 길어 보이고,
+// 어디까지 읽었는지 가늠하기 어렵다. 제목이 왼쪽 열에서 섹션 경계를 말해 준다.
+//
+// 내용은 어떤 요소든 2열에 넣고(`> *`), 제목만 1열에 둔다. 제목과 내용 첫
+// 요소가 같은 첫 행에 놓여 윗선이 맞는다.
+.featured, .recent, .stack, .work, .career, .how {
+  display:grid;
+  grid-template-columns:9rem minmax(0, 1fr);
+  column-gap:2rem;
+
+  > * { grid-column:2; }
+  > .sec__title { grid-column:1; grid-row:1; padding-top:.2rem; }
+}
+
+// 포인트는 하나만 반복한다. 제목 뒤 파란 점 — 장식을 더 얹지 않는다.
+.sec__title::after,
+.hero__title .dot { color:var(--accent); }
+
+.sec__title::after { content:"."; }
+
+@media (max-width:$bp-tablet) {
+  .featured, .recent, .stack, .work, .career, .how {
+    grid-template-columns:minmax(0, 1fr);
+    row-gap:.25rem;
+
+    > * { grid-column:1; }
+    > .sec__title { grid-row:auto; }
+  }
+}
+
 // --- 경력 -------------------------------------------------------------------
 //
 // 프로젝트 카드로 다루기엔 근거 글이 없는 구간. 기간과 내용을 두 칸으로
