@@ -31,9 +31,9 @@
 
   <path class="dg-arw" d="M533 140 V166" marker-end="url(#ls6si-a)"/>
 
-  <rect class="dg-out" x="468" y="172" width="130" height="40" rx="6"/>
-  <text class="dg-k" x="484" y="197">B</text>
-  <text class="dg-s" x="514" y="197">헷갈릴 일 없음</text>
+  <rect class="dg-out" x="432" y="172" width="200" height="40" rx="6"/>
+  <text class="dg-k" x="448" y="197">B</text>
+  <text class="dg-s" x="478" y="197">헷갈릴 일 없음</text>
 
   <text class="dg-v" x="24" y="256">조상이 둘이면 같은 이름의 메서드를 구별할 방법이 없다</text>
   <text class="dg-s" x="24" y="282">편리함을 포기하고 명확함을 택한 결정이다 — 대신 인터페이스로 여럿을 구현한다</text>

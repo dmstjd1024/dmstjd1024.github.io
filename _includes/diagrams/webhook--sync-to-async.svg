@@ -28,8 +28,9 @@
   <rect class="dg-out" x="194" y="200" width="140" height="30" rx="6"/>
   <text class="dg-k" x="210" y="220">jobId 즉시 반환</text>
   <path class="dg-arw" d="M342 215 H366" marker-end="url(#whsa-a)"/>
-  <rect class="dg-row" x="374" y="200" width="302" height="30" rx="6"/>
-  <text class="dg-v" x="394" y="220">OCR 은 따로 돌고, 끝나면 /callback 으로 알린다</text>
+  <rect class="dg-row" x="374" y="194" width="302" height="42" rx="6"/>
+  <text class="dg-v" x="394" y="212">OCR 은 따로 돌고,</text>
+  <text class="dg-v" x="394" y="230">끝나면 /callback 으로 알린다</text>
 
   <text class="dg-s" x="44" y="252">클라이언트는 GET /requests/{id} 로 나중에 확인한다</text>
   <text class="dg-s" x="44" y="270">요청 스레드와 커넥션이 곧바로 풀린다</text>

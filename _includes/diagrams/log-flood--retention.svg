@@ -18,8 +18,9 @@
   <path class="dg-arw" d="M460 86 H492" marker-end="url(#lgfr-a)"/>
 
   <rect class="dg-warn" x="500" y="56" width="196" height="60" rx="8"/>
-  <text class="dg-k" x="520" y="80">회전이 빨라진다</text>
-  <text class="dg-s" x="520" y="100">max-size 10m · max-file 3</text>
+  <text class="dg-k" x="520" y="78">회전이 빨라진다</text>
+  <text class="dg-s" x="520" y="96">max-size 10m</text>
+  <text class="dg-s" x="520" y="110">max-file 3</text>
 
   <rect class="dg-warn" x="24" y="140" width="672" height="72" rx="8"/>
   <text class="dg-t" x="44" y="164">진짜 잃은 것은 디스크가 아니다</text>

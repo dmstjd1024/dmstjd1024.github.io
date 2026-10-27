@@ -22,13 +22,15 @@
 
   <text class="dg-t" x="24" y="180">두 가지 해법</text>
 
-  <rect class="dg-row" x="24" y="192" width="328" height="64" rx="8"/>
-  <text class="dg-k" x="44" y="216">인덱스를 쿼리에 맞춘다</text>
-  <text class="dg-s" x="44" y="238">GIN (LOWER(name)) — 검색 컬럼마다 따로 필요</text>
+  <rect class="dg-row" x="24" y="192" width="328" height="72" rx="8"/>
+  <text class="dg-k" x="44" y="214">인덱스를 쿼리에 맞춘다</text>
+  <text class="dg-s" x="44" y="236">GIN (LOWER(name))</text>
+  <text class="dg-s" x="44" y="254">검색 컬럼마다 따로 필요</text>
 
-  <rect class="dg-out" x="368" y="192" width="328" height="64" rx="8"/>
-  <text class="dg-k" x="388" y="216">쿼리를 인덱스에 맞춘다  (채택)</text>
-  <text class="dg-s" x="388" y="238">ILIKE — 기존 인덱스를 그대로 쓴다</text>
+  <rect class="dg-out" x="368" y="192" width="328" height="72" rx="8"/>
+  <text class="dg-k" x="388" y="214">쿼리를 인덱스에 맞춘다  (채택)</text>
+  <text class="dg-s" x="388" y="236">ILIKE</text>
+  <text class="dg-s" x="388" y="254">기존 인덱스를 그대로 쓴다</text>
 
   <text class="dg-s" x="24" y="286">LOWER · CAST · COALESCE 를 조건절 좌변에 쓰면 그 컬럼 인덱스는 대체로 놀고 있다</text>
 </svg>

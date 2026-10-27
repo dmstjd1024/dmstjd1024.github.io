@@ -11,23 +11,23 @@
 
   <path class="dg-arw" d="M182 82 H210" marker-end="url(#agic-a)"/>
 
-  <rect class="dg-warn" x="218" y="56" width="180" height="52" rx="8"/>
-  <text class="dg-k" x="238" y="80">onClickRowAction</text>
-  <text class="dg-s" x="238" y="98">identity 가 새로 만들어짐</text>
+  <rect class="dg-warn" x="218" y="50" width="180" height="64" rx="8"/>
+  <text class="dg-k" x="238" y="74">onClickRowAction</text>
+  <text class="dg-s" x="238" y="92">identity 가 새로</text>
+  <text class="dg-s" x="238" y="106">만들어짐</text>
 
   <path class="dg-arw" d="M406 82 H434" marker-end="url(#agic-a)"/>
 
-  <rect class="dg-warn" x="442" y="56" width="150" height="52" rx="8"/>
-  <text class="dg-k" x="462" y="80">useMemo 무효</text>
-  <text class="dg-s" x="462" y="98">columnDefs 재생성</text>
+  <rect class="dg-warn" x="442" y="50" width="162" height="64" rx="8"/>
+  <text class="dg-k" x="462" y="74">useMemo 무효</text>
+  <text class="dg-s" x="462" y="92">columnDefs</text>
+  <text class="dg-s" x="462" y="106">재생성</text>
 
-  <path class="dg-arw" d="M600 82 H628" marker-end="url(#agic-a)"/>
+  <path class="dg-arw" d="M523 118 V128 H650 V136" marker-end="url(#agic-a)"/>
 
-  <rect class="dg-warn" x="612" y="120" width="84" height="52" rx="8"/>
-  <text class="dg-k" x="628" y="144">전 컬럼</text>
-  <text class="dg-k" x="628" y="162">재적용</text>
-
-  <path class="dg-arw" d="M666 112 V118" marker-end="url(#agic-a)"/>
+  <rect class="dg-warn" x="604" y="140" width="92" height="52" rx="8"/>
+  <text class="dg-k" x="620" y="164">전 컬럼</text>
+  <text class="dg-k" x="620" y="182">재적용</text>
 
   <rect class="dg-lane" x="24" y="132" width="560" height="60" rx="8"/>
   <text class="dg-v" x="44" y="156">AG Grid 는 columnDefs 가 바뀌면 컬럼 정의가 달라진 줄 안다</text>

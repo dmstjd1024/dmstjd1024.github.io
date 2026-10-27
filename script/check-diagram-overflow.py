@@ -60,9 +60,11 @@ try {
         svg.querySelectorAll('text').forEach(t => {
           const b = t.getBBox();
           const tx = +t.getAttribute('x'), ty = +t.getAttribute('y');
-          // 글자 시작점을 품는 가장 작은 상자가 그 글자의 상자다.
+          // 글자 시작점을 품는 가장 작은 상자가 그 글자의 상자다. 단
+          // 오른쪽 끝에 걸터앉은 글자는 그 상자 소속이 아니다 - 상자 사이
+          // 틈에 놓인 연결 기호(`↔` 같은 것)가 그렇게 잘못 짝지어진다.
           const box = boxes
-            .filter(r => tx >= r.x - 1 && tx <= r.x + r.w
+            .filter(r => tx >= r.x - 1 && tx <= r.x + r.w - 8
                       && ty >= r.y - 2 && ty <= r.y + r.h + 2)
             .sort((a, c) => a.w * a.h - c.w * c.h)[0];
           const right = b.x + b.width;
@@ -121,10 +123,12 @@ def main():
     proc = subprocess.run(["ego-browser", "nodejs"],
                           input=script, capture_output=True, text=True)
 
-    # ego 는 결과 앞뒤로 자기 로그를 섞어 내보낸다. 마커가 붙은 줄만 고른다.
+    # ego 는 결과 앞뒤로 자기 로그를 섞어 내보내고, 업데이트 공지가 뜨면
+    # 결과를 stderr 로 밀어 보낸다. 양쪽에서 마커가 붙은 줄을 찾는다.
     marker = "__DG_RESULT__"
     payload = next((line.split(marker, 1)[1]
-                    for line in proc.stdout.splitlines() if marker in line), None)
+                    for line in (proc.stdout + "\n" + proc.stderr).splitlines()
+                    if marker in line), None)
     if payload is None:
         print(proc.stdout, file=sys.stderr)
         print(proc.stderr, file=sys.stderr)

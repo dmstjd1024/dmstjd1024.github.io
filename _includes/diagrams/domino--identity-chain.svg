@@ -10,21 +10,21 @@
 
   <path class="dg-arw" d="M360 100 V118" marker-end="url(#dic-a)"/>
 
-  <rect class="dg-out" x="140" y="124" width="440" height="30" rx="6"/>
-  <text class="dg-k" x="156" y="144">① 매 keystroke 마다 handleRowUpdate identity 변경</text>
+  <rect class="dg-out" x="72" y="124" width="576" height="30" rx="6"/>
+  <text class="dg-k" x="92" y="144">① 매 keystroke 마다 handleRowUpdate identity 변경</text>
 
   <path class="dg-arw" d="M360 156 V174" marker-end="url(#dic-a)"/>
 
-  <rect class="dg-out" x="140" y="180" width="440" height="30" rx="6"/>
-  <text class="dg-k" x="156" y="200">② emsColumn(useMemo) → columnDefs(useMemo) 로 전파</text>
+  <rect class="dg-out" x="72" y="180" width="576" height="30" rx="6"/>
+  <text class="dg-k" x="92" y="200">② emsColumn(useMemo) → columnDefs(useMemo) 로 전파</text>
 
   <path class="dg-arw" d="M360 212 V230" marker-end="url(#dic-a)"/>
 
-  <rect class="dg-out" x="140" y="236" width="440" height="30" rx="6"/>
-  <text class="dg-k" x="156" y="256">③ ag-grid 가 cellRenderer 재생성</text>
+  <rect class="dg-out" x="72" y="236" width="576" height="30" rx="6"/>
+  <text class="dg-k" x="92" y="256">③ ag-grid 가 cellRenderer 재생성</text>
 
   <path class="dg-arw" d="M360 268 V286" marker-end="url(#dic-a)"/>
 
-  <rect class="dg-warn" x="140" y="292" width="440" height="30" rx="6"/>
-  <text class="dg-k" x="156" y="312">④ 안의 &lt;input&gt; 언마운트·재마운트 → 포커스·IME 유실</text>
+  <rect class="dg-warn" x="72" y="292" width="576" height="30" rx="6"/>
+  <text class="dg-k" x="92" y="312">④ 안의 &lt;input&gt; 언마운트·재마운트 → 포커스·IME 유실</text>
 </svg>

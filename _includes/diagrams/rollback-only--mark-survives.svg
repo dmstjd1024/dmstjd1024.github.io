@@ -29,8 +29,8 @@
 
   <path class="dg-arw" d="M360 240 V266" marker-end="url(#rom-a)"/>
 
-  <rect class="dg-warn" x="172" y="272" width="376" height="30" rx="6"/>
-  <text class="dg-k" x="188" y="292">UnexpectedRollbackException — 승인 통째로 소멸</text>
+  <rect class="dg-warn" x="160" y="272" width="400" height="30" rx="6"/>
+  <text class="dg-k" x="176" y="292">UnexpectedRollbackException — 승인 통째로 소멸</text>
 
   <text class="dg-v" x="24" y="326">해법 — 조회를 REQUIRES_NEW 별도 빈으로 분리해 마크가 옮겨붙지 않게 한다</text>
 </svg>

@@ -22,13 +22,15 @@
 
   <text class="dg-t" x="24" y="184">그래서 두 가지 방법을 쓴다</text>
 
-  <rect class="dg-row" x="24" y="196" width="328" height="64" rx="8"/>
-  <text class="dg-k" x="44" y="220">파드 안으로 들어간다</text>
-  <text class="dg-s" x="44" y="242">kubectl exec -it nginx-pod -- bash</text>
+  <rect class="dg-row" x="24" y="196" width="328" height="72" rx="8"/>
+  <text class="dg-k" x="44" y="218">파드 안으로 들어간다</text>
+  <text class="dg-s" x="44" y="240">kubectl exec -it nginx-pod</text>
+  <text class="dg-s" x="44" y="258">-- bash</text>
 
-  <rect class="dg-out" x="368" y="196" width="328" height="64" rx="8"/>
-  <text class="dg-k" x="388" y="220">포트를 이어준다</text>
-  <text class="dg-s" x="388" y="242">kubectl port-forward pod/nginx-pod 80:80</text>
+  <rect class="dg-out" x="368" y="196" width="328" height="72" rx="8"/>
+  <text class="dg-k" x="388" y="218">포트를 이어준다</text>
+  <text class="dg-s" x="388" y="240">kubectl port-forward</text>
+  <text class="dg-s" x="388" y="258">pod/nginx-pod 80:80</text>
 
   <path class="dg-arw" d="M364 92 H380" marker-end="url(#k8spn-a)"/>
 
