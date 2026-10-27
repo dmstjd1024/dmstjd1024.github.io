@@ -27,7 +27,7 @@
   <text class="dg-s" x="516" y="170">PR 열림</text>
 
   <rect class="dg-warn" x="24" y="222" width="672" height="76" rx="8"/>
-  <text class="dg-t" x="44" y="246">연결이 안 될 때 대부분의 원인</text>
-  <text class="dg-v" x="44" y="268">JIRA 계정과 Git 호스팅 계정의 이메일이 다르다</text>
+  <text class="dg-t" x="44" y="246">스마트 커밋이 안 될 때 확인할 것</text>
+  <text class="dg-v" x="44" y="268">커밋 작성자 이메일과 JIRA 계정 이메일이 일치하는가</text>
   <text class="dg-s" x="44" y="288">키를 깜빡하는 게 문제라면 commit-msg 훅으로 막는다</text>
 </svg>

@@ -24,6 +24,6 @@
   <text class="dg-k" x="336" y="84">이 구간이 위험하다</text>
 
   <rect class="dg-out" x="24" y="244" width="672" height="48" rx="8"/>
-  <text class="dg-k" x="44" y="268">mkdir -p 는 "없으면 만들고 있으면 성공" 을 커널이 한 번에 처리한다</text>
-  <text class="dg-s" x="44" y="286">틈이 아예 없으므로 몇 개가 동시에 들어와도 race 가 생기지 않는다</text>
+  <text class="dg-k" x="44" y="268">mkdir -p 는 디렉토리 생성과 이미 존재하는 경우의 처리를 맡는다</text>
+  <text class="dg-s" x="44" y="286">경로 전체가 원자적인 것은 아니다. 직접 만든 stat / mkdir 루프를 대체한다</text>
 </svg>

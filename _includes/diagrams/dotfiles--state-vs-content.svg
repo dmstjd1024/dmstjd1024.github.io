@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="pull 은 파일 내용만 옮기고 심링크·플래그·등록 주기 같은 시스템 상태는 옮기지 않는다">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="pull 은 추적 파일을 갱신하지만 홈의 링크·인덱스 플래그·등록 상태는 맞추지 않는다">
   <marker id="dfsv-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
     <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
   </marker>
@@ -21,12 +21,12 @@
   <rect class="dg-warn" x="460" y="54" width="236" height="96" rx="8"/>
   <text class="dg-t" x="480" y="82">시스템 상태</text>
   <text class="dg-v" x="480" y="106">전파되지 않는다</text>
-  <text class="dg-s" x="480" y="128">심링크 · 플래그 · plist</text>
+  <text class="dg-s" x="480" y="128">홈 링크 · 플래그 · 등록 상태</text>
 
   <rect class="dg-lane" x="24" y="170" width="672" height="98" rx="8"/>
-  <text class="dg-t" x="44" y="198">파일이 아닌 것은</text>
-  <text class="dg-t" x="44" y="222">파일 동기화로 따라오지 않는다</text>
-  <text class="dg-s" x="44" y="246">심링크는 링크이지 내용이 아니고,</text>
+  <text class="dg-t" x="44" y="198">저장소 밖 시스템 상태는</text>
+  <text class="dg-t" x="44" y="222">추적 파일 갱신만으로 맞춰지지 않는다</text>
+  <text class="dg-s" x="44" y="246">홈 링크는 설치 작업이 필요하고,</text>
   <text class="dg-s" x="44" y="262">인덱스 플래그는 커밋되지 않는다</text>
 
   <rect class="dg-out" x="24" y="284" width="672" height="34" rx="8"/>

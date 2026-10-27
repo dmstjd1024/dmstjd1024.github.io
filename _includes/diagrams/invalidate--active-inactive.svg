@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="invalidateQueries 는 활성 쿼리만 즉시 다시 부르고 비활성 쿼리는 표시만 남긴다">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="invalidateQueries 기본 옵션은 활성 쿼리를 다시 부르고 비활성 쿼리는 stale 표시만 남긴다">
   <marker id="ivai-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
     <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
   </marker>
 
-  <text class="dg-h" x="24" y="30">invalidate 는 상황을 봐서 움직인다</text>
+  <text class="dg-h" x="24" y="30">invalidate 기본값은 활성 쿼리만 재요청한다</text>
 
   <rect class="dg-lead" x="252" y="52" width="216" height="40" rx="8"/>
   <text class="dg-t" x="272" y="78">invalidateQueries</text>
@@ -23,5 +23,5 @@
   <text class="dg-k" x="404" y="206">"다음에 볼 때 새로 받아라" 메모만</text>
   <text class="dg-s" x="388" y="238">지금은 아무 일도 일어나지 않는다</text>
 
-  <text class="dg-v" x="24" y="284">탭 A 에서 작업하고 탭 B 목록이 바뀌길 기대했는데, 탭 B 는 언마운트라 메모만 남았다</text>
+  <text class="dg-v" x="24" y="284">refetchType: all 이면 비활성도 재요청 — 기본값에서도 재마운트 시 다시 받을 수 있다</text>
 </svg>

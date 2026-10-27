@@ -30,8 +30,8 @@
   <text class="dg-t" x="24" y="188">예약 트리거는 JQL 과 짝을 이룬다</text>
 
   <rect class="dg-code" x="24" y="200" width="672" height="52" rx="8"/>
-  <text class="dg-v" x="44" y="222">매일 오전 10시  +  status = &quot;In Progress&quot; AND status CHANGED BEFORE -3d</text>
-  <text class="dg-s" x="44" y="242">→ 사흘 넘게 진행 중인 이슈만 골라 알린다</text>
+  <text class="dg-v" x="44" y="222">매일 오전 10시 + 진행 중이며 생성·최근 상태 변경이 3일 이전인 이슈</text>
+  <text class="dg-s" x="44" y="242">→ 최근 3일간 상태 변경이 없는 이슈를 고른다</text>
 
   <text class="dg-s" x="24" y="278">JQL 로 &quot;누구를&quot;을 정하고, 자동화가 &quot;무엇을&quot;을 한다 — 둘을 붙일 때 위력이 나온다</text>
   <text class="dg-s" x="24" y="300">처음에는 알림만 하는 규칙부터 만든다. 상태를 바꾸는 규칙은 되돌리기 번거롭다</text>

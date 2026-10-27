@@ -22,5 +22,5 @@
   <rect class="dg-warn" x="24" y="196" width="672" height="68" rx="8"/>
   <text class="dg-t" x="44" y="220">그런데 아무 에러도 안 보였다</text>
   <text class="dg-v" x="44" y="244">writeText() 가 돌려준 Promise 를 아무도 받지 않아서</text>
-  <text class="dg-s" x="44" y="260">rejection 이 어디에도 도달하지 못하고 사라졌다 — 토스트는 성공으로 떴다</text>
+  <text class="dg-s" x="44" y="260">rejection 을 처리하지 않았다 — 실패해도 토스트는 성공으로 떴다</text>
 </svg>

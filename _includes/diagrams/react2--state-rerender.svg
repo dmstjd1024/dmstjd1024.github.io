@@ -27,6 +27,6 @@
   <rect class="dg-out" x="388" y="154" width="288" height="38" rx="6"/>
   <text class="dg-k" x="404" y="177">리액트가 알아채고 다시 그린다</text>
 
-  <text class="dg-v" x="24" y="244">리액트는 set 함수가 불렸을 때만 "바뀌었구나" 하고 재렌더링한다</text>
+  <text class="dg-v" x="24" y="244">state 직접 대입은 갱신 안 됨 — 부모·Context도 렌더를 유발한다</text>
   <text class="dg-s" x="24" y="268">그래서 렌더링과 무관한 값은 아예 state 에 넣지 않는 편이 좋다</text>
 </svg>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="원형은 셸이 무한히 반복하고, 공식 플러그인은 세션 안에서 Stop 훅으로 반복해 세션 수명에 묶이며, 셸 드라이버는 매 사이클 프로세스를 새로 띄워 걸음 수를 끊는 세 가지 형태">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="원형은 셸이 무한히 반복하고, 공식 플러그인은 세션 안에서 Stop 훅으로 반복하며, 셸 드라이버는 매 사이클 새 프로세스를 띄우고 파일로 상태를 넘기는 세 가지 형태">
   <marker id="r3s-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
     <path d="M0 0 L10 5 L0 10 z"/>
   </marker>
@@ -44,9 +44,9 @@
   <path class="dg-arw-a" d="M588 174 V196" marker-end="url(#r3s-a)"/>
 
   <rect class="dg-hl" x="496" y="200" width="184" height="30" rx="6"/>
-  <text class="dg-n" x="510" y="220">걸음 수가 매번 0 으로</text>
+  <text class="dg-n" x="510" y="220">컨텍스트는 새로 시작</text>
 
   <rect class="dg-lane" x="24" y="240" width="672" height="46" rx="8"/>
   <text class="dg-v" x="44" y="262">어느 쪽이 낫다가 아니라 용도가 다르다 — 대화 중 한 태스크냐, 자는 동안 모듈 하나냐</text>
-  <text class="dg-s" x="44" y="280">사람이 터미널을 지키고 있는가 하나로 갈린다</text>
+  <text class="dg-s" x="44" y="280">반복을 어디서 제어하고 상태를 어디에 남기는가가 다르다</text>
 </svg>

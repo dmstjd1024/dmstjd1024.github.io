@@ -27,7 +27,7 @@
   <rect class="dg-lead" x="316" y="162" width="150" height="44" rx="6"/>
   <text class="dg-k" x="336" y="189">여기서 그린다</text>
   <rect class="dg-row" x="482" y="162" width="194" height="44" rx="6"/>
-  <text class="dg-s" x="502" y="189">받아서 보여주기만</text>
+  <text class="dg-s" x="502" y="189">표시 · 선택적 동작 연결</text>
 
   <rect class="dg-lane" x="24" y="230" width="672" height="70" rx="8"/>
   <text class="dg-t" x="44" y="258">SSG</text>
@@ -37,7 +37,7 @@
   <rect class="dg-row" x="316" y="242" width="150" height="44" rx="6"/>
   <text class="dg-s" x="336" y="269">파일만 내려줌</text>
   <rect class="dg-row" x="482" y="242" width="194" height="44" rx="6"/>
-  <text class="dg-s" x="502" y="269">받아서 보여주기만</text>
+  <text class="dg-s" x="502" y="269">표시 · 선택적 동작 연결</text>
 
-  <text class="dg-s" x="24" y="326">일찍 만들수록 빠르고 검색에 잘 잡히며, 늦게 만들수록 화면이 자유롭다</text>
+  <text class="dg-s" x="24" y="326">HTML 생성 시점이 다르다 — 속도와 검색 노출은 캐시·내용·구현에 달렸다</text>
 </svg>

@@ -23,8 +23,8 @@
   <path class="dg-arw" d="M532 120 V132" marker-end="url(#rogr-a)"/>
   <rect class="dg-out" x="388" y="138" width="288" height="46" rx="6"/>
   <text class="dg-k" x="404" y="160">쓰기가 일어나면 실패시킨다</text>
-  <text class="dg-s" x="404" y="178">런타임 동작을 막지 않고 감시만 한다</text>
+  <text class="dg-s" x="404" y="178">테스트에서 실행 SQL 을 검사한다</text>
 
-  <text class="dg-v" x="24" y="238">애노테이션은 실행을 막지만, 막힌 곳이 정작 고쳐야 할 곳이 아닐 수 있다</text>
-  <text class="dg-s" x="24" y="264">가드레일은 동작을 바꾸지 않고 "다시 생기면 알려주는" 역할만 한다</text>
+  <text class="dg-v" x="24" y="238">readOnly 는 힌트다. 실제 쓰기 차단 여부는 트랜잭션·드라이버 설정에 달린다</text>
+  <text class="dg-s" x="24" y="264">가드레일은 선택한 테스트에서 쓰기 SQL 을 검출해 실패시킨다</text>
 </svg>

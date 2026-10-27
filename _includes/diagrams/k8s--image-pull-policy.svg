@@ -10,8 +10,8 @@
 
   <rect class="dg-warn" x="44" y="88" width="204" height="62" rx="6"/>
   <text class="dg-k" x="60" y="110">Always</text>
-  <text class="dg-s" x="60" y="130">로컬은 안 보고</text>
-  <text class="dg-s" x="60" y="146">무조건 레지스트리에서</text>
+  <text class="dg-s" x="60" y="130">레지스트리 확인 후</text>
+  <text class="dg-s" x="60" y="146">같은 다이제스트는 캐시</text>
 
   <rect class="dg-out" x="258" y="88" width="204" height="62" rx="6"/>
   <text class="dg-k" x="274" y="110">IfNotPresent</text>
@@ -35,5 +35,5 @@
   <text class="dg-s" x="428" y="246">레지스트리를 뒤지다 실패한다</text>
 
   <rect class="dg-out" x="24" y="266" width="672" height="40" rx="8"/>
-  <text class="dg-k" x="44" y="292">imagePullPolicy: IfNotPresent 로 바꾸면 로컬 이미지를 쓴다</text>
+  <text class="dg-k" x="44" y="292">IfNotPresent 는 파드를 실행할 노드에 이미지가 있어야 재사용한다</text>
 </svg>

@@ -7,7 +7,7 @@
 
   <rect class="dg-lane" x="24" y="48" width="328" height="228" rx="10"/>
   <text class="dg-t" x="44" y="76">다중 가용 영역</text>
-  <text class="dg-s" x="44" y="96">목적 : 재해 복구</text>
+  <text class="dg-s" x="44" y="96">DB 인스턴스의 대기 복제본</text>
 
   <rect class="dg-lead" x="44" y="112" width="128" height="52" rx="6"/>
   <text class="dg-t" x="60" y="134">원본</text>
@@ -41,8 +41,8 @@
   <text class="dg-v" x="388" y="192">복제본도 읽기 요청을 받는다</text>
   <text class="dg-v" x="388" y="214">원본이 지던 조회 부담을 나눠</text>
   <text class="dg-v" x="388" y="236">전체 처리량이 올라간다</text>
-  <text class="dg-b" x="388" y="262">최대 5개까지</text>
+  <text class="dg-b" x="388" y="262">개수는 DB 엔진별로 다름</text>
 
   <text class="dg-s" x="24" y="308">둘 다 복제본을 만들지만, 하나는 쓰러졌을 때를 대비하고 하나는 평소 부하를 나눈다</text>
-  <text class="dg-s" x="24" y="330">그래서 Multi-AZ 복제본에는 평소에 조회를 보내지 않는다</text>
+  <text class="dg-s" x="24" y="330">Multi-AZ DB 인스턴스의 대기 복제본에는 조회를 보내지 않는다 (클러스터형은 별도)</text>
 </svg>

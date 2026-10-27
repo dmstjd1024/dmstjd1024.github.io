@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="면제 가능한 수수료와 면제 불가능한 세금을 한 함수에 묶어두면 생기는 위험">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="증권사 정책에 따른 수수료와 법정 과세 조건의 세금을 한 함수에 묶어두면 생기는 위험">
   <marker id="fsbn-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
     <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
   </marker>
@@ -20,13 +20,13 @@
   <rect class="dg-lane" x="368" y="48" width="328" height="150" rx="10"/>
   <text class="dg-t" x="388" y="74">나눈 뒤</text>
 
-  <rect class="dg-out" x="388" y="88" width="140" height="34" rx="6"/>
+  <rect class="dg-out" x="388" y="88" width="156" height="34" rx="6"/>
   <text class="dg-k" x="404" y="110">calc_commission</text>
-  <rect class="dg-out" x="536" y="88" width="140" height="34" rx="6"/>
-  <text class="dg-k" x="552" y="110">calc_tax</text>
+  <rect class="dg-out" x="552" y="88" width="124" height="34" rx="6"/>
+  <text class="dg-k" x="568" y="110">calc_tax</text>
 
   <text class="dg-v" x="388" y="146">수수료 — 증권사 정책, 면제 가능</text>
-  <text class="dg-v" x="388" y="168">거래세 — 법정, 면제 불가</text>
+  <text class="dg-v" x="388" y="168">거래세 — 법정 과세 조건·세율</text>
   <text class="dg-s" x="388" y="190">한쪽이 바뀌어도 다른 쪽은 그대로다</text>
 
   <text class="dg-s" x="24" y="252">계산식이 비슷해 보여도, 바뀌는 이유가 다르면 같이 두지 않는다</text>

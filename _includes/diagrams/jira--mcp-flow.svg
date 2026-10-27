@@ -28,7 +28,7 @@
   <text class="dg-s" x="528" y="142">Confluence 도 함께</text>
 
   <rect class="dg-code" x="24" y="166" width="672" height="40" rx="8"/>
-  <text class="dg-v" x="44" y="192">claude mcp add --transport http atlassian https://mcp.atlassian.com/v1/mcp/authv2</text>
+  <text class="dg-v" x="44" y="192">2026-08 연결 명령 — 현재 URL은 본문의 날짜별 확인 메모 참고</text>
 
   <rect class="dg-warn" x="24" y="222" width="672" height="76" rx="8"/>
   <text class="dg-t" x="44" y="246">주의 — 권한이 그대로 넘어간다</text>

@@ -24,6 +24,6 @@
   <text class="dg-k" x="300" y="180">읽기 전용</text>
   <text class="dg-s" x="300" y="200">고칠 수 없다</text>
 
-  <text class="dg-v" x="24" y="248">같은 props 를 넣으면 언제나 같은 화면이 나와야 한다 — 순수 함수처럼</text>
+  <text class="dg-v" x="24" y="248">props · state · context가 렌더 입력이다 — 직접 바꾸지 않는다</text>
   <text class="dg-s" x="24" y="272">하위가 props 를 고칠 수 있으면 어디서 바뀌었는지 추적할 수 없게 된다</text>
 </svg>

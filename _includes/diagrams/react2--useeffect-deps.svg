@@ -12,13 +12,13 @@
   <rect class="dg-code" x="44" y="138" width="290" height="42" rx="6"/>
   <text class="dg-key" x="60" y="164">useEffect(fn, [])</text>
   <text class="dg-t" x="368" y="156">빈 배열</text>
-  <text class="dg-v" x="368" y="176">처음 한 번만 실행</text>
+  <text class="dg-v" x="368" y="176">마운트 후 실행</text>
 
   <rect class="dg-lane" x="24" y="204" width="672" height="66" rx="8"/>
   <rect class="dg-code" x="44" y="216" width="290" height="42" rx="6"/>
   <text class="dg-key" x="60" y="242">useEffect(fn, [count])</text>
   <text class="dg-t" x="368" y="234">값을 넣으면</text>
-  <text class="dg-v" x="368" y="254">그 값이 바뀔 때만 실행</text>
+  <text class="dg-v" x="368" y="254">마운트 후 · 의존성 변경 시</text>
 
-  <text class="dg-s" x="24" y="292">배열을 빠뜨리면 매 렌더링마다 돌아 무한 루프가 되기 쉽다</text>
+  <text class="dg-s" x="24" y="292">커밋 후 실행 — 개발 StrictMode는 setup·cleanup을 추가 검사한다</text>
 </svg>

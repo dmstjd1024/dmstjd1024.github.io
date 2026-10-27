@@ -9,8 +9,8 @@
 
   <rect class="dg-lane" x="24" y="72" width="672" height="52" rx="8"/>
   <text class="dg-t" x="44" y="104">논리형</text>
-  <rect class="dg-lead" x="132" y="82" width="128" height="32" rx="6"/>
-  <text class="dg-k" x="152" y="104">boolean</text>
+  <rect class="dg-lead" x="132" y="82" width="542" height="32" rx="6"/>
+  <text class="dg-k" x="152" y="104">boolean — 언어 명세는 저장 크기를 고정하지 않는다</text>
 
   <rect class="dg-lane" x="24" y="132" width="672" height="52" rx="8"/>
   <text class="dg-t" x="44" y="164">문자형</text>
