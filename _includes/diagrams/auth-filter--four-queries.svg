@@ -5,7 +5,7 @@
 
   <text class="dg-h" x="24" y="30">GET 요청 하나가 DB 를 네 번 때린다</text>
 
-  <rect class="dg-item" x="24" y="52" width="104" height="162" rx="8"/>
+  <rect class="dg-item" x="24" y="52" width="104" height="90" rx="8"/>
   <text class="dg-t" x="44" y="78">요청</text>
   <text class="dg-s" x="44" y="100">리소스 하나</text>
   <text class="dg-s" x="44" y="118">읽기</text>

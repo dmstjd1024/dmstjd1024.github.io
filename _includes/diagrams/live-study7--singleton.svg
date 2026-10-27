@@ -22,8 +22,8 @@
   <rect class="dg-lead" x="428" y="164" width="248" height="30" rx="6"/>
   <text class="dg-k" x="444" y="184">public static getInstance()</text>
 
-  <path class="dg-arw" d="M228 200 V212 H552 V200" marker-end="url(#ls7sg-a)"/>
-  <text class="dg-s" x="240" y="226">미리 만들어 둔 하나를 계속 돌려준다</text>
+  <path class="dg-arw" d="M228 198 V208 H552 V198" marker-end="url(#ls7sg-a)"/>
+  <text class="dg-s" x="240" y="228">미리 만들어 둔 하나를 계속 돌려준다</text>
 
   <text class="dg-v" x="24" y="264">몇 번을 불러도 항상 같은 인스턴스가 나온다</text>
   <text class="dg-s" x="24" y="288">생성자가 private 이면 자손 클래스도 만들 수 없으므로 final 을 붙여 알려주는 게 좋다</text>
