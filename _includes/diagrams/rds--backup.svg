@@ -1,30 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="자동 백업과 스냅샷의 생성 주체와 인스턴스 삭제 시 차이">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="rds--backup-title rds--backup-desc">
+  <title id="rds--backup-title">자동 백업과 스냅샷의 생성 주체와 인스턴스 삭제 시 차이</title>
+  <desc id="rds--backup-desc">자동 백업과 스냅샷의 생성 주체와 인스턴스 삭제 시 차이</desc>
 
-  <text class="dg-h" x="24" y="30">자동 백업 vs 스냅샷</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-item" x="24" y="48" width="328" height="196" rx="10"/>
-  <text class="dg-t" x="44" y="80">자동 백업 (Auto Backup)</text>
-  <rect class="dg-row" x="44" y="96" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="60" y="118">생성</text>
-  <text class="dg-v" x="150" y="118">RDS 가 자동으로</text>
-  <rect class="dg-row" x="44" y="138" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="60" y="160">보관 기간</text>
-  <text class="dg-v" x="150" y="160">0~35일 (0: 끔)</text>
-  <rect class="dg-warn" x="44" y="180" width="288" height="46" rx="6"/>
-  <text class="dg-k" x="60" y="202">인스턴스 삭제 시</text>
-  <text class="dg-v" x="60" y="220">자동 백업 유지 여부 선택</text>
-
-  <rect class="dg-item" x="368" y="48" width="328" height="196" rx="10"/>
-  <text class="dg-t" x="388" y="80">스냅샷 (Snapshot)</text>
-  <rect class="dg-row" x="388" y="96" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="404" y="118">생성</text>
-  <text class="dg-v" x="494" y="118">개발자가 수동으로</text>
-  <rect class="dg-row" x="388" y="138" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="404" y="160">저장 위치</text>
-  <text class="dg-v" x="494" y="160">S3 (크기만큼 과금)</text>
-  <rect class="dg-out" x="388" y="180" width="288" height="46" rx="6"/>
-  <text class="dg-k" x="404" y="202">인스턴스 삭제 시</text>
-  <text class="dg-v" x="404" y="220">그대로 남는다</text>
-
-  <text class="dg-s" x="24" y="276">삭제 전 자동 백업 유지 또는 최종 스냅샷 생성을 선택한다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="78" y="56" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="160" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">자동 백업 (Auto Backup)</text>
+  <rect class="dg-item" x="258" y="56" width="131" height="52" rx="6"/>
+  <text class="dg-t" x="323" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스냅샷 (Snapshot)</text>
+  <rect class="dg-item" x="405" y="56" width="106" height="52" rx="6"/>
+  <text class="dg-t" x="458" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">생성</text>
+  <text class="dg-s" x="458" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">RDS 가 자동으로</text>
+  <rect class="dg-item" x="527" y="56" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="584" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">생성</text>
+  <text class="dg-s" x="584" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">개발자가 수동으로</text>
+  <rect class="dg-item" x="90" y="122" width="101" height="52" rx="6"/>
+  <text class="dg-t" x="140" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">보관 기간</text>
+  <text class="dg-s" x="140" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">0~35일 (0: 끔)</text>
+  <rect class="dg-item" x="207" y="122" width="119" height="52" rx="6"/>
+  <text class="dg-t" x="266" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">저장 위치</text>
+  <text class="dg-s" x="266" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">S3 (크기만큼 과금)</text>
+  <rect class="dg-item" x="342" y="122" width="146" height="52" rx="6"/>
+  <text class="dg-t" x="415" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인스턴스 삭제 시</text>
+  <text class="dg-s" x="415" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">자동 백업 유지 여부 선택</text>
+  <rect class="dg-item" x="504" y="122" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="567" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인스턴스 삭제 시</text>
+  <text class="dg-s" x="567" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">그대로 남는다</text>
 </svg>

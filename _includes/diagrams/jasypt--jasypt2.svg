@@ -1,16 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="application.yml 에서 암호문을 ENC 로 감싸 넣는 방법">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="jasypt--jasypt2-title jasypt--jasypt2-desc">
+  <title id="jasypt--jasypt2-title">application.yml 에서 암호문을 ENC 로 감싸 넣는 방법</title>
+  <desc id="jasypt--jasypt2-desc">application.yml 에서 암호문을 ENC 로 감싸 넣는 방법</desc>
 
-  <text class="dg-h" x="24" y="32">application.yml</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-code" x="24" y="48" width="672" height="164" rx="8"/>
-  <text class="dg-key" x="44"  y="78">spring:</text>
-  <text class="dg-key" x="68"  y="102">datasource:</text>
-  <text class="dg-key" x="92"  y="126">username:</text>
-  <text class="dg-enc" x="188" y="126">ENC(암호화된_문자열)</text>
-  <text class="dg-key" x="92"  y="150">password:</text>
-  <text class="dg-enc" x="188" y="150">ENC(암호화된_문자열)</text>
-  <text class="dg-cm"  x="44"  y="188">복사한 Encrypted String 을 ENC( ) 안에 넣는다</text>
-
-  <text class="dg-s" x="24" y="244">배포 시 Jasypt 가 ENC( ) 안의 값을 자동으로 풀어서 읽는다</text>
-  <text class="dg-s" x="24" y="266">평문이 저장소에 남지 않으므로 그대로 커밋해도 된다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="249" y="56" width="221" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">spring:</text>
+  <text class="dg-s" x="359" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">datasource: · username: · ENC(암호화된_…</text>
 </svg>

@@ -1,33 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="DTO, VO, Entity 를 목적과 같음의 기준으로 비교">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="dto--dto-vo-entity-title dto--dto-vo-entity-desc">
+  <title id="dto--dto-vo-entity-title">DTO, VO, Entity 를 목적과 같음의 기준으로 비교</title>
+  <desc id="dto--dto-vo-entity-desc">DTO, VO, Entity 를 목적과 같음의 기준으로 비교</desc>
 
-  <text class="dg-h" x="24" y="30">DTO · VO · Entity 는 무엇이 다른가</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-item" x="24" y="48" width="212" height="160" rx="10"/>
-  <text class="dg-t" x="44" y="76">DTO</text>
-  <rect class="dg-row" x="44" y="90" width="172" height="46" rx="6"/>
-  <text class="dg-k" x="60" y="110">목적</text>
-  <text class="dg-s" x="60" y="128">계층 사이 데이터 운반</text>
-  <rect class="dg-row" x="44" y="144" width="172" height="46" rx="6"/>
-  <text class="dg-k" x="60" y="164">같음의 기준</text>
-  <text class="dg-s" x="60" y="182">따지지 않는다</text>
-
-  <rect class="dg-item" x="252" y="48" width="212" height="160" rx="10"/>
-  <text class="dg-t" x="272" y="76">VO</text>
-  <rect class="dg-row" x="272" y="90" width="172" height="46" rx="6"/>
-  <text class="dg-k" x="288" y="110">목적</text>
-  <text class="dg-s" x="288" y="128">값 자체를 표현</text>
-  <rect class="dg-lead" x="272" y="144" width="172" height="46" rx="6"/>
-  <text class="dg-k" x="288" y="164">같음의 기준</text>
-  <text class="dg-s" x="288" y="182">속성 값이 모두 같으면</text>
-
-  <rect class="dg-item" x="480" y="48" width="216" height="160" rx="10"/>
-  <text class="dg-t" x="500" y="76">Entity</text>
-  <rect class="dg-row" x="500" y="90" width="176" height="46" rx="6"/>
-  <text class="dg-k" x="516" y="110">목적</text>
-  <text class="dg-s" x="516" y="128">DB 테이블과 매핑</text>
-  <rect class="dg-lead" x="500" y="144" width="176" height="46" rx="6"/>
-  <text class="dg-k" x="516" y="164">같음의 기준</text>
-  <text class="dg-s" x="516" y="182">id 가 같으면</text>
-
-  <text class="dg-s" x="24" y="240">이름이 달라도 값이 같으면 같은 VO 이고, 값이 달라도 id 가 같으면 같은 Entity 다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="67" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="115" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DTO</text>
+  <rect class="dg-item" x="179" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="227" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">VO</text>
+  <rect class="dg-item" x="291" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="339" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Entity</text>
+  <rect class="dg-item" x="403" y="56" width="132" height="52" rx="6"/>
+  <text class="dg-t" x="469" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">목적</text>
+  <text class="dg-s" x="469" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">계층 사이 데이터 운반</text>
+  <rect class="dg-item" x="551" y="56" width="101" height="52" rx="6"/>
+  <text class="dg-t" x="601" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">목적</text>
+  <text class="dg-s" x="601" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">값 자체를 표현</text>
+  <rect class="dg-item" x="116" y="122" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="171" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">목적</text>
+  <text class="dg-s" x="171" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">DB 테이블과 매핑</text>
+  <rect class="dg-item" x="242" y="122" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="291" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같음의 기준</text>
+  <text class="dg-s" x="291" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">따지지 않는다</text>
+  <rect class="dg-item" x="357" y="122" width="132" height="52" rx="6"/>
+  <text class="dg-t" x="423" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같음의 기준</text>
+  <text class="dg-s" x="423" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">속성 값이 모두 같으면</text>
+  <rect class="dg-item" x="505" y="122" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="554" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같음의 기준</text>
+  <text class="dg-s" x="554" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">id 가 같으면</text>
 </svg>

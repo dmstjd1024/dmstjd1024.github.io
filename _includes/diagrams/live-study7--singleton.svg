@@ -1,30 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="생성자를 private 로 막고 static 메서드로만 인스턴스를 얻게 하는 싱글톤 구조">
-  <marker id="ls7sg-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study7--singleton-title live-study7--singleton-desc">
+  <title id="live-study7--singleton-title">생성자를 private 로 막고 static 메서드로만 인스턴스를 얻게 하는 싱글톤 구조</title>
+  <desc id="live-study7--singleton-desc">생성자를 private 로 막고 static 메서드로만 인스턴스를 얻게 하는 싱글톤 구조</desc>
 
-  <text class="dg-h" x="24" y="30">생성자를 private 로 막으면</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-warn" x="24" y="52" width="300" height="52" rx="8"/>
-  <text class="dg-k" x="44" y="76">new Singleton()</text>
-  <text class="dg-s" x="44" y="96">외부에서 만들 수 없다 — 컴파일 에러</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="170" y="56" width="199" height="52" rx="6"/>
+  <text class="dg-t" x="269" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">new Singleton()</text>
+  <text class="dg-s" x="269" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">외부에서 만들 수 없다 — 컴파일 에러</text>
+  <rect class="dg-item" x="385" y="56" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="467" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Singleton.getInstance()</text>
+  <text class="dg-s" x="467" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">이 통로로만 받을 수 있다</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-out" x="396" y="52" width="300" height="52" rx="8"/>
-  <text class="dg-k" x="416" y="76">Singleton.getInstance()</text>
-  <text class="dg-s" x="416" y="96">이 통로로만 받을 수 있다</text>
-
-  <rect class="dg-lane" x="24" y="124" width="672" height="108" rx="10"/>
-  <text class="dg-t" x="44" y="150">클래스 안쪽</text>
-
-  <rect class="dg-row" x="44" y="164" width="368" height="30" rx="6"/>
-  <text class="dg-v" x="60" y="184">private static Singleton s = new Singleton();</text>
-
-  <rect class="dg-lead" x="428" y="164" width="248" height="30" rx="6"/>
-  <text class="dg-k" x="444" y="184">public static getInstance()</text>
-
-  <path class="dg-arw" d="M228 198 V208 H552 V198" marker-end="url(#ls7sg-a)"/>
-  <text class="dg-s" x="240" y="228">미리 만들어 둔 하나를 계속 돌려준다</text>
-
-  <text class="dg-v" x="24" y="264">몇 번을 불러도 항상 같은 인스턴스가 나온다</text>
-  <text class="dg-s" x="24" y="288">생성자가 private 이면 자손 클래스도 만들 수 없으므로 final 을 붙여 알려주는 게 좋다</text>
+  <!-- 클래스 안쪽 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">클래스 안쪽</text>
+  <rect class="dg-item" x="158" y="200" width="202" height="52" rx="6"/>
+  <text class="dg-t" x="259" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">private static Singleton s =…</text>
+  <rect class="dg-item" x="376" y="200" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="468" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">public static getInstance()</text>
 </svg>

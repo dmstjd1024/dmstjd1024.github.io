@@ -1,29 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="논리 연산자가 결과가 확정되면 오른쪽을 평가하지 않고 건너뛰는 동작">
-  <marker id="ls3sc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study3--short-circuit-title live-study3--short-circuit-desc">
+  <title id="live-study3--short-circuit-title">논리 연산자가 결과가 확정되면 오른쪽을 평가하지 않고 건너뛰는 동작</title>
+  <desc id="live-study3--short-circuit-desc">논리 연산자가 결과가 확정되면 오른쪽을 평가하지 않고 건너뛰는 동작</desc>
 
-  <text class="dg-h" x="24" y="30">결과가 정해지면 나머지는 보지 않는다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="672" height="76" rx="8"/>
-  <text class="dg-t" x="44" y="74">||  (OR)</text>
+  <!-- ||  (OR) -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">||  (OR)</text>
+  <rect class="dg-item" x="218" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="267" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">왼쪽이 true</text>
+  <rect class="dg-item" x="333" y="56" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="417" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">오른쪽은 평가하지 않는다</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-out" x="140" y="58" width="180" height="38" rx="6"/>
-  <text class="dg-k" x="160" y="82">왼쪽이 true</text>
-  <path class="dg-arw" d="M328 77 H372" marker-end="url(#ls3sc-a)"/>
-  <rect class="dg-warn" x="380" y="58" width="296" height="38" rx="6"/>
-  <text class="dg-v" x="400" y="82">오른쪽은 평가하지 않는다</text>
-  <text class="dg-s" x="140" y="114">한쪽만 참이면 이미 결과가 true 이기 때문</text>
-
-  <rect class="dg-lane" x="24" y="136" width="672" height="76" rx="8"/>
-  <text class="dg-t" x="44" y="162">&amp;&amp;  (AND)</text>
-
-  <rect class="dg-out" x="140" y="146" width="180" height="38" rx="6"/>
-  <text class="dg-k" x="160" y="170">왼쪽이 false</text>
-  <path class="dg-arw" d="M328 165 H372" marker-end="url(#ls3sc-a)"/>
-  <rect class="dg-warn" x="380" y="146" width="296" height="38" rx="6"/>
-  <text class="dg-v" x="400" y="170">오른쪽은 평가하지 않는다</text>
-  <text class="dg-s" x="140" y="202">한쪽만 거짓이어도 결과가 false 이기 때문</text>
-
-  <text class="dg-s" x="24" y="240">그래서 왼쪽에 null 검사를 두면 오른쪽에서 NPE 가 나지 않는다</text>
+  <!-- &&  (AND) -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">&amp;&amp;  (AND)</text>
+  <rect class="dg-item" x="215" y="200" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="267" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">왼쪽이 false</text>
+  <rect class="dg-item" x="335" y="200" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="419" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">오른쪽은 평가하지 않는다</text>
 </svg>

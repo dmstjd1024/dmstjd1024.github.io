@@ -1,38 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="Rovo 크레딧이 무료 기능과 소모 기능으로 나뉘고 요금제별 월 할당량이 다른 구조">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="jira--rovo-credits-title jira--rovo-credits-desc">
+  <title id="jira--rovo-credits-title">Rovo 크레딧이 무료 기능과 소모 기능으로 나뉘고 요금제별 월 할당량이 다른 구조</title>
+  <desc id="jira--rovo-credits-desc">Rovo 크레딧이 무료 기능과 소모 기능으로 나뉘고 요금제별 월 할당량이 다른 구조</desc>
 
-  <text class="dg-h" x="24" y="30">Rovo 크레딧 — 2026년 8월 작성 당시 기록</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-out" x="24" y="52" width="328" height="124" rx="10"/>
-  <text class="dg-t" x="44" y="78">크레딧을 쓰지 않는다</text>
-  <text class="dg-v" x="44" y="102">Rovo Search — 통합 검색</text>
-  <text class="dg-v" x="44" y="124">요약 — 긴 댓글 스레드 정리</text>
-  <text class="dg-v" x="44" y="146">용어 정의 · 차트 인사이트</text>
-  <text class="dg-s" x="44" y="166">여기부터 쓰면 부담이 없다</text>
-
-  <rect class="dg-warn" x="368" y="52" width="328" height="124" rx="10"/>
-  <text class="dg-t" x="388" y="78">크레딧을 쓴다</text>
-  <text class="dg-v" x="388" y="102">Rovo Chat 단답 — 10</text>
-  <text class="dg-v" x="388" y="124">Rovo Agent 실행 — 10</text>
-  <text class="dg-k" x="388" y="146">Deep Research — 100</text>
-  <text class="dg-s" x="388" y="166">100 은 Standard 한 달치를 넘는다</text>
-
-  <text class="dg-t" x="24" y="212">요금제별 월 할당 (사용자당, 조직 단위로 합산)</text>
-
-  <rect class="dg-item" x="24" y="224" width="160" height="56" rx="8"/>
-  <text class="dg-k" x="44" y="248">Free</text>
-  <text class="dg-s" x="44" y="268">크레딧 없음</text>
-
-  <rect class="dg-row" x="196" y="224" width="160" height="56" rx="8"/>
-  <text class="dg-k" x="216" y="248">Standard</text>
-  <text class="dg-v" x="216" y="268">25</text>
-
-  <rect class="dg-row" x="368" y="224" width="160" height="56" rx="8"/>
-  <text class="dg-k" x="388" y="248">Premium</text>
-  <text class="dg-v" x="388" y="268">70</text>
-
-  <rect class="dg-lead" x="540" y="224" width="156" height="56" rx="8"/>
-  <text class="dg-k" x="560" y="248">Enterprise</text>
-  <text class="dg-v" x="560" y="268">150</text>
-
-  <text class="dg-s" x="24" y="308">매월 초기화되고 이월되지 않는다 — 검색·요약 위주로 쓰고 Chat 은 아껴 쓰는 편이 낫다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="71" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="187" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">크레딧을 쓰지 않는다</text>
+  <text class="dg-s" x="187" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Rovo Search — 통합 검색 · 요약 — 긴 댓글…</text>
+  <rect class="dg-item" x="319" y="56" width="217" height="52" rx="6"/>
+  <text class="dg-t" x="427" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">크레딧을 쓴다</text>
+  <text class="dg-s" x="427" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Rovo Chat 단답 — 10 · Rovo Agent 실행…</text>
+  <rect class="dg-item" x="552" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="600" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Free</text>
+  <text class="dg-s" x="600" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">크레딧 없음</text>
+  <rect class="dg-item" x="200" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Standard</text>
+  <text class="dg-s" x="248" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">25</text>
+  <rect class="dg-item" x="312" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Premium</text>
+  <text class="dg-s" x="360" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">70</text>
+  <rect class="dg-item" x="424" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Enterprise</text>
+  <text class="dg-s" x="472" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">150</text>
 </svg>

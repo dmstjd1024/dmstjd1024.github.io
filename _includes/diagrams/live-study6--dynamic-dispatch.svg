@@ -1,32 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="같은 코드가 실제로 담긴 객체에 따라 다른 메서드를 실행하는 동적 디스패치">
-  <marker id="ls6dd-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="live-study6--dynamic-dispatch-title live-study6--dynamic-dispatch-desc">
+  <title id="live-study6--dynamic-dispatch-title">같은 코드가 실제로 담긴 객체에 따라 다른 메서드를 실행하는 동적 디스패치</title>
+  <desc id="live-study6--dynamic-dispatch-desc">같은 코드가 실제로 담긴 객체에 따라 다른 메서드를 실행하는 동적 디스패치</desc>
 
-  <text class="dg-h" x="24" y="30">어느 메서드가 불릴지는 실행할 때 정해진다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-code" x="24" y="48" width="360" height="36" rx="4"/>
-  <text class="dg-key" x="44" y="72">Player p = ... ;   p.play();</text>
-  <text class="dg-s" x="400" y="72">코드는 이 한 줄뿐인데</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="264" y="56" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Player p = ... ;   p.play();</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <text class="dg-s" x="24" y="108">컴파일할 때는 p 가 Player 라는 것만 안다 — 실제로 뭐가 들어올지는 모른다</text>
+  <!-- p 에 NBAPlayer 가 담겼다면 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="125" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">p 에 NBAPlayer 가 담겼다면</text>
+  <rect class="dg-item" x="220" y="200" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="280" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">new NBAPlayer()</text>
+  <rect class="dg-item" x="357" y="200" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="428" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NBAPlayer 의 play()</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="124" width="328" height="128" rx="10"/>
-  <text class="dg-t" x="44" y="150">p 에 NBAPlayer 가 담겼다면</text>
-  <rect class="dg-row" x="44" y="164" width="288" height="34" rx="6"/>
-  <text class="dg-v" x="60" y="186">new NBAPlayer()</text>
-  <path class="dg-arw" d="M188 202 V216" marker-end="url(#ls6dd-a)"/>
-  <rect class="dg-out" x="44" y="220" width="288" height="26" rx="6"/>
-  <text class="dg-k" x="60" y="239">NBAPlayer 의 play()</text>
-
-  <rect class="dg-lane" x="368" y="124" width="328" height="128" rx="10"/>
-  <text class="dg-t" x="388" y="150">SoccerPlayer 가 담겼다면</text>
-  <rect class="dg-row" x="388" y="164" width="288" height="34" rx="6"/>
-  <text class="dg-v" x="404" y="186">new SoccerPlayer()</text>
-  <path class="dg-arw" d="M532 202 V216" marker-end="url(#ls6dd-a)"/>
-  <rect class="dg-out" x="388" y="220" width="288" height="26" rx="6"/>
-  <text class="dg-k" x="404" y="239">SoccerPlayer 의 play()</text>
-
-  <text class="dg-v" x="24" y="284">호출할 메서드를 실행 시점에 고르는 것 — 이것이 동적 메서드 디스패치다</text>
-  <text class="dg-s" x="24" y="308">덕분에 새 자식 클래스를 추가해도 호출하는 쪽 코드는 그대로 둬도 된다</text>
+  <!-- SoccerPlayer 가 담겼다면 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="116" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SoccerPlayer 가 담겼다면</text>
+  <rect class="dg-item" x="204" y="344" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="272" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">new SoccerPlayer()</text>
+  <rect class="dg-item" x="357" y="344" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="436" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SoccerPlayer 의 play()</text>
 </svg>

@@ -1,33 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="S3 객체 작업의 강한 일관성과 버킷 설정 변경의 최종 일관성">
-  <marker id="s3cons-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="s3--consistency-title s3--consistency-desc">
+  <title id="s3--consistency-title">S3 객체 작업의 강한 일관성과 버킷 설정 변경의 최종 일관성</title>
+  <desc id="s3--consistency-desc">S3 객체 작업의 강한 일관성과 버킷 설정 변경의 최종 일관성</desc>
 
-  <text class="dg-h" x="24" y="30">객체 작업과 버킷 설정의 일관성</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="672" height="112" rx="10"/>
-  <text class="dg-t" x="44" y="76">객체 작업 (강한 일관성)</text>
-  <text class="dg-s" x="44" y="96">PUT · DELETE</text>
+  <!-- 객체 작업 (강한 일관성) -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="112" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">객체 작업 (강한 일관성)</text>
+  <rect class="dg-item" x="254" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="302" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">객체 변경</text>
+  <rect class="dg-item" x="366" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="415" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">바로 읽힌다</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lead" x="300" y="62" width="120" height="42" rx="6"/>
-  <text class="dg-t" x="320" y="88">객체 변경</text>
-  <path class="dg-arw" d="M428 83 H480" marker-end="url(#s3cons-a)"/>
-  <rect class="dg-out" x="488" y="62" width="188" height="42" rx="6"/>
-  <text class="dg-t" x="508" y="88">바로 읽힌다</text>
-
-  <text class="dg-v" x="44" y="140">생성·덮어쓰기·삭제 성공 뒤 GET과 LIST에 바로 반영된다</text>
-
-  <rect class="dg-lane" x="24" y="176" width="672" height="132" rx="10"/>
-  <text class="dg-t" x="44" y="204">버킷 설정 변경 (최종 일관성)</text>
-  <text class="dg-s" x="44" y="224">버킷·버저닝 설정</text>
-
-  <rect class="dg-lead" x="300" y="190" width="120" height="42" rx="6"/>
-  <text class="dg-t" x="320" y="216">설정 변경</text>
-  <path class="dg-arw" d="M428 211 H480" marker-end="url(#s3cons-a)"/>
-  <rect class="dg-warn" x="488" y="190" width="188" height="42" rx="6"/>
-  <text class="dg-t" x="508" y="216">반영이 지연될 수 있다</text>
-
-  <text class="dg-v" x="44" y="256">버킷 삭제 직후 버킷 목록에 삭제한 버킷이 남아 있을 수 있다</text>
-  <text class="dg-v" x="44" y="278">버저닝 최초 활성화도 설정 전파에 시간이 걸릴 수 있다</text>
-  <text class="dg-s" x="44" y="298">객체의 PUT·DELETE 일관성과 구분한다</text>
+  <!-- 버킷 설정 변경 (최종 일관성) -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="133" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">버킷 설정 변경 (최종 일관성)</text>
+  <rect class="dg-item" x="227" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="275" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">설정 변경</text>
+  <rect class="dg-item" x="339" y="200" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="415" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">반영이 지연될 수 있다</text>
 </svg>

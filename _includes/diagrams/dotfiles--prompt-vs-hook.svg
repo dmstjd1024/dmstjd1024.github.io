@@ -1,25 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 356" role="img" aria-label="프롬프트의 금지 목록은 요청에 그치고 PreToolUse 훅만 실제로 명령을 차단한다">
-  <text class="dg-h" x="24" y="30">같은 금지 목록, 다른 강제력</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="dotfiles--prompt-vs-hook-title dotfiles--prompt-vs-hook-desc">
+  <title id="dotfiles--prompt-vs-hook-title">프롬프트의 금지 목록은 요청에 그치고 PreToolUse 훅만 실제로 명령을 차단한다</title>
+  <desc id="dotfiles--prompt-vs-hook-desc">프롬프트의 금지 목록은 요청에 그치고 PreToolUse 훅만 실제로 명령을 차단한다</desc>
 
-  <rect class="dg-warn" x="24" y="54" width="330" height="128" rx="8"/>
-  <text class="dg-t" x="44" y="82">프롬프트 + allowedTools</text>
-  <text class="dg-s" x="44" y="106">"push --force 하지 마"</text>
-  <text class="dg-s" x="44" y="126">범위를 좁혀 지정</text>
-  <text class="dg-v" x="44" y="152">실측: 범위 밖 명령도 실행됨</text>
-  <text class="dg-s" x="44" y="172">차단이 아니라 요청이었다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-out" x="366" y="54" width="330" height="128" rx="8"/>
-  <text class="dg-t" x="386" y="82">PreToolUse 훅</text>
-  <text class="dg-s" x="386" y="106">매 호출의 명령 문자열 검사</text>
-  <text class="dg-s" x="386" y="126">해당하면 exit 2 로 거부</text>
-  <text class="dg-b" x="386" y="152">실측: whoami 차단 / echo 통과</text>
-  <text class="dg-s" x="386" y="172">호출 자체가 도달하지 못한다</text>
-
-  <rect class="dg-lane" x="24" y="202" width="672" height="94" rx="8"/>
-  <text class="dg-t" x="44" y="230">차단은 명령어 이름이 아니라</text>
-  <text class="dg-t" x="44" y="254">명령 문자열 전체를 본다</text>
-  <text class="dg-s" x="44" y="278">cat README.md 는 통과, cat ~/.ssh/config 는 차단</text>
-
-  <rect class="dg-out" x="24" y="312" width="672" height="34" rx="8"/>
-  <text class="dg-k" x="44" y="334">시크릿 경로를 건드리지 않는 cat 만 허용된다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="121" y="56" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">프롬프트 + allowedTools</text>
+  <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">"push --force 하지 마" · 범위를 좁혀 지정…</text>
+  <rect class="dg-item" x="367" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="483" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PreToolUse 훅</text>
+  <text class="dg-s" x="483" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">매 호출의 명령 문자열 검사 · 해당하면 exit 2…</text>
+  <rect class="dg-item" x="251" y="122" width="218" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">시크릿 경로를 건드리지 않는 cat…</text>
 </svg>

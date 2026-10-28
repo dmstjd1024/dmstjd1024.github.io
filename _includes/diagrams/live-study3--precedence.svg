@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="연산자 우선순위를 높은 것부터 낮은 것까지 순서대로 나열">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-labelledby="live-study3--precedence-title live-study3--precedence-desc">
+  <title id="live-study3--precedence-title">연산자 우선순위를 높은 것부터 낮은 것까지 순서대로 나열</title>
+  <desc id="live-study3--precedence-desc">연산자 우선순위를 높은 것부터 낮은 것까지 순서대로 나열</desc>
 
-  <text class="dg-h" x="24" y="30">연산자 우선순위</text>
-  <text class="dg-s" x="24" y="50">위에 있을수록 먼저 계산된다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lead" x="24" y="66" width="672" height="38" rx="6"/>
-  <text class="dg-t" x="44" y="90">단항</text>
-  <text class="dg-v" x="160" y="90">++  --  +  -  ~  !  (type)</text>
-  <text class="dg-s" x="560" y="90">← 오른쪽부터</text>
-
-  <rect class="dg-row" x="24" y="112" width="672" height="38" rx="6"/>
-  <text class="dg-t" x="44" y="136">산술</text>
-  <text class="dg-v" x="160" y="136">*  /  %   그다음  +  -   그다음  &lt;&lt;  &gt;&gt;</text>
-
-  <rect class="dg-row" x="24" y="158" width="672" height="38" rx="6"/>
-  <text class="dg-t" x="44" y="182">비교</text>
-  <text class="dg-v" x="160" y="182">&lt;  &gt;  &lt;=  &gt;=  instanceof   그다음  ==  !=</text>
-
-  <rect class="dg-row" x="24" y="204" width="672" height="38" rx="6"/>
-  <text class="dg-t" x="44" y="228">논리</text>
-  <text class="dg-v" x="160" y="228">&amp;   ^   |   &amp;&amp;   ||</text>
-
-  <rect class="dg-row" x="24" y="250" width="672" height="38" rx="6"/>
-  <text class="dg-t" x="44" y="274">삼항</text>
-  <text class="dg-v" x="160" y="274">? :</text>
-
-  <rect class="dg-out" x="24" y="296" width="672" height="18" rx="4"/>
-  <text class="dg-t" x="44" y="310">대입</text>
-  <text class="dg-v" x="160" y="310">=  +=  -=  *=  /=  ...</text>
-  <text class="dg-s" x="560" y="310">← 오른쪽부터</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="232" rx="8"/>
+  <rect class="dg-item" x="133" y="56" width="225" height="52" rx="6"/>
+  <text class="dg-t" x="245" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">단항</text>
+  <text class="dg-s" x="245" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">++  --  +  -  ~  !  (type) · ← 오른쪽부…</text>
+  <rect class="dg-item" x="374" y="56" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="480" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">산술</text>
+  <text class="dg-s" x="480" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">*  /  %   그다음  +  -   그다음  &lt;&lt;  &gt;&gt;</text>
+  <rect class="dg-item" x="121" y="122" width="225" height="52" rx="6"/>
+  <text class="dg-t" x="233" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">비교</text>
+  <text class="dg-s" x="233" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">&lt;  &gt;  &lt;=  &gt;=  instanceof   그다음  ==  !…</text>
+  <rect class="dg-item" x="362" y="122" width="124" height="52" rx="6"/>
+  <text class="dg-t" x="424" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">논리</text>
+  <text class="dg-s" x="424" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">&amp;   ^   |   &amp;&amp;   ||</text>
+  <rect class="dg-item" x="502" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="550" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">삼항</text>
+  <text class="dg-s" x="550" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">? :</text>
+  <rect class="dg-item" x="256" y="188" width="208" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">대입</text>
+  <text class="dg-s" x="360" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">=  +=  -=  *=  /=  ... · ← 오른쪽부터</text>
 </svg>

@@ -1,31 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="run A 와 run B 가 트랜잭션 밖에서 같은 pending 집합을 스냅샷하고 B 가 상태 확인 없이 다시 로드해 외부 API 를 두 번 호출한다">
-  <marker id="cdc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="chunk--double-charge-title chunk--double-charge-desc">
+  <title id="chunk--double-charge-title">run A 와 run B 가 트랜잭션 밖에서 같은 pending 집합을 스냅샷하고 B 가 상태 확인 없이 다시 로드해 외부 API 를 두 번 호출한다</title>
+  <desc id="chunk--double-charge-desc">run A 와 run B 가 트랜잭션 밖에서 같은 pending 집합을 스냅샷하고 B 가 상태 확인 없이 다시 로드해 외부 API 를 두 번 호출한다</desc>
 
-  <text class="dg-h" x="24" y="30">버튼을 두 번 누르면</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lead" x="188" y="52" width="344" height="40" rx="8"/>
-  <text class="dg-t" x="208" y="78">pending 스냅샷 — 트랜잭션 밖에서 1 회</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="123" y="56" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="237" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">pending 스냅샷 — 트랜잭션 밖에서…</text>
+  <rect class="dg-item" x="368" y="56" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="482" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같은 구간 이중 과금 + A 결과 덮어…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <path class="dg-arw" d="M360 100 V116 H160 V140" marker-end="url(#cdc-a)"/>
-  <path class="dg-arw" d="M360 100 V116 H560 V140" marker-end="url(#cdc-a)"/>
+  <!-- run A -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="37" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">run A</text>
+  <rect class="dg-item" x="248" y="200" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">외부 API 호출 → 청크 커밋 (succ…</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="146" width="328" height="104" rx="10"/>
-  <text class="dg-t" x="44" y="172">run A</text>
-  <rect class="dg-out" x="44" y="186" width="288" height="30" rx="6"/>
-  <text class="dg-k" x="60" y="206">외부 API 호출 → 청크 커밋 (success)</text>
-  <text class="dg-s" x="44" y="238">같은 id 집합을 잡았다</text>
-
-  <rect class="dg-lane" x="368" y="146" width="328" height="104" rx="10"/>
-  <text class="dg-t" x="388" y="172">run B</text>
-  <rect class="dg-warn" x="388" y="186" width="288" height="30" rx="6"/>
-  <text class="dg-k" x="404" y="206">findAllById — 상태를 확인하지 않는다</text>
-  <text class="dg-s" x="388" y="238">이미 success 인데 또 처리한다</text>
-
-  <path class="dg-arw" d="M532 256 V282" marker-end="url(#cdc-a)"/>
-  <rect class="dg-warn" x="368" y="288" width="328" height="30" rx="6"/>
-  <text class="dg-k" x="384" y="308">같은 구간 이중 과금 + A 결과 덮어씀</text>
-
-  <text class="dg-v" x="24" y="308">수정 — 청크 트랜잭션 안에서 pending 을 다시 확인한다</text>
+  <!-- run B -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="37" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">run B</text>
+  <rect class="dg-item" x="254" y="344" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">findAllById — 상태를 확인하지…</text>
 </svg>

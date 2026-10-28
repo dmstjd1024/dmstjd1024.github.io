@@ -1,59 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="동기 호출은 응답을 받을 때까지 호출한 쪽이 기다리고 뒤쪽이 죽으면 앞까지 실패하는 반면 비동기 메시징은 브로커에 맡기고 바로 돌아오며 소비자가 죽어도 메시지가 남는 구조">
-  <marker id="msgsva-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="messaging--sync-vs-async-title messaging--sync-vs-async-desc">
+  <title id="messaging--sync-vs-async-title">동기 호출은 응답을 받을 때까지 호출한 쪽이 기다리고 뒤쪽이 죽으면 앞까지 실패하는 반면 비동기 메시징은 브로커에 맡기고 바로 돌아오며 소비자가 죽어도 메시지가 남는 구조</title>
+  <desc id="messaging--sync-vs-async-desc">동기 호출은 응답을 받을 때까지 호출한 쪽이 기다리고 뒤쪽이 죽으면 앞까지 실패하는 반면 비동기 메시징은 브로커에 맡기고 바로 돌아오며 소비자가 죽어도 메시지가 남는 구조</desc>
 
-  <text class="dg-h" x="24" y="30">주문 하나를 처리하는 두 가지 방식</text>
-  <text class="dg-s" x="24" y="50">주문을 받고 재고를 줄이고 메일을 보내는 흐름</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="68" width="330" height="250" rx="10"/>
-  <text class="dg-k" x="44" y="94">동기 호출 — 끝날 때까지 기다린다</text>
+  <!-- 동기 호출 — 끝날 때까지 기다린다 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="154" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">동기 호출 — 끝날 때까지 기다린다</text>
+  <rect class="dg-item" x="72" y="56" width="146" height="52" rx="6"/>
+  <text class="dg-t" x="145" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">주문 서비스</text>
+  <text class="dg-s" x="145" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">호출하고 응답을 기다린다</text>
+  <rect class="dg-item" x="234" y="56" width="208" height="52" rx="6"/>
+  <text class="dg-t" x="338" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">재고 서비스</text>
+  <text class="dg-s" x="338" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">이 사이 주문 서비스 스레드는 묶여 있다</text>
+  <rect class="dg-item" x="458" y="56" width="190" height="52" rx="6"/>
+  <text class="dg-t" x="553" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">메일 서비스</text>
+  <text class="dg-s" x="553" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">메일이 안 나가면 주문까지 실패한다</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-row" x="44" y="108" width="290" height="42" rx="6"/>
-  <text class="dg-v" x="60" y="128">주문 서비스</text>
-  <text class="dg-s" x="60" y="144">호출하고 응답을 기다린다</text>
-
-  <path class="dg-arw" d="M189 154 V168" marker-end="url(#msgsva-a)"/>
-
-  <rect class="dg-row" x="44" y="172" width="290" height="42" rx="6"/>
-  <text class="dg-v" x="60" y="192">재고 서비스</text>
-  <text class="dg-s" x="60" y="208">이 사이 주문 서비스 스레드는 묶여 있다</text>
-
-  <path class="dg-arw" d="M189 218 V232" marker-end="url(#msgsva-a)"/>
-
-  <rect class="dg-row" x="44" y="236" width="290" height="42" rx="6"/>
-  <text class="dg-v" x="60" y="256">메일 서비스</text>
-  <text class="dg-s" x="60" y="272">메일이 안 나가면 주문까지 실패한다</text>
-
-  <text class="dg-s" x="44" y="302">전체 응답 시간 = 세 구간을 더한 값</text>
-
-  <rect class="dg-lane" x="374" y="68" width="322" height="250" rx="10"/>
-  <text class="dg-k" x="394" y="94">비동기 메시징 — 맡기고 바로 돌아온다</text>
-
-  <rect class="dg-row" x="394" y="108" width="282" height="42" rx="6"/>
-  <text class="dg-v" x="410" y="128">주문 서비스 (생산자)</text>
-  <text class="dg-s" x="410" y="144">메시지를 넣은 순간 응답한다</text>
-
-  <path class="dg-arw" d="M535 154 V168" marker-end="url(#msgsva-a)"/>
-
-  <rect class="dg-lead" x="394" y="172" width="282" height="42" rx="6"/>
-  <text class="dg-v" x="410" y="192">브로커 (메시지를 보관한다)</text>
-  <text class="dg-s" x="410" y="208">소비자가 죽어 있어도 메시지는 남는다</text>
-
-  <path class="dg-arw" d="M470 218 V232" marker-end="url(#msgsva-a)"/>
-  <path class="dg-arw" d="M600 218 V232" marker-end="url(#msgsva-a)"/>
-
-  <rect class="dg-row" x="394" y="236" width="130" height="42" rx="6"/>
-  <text class="dg-v" x="408" y="256">재고 소비자</text>
-  <text class="dg-s" x="408" y="272">각자 처리</text>
-
-  <rect class="dg-row" x="546" y="236" width="130" height="42" rx="6"/>
-  <text class="dg-v" x="560" y="256">메일 소비자</text>
-  <text class="dg-s" x="560" y="272">각자 처리</text>
-
-  <text class="dg-s" x="394" y="302">주문 응답 시간 = 메시지를 넣는 구간까지</text>
-
-  <rect class="dg-lane" x="24" y="334" width="672" height="66" rx="8"/>
-  <text class="dg-v" x="44" y="358">얻는 것 — 호출한 쪽이 기다리지 않고, 뒤쪽이 죽어도 앞쪽이 같이 죽지 않는다</text>
-  <text class="dg-s" x="44" y="380">잃는 것 — 언제 처리됐는지 바로 알 수 없고, 브로커라는 운영 대상이 하나 늘어난다</text>
+  <!-- 비동기 메시징 — 맡기고 바로 돌아온다 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="171" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">비동기 메시징 — 맡기고 바로 돌아온다</text>
+  <rect class="dg-item" x="58" y="200" width="159" height="52" rx="6"/>
+  <text class="dg-t" x="137" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">주문 서비스 (생산자)</text>
+  <text class="dg-s" x="137" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">메시지를 넣은 순간 응답한다</text>
+  <rect class="dg-item" x="233" y="200" width="199" height="52" rx="6"/>
+  <text class="dg-t" x="332" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">브로커 (메시지를 보관한다)</text>
+  <text class="dg-s" x="332" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">소비자가 죽어 있어도 메시지는 남는다</text>
+  <rect class="dg-item" x="448" y="200" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="497" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">재고 소비자</text>
+  <text class="dg-s" x="497" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">각자 처리</text>
+  <rect class="dg-item" x="563" y="200" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="612" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">메일 소비자</text>
+  <text class="dg-s" x="612" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">각자 처리</text>
 </svg>

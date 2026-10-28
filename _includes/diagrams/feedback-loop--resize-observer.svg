@@ -1,30 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="ResizeObserver 가 접힘 여부에 따라 폭이 달라지는 컨테이너를 측정해 펼침과 접힘이 서로를 유발하며 진동한다">
-  <marker id="fro-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="feedback-loop--resize-observer-title feedback-loop--resize-observer-desc">
+  <title id="feedback-loop--resize-observer-title">ResizeObserver 가 접힘 여부에 따라 폭이 달라지는 컨테이너를 측정해 펼침과 접힘이 서로를 유발하며 진동한다</title>
+  <desc id="feedback-loop--resize-observer-desc">ResizeObserver 가 접힘 여부에 따라 폭이 달라지는 컨테이너를 측정해 펼침과 접힘이 서로를 유발하며 진동한다</desc>
 
-  <text class="dg-h" x="24" y="30">접으면 좁아지고, 좁으면 펼친다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="52" width="328" height="126" rx="10"/>
-  <text class="dg-t" x="44" y="78">펼친 상태</text>
-  <rect class="dg-out" x="44" y="92" width="288" height="30" rx="6"/>
-  <text class="dg-k" x="60" y="112">탭이 다 보여 폭이 넓다</text>
-  <text class="dg-s" x="44" y="146">→ 임계값 초과 → '접음' 으로 전환</text>
-  <text class="dg-s" x="44" y="166">측정 대상이 접힘 여부에 따라 변한다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="244" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">폭이 임계값 근처면 무한 진동 — 초…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="368" y="52" width="328" height="126" rx="10"/>
-  <text class="dg-t" x="388" y="78">접은 상태</text>
-  <rect class="dg-out" x="388" y="92" width="288" height="30" rx="6"/>
-  <text class="dg-k" x="404" y="112">드롭다운만 남아 폭이 줄어든다</text>
-  <text class="dg-s" x="388" y="146">→ 임계값 미만 → '펼침' 으로 되돌아감</text>
-  <text class="dg-s" x="388" y="166">그래서 다시 위 상태가 된다</text>
+  <!-- 펼친 상태 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">펼친 상태</text>
+  <rect class="dg-item" x="281" y="200" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">탭이 다 보여 폭이 넓다</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <path class="dg-arw" d="M352 100 H364" marker-end="url(#fro-a)"/>
-  <path class="dg-arw" d="M368 160 H356" marker-end="url(#fro-a)"/>
-
-  <rect class="dg-warn" x="140" y="200" width="440" height="30" rx="6"/>
-  <text class="dg-k" x="156" y="220">폭이 임계값 근처면 무한 진동 — 초당 수백 노드 재생성</text>
-
-  <text class="dg-v" x="24" y="262">redux 액션이 없는 순수 setState 루프라 devtools 에는 아무것도 안 남는다</text>
-  <text class="dg-v" x="24" y="284">해법 — 접힘에 흔들리지 않는 외부 래퍼를 측정 대상으로 바꾼다</text>
+  <!-- 접은 상태 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">접은 상태</text>
+  <rect class="dg-item" x="262" y="344" width="196" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">드롭다운만 남아 폭이 줄어든다</text>
 </svg>

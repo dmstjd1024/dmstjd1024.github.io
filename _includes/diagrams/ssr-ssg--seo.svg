@@ -1,33 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="검색 크롤러가 받는 HTML 이 CSR 과 SSR 에서 다르다">
-  <marker id="ssrseo-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="ssr-ssg--seo-title ssr-ssg--seo-desc">
+  <title id="ssr-ssg--seo-title">검색 크롤러가 받는 HTML 이 CSR 과 SSR 에서 다르다</title>
+  <desc id="ssr-ssg--seo-desc">검색 크롤러가 받는 HTML 이 CSR 과 SSR 에서 다르다</desc>
 
-  <text class="dg-h" x="24" y="30">검색 크롤러가 보는 것</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="328" height="164" rx="10"/>
-  <text class="dg-t" x="44" y="74">CSR</text>
+  <!-- CSR -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="28" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CSR</text>
+  <rect class="dg-item" x="215" y="56" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="289" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">&lt;div id="app"&gt;&lt;/div&gt;</text>
+  <rect class="dg-item" x="379" y="56" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="442" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">읽을 내용이 없다</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-code" x="44" y="88" width="288" height="46" rx="6"/>
-  <text class="dg-key" x="60" y="118">&lt;div id="app"&gt;&lt;/div&gt;</text>
-
-  <path class="dg-arw" d="M188 142 V158" marker-end="url(#ssrseo-a)"/>
-
-  <rect class="dg-warn" x="44" y="164" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="60" y="186">읽을 내용이 없다</text>
-
-  <rect class="dg-lane" x="368" y="48" width="328" height="164" rx="10"/>
-  <text class="dg-t" x="388" y="74">SSR · SSG</text>
-
-  <rect class="dg-code" x="388" y="88" width="288" height="46" rx="6"/>
-  <text class="dg-key" x="404" y="112">&lt;h1&gt;제목&lt;/h1&gt;</text>
-  <text class="dg-key" x="404" y="128">&lt;p&gt;본문 내용...&lt;/p&gt;</text>
-
-  <path class="dg-arw" d="M532 142 V158" marker-end="url(#ssrseo-a)"/>
-
-  <rect class="dg-out" x="388" y="164" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="404" y="186">제목과 본문을 색인할 수 있다</text>
-
-  <text class="dg-v" x="24" y="244">자바스크립트 실행 지원 여부는 크롤러마다 다르다</text>
-  <text class="dg-s" x="24" y="268">본문을 바로 읽을 수 있다 — 검색 순위나 색인이 보장되지는 않는다</text>
+  <!-- SSR · SSG -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SSR · SSG</text>
+  <rect class="dg-item" x="194" y="200" width="124" height="52" rx="6"/>
+  <text class="dg-t" x="256" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">&lt;h1&gt;제목&lt;/h1&gt;</text>
+  <text class="dg-s" x="256" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">&lt;p&gt;본문 내용...&lt;/p&gt;</text>
+  <rect class="dg-item" x="334" y="200" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="429" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">제목과 본문을 색인할 수 있다</text>
 </svg>

@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="메모장에서 다른 이름으로 저장할 때 파일 이름과 형식을 지정하는 방법">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="github-blog-local-batch--save-title github-blog-local-batch--save-desc">
+  <title id="github-blog-local-batch--save-title">메모장에서 다른 이름으로 저장할 때 파일 이름과 형식을 지정하는 방법</title>
+  <desc id="github-blog-local-batch--save-desc">메모장에서 다른 이름으로 저장할 때 파일 이름과 형식을 지정하는 방법</desc>
 
-  <text class="dg-h" x="24" y="32">다른 이름으로 저장</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-card" x="24" y="48" width="672" height="150" rx="10"/>
-
-  <rect class="dg-hl" x="44" y="68" width="632" height="42" rx="6"/>
-  <text class="dg-k" x="60"  y="94">파일 이름</text>
-  <text class="dg-m" x="200" y="94">blog.bat</text>
-  <text class="dg-b" x="560" y="94">확장자 .bat</text>
-
-  <rect class="dg-row" x="44" y="120" width="632" height="42" rx="6"/>
-  <text class="dg-k" x="60"  y="146">파일 형식</text>
-  <text class="dg-m" x="200" y="146">모든 파일 (*.*)</text>
-
-  <text class="dg-s" x="44" y="186">형식을 "모든 파일"로 바꾸지 않으면 blog.bat.txt 로 저장된다</text>
-
-  <text class="dg-s" x="24" y="238">원본 캡처 대신 재구성한 도식 · 실제 화면과 다를 수 있습니다</text>
+  <!-- 형식을 "모든 파일"로 바꾸지 않으면 blog.bat.txt 로 저장된다 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="263" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">형식을 "모든 파일"로 바꾸지 않으면 blog.bat.txt 로 저장된다</text>
+  <rect class="dg-item" x="230" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="298" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일 이름</text>
+  <text class="dg-s" x="298" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">blog.bat · 확장자 .bat</text>
+  <rect class="dg-item" x="383" y="56" width="106" height="52" rx="6"/>
+  <text class="dg-t" x="436" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일 형식</text>
+  <text class="dg-s" x="436" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">모든 파일 (*.*)</text>
 </svg>

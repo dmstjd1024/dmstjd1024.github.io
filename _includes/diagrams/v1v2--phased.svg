@@ -1,40 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-label="배선만 깔고 동작을 바꾸지 않는 단계를 앞에 두어 롤백 가능하게 만든 6단계 이관">
-  <marker id="v1v2ph-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="v1v2--phased-title v1v2--phased-desc">
+  <title id="v1v2--phased-title">배선만 깔고 동작을 바꾸지 않는 단계를 앞에 두어 롤백 가능하게 만든 6단계 이관</title>
+  <desc id="v1v2--phased-desc">배선만 깔고 동작을 바꾸지 않는 단계를 앞에 두어 롤백 가능하게 만든 6단계 이관</desc>
 
-  <text class="dg-h" x="24" y="30">아무것도 안 바꾸는 단계를 먼저 넣었다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lead" x="24" y="56" width="200" height="88" rx="8"/>
-  <text class="dg-n" x="44" y="80">Phase 0-1</text>
-  <text class="dg-k" x="44" y="102">배선만 깐다</text>
-  <text class="dg-s" x="44" y="120">기본값이 false 라</text>
-  <text class="dg-s" x="44" y="136">동작 동일</text>
-
-  <path class="dg-arw" d="M232 94 H256" marker-end="url(#v1v2ph-a)"/>
-
-  <rect class="dg-row" x="264" y="56" width="200" height="88" rx="8"/>
-  <text class="dg-n" x="284" y="80">Phase 2-4</text>
-  <text class="dg-k" x="284" y="102">기능을 하나씩 옮긴다</text>
-  <text class="dg-s" x="284" y="120">저장 · 편집 차단</text>
-  <text class="dg-s" x="284" y="136">사이드패널</text>
-
-  <path class="dg-arw" d="M472 94 H496" marker-end="url(#v1v2ph-a)"/>
-
-  <rect class="dg-out" x="504" y="56" width="192" height="88" rx="8"/>
-  <text class="dg-n" x="524" y="80">Phase 5</text>
-  <text class="dg-k" x="524" y="102">V1 을 지운다</text>
-  <text class="dg-s" x="524" y="120">파일 6개 · 2,389줄</text>
-
-  <rect class="dg-lane" x="24" y="164" width="328" height="72" rx="8"/>
-  <text class="dg-t" x="44" y="188">1단계의 성질</text>
-  <text class="dg-v" x="44" y="212">호출부가 값을 안 넘기면 예전 그대로 동작한다</text>
-  <text class="dg-s" x="44" y="230">배포해도 아무 변화가 없으니 되돌릴 것도 없다</text>
-
-  <rect class="dg-warn" x="368" y="164" width="328" height="72" rx="8"/>
-  <text class="dg-t" x="388" y="188">삭제할 때 조심한 것</text>
-  <text class="dg-v" x="388" y="212">V1 전용처럼 보이지만 V2 도 쓰는 부품 5개</text>
-  <text class="dg-s" x="388" y="230">그중 하나는 다른 화면 두 곳에서도 쓰고 있었다</text>
-
-  <text class="dg-s" x="24" y="276">한 번에 갈아엎지 않고, 각 단계가 그 자체로 배포 가능하게 쪼갰다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="121" y="56" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Phase 0-1</text>
+  <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">배선만 깐다 · 기본값이 false 라 · 동작 동일</text>
+  <rect class="dg-item" x="367" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="483" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Phase 2-4</text>
+  <text class="dg-s" x="483" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">기능을 하나씩 옮긴다 · 저장 · 편집 차단 · 사…</text>
+  <rect class="dg-item" x="146" y="122" width="186" height="52" rx="6"/>
+  <text class="dg-t" x="239" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Phase 5</text>
+  <text class="dg-s" x="239" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">V1 을 지운다 · 파일 6개 · 2,389줄</text>
+  <rect class="dg-item" x="348" y="122" width="225" height="52" rx="6"/>
+  <text class="dg-t" x="460" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">삭제할 때 조심한 것</text>
+  <text class="dg-s" x="460" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">V1 전용처럼 보이지만 V2 도 쓰는 부품 5개…</text>
 </svg>

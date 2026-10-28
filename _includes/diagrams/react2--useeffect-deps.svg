@@ -1,24 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="useEffect 의 의존성 배열에 따라 이펙트가 언제 실행되는지">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="react2--useeffect-deps-title react2--useeffect-deps-desc">
+  <title id="react2--useeffect-deps-title">useEffect 의 의존성 배열에 따라 이펙트가 언제 실행되는지</title>
+  <desc id="react2--useeffect-deps-desc">useEffect 의 의존성 배열에 따라 이펙트가 언제 실행되는지</desc>
 
-  <text class="dg-h" x="24" y="30">의존성 배열이 실행 시점을 정한다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="672" height="66" rx="8"/>
-  <rect class="dg-code" x="44" y="60" width="290" height="42" rx="6"/>
-  <text class="dg-key" x="60" y="86">useEffect(fn)</text>
-  <text class="dg-t" x="368" y="78">배열 없음</text>
-  <text class="dg-v" x="368" y="98">렌더링될 때마다 매번 실행</text>
+  <!-- 배열 없음 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">배열 없음</text>
+  <rect class="dg-item" x="305" y="56" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">useEffect(fn)</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="126" width="672" height="66" rx="8"/>
-  <rect class="dg-code" x="44" y="138" width="290" height="42" rx="6"/>
-  <text class="dg-key" x="60" y="164">useEffect(fn, [])</text>
-  <text class="dg-t" x="368" y="156">빈 배열</text>
-  <text class="dg-v" x="368" y="176">마운트 후 실행</text>
+  <!-- 빈 배열 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">빈 배열</text>
+  <rect class="dg-item" x="294" y="200" width="131" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">useEffect(fn, [])</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="204" width="672" height="66" rx="8"/>
-  <rect class="dg-code" x="44" y="216" width="290" height="42" rx="6"/>
-  <text class="dg-key" x="60" y="242">useEffect(fn, [count])</text>
-  <text class="dg-t" x="368" y="234">값을 넣으면</text>
-  <text class="dg-v" x="368" y="254">마운트 후 · 의존성 변경 시</text>
-
-  <text class="dg-s" x="24" y="292">커밋 후 실행 — 개발 StrictMode는 setup·cleanup을 추가 검사한다</text>
+  <!-- 값을 넣으면 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">값을 넣으면</text>
+  <rect class="dg-item" x="281" y="344" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">useEffect(fn, [count])</text>
 </svg>

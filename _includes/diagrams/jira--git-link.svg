@@ -1,33 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="이슈 키가 브랜치와 커밋, PR 을 거쳐 지라 이슈로 연결되는 흐름">
-  <marker id="jiragl-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="jira--git-link-title jira--git-link-desc">
+  <title id="jira--git-link-title">이슈 키가 브랜치와 커밋, PR 을 거쳐 지라 이슈로 연결되는 흐름</title>
+  <desc id="jira--git-link-desc">이슈 키가 브랜치와 커밋, PR 을 거쳐 지라 이슈로 연결되는 흐름</desc>
 
-  <text class="dg-h" x="24" y="30">이슈 키 하나가 코드와 이슈를 잇는다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="52" width="404" height="152" rx="10"/>
-  <text class="dg-t" x="44" y="78">Git 쪽</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="80" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="148" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JIRA 이슈 SHOP-101</text>
+  <rect class="dg-item" x="233" y="56" width="159" height="52" rx="6"/>
+  <text class="dg-t" x="312" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">개발 (Development)</text>
+  <text class="dg-s" x="312" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">브랜치 1 · 커밋 3 · PR 열림</text>
+  <rect class="dg-item" x="408" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="524" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스마트 커밋이 안 될 때 확인할 것</text>
+  <text class="dg-s" x="524" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">커밋 작성자 이메일과 JIRA 계정 이메일이 일치…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-code" x="44" y="90" width="364" height="34" rx="6"/>
-  <text class="dg-v" x="60" y="112">feature/SHOP-101-card-payment</text>
-
-  <rect class="dg-code" x="44" y="132" width="364" height="34" rx="6"/>
-  <text class="dg-v" x="60" y="154">git commit -m &quot;SHOP-101 결제 연동&quot;</text>
-
-  <text class="dg-b" x="44" y="188">SHOP-101 — 이 키가 열쇠다</text>
-
-  <path class="dg-arw" d="M436 128 H472" marker-end="url(#jiragl-a)"/>
-
-  <rect class="dg-out" x="480" y="52" width="216" height="152" rx="10"/>
-  <text class="dg-t" x="500" y="78">JIRA 이슈 SHOP-101</text>
-  <rect class="dg-row" x="500" y="90" width="176" height="96" rx="6"/>
-  <text class="dg-t" x="516" y="112">개발 (Development)</text>
-  <text class="dg-s" x="516" y="134">브랜치 1</text>
-  <text class="dg-s" x="516" y="152">커밋 3</text>
-  <text class="dg-s" x="516" y="170">PR 열림</text>
-
-  <rect class="dg-warn" x="24" y="222" width="672" height="76" rx="8"/>
-  <text class="dg-t" x="44" y="246">스마트 커밋이 안 될 때 확인할 것</text>
-  <text class="dg-v" x="44" y="268">커밋 작성자 이메일과 JIRA 계정 이메일이 일치하는가</text>
-  <text class="dg-s" x="44" y="288">키를 깜빡하는 게 문제라면 commit-msg 훅으로 막는다</text>
+  <!-- Git 쪽 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Git 쪽</text>
+  <rect class="dg-item" x="153" y="200" width="196" height="52" rx="6"/>
+  <text class="dg-t" x="251" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">feature/SHOP-101-card-payment</text>
+  <rect class="dg-item" x="365" y="200" width="202" height="52" rx="6"/>
+  <text class="dg-t" x="466" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">git commit -m "SHOP-101 결제…</text>
 </svg>

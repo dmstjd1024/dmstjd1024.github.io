@@ -1,30 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="컬렉션 두 개를 동시에 fetch join 하면 카테시안 곱을 구분할 수 없어 거부된다">
-  <marker id="n1mb-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="n1--multiple-bag-title n1--multiple-bag-desc">
+  <title id="n1--multiple-bag-title">컬렉션 두 개를 동시에 fetch join 하면 카테시안 곱을 구분할 수 없어 거부된다</title>
+  <desc id="n1--multiple-bag-desc">컬렉션 두 개를 동시에 fetch join 하면 카테시안 곱을 구분할 수 없어 거부된다</desc>
 
-  <text class="dg-h" x="24" y="30">컬렉션 둘을 한꺼번에 fetch join 하면</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lead" x="252" y="52" width="216" height="40" rx="8"/>
-  <text class="dg-t" x="272" y="78">Product</text>
-
-  <path class="dg-arw" d="M360 100 V114 H160 V132" marker-end="url(#n1mb-a)"/>
-  <path class="dg-arw" d="M360 100 V114 H560 V132" marker-end="url(#n1mb-a)"/>
-
-  <rect class="dg-row" x="60" y="138" width="200" height="44" rx="6"/>
-  <text class="dg-k" x="80" y="160">lcaList</text>
-  <text class="dg-s" x="80" y="176">List — 순서 없음 (bag)</text>
-
-  <rect class="dg-row" x="460" y="138" width="200" height="44" rx="6"/>
-  <text class="dg-k" x="480" y="160">productUnitProcesses</text>
-  <text class="dg-s" x="480" y="176">List — 순서 없음 (bag)</text>
-
-  <path class="dg-arw" d="M160 190 V206 H360 V222" marker-end="url(#n1mb-a)"/>
-  <path class="dg-arw" d="M560 190 V206 H360 V222" marker-end="url(#n1mb-a)"/>
-
-  <rect class="dg-warn" x="180" y="228" width="360" height="44" rx="8"/>
-  <text class="dg-k" x="200" y="250">MultipleBagFetchException</text>
-  <text class="dg-s" x="200" y="266">행이 곱해졌을 때 원래 몇 개였는지 되돌릴 수 없다</text>
-
-  <text class="dg-s" x="24" y="292">그래서 하나만 fetch join 하고 나머지는 @BatchSize 로 IN 절 배치 조회를 시킨다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="151" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="199" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Product</text>
+  <rect class="dg-item" x="263" y="56" width="141" height="52" rx="6"/>
+  <text class="dg-t" x="333" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">lcaList</text>
+  <text class="dg-s" x="333" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">List — 순서 없음 (bag)</text>
+  <rect class="dg-item" x="420" y="56" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="494" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">productUnitProcesses</text>
+  <text class="dg-s" x="494" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">List — 순서 없음 (bag)</text>
+  <rect class="dg-item" x="244" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MultipleBagFetchException</text>
+  <text class="dg-s" x="360" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">행이 곱해졌을 때 원래 몇 개였는지 되돌릴 수…</text>
 </svg>

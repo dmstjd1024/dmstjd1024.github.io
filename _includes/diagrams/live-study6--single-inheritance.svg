@@ -1,40 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="자바가 다중 상속을 막는 이유와 단일 상속 구조">
-  <marker id="ls6si-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study6--single-inheritance-title live-study6--single-inheritance-desc">
+  <title id="live-study6--single-inheritance-title">자바가 다중 상속을 막는 이유와 단일 상속 구조</title>
+  <desc id="live-study6--single-inheritance-desc">자바가 다중 상속을 막는 이유와 단일 상속 구조</desc>
 
-  <text class="dg-h" x="24" y="30">자바가 다중 상속을 막은 이유</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="328" height="176" rx="10"/>
-  <text class="dg-t" x="44" y="76">다중 상속 (자바에 없음)</text>
+  <!-- 다중 상속 (자바에 없음) -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="112" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">다중 상속 (자바에 없음)</text>
+  <rect class="dg-item" x="177" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="225" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">A</text>
+  <text class="dg-s" x="225" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">print()</text>
+  <rect class="dg-item" x="289" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="337" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">B</text>
+  <text class="dg-s" x="337" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">print()</text>
+  <rect class="dg-item" x="401" y="56" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">C — 어느 print() ?</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-row" x="44" y="92" width="130" height="40" rx="6"/>
-  <text class="dg-k" x="60" y="117">A</text>
-  <text class="dg-s" x="90" y="117">print()</text>
-
-  <rect class="dg-row" x="202" y="92" width="130" height="40" rx="6"/>
-  <text class="dg-k" x="218" y="117">B</text>
-  <text class="dg-s" x="248" y="117">print()</text>
-
-  <path class="dg-arw" d="M109 140 V166" marker-end="url(#ls6si-a)"/>
-  <path class="dg-arw" d="M267 140 V166" marker-end="url(#ls6si-a)"/>
-
-  <rect class="dg-warn" x="88" y="172" width="200" height="40" rx="6"/>
-  <text class="dg-k" x="108" y="197">C — 어느 print() ?</text>
-
-  <rect class="dg-lane" x="368" y="48" width="328" height="176" rx="10"/>
-  <text class="dg-t" x="388" y="76">단일 상속 (자바)</text>
-
-  <rect class="dg-lead" x="468" y="92" width="130" height="40" rx="6"/>
-  <text class="dg-k" x="484" y="117">A</text>
-  <text class="dg-s" x="514" y="117">print()</text>
-
-  <path class="dg-arw" d="M533 140 V166" marker-end="url(#ls6si-a)"/>
-
-  <rect class="dg-out" x="432" y="172" width="200" height="40" rx="6"/>
-  <text class="dg-k" x="448" y="197">B</text>
-  <text class="dg-s" x="478" y="197">헷갈릴 일 없음</text>
-
-  <text class="dg-v" x="24" y="256">조상이 둘이면 같은 이름의 메서드를 구별할 방법이 없다</text>
-  <text class="dg-s" x="24" y="282">편리함을 포기하고 명확함을 택한 결정이다 — 대신 인터페이스로 여럿을 구현한다</text>
+  <!-- 단일 상속 (자바) -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="83" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">단일 상속 (자바)</text>
+  <rect class="dg-item" x="253" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="301" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">A</text>
+  <text class="dg-s" x="301" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">print()</text>
+  <rect class="dg-item" x="365" y="200" width="101" height="52" rx="6"/>
+  <text class="dg-t" x="415" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">B</text>
+  <text class="dg-s" x="415" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">헷갈릴 일 없음</text>
 </svg>

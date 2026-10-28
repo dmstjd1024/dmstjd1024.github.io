@@ -1,30 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" role="img" aria-label="deps 를 rows 로 바꾸자 매 keystroke 마다 콜백 identity 가 바뀌고 useMemo 사슬을 거쳐 ag-grid cellRenderer 재생성과 input 재마운트로 이어진다">
-  <marker id="dic-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-labelledby="domino--identity-chain-title domino--identity-chain-desc">
+  <title id="domino--identity-chain-title">deps 를 rows 로 바꾸자 매 keystroke 마다 콜백 identity 가 바뀌고 useMemo 사슬을 거쳐 ag-grid cellRenderer 재생성과 input 재마운트로 이어진다</title>
+  <desc id="domino--identity-chain-desc">deps 를 rows 로 바꾸자 매 keystroke 마다 콜백 identity 가 바뀌고 useMemo 사슬을 거쳐 ag-grid cellRenderer 재생성과 input 재마운트로 이어진다</desc>
 
-  <text class="dg-h" x="24" y="30">deps 한 줄이 DOM 까지 갔다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lead" x="24" y="52" width="672" height="40" rx="8"/>
-  <text class="dg-t" x="44" y="78">useCallback deps 를 [] → [rows] 로 (undo 스냅샷을 찍으려고)</text>
-
-  <path class="dg-arw" d="M360 100 V118" marker-end="url(#dic-a)"/>
-
-  <rect class="dg-out" x="72" y="124" width="576" height="30" rx="6"/>
-  <text class="dg-k" x="92" y="144">① 매 keystroke 마다 handleRowUpdate identity 변경</text>
-
-  <path class="dg-arw" d="M360 156 V174" marker-end="url(#dic-a)"/>
-
-  <rect class="dg-out" x="72" y="180" width="576" height="30" rx="6"/>
-  <text class="dg-k" x="92" y="200">② emsColumn(useMemo) → columnDefs(useMemo) 로 전파</text>
-
-  <path class="dg-arw" d="M360 212 V230" marker-end="url(#dic-a)"/>
-
-  <rect class="dg-out" x="72" y="236" width="576" height="30" rx="6"/>
-  <text class="dg-k" x="92" y="256">③ ag-grid 가 cellRenderer 재생성</text>
-
-  <path class="dg-arw" d="M360 268 V286" marker-end="url(#dic-a)"/>
-
-  <rect class="dg-warn" x="72" y="292" width="576" height="30" rx="6"/>
-  <text class="dg-k" x="92" y="312">④ 안의 &lt;input&gt; 언마운트·재마운트 → 포커스·IME 유실</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="232" rx="8"/>
+  <rect class="dg-item" x="140" y="56" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="246" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">useCallback deps 를 [] → [row…</text>
+  <rect class="dg-item" x="368" y="56" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="474" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">① 매 keystroke 마다 handleRow…</text>
+  <rect class="dg-item" x="142" y="122" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">② emsColumn(useMemo) → colum…</text>
+  <rect class="dg-item" x="370" y="122" width="207" height="52" rx="6"/>
+  <text class="dg-t" x="473" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">③ ag-grid 가 cellRenderer 재…</text>
+  <rect class="dg-item" x="245" y="188" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">④ 안의 &lt;input&gt; 언마운트·재마운트…</text>
 </svg>

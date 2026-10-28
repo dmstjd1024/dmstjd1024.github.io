@@ -1,30 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="필드를 public 으로 두면 잘못된 값을 막을 수 없고 setter 를 거치면 검증할 수 있다">
-  <marker id="ls7enc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study7--encapsulation-title live-study7--encapsulation-desc">
+  <title id="live-study7--encapsulation-title">필드를 public 으로 두면 잘못된 값을 막을 수 없고 setter 를 거치면 검증할 수 있다</title>
+  <desc id="live-study7--encapsulation-desc">필드를 public 으로 두면 잘못된 값을 막을 수 없고 setter 를 거치면 검증할 수 있다</desc>
 
-  <text class="dg-h" x="24" y="30">왜 필드를 감추고 메서드로 여나</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="328" height="176" rx="10"/>
-  <text class="dg-t" x="44" y="76">public 필드</text>
+  <!-- public 필드 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">public 필드</text>
+  <rect class="dg-item" x="239" y="56" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="291" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">t.hour = 25;</text>
+  <rect class="dg-item" x="359" y="56" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="419" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그대로 들어간다</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-row" x="44" y="90" width="288" height="32" rx="6"/>
-  <text class="dg-v" x="60" y="112">t.hour = 25;</text>
-  <path class="dg-arw" d="M188 126 V144" marker-end="url(#ls7enc-a)"/>
-  <rect class="dg-warn" x="44" y="150" width="288" height="32" rx="6"/>
-  <text class="dg-k" x="60" y="172">그대로 들어간다</text>
-  <text class="dg-s" x="44" y="204">25시는 없는 시간인데 막을 수가 없다</text>
-
-  <rect class="dg-lane" x="368" y="48" width="328" height="176" rx="10"/>
-  <text class="dg-t" x="388" y="76">private 필드 + setter</text>
-
-  <rect class="dg-row" x="388" y="90" width="288" height="32" rx="6"/>
-  <text class="dg-v" x="404" y="112">t.setHour(25);</text>
-  <path class="dg-arw" d="M532 126 V144" marker-end="url(#ls7enc-a)"/>
-  <rect class="dg-out" x="388" y="150" width="288" height="32" rx="6"/>
-  <text class="dg-k" x="404" y="172">0~23 인지 검사한 뒤 넣는다</text>
-  <text class="dg-s" x="388" y="204">잘못된 값이 아예 들어오지 못한다</text>
-
-  <text class="dg-v" x="24" y="256">값을 넣는 통로를 하나로 좁혀야 그 자리에서 검사할 수 있다</text>
-  <text class="dg-s" x="24" y="282">상속을 염두에 둔 클래스라면 private 대신 protected 를 쓴다</text>
+  <!-- private 필드 + setter -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="104" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">private 필드 + setter</text>
+  <rect class="dg-item" x="204" y="200" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="261" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">t.setHour(25);</text>
+  <rect class="dg-item" x="335" y="200" width="180" height="52" rx="6"/>
+  <text class="dg-t" x="425" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">0~23 인지 검사한 뒤 넣는다</text>
 </svg>

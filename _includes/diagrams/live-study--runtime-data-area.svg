@@ -1,33 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Runtime Data Area 네 영역과 쓰레드 공유 여부, GC 대상 여부">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study--runtime-data-area-title live-study--runtime-data-area-desc">
+  <title id="live-study--runtime-data-area-title">Runtime Data Area 네 영역과 쓰레드 공유 여부, GC 대상 여부</title>
+  <desc id="live-study--runtime-data-area-desc">Runtime Data Area 네 영역과 쓰레드 공유 여부, GC 대상 여부</desc>
 
-  <text class="dg-h" x="24" y="30">Runtime Data Area</text>
-  <text class="dg-s" x="24" y="50">해석된 프로그램이 올라가 도는 공간</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="66" width="672" height="128" rx="10"/>
-  <text class="dg-t" x="44" y="92">모든 쓰레드가 함께 쓴다</text>
+  <!-- 모든 쓰레드가 함께 쓴다 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="112" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">모든 쓰레드가 함께 쓴다</text>
+  <rect class="dg-item" x="127" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="243" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Method Area</text>
+  <text class="dg-s" x="243" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">클래스 · 인터페이스 · 메서드 · 필드 정보 · G…</text>
+  <rect class="dg-item" x="375" y="56" width="217" height="52" rx="6"/>
+  <text class="dg-t" x="483" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Heap</text>
+  <text class="dg-s" x="483" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">new 로 만든 인스턴스가 사는 곳 · GC 대상</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lead" x="44" y="106" width="316" height="72" rx="8"/>
-  <text class="dg-t" x="64" y="130">Method Area</text>
-  <text class="dg-v" x="64" y="152">클래스 · 인터페이스 · 메서드 · 필드 정보</text>
-  <text class="dg-b" x="64" y="170">GC 정책은 구현별</text>
-
-  <rect class="dg-lead" x="376" y="106" width="300" height="72" rx="8"/>
-  <text class="dg-t" x="396" y="130">Heap</text>
-  <text class="dg-v" x="396" y="152">new 로 만든 인스턴스가 사는 곳</text>
-  <text class="dg-b" x="396" y="170">GC 대상</text>
-
-  <rect class="dg-lane" x="24" y="210" width="672" height="128" rx="10"/>
-  <text class="dg-t" x="44" y="236">쓰레드마다 따로 갖는다</text>
-
-  <rect class="dg-row" x="44" y="250" width="316" height="72" rx="8"/>
-  <text class="dg-t" x="64" y="274">JVM Stacks</text>
-  <text class="dg-v" x="64" y="296">매개변수 · 지역변수 같은 임시 데이터</text>
-  <text class="dg-s" x="64" y="314">메서드가 끝나면 바로 반환된다</text>
-
-  <rect class="dg-row" x="376" y="250" width="300" height="72" rx="8"/>
-  <text class="dg-t" x="396" y="274">PC Registers</text>
-  <text class="dg-v" x="396" y="296">현재 실행 중인 JVM 명령 주소</text>
-  <text class="dg-s" x="396" y="314">쓰레드가 생길 때 만들어진다</text>
-
-  <text class="dg-s" x="24" y="366">Method Area 관리는 구현별이며, Heap 은 GC 가 관리한다</text>
+  <!-- 쓰레드마다 따로 갖는다 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="108" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">쓰레드마다 따로 갖는다</text>
+  <rect class="dg-item" x="120" y="200" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JVM Stacks</text>
+  <text class="dg-s" x="236" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">매개변수 · 지역변수 같은 임시 데이터 · 메서드…</text>
+  <rect class="dg-item" x="368" y="200" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="484" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PC Registers</text>
+  <text class="dg-s" x="484" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">현재 실행 중인 JVM 명령 주소 · 쓰레드가 생길…</text>
 </svg>

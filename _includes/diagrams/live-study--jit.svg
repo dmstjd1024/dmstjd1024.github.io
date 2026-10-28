@@ -1,29 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="인터프리터 방식과 컴파일 방식을 JIT 가 어떻게 섞는지">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="live-study--jit-title live-study--jit-desc">
+  <title id="live-study--jit-title">인터프리터 방식과 컴파일 방식을 JIT 가 어떻게 섞는지</title>
+  <desc id="live-study--jit-desc">인터프리터 방식과 컴파일 방식을 JIT 가 어떻게 섞는지</desc>
 
-  <text class="dg-h" x="24" y="30">HotSpot 은 해석과 JIT 컴파일을 함께 쓴다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-item" x="24" y="48" width="212" height="124" rx="10"/>
-  <text class="dg-t" x="44" y="76">인터프리터</text>
-  <text class="dg-v" x="44" y="102">바이트코드 명령을 읽고</text>
-  <text class="dg-v" x="44" y="122">대응하는 동작을 수행한다</text>
-  <text class="dg-s" x="44" y="138">기계어 코드 생성은</text>
-  <text class="dg-s" x="44" y="156">JIT 의 역할</text>
-
-  <rect class="dg-item" x="252" y="48" width="212" height="124" rx="10"/>
-  <text class="dg-t" x="272" y="76">정적 컴파일</text>
-  <text class="dg-v" x="272" y="102">실행 전에 전부 미리</text>
-  <text class="dg-v" x="272" y="122">기계어로 바꿔 둔다</text>
-  <text class="dg-s" x="272" y="152">빠르지만 미리 다 해야 함</text>
-
-  <rect class="dg-lead" x="480" y="48" width="216" height="124" rx="10"/>
-  <text class="dg-t" x="500" y="76">JIT</text>
-  <text class="dg-v" x="500" y="102">실행 시점에 번역하되</text>
-  <text class="dg-b" x="500" y="122">결과를 캐싱한다</text>
-  <text class="dg-s" x="500" y="152">컴파일된 코드를 재사용</text>
-
-  <rect class="dg-out" x="24" y="188" width="672" height="60" rx="8"/>
-  <text class="dg-k" x="44" y="212">JVM 은 메서드가 얼마나 자주 불리는지 센다</text>
-  <text class="dg-v" x="44" y="234">자주 불리는 것만 컴파일해 캐싱하고, 한 번만 도는 코드는 그냥 해석한다</text>
-
-  <text class="dg-s" x="24" y="278">자주 실행되는 코드의 컴파일로 워밍업 이후 성능이 달라질 수 있다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="123" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="239" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인터프리터</text>
+  <text class="dg-s" x="239" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">바이트코드 명령을 읽고 · 대응하는 동작을 수행…</text>
+  <rect class="dg-item" x="371" y="56" width="225" height="52" rx="6"/>
+  <text class="dg-t" x="483" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">정적 컴파일</text>
+  <text class="dg-s" x="483" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">실행 전에 전부 미리 · 기계어로 바꿔 둔다…</text>
+  <rect class="dg-item" x="120" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JIT</text>
+  <text class="dg-s" x="236" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">실행 시점에 번역하되 · 결과를 캐싱한다 · 컴파…</text>
+  <rect class="dg-item" x="368" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="484" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JVM 은 메서드가 얼마나 자주 불리…</text>
+  <text class="dg-s" x="484" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">자주 불리는 것만 컴파일해 캐싱하고, 한 번만…</text>
 </svg>

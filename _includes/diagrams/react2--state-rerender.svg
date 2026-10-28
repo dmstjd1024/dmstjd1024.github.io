@@ -1,32 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="set 함수를 호출해야 재렌더링이 일어나고 직접 대입하면 화면이 바뀌지 않는다">
-  <marker id="rc2sr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="react2--state-rerender-title react2--state-rerender-desc">
+  <title id="react2--state-rerender-title">set 함수를 호출해야 재렌더링이 일어나고 직접 대입하면 화면이 바뀌지 않는다</title>
+  <desc id="react2--state-rerender-desc">set 함수를 호출해야 재렌더링이 일어나고 직접 대입하면 화면이 바뀌지 않는다</desc>
 
-  <text class="dg-h" x="24" y="30">state 를 직접 고치면 안 되는 이유</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="328" height="160" rx="10"/>
-  <text class="dg-t" x="44" y="74">직접 대입</text>
+  <!-- 직접 대입 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">직접 대입</text>
+  <rect class="dg-item" x="185" y="56" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="259" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">this.state = { ... }</text>
+  <rect class="dg-item" x="349" y="56" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="441" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">값은 바뀌지만 화면은 그대로</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-code" x="44" y="88" width="288" height="34" rx="6"/>
-  <text class="dg-key" x="60" y="110">this.state = { ... }</text>
-
-  <path class="dg-arw" d="M188 130 V148" marker-end="url(#rc2sr-a)"/>
-
-  <rect class="dg-warn" x="44" y="154" width="288" height="38" rx="6"/>
-  <text class="dg-k" x="60" y="177">값은 바뀌지만 화면은 그대로</text>
-
-  <rect class="dg-lane" x="368" y="48" width="328" height="160" rx="10"/>
-  <text class="dg-t" x="388" y="74">set 함수 사용</text>
-
-  <rect class="dg-code" x="388" y="88" width="288" height="34" rx="6"/>
-  <text class="dg-key" x="404" y="110">setCount(count + 1)</text>
-
-  <path class="dg-arw" d="M532 130 V148" marker-end="url(#rc2sr-a)"/>
-
-  <rect class="dg-out" x="388" y="154" width="288" height="38" rx="6"/>
-  <text class="dg-k" x="404" y="177">리액트가 알아채고 다시 그린다</text>
-
-  <text class="dg-v" x="24" y="244">state 직접 대입은 갱신 안 됨 — 부모·Context도 렌더를 유발한다</text>
-  <text class="dg-s" x="24" y="268">그래서 렌더링과 무관한 값은 아예 state 에 넣지 않는 편이 좋다</text>
+  <!-- set 함수 사용 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">set 함수 사용</text>
+  <rect class="dg-item" x="183" y="200" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="254" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">setCount(count + 1)</text>
+  <rect class="dg-item" x="341" y="200" width="196" height="52" rx="6"/>
+  <text class="dg-t" x="439" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">리액트가 알아채고 다시 그린다</text>
 </svg>

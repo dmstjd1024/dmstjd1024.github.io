@@ -1,33 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="배포로 클래스 구조가 바뀌면 이전 버전이 저장한 세션을 역직렬화하지 못한다">
-  <marker id="ssds-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="session--deserialization-title session--deserialization-desc">
+  <title id="session--deserialization-title">배포로 클래스 구조가 바뀌면 이전 버전이 저장한 세션을 역직렬화하지 못한다</title>
+  <desc id="session--deserialization-desc">배포로 클래스 구조가 바뀌면 이전 버전이 저장한 세션을 역직렬화하지 못한다</desc>
 
-  <text class="dg-h" x="24" y="30">배포하니 로그인이 500 이 된 이유</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-item" x="24" y="56" width="200" height="76" rx="8"/>
-  <text class="dg-t" x="44" y="80">배포 전 버전</text>
-  <text class="dg-s" x="44" y="102">세션 객체를 직렬화해</text>
-  <text class="dg-s" x="44" y="120">Redis 에 저장해 뒀다</text>
-
-  <path class="dg-arw" d="M232 94 H280" marker-end="url(#ssds-a)"/>
-  <text class="dg-s" x="236" y="84">배포</text>
-
-  <rect class="dg-item" x="288" y="56" width="200" height="76" rx="8"/>
-  <text class="dg-t" x="308" y="80">새 버전</text>
-  <text class="dg-s" x="308" y="102">클래스 구조가 바뀌었다</text>
-
-  <path class="dg-arw" d="M496 94 H544" marker-end="url(#ssds-a)"/>
-
-  <rect class="dg-warn" x="552" y="56" width="144" height="76" rx="8"/>
-  <text class="dg-k" x="572" y="86">읽을 수 없다</text>
-  <text class="dg-s" x="572" y="110">Serialization</text>
-  <text class="dg-s" x="572" y="126">Exception</text>
-
-  <rect class="dg-lane" x="24" y="152" width="672" height="72" rx="8"/>
-  <text class="dg-t" x="44" y="178">하필 로그인 경로에서 터졌다</text>
-  <text class="dg-v" x="44" y="202">기존 세션을 정리하려고 예전 세션을 읽는 로직이 로그인 시 돌기 때문이다</text>
-  <text class="dg-s" x="44" y="218">남아 있는 옛 세션이 새 코드에게는 해독 불가능한 데이터가 된다</text>
-
-  <text class="dg-s" x="24" y="266">세션에 객체를 통째로 담으면 배포가 곧 데이터 스키마 변경이 된다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="85" y="56" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="200" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">배포 전 버전</text>
+  <text class="dg-s" x="200" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">세션 객체를 직렬화해 · Redis 에 저장해 뒀다</text>
+  <rect class="dg-item" x="331" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="399" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">새 버전</text>
+  <text class="dg-s" x="399" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">클래스 구조가 바뀌었다</text>
+  <rect class="dg-item" x="484" y="56" width="150" height="52" rx="6"/>
+  <text class="dg-t" x="559" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">읽을 수 없다</text>
+  <text class="dg-s" x="559" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Serialization · Exception</text>
 </svg>

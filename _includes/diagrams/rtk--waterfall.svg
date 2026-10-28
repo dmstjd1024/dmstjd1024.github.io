@@ -1,34 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 326" role="img" aria-label="effect 가 상태를 거쳐 다음 effect 를 깨우면서 요청이 직렬로 이어지는 워터폴">
-  <marker id="rtkwf-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="rtk--waterfall-title rtk--waterfall-desc">
+  <title id="rtk--waterfall-title">effect 가 상태를 거쳐 다음 effect 를 깨우면서 요청이 직렬로 이어지는 워터폴</title>
+  <desc id="rtk--waterfall-desc">effect 가 상태를 거쳐 다음 effect 를 깨우면서 요청이 직렬로 이어지는 워터폴</desc>
 
-  <text class="dg-h" x="24" y="30">요청이 한 줄로 늘어선다</text>
-  <text class="dg-s" x="24" y="50">시간 →</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="64" width="672" height="150" rx="10"/>
-
-  <rect class="dg-row" x="44" y="78" width="150" height="30" rx="6"/>
-  <text class="dg-v" x="60" y="98">summary 조회</text>
-
-  <path class="dg-arw" d="M120 112 V122 H208 V128" marker-end="url(#rtkwf-a)"/>
-  <text class="dg-s" x="128" y="122">응답을 받아야</text>
-
-  <rect class="dg-row" x="196" y="128" width="150" height="30" rx="6"/>
-  <text class="dg-v" x="212" y="148">첫 제품 자동 선택</text>
-
-  <path class="dg-arw" d="M272 162 V172 H360 V178" marker-end="url(#rtkwf-a)"/>
-
-  <rect class="dg-row" x="348" y="178" width="150" height="30" rx="6"/>
-  <text class="dg-v" x="364" y="198">LCA 선택</text>
-
-  <path class="dg-arw" d="M424 212 V222 H512 V190" marker-end="url(#rtkwf-a)"/>
-
-  <rect class="dg-warn" x="500" y="160" width="176" height="30" rx="6"/>
-  <text class="dg-k" x="516" y="180">상세 데이터 호출</text>
-
-  <rect class="dg-lane" x="24" y="230" width="672" height="82" rx="8"/>
-  <text class="dg-v" x="44" y="254">effect 가 state 를 바꾸고 그 state 가 다음 effect 를 깨우는 구조라</text>
-  <text class="dg-v" x="44" y="274">단계마다 렌더 사이클이 한 번씩 더 끼어든다</text>
-  <text class="dg-s" x="44" y="296">구독 종료 후 캐시를 바로 지워 탭 재진입마다 처음부터 반복된다</text>
+  <!-- 응답을 받아야 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">응답을 받아야</text>
+  <rect class="dg-item" x="107" y="56" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="159" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">summary 조회</text>
+  <rect class="dg-item" x="227" y="56" width="131" height="52" rx="6"/>
+  <text class="dg-t" x="292" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">첫 제품 자동 선택</text>
+  <rect class="dg-item" x="374" y="56" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="437" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">상세 데이터 호출</text>
+  <rect class="dg-item" x="516" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="564" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LCA 선택</text>
 </svg>

@@ -1,53 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-label="세션은 구현과 커밋만 하고, 태스크를 잡는 일과 done 을 찍는 일은 양쪽 끝에서 CLI 가 맡는다">
-  <marker id="lcg-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="loop--cycle-gate-title loop--cycle-gate-desc">
+  <title id="loop--cycle-gate-title">세션은 구현과 커밋만 하고, 태스크를 잡는 일과 done 을 찍는 일은 양쪽 끝에서 CLI 가 맡는다</title>
+  <desc id="loop--cycle-gate-desc">세션은 구현과 커밋만 하고, 태스크를 잡는 일과 done 을 찍는 일은 양쪽 끝에서 CLI 가 맡는다</desc>
 
-  <text class="dg-h" x="24" y="30">판정 권한은 세션 밖에 있다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-zone" x="24" y="48" width="216" height="300" rx="10"/>
-  <text class="dg-t" x="44" y="74">CLI 가 한다</text>
+  <!-- CLI 가 한다 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CLI 가 한다</text>
+  <rect class="dg-item" x="148" y="56" width="177" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">next</text>
+  <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">태스크를 고르고 · 브랜치를 판다</text>
+  <rect class="dg-item" x="341" y="56" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="456" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">complete</text>
+  <text class="dg-s" x="456" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">게이트 재검증 · 머지 · git 에 물어 · done…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-item" x="44" y="92" width="176" height="62" rx="6"/>
-  <text class="dg-v" x="60" y="115">next</text>
-  <text class="dg-s" x="60" y="133">태스크를 고르고</text>
-  <text class="dg-s" x="60" y="149">브랜치를 판다</text>
+  <!-- 세션이 한다 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">세션이 한다</text>
+  <rect class="dg-item" x="233" y="200" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="297" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현</text>
+  <text class="dg-s" x="297" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">코드를 쓰고 커밋한다</text>
+  <rect class="dg-item" x="377" y="200" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="432" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">게이트 1 요청</text>
+  <text class="dg-s" x="432" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">스스로 확인할 때</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-hl" x="44" y="256" width="176" height="80" rx="6"/>
-  <text class="dg-n" x="60" y="279">complete</text>
-  <text class="dg-s" x="60" y="297">게이트 재검증 · 머지</text>
-  <text class="dg-s" x="60" y="313">git 에 물어</text>
-  <text class="dg-s" x="60" y="329">done 을 찍는다</text>
-
-  <rect class="dg-zone-a" x="264" y="48" width="200" height="300" rx="10"/>
-  <text class="dg-t" x="284" y="74">세션이 한다</text>
-
-  <rect class="dg-item" x="284" y="92" width="160" height="52" rx="6"/>
-  <text class="dg-v" x="300" y="115">구현</text>
-  <text class="dg-s" x="300" y="133">코드를 쓰고 커밋한다</text>
-
-  <rect class="dg-item" x="284" y="172" width="160" height="52" rx="6"/>
-  <text class="dg-v" x="300" y="195">게이트 1 요청</text>
-  <text class="dg-s" x="300" y="213">스스로 확인할 때</text>
-
-  <rect class="dg-zone" x="488" y="48" width="208" height="300" rx="10"/>
-  <text class="dg-t" x="508" y="74">통과하지 못하면</text>
-
-  <rect class="dg-item" x="508" y="92" width="168" height="62" rx="6"/>
-  <text class="dg-v" x="524" y="115">fail</text>
-  <text class="dg-s" x="524" y="133">시도를 하나 태운다</text>
-  <text class="dg-s" x="524" y="149">세 번이면 보류</text>
-
-  <rect class="dg-item" x="508" y="178" width="168" height="62" rx="6"/>
-  <text class="dg-v" x="524" y="201">block</text>
-  <text class="dg-s" x="524" y="219">시도를 안 태운다</text>
-  <text class="dg-s" x="524" y="235">사람에게 넘긴다</text>
-
-  <path class="dg-arw" d="M220 118 H278" marker-end="url(#lcg-a)"/>
-  <path class="dg-arw" d="M364 144 V166" marker-end="url(#lcg-a)"/>
-  <path class="dg-arw-a" d="M364 224 V242 H132 V250" marker-end="url(#lcg-a)"/>
-  <path class="dg-arw" d="M444 198 H502" marker-end="url(#lcg-a)"/>
-
-  <text class="dg-v" x="24" y="378">세션은 구현과 커밋만 한다. 태스크를 잡는 일과 done 을 찍는 일은 양쪽 끝에서 CLI 가 맡는다</text>
-  <text class="dg-s" x="24" y="402">게이트 1 은 구조 검사(브랜치·미커밋·보호 파일·범위)를 먼저 보고, 걸리면 테스트를 돌리지 않는다</text>
+  <!-- 통과하지 못하면 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="79" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">통과하지 못하면</text>
+  <rect class="dg-item" x="160" y="344" width="194" height="52" rx="6"/>
+  <text class="dg-t" x="257" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">fail</text>
+  <text class="dg-s" x="257" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">시도를 하나 태운다 · 세 번이면 보류</text>
+  <rect class="dg-item" x="370" y="344" width="190" height="52" rx="6"/>
+  <text class="dg-t" x="465" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">block</text>
+  <text class="dg-s" x="465" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">시도를 안 태운다 · 사람에게 넘긴다</text>
 </svg>

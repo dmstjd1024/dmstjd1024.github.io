@@ -1,28 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="생성자를 하나라도 직접 쓰면 기본 생성자가 자동 추가되지 않는다는 규칙">
-  <marker id="ls5dc-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study5--default-constructor-title live-study5--default-constructor-desc">
+  <title id="live-study5--default-constructor-title">생성자를 하나라도 직접 쓰면 기본 생성자가 자동 추가되지 않는다는 규칙</title>
+  <desc id="live-study5--default-constructor-desc">생성자를 하나라도 직접 쓰면 기본 생성자가 자동 추가되지 않는다는 규칙</desc>
 
-  <text class="dg-h" x="24" y="30">기본 생성자가 사라지는 순간</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="328" height="152" rx="10"/>
-  <text class="dg-t" x="44" y="76">생성자를 하나도 안 썼다</text>
+  <!-- 생성자를 하나도 안 썼다 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="112" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">생성자를 하나도 안 썼다</text>
+  <rect class="dg-item" x="169" y="56" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="243" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">클래스에 생성자 없음</text>
+  <rect class="dg-item" x="333" y="56" width="218" height="52" rx="6"/>
+  <text class="dg-t" x="442" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">컴파일러가 기본 생성자를 넣어준다</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-row" x="44" y="90" width="288" height="34" rx="6"/>
-  <text class="dg-v" x="60" y="112">클래스에 생성자 없음</text>
-  <path class="dg-arw" d="M188 128 V144" marker-end="url(#ls5dc-a)"/>
-  <rect class="dg-out" x="44" y="150" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="60" y="172">컴파일러가 기본 생성자를 넣어준다</text>
-
-  <rect class="dg-lane" x="368" y="48" width="328" height="152" rx="10"/>
-  <text class="dg-t" x="388" y="76">매개변수 있는 생성자만 썼다</text>
-
-  <rect class="dg-row" x="388" y="90" width="288" height="34" rx="6"/>
-  <text class="dg-v" x="404" y="112">Car(String color) 만 정의</text>
-  <path class="dg-arw" d="M532 128 V144" marker-end="url(#ls5dc-a)"/>
-  <rect class="dg-warn" x="388" y="150" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="404" y="172">기본 생성자는 추가되지 않는다</text>
-
-  <text class="dg-v" x="24" y="234">그래서 new Car() 를 쓰면 갑자기 컴파일 에러가 난다</text>
-  <text class="dg-s" x="24" y="260">잘 쓰던 코드가 생성자 하나 추가했더니 깨지는 이유가 이것이다</text>
+  <!-- 매개변수 있는 생성자만 썼다 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="129" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">매개변수 있는 생성자만 썼다</text>
+  <rect class="dg-item" x="166" y="200" width="175" height="52" rx="6"/>
+  <text class="dg-t" x="253" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Car(String color) 만 정의</text>
+  <rect class="dg-item" x="357" y="200" width="196" height="52" rx="6"/>
+  <text class="dg-t" x="455" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기본 생성자는 추가되지 않는다</text>
 </svg>

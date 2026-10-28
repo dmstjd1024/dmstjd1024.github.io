@@ -1,44 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="SOURCE, CLASS, RUNTIME 유지 정책이 각 단계에서 애노테이션을 어디까지 남기는지">
-  <marker id="ls12ret-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="live-study12--retention-title live-study12--retention-desc">
+  <title id="live-study12--retention-title">SOURCE, CLASS, RUNTIME 유지 정책이 각 단계에서 애노테이션을 어디까지 남기는지</title>
+  <desc id="live-study12--retention-desc">SOURCE, CLASS, RUNTIME 유지 정책이 각 단계에서 애노테이션을 어디까지 남기는지</desc>
 
-  <text class="dg-h" x="24" y="30">애노테이션이 어디까지 살아남나</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <text class="dg-s" x="150" y="60">.java</text>
-  <text class="dg-s" x="330" y="60">.class</text>
-  <text class="dg-s" x="530" y="60">실행 중</text>
+  <!-- SOURCE -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SOURCE</text>
+  <rect class="dg-item" x="200" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">남는다</text>
+  <rect class="dg-item" x="312" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사라짐</text>
+  <rect class="dg-item" x="424" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사라짐</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <path class="dg-arw" d="M230 54 H300" marker-end="url(#ls12ret-a)"/>
-  <path class="dg-arw" d="M420 54 H500" marker-end="url(#ls12ret-a)"/>
+  <!-- CLASS -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="37" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CLASS</text>
+  <rect class="dg-item" x="196" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="244" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">남는다</text>
+  <rect class="dg-item" x="308" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="356" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">남는다</text>
+  <rect class="dg-item" x="420" y="200" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">읽을 수 없음</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="72" width="672" height="56" rx="8"/>
-  <text class="dg-t" x="44" y="106">SOURCE</text>
-  <rect class="dg-lead" x="130" y="82" width="140" height="36" rx="6"/>
-  <text class="dg-b" x="176" y="106">남는다</text>
-  <rect class="dg-row" x="300" y="82" width="140" height="36" rx="6"/>
-  <text class="dg-s" x="342" y="106">사라짐</text>
-  <rect class="dg-row" x="470" y="82" width="140" height="36" rx="6"/>
-  <text class="dg-s" x="512" y="106">사라짐</text>
-
-  <rect class="dg-lane" x="24" y="140" width="672" height="56" rx="8"/>
-  <text class="dg-t" x="44" y="174">CLASS</text>
-  <text class="dg-s" x="44" y="190">기본값</text>
-  <rect class="dg-lead" x="130" y="150" width="140" height="36" rx="6"/>
-  <text class="dg-b" x="176" y="174">남는다</text>
-  <rect class="dg-lead" x="300" y="150" width="140" height="36" rx="6"/>
-  <text class="dg-b" x="346" y="174">남는다</text>
-  <rect class="dg-row" x="470" y="150" width="140" height="36" rx="6"/>
-  <text class="dg-s" x="500" y="174">읽을 수 없음</text>
-
-  <rect class="dg-lane" x="24" y="208" width="672" height="56" rx="8"/>
-  <text class="dg-t" x="44" y="242">RUNTIME</text>
-  <rect class="dg-lead" x="130" y="218" width="140" height="36" rx="6"/>
-  <text class="dg-b" x="176" y="242">남는다</text>
-  <rect class="dg-lead" x="300" y="218" width="140" height="36" rx="6"/>
-  <text class="dg-b" x="346" y="242">남는다</text>
-  <rect class="dg-out" x="470" y="218" width="140" height="36" rx="6"/>
-  <text class="dg-b" x="500" y="242">읽을 수 있다</text>
-
-  <text class="dg-s" x="24" y="288">리플렉션으로 애노테이션을 읽으려면 RUNTIME 이어야 한다 — Spring 이 이 방식을 쓴다</text>
+  <!-- RUNTIME -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">RUNTIME</text>
+  <rect class="dg-item" x="196" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="244" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">남는다</text>
+  <rect class="dg-item" x="308" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="356" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">남는다</text>
+  <rect class="dg-item" x="420" y="344" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">읽을 수 있다</text>
 </svg>

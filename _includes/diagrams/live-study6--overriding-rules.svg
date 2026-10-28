@@ -1,28 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="메서드 오버라이딩이 성립하려면 지켜야 할 조건들">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-labelledby="live-study6--overriding-rules-title live-study6--overriding-rules-desc">
+  <title id="live-study6--overriding-rules-title">메서드 오버라이딩이 성립하려면 지켜야 할 조건들</title>
+  <desc id="live-study6--overriding-rules-desc">메서드 오버라이딩이 성립하려면 지켜야 할 조건들</desc>
 
-  <text class="dg-h" x="24" y="30">오버라이딩의 조건</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="672" height="96" rx="10"/>
-  <text class="dg-t" x="44" y="74">이름과 매개변수 타입은 같아야 한다</text>
+  <!-- 이름과 매개변수 타입은 같아야 한다 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="158" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">이름과 매개변수 타입은 같아야 한다</text>
+  <rect class="dg-item" x="169" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="217" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이름</text>
+  <rect class="dg-item" x="281" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="329" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">매개변수</text>
+  <rect class="dg-item" x="393" y="56" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">반환: 같거나 하위 타입</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lead" x="44" y="88" width="200" height="40" rx="6"/>
-  <text class="dg-k" x="64" y="113">이름</text>
-  <rect class="dg-lead" x="260" y="88" width="200" height="40" rx="6"/>
-  <text class="dg-k" x="280" y="113">매개변수</text>
-  <rect class="dg-lead" x="476" y="88" width="200" height="40" rx="6"/>
-  <text class="dg-k" x="496" y="113">반환: 같거나 하위 타입</text>
-
-  <rect class="dg-lane" x="24" y="160" width="672" height="112" rx="10"/>
-  <text class="dg-t" x="44" y="186">접근 범위와 checked 예외 범위에는 제약이 있다</text>
-
-  <rect class="dg-row" x="44" y="200" width="308" height="30" rx="6"/>
-  <text class="dg-v" x="60" y="220">접근 제어자 — 조상보다 좁게 못 한다</text>
-
-  <rect class="dg-row" x="368" y="200" width="308" height="30" rx="6"/>
-  <text class="dg-v" x="384" y="220">checked 예외 — 같은·하위 타입</text>
-
-  <rect class="dg-warn" x="44" y="238" width="632" height="26" rx="6"/>
-  <text class="dg-s" x="60" y="256">static 메서드는 오버라이딩이 아니다 — 그냥 새로 정의하는 것이다</text>
-
-  <text class="dg-s" x="24" y="292">조상 타입으로 받아 쓸 수 있어야 하므로, 조상보다 까다로워지면 안 된다</text>
+  <!-- 접근 범위와 checked 예외 범위에는 제약이 있다 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="205" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">접근 범위와 checked 예외 범위에는 제약이 있다</text>
+  <rect class="dg-item" x="135" y="200" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="251" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">접근 제어자 — 조상보다 좁게 못 한…</text>
+  <rect class="dg-item" x="383" y="200" width="202" height="52" rx="6"/>
+  <text class="dg-t" x="484" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">checked 예외 — 같은·하위 타입</text>
+  <rect class="dg-item" x="245" y="266" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">static 메서드는 오버라이딩이 아니…</text>
 </svg>

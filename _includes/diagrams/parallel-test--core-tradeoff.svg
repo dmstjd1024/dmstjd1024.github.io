@@ -1,26 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="10 코어 로컬에서는 포크 병렬이 179 초를 104 초로 줄였지만 2 코어 러너에서는 179 초가 195 초로 늘었다">
-  <text class="dg-h" x="24" y="30">같은 변경, 반대 결과</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="parallel-test--core-tradeoff-title parallel-test--core-tradeoff-desc">
+  <title id="parallel-test--core-tradeoff-title">10 코어 로컬에서는 포크 병렬이 179 초를 104 초로 줄였지만 2 코어 러너에서는 179 초가 195 초로 늘었다</title>
+  <desc id="parallel-test--core-tradeoff-desc">10 코어 로컬에서는 포크 병렬이 179 초를 104 초로 줄였지만 2 코어 러너에서는 179 초가 195 초로 늘었다</desc>
 
-  <rect class="dg-lane" x="24" y="52" width="328" height="180" rx="10"/>
-  <text class="dg-t" x="44" y="78">로컬 — 10 코어</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-out" x="44" y="92" width="288" height="30" rx="6"/>
-  <text class="dg-k" x="60" y="112">179s → 104.6s</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="244" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">환경 의존적 최적화는 적용할 환경에…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <text class="dg-s" x="44" y="146">포크를 늘릴 코어가 남아 있다</text>
-  <text class="dg-s" x="44" y="170">JVM 기동 비용 &lt; 병렬 이득</text>
-  <text class="dg-s" x="44" y="208">여기서 재고 "성공" 이라 판단했다</text>
+  <!-- 로컬 — 10 코어 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="79" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">로컬 — 10 코어</text>
+  <rect class="dg-item" x="302" y="200" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">179s → 104.6s</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="368" y="52" width="328" height="180" rx="10"/>
-  <text class="dg-t" x="388" y="78">CI — GitHub 무료 러너 2 코어</text>
-
-  <rect class="dg-warn" x="388" y="92" width="288" height="30" rx="6"/>
-  <text class="dg-k" x="404" y="112">179s → 195.8s (17 초 악화)</text>
-
-  <text class="dg-s" x="388" y="146">포크를 늘려도 돌릴 코어가 없다</text>
-  <text class="dg-s" x="388" y="170">JVM 기동 비용 &gt; 병렬 이득</text>
-  <text class="dg-s" x="388" y="208">적용되는 곳은 이쪽이었다</text>
-
-  <rect class="dg-warn" x="140" y="250" width="440" height="30" rx="6"/>
-  <text class="dg-k" x="156" y="270">환경 의존적 최적화는 적용할 환경에서 재야 한다</text>
+  <!-- CI — GitHub 무료 러너 2 코어 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="137" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CI — GitHub 무료 러너 2 코어</text>
+  <rect class="dg-item" x="267" y="344" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">179s → 195.8s (17 초 악화)</text>
 </svg>

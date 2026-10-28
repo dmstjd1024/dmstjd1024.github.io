@@ -1,27 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="invalidateQueries 기본 옵션은 활성 쿼리를 다시 부르고 비활성 쿼리는 stale 표시만 남긴다">
-  <marker id="ivai-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="invalidate--active-inactive-title invalidate--active-inactive-desc">
+  <title id="invalidate--active-inactive-title">invalidateQueries 기본 옵션은 활성 쿼리를 다시 부르고 비활성 쿼리는 stale 표시만 남긴다</title>
+  <desc id="invalidate--active-inactive-desc">invalidateQueries 기본 옵션은 활성 쿼리를 다시 부르고 비활성 쿼리는 stale 표시만 남긴다</desc>
 
-  <text class="dg-h" x="24" y="30">invalidate 기본값은 활성 쿼리만 재요청한다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lead" x="252" y="52" width="216" height="40" rx="8"/>
-  <text class="dg-t" x="272" y="78">invalidateQueries</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="294" y="56" width="131" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">invalidateQueries</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <path class="dg-arw" d="M360 100 V116 H160 V140" marker-end="url(#ivai-a)"/>
-  <path class="dg-arw" d="M360 100 V116 H560 V140" marker-end="url(#ivai-a)"/>
+  <!-- 활성 — 화면에 떠 있다 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="108" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">활성 — 화면에 떠 있다</text>
+  <rect class="dg-item" x="297" y="200" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">즉시 다시 부른다</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="146" width="328" height="112" rx="10"/>
-  <text class="dg-t" x="44" y="172">활성 — 화면에 떠 있다</text>
-  <rect class="dg-out" x="44" y="186" width="288" height="30" rx="6"/>
-  <text class="dg-k" x="60" y="206">즉시 다시 부른다</text>
-  <text class="dg-s" x="44" y="238">보고 있으니 바로 갱신된다</text>
-
-  <rect class="dg-lane" x="368" y="146" width="328" height="112" rx="10"/>
-  <text class="dg-t" x="388" y="172">비활성 — 언마운트 상태</text>
-  <rect class="dg-warn" x="388" y="186" width="288" height="30" rx="6"/>
-  <text class="dg-k" x="404" y="206">"다음에 볼 때 새로 받아라" 메모만</text>
-  <text class="dg-s" x="388" y="238">지금은 아무 일도 일어나지 않는다</text>
-
-  <text class="dg-v" x="24" y="284">refetchType: all 이면 비활성도 재요청 — 기본값에서도 재마운트 시 다시 받을 수 있다</text>
+  <!-- 비활성 — 언마운트 상태 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="112" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">비활성 — 언마운트 상태</text>
+  <rect class="dg-item" x="251" y="344" width="218" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">"다음에 볼 때 새로 받아라" 메모만</text>
 </svg>

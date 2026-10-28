@@ -1,39 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="DTO 는 클라이언트부터 서비스까지 오가고 Repository 부터는 Entity 를 쓴다는 경계">
-  <marker id="dtolb-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="dto--layer-boundary-title dto--layer-boundary-desc">
+  <title id="dto--layer-boundary-title">DTO 는 클라이언트부터 서비스까지 오가고 Repository 부터는 Entity 를 쓴다는 경계</title>
+  <desc id="dto--layer-boundary-desc">DTO 는 클라이언트부터 서비스까지 오가고 Repository 부터는 Entity 를 쓴다는 경계</desc>
 
-  <text class="dg-h" x="24" y="30">DTO 는 어디까지 쓰나</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="52" width="452" height="96" rx="10"/>
-  <text class="dg-t" x="44" y="78">DTO 구간</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="120" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Entity</text>
+  <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">DB 테이블과 맞물려 있다 · 바뀌면 여러 곳이…</text>
+  <rect class="dg-item" x="368" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="484" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DTO</text>
+  <text class="dg-s" x="484" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">화면이 요구하는 모양 · 자주 바뀌어도 DB 와…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lead" x="44" y="92" width="120" height="40" rx="6"/>
-  <text class="dg-k" x="64" y="117">Client</text>
-  <path class="dg-arw" d="M172 112 H196" marker-end="url(#dtolb-a)"/>
-  <rect class="dg-lead" x="204" y="92" width="120" height="40" rx="6"/>
-  <text class="dg-k" x="224" y="117">Controller</text>
-  <path class="dg-arw" d="M332 112 H356" marker-end="url(#dtolb-a)"/>
-  <rect class="dg-lead" x="364" y="92" width="100" height="40" rx="6"/>
-  <text class="dg-k" x="384" y="117">Service</text>
+  <!-- DTO 구간 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">DTO 구간</text>
+  <rect class="dg-item" x="200" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Client</text>
+  <rect class="dg-item" x="312" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Controller</text>
+  <rect class="dg-item" x="424" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Service</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <path class="dg-arw" d="M484 112 H512" marker-end="url(#dtolb-a)"/>
-  <text class="dg-b" x="446" y="44">여기서 변환</text>
-
-  <rect class="dg-lane" x="520" y="52" width="176" height="96" rx="10"/>
-  <text class="dg-t" x="540" y="78">Entity 구간</text>
-  <rect class="dg-out" x="540" y="92" width="136" height="40" rx="6"/>
-  <text class="dg-k" x="560" y="117">Repository</text>
-
-  <rect class="dg-row" x="24" y="168" width="328" height="72" rx="8"/>
-  <text class="dg-t" x="44" y="192">Entity</text>
-  <text class="dg-v" x="44" y="214">DB 테이블과 맞물려 있다</text>
-  <text class="dg-s" x="44" y="232">바뀌면 여러 곳이 영향을 받는다</text>
-
-  <rect class="dg-row" x="368" y="168" width="328" height="72" rx="8"/>
-  <text class="dg-t" x="388" y="192">DTO</text>
-  <text class="dg-v" x="388" y="214">화면이 요구하는 모양</text>
-  <text class="dg-s" x="388" y="232">자주 바뀌어도 DB 와 무관하다</text>
-
-  <text class="dg-s" x="24" y="276">둘을 섞으면 화면 사정 때문에 Entity 가 흔들린다 — 그래서 경계에서 갈아탄다</text>
+  <!-- Entity 구간 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Entity 구간</text>
+  <rect class="dg-item" x="312" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Repository</text>
 </svg>

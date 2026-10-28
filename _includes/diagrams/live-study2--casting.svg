@@ -1,32 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="int와 long 간 자동 형변환·캐스팅 예시와 정밀도 손실 주의">
-  <marker id="ls2cast-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study2--casting-title live-study2--casting-desc">
+  <title id="live-study2--casting-title">int와 long 간 자동 형변환·캐스팅 예시와 정밀도 손실 주의</title>
+  <desc id="live-study2--casting-desc">int와 long 간 자동 형변환·캐스팅 예시와 정밀도 손실 주의</desc>
 
-  <text class="dg-h" x="24" y="30">형변환의 방향</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="672" height="96" rx="10"/>
-  <text class="dg-t" x="44" y="76">int → long</text>
-  <text class="dg-b" x="280" y="76">자동 형변환 (타입 프로모션)</text>
+  <!-- int → long -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">int → long</text>
+  <rect class="dg-item" x="256" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="304" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">int</text>
+  <rect class="dg-item" x="368" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="416" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">long</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-row" x="44" y="90" width="120" height="36" rx="6"/>
-  <text class="dg-k" x="60" y="114">int</text>
-  <path class="dg-arw" d="M172 108 H228" marker-end="url(#ls2cast-a)"/>
-  <rect class="dg-out" x="236" y="90" width="120" height="36" rx="6"/>
-  <text class="dg-k" x="252" y="114">long</text>
-  <text class="dg-v" x="380" y="114">값이 다 들어가므로 그냥 넣어도 된다</text>
-
-  <rect class="dg-lane" x="24" y="160" width="672" height="96" rx="10"/>
-  <text class="dg-t" x="44" y="188">long → int</text>
-  <text class="dg-b" x="280" y="188">캐스팅을 직접 써야 한다</text>
-
-  <rect class="dg-row" x="44" y="202" width="120" height="36" rx="6"/>
-  <text class="dg-k" x="60" y="226">long</text>
-  <path class="dg-arw" d="M172 220 H228" marker-end="url(#ls2cast-a)"/>
-  <rect class="dg-warn" x="236" y="202" width="120" height="36" rx="6"/>
-  <text class="dg-k" x="252" y="226">int</text>
-  <text class="dg-v" x="380" y="220">넘치는 부분이 잘린다</text>
-  <text class="dg-s" x="380" y="238">(타입) 을 붙여 의도를 밝혀야 컴파일된다</text>
-
-  <text class="dg-s" x="24" y="284">자동 형변환도 정밀도를 잃을 수 있다 — int → float, long → double</text>
+  <!-- long → int -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">long → int</text>
+  <rect class="dg-item" x="256" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="304" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">long</text>
+  <rect class="dg-item" x="368" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="416" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">int</text>
 </svg>

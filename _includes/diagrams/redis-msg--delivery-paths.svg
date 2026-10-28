@@ -1,69 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 408" role="img" aria-label="소비자가 처리 도중 죽었을 때 Pub/Sub은 메시지가 사라지고 List는 꺼낸 메시지만 사라지며 Streams는 PEL에 남아 재처리되는 구조">
-  <marker id="rmsgdp-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="redis-msg--delivery-paths-title redis-msg--delivery-paths-desc">
+  <title id="redis-msg--delivery-paths-title">소비자가 처리 도중 죽었을 때 Pub/Sub은 메시지가 사라지고 List는 꺼낸 메시지만 사라지며 Streams는 PEL에 남아 재처리되는 구조</title>
+  <desc id="redis-msg--delivery-paths-desc">소비자가 처리 도중 죽었을 때 Pub/Sub은 메시지가 사라지고 List는 꺼낸 메시지만 사라지며 Streams는 PEL에 남아 재처리되는 구조</desc>
 
-  <text class="dg-h" x="24" y="30">소비자가 처리 도중 죽으면 메시지는 어디 있나</text>
-  <text class="dg-s" x="24" y="50">세 방식의 차이는 이 한 장면에서 갈린다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
   <!-- Pub/Sub -->
-  <rect class="dg-lane" x="24" y="68" width="216" height="254" rx="10"/>
-  <text class="dg-k" x="40" y="94">Pub/Sub</text>
-
-  <rect class="dg-row" x="40" y="108" width="184" height="34" rx="6"/>
-  <text class="dg-v" x="54" y="130">PUBLISH</text>
-
-  <path class="dg-arw" d="M132 146 V172" marker-end="url(#rmsgdp-a)"/>
-
-  <rect class="dg-row" x="40" y="176" width="184" height="34" rx="6"/>
-  <text class="dg-v" x="54" y="198">구독자에게 즉시 밀어냄</text>
-
-  <path class="dg-arw" d="M132 214 V240" marker-end="url(#rmsgdp-a)"/>
-
-  <rect class="dg-row" x="40" y="244" width="184" height="34" rx="6"/>
-  <text class="dg-s" x="54" y="266">서버에 남는 것 없음</text>
-
-  <text class="dg-s" x="40" y="294">유실 — 재시도 근거가 없다</text>
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Pub/Sub</text>
+  <rect class="dg-item" x="146" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="194" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PUBLISH</text>
+  <rect class="dg-item" x="258" y="56" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="337" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구독자에게 즉시 밀어냄</text>
+  <rect class="dg-item" x="432" y="56" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="503" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버에 남는 것 없음</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
   <!-- List -->
-  <rect class="dg-lane" x="252" y="68" width="216" height="254" rx="10"/>
-  <text class="dg-k" x="268" y="94">List</text>
-
-  <rect class="dg-row" x="268" y="108" width="184" height="34" rx="6"/>
-  <text class="dg-v" x="282" y="130">LPUSH</text>
-
-  <path class="dg-arw" d="M360 146 V172" marker-end="url(#rmsgdp-a)"/>
-
-  <rect class="dg-row" x="268" y="176" width="184" height="34" rx="6"/>
-  <text class="dg-v" x="282" y="198">키에 쌓여 대기</text>
-
-  <path class="dg-arw" d="M360 214 V240" marker-end="url(#rmsgdp-a)"/>
-
-  <rect class="dg-row" x="268" y="244" width="184" height="34" rx="6"/>
-  <text class="dg-s" x="282" y="266">RPOP 한 1건만 증발</text>
-
-  <text class="dg-s" x="268" y="294">뒤의 대기열은 살아 있다</text>
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="32" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">List</text>
+  <rect class="dg-item" x="170" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="218" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LPUSH</text>
+  <rect class="dg-item" x="282" y="200" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="339" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">키에 쌓여 대기</text>
+  <rect class="dg-item" x="413" y="200" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="481" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RPOP 한 1건만 증발</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
   <!-- Streams -->
-  <rect class="dg-lane" x="480" y="68" width="216" height="254" rx="10"/>
-  <text class="dg-k" x="496" y="94">Streams</text>
-
-  <rect class="dg-row" x="496" y="108" width="184" height="34" rx="6"/>
-  <text class="dg-v" x="510" y="130">XADD</text>
-
-  <path class="dg-arw" d="M588 146 V172" marker-end="url(#rmsgdp-a)"/>
-
-  <rect class="dg-row" x="496" y="176" width="184" height="34" rx="6"/>
-  <text class="dg-v" x="510" y="198">append 되고 안 지워짐</text>
-
-  <path class="dg-arw" d="M588 214 V240" marker-end="url(#rmsgdp-a)"/>
-
-  <rect class="dg-lead" x="496" y="244" width="184" height="34" rx="6"/>
-  <text class="dg-b" x="510" y="266">PEL 에 미처리로 남음</text>
-
-  <text class="dg-s" x="496" y="294">다른 소비자가 인수한다</text>
-  <text class="dg-s" x="496" y="310">XAUTOCLAIM</text>
-
-  <rect class="dg-lane" x="24" y="338" width="672" height="46" rx="8"/>
-  <text class="dg-v" x="44" y="362">갈림길은 "서버가 기억하는가" 하나다 — 기억하지 않으면 재시도라는 선택지가 없다</text>
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Streams</text>
+  <rect class="dg-item" x="145" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="193" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">XADD</text>
+  <rect class="dg-item" x="257" y="344" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="333" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">append 되고 안 지워짐</text>
+  <rect class="dg-item" x="426" y="344" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="500" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PEL 에 미처리로 남음</text>
 </svg>

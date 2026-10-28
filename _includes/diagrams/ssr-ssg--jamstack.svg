@@ -1,37 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Jam Stack 은 정적 페이지를 CDN 으로 배포하고 동적 기능은 외부 API 에 맡긴다">
-  <marker id="ssrjam-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="ssr-ssg--jamstack-title ssr-ssg--jamstack-desc">
+  <title id="ssr-ssg--jamstack-title">Jam Stack 은 정적 페이지를 CDN 으로 배포하고 동적 기능은 외부 API 에 맡긴다</title>
+  <desc id="ssr-ssg--jamstack-desc">Jam Stack 은 정적 페이지를 CDN 으로 배포하고 동적 기능은 외부 API 에 맡긴다</desc>
 
-  <text class="dg-h" x="24" y="30">Jam Stack 의 구성</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-item" x="24" y="56" width="180" height="64" rx="8"/>
-  <text class="dg-t" x="44" y="82">빌드</text>
-  <text class="dg-s" x="44" y="104">미리 렌더링한 정적 파일</text>
-
-  <path class="dg-arw" d="M212 88 H260" marker-end="url(#ssrjam-a)"/>
-
-  <rect class="dg-lead" x="268" y="56" width="180" height="64" rx="8"/>
-  <text class="dg-t" x="288" y="82">CDN</text>
-  <text class="dg-s" x="288" y="104">전 세계에 뿌려 둔다</text>
-
-  <path class="dg-arw" d="M456 88 H504" marker-end="url(#ssrjam-a)"/>
-
-  <rect class="dg-out" x="512" y="56" width="184" height="64" rx="8"/>
-  <text class="dg-t" x="532" y="82">브라우저</text>
-  <text class="dg-s" x="532" y="104">바로 받는다</text>
-
-  <path class="dg-arw" d="M604 128 V156" marker-end="url(#ssrjam-a)"/>
-  <text class="dg-s" x="440" y="150">동적인 부분만 따로</text>
-
-  <rect class="dg-item" x="512" y="162" width="184" height="56" rx="8"/>
-  <text class="dg-t" x="532" y="186">외부 API</text>
-  <text class="dg-s" x="532" y="206">로그인 · 결제 · 댓글</text>
-
-  <rect class="dg-lane" x="24" y="150" width="440" height="88" rx="8"/>
-  <text class="dg-v" x="44" y="176">요청마다 HTML을 만드는 애플리케이션 서버는 필요 없다</text>
-  <text class="dg-s" x="44" y="198">정적 제공은 운영 부담을 줄인다</text>
-  <text class="dg-s" x="44" y="220">API·인증 보안은 별도로 필요하다</text>
-
-  <text class="dg-s" x="24" y="282">이 블로그도 Jekyll 로 만든 정적 파일을 GitHub Pages 가 배포하는 같은 구조다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="91" y="56" width="141" height="52" rx="6"/>
+  <text class="dg-t" x="161" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">빌드</text>
+  <text class="dg-s" x="161" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">미리 렌더링한 정적 파일</text>
+  <rect class="dg-item" x="248" y="56" width="124" height="52" rx="6"/>
+  <text class="dg-t" x="310" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CDN</text>
+  <text class="dg-s" x="310" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">전 세계에 뿌려 둔다</text>
+  <rect class="dg-item" x="388" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="436" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">브라우저</text>
+  <text class="dg-s" x="436" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">바로 받는다</text>
+  <rect class="dg-item" x="500" y="56" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="564" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">외부 API</text>
+  <text class="dg-s" x="564" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">로그인 · 결제 · 댓글</text>
 </svg>

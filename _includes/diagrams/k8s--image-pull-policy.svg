@@ -1,39 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="이미지 풀 정책 세 가지와 태그에 따라 기본값이 달라져 ImagePullBackOff 가 나는 이유">
-  <marker id="k8sipp-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="k8s--image-pull-policy-title k8s--image-pull-policy-desc">
+  <title id="k8s--image-pull-policy-title">이미지 풀 정책 세 가지와 태그에 따라 기본값이 달라져 ImagePullBackOff 가 나는 이유</title>
+  <desc id="k8s--image-pull-policy-desc">이미지 풀 정책 세 가지와 태그에 따라 기본값이 달라져 ImagePullBackOff 가 나는 이유</desc>
 
-  <text class="dg-h" x="24" y="30">ImagePullBackOff 가 났던 이유</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="672" height="118" rx="10"/>
-  <text class="dg-t" x="44" y="74">이미지 풀 정책</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="58" y="56" width="163" height="52" rx="6"/>
+  <text class="dg-t" x="139" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">image: spring-server</text>
+  <text class="dg-s" x="139" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">태그 없음 · latest → Always</text>
+  <rect class="dg-item" x="237" y="56" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="329" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">로컬에 방금 빌드해 뒀는데도</text>
+  <text class="dg-s" x="329" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">레지스트리를 뒤지다 실패한다</text>
+  <rect class="dg-item" x="438" y="56" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="549" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">IfNotPresent 는 파드를 실행할 노…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-warn" x="44" y="88" width="204" height="62" rx="6"/>
-  <text class="dg-k" x="60" y="110">Always</text>
-  <text class="dg-s" x="60" y="130">레지스트리 확인 후</text>
-  <text class="dg-s" x="60" y="146">같은 다이제스트는 캐시</text>
-
-  <rect class="dg-out" x="258" y="88" width="204" height="62" rx="6"/>
-  <text class="dg-k" x="274" y="110">IfNotPresent</text>
-  <text class="dg-s" x="274" y="130">로컬을 먼저 보고</text>
-  <text class="dg-s" x="274" y="146">없으면 레지스트리에서</text>
-
-  <rect class="dg-row" x="472" y="88" width="204" height="62" rx="6"/>
-  <text class="dg-k" x="488" y="110">Never</text>
-  <text class="dg-s" x="488" y="130">로컬에서만</text>
-
-  <text class="dg-t" x="24" y="196">태그를 안 쓰면 기본값이 Always 가 된다</text>
-
-  <rect class="dg-row" x="24" y="208" width="328" height="44" rx="6"/>
-  <text class="dg-v" x="44" y="228">image: spring-server</text>
-  <text class="dg-s" x="44" y="246">태그 없음 · latest → Always</text>
-
-  <path class="dg-arw" d="M360 230 H400" marker-end="url(#k8sipp-a)"/>
-
-  <rect class="dg-warn" x="408" y="208" width="288" height="44" rx="6"/>
-  <text class="dg-k" x="428" y="228">로컬에 방금 빌드해 뒀는데도</text>
-  <text class="dg-s" x="428" y="246">레지스트리를 뒤지다 실패한다</text>
-
-  <rect class="dg-out" x="24" y="266" width="672" height="40" rx="8"/>
-  <text class="dg-k" x="44" y="292">IfNotPresent 는 파드를 실행할 노드에 이미지가 있어야 재사용한다</text>
+  <!-- 이미지 풀 정책 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="74" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">이미지 풀 정책</text>
+  <rect class="dg-item" x="72" y="200" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="187" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Always</text>
+  <text class="dg-s" x="187" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">레지스트리 확인 후 · 같은 다이제스트는 캐시</text>
+  <rect class="dg-item" x="318" y="200" width="217" height="52" rx="6"/>
+  <text class="dg-t" x="426" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">IfNotPresent</text>
+  <text class="dg-s" x="426" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">로컬을 먼저 보고 · 없으면 레지스트리에서</text>
+  <rect class="dg-item" x="551" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="599" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Never</text>
+  <text class="dg-s" x="599" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">로컬에서만</text>
 </svg>

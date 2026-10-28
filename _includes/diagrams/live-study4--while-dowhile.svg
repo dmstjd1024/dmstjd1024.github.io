@@ -1,33 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="while 은 조건을 먼저 보고 do-while 은 한 번 실행한 뒤 조건을 본다">
-  <marker id="ls4wd-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study4--while-dowhile-title live-study4--while-dowhile-desc">
+  <title id="live-study4--while-dowhile-title">while 은 조건을 먼저 보고 do-while 은 한 번 실행한 뒤 조건을 본다</title>
+  <desc id="live-study4--while-dowhile-desc">while 은 조건을 먼저 보고 do-while 은 한 번 실행한 뒤 조건을 본다</desc>
 
-  <text class="dg-h" x="24" y="30">while 과 do-while 의 차이는 순서다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="328" height="196" rx="10"/>
-  <text class="dg-t" x="44" y="76">while</text>
+  <!-- while -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="37" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">while</text>
+  <rect class="dg-item" x="117" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="185" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조건식을 먼저 본다</text>
+  <rect class="dg-item" x="270" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="319" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">참이면 실행</text>
+  <rect class="dg-item" x="385" y="56" width="218" height="52" rx="6"/>
+  <text class="dg-t" x="494" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">처음부터 거짓이면 한 번도 안 돈다</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lead" x="44" y="90" width="288" height="38" rx="6"/>
-  <text class="dg-k" x="60" y="114">조건식을 먼저 본다</text>
-  <path class="dg-arw" d="M188 132 V150" marker-end="url(#ls4wd-a)"/>
-  <rect class="dg-row" x="44" y="156" width="288" height="38" rx="6"/>
-  <text class="dg-v" x="60" y="180">참이면 실행</text>
-
-  <rect class="dg-warn" x="44" y="202" width="288" height="30" rx="6"/>
-  <text class="dg-s" x="60" y="222">처음부터 거짓이면 한 번도 안 돈다</text>
-
-  <rect class="dg-lane" x="368" y="48" width="328" height="196" rx="10"/>
-  <text class="dg-t" x="388" y="76">do-while</text>
-
-  <rect class="dg-row" x="388" y="90" width="288" height="38" rx="6"/>
-  <text class="dg-v" x="404" y="114">일단 실행하고</text>
-  <path class="dg-arw" d="M532 132 V150" marker-end="url(#ls4wd-a)"/>
-  <rect class="dg-lead" x="388" y="156" width="288" height="38" rx="6"/>
-  <text class="dg-k" x="404" y="180">그다음 조건식을 본다</text>
-
-  <rect class="dg-out" x="388" y="202" width="288" height="30" rx="6"/>
-  <text class="dg-s" x="404" y="222">거짓이어도 최소 한 번은 돈다</text>
-
-  <text class="dg-s" x="24" y="274">"일단 한 번은 물어보고 아니면 다시" 같은 입력 처리에 do-while 이 맞는다</text>
+  <!-- do-while -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">do-while</text>
+  <rect class="dg-item" x="119" y="200" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="174" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">일단 실행하고</text>
+  <rect class="dg-item" x="245" y="200" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="319" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그다음 조건식을 본다</text>
+  <rect class="dg-item" x="409" y="200" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="504" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">거짓이어도 최소 한 번은 돈다</text>
 </svg>

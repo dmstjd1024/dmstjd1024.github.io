@@ -1,35 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="티켓 배포 프로젝트의 요구사항과 그로부터 나오는 기술 과제">
-  <marker id="tsreq-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-labelledby="ticket-start--requirements-title ticket-start--requirements-desc">
+  <title id="ticket-start--requirements-title">티켓 배포 프로젝트의 요구사항과 그로부터 나오는 기술 과제</title>
+  <desc id="ticket-start--requirements-desc">티켓 배포 프로젝트의 요구사항과 그로부터 나오는 기술 과제</desc>
 
-  <text class="dg-h" x="24" y="30">요구사항이 만드는 기술 과제</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="300" height="188" rx="10"/>
-  <text class="dg-t" x="44" y="74">요구사항</text>
+  <!-- 요구사항 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">요구사항</text>
+  <rect class="dg-item" x="100" y="56" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="160" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">티켓 100매 한정</text>
+  <rect class="dg-item" x="237" y="56" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="300" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">공인 IP 당 1회만</text>
+  <rect class="dg-item" x="379" y="56" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="439" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">30% 확률로 당첨</text>
+  <rect class="dg-item" x="516" y="56" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="568" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">WAS 2대 이상</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-row" x="44" y="88" width="260" height="30" rx="6"/>
-  <text class="dg-v" x="60" y="108">티켓 100매 한정</text>
-  <rect class="dg-row" x="44" y="124" width="260" height="30" rx="6"/>
-  <text class="dg-v" x="60" y="144">공인 IP 당 1회만</text>
-  <rect class="dg-row" x="44" y="160" width="260" height="30" rx="6"/>
-  <text class="dg-v" x="60" y="180">30% 확률로 당첨</text>
-  <rect class="dg-row" x="44" y="196" width="260" height="30" rx="6"/>
-  <text class="dg-v" x="60" y="216">WAS 2대 이상</text>
-
-  <path class="dg-arw" d="M332 103 H388" marker-end="url(#tsreq-a)"/>
-  <path class="dg-arw" d="M332 139 H388" marker-end="url(#tsreq-a)"/>
-  <path class="dg-arw" d="M332 211 H388" marker-end="url(#tsreq-a)"/>
-
-  <rect class="dg-lane" x="396" y="48" width="300" height="188" rx="10"/>
-  <text class="dg-t" x="416" y="74">그래서 풀어야 할 문제</text>
-
-  <rect class="dg-lead" x="416" y="88" width="260" height="30" rx="6"/>
-  <text class="dg-k" x="432" y="108">동시 요청에 101매가 나가면 안 된다</text>
-  <rect class="dg-lead" x="416" y="124" width="260" height="30" rx="6"/>
-  <text class="dg-k" x="432" y="144">중복 신청을 어디서 막을 것인가</text>
-  <rect class="dg-lead" x="416" y="196" width="260" height="30" rx="6"/>
-  <text class="dg-k" x="432" y="216">서버가 여러 대라 메모리는 못 쓴다</text>
-
-  <text class="dg-s" x="24" y="268">서버가 한 대라면 간단할 일이 두 대가 되는 순간 상태를 공유할 곳이 필요해진다</text>
+  <!-- 그래서 풀어야 할 문제 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="104" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">그래서 풀어야 할 문제</text>
+  <rect class="dg-item" x="139" y="200" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="250" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">동시 요청에 101매가 나가면 안 된…</text>
+  <rect class="dg-item" x="378" y="200" width="202" height="52" rx="6"/>
+  <text class="dg-t" x="479" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">중복 신청을 어디서 막을 것인가</text>
+  <rect class="dg-item" x="251" y="266" width="218" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버가 여러 대라 메모리는 못 쓴다</text>
 </svg>

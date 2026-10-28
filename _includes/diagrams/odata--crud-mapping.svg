@@ -1,37 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="OData 모델의 create, read, update, remove 함수가 각각 어떤 HTTP 요청으로 나가는지">
-  <marker id="odcm-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 580" role="img" aria-labelledby="odata--crud-mapping-title odata--crud-mapping-desc">
+  <title id="odata--crud-mapping-title">OData 모델의 create, read, update, remove 함수가 각각 어떤 HTTP 요청으로 나가는지</title>
+  <desc id="odata--crud-mapping-desc">OData 모델의 create, read, update, remove 함수가 각각 어떤 HTTP 요청으로 나가는지</desc>
 
-  <text class="dg-h" x="24" y="30">모델 함수와 실제로 나가는 요청</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="672" height="40" rx="6"/>
-  <text class="dg-t" x="44" y="74">create()</text>
-  <path class="dg-arw" d="M180 68 H216" marker-end="url(#odcm-a)"/>
-  <rect class="dg-lead" x="224" y="54" width="120" height="28" rx="4"/>
-  <text class="dg-k" x="240" y="73">POST</text>
-  <text class="dg-v" x="376" y="73">엔티티 셋에 새로 추가한다</text>
+  <!-- create() -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">create()</text>
+  <rect class="dg-item" x="312" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">POST</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="96" width="672" height="40" rx="6"/>
-  <text class="dg-t" x="44" y="122">read()</text>
-  <path class="dg-arw" d="M180 116 H216" marker-end="url(#odcm-a)"/>
-  <rect class="dg-lead" x="224" y="102" width="120" height="28" rx="4"/>
-  <text class="dg-k" x="240" y="121">GET</text>
-  <text class="dg-v" x="376" y="121">성공·실패 핸들러로 갈린다</text>
+  <!-- read() -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">read()</text>
+  <rect class="dg-item" x="312" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">GET</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="144" width="672" height="40" rx="6"/>
-  <text class="dg-t" x="44" y="170">update()</text>
-  <path class="dg-arw" d="M180 164 H216" marker-end="url(#odcm-a)"/>
-  <rect class="dg-lead" x="224" y="150" width="120" height="28" rx="4"/>
-  <text class="dg-k" x="240" y="169">PUT / MERGE</text>
-  <text class="dg-v" x="376" y="169">성공하면 모델을 자동 갱신한다</text>
+  <!-- update() -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">update()</text>
+  <rect class="dg-item" x="310" y="344" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PUT / MERGE</text>
+  <path class="dg-arw" d="M360,420 V458" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="192" width="672" height="40" rx="6"/>
-  <text class="dg-t" x="44" y="218">remove()</text>
-  <path class="dg-arw" d="M180 212 H216" marker-end="url(#odcm-a)"/>
-  <rect class="dg-lead" x="224" y="198" width="120" height="28" rx="4"/>
-  <text class="dg-k" x="240" y="217">DELETE</text>
-  <text class="dg-v" x="376" y="217">지울 엔트리 경로를 지정한다</text>
-
-  <text class="dg-s" x="24" y="264">모든 작업은 중단 함수를 가진 객체를 돌려주므로, 요청을 취소할 수 있다</text>
+  <!-- remove() -->
+  <rect class="dg-zone" x="24" y="464" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="458" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="467" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">remove()</text>
+  <rect class="dg-item" x="312" y="488" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DELETE</text>
 </svg>

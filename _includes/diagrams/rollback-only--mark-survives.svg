@@ -1,36 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="같은 트랜잭션에 참여한 조회에서 난 예외가 rollback-only 마크를 남기고 호출자가 예외를 잡아도 커밋 시점에 UnexpectedRollbackException 이 터진다">
-  <marker id="rom-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-labelledby="rollback-only--mark-survives-title rollback-only--mark-survives-desc">
+  <title id="rollback-only--mark-survives-title">같은 트랜잭션에 참여한 조회에서 난 예외가 rollback-only 마크를 남기고 호출자가 예외를 잡아도 커밋 시점에 UnexpectedRollbackException 이 터진다</title>
+  <desc id="rollback-only--mark-survives-desc">같은 트랜잭션에 참여한 조회에서 난 예외가 rollback-only 마크를 남기고 호출자가 예외를 잡아도 커밋 시점에 UnexpectedRollbackException 이 터진다</desc>
 
-  <text class="dg-h" x="24" y="30">catch 는 마크를 지우지 못한다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="52" width="672" height="180" rx="10"/>
-  <text class="dg-t" x="44" y="78">승인 트랜잭션 (하나뿐)</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="262" y="56" width="196" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">UnexpectedRollbackException…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-out" x="44" y="92" width="300" height="30" rx="6"/>
-  <text class="dg-k" x="60" y="112">① 승인 로직 시작</text>
-
-  <rect class="dg-warn" x="44" y="130" width="300" height="30" rx="6"/>
-  <text class="dg-k" x="60" y="150">② readOnly 조회가 같은 TX 에 참여</text>
-
-  <rect class="dg-warn" x="44" y="168" width="300" height="30" rx="6"/>
-  <text class="dg-k" x="60" y="188">③ 예외 → rollback-only 마크</text>
-
-  <path class="dg-arw" d="M352 183 H388" marker-end="url(#rom-a)"/>
-
-  <rect class="dg-out" x="396" y="130" width="284" height="30" rx="6"/>
-  <text class="dg-k" x="412" y="150">④ catch — 예외는 잡혔다</text>
-
-  <rect class="dg-warn" x="396" y="168" width="284" height="30" rx="6"/>
-  <text class="dg-k" x="412" y="188">⑤ 커밋 시도 → 마크가 남아 있다</text>
-
-  <text class="dg-s" x="396" y="218">잡은 것은 예외지 마크가 아니다</text>
-
-  <path class="dg-arw" d="M360 240 V266" marker-end="url(#rom-a)"/>
-
-  <rect class="dg-warn" x="160" y="272" width="400" height="30" rx="6"/>
-  <text class="dg-k" x="176" y="292">UnexpectedRollbackException — 승인 통째로 소멸</text>
-
-  <text class="dg-v" x="24" y="326">해법 — 조회를 REQUIRES_NEW 별도 빈으로 분리해 마크가 옮겨붙지 않게 한다</text>
+  <!-- 승인 트랜잭션 (하나뿐) -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="108" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">승인 트랜잭션 (하나뿐)</text>
+  <rect class="dg-item" x="79" y="200" width="131" height="52" rx="6"/>
+  <text class="dg-t" x="144" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">① 승인 로직 시작</text>
+  <rect class="dg-item" x="226" y="200" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="337" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">② readOnly 조회가 같은 TX 에 참…</text>
+  <rect class="dg-item" x="465" y="200" width="175" height="52" rx="6"/>
+  <text class="dg-t" x="552" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">④ catch — 예외는 잡혔다</text>
+  <rect class="dg-item" x="148" y="266" width="196" height="52" rx="6"/>
+  <text class="dg-t" x="246" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">③ 예외 → rollback-only 마크</text>
+  <rect class="dg-item" x="360" y="266" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="466" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">⑤ 커밋 시도 → 마크가 남아 있다</text>
 </svg>

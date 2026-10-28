@@ -1,38 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" role="img" aria-label="Jira 이슈 생성부터 develop 병합까지의 운영 순서 흐름도">
-  <marker id="JIRA-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="git-flow--JIRA-title git-flow--JIRA-desc">
+  <title id="git-flow--JIRA-title">Jira 이슈 생성부터 develop 병합까지의 운영 순서 흐름도</title>
+  <desc id="git-flow--JIRA-desc">Jira 이슈 생성부터 develop 병합까지의 운영 순서 흐름도</desc>
 
-  <rect class="dg-lead" x="20"  y="52" width="150" height="62" rx="8"/>
-  <text class="dg-n" x="34" y="76">1</text>
-  <text class="dg-t" x="34" y="94">Jira 이슈 생성</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <path class="dg-arw" d="M176 83 H206" marker-end="url(#JIRA-a)"/>
-
-  <rect class="dg-card" x="212" y="52" width="150" height="62" rx="8"/>
-  <text class="dg-n" x="226" y="76">2</text>
-  <text class="dg-t" x="226" y="94">IntelliJ 연결</text>
-
-  <path class="dg-arw" d="M368 83 H398" marker-end="url(#JIRA-a)"/>
-
-  <rect class="dg-card" x="404" y="52" width="150" height="62" rx="8"/>
-  <text class="dg-n" x="418" y="76">3</text>
-  <text class="dg-t" x="418" y="94">feature 브랜치</text>
-
-  <path class="dg-arw" d="M560 83 H590" marker-end="url(#JIRA-a)"/>
-
-  <rect class="dg-card" x="596" y="52" width="120" height="62" rx="8"/>
-  <text class="dg-n" x="610" y="76">4</text>
-  <text class="dg-t" x="610" y="94">commit</text>
-
-  <path class="dg-arw" d="M722 83 H752" marker-end="url(#JIRA-a)"/>
-
-  <rect class="dg-card" x="758" y="52" width="102" height="62" rx="8"/>
-  <text class="dg-n" x="772" y="76">5</text>
-  <text class="dg-t" x="772" y="94">PR·리뷰</text>
-
-  <path class="dg-arw" d="M809 120 V146 H440 V128" marker-end="url(#JIRA-a)"/>
-  <text class="dg-s" x="440" y="168" text-anchor="middle">리뷰 통과 후 develop 에 merge · feature 브랜치 삭제</text>
-
-  <text class="dg-s" x="20" y="30">운영 순서</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="309" y="56" width="101" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">1</text>
+  <text class="dg-s" x="359" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Jira 이슈 생성</text>
 </svg>

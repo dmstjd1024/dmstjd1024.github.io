@@ -1,27 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="모든 클래스가 Object 를 최상위 조상으로 갖는 상속 계층">
-  <marker id="ls6or-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="live-study6--object-root-title live-study6--object-root-desc">
+  <title id="live-study6--object-root-title">모든 클래스가 Object 를 최상위 조상으로 갖는 상속 계층</title>
+  <desc id="live-study6--object-root-desc">모든 클래스가 Object 를 최상위 조상으로 갖는 상속 계층</desc>
 
-  <text class="dg-h" x="24" y="30">모든 클래스의 꼭대기에는 Object 가 있다</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lead" x="212" y="52" width="296" height="48" rx="8"/>
-  <text class="dg-t" x="232" y="76">Object</text>
-  <text class="dg-s" x="232" y="94">toString() · equals() · hashCode() ...</text>
-
-  <path class="dg-arw" d="M360 108 V124 H140 V148" marker-end="url(#ls6or-a)"/>
-  <path class="dg-arw" d="M360 108 V148" marker-end="url(#ls6or-a)"/>
-  <path class="dg-arw" d="M360 108 V124 H580 V148" marker-end="url(#ls6or-a)"/>
-
-  <rect class="dg-row" x="60" y="156" width="160" height="42" rx="6"/>
-  <text class="dg-k" x="80" y="182">내가 만든 클래스</text>
-
-  <rect class="dg-row" x="280" y="156" width="160" height="42" rx="6"/>
-  <text class="dg-k" x="300" y="182">String</text>
-
-  <rect class="dg-row" x="500" y="156" width="160" height="42" rx="6"/>
-  <text class="dg-k" x="520" y="182">List</text>
-
-  <text class="dg-v" x="24" y="228">extends 를 안 써도 자동으로 Object 를 상속받는다</text>
-  <text class="dg-s" x="24" y="252">그래서 어떤 객체든 toString() 을 부를 수 있다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="73" y="56" width="208" height="52" rx="6"/>
+  <text class="dg-t" x="177" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Object</text>
+  <text class="dg-s" x="177" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">toString() · equals() · hashCode() ...</text>
+  <rect class="dg-item" x="297" y="56" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내가 만든 클래스</text>
+  <rect class="dg-item" x="439" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="487" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">String</text>
+  <rect class="dg-item" x="551" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="599" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">List</text>
 </svg>

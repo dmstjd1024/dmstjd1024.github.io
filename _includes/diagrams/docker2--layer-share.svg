@@ -1,33 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="여러 이미지가 같은 레이어를 공유하므로 실제 디스크 사용량은 표시된 합보다 작다">
-  <marker id="dk2ls-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="docker2--layer-share-title docker2--layer-share-desc">
+  <title id="docker2--layer-share-title">여러 이미지가 같은 레이어를 공유하므로 실제 디스크 사용량은 표시된 합보다 작다</title>
+  <desc id="docker2--layer-share-desc">여러 이미지가 같은 레이어를 공유하므로 실제 디스크 사용량은 표시된 합보다 작다</desc>
 
-  <text class="dg-h" x="24" y="30">이미지 용량이 합쳐지지 않는 이유</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-item" x="24" y="52" width="200" height="76" rx="8"/>
-  <text class="dg-t" x="44" y="76">이미지 A</text>
-  <text class="dg-s" x="44" y="98">앱 레이어</text>
-  <text class="dg-s" x="44" y="118">+ Node.js 런타임</text>
-
-  <rect class="dg-item" x="256" y="52" width="200" height="76" rx="8"/>
-  <text class="dg-t" x="276" y="76">이미지 B</text>
-  <text class="dg-s" x="276" y="98">앱 레이어</text>
-  <text class="dg-s" x="276" y="118">+ Node.js 런타임</text>
-
-  <rect class="dg-item" x="488" y="52" width="208" height="76" rx="8"/>
-  <text class="dg-t" x="508" y="76">이미지 C</text>
-  <text class="dg-s" x="508" y="98">앱 레이어</text>
-  <text class="dg-s" x="508" y="118">+ Node.js 런타임</text>
-
-  <path class="dg-arw" d="M124 136 V160 H360 V180" marker-end="url(#dk2ls-a)"/>
-  <path class="dg-arw" d="M356 136 V180" marker-end="url(#dk2ls-a)"/>
-  <path class="dg-arw" d="M592 136 V160 H360 V180" marker-end="url(#dk2ls-a)"/>
-
-  <rect class="dg-out" x="200" y="186" width="320" height="48" rx="8"/>
-  <text class="dg-t" x="220" y="210">Node.js 레이어 — 실제로는 하나</text>
-  <text class="dg-s" x="220" y="228">디스크에 한 번만 저장된다</text>
-
-  <text class="dg-v" x="24" y="266">그래서 docker image ls 의 SIZE 를 다 더하면 실제보다 훨씬 커진다</text>
-  <text class="dg-s" x="24" y="290">진짜 사용량은 docker system df 로 봐야 하고, 공유되므로 레이어는 읽기 전용이다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="99" y="56" width="163" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이미지 A</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">앱 레이어 · + Node.js 런타임</text>
+  <rect class="dg-item" x="278" y="56" width="163" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이미지 B</text>
+  <text class="dg-s" x="359" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">앱 레이어 · + Node.js 런타임</text>
+  <rect class="dg-item" x="457" y="56" width="163" height="52" rx="6"/>
+  <text class="dg-t" x="538" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이미지 C</text>
+  <text class="dg-s" x="538" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">앱 레이어 · + Node.js 런타임</text>
+  <rect class="dg-item" x="256" y="122" width="207" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Node.js 레이어 — 실제로는 하나</text>
+  <text class="dg-s" x="359" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">디스크에 한 번만 저장된다</text>
 </svg>

@@ -1,28 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="도달 불가능한 죽은 파일이 살아있는 파일보다 최근에 수정돼 착각이 자기강화되는 구조">
-  <marker id="dfml-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="dead-file--misleading-log-title dead-file--misleading-log-desc">
+  <title id="dead-file--misleading-log-title">도달 불가능한 죽은 파일이 살아있는 파일보다 최근에 수정돼 착각이 자기강화되는 구조</title>
+  <desc id="dead-file--misleading-log-desc">도달 불가능한 죽은 파일이 살아있는 파일보다 최근에 수정돼 착각이 자기강화되는 구조</desc>
 
-  <text class="dg-h" x="24" y="30">최근에 손댄 쪽이 현행이라는 착각</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="328" height="120" rx="10"/>
-  <text class="dg-t" x="44" y="74">죽은 파일</text>
-  <text class="dg-s" x="44" y="94">라우터가 import 하지 않음 — 도달 불가</text>
-  <rect class="dg-warn" x="44" y="106" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="60" y="128">마지막 커밋 7일 전</text>
-  <text class="dg-s" x="44" y="158">최신처럼 보인다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-item" x="244" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그리고 착각은 스스로를 강화한다</text>
+  <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">누군가 죽은 파일을 고친다 → 그 파일이 더 최…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="368" y="48" width="328" height="120" rx="10"/>
-  <text class="dg-t" x="388" y="74">살아있는 파일</text>
-  <text class="dg-s" x="388" y="94">실제로 화면에 그려지는 쪽</text>
-  <rect class="dg-row" x="388" y="106" width="288" height="34" rx="6"/>
-  <text class="dg-v" x="404" y="128">마지막 커밋 1년 4개월 전</text>
-  <text class="dg-s" x="388" y="158">잘 돌아가서 손댈 일이 없었을 뿐</text>
+  <!-- 죽은 파일 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">죽은 파일</text>
+  <rect class="dg-item" x="291" y="200" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마지막 커밋 7일 전</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-warn" x="24" y="188" width="672" height="76" rx="8"/>
-  <text class="dg-t" x="44" y="212">그리고 착각은 스스로를 강화한다</text>
-  <text class="dg-v" x="44" y="236">누군가 죽은 파일을 고친다 → 그 파일이 더 최신이 된다 → 다음 사람은 더 확신한다</text>
-  <text class="dg-s" x="44" y="254">2주 동안 같은 패턴이 5회 반복됐다</text>
-
-  <text class="dg-s" x="24" y="288">git log 는 "언제 고쳤나" 를 알려주지 "지금 쓰이나" 를 알려주지 않는다</text>
+  <!-- 살아있는 파일 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">살아있는 파일</text>
+  <rect class="dg-item" x="275" y="344" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마지막 커밋 1년 4개월 전</text>
 </svg>

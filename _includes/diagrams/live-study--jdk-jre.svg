@@ -1,30 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="JDK 가 JRE 를 포함하고 JRE 가 JVM 을 포함하는 관계">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="live-study--jdk-jre-title live-study--jdk-jre-desc">
+  <title id="live-study--jdk-jre-title">JDK 가 JRE 를 포함하고 JRE 가 JVM 을 포함하는 관계</title>
+  <desc id="live-study--jdk-jre-desc">JDK 가 JRE 를 포함하고 JRE 가 JVM 을 포함하는 관계</desc>
 
-  <text class="dg-h" x="24" y="30">JDK · JRE · JVM 의 포함 관계</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="672" height="180" rx="10"/>
-  <text class="dg-t" x="44" y="76">JDK</text>
-  <text class="dg-s" x="86" y="76">개발에 필요한 것 전부</text>
-
-  <rect class="dg-row" x="44" y="90" width="180" height="52" rx="6"/>
-  <text class="dg-k" x="60" y="112">javac</text>
-  <text class="dg-s" x="60" y="132">컴파일러</text>
-
-  <rect class="dg-row" x="44" y="154" width="180" height="52" rx="6"/>
-  <text class="dg-k" x="60" y="176">개발 도구</text>
-  <text class="dg-s" x="60" y="196">디버거 등</text>
-
-  <rect class="dg-lead" x="240" y="90" width="440" height="116" rx="8"/>
-  <text class="dg-t" x="260" y="116">JRE</text>
-  <text class="dg-s" x="302" y="116">실행에 필요한 것</text>
-
-  <rect class="dg-row" x="260" y="130" width="180" height="58" rx="6"/>
-  <text class="dg-k" x="276" y="152">라이브러리</text>
-  <text class="dg-s" x="276" y="172">java 명령 등</text>
-
-  <rect class="dg-out" x="456" y="130" width="204" height="58" rx="6"/>
-  <text class="dg-k" x="472" y="152">JVM</text>
-  <text class="dg-s" x="472" y="172">실제로 코드를 돌리는 것</text>
-
-  <text class="dg-s" x="24" y="256">돌리기만 하면 JRE 로 충분하고, 코드를 짜서 컴파일하려면 JDK 가 있어야 한다</text>
+  <!-- JDK -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="28" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">JDK</text>
+  <rect class="dg-item" x="58" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="106" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">javac</text>
+  <text class="dg-s" x="106" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">컴파일러</text>
+  <rect class="dg-item" x="170" y="56" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="225" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JRE</text>
+  <text class="dg-s" x="225" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">실행에 필요한 것</text>
+  <rect class="dg-item" x="296" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="344" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">라이브러리</text>
+  <text class="dg-s" x="344" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">java 명령 등</text>
+  <rect class="dg-item" x="408" y="56" width="141" height="52" rx="6"/>
+  <text class="dg-t" x="478" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JVM</text>
+  <text class="dg-s" x="478" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">실제로 코드를 돌리는 것</text>
+  <rect class="dg-item" x="565" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="613" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">개발 도구</text>
+  <text class="dg-s" x="613" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">디버거 등</text>
 </svg>

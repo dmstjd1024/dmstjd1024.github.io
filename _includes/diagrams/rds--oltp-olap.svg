@@ -1,28 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-label="OLTP 와 OLAP 의 사용 목적과 데이터 규모 차이 비교">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="rds--oltp-olap-title rds--oltp-olap-desc">
+  <title id="rds--oltp-olap-title">OLTP 와 OLAP 의 사용 목적과 데이터 규모 차이 비교</title>
+  <desc id="rds--oltp-olap-desc">OLTP 와 OLAP 의 사용 목적과 데이터 규모 차이 비교</desc>
 
-  <text class="dg-h" x="24" y="30">OLTP vs OLAP</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-item" x="24" y="48" width="328" height="176" rx="10"/>
-  <text class="dg-t" x="44" y="80">OLTP</text>
-  <text class="dg-s" x="44" y="102">Online Transaction Processing</text>
-  <rect class="dg-row" x="44" y="118" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="60" y="140">목적</text>
-  <text class="dg-v" x="140" y="140">넣자마자 바로 조회</text>
-  <rect class="dg-row" x="44" y="160" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="60" y="182">데이터 규모</text>
-  <text class="dg-v" x="140" y="182">작다</text>
-  <text class="dg-s" x="44" y="212">주문 등록, 회원 조회 같은 실시간 업무</text>
-
-  <rect class="dg-item" x="368" y="48" width="328" height="176" rx="10"/>
-  <text class="dg-t" x="388" y="80">OLAP</text>
-  <text class="dg-s" x="388" y="102">Online Analytical Processing</text>
-  <rect class="dg-row" x="388" y="118" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="404" y="140">목적</text>
-  <text class="dg-v" x="484" y="140">모아둔 것을 분석</text>
-  <rect class="dg-row" x="388" y="160" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="404" y="182">데이터 규모</text>
-  <text class="dg-v" x="484" y="182">크다</text>
-  <text class="dg-s" x="388" y="212">월별 매출 집계 같은 복잡한 쿼리</text>
-
-  <text class="dg-s" x="24" y="256">같은 데이터라도 "지금 처리하려고" 읽으면 OLTP, "돌아보려고" 읽으면 OLAP 다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="61" y="56" width="221" height="52" rx="6"/>
+  <text class="dg-t" x="171" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OLTP</text>
+  <text class="dg-s" x="171" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Online Transaction Processing · 주문 등…</text>
+  <rect class="dg-item" x="298" y="56" width="225" height="52" rx="6"/>
+  <text class="dg-t" x="410" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OLAP</text>
+  <text class="dg-s" x="410" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Online Analytical Processing · 월별 매출…</text>
+  <rect class="dg-item" x="539" y="56" width="119" height="52" rx="6"/>
+  <text class="dg-t" x="598" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">목적</text>
+  <text class="dg-s" x="598" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">넣자마자 바로 조회</text>
+  <rect class="dg-item" x="190" y="122" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="245" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">목적</text>
+  <text class="dg-s" x="245" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">모아둔 것을 분석</text>
+  <rect class="dg-item" x="316" y="122" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="365" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">데이터 규모</text>
+  <text class="dg-s" x="365" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">작다</text>
+  <rect class="dg-item" x="431" y="122" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="480" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">데이터 규모</text>
+  <text class="dg-s" x="480" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">크다</text>
 </svg>

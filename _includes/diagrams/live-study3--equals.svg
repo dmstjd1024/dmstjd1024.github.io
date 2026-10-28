@@ -1,37 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="문자열 비교에서 == 는 주소를 보고 equals 는 내용을 본다는 차이">
-  <marker id="ls3eq-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="live-study3--equals-title live-study3--equals-desc">
+  <title id="live-study3--equals-title">문자열 비교에서 == 는 주소를 보고 equals 는 내용을 본다는 차이</title>
+  <desc id="live-study3--equals-desc">문자열 비교에서 == 는 주소를 보고 equals 는 내용을 본다는 차이</desc>
 
-  <text class="dg-h" x="24" y="30">문자열은 왜 == 로 비교하면 안 되나</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-row" x="24" y="52" width="180" height="56" rx="6"/>
-  <text class="dg-t" x="44" y="76">a</text>
-  <text class="dg-v" x="44" y="96">0x1A2B</text>
-
-  <rect class="dg-row" x="24" y="124" width="180" height="56" rx="6"/>
-  <text class="dg-t" x="44" y="148">b</text>
-  <text class="dg-v" x="44" y="168">0x9F3C</text>
-
-  <path class="dg-arw" d="M212 80 H268" marker-end="url(#ls3eq-a)"/>
-  <path class="dg-arw" d="M212 152 H268" marker-end="url(#ls3eq-a)"/>
-
-  <rect class="dg-out" x="276" y="52" width="180" height="56" rx="6"/>
-  <text class="dg-k" x="296" y="86">"hello"</text>
-
-  <rect class="dg-out" x="276" y="124" width="180" height="56" rx="6"/>
-  <text class="dg-k" x="296" y="158">"hello"</text>
-
-  <rect class="dg-warn" x="488" y="52" width="208" height="56" rx="6"/>
-  <text class="dg-k" x="508" y="76">a == b</text>
-  <text class="dg-v" x="508" y="96">false — 주소가 다르다</text>
-
-  <rect class="dg-out" x="488" y="124" width="208" height="56" rx="6"/>
-  <text class="dg-k" x="508" y="148">a.equals(b)</text>
-  <text class="dg-b" x="508" y="168">true — 내용이 같다</text>
-
-  <text class="dg-v" x="24" y="216">참조형 변수가 담은 것은 주소이므로, == 는 "같은 객체냐" 를 묻는 것이 된다</text>
-  <text class="dg-v" x="24" y="240">내용이 같은지 알고 싶으면 equals() 를 써야 한다</text>
-
-  <text class="dg-s" x="24" y="276">기본형은 값을 직접 담으므로 == 로 비교하는 것이 맞다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="67" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="115" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">a</text>
+  <text class="dg-s" x="115" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">0x1A2B</text>
+  <rect class="dg-item" x="179" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="227" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">"hello"</text>
+  <rect class="dg-item" x="291" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">a == b</text>
+  <text class="dg-s" x="359" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">false — 주소가 다르다</text>
+  <rect class="dg-item" x="444" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="492" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">b</text>
+  <text class="dg-s" x="492" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">0x9F3C</text>
+  <rect class="dg-item" x="556" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="604" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">"hello"</text>
+  <rect class="dg-item" x="298" y="122" width="124" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">a.equals(b)</text>
+  <text class="dg-s" x="360" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">true — 내용이 같다</text>
 </svg>

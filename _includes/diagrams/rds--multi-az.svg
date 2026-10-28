@@ -1,48 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="다중 가용 영역 복제본과 읽기 전용 복제본의 목적 차이">
-  <marker id="rdsmaz-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="rds--multi-az-title rds--multi-az-desc">
+  <title id="rds--multi-az-title">다중 가용 영역 복제본과 읽기 전용 복제본의 목적 차이</title>
+  <desc id="rds--multi-az-desc">다중 가용 영역 복제본과 읽기 전용 복제본의 목적 차이</desc>
 
-  <text class="dg-h" x="24" y="30">Multi-AZ vs Read Replica</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="328" height="228" rx="10"/>
-  <text class="dg-t" x="44" y="76">다중 가용 영역</text>
-  <text class="dg-s" x="44" y="96">DB 인스턴스의 대기 복제본</text>
+  <!-- 다중 가용 영역 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="74" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">다중 가용 영역</text>
+  <rect class="dg-item" x="256" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="304" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">원본</text>
+  <text class="dg-s" x="304" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">가용영역 A</text>
+  <rect class="dg-item" x="368" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="416" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">복제본</text>
+  <text class="dg-s" x="416" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">가용영역 B</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lead" x="44" y="112" width="128" height="52" rx="6"/>
-  <text class="dg-t" x="60" y="134">원본</text>
-  <text class="dg-s" x="60" y="152">가용영역 A</text>
-
-  <path class="dg-arw" d="M180 138 H212" marker-end="url(#rdsmaz-a)"/>
-
-  <rect class="dg-row" x="220" y="112" width="112" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="134">복제본</text>
-  <text class="dg-s" x="236" y="152">가용영역 B</text>
-
-  <text class="dg-v" x="44" y="192">읽기 · 쓰기는 원본만 받는다</text>
-  <text class="dg-v" x="44" y="214">복제본은 대기 상태로 있다가</text>
-  <text class="dg-v" x="44" y="236">장애가 나면 대신 올라온다</text>
-  <text class="dg-s" x="44" y="262">서울에 A, B 영역이 나뉜 이유</text>
-
-  <rect class="dg-lane" x="368" y="48" width="328" height="228" rx="10"/>
-  <text class="dg-t" x="388" y="76">읽기 전용 복제본</text>
-  <text class="dg-s" x="388" y="96">목적 : 성능 향상</text>
-
-  <rect class="dg-lead" x="388" y="112" width="128" height="52" rx="6"/>
-  <text class="dg-t" x="404" y="134">원본</text>
-  <text class="dg-s" x="404" y="152">읽기 · 쓰기</text>
-
-  <path class="dg-arw" d="M524 138 H556" marker-end="url(#rdsmaz-a)"/>
-
-  <rect class="dg-row" x="564" y="112" width="112" height="52" rx="6"/>
-  <text class="dg-t" x="580" y="134">복제본</text>
-  <text class="dg-s" x="580" y="152">읽기 전용</text>
-
-  <text class="dg-v" x="388" y="192">복제본도 읽기 요청을 받는다</text>
-  <text class="dg-v" x="388" y="214">원본이 지던 조회 부담을 나눠</text>
-  <text class="dg-v" x="388" y="236">전체 처리량이 올라간다</text>
-  <text class="dg-b" x="388" y="262">개수는 DB 엔진별로 다름</text>
-
-  <text class="dg-s" x="24" y="308">둘 다 복제본을 만들지만, 하나는 쓰러졌을 때를 대비하고 하나는 평소 부하를 나눈다</text>
-  <text class="dg-s" x="24" y="330">Multi-AZ DB 인스턴스의 대기 복제본에는 조회를 보내지 않는다 (클러스터형은 별도)</text>
+  <!-- 읽기 전용 복제본 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="83" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">읽기 전용 복제본</text>
+  <rect class="dg-item" x="256" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="304" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">원본</text>
+  <text class="dg-s" x="304" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">읽기 · 쓰기</text>
+  <rect class="dg-item" x="368" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="416" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">복제본</text>
+  <text class="dg-s" x="416" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">읽기 전용</text>
 </svg>

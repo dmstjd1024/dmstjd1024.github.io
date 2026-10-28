@@ -1,43 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="CSR, SSR, SSG 가 HTML 을 만드는 시점이 각각 다르다는 비교">
-  <marker id="ssrrt-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-    <path d="M0 0 L10 5 L0 10 z" fill="#afb8c1"/>
-  </marker>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="ssr-ssg--rendering-timing-title ssr-ssg--rendering-timing-desc">
+  <title id="ssr-ssg--rendering-timing-title">CSR, SSR, SSG 가 HTML 을 만드는 시점이 각각 다르다는 비교</title>
+  <desc id="ssr-ssg--rendering-timing-desc">CSR, SSR, SSG 가 HTML 을 만드는 시점이 각각 다르다는 비교</desc>
 
-  <text class="dg-h" x="24" y="30">HTML 을 언제 만드느냐의 차이</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <text class="dg-s" x="180" y="58">빌드할 때</text>
-  <text class="dg-s" x="360" y="58">요청이 올 때</text>
-  <text class="dg-s" x="548" y="58">브라우저에서</text>
+  <!-- CSR -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="28" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CSR</text>
+  <rect class="dg-item" x="183" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="231" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">—</text>
+  <rect class="dg-item" x="295" y="56" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="352" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">빈 div 만 보냄</text>
+  <rect class="dg-item" x="426" y="56" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="481" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">여기서 그린다</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="70" width="672" height="70" rx="8"/>
-  <text class="dg-t" x="44" y="98">CSR</text>
-  <text class="dg-s" x="44" y="118">React · Vue</text>
-  <rect class="dg-row" x="150" y="82" width="150" height="44" rx="6"/>
-  <text class="dg-s" x="196" y="109">—</text>
-  <rect class="dg-row" x="316" y="82" width="150" height="44" rx="6"/>
-  <text class="dg-s" x="340" y="109">빈 div 만 보냄</text>
-  <rect class="dg-lead" x="482" y="82" width="194" height="44" rx="6"/>
-  <text class="dg-k" x="502" y="109">여기서 그린다</text>
+  <!-- SSR -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="28" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SSR</text>
+  <rect class="dg-item" x="159" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="207" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">—</text>
+  <rect class="dg-item" x="271" y="200" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="326" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">여기서 그린다</text>
+  <rect class="dg-item" x="397" y="200" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="479" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">표시 · 선택적 동작 연결</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="150" width="672" height="70" rx="8"/>
-  <text class="dg-t" x="44" y="178">SSR</text>
-  <text class="dg-s" x="44" y="198">Next · Nuxt</text>
-  <rect class="dg-row" x="150" y="162" width="150" height="44" rx="6"/>
-  <text class="dg-s" x="196" y="189">—</text>
-  <rect class="dg-lead" x="316" y="162" width="150" height="44" rx="6"/>
-  <text class="dg-k" x="336" y="189">여기서 그린다</text>
-  <rect class="dg-row" x="482" y="162" width="194" height="44" rx="6"/>
-  <text class="dg-s" x="502" y="189">표시 · 선택적 동작 연결</text>
-
-  <rect class="dg-lane" x="24" y="230" width="672" height="70" rx="8"/>
-  <text class="dg-t" x="44" y="258">SSG</text>
-  <text class="dg-s" x="44" y="278">Jekyll · Hugo</text>
-  <rect class="dg-lead" x="150" y="242" width="150" height="44" rx="6"/>
-  <text class="dg-k" x="170" y="269">여기서 그린다</text>
-  <rect class="dg-row" x="316" y="242" width="150" height="44" rx="6"/>
-  <text class="dg-s" x="336" y="269">파일만 내려줌</text>
-  <rect class="dg-row" x="482" y="242" width="194" height="44" rx="6"/>
-  <text class="dg-s" x="502" y="269">표시 · 선택적 동작 연결</text>
-
-  <text class="dg-s" x="24" y="326">HTML 생성 시점이 다르다 — 속도와 검색 노출은 캐시·내용·구현에 달렸다</text>
+  <!-- SSG -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="28" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SSG</text>
+  <rect class="dg-item" x="152" y="344" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="207" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">여기서 그린다</text>
+  <rect class="dg-item" x="278" y="344" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="333" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일만 내려줌</text>
+  <rect class="dg-item" x="404" y="344" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="486" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">표시 · 선택적 동작 연결</text>
 </svg>

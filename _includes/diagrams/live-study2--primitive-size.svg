@@ -1,37 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="프리미티브 타입 여덟 가지를 분류와 크기별로 배치한 표">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 580" role="img" aria-labelledby="live-study2--primitive-size-title live-study2--primitive-size-desc">
+  <title id="live-study2--primitive-size-title">프리미티브 타입 여덟 가지를 분류와 크기별로 배치한 표</title>
+  <desc id="live-study2--primitive-size-desc">프리미티브 타입 여덟 가지를 분류와 크기별로 배치한 표</desc>
 
-  <text class="dg-h" x="24" y="30">프리미티브 타입 8개의 크기</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <text class="dg-s" x="150" y="60">1 byte</text>
-  <text class="dg-s" x="288" y="60">2 byte</text>
-  <text class="dg-s" x="426" y="60">4 byte</text>
-  <text class="dg-s" x="564" y="60">8 byte</text>
+  <!-- 논리형 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">논리형</text>
+  <rect class="dg-item" x="248" y="56" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">boolean — 언어 명세는 저장 크기…</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="72" width="672" height="52" rx="8"/>
-  <text class="dg-t" x="44" y="104">논리형</text>
-  <rect class="dg-lead" x="132" y="82" width="542" height="32" rx="6"/>
-  <text class="dg-k" x="152" y="104">boolean — 언어 명세는 저장 크기를 고정하지 않는다</text>
+  <!-- 문자형 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">문자형</text>
+  <rect class="dg-item" x="312" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">char</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="132" width="672" height="52" rx="8"/>
-  <text class="dg-t" x="44" y="164">문자형</text>
-  <rect class="dg-lead" x="270" y="142" width="128" height="32" rx="6"/>
-  <text class="dg-k" x="290" y="164">char</text>
+  <!-- 정수형 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">정수형</text>
+  <rect class="dg-item" x="144" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="192" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">byte</text>
+  <rect class="dg-item" x="256" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="304" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">short</text>
+  <rect class="dg-item" x="368" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="416" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">int</text>
+  <rect class="dg-item" x="480" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="528" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">long</text>
+  <path class="dg-arw" d="M360,420 V458" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-lane" x="24" y="192" width="672" height="52" rx="8"/>
-  <text class="dg-t" x="44" y="224">정수형</text>
-  <rect class="dg-row" x="132" y="202" width="128" height="32" rx="6"/>
-  <text class="dg-k" x="152" y="224">byte</text>
-  <rect class="dg-row" x="270" y="202" width="128" height="32" rx="6"/>
-  <text class="dg-k" x="290" y="224">short</text>
-  <rect class="dg-lead" x="408" y="202" width="128" height="32" rx="6"/>
-  <text class="dg-k" x="428" y="224">int</text>
-  <rect class="dg-row" x="546" y="202" width="128" height="32" rx="6"/>
-  <text class="dg-k" x="566" y="224">long</text>
-
-  <rect class="dg-lane" x="24" y="252" width="672" height="52" rx="8"/>
-  <text class="dg-t" x="44" y="284">실수형</text>
-  <rect class="dg-row" x="408" y="262" width="128" height="32" rx="6"/>
-  <text class="dg-k" x="428" y="284">float</text>
-  <rect class="dg-lead" x="546" y="262" width="128" height="32" rx="6"/>
-  <text class="dg-k" x="566" y="284">double</text>
+  <!-- 실수형 -->
+  <rect class="dg-zone" x="24" y="464" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="458" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="467" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">실수형</text>
+  <rect class="dg-item" x="256" y="488" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="304" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">float</text>
+  <rect class="dg-item" x="368" y="488" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="416" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">double</text>
 </svg>

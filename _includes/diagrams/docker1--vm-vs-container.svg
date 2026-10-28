@@ -1,44 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="가상머신은 게스트 OS 를 저마다 갖고 컨테이너는 호스트 OS 를 공유한다">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-labelledby="docker1--vm-vs-container-title docker1--vm-vs-container-desc">
+  <title id="docker1--vm-vs-container-title">가상머신은 게스트 OS 를 저마다 갖고 컨테이너는 호스트 OS 를 공유한다</title>
+  <desc id="docker1--vm-vs-container-desc">가상머신은 게스트 OS 를 저마다 갖고 컨테이너는 호스트 OS 를 공유한다</desc>
 
-  <text class="dg-h" x="24" y="30">가상머신과 컨테이너의 차이</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-lane" x="24" y="48" width="328" height="232" rx="10"/>
-  <text class="dg-t" x="44" y="74">가상머신</text>
+  <!-- 가상머신 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">가상머신</text>
+  <rect class="dg-item" x="84" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="132" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">앱 A</text>
+  <rect class="dg-item" x="196" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="244" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">앱 B</text>
+  <rect class="dg-item" x="308" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="356" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">게스트 OS</text>
+  <rect class="dg-item" x="420" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="468" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">게스트 OS</text>
+  <rect class="dg-item" x="532" y="56" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="584" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">하이퍼바이저</text>
+  <rect class="dg-item" x="312" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">호스트 OS</text>
+  <path class="dg-arw" d="M360,198 V236" marker-end="url(#br-arw)"/>
 
-  <rect class="dg-row" x="44" y="88" width="140" height="28" rx="4"/>
-  <text class="dg-s" x="60" y="107">앱 A</text>
-  <rect class="dg-row" x="192" y="88" width="140" height="28" rx="4"/>
-  <text class="dg-s" x="208" y="107">앱 B</text>
-
-  <rect class="dg-warn" x="44" y="122" width="140" height="42" rx="4"/>
-  <text class="dg-k" x="60" y="148">게스트 OS</text>
-  <rect class="dg-warn" x="192" y="122" width="140" height="42" rx="4"/>
-  <text class="dg-k" x="208" y="148">게스트 OS</text>
-
-  <rect class="dg-row" x="44" y="170" width="288" height="30" rx="4"/>
-  <text class="dg-v" x="60" y="190">하이퍼바이저</text>
-
-  <rect class="dg-row" x="44" y="206" width="288" height="30" rx="4"/>
-  <text class="dg-v" x="60" y="226">호스트 OS</text>
-
-  <text class="dg-s" x="44" y="262">OS 를 통째로 하나씩 더 얹는다</text>
-
-  <rect class="dg-lane" x="368" y="48" width="328" height="232" rx="10"/>
-  <text class="dg-t" x="388" y="74">컨테이너</text>
-
-  <rect class="dg-row" x="388" y="88" width="140" height="28" rx="4"/>
-  <text class="dg-s" x="404" y="107">앱 A</text>
-  <rect class="dg-row" x="536" y="88" width="140" height="28" rx="4"/>
-  <text class="dg-s" x="552" y="107">앱 B</text>
-
-  <rect class="dg-row" x="388" y="122" width="288" height="30" rx="4"/>
-  <text class="dg-v" x="404" y="142">도커 엔진</text>
-
-  <rect class="dg-out" x="388" y="158" width="288" height="42" rx="4"/>
-  <text class="dg-k" x="404" y="184">호스트 OS — 함께 쓴다</text>
-
-  <text class="dg-s" x="388" y="228">OS 가 하나뿐이라 가볍고 빠르다</text>
-  <text class="dg-s" x="388" y="262">대신 호스트와 커널을 공유한다</text>
-
-  <text class="dg-s" x="24" y="308">컨테이너가 빠른 이유는 OS 를 새로 띄우지 않기 때문이다</text>
+  <!-- 컨테이너 -->
+  <rect class="dg-zone" x="24" y="242" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컨테이너</text>
+  <rect class="dg-item" x="113" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="161" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">앱 A</text>
+  <rect class="dg-item" x="225" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="273" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">앱 B</text>
+  <rect class="dg-item" x="337" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="385" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">도커 엔진</text>
+  <rect class="dg-item" x="449" y="266" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="528" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">호스트 OS — 함께 쓴다</text>
 </svg>

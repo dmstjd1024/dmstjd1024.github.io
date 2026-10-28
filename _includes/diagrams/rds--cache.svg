@@ -1,24 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="엘라스틱캐시의 두 엔진 맴캐시드와 레디스 비교">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="rds--cache-title rds--cache-desc">
+  <title id="rds--cache-title">엘라스틱캐시의 두 엔진 맴캐시드와 레디스 비교</title>
+  <desc id="rds--cache-desc">엘라스틱캐시의 두 엔진 맴캐시드와 레디스 비교</desc>
 
-  <text class="dg-h" x="24" y="30">엘라스틱캐시 엔진 비교</text>
+  <defs>
+    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
 
-  <rect class="dg-item" x="24" y="48" width="328" height="152" rx="10"/>
-  <text class="dg-t" x="44" y="80">맴캐시드</text>
-  <rect class="dg-row" x="44" y="96" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="60" y="118">다루는 자료</text>
-  <text class="dg-v" x="170" y="118">단순 문자열</text>
-  <rect class="dg-row" x="44" y="138" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="60" y="160">특징</text>
-  <text class="dg-v" x="170" y="160">몸집이 늘었다 줄었다</text>
-
-  <rect class="dg-item" x="368" y="48" width="328" height="152" rx="10"/>
-  <text class="dg-t" x="388" y="80">레디스</text>
-  <rect class="dg-row" x="388" y="96" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="404" y="118">다루는 자료</text>
-  <text class="dg-v" x="514" y="118">리스트 · 해시 등</text>
-  <rect class="dg-row" x="388" y="138" width="288" height="34" rx="6"/>
-  <text class="dg-k" x="404" y="160">특징</text>
-  <text class="dg-v" x="514" y="160">다중 가용 영역 지원</text>
-
-  <text class="dg-s" x="24" y="232">단순히 값만 캐싱하면 맴캐시드로 충분하고, 정렬된 목록까지 다루려면 레디스를 쓴다</text>
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-item" x="63" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="111" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">맴캐시드</text>
+  <rect class="dg-item" x="175" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="223" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">레디스</text>
+  <rect class="dg-item" x="287" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="336" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다루는 자료</text>
+  <text class="dg-s" x="336" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">단순 문자열</text>
+  <rect class="dg-item" x="402" y="56" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="457" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다루는 자료</text>
+  <text class="dg-s" x="457" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">리스트 · 해시 등</text>
+  <rect class="dg-item" x="528" y="56" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="592" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">특징</text>
+  <text class="dg-s" x="592" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">몸집이 늘었다 줄었다</text>
+  <rect class="dg-item" x="298" y="122" width="124" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">특징</text>
+  <text class="dg-s" x="360" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">다중 가용 영역 지원</text>
 </svg>
