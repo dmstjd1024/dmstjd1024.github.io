@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="circuit--refresh-storm-title circuit--refresh-storm-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="circuit--refresh-storm-title circuit--refresh-storm-desc">
   <title id="circuit--refresh-storm-title">새로고침하면 메모리 상태가 사라져 죽은 게이트웨이로 요청이 다시 쏟아지는 구조</title>
   <desc id="circuit--refresh-storm-desc">새로고침하면 메모리 상태가 사라져 죽은 게이트웨이로 요청이 다시 쏟아지는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="circuit--refresh-storm-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="120" y="56" width="121" height="52" rx="6"/>
   <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">게이트웨이 장애</text>
   <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">502 · 503 · 504</text>
@@ -27,4 +29,34 @@
   <rect class="dg-item" x="368" y="122" width="232" height="52" rx="6"/>
   <text class="dg-t" x="484" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그래서 브라우저 쪽에 서킷 브레이커…</text>
   <text class="dg-s" x="484" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">막을 대상은 서버가 아니라 "장애를 아는 이 탭…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="circuit--refresh-storm-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="54" y="56" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="114" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">게이트웨이 장애</text>
+  <text class="dg-s" x="114" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">502 · 503 · 504</text>
+  <rect class="dg-item" x="191" y="56" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">오버레이 표시</text>
+  <text class="dg-s" x="248" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">사람에게만 보인다</text>
+  <rect class="dg-item" x="74" y="122" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="123" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사용자가 F5</text>
+  <text class="dg-s" x="123" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">멈춘 줄 알고</text>
+  <rect class="dg-item" x="189" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="237" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">폭주</text>
+  <rect class="dg-item" x="64" y="188" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">새로고침이 상태를 지운다</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Zustand 오버레이 상태는 메모리 → 새로고침하…</text>
+  <rect class="dg-item" x="64" y="254" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그래서 브라우저 쪽에 서킷 브레이커…</text>
+  <text class="dg-s" x="180" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">막을 대상은 서버가 아니라 "장애를 아는 이 탭…</text>
 </svg>

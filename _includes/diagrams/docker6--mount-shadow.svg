@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="docker6--mount-shadow-title docker6--mount-shadow-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="docker6--mount-shadow-title docker6--mount-shadow-desc">
   <title id="docker6--mount-shadow-title">디렉터리를 마운트하면 원래 있던 내용이 가려지지만 파일 하나만 마운트하면 나머지는 그대로 남는다</title>
   <desc id="docker6--mount-shadow-desc">디렉터리를 마운트하면 원래 있던 내용이 가려지지만 파일 하나만 마운트하면 나머지는 그대로 남는다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="docker6--mount-shadow-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="50" y="56" width="124" height="52" rx="6"/>
   <text class="dg-t" x="112" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내 폴더</text>
   <text class="dg-s" x="112" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">config.json · 1개뿐</text>
@@ -28,4 +30,35 @@
   <rect class="dg-item" x="435" y="122" width="199" height="52" rx="6"/>
   <text class="dg-t" x="534" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">결과</text>
   <text class="dg-s" x="534" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">그 파일만 바뀌고 · 나머지는 유지된다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 478" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="docker6--mount-shadow-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="430" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="118" y="56" width="124" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내 폴더</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">config.json · 1개뿐</text>
+  <rect class="dg-item" x="64" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">컨테이너의 /etc</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">원래 있던 수십 개 파일이 · 전부 안 보이게 된…</text>
+  <rect class="dg-item" x="64" y="188" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">결과</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">config.json 만 남는다 · 지워진 건 아니고 가…</text>
+  <rect class="dg-item" x="105" y="254" width="150" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내 파일</text>
+  <text class="dg-s" x="180" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">config.json · 하나만 지정</text>
+  <rect class="dg-item" x="96" y="320" width="168" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="342" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">컨테이너의 /etc</text>
+  <text class="dg-s" x="180" y="359" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">나머지 파일은 · 그대로 보인다</text>
+  <rect class="dg-item" x="80" y="386" width="199" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="408" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">결과</text>
+  <text class="dg-s" x="179" y="425" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">그 파일만 바뀌고 · 나머지는 유지된다</text>
 </svg>

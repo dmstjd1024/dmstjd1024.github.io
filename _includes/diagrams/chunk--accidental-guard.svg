@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="chunk--accidental-guard-title chunk--accidental-guard-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="chunk--accidental-guard-title chunk--accidental-guard-desc">
   <title id="chunk--accidental-guard-title">긴 단일 트랜잭션의 쓰기 경합이 두 번째 run 을 넘어뜨려 우연히 중복을 막고 있었는데 청크 커밋으로 그 마찰이 사라졌다</title>
   <desc id="chunk--accidental-guard-desc">긴 단일 트랜잭션의 쓰기 경합이 두 번째 run 을 넘어뜨려 우연히 중복을 막고 있었는데 청크 커밋으로 그 마찰이 사라졌다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="chunk--accidental-guard-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -14,7 +14,7 @@
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">이전 — 긴 단일 트랜잭션</text>
   <rect class="dg-item" x="254" y="56" width="212" height="52" rx="6"/>
   <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">run B 가 쓰기 경합에 걸려 죽는다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#chunk--accidental-guard-arw-w)"/>
 
   <!-- 이후 — 200 건 청크 커밋 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -24,4 +24,29 @@
   <text class="dg-t" x="259" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">경합이 사라져 run B 가 끝까지 돈…</text>
   <rect class="dg-item" x="387" y="200" width="185" height="52" rx="6"/>
   <text class="dg-t" x="479" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">가려져 있던 결함이 드러났다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 358" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="chunk--accidental-guard-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 이전 — 긴 단일 트랜잭션 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="116" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">이전 — 긴 단일 트랜잭션</text>
+  <rect class="dg-item" x="74" y="56" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">run B 가 쓰기 경합에 걸려 죽는다</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#chunk--accidental-guard-arw-n)"/>
+
+  <!-- 이후 — 200 건 청크 커밋 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="116" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">이후 — 200 건 청크 커밋</text>
+  <rect class="dg-item" x="68" y="200" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">경합이 사라져 run B 가 끝까지 돈…</text>
+  <rect class="dg-item" x="87" y="266" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">가려져 있던 결함이 드러났다</text>
 </svg>

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="perm--level-to-code-title perm--level-to-code-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="perm--level-to-code-title perm--level-to-code-desc">
   <title id="perm--level-to-code-title">정수 하나로 권한을 표현하는 방식과 권한 코드 기반 모델의 차이</title>
   <desc id="perm--level-to-code-desc">정수 하나로 권한을 표현하는 방식과 권한 코드 기반 모델의 차이</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="perm--level-to-code-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -17,7 +17,7 @@
   <rect class="dg-item" x="363" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="479" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">"조회는 되는데 삭제는 안 되고</text>
   <text class="dg-s" x="479" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">다른 화면에선 승인은 된다" · 한 축으로는 못…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#perm--level-to-code-arw-w)"/>
 
   <!-- 권한 코드 기반 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -29,4 +29,34 @@
   <text class="dg-t" x="376" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">역할에 코드를 매핑</text>
   <rect class="dg-item" x="461" y="200" width="158" height="52" rx="6"/>
   <text class="dg-t" x="540" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사용자에게 역할을 부여</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="perm--level-to-code-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- user_level 정수 하나 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="100" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">user_level 정수 하나</text>
+  <rect class="dg-item" x="68" y="56" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">level 3 — 숫자가 클수록 많은 권…</text>
+  <rect class="dg-item" x="64" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">"조회는 되는데 삭제는 안 되고</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">다른 화면에선 승인은 된다" · 한 축으로는 못…</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#perm--level-to-code-arw-n)"/>
+
+  <!-- 권한 코드 기반 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="74" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">권한 코드 기반</text>
+  <rect class="dg-item" x="84" y="266" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PERM_리소스_행위 형태의 코드</text>
+  <rect class="dg-item" x="111" y="332" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">역할에 코드를 매핑</text>
+  <rect class="dg-item" x="101" y="398" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사용자에게 역할을 부여</text>
 </svg>

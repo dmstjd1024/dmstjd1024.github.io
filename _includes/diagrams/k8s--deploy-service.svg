@@ -1,22 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="k8s--deploy-service-title k8s--deploy-service-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="k8s--deploy-service-title k8s--deploy-service-desc">
   <title id="k8s--deploy-service-title">디플로이먼트와 서비스가 각각 라벨을 보고 같은 파드 묶음을 찾아내는 구조</title>
   <desc id="k8s--deploy-service-desc">디플로이먼트와 서비스가 각각 라벨을 보고 같은 파드 묶음을 찾아내는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="k8s--deploy-service-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="127" y="56" width="217" height="52" rx="6"/>
   <text class="dg-t" x="235" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">디플로이먼트</text>
   <text class="dg-s" x="235" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">개수를 맞춰 놓는다 · selector: app=nginx</text>
   <rect class="dg-item" x="360" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="476" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서비스</text>
   <text class="dg-s" x="476" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">들어온 요청을 나눠 준다 · selector: app=ng…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#k8s--deploy-service-arw-w)"/>
 
   <!-- 라벨이 app=nginx 인 파드들 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -28,4 +30,35 @@
   <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">nginx-7d9c...-c3d4</text>
   <rect class="dg-item" x="444" y="200" width="137" height="52" rx="6"/>
   <text class="dg-t" x="512" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">nginx-7d9c...-e5f6</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="k8s--deploy-service-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="71" y="56" width="217" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">디플로이먼트</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">개수를 맞춰 놓는다 · selector: app=nginx</text>
+  <rect class="dg-item" x="64" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서비스</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">들어온 요청을 나눠 준다 · selector: app=ng…</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#k8s--deploy-service-arw-n)"/>
+
+  <!-- 라벨이 app=nginx 인 파드들 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="125" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">라벨이 app=nginx 인 파드들</text>
+  <rect class="dg-item" x="111" y="266" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">nginx-7d9c...-a1b2</text>
+  <rect class="dg-item" x="111" y="332" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">nginx-7d9c...-c3d4</text>
+  <rect class="dg-item" x="111" y="398" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">nginx-7d9c...-e5f6</text>
 </svg>

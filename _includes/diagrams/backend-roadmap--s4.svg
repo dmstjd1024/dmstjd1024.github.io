@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 568" role="img" aria-labelledby="backend-roadmap--s4-title backend-roadmap--s4-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 568" role="img" aria-labelledby="backend-roadmap--s4-title backend-roadmap--s4-desc">
   <title id="backend-roadmap--s4-title">4단계 캐싱, 웹 서버, 보안</title>
   <desc id="backend-roadmap--s4-desc">캐싱과 웹 서버를 거쳐 웹 보안으로 이어지는 구간. Redis 와 Nginx 가 추천이다.</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="backend-roadmap--s4-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -19,7 +19,7 @@
   <text class="dg-s" x="356" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
   <rect class="dg-item" x="420" y="56" width="104" height="52" rx="6"/>
   <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">HTTP Caching</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#backend-roadmap--s4-arw-w)"/>
 
   <!-- 웹 서버 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -36,7 +36,7 @@
   <rect class="dg-item" x="480" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="528" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MS IIS</text>
   <text class="dg-s" x="528" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#backend-roadmap--s4-arw-w)"/>
 
   <!-- 보안 · 암호화 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="232" rx="8"/>
@@ -64,4 +64,69 @@
   <text class="dg-t" x="584" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CSP</text>
   <rect class="dg-item" x="312" y="476" width="96" height="52" rx="6"/>
   <text class="dg-t" x="360" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버 보안</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 898" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="backend-roadmap--s4-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 캐싱 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="32" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">캐싱</text>
+  <rect class="dg-item" x="76" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Redis</text>
+  <rect class="dg-item" x="188" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Memcached</text>
+  <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="128" y="122" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">HTTP Caching</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#backend-roadmap--s4-arw-n)"/>
+
+  <!-- 웹 서버 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">웹 서버</text>
+  <rect class="dg-item" x="76" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Nginx</text>
+  <rect class="dg-item" x="188" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Apache</text>
+  <text class="dg-s" x="236" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="76" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="354" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Caddy</text>
+  <text class="dg-s" x="124" y="371" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="188" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="354" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MS IIS</text>
+  <text class="dg-s" x="236" y="371" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <path class="dg-arw" d="M180,408 V446" marker-end="url(#backend-roadmap--s4-arw-n)"/>
+
+  <!-- 보안 · 암호화 -->
+  <rect class="dg-zone" x="24" y="452" width="312" height="430" rx="8"/>
+  <rect class="dg-mask" x="40" y="446" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="455" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">보안 · 암호화</text>
+  <rect class="dg-item" x="76" y="476" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">웹 보안</text>
+  <rect class="dg-item" x="188" y="476" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MD5</text>
+  <rect class="dg-item" x="76" y="542" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SHA</text>
+  <rect class="dg-item" x="188" y="542" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">scrypt</text>
+  <rect class="dg-item" x="76" y="608" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="639" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">bcrypt</text>
+  <rect class="dg-item" x="188" y="608" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="639" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">HTTPS</text>
+  <rect class="dg-item" x="76" y="674" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OWASP 위험</text>
+  <rect class="dg-item" x="188" y="674" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CORS</text>
+  <rect class="dg-item" x="76" y="740" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="771" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SSL/TLS</text>
+  <rect class="dg-item" x="188" y="740" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="771" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CSP</text>
+  <rect class="dg-item" x="132" y="806" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="837" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버 보안</text>
 </svg>

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="ec2--elb-type-title ec2--elb-type-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="ec2--elb-type-title ec2--elb-type-desc">
   <title id="ec2--elb-type-title">ALB, NLB, CLB 가 각각 OSI 어느 계층에서 동작하는지 비교</title>
   <desc id="ec2--elb-type-desc">ALB, NLB, CLB 가 각각 OSI 어느 계층에서 동작하는지 비교</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="ec2--elb-type-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -15,7 +15,7 @@
   <rect class="dg-item" x="287" y="56" width="146" height="52" rx="6"/>
   <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ALB</text>
   <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">URL · 호스트 기반 라우팅</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#ec2--elb-type-arw-w)"/>
 
   <!-- L4  전송 계층 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -24,7 +24,7 @@
   <rect class="dg-item" x="294" y="200" width="132" height="52" rx="6"/>
   <text class="dg-t" x="360" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NLB</text>
   <text class="dg-s" x="360" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">높은 성능 · 낮은 지연</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#ec2--elb-type-arw-w)"/>
 
   <!-- L4 + L7  혼합 (구형) -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -33,4 +33,38 @@
   <rect class="dg-item" x="285" y="344" width="150" height="52" rx="6"/>
   <text class="dg-t" x="360" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CLB</text>
   <text class="dg-s" x="360" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">기능 제한 · 권장하지 않음</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 436" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="ec2--elb-type-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- L7  애플리케이션 계층 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="104" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">L7  애플리케이션 계층</text>
+  <rect class="dg-item" x="107" y="56" width="146" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ALB</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">URL · 호스트 기반 라우팅</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#ec2--elb-type-arw-n)"/>
+
+  <!-- L4  전송 계층 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">L4  전송 계층</text>
+  <rect class="dg-item" x="114" y="200" width="132" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NLB</text>
+  <text class="dg-s" x="180" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">높은 성능 · 낮은 지연</text>
+  <path class="dg-arw" d="M180,276 V314" marker-end="url(#ec2--elb-type-arw-n)"/>
+
+  <!-- L4 + L7  혼합 (구형) -->
+  <rect class="dg-zone" x="24" y="320" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="100" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">L4 + L7  혼합 (구형)</text>
+  <rect class="dg-item" x="105" y="344" width="150" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CLB</text>
+  <text class="dg-s" x="180" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">기능 제한 · 권장하지 않음</text>
 </svg>

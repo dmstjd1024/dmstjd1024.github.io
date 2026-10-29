@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="jira--git-link-title jira--git-link-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="jira--git-link-title jira--git-link-desc">
   <title id="jira--git-link-title">이슈 키가 브랜치와 커밋, PR 을 거쳐 지라 이슈로 연결되는 흐름</title>
   <desc id="jira--git-link-desc">이슈 키가 브랜치와 커밋, PR 을 거쳐 지라 이슈로 연결되는 흐름</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="jira--git-link-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="80" y="56" width="137" height="52" rx="6"/>
   <text class="dg-t" x="148" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JIRA 이슈 SHOP-101</text>
   <rect class="dg-item" x="233" y="56" width="159" height="52" rx="6"/>
@@ -18,7 +20,7 @@
   <rect class="dg-item" x="408" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="524" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스마트 커밋이 안 될 때 확인할 것</text>
   <text class="dg-s" x="524" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">커밋 작성자 이메일과 JIRA 계정 이메일이 일치…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#jira--git-link-arw-w)"/>
 
   <!-- Git 쪽 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -28,4 +30,35 @@
   <text class="dg-t" x="251" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">feature/SHOP-101-card-payment</text>
   <rect class="dg-item" x="365" y="200" width="202" height="52" rx="6"/>
   <text class="dg-t" x="466" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">git commit -m "SHOP-101 결제…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="jira--git-link-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="111" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JIRA 이슈 SHOP-101</text>
+  <rect class="dg-item" x="100" y="122" width="159" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">개발 (Development)</text>
+  <text class="dg-s" x="179" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">브랜치 1 · 커밋 3 · PR 열림</text>
+  <rect class="dg-item" x="64" y="188" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스마트 커밋이 안 될 때 확인할 것</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">커밋 작성자 이메일과 JIRA 계정 이메일이 일치…</text>
+  <path class="dg-arw" d="M180,264 V302" marker-end="url(#jira--git-link-arw-n)"/>
+
+  <!-- Git 쪽 -->
+  <rect class="dg-zone" x="24" y="308" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="302" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="311" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Git 쪽</text>
+  <rect class="dg-item" x="82" y="332" width="196" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">feature/SHOP-101-card-payment</text>
+  <rect class="dg-item" x="79" y="398" width="202" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">git commit -m "SHOP-101 결제…</text>
 </svg>

@@ -36,6 +36,25 @@
     margin-left: calc(min(100%, #{$contentwd}) * -24 / 672);
   }
 
+  // 폰에서는 세로본으로 바꾼다.
+  //
+  // viewBox 는 CSS 로 바꿀 수 없어서, gen.py 가 가로본(720)과 세로본(360)을
+  // 형제 <svg> 로 같이 내보낸다. 여기서는 어느 쪽을 보일지만 정한다.
+  //
+  // 한 장만 두면 720 폭이 통째로 축소된다 — 390px 뷰포트에서 존 라벨이
+  // 3.6px, 노드 제목이 6.3px 까지 작아졌다 (실측 2026-10-29).
+  .dg-narrow { display: none; }
+
+  @media (max-width: 40rem) {
+    .dg-wide { display: none; }
+    .dg-narrow {
+      display: block;
+      // 세로본은 viewBox 가 360 이므로 내용 폭이 360-48=312 다.
+      width: calc(min(100%, #{$contentwd}) * 360 / 312);
+      margin-left: calc(min(100%, #{$contentwd}) * -24 / 312);
+    }
+  }
+
   // 면
   .dg-card, .dg-lane { fill: var(--bg-sunken); stroke: var(--border); }
   .dg-row, .dg-item  { fill: var(--bg); stroke: var(--border); }

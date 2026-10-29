@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="react1--virtual-dom-title react1--virtual-dom-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="react1--virtual-dom-title react1--virtual-dom-desc">
   <title id="react1--virtual-dom-title">Virtual DOM 에서 바뀐 부분만 계산해 실제 DOM 에 반영하는 흐름</title>
   <desc id="react1--virtual-dom-desc">Virtual DOM 에서 바뀐 부분만 계산해 실제 DOM 에 반영하는 흐름</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="react1--virtual-dom-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="244" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">실제 DOM</text>
   <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">추가된 항목 하나만 · 건드린다 · 나머지는 그대…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#react1--virtual-dom-arw-w)"/>
 
   <!-- Virtual DOM — 자바스크립트 객체 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -25,4 +27,32 @@
   <rect class="dg-item" x="368" y="200" width="106" height="52" rx="6"/>
   <text class="dg-t" x="421" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">새 상태</text>
   <text class="dg-s" x="421" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">제목 · 항목 4개</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 292" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="react1--virtual-dom-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">실제 DOM</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">추가된 항목 하나만 · 건드린다 · 나머지는 그대…</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#react1--virtual-dom-arw-n)"/>
+
+  <!-- Virtual DOM — 자바스크립트 객체 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="150" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Virtual DOM — 자바스크립트 객체</text>
+  <rect class="dg-item" x="66" y="200" width="106" height="52" rx="6"/>
+  <text class="dg-t" x="119" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이전 상태</text>
+  <text class="dg-s" x="119" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">제목 · 항목 3개</text>
+  <rect class="dg-item" x="188" y="200" width="106" height="52" rx="6"/>
+  <text class="dg-t" x="241" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">새 상태</text>
+  <text class="dg-s" x="241" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">제목 · 항목 4개</text>
 </svg>

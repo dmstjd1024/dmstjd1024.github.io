@@ -1,20 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="bottleneck--correlated-scope-title bottleneck--correlated-scope-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="bottleneck--correlated-scope-title bottleneck--correlated-scope-desc">
   <title id="bottleneck--correlated-scope-title">바깥 WHERE 에는 테넌트 스코프가 있지만 ORDER BY 안의 상관 서브쿼리에는 없어 결과 행마다 전체 테넌트를 다시 스캔한다</title>
   <desc id="bottleneck--correlated-scope-desc">바깥 WHERE 에는 테넌트 스코프가 있지만 ORDER BY 안의 상관 서브쿼리에는 없어 결과 행마다 전체 테넌트를 다시 스캔한다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="bottleneck--correlated-scope-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="155" y="56" width="164" height="52" rx="6"/>
   <text class="dg-t" x="237" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">운송 원데이터 목록 조회</text>
   <rect class="dg-item" x="335" y="56" width="229" height="52" rx="6"/>
   <text class="dg-t" x="449" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다른 회사가 늘어도 내 화면이 느려…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#bottleneck--correlated-scope-arw-w)"/>
 
   <!-- 바깥 WHERE -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -22,7 +24,7 @@
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">바깥 WHERE</text>
   <rect class="dg-item" x="264" y="200" width="191" height="52" rx="6"/>
   <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">company_id · year · category</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#bottleneck--correlated-scope-arw-w)"/>
 
   <!-- ORDER BY 안의 서브쿼리 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -30,4 +32,37 @@
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">ORDER BY 안의 서브쿼리</text>
   <rect class="dg-item" x="267" y="344" width="185" height="52" rx="6"/>
   <text class="dg-t" x="359" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조건 없음 — 전 테넌트 스캔</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 502" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="bottleneck--correlated-scope-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="98" y="56" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">운송 원데이터 목록 조회</text>
+  <rect class="dg-item" x="65" y="122" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다른 회사가 늘어도 내 화면이 느려…</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#bottleneck--correlated-scope-arw-n)"/>
+
+  <!-- 바깥 WHERE -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="58" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">바깥 WHERE</text>
+  <rect class="dg-item" x="84" y="266" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">company_id · year · category</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#bottleneck--correlated-scope-arw-n)"/>
+
+  <!-- ORDER BY 안의 서브쿼리 -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="108" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">ORDER BY 안의 서브쿼리</text>
+  <rect class="dg-item" x="87" y="410" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조건 없음 — 전 테넌트 스캔</text>
 </svg>

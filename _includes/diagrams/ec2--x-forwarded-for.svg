@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="ec2--x-forwarded-for-title ec2--x-forwarded-for-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="ec2--x-forwarded-for-title ec2--x-forwarded-for-desc">
   <title id="ec2--x-forwarded-for-title">로드밸런서를 거치면 원래 출처 IP 가 사라지고 X-Forwarded-For 헤더에만 남는 흐름</title>
   <desc id="ec2--x-forwarded-for-desc">로드밸런서를 거치면 원래 출처 IP 가 사라지고 X-Forwarded-For 헤더에만 남는 흐름</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="ec2--x-forwarded-for-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="105" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="153" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">클라이언트</text>
   <text class="dg-s" x="153" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">공인 IP</text>
@@ -25,4 +27,32 @@
   <rect class="dg-item" x="244" y="122" width="232" height="52" rx="6"/>
   <text class="dg-t" x="360" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">X-Forwarded-For</text>
   <text class="dg-s" x="360" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">클라이언트의 원래 공인 IP · 헤더를 읽어야 진…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="ec2--x-forwarded-for-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="112" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">클라이언트</text>
+  <text class="dg-s" x="112" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">공인 IP</text>
+  <rect class="dg-item" x="176" y="56" width="119" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">로드밸런서</text>
+  <text class="dg-s" x="235" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">출처를 헤더에 기록</text>
+  <rect class="dg-item" x="48" y="122" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="108" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백엔드 인스턴스</text>
+  <text class="dg-s" x="108" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">사설 IP 만 보임</text>
+  <rect class="dg-item" x="185" y="122" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">여기서 본 출처는</text>
+  <text class="dg-s" x="248" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">로드밸런서의 IP 다</text>
+  <rect class="dg-item" x="64" y="188" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">X-Forwarded-For</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">클라이언트의 원래 공인 IP · 헤더를 읽어야 진…</text>
 </svg>

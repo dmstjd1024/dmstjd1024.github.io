@@ -1,22 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="gin-trgm--function-wrap-title gin-trgm--function-wrap-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="gin-trgm--function-wrap-title gin-trgm--function-wrap-desc">
   <title id="gin-trgm--function-wrap-title">컬럼을 함수로 감싸면 인덱스와 표현식이 달라져 인덱스를 타지 못한다</title>
   <desc id="gin-trgm--function-wrap-desc">컬럼을 함수로 감싸면 인덱스와 표현식이 달라져 인덱스를 타지 못한다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="gin-trgm--function-wrap-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="136" y="56" width="230" height="52" rx="6"/>
   <text class="dg-t" x="251" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인덱스를 쿼리에 맞춘다</text>
   <text class="dg-s" x="251" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">GIN (LOWER(name)) · 검색 컬럼마다 따로 필…</text>
   <rect class="dg-item" x="382" y="56" width="202" height="52" rx="6"/>
   <text class="dg-t" x="483" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿼리를 인덱스에 맞춘다  (채택)</text>
   <text class="dg-s" x="483" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">ILIKE · 기존 인덱스를 그대로 쓴다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#gin-trgm--function-wrap-arw-w)"/>
 
   <!-- 만들어 둔 인덱스 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -29,4 +31,36 @@
   <text class="dg-s" x="358" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Seq Scan 으로 돈다</text>
   <rect class="dg-item" x="437" y="200" width="99" height="52" rx="6"/>
   <text class="dg-t" x="486" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LOWER(name)</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="gin-trgm--function-wrap-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="65" y="56" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인덱스를 쿼리에 맞춘다</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">GIN (LOWER(name)) · 검색 컬럼마다 따로 필…</text>
+  <rect class="dg-item" x="79" y="122" width="202" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿼리를 인덱스에 맞춘다  (채택)</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">ILIKE · 기존 인덱스를 그대로 쓴다</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#gin-trgm--function-wrap-arw-n)"/>
+
+  <!-- 만들어 둔 인덱스 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="83" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">만들어 둔 인덱스</text>
+  <rect class="dg-item" x="61" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="109" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">GIN (name)</text>
+  <rect class="dg-item" x="173" y="266" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서로 다른 표현식</text>
+  <text class="dg-s" x="236" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Seq Scan 으로 돈다</text>
+  <rect class="dg-item" x="130" y="332" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LOWER(name)</text>
 </svg>

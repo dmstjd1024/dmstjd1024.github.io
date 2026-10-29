@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="v1v2--phased-title v1v2--phased-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="v1v2--phased-title v1v2--phased-desc">
   <title id="v1v2--phased-title">배선만 깔고 동작을 바꾸지 않는 단계를 앞에 두어 롤백 가능하게 만든 6단계 이관</title>
   <desc id="v1v2--phased-desc">배선만 깔고 동작을 바꾸지 않는 단계를 앞에 두어 롤백 가능하게 만든 6단계 이관</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="v1v2--phased-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="121" y="56" width="230" height="52" rx="6"/>
   <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Phase 0-1</text>
   <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">배선만 깐다 · 기본값이 false 라 · 동작 동일</text>
@@ -22,4 +24,29 @@
   <rect class="dg-item" x="348" y="122" width="225" height="52" rx="6"/>
   <text class="dg-t" x="460" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">삭제할 때 조심한 것</text>
   <text class="dg-s" x="460" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">V1 전용처럼 보이지만 V2 도 쓰는 부품 5개…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="v1v2--phased-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="65" y="56" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Phase 0-1</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">배선만 깐다 · 기본값이 false 라 · 동작 동일</text>
+  <rect class="dg-item" x="64" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Phase 2-4</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">기능을 하나씩 옮긴다 · 저장 · 편집 차단 · 사…</text>
+  <rect class="dg-item" x="87" y="188" width="186" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Phase 5</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">V1 을 지운다 · 파일 6개 · 2,389줄</text>
+  <rect class="dg-item" x="67" y="254" width="225" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">삭제할 때 조심한 것</text>
+  <text class="dg-s" x="179" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">V1 전용처럼 보이지만 V2 도 쓰는 부품 5개…</text>
 </svg>

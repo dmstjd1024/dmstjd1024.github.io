@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="soft-delete--unique-title soft-delete--unique-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="soft-delete--unique-title soft-delete--unique-desc">
   <title id="soft-delete--unique-title">소프트 삭제로 바꾸면 삭제된 행이 남아 유니크 제약에 걸리는 문제와 생성 컬럼 해법</title>
   <desc id="soft-delete--unique-desc">소프트 삭제로 바꾸면 삭제된 행이 남아 유니크 제약에 걸리는 문제와 생성 컬럼 해법</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="soft-delete--unique-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="244" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MySQL 에는 부분 인덱스가 없어 VI…</text>
   <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">살아 있으면 이름을, 삭제됐으면 NULL 을 갖는…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#soft-delete--unique-arw-w)"/>
 
   <!-- 하드 삭제일 때 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -23,7 +25,7 @@
   <text class="dg-t" x="275" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">행이 사라진다</text>
   <rect class="dg-item" x="346" y="200" width="153" height="52" rx="6"/>
   <text class="dg-t" x="422" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같은 이름 재사용 가능</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#soft-delete--unique-arw-w)"/>
 
   <!-- 소프트 삭제로 바꾸면 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -33,4 +35,40 @@
   <text class="dg-t" x="264" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">is_delete = 1 로 남아 있다</text>
   <rect class="dg-item" x="370" y="344" width="175" height="52" rx="6"/>
   <text class="dg-t" x="457" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같은 이름으로 재생성 불가</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 568" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="soft-delete--unique-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MySQL 에는 부분 인덱스가 없어 VI…</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">살아 있으면 이름을, 삭제됐으면 NULL 을 갖는…</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#soft-delete--unique-arw-n)"/>
+
+  <!-- 하드 삭제일 때 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="74" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">하드 삭제일 때</text>
+  <rect class="dg-item" x="125" y="200" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">행이 사라진다</text>
+  <rect class="dg-item" x="103" y="266" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같은 이름 재사용 가능</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#soft-delete--unique-arw-n)"/>
+
+  <!-- 소프트 삭제로 바꾸면 -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="100" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">소프트 삭제로 바꾸면</text>
+  <rect class="dg-item" x="90" y="410" width="180" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">is_delete = 1 로 남아 있다</text>
+  <rect class="dg-item" x="92" y="476" width="175" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같은 이름으로 재생성 불가</text>
 </svg>

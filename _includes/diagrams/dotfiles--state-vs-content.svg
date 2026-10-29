@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="dotfiles--state-vs-content-title dotfiles--state-vs-content-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="dotfiles--state-vs-content-title dotfiles--state-vs-content-desc">
   <title id="dotfiles--state-vs-content-title">pull 은 추적 파일을 갱신하지만 홈의 링크·인덱스 플래그·등록 상태는 맞추지 않는다</title>
   <desc id="dotfiles--state-vs-content-desc">pull 은 추적 파일을 갱신하지만 홈의 링크·인덱스 플래그·등록 상태는 맞추지 않는다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="dotfiles--state-vs-content-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="84" y="56" width="119" height="52" rx="6"/>
   <text class="dg-t" x="143" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">원격 레포</text>
   <text class="dg-s" x="143" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">커밋된 · 설정 파일</text>
@@ -21,4 +23,28 @@
   <text class="dg-s" x="519" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">전파되지 않는다 · 홈 링크 · 플래그 · 등록 상…</text>
   <rect class="dg-item" x="254" y="122" width="212" height="52" rx="6"/>
   <text class="dg-t" x="360" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그래서 pull 성공 시 install.sh…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="dotfiles--state-vs-content-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="120" y="56" width="119" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">원격 레포</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">커밋된 · 설정 파일</text>
+  <rect class="dg-item" x="96" y="122" width="168" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일 내용</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">전파된다 · CLAUDE.md · .zshrc</text>
+  <rect class="dg-item" x="64" y="188" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">시스템 상태</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">전파되지 않는다 · 홈 링크 · 플래그 · 등록 상…</text>
+  <rect class="dg-item" x="74" y="254" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="285" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그래서 pull 성공 시 install.sh…</text>
 </svg>

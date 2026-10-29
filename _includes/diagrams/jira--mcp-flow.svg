@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-labelledby="jira--mcp-flow-title jira--mcp-flow-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 280" role="img" aria-labelledby="jira--mcp-flow-title jira--mcp-flow-desc">
   <title id="jira--mcp-flow-title">개발 도구가 MCP 서버를 거쳐 지라 이슈를 읽고 쓰는 연결 구조와 권한 경고</title>
   <desc id="jira--mcp-flow-desc">개발 도구가 MCP 서버를 거쳐 지라 이슈를 읽고 쓰는 연결 구조와 권한 경고</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="jira--mcp-flow-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="135" y="56" width="221" height="52" rx="6"/>
   <text class="dg-t" x="245" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">개발 도구</text>
   <text class="dg-s" x="245" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Claude Code · Cursor · VS Code · Claude…</text>
@@ -24,4 +26,31 @@
   <rect class="dg-item" x="244" y="188" width="232" height="52" rx="6"/>
   <text class="dg-t" x="360" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">주의 — 권한이 그대로 넘어간다</text>
   <text class="dg-s" x="360" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">AI 가 "당신 권한으로" 이슈를 만들고 고친다.…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="jira--mcp-flow-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="364" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="69" y="56" width="221" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">개발 도구</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Claude Code · Cursor · VS Code · Claude…</text>
+  <rect class="dg-item" x="74" y="122" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Rovo MCP 서버</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">mcp.atlassian.com · OAuth 2.1 로 인증…</text>
+  <rect class="dg-item" x="64" y="188" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JIRA</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">이슈 조회 · 생성 · 수정 · 검색 · Confluenc…</text>
+  <rect class="dg-item" x="71" y="254" width="218" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="285" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">2026-08 연결 명령 — 현재 URL은…</text>
+  <rect class="dg-item" x="64" y="320" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="342" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">주의 — 권한이 그대로 넘어간다</text>
+  <text class="dg-s" x="180" y="359" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">AI 가 "당신 권한으로" 이슈를 만들고 고친다.…</text>
 </svg>

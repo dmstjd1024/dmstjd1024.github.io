@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study6--single-inheritance-title live-study6--single-inheritance-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study6--single-inheritance-title live-study6--single-inheritance-desc">
   <title id="live-study6--single-inheritance-title">자바가 다중 상속을 막는 이유와 단일 상속 구조</title>
   <desc id="live-study6--single-inheritance-desc">자바가 다중 상속을 막는 이유와 단일 상속 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="live-study6--single-inheritance-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -20,7 +20,7 @@
   <text class="dg-s" x="337" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">print()</text>
   <rect class="dg-item" x="401" y="56" width="142" height="52" rx="6"/>
   <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">C — 어느 print() ?</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#live-study6--single-inheritance-arw-w)"/>
 
   <!-- 단일 상속 (자바) -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -32,4 +32,37 @@
   <rect class="dg-item" x="365" y="200" width="101" height="52" rx="6"/>
   <text class="dg-t" x="415" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">B</text>
   <text class="dg-s" x="415" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">헷갈릴 일 없음</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 358" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="live-study6--single-inheritance-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 다중 상속 (자바에 없음) -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="112" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">다중 상속 (자바에 없음)</text>
+  <rect class="dg-item" x="76" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">A</text>
+  <text class="dg-s" x="124" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">print()</text>
+  <rect class="dg-item" x="188" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">B</text>
+  <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">print()</text>
+  <rect class="dg-item" x="109" y="122" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">C — 어느 print() ?</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#live-study6--single-inheritance-arw-n)"/>
+
+  <!-- 단일 상속 (자바) -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="83" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">단일 상속 (자바)</text>
+  <rect class="dg-item" x="73" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="121" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">A</text>
+  <text class="dg-s" x="121" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">print()</text>
+  <rect class="dg-item" x="185" y="266" width="101" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">B</text>
+  <text class="dg-s" x="235" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">헷갈릴 일 없음</text>
 </svg>

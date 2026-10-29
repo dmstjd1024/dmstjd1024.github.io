@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 502" role="img" aria-labelledby="herdr--api-surface-title herdr--api-surface-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 502" role="img" aria-labelledby="herdr--api-surface-title herdr--api-surface-desc">
   <title id="herdr--api-surface-title">Herdr 의 두 가지 API 표면 비교: 공식 문서는 명령 세 개만 적어두었지만, 바이너리에 번들된 스키마를 꺼내면 메서드 102개와 타입 정의 121개가 나온다. 그 스키마를 보고 유닉스 소켓에 JSON Lines 로 직접 요청을 넣을 수 있다</title>
   <desc id="herdr--api-surface-desc">Herdr 의 두 가지 API 표면 비교: 공식 문서는 명령 세 개만 적어두었지만, 바이너리에 번들된 스키마를 꺼내면 메서드 102개와 타입 정의 121개가 나온다. 그 스키마를 보고 유닉스 소켓에 JSON Lines 로 직접 요청을 넣을 수 있다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="herdr--api-surface-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="90" y="56" width="230" height="52" rx="6"/>
   <text class="dg-t" x="205" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">바이너리에 번들된 스키마</text>
   <text class="dg-s" x="205" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">나머지 13계열 22개 — 메서드 102개 · 타입…</text>
@@ -22,7 +24,7 @@
   <rect class="dg-item" x="296" y="122" width="128" height="52" rx="6"/>
   <text class="dg-t" x="360" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">plugin · 11</text>
   <text class="dg-s" x="360" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">link · action.invoke</text>
-  <path class="dg-arw" d="M360,198 V236" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,198 V236" marker-end="url(#herdr--api-surface-arw-w)"/>
 
   <!-- 공식 문서가 적어둔 것 -->
   <rect class="dg-zone" x="24" y="242" width="672" height="100" rx="8"/>
@@ -34,7 +36,7 @@
   <rect class="dg-item" x="351" y="266" width="202" height="52" rx="6"/>
   <text class="dg-t" x="452" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">"CLI 와 소켓 API 는 같은 표면"</text>
   <text class="dg-s" x="452" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">엔드포인트 기재 0개 — 여기서 막힌다</text>
-  <path class="dg-arw" d="M360,342 V380" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,342 V380" marker-end="url(#herdr--api-surface-arw-w)"/>
 
   <!-- 돌고 있는 서버 -->
   <rect class="dg-zone" x="24" y="386" width="672" height="100" rx="8"/>
@@ -43,4 +45,50 @@
   <rect class="dg-item" x="265" y="410" width="190" height="52" rx="6"/>
   <text class="dg-t" x="360" y="432" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">~/.config/herdr/herdr.sock</text>
   <text class="dg-s" x="360" y="449" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">권한 600 · 내 계정만 · protocol 22</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 700" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="herdr--api-surface-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="65" y="56" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">바이너리에 번들된 스키마</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">나머지 13계열 22개 — 메서드 102개 · 타입…</text>
+  <rect class="dg-item" x="107" y="122" width="146" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">pane · 36</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">split · send_keys · read</text>
+  <rect class="dg-item" x="114" y="188" width="132" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">agent · 12</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">start · prompt · wait</text>
+  <rect class="dg-item" x="116" y="254" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">plugin · 11</text>
+  <text class="dg-s" x="180" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">link · action.invoke</text>
+  <path class="dg-arw" d="M180,330 V368" marker-end="url(#herdr--api-surface-arw-n)"/>
+
+  <!-- 공식 문서가 적어둔 것 -->
+  <rect class="dg-zone" x="24" y="374" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="368" width="104" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="377" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">공식 문서가 적어둔 것</text>
+  <rect class="dg-item" x="95" y="398" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="420" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">server · client · update</text>
+  <text class="dg-s" x="179" y="437" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">명령 3개</text>
+  <rect class="dg-item" x="79" y="464" width="202" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="486" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">"CLI 와 소켓 API 는 같은 표면"</text>
+  <text class="dg-s" x="180" y="503" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">엔드포인트 기재 0개 — 여기서 막힌다</text>
+  <path class="dg-arw" d="M180,540 V578" marker-end="url(#herdr--api-surface-arw-n)"/>
+
+  <!-- 돌고 있는 서버 -->
+  <rect class="dg-zone" x="24" y="584" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="578" width="74" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="587" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">돌고 있는 서버</text>
+  <rect class="dg-item" x="85" y="608" width="190" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="630" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">~/.config/herdr/herdr.sock</text>
+  <text class="dg-s" x="180" y="647" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">권한 600 · 내 계정만 · protocol 22</text>
 </svg>

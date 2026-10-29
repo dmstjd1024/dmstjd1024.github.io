@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="clipboard--secure-context-title clipboard--secure-context-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="clipboard--secure-context-title clipboard--secure-context-desc">
   <title id="clipboard--secure-context-title">navigator.clipboard 는 HTTPS 나 localhost 에서만 동작하며 HTTP 배포 환경에서는 조용히 실패한다</title>
   <desc id="clipboard--secure-context-desc">navigator.clipboard 는 HTTPS 나 localhost 에서만 동작하며 HTTP 배포 환경에서는 조용히 실패한다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="clipboard--secure-context-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="244" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그런데 아무 에러도 안 보였다</text>
   <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">writeText() 가 돌려준 Promise 를 아무도 받…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#clipboard--secure-context-arw-w)"/>
 
   <!-- 로컬 — localhost -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -23,7 +25,7 @@
   <text class="dg-t" x="267" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">secure context 로 인정</text>
   <rect class="dg-item" x="362" y="200" width="169" height="52" rx="6"/>
   <text class="dg-t" x="446" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">navigator.clipboard 동작</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#clipboard--secure-context-arw-w)"/>
 
   <!-- 배포 — HTTP -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -33,4 +35,40 @@
   <text class="dg-t" x="246" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">secure context 아님</text>
   <rect class="dg-item" x="333" y="344" width="212" height="52" rx="6"/>
   <text class="dg-t" x="439" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">undefined 이거나 Promise rejec…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 568" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="clipboard--secure-context-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그런데 아무 에러도 안 보였다</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">writeText() 가 돌려준 Promise 를 아무도 받…</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#clipboard--secure-context-arw-n)"/>
+
+  <!-- 로컬 — localhost -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="87" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">로컬 — localhost</text>
+  <rect class="dg-item" x="101" y="200" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">secure context 로 인정</text>
+  <rect class="dg-item" x="95" y="266" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">navigator.clipboard 동작</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#clipboard--secure-context-arw-n)"/>
+
+  <!-- 배포 — HTTP -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="66" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">배포 — HTTP</text>
+  <rect class="dg-item" x="109" y="410" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">secure context 아님</text>
+  <rect class="dg-item" x="74" y="476" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">undefined 이거나 Promise rejec…</text>
 </svg>

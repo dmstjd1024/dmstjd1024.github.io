@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study5--this-constructor-title live-study5--this-constructor-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study5--this-constructor-title live-study5--this-constructor-desc">
   <title id="live-study5--this-constructor-title">this 로 다른 생성자를 호출할 때 반드시 첫 줄이어야 하는 이유</title>
   <desc id="live-study5--this-constructor-desc">this 로 다른 생성자를 호출할 때 반드시 첫 줄이어야 하는 이유</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="live-study5--this-constructor-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -16,7 +16,7 @@
   <text class="dg-t" x="267" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">this(...) 로 초기화</text>
   <rect class="dg-item" x="354" y="56" width="169" height="52" rx="6"/>
   <text class="dg-t" x="438" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그 위에 내 작업을 얹는다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#live-study5--this-constructor-arw-w)"/>
 
   <!-- 뒤에 썼다면 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -26,4 +26,31 @@
   <text class="dg-t" x="261" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">door = 5 로 초기화해 뒀는데</text>
   <rect class="dg-item" x="370" y="200" width="180" height="52" rx="6"/>
   <text class="dg-t" x="460" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">this(...) 가 다시 덮어쓴다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="live-study5--this-constructor-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 첫 줄에 쓴 경우 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="79" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">첫 줄에 쓴 경우</text>
+  <rect class="dg-item" x="109" y="56" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">this(...) 로 초기화</text>
+  <rect class="dg-item" x="95" y="122" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그 위에 내 작업을 얹는다</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#live-study5--this-constructor-arw-n)"/>
+
+  <!-- 뒤에 썼다면 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">뒤에 썼다면</text>
+  <rect class="dg-item" x="87" y="266" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">door = 5 로 초기화해 뒀는데</text>
+  <rect class="dg-item" x="90" y="332" width="180" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">this(...) 가 다시 덮어쓴다</text>
 </svg>

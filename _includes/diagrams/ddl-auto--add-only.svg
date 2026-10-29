@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="ddl-auto--add-only-title ddl-auto--add-only-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="ddl-auto--add-only-title ddl-auto--add-only-desc">
   <title id="ddl-auto--add-only-title">ddl-auto update 의 자동 반영 범위는 버전과 방언에 따라 다르다</title>
   <desc id="ddl-auto--add-only-desc">ddl-auto update 의 자동 반영 범위는 버전과 방언에 따라 다르다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="ddl-auto--add-only-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -16,7 +16,7 @@
   <text class="dg-t" x="283" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">없던 테이블을 만든다</text>
   <rect class="dg-item" x="373" y="56" width="137" height="52" rx="6"/>
   <text class="dg-t" x="441" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">없던 컬럼을 붙인다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#ddl-auto--add-only-arw-w)"/>
 
   <!-- 하지 않는 일 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -26,4 +26,31 @@
   <text class="dg-t" x="289" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">뷰 만들기 · 데이터 백필</text>
   <rect class="dg-item" x="387" y="200" width="126" height="52" rx="6"/>
   <text class="dg-t" x="450" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">있는 것을 지우기</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="ddl-auto--add-only-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- ddl-auto: update 가 하는 일 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="129" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">ddl-auto: update 가 하는 일</text>
+  <rect class="dg-item" x="106" y="56" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">없던 테이블을 만든다</text>
+  <rect class="dg-item" x="111" y="122" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">없던 컬럼을 붙인다</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#ddl-auto--add-only-arw-n)"/>
+
+  <!-- 하지 않는 일 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="66" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">하지 않는 일</text>
+  <rect class="dg-item" x="98" y="266" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">뷰 만들기 · 데이터 백필</text>
+  <rect class="dg-item" x="117" y="332" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">있는 것을 지우기</text>
 </svg>

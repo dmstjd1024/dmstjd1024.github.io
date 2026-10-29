@@ -1,20 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="groupby--axis-mismatch-title groupby--axis-mismatch-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="groupby--axis-mismatch-title groupby--axis-mismatch-desc">
   <title id="groupby--axis-mismatch-title">산출은 공정별로 묶이고 투입은 LCA 전역으로 묶여 투입 1 행이 두 산출 공정에 각각 붙어 전액 중복 계상된다</title>
   <desc id="groupby--axis-mismatch-desc">산출은 공정별로 묶이고 투입은 LCA 전역으로 묶여 투입 1 행이 두 산출 공정에 각각 붙어 전액 중복 계상된다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="groupby--axis-mismatch-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="129" y="56" width="223" height="52" rx="6"/>
   <text class="dg-t" x="240" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LEFT JOIN — 두 공정이 각각 전액…</text>
   <rect class="dg-item" x="368" y="56" width="223" height="52" rx="6"/>
   <text class="dg-t" x="479" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">귀속 200kg — 실제 소비 100kg 의…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#groupby--axis-mismatch-arw-w)"/>
 
   <!-- 산출 — GROUP BY 공정 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -24,7 +26,7 @@
   <text class="dg-t" x="302" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">UP1 · 100kg</text>
   <rect class="dg-item" x="368" y="200" width="99" height="52" rx="6"/>
   <text class="dg-t" x="417" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">UP2 · 100kg</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#groupby--axis-mismatch-arw-w)"/>
 
   <!-- 투입 — GROUP BY LCA 전역 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -32,4 +34,39 @@
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">투입 — GROUP BY LCA 전역</text>
   <rect class="dg-item" x="264" y="344" width="191" height="52" rx="6"/>
   <text class="dg-t" x="359" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">match_key 당 단 1 행 · 100kg</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 502" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="groupby--axis-mismatch-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="68" y="56" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LEFT JOIN — 두 공정이 각각 전액…</text>
+  <rect class="dg-item" x="68" y="122" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">귀속 200kg — 실제 소비 100kg 의…</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#groupby--axis-mismatch-arw-n)"/>
+
+  <!-- 산출 — GROUP BY 공정 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="104" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">산출 — GROUP BY 공정</text>
+  <rect class="dg-item" x="73" y="266" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="122" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">UP1 · 100kg</text>
+  <rect class="dg-item" x="188" y="266" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="237" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">UP2 · 100kg</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#groupby--axis-mismatch-arw-n)"/>
+
+  <!-- 투입 — GROUP BY LCA 전역 -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="121" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">투입 — GROUP BY LCA 전역</text>
+  <rect class="dg-item" x="84" y="410" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">match_key 당 단 1 행 · 100kg</text>
 </svg>

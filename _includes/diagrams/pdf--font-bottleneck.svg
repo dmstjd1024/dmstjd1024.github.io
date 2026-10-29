@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="pdf--font-bottleneck-title pdf--font-bottleneck-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="pdf--font-bottleneck-title pdf--font-bottleneck-desc">
   <title id="pdf--font-bottleneck-title">폰트를 빠르게 만드는 시도가 모두 실패한 뒤 텍스트 자체를 없애는 쪽으로 방향을 바꾼 과정</title>
   <desc id="pdf--font-bottleneck-desc">폰트를 빠르게 만드는 시도가 모두 실패한 뒤 텍스트 자체를 없애는 쪽으로 방향을 바꾼 과정</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="pdf--font-bottleneck-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -24,7 +24,7 @@
   <rect class="dg-item" x="515" y="56" width="99" height="52" rx="6"/>
   <text class="dg-t" x="564" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">텍스트 축약</text>
   <text class="dg-s" x="564" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">무효</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#pdf--font-bottleneck-arw-w)"/>
 
   <!-- 목표를 바꿨다 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -36,4 +36,41 @@
   <text class="dg-t" x="373" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그 이미지를 PDF 로 감싼다</text>
   <rect class="dg-item" x="477" y="200" width="121" height="52" rx="6"/>
   <text class="dg-t" x="537" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">텍스트 객체 0개</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="pdf--font-bottleneck-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- layout 을 빠르게 하려는 시도 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="133" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">layout 을 빠르게 하려는 시도</text>
+  <rect class="dg-item" x="54" y="56" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="109" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">폰트 서브셋팅</text>
+  <text class="dg-s" x="109" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">무효</text>
+  <rect class="dg-item" x="180" y="56" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="243" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">줄바꿈 옵션 조정</text>
+  <text class="dg-s" x="243" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">무효</text>
+  <rect class="dg-item" x="59" y="122" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="122" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">hyphenation 끄기</text>
+  <text class="dg-s" x="122" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">무효</text>
+  <rect class="dg-item" x="201" y="122" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="250" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">텍스트 축약</text>
+  <text class="dg-s" x="250" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">무효</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#pdf--font-bottleneck-arw-n)"/>
+
+  <!-- 목표를 바꿨다 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">목표를 바꿨다</text>
+  <rect class="dg-item" x="106" y="266" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">화면을 이미지로 캡처</text>
+  <rect class="dg-item" x="92" y="332" width="175" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그 이미지를 PDF 로 감싼다</text>
+  <rect class="dg-item" x="119" y="398" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">텍스트 객체 0개</text>
 </svg>

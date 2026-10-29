@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 634" role="img" aria-labelledby="backend-roadmap--s3-title backend-roadmap--s3-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 634" role="img" aria-labelledby="backend-roadmap--s3-title backend-roadmap--s3-desc">
   <title id="backend-roadmap--s3-title">3단계 데이터베이스와 API</title>
   <desc id="backend-roadmap--s3-desc">관계형 DB 에서 API 스타일, 인증, 웹 보안으로 이어지는 구간. PostgreSQL 만 추천이고 나머지는 대안이다.</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="backend-roadmap--s3-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -33,7 +33,7 @@
   <text class="dg-s" x="360" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
   <rect class="dg-item" x="424" y="122" width="96" height="52" rx="6"/>
   <text class="dg-t" x="472" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">N+1 문제</text>
-  <path class="dg-arw" d="M360,198 V236" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,198 V236" marker-end="url(#backend-roadmap--s3-arw-w)"/>
 
   <!-- API 스타일 -->
   <rect class="dg-zone" x="24" y="242" width="672" height="166" rx="8"/>
@@ -55,7 +55,7 @@
   <rect class="dg-item" x="308" y="332" width="104" height="52" rx="6"/>
   <text class="dg-t" x="360" y="354" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OpenAPI 명세</text>
   <text class="dg-s" x="360" y="371" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
-  <path class="dg-arw" d="M360,408 V446" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,408 V446" marker-end="url(#backend-roadmap--s3-arw-w)"/>
 
   <!-- 인증 · 인가 -->
   <rect class="dg-zone" x="24" y="452" width="672" height="166" rx="8"/>
@@ -79,4 +79,84 @@
   <rect class="dg-item" x="425" y="542" width="96" height="52" rx="6"/>
   <text class="dg-t" x="473" y="564" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SAML</text>
   <text class="dg-s" x="473" y="581" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 964" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="backend-roadmap--s3-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 관계형 DB -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">관계형 DB</text>
+  <rect class="dg-item" x="72" y="56" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마이그레이션</text>
+  <rect class="dg-item" x="192" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="240" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MySQL</text>
+  <text class="dg-s" x="240" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="76" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PostgreSQL</text>
+  <rect class="dg-item" x="188" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MariaDB</text>
+  <text class="dg-s" x="236" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="76" y="188" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SQLite</text>
+  <text class="dg-s" x="124" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="188" y="188" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MS SQL</text>
+  <text class="dg-s" x="236" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="76" y="254" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Oracle</text>
+  <text class="dg-s" x="124" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="188" y="254" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="285" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">N+1 문제</text>
+  <path class="dg-arw" d="M180,330 V368" marker-end="url(#backend-roadmap--s3-arw-n)"/>
+
+  <!-- API 스타일 -->
+  <rect class="dg-zone" x="24" y="374" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="368" width="58" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="377" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">API 스타일</text>
+  <rect class="dg-item" x="76" y="398" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">REST</text>
+  <rect class="dg-item" x="188" y="398" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JSON API</text>
+  <rect class="dg-item" x="76" y="464" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="486" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SOAP</text>
+  <text class="dg-s" x="124" y="503" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
+  <rect class="dg-item" x="188" y="464" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="486" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">gRPC</text>
+  <text class="dg-s" x="236" y="503" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
+  <rect class="dg-item" x="72" y="530" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="120" y="552" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">GraphQL</text>
+  <text class="dg-s" x="120" y="569" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
+  <rect class="dg-item" x="184" y="530" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="552" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OpenAPI 명세</text>
+  <text class="dg-s" x="236" y="569" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
+  <path class="dg-arw" d="M180,606 V644" marker-end="url(#backend-roadmap--s3-arw-n)"/>
+
+  <!-- 인증 · 인가 -->
+  <rect class="dg-zone" x="24" y="650" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="644" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="653" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">인증 · 인가</text>
+  <rect class="dg-item" x="76" y="674" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인증</text>
+  <rect class="dg-item" x="188" y="674" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JWT</text>
+  <rect class="dg-item" x="76" y="740" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="771" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OAuth</text>
+  <rect class="dg-item" x="188" y="740" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="771" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Basic 인증</text>
+  <rect class="dg-item" x="74" y="806" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="122" y="837" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Token 인증</text>
+  <rect class="dg-item" x="186" y="806" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="837" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Cookie 인증</text>
+  <rect class="dg-item" x="76" y="872" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="894" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OpenID</text>
+  <text class="dg-s" x="124" y="911" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
+  <rect class="dg-item" x="188" y="872" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="894" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SAML</text>
+  <text class="dg-s" x="236" y="911" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
 </svg>

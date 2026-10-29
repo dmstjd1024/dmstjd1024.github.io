@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-labelledby="ralph--cycle-and-stops-title ralph--cycle-and-stops-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 358" role="img" aria-labelledby="ralph--cycle-and-stops-title ralph--cycle-and-stops-desc">
   <title id="ralph--cycle-and-stops-title">셸 루프가 매 사이클 claude -p 를 새로 띄우고, 세션은 태스크 하나를 처리한 뒤 마지막 줄로 결과를 알리며 죽고, 셸은 그 줄과 다섯 가지 조건을 보고 다시 돌지 멈출지 정하는 구조</title>
   <desc id="ralph--cycle-and-stops-desc">셸 루프가 매 사이클 claude -p 를 새로 띄우고, 세션은 태스크 하나를 처리한 뒤 마지막 줄로 결과를 알리며 죽고, 셸은 그 줄과 다섯 가지 조건을 보고 다시 돌지 멈출지 정하는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="ralph--cycle-and-stops-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -20,7 +20,7 @@
   <rect class="dg-item" x="450" y="56" width="128" height="52" rx="6"/>
   <text class="dg-t" x="514" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다섯 조건을 본다</text>
   <text class="dg-s" x="514" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">하나라도 걸리면 종료</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#ralph--cycle-and-stops-arw-w)"/>
 
   <!-- SESSION — 매번 죽는다 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="166" rx="8"/>
@@ -34,4 +34,39 @@
   <rect class="dg-item" x="254" y="266" width="212" height="52" rx="6"/>
   <text class="dg-t" x="360" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마지막 줄에 결과를 적고 죽는다</text>
   <text class="dg-s" x="360" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">상태는 파일에 남는다 — 기억은 사라진다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 556" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="ralph--cycle-and-stops-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- SHELL — 계속 산다 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="91" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SHELL — 계속 산다</text>
+  <rect class="dg-item" x="132" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">셸 루프</text>
+  <rect class="dg-item" x="89" y="122" width="181" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마지막 줄만 읽는다</text>
+  <text class="dg-s" x="179" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">중간에 언급된 같은 문자열은 무시</text>
+  <rect class="dg-item" x="116" y="188" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다섯 조건을 본다</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">하나라도 걸리면 종료</text>
+  <path class="dg-arw" d="M180,264 V302" marker-end="url(#ralph--cycle-and-stops-arw-n)"/>
+
+  <!-- SESSION — 매번 죽는다 -->
+  <rect class="dg-zone" x="24" y="308" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="302" width="108" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="311" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SESSION — 매번 죽는다</text>
+  <rect class="dg-item" x="84" y="332" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일에서 할 일 하나를 집는다</text>
+  <rect class="dg-item" x="76" y="398" width="208" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="420" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현하고 게이트를 통과시킨다</text>
+  <text class="dg-s" x="180" y="437" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">판정은 CLI 가 낸다 — 스스로 못 정한다</text>
+  <rect class="dg-item" x="74" y="464" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="486" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마지막 줄에 결과를 적고 죽는다</text>
+  <text class="dg-s" x="180" y="503" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">상태는 파일에 남는다 — 기억은 사라진다</text>
 </svg>

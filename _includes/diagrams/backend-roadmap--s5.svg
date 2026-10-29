@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 712" role="img" aria-labelledby="backend-roadmap--s5-title backend-roadmap--s5-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 712" role="img" aria-labelledby="backend-roadmap--s5-title backend-roadmap--s5-desc">
   <title id="backend-roadmap--s5-title">5단계 AI</title>
   <desc id="backend-roadmap--s5-desc">2026년판에 새로 들어온 구간. LLM 기초에서 코딩 도구를 거쳐 AI 기능 개발로 이어진다.</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="backend-roadmap--s5-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -22,7 +22,7 @@
   <text class="dg-t" x="499" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">벡터</text>
   <rect class="dg-item" x="563" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="611" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RAG</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#backend-roadmap--s5-arw-w)"/>
 
   <!-- AI 코딩 도구 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="166" rx="8"/>
@@ -47,7 +47,7 @@
   <text class="dg-t" x="360" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MCP</text>
   <rect class="dg-item" x="424" y="266" width="96" height="52" rx="6"/>
   <text class="dg-t" x="472" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Skills</text>
-  <path class="dg-arw" d="M360,342 V380" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,342 V380" marker-end="url(#backend-roadmap--s5-arw-w)"/>
 
   <!-- 적용 분야 -->
   <rect class="dg-zone" x="24" y="386" width="672" height="100" rx="8"/>
@@ -59,7 +59,7 @@
   <text class="dg-t" x="360" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">리팩터링</text>
   <rect class="dg-item" x="424" y="410" width="96" height="52" rx="6"/>
   <text class="dg-t" x="472" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">문서 생성</text>
-  <path class="dg-arw" d="M360,486 V524" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,486 V524" marker-end="url(#backend-roadmap--s5-arw-w)"/>
 
   <!-- AI 기능 개발 -->
   <rect class="dg-zone" x="24" y="530" width="672" height="166" rx="8"/>
@@ -77,4 +77,82 @@
   <text class="dg-t" x="606" y="585" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OpenAI</text>
   <rect class="dg-item" x="312" y="620" width="96" height="52" rx="6"/>
   <text class="dg-t" x="360" y="651" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Anthropic</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 1108" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="backend-roadmap--s5-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 기초 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="32" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">기초</text>
+  <rect class="dg-item" x="48" y="56" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="103" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LLM 동작 원리</text>
+  <rect class="dg-item" x="174" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="242" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기존 코딩과의 차이</text>
+  <rect class="dg-item" x="76" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">임베딩</text>
+  <rect class="dg-item" x="188" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">벡터</text>
+  <rect class="dg-item" x="132" y="188" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RAG</text>
+  <path class="dg-arw" d="M180,264 V302" marker-end="url(#backend-roadmap--s5-arw-n)"/>
+
+  <!-- AI 코딩 도구 -->
+  <rect class="dg-zone" x="24" y="308" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="302" width="66" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="311" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">AI 코딩 도구</text>
+  <rect class="dg-item" x="74" y="332" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="123" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Claude Code</text>
+  <rect class="dg-item" x="189" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="237" y="354" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Cursor</text>
+  <text class="dg-s" x="237" y="371" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="74" y="398" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="122" y="420" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Copilot</text>
+  <text class="dg-s" x="122" y="437" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="186" y="398" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="420" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Antigravity</text>
+  <text class="dg-s" x="235" y="437" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-item" x="69" y="464" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="495" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">프롬프팅 기법</text>
+  <rect class="dg-item" x="195" y="464" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="243" y="495" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Agents</text>
+  <rect class="dg-item" x="76" y="530" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="561" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MCP</text>
+  <rect class="dg-item" x="188" y="530" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="561" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Skills</text>
+  <path class="dg-arw" d="M180,606 V644" marker-end="url(#backend-roadmap--s5-arw-n)"/>
+
+  <!-- 적용 분야 -->
+  <rect class="dg-zone" x="24" y="650" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="644" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="653" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">적용 분야</text>
+  <rect class="dg-item" x="76" y="674" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">코드 리뷰</text>
+  <rect class="dg-item" x="188" y="674" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">리팩터링</text>
+  <rect class="dg-item" x="132" y="740" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="771" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">문서 생성</text>
+  <path class="dg-arw" d="M180,816 V854" marker-end="url(#backend-roadmap--s5-arw-n)"/>
+
+  <!-- AI 기능 개발 -->
+  <rect class="dg-zone" x="24" y="860" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="854" width="66" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="863" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">AI 기능 개발</text>
+  <rect class="dg-item" x="69" y="884" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="117" y="915" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스트리밍</text>
+  <rect class="dg-item" x="181" y="884" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="915" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구조화된 출력</text>
+  <rect class="dg-item" x="61" y="950" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="981" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Function Calling</text>
+  <rect class="dg-item" x="203" y="950" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="251" y="981" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Gemini</text>
+  <rect class="dg-item" x="76" y="1016" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="1047" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OpenAI</text>
+  <rect class="dg-item" x="188" y="1016" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="1047" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Anthropic</text>
 </svg>

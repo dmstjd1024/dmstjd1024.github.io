@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="react1--props-flow-title react1--props-flow-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="react1--props-flow-title react1--props-flow-desc">
   <title id="react1--props-flow-title">Props 는 상위 컴포넌트에서 하위로만 흐르고 하위에서 바꿀 수 없다</title>
   <desc id="react1--props-flow-desc">Props 는 상위 컴포넌트에서 하위로만 흐르고 하위에서 바꿀 수 없다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="react1--props-flow-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="123" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="171" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">App</text>
   <text class="dg-s" x="171" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">name="소플"</text>
@@ -22,4 +24,29 @@
   <rect class="dg-item" x="491" y="56" width="106" height="52" rx="6"/>
   <text class="dg-t" x="544" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Layout</text>
   <text class="dg-s" x="544" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">props 를 읽는다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 214" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="react1--props-flow-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="60" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="108" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">App</text>
+  <text class="dg-s" x="108" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">name="소플"</text>
+  <rect class="dg-item" x="172" y="56" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Profile</text>
+  <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">props.name 을 읽는다</text>
+  <rect class="dg-item" x="71" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="119" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">읽기 전용</text>
+  <text class="dg-s" x="119" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">고칠 수 없다</text>
+  <rect class="dg-item" x="183" y="122" width="106" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Layout</text>
+  <text class="dg-s" x="236" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">props 를 읽는다</text>
 </svg>

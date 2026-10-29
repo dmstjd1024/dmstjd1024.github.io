@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-labelledby="k8s--pod-network-title k8s--pod-network-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 358" role="img" aria-labelledby="k8s--pod-network-title k8s--pod-network-desc">
   <title id="k8s--pod-network-title">파드 네트워크가 로컬과 분리되어 있어 포트 포워딩이 필요한 구조</title>
   <desc id="k8s--pod-network-desc">파드 네트워크가 로컬과 분리되어 있어 포트 포워딩이 필요한 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="k8s--pod-network-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="112" y="56" width="163" height="52" rx="6"/>
   <text class="dg-t" x="193" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내 컴퓨터</text>
   <text class="dg-s" x="193" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">localhost:80 · 으로 열어봐도</text>
@@ -22,7 +24,7 @@
   <rect class="dg-item" x="249" y="122" width="221" height="52" rx="6"/>
   <text class="dg-t" x="359" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">포트를 이어준다</text>
   <text class="dg-s" x="359" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">kubectl port-forward · pod/nginx-pod 80…</text>
-  <path class="dg-arw" d="M360,198 V236" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,198 V236" marker-end="url(#k8s--pod-network-arw-w)"/>
 
   <!-- 파드 -->
   <rect class="dg-zone" x="24" y="242" width="672" height="100" rx="8"/>
@@ -30,4 +32,37 @@
   <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">파드</text>
   <rect class="dg-item" x="289" y="266" width="142" height="52" rx="6"/>
   <text class="dg-t" x="360" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">nginx 컨테이너 : 80</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="k8s--pod-network-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="98" y="56" width="163" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내 컴퓨터</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">localhost:80 · 으로 열어봐도</text>
+  <rect class="dg-item" x="129" y="122" width="101" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">막혀 있다</text>
+  <text class="dg-s" x="179" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">서로 분리된 망</text>
+  <rect class="dg-item" x="80" y="188" width="199" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파드 안으로 들어간다</text>
+  <text class="dg-s" x="179" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">kubectl exec -it nginx-pod · -- bash</text>
+  <rect class="dg-item" x="69" y="254" width="221" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">포트를 이어준다</text>
+  <text class="dg-s" x="179" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">kubectl port-forward · pod/nginx-pod 80…</text>
+  <path class="dg-arw" d="M180,330 V368" marker-end="url(#k8s--pod-network-arw-n)"/>
+
+  <!-- 파드 -->
+  <rect class="dg-zone" x="24" y="374" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="368" width="32" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="377" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">파드</text>
+  <rect class="dg-item" x="109" y="398" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">nginx 컨테이너 : 80</text>
 </svg>

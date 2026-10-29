@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="n1--where-n-happens-title n1--where-n-happens-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="n1--where-n-happens-title n1--where-n-happens-desc">
   <title id="n1--where-n-happens-title">같은 N+1 증상이라도 발생 지점이 연관 로딩, 애플리케이션 루프, DTO 매퍼로 갈린다</title>
   <desc id="n1--where-n-happens-desc">같은 N+1 증상이라도 발생 지점이 연관 로딩, 애플리케이션 루프, DTO 매퍼로 갈린다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="n1--where-n-happens-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="167" y="56" width="137" height="52" rx="6"/>
   <text class="dg-t" x="235" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿼리가 N 번 나간다</text>
   <rect class="dg-item" x="320" y="56" width="232" height="52" rx="6"/>
@@ -21,4 +23,28 @@
   <rect class="dg-item" x="368" y="122" width="232" height="52" rx="6"/>
   <text class="dg-t" x="484" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DTO 매퍼</text>
   <text class="dg-s" x="484" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">매퍼가 프록시를 · 건드릴 때 · @EntityGraph…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="n1--where-n-happens-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="111" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿼리가 N 번 나간다</text>
+  <rect class="dg-item" x="64" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">연관 로딩</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">엔티티의 컬렉션을 · 지연 로딩할 때 · fetch…</text>
+  <rect class="dg-item" x="64" y="188" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">애플리케이션 루프</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">코드가 반복문에서 · 집계 쿼리를 부를 때 · IN…</text>
+  <rect class="dg-item" x="64" y="254" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DTO 매퍼</text>
+  <text class="dg-s" x="180" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">매퍼가 프록시를 · 건드릴 때 · @EntityGraph…</text>
 </svg>

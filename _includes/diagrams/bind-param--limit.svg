@@ -1,20 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="bind-param--limit-title bind-param--limit-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="bind-param--limit-title bind-param--limit-desc">
   <title id="bind-param--limit-title">같은 65535 한도 아래에서도 행당 컬럼 수에 따라 넣을 수 있는 행 수가 달라진다</title>
   <desc id="bind-param--limit-desc">같은 65535 한도 아래에서도 행당 컬럼 수에 따라 넣을 수 있는 행 수가 달라진다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="bind-param--limit-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="155" y="56" width="229" height="52" rx="6"/>
   <text class="dg-t" x="269" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파라미터 총수 = 행 수 × 행당 파라…</text>
   <rect class="dg-item" x="400" y="56" width="164" height="52" rx="6"/>
   <text class="dg-t" x="482" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">65,535 를 넘으면 터진다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#bind-param--limit-arw-w)"/>
 
   <!-- 컬럼이 적은 쿼리 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -22,7 +24,7 @@
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컬럼이 적은 쿼리</text>
   <rect class="dg-item" x="283" y="200" width="153" height="52" rx="6"/>
   <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">20,000 행까지 한 번에</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#bind-param--limit-arw-w)"/>
 
   <!-- 컬럼이 많은 쿼리 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -30,4 +32,37 @@
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컬럼이 많은 쿼리</text>
   <rect class="dg-item" x="286" y="344" width="148" height="52" rx="6"/>
   <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">1,000 행도 이미 초과</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 502" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="bind-param--limit-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="65" y="56" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파라미터 총수 = 행 수 × 행당 파라…</text>
+  <rect class="dg-item" x="98" y="122" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">65,535 를 넘으면 터진다</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#bind-param--limit-arw-n)"/>
+
+  <!-- 컬럼이 적은 쿼리 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="83" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컬럼이 적은 쿼리</text>
+  <rect class="dg-item" x="103" y="266" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">20,000 행까지 한 번에</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#bind-param--limit-arw-n)"/>
+
+  <!-- 컬럼이 많은 쿼리 -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="83" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컬럼이 많은 쿼리</text>
+  <rect class="dg-item" x="106" y="410" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">1,000 행도 이미 초과</text>
 </svg>

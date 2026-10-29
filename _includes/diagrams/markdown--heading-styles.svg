@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="markdown--heading-styles-title markdown--heading-styles-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="markdown--heading-styles-title markdown--heading-styles-desc">
   <title id="markdown--heading-styles-title">마크다운 제목을 쓰는 두 가지 방법과 각각이 표현할 수 있는 단계</title>
   <desc id="markdown--heading-styles-desc">마크다운 제목을 쓰는 두 가지 방법과 각각이 표현할 수 있는 단계</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="markdown--heading-styles-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -15,7 +15,7 @@
   <rect class="dg-item" x="311" y="56" width="97" height="52" rx="6"/>
   <text class="dg-t" x="359" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle"># 제목 1</text>
   <text class="dg-s" x="359" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">###### 제목 6</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#markdown--heading-styles-arw-w)"/>
 
   <!-- 밑줄을 긋는 방식 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -24,4 +24,29 @@
   <rect class="dg-item" x="269" y="200" width="181" height="52" rx="6"/>
   <text class="dg-t" x="359" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">제목 1</text>
   <text class="dg-s" x="359" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">====== · 제목 2  아래에는 ------</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 292" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="markdown--heading-styles-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- # 을 붙이는 방식 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="83" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"># 을 붙이는 방식</text>
+  <rect class="dg-item" x="131" y="56" width="97" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle"># 제목 1</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">###### 제목 6</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#markdown--heading-styles-arw-n)"/>
+
+  <!-- 밑줄을 긋는 방식 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="83" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">밑줄을 긋는 방식</text>
+  <rect class="dg-item" x="89" y="200" width="181" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">제목 1</text>
+  <text class="dg-s" x="179" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">====== · 제목 2  아래에는 ------</text>
 </svg>

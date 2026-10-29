@@ -1,22 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="healthcheck--401-title healthcheck--401-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="healthcheck--401-title healthcheck--401-desc">
   <title id="healthcheck--401-title">401 응답은 앱이 살아 있다는 증거인데 curl -f 가 이를 실패로 처리했다</title>
   <desc id="healthcheck--401-desc">401 응답은 앱이 살아 있다는 증거인데 curl -f 가 이를 실패로 처리했다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="healthcheck--401-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="121" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="237" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그런데 curl -f 는</text>
   <text class="dg-s" x="237" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">4xx 를 전부 실패로 본다 · 정상 기동했는데 배…</text>
   <rect class="dg-item" x="369" y="56" width="230" height="52" rx="6"/>
   <text class="dg-t" x="484" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">헬스체크가 알고 싶은 것</text>
   <text class="dg-s" x="484" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">"앱이 떴는가" · 401 로 이미 충족된 질문이다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#healthcheck--401-arw-w)"/>
 
   <!-- 응답이 401 로 돌아왔다는 뜻은 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -28,4 +30,35 @@
   <text class="dg-t" x="373" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서블릿 컨테이너 생존</text>
   <rect class="dg-item" x="463" y="200" width="131" height="52" rx="6"/>
   <text class="dg-t" x="528" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">필터 체인 동작 중</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="healthcheck--401-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그런데 curl -f 는</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">4xx 를 전부 실패로 본다 · 정상 기동했는데 배…</text>
+  <rect class="dg-item" x="65" y="122" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">헬스체크가 알고 싶은 것</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">"앱이 떴는가" · 401 로 이미 충족된 질문이다</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#healthcheck--401-arw-n)"/>
+
+  <!-- 응답이 401 로 돌아왔다는 뜻은 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="137" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">응답이 401 로 돌아왔다는 뜻은</text>
+  <rect class="dg-item" x="101" y="266" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">요청이 앱까지 도달했다</text>
+  <rect class="dg-item" x="106" y="332" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서블릿 컨테이너 생존</text>
+  <rect class="dg-item" x="114" y="398" width="131" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">필터 체인 동작 중</text>
 </svg>

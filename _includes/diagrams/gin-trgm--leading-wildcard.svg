@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="gin-trgm--leading-wildcard-title gin-trgm--leading-wildcard-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="gin-trgm--leading-wildcard-title gin-trgm--leading-wildcard-desc">
   <title id="gin-trgm--leading-wildcard-title">앞에 퍼센트가 붙은 LIKE 는 B-tree 인덱스를 못 쓰지만 trigram 은 가능하다</title>
   <desc id="gin-trgm--leading-wildcard-desc">앞에 퍼센트가 붙은 LIKE 는 B-tree 인덱스를 못 쓰지만 trigram 은 가능하다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="gin-trgm--leading-wildcard-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -16,7 +16,7 @@
   <text class="dg-t" x="299" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LIKE 'abc%'</text>
   <rect class="dg-item" x="365" y="56" width="104" height="52" rx="6"/>
   <text class="dg-t" x="417" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LIKE '%abc%'</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#gin-trgm--leading-wildcard-arw-w)"/>
 
   <!-- GIN + pg_trgm -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -30,4 +30,35 @@
   <text class="dg-t" x="412" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">cde</text>
   <rect class="dg-item" x="476" y="200" width="104" height="52" rx="6"/>
   <text class="dg-t" x="528" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LIKE '%bcd%'</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 358" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="gin-trgm--leading-wildcard-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- B-tree -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">B-tree</text>
+  <rect class="dg-item" x="70" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="119" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LIKE 'abc%'</text>
+  <rect class="dg-item" x="185" y="56" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="237" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LIKE '%abc%'</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#gin-trgm--leading-wildcard-arw-n)"/>
+
+  <!-- GIN + pg_trgm -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">GIN + pg_trgm</text>
+  <rect class="dg-item" x="76" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">abc</text>
+  <rect class="dg-item" x="188" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">bcd</text>
+  <rect class="dg-item" x="72" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="120" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">cde</text>
+  <rect class="dg-item" x="184" y="266" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LIKE '%bcd%'</text>
 </svg>

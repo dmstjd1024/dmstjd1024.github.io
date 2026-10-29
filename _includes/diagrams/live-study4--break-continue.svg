@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study4--break-continue-title live-study4--break-continue-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study4--break-continue-title live-study4--break-continue-desc">
   <title id="live-study4--break-continue-title">break 는 반복문을 벗어나고 continue 는 다음 회차로 건너뛴다는 차이</title>
   <desc id="live-study4--break-continue-desc">break 는 반복문을 벗어나고 continue 는 다음 회차로 건너뛴다는 차이</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="live-study4--break-continue-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -18,7 +18,7 @@
   <text class="dg-t" x="334" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">break</text>
   <rect class="dg-item" x="398" y="56" width="148" height="52" rx="6"/>
   <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">반복문 밖으로 나온다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#live-study4--break-continue-arw-w)"/>
 
   <!-- continue -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -30,4 +30,35 @@
   <text class="dg-t" x="307" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">continue</text>
   <rect class="dg-item" x="371" y="200" width="202" height="52" rx="6"/>
   <text class="dg-t" x="472" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이번 회차만 건너뛰고 계속 돈다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="live-study4--break-continue-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- break -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="37" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">break</text>
+  <rect class="dg-item" x="76" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">반복문 안</text>
+  <rect class="dg-item" x="188" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">break</text>
+  <rect class="dg-item" x="106" y="122" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">반복문 밖으로 나온다</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#live-study4--break-continue-arw-n)"/>
+
+  <!-- continue -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">continue</text>
+  <rect class="dg-item" x="76" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">반복문 안</text>
+  <rect class="dg-item" x="188" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">continue</text>
+  <rect class="dg-item" x="79" y="332" width="202" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이번 회차만 건너뛰고 계속 돈다</text>
 </svg>

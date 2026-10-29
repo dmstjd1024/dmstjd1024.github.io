@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="redis-session--two-keys-title redis-session--two-keys-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="redis-session--two-keys-title redis-session--two-keys-desc">
   <title id="redis-session--two-keys-title">Redis 안에 내가 만든 장부 키와 Spring Session 이 관리하는 세션 키가 따로 있는데, 강제 로그인에서 장부만 지우면 세션 키가 남아 다른 기기의 요청이 그대로 통과하고, 두 키를 모두 지워야 인증이 끊기는 구조</title>
   <desc id="redis-session--two-keys-desc">Redis 안에 내가 만든 장부 키와 Spring Session 이 관리하는 세션 키가 따로 있는데, 강제 로그인에서 장부만 지우면 세션 키가 남아 다른 기기의 요청이 그대로 통과하고, 두 키를 모두 지워야 인증이 끊기는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="redis-session--two-keys-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -18,7 +18,7 @@
   <rect class="dg-item" x="369" y="56" width="230" height="52" rx="6"/>
   <text class="dg-t" x="484" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">icbm:session:sessions:{sessio…</text>
   <text class="dg-s" x="484" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Spring Session 이 만든 진짜 세션 · 요청을…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#redis-session--two-keys-arw-w)"/>
 
   <!-- 1차 — 장부만 지웠다 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -28,7 +28,7 @@
   <text class="dg-t" x="264" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">delete(user:sessions:{userId}…</text>
   <rect class="dg-item" x="384" y="200" width="175" height="52" rx="6"/>
   <text class="dg-t" x="471" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다른 기기는 그대로 쓰였다</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#redis-session--two-keys-arw-w)"/>
 
   <!-- 고친 뒤 — 세션부터 지운다 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -39,4 +39,44 @@
   <text class="dg-s" x="259" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">세션 본체와 역인덱스를 지운다</text>
   <rect class="dg-item" x="360" y="344" width="185" height="52" rx="6"/>
   <text class="dg-t" x="452" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다음 요청에서 인증이 끊긴다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 634" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="redis-session--two-keys-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- Redis -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="37" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Redis</text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">user:sessions:{userId}</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">내가 만든 장부 — 기기 정보를 담은 Hash · 개…</text>
+  <rect class="dg-item" x="65" y="122" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">icbm:session:sessions:{sessio…</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Spring Session 이 만든 진짜 세션 · 요청을…</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#redis-session--two-keys-arw-n)"/>
+
+  <!-- 1차 — 장부만 지웠다 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="100" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">1차 — 장부만 지웠다</text>
+  <rect class="dg-item" x="76" y="266" width="207" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">delete(user:sessions:{userId}…</text>
+  <rect class="dg-item" x="92" y="332" width="175" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다른 기기는 그대로 쓰였다</text>
+  <path class="dg-arw" d="M180,408 V446" marker-end="url(#redis-session--two-keys-arw-n)"/>
+
+  <!-- 고친 뒤 — 세션부터 지운다 -->
+  <rect class="dg-zone" x="24" y="452" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="446" width="125" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="455" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">고친 뒤 — 세션부터 지운다</text>
+  <rect class="dg-item" x="95" y="476" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="498" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">장부에서 세션 ID 를 꺼내</text>
+  <text class="dg-s" x="179" y="515" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">세션 본체와 역인덱스를 지운다</text>
+  <rect class="dg-item" x="87" y="542" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">다음 요청에서 인증이 끊긴다</text>
 </svg>

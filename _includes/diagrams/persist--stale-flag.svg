@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="persist--stale-flag-title persist--stale-flag-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="persist--stale-flag-title persist--stale-flag-desc">
   <title id="persist--stale-flag-title">localStorage 에 저장된 isAuthenticated 와 실제 토큰 만료가 서로 연결되어 있지 않다</title>
   <desc id="persist--stale-flag-desc">localStorage 에 저장된 isAuthenticated 와 실제 토큰 만료가 서로 연결되어 있지 않다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="persist--stale-flag-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="244" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그 결과</text>
   <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">"로그인돼 있다" 고 믿고 로딩 화면에 머무는데,…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#persist--stale-flag-arw-w)"/>
 
   <!-- localStorage -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -22,7 +24,7 @@
   <rect class="dg-item" x="283" y="200" width="153" height="52" rx="6"/>
   <text class="dg-t" x="359" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">isAuthenticated: true</text>
   <text class="dg-s" x="359" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">↔</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#persist--stale-flag-arw-w)"/>
 
   <!-- 실제 토큰 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -30,4 +32,37 @@
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">실제 토큰</text>
   <rect class="dg-item" x="310" y="344" width="99" height="52" rx="6"/>
   <text class="dg-t" x="359" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이미 만료됨</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 436" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="persist--stale-flag-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그 결과</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">"로그인돼 있다" 고 믿고 로딩 화면에 머무는데,…</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#persist--stale-flag-arw-n)"/>
+
+  <!-- localStorage -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="66" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">localStorage</text>
+  <rect class="dg-item" x="103" y="200" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">isAuthenticated: true</text>
+  <text class="dg-s" x="179" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">↔</text>
+  <path class="dg-arw" d="M180,276 V314" marker-end="url(#persist--stale-flag-arw-n)"/>
+
+  <!-- 실제 토큰 -->
+  <rect class="dg-zone" x="24" y="320" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">실제 토큰</text>
+  <rect class="dg-item" x="130" y="344" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이미 만료됨</text>
 </svg>

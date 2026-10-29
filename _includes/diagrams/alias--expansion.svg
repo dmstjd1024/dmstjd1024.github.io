@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="alias--expansion-title alias--expansion-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="alias--expansion-title alias--expansion-desc">
   <title id="alias--expansion-title">셸이 명령어를 실행하기 전에 alias 를 원래 명령으로 펼쳐 넣는 과정</title>
   <desc id="alias--expansion-desc">셸이 명령어를 실행하기 전에 alias 를 원래 명령으로 펼쳐 넣는 과정</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="alias--expansion-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="168" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="216" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내가 친 것</text>
   <text class="dg-s" x="216" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">log</text>
@@ -18,4 +20,25 @@
   <text class="dg-s" x="359" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">tail -f /경로/logs/파일.log</text>
   <rect class="dg-item" x="455" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="503" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">실행</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="alias--expansion-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="132" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내가 친 것</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">log</text>
+  <rect class="dg-item" x="100" y="122" width="159" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">실제로 실행되는 것</text>
+  <text class="dg-s" x="179" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">tail -f /경로/logs/파일.log</text>
+  <rect class="dg-item" x="132" y="188" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">실행</text>
 </svg>

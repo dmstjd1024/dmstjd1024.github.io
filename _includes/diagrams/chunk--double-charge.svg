@@ -1,20 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="chunk--double-charge-title chunk--double-charge-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="chunk--double-charge-title chunk--double-charge-desc">
   <title id="chunk--double-charge-title">run A 와 run B 가 트랜잭션 밖에서 같은 pending 집합을 스냅샷하고 B 가 상태 확인 없이 다시 로드해 외부 API 를 두 번 호출한다</title>
   <desc id="chunk--double-charge-desc">run A 와 run B 가 트랜잭션 밖에서 같은 pending 집합을 스냅샷하고 B 가 상태 확인 없이 다시 로드해 외부 API 를 두 번 호출한다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="chunk--double-charge-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="123" y="56" width="229" height="52" rx="6"/>
   <text class="dg-t" x="237" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">pending 스냅샷 — 트랜잭션 밖에서…</text>
   <rect class="dg-item" x="368" y="56" width="229" height="52" rx="6"/>
   <text class="dg-t" x="482" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같은 구간 이중 과금 + A 결과 덮어…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#chunk--double-charge-arw-w)"/>
 
   <!-- run A -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -22,7 +24,7 @@
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">run A</text>
   <rect class="dg-item" x="248" y="200" width="223" height="52" rx="6"/>
   <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">외부 API 호출 → 청크 커밋 (succ…</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#chunk--double-charge-arw-w)"/>
 
   <!-- run B -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -30,4 +32,37 @@
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">run B</text>
   <rect class="dg-item" x="254" y="344" width="212" height="52" rx="6"/>
   <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">findAllById — 상태를 확인하지…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 502" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="chunk--double-charge-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="65" y="56" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">pending 스냅샷 — 트랜잭션 밖에서…</text>
+  <rect class="dg-item" x="65" y="122" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같은 구간 이중 과금 + A 결과 덮어…</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#chunk--double-charge-arw-n)"/>
+
+  <!-- run A -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="37" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">run A</text>
+  <rect class="dg-item" x="68" y="266" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">외부 API 호출 → 청크 커밋 (succ…</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#chunk--double-charge-arw-n)"/>
+
+  <!-- run B -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="37" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">run B</text>
+  <rect class="dg-item" x="74" y="410" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">findAllById — 상태를 확인하지…</text>
 </svg>

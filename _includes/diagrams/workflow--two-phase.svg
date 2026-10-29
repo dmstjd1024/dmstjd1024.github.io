@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="workflow--two-phase-title workflow--two-phase-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="workflow--two-phase-title workflow--two-phase-desc">
   <title id="workflow--two-phase-title">work-start 의 2단계 구조: Phase A 는 최신화만 하고 멈추며, 작업 설명을 받은 뒤 Phase B 에서 브랜치 이름을 짓는다</title>
   <desc id="workflow--two-phase-desc">work-start 의 2단계 구조: Phase A 는 최신화만 하고 멈추며, 작업 설명을 받은 뒤 Phase B 에서 브랜치 이름을 짓는다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="workflow--two-phase-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="270" y="56" width="180" height="52" rx="6"/>
   <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사용자: "무슨 작업을 할지"</text>
   <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">이 프롬프트가 이름의 근거다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#workflow--two-phase-arw-w)"/>
 
   <!-- Phase A — 브랜치는 아직 안 만든다 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -31,7 +33,7 @@
   <rect class="dg-item" x="514" y="200" width="97" height="52" rx="6"/>
   <text class="dg-t" x="562" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">멈춘다</text>
   <text class="dg-s" x="562" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">작업을 묻는다</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#workflow--two-phase-arw-w)"/>
 
   <!-- Phase B — 이제 이름을 짓는다 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -43,4 +45,50 @@
   <rect class="dg-item" x="378" y="344" width="148" height="52" rx="6"/>
   <text class="dg-t" x="452" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">FE · BE 두 repo 생성</text>
   <text class="dg-s" x="452" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">같은 이름 · eunseong 위</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 568" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="workflow--two-phase-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="90" y="56" width="180" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사용자: "무슨 작업을 할지"</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">이 프롬프트가 이름의 근거다</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#workflow--two-phase-arw-n)"/>
+
+  <!-- Phase A — 브랜치는 아직 안 만든다 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="158" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Phase A — 브랜치는 아직 안 만든다</text>
+  <rect class="dg-item" x="59" y="200" width="97" height="52" rx="6"/>
+  <text class="dg-t" x="107" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">fetch</text>
+  <text class="dg-s" x="107" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">dev 존재 확인</text>
+  <rect class="dg-item" x="172" y="200" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">eunseong 확보</text>
+  <text class="dg-s" x="236" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">없으면 dev 기준 생성</text>
+  <rect class="dg-item" x="57" y="266" width="132" height="52" rx="6"/>
+  <text class="dg-t" x="123" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">rebase</text>
+  <text class="dg-s" x="123" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">origin/dev 를 그 위에</text>
+  <rect class="dg-item" x="205" y="266" width="97" height="52" rx="6"/>
+  <text class="dg-t" x="253" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">멈춘다</text>
+  <text class="dg-s" x="253" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">작업을 묻는다</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#workflow--two-phase-arw-n)"/>
+
+  <!-- Phase B — 이제 이름을 짓는다 -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="137" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Phase B — 이제 이름을 짓는다</text>
+  <rect class="dg-item" x="96" y="410" width="168" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="432" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">브랜치 이름 결정</text>
+  <text class="dg-s" x="180" y="449" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">feature/ITS-63-lca-result-pdf</text>
+  <rect class="dg-item" x="106" y="476" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="498" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">FE · BE 두 repo 생성</text>
+  <text class="dg-s" x="180" y="515" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">같은 이름 · eunseong 위</text>
 </svg>

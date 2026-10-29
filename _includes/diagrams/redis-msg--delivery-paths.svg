@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="redis-msg--delivery-paths-title redis-msg--delivery-paths-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="redis-msg--delivery-paths-title redis-msg--delivery-paths-desc">
   <title id="redis-msg--delivery-paths-title">소비자가 처리 도중 죽었을 때 Pub/Sub은 메시지가 사라지고 List는 꺼낸 메시지만 사라지며 Streams는 PEL에 남아 재처리되는 구조</title>
   <desc id="redis-msg--delivery-paths-desc">소비자가 처리 도중 죽었을 때 Pub/Sub은 메시지가 사라지고 List는 꺼낸 메시지만 사라지며 Streams는 PEL에 남아 재처리되는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="redis-msg--delivery-paths-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -18,7 +18,7 @@
   <text class="dg-t" x="337" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구독자에게 즉시 밀어냄</text>
   <rect class="dg-item" x="432" y="56" width="142" height="52" rx="6"/>
   <text class="dg-t" x="503" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버에 남는 것 없음</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#redis-msg--delivery-paths-arw-w)"/>
 
   <!-- List -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -30,7 +30,7 @@
   <text class="dg-t" x="339" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">키에 쌓여 대기</text>
   <rect class="dg-item" x="413" y="200" width="137" height="52" rx="6"/>
   <text class="dg-t" x="481" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RPOP 한 1건만 증발</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#redis-msg--delivery-paths-arw-w)"/>
 
   <!-- Streams -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -42,4 +42,47 @@
   <text class="dg-t" x="333" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">append 되고 안 지워짐</text>
   <rect class="dg-item" x="426" y="344" width="148" height="52" rx="6"/>
   <text class="dg-t" x="500" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PEL 에 미처리로 남음</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 766" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="redis-msg--delivery-paths-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- Pub/Sub -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Pub/Sub</text>
+  <rect class="dg-item" x="132" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PUBLISH</text>
+  <rect class="dg-item" x="101" y="122" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구독자에게 즉시 밀어냄</text>
+  <rect class="dg-item" x="109" y="188" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버에 남는 것 없음</text>
+  <path class="dg-arw" d="M180,264 V302" marker-end="url(#redis-msg--delivery-paths-arw-n)"/>
+
+  <!-- List -->
+  <rect class="dg-zone" x="24" y="308" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="302" width="32" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="311" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">List</text>
+  <rect class="dg-item" x="66" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="114" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LPUSH</text>
+  <rect class="dg-item" x="178" y="332" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">키에 쌓여 대기</text>
+  <rect class="dg-item" x="111" y="398" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RPOP 한 1건만 증발</text>
+  <path class="dg-arw" d="M180,474 V512" marker-end="url(#redis-msg--delivery-paths-arw-n)"/>
+
+  <!-- Streams -->
+  <rect class="dg-zone" x="24" y="518" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="512" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="521" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Streams</text>
+  <rect class="dg-item" x="132" y="542" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">XADD</text>
+  <rect class="dg-item" x="103" y="608" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="639" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">append 되고 안 지워짐</text>
+  <rect class="dg-item" x="106" y="674" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PEL 에 미처리로 남음</text>
 </svg>

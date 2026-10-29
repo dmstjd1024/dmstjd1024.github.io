@@ -1,19 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="jira--cfd-bottleneck-title jira--cfd-bottleneck-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="jira--cfd-bottleneck-title jira--cfd-bottleneck-desc">
   <title id="jira--cfd-bottleneck-title">누적 흐름도에서 리뷰 중 띠가 두꺼워지며 병목을 드러내는 구조</title>
   <desc id="jira--cfd-bottleneck-desc">누적 흐름도에서 리뷰 중 띠가 두꺼워지며 병목을 드러내는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="jira--cfd-bottleneck-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="120" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">리뷰 띠가 두꺼워진다</text>
   <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">= 리뷰가 밀리고 있다 · 들어오는 속도 &gt; 처리…</text>
   <rect class="dg-item" x="368" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="484" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">대응</text>
   <text class="dg-s" x="484" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">리뷰 우선순위를 올린다 · 또는 WIP 제한을 건…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 214" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="jira--cfd-bottleneck-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">리뷰 띠가 두꺼워진다</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">= 리뷰가 밀리고 있다 · 들어오는 속도 &gt; 처리…</text>
+  <rect class="dg-item" x="64" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">대응</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">리뷰 우선순위를 올린다 · 또는 WIP 제한을 건…</text>
 </svg>

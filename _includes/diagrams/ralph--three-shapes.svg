@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="ralph--three-shapes-title ralph--three-shapes-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="ralph--three-shapes-title ralph--three-shapes-desc">
   <title id="ralph--three-shapes-title">원형은 셸이 무한히 반복하고, 공식 플러그인은 세션 안에서 Stop 훅으로 반복하며, 셸 드라이버는 매 사이클 새 프로세스를 띄우고 파일로 상태를 넘기는 세 가지 형태</title>
   <desc id="ralph--three-shapes-desc">원형은 셸이 무한히 반복하고, 공식 플러그인은 세션 안에서 Stop 훅으로 반복하며, 셸 드라이버는 매 사이클 새 프로세스를 띄우고 파일로 상태를 넘기는 세 가지 형태</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="ralph--three-shapes-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -16,7 +16,7 @@
   <text class="dg-t" x="294" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">while : 무한 반복</text>
   <rect class="dg-item" x="376" y="56" width="115" height="52" rx="6"/>
   <text class="dg-t" x="433" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">멈춤 조건 없음</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#ralph--three-shapes-arw-w)"/>
 
   <!-- 공식 플러그인 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -27,7 +27,7 @@
   <text class="dg-s" x="275" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Stop 훅이 종료를 막고 · 같은 프롬프트를 재투…</text>
   <rect class="dg-item" x="407" y="200" width="153" height="52" rx="6"/>
   <text class="dg-t" x="483" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">걸음 수가 계속 쌓인다</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#ralph--three-shapes-arw-w)"/>
 
   <!-- 셸 드라이버 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -38,4 +38,43 @@
   <text class="dg-s" x="278" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">셸이 밖에서 다시 띄운다 · 상태는 파일에만 남…</text>
   <rect class="dg-item" x="410" y="344" width="148" height="52" rx="6"/>
   <text class="dg-t" x="484" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">컨텍스트는 새로 시작</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 568" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="ralph--three-shapes-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 원형 — bash -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="66" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">원형 — bash</text>
+  <rect class="dg-item" x="49" y="56" width="131" height="52" rx="6"/>
+  <text class="dg-t" x="114" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">while : 무한 반복</text>
+  <rect class="dg-item" x="196" y="56" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="253" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">멈춤 조건 없음</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#ralph--three-shapes-arw-n)"/>
+
+  <!-- 공식 플러그인 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">공식 플러그인</text>
+  <rect class="dg-item" x="64" y="200" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">세션 하나</text>
+  <text class="dg-s" x="180" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Stop 훅이 종료를 막고 · 같은 프롬프트를 재투…</text>
+  <rect class="dg-item" x="103" y="266" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">걸음 수가 계속 쌓인다</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#ralph--three-shapes-arw-n)"/>
+
+  <!-- 셸 드라이버 -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="62" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">셸 드라이버</text>
+  <rect class="dg-item" x="64" y="410" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="432" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">매번 새 프로세스</text>
+  <text class="dg-s" x="180" y="449" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">셸이 밖에서 다시 띄운다 · 상태는 파일에만 남…</text>
+  <rect class="dg-item" x="106" y="476" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">컨텍스트는 새로 시작</text>
 </svg>

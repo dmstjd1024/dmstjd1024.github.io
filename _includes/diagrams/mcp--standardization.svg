@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 424" role="img" aria-labelledby="mcp--standardization-title mcp--standardization-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 424" role="img" aria-labelledby="mcp--standardization-title mcp--standardization-desc">
   <title id="mcp--standardization-title">프레임워크마다 제각각이던 툴 연동 방식이 표준 프로토콜로 정리되는 구조</title>
   <desc id="mcp--standardization-desc">프레임워크마다 제각각이던 툴 연동 방식이 표준 프로토콜로 정리되는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="mcp--standardization-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -24,7 +24,7 @@
   <text class="dg-t" x="584" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">API</text>
   <rect class="dg-item" x="312" y="122" width="96" height="52" rx="6"/>
   <text class="dg-t" x="360" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일</text>
-  <path class="dg-arw" d="M360,198 V236" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,198 V236" marker-end="url(#mcp--standardization-arw-w)"/>
 
   <!-- MCP 이후 -->
   <rect class="dg-zone" x="24" y="242" width="672" height="166" rx="8"/>
@@ -44,4 +44,49 @@
   <text class="dg-t" x="304" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">API</text>
   <rect class="dg-item" x="368" y="332" width="96" height="52" rx="6"/>
   <text class="dg-t" x="416" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 622" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="mcp--standardization-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- MCP 이전 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">MCP 이전</text>
+  <rect class="dg-item" x="76" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">에이전트 A</text>
+  <rect class="dg-item" x="188" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">에이전트 B</text>
+  <rect class="dg-item" x="76" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">에이전트 C</text>
+  <rect class="dg-item" x="188" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DB</text>
+  <rect class="dg-item" x="76" y="188" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">API</text>
+  <rect class="dg-item" x="188" y="188" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일</text>
+  <path class="dg-arw" d="M180,264 V302" marker-end="url(#mcp--standardization-arw-n)"/>
+
+  <!-- MCP 이후 -->
+  <rect class="dg-zone" x="24" y="308" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="302" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="311" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">MCP 이후</text>
+  <rect class="dg-item" x="76" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">에이전트 A</text>
+  <rect class="dg-item" x="188" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">에이전트 B</text>
+  <rect class="dg-item" x="55" y="398" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="103" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">에이전트 C</text>
+  <rect class="dg-item" x="167" y="398" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MCP — 하나의 규약</text>
+  <rect class="dg-item" x="76" y="464" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="495" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DB</text>
+  <rect class="dg-item" x="188" y="464" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="495" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">API</text>
+  <rect class="dg-item" x="132" y="530" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="561" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일</text>
 </svg>

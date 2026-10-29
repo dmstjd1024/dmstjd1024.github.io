@@ -7,7 +7,8 @@
 """
 import html
 
-W = 720           # viewBox 폭
+W = 720           # viewBox 폭 (가로본)
+W_NARROW = 360    # 폰 폭. 본문 폭이 이보다 좁아지면 세로본으로 바꾼다
 PAD = 24          # 좌우 여백
 ZONE_PAD = 24     # 존 안쪽 여백
 NODE_H = 52
@@ -38,19 +39,29 @@ def wrap_rows(items, avail_w):
     return rows
 
 
-def node_width(label, sub):
-    """글자 수로 대략의 폭을 잡는다. 한글은 넓게 친다."""
+def node_width(label, sub, W=W):
+    """글자 수로 대략의 폭을 잡는다. 한글은 넓게 친다.
+
+    상한은 존 안쪽 폭을 넘지 않게 잡는다 — 세로본(360)에서 232 를 그대로
+    쓰면 상자가 존 밖으로 삐져나온다.
+    """
     def vis(s):
         return sum(2 if ord(c) > 0x2000 else 1 for c in s)
+    cap = min(232, W - 2 * PAD - 2 * ZONE_PAD)
     n = max(vis(label), vis(sub or "") * 0.82)
-    return max(96, min(232, int(n * 5.4) + 40))
+    return max(min(96, cap), min(cap, int(n * 5.4) + 40))
 
 
-def build(zones, out_path, title, desc, focal_zone=None):
+def render(zones, focal_zone, W, arw="br-arw"):
+    """주어진 폭으로 도형을 그려 (줄 목록, 전체 높이) 를 돌려준다.
+
+    폭만 바꾸면 wrap_rows 가 알아서 다음 줄로 접으므로, 같은 코드로
+    가로본(720)과 세로본(360)을 만든다.
+    """
     body, y = [], 32
 
     for zi, z in enumerate(zones):
-        nodes = [dict(n, w=node_width(n["t"], n.get("s"))) for n in z["nodes"]]
+        nodes = [dict(n, w=node_width(n["t"], n.get("s"), W)) for n in z["nodes"]]
         rows = wrap_rows(nodes, W - 2 * PAD - 2 * ZONE_PAD)
 
         zone_h = ZONE_LABEL_H + len(rows) * NODE_H + (len(rows) - 1) * ROW_GAP + ZONE_PAD
@@ -80,7 +91,7 @@ def build(zones, out_path, title, desc, focal_zone=None):
                 if i > 0 and z.get("seq"):
                     body.append(
                         f'  <path class="dg-arw" d="M{nx-NODE_GAP},{ny+NODE_H//2} H{nx-3}" '
-                        f'marker-end="url(#br-arw)"/>')
+                        f'marker-end="url(#{arw})"/>')
                 body.append(f'  <rect class="{ncls}" x="{nx}" y="{ny}" width="{n["w"]}" height="{NODE_H}" rx="6"/>')
                 cx = nx + n["w"] // 2
                 if n.get("s"):
@@ -100,21 +111,48 @@ def build(zones, out_path, title, desc, focal_zone=None):
         y += zone_h
         if zi < len(zones) - 1:
             body.append(
-                f'  <path class="dg-arw" d="M{W//2},{y} V{y+ZONE_GAP-6}" marker-end="url(#br-arw)"/>')
+                f'  <path class="dg-arw" d="M{W//2},{y} V{y+ZONE_GAP-6}" marker-end="url(#{arw})"/>')
             y += ZONE_GAP
 
-    total_h = y + 16
-    head = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {total_h}" role="img" '
-        f'aria-labelledby="{out_path.stem}-title {out_path.stem}-desc">',
-        f'  <title id="{out_path.stem}-title">{esc(title)}</title>',
-        f'  <desc id="{out_path.stem}-desc">{esc(desc)}</desc>',
-        '',
-        '  <defs>',
-        '    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">',
-        '      <path d="M0 0 L8 3 L0 6 z"/>',
-        '    </marker>',
-        '  </defs>',
-    ]
-    out_path.write_text("\n".join(head + body) + "\n</svg>\n", encoding="utf-8")
-    return total_h
+    return body, y + 16
+
+
+def build(zones, out_path, title, desc, focal_zone=None):
+    """가로본과 세로본을 한 파일에 나란히 넣는다.
+
+    SVG 의 viewBox 는 CSS 로 바꿀 수 없다. 그래서 하나를 두고 늘이는 대신
+    형제 <svg> 2개를 두고 diagram.scss 가 display 로 하나만 보여준다.
+    한 장만 두면 폰에서 720 폭이 통째로 축소돼 존 라벨이 3.6px 까지
+    작아졌다 (390px 뷰포트 실측, 2026-10-29).
+    """
+    stem = out_path.stem
+    arw = f"{stem}-arw"
+    wide_body, wide_h = render(zones, focal_zone, W, arw + "-w")
+    narrow_body, narrow_h = render(zones, focal_zone, W_NARROW, arw + "-n")
+
+    def defs(suffix):
+        # 두 본이 한 문서에 같이 있으므로 marker id 가 겹치면 안 된다.
+        return [
+            '  <defs>',
+            f'    <marker id="{arw}{suffix}" markerWidth="8" markerHeight="6" '
+            'refX="7" refY="3" orient="auto">',
+            '      <path d="M0 0 L8 3 L0 6 z"/>',
+            '    </marker>',
+            '  </defs>',
+        ]
+
+    def one(cls, vb_w, vb_h, lines, suffix, labelled):
+        # 접근성 이름은 한쪽에만 둔다 — 둘 다 주면 같은 설명이 두 번 읽힌다.
+        a11y = (f' role="img" aria-labelledby="{stem}-title {stem}-desc"'
+                if labelled else ' role="presentation" aria-hidden="true"')
+        head = [f'<svg xmlns="http://www.w3.org/2000/svg" class="{cls}" '
+                f'viewBox="0 0 {vb_w} {vb_h}"{a11y}>']
+        if labelled:
+            head += [f'  <title id="{stem}-title">{esc(title)}</title>',
+                     f'  <desc id="{stem}-desc">{esc(desc)}</desc>']
+        return head + [''] + defs(suffix) + lines + ['</svg>']
+
+    out = (one("dg-wide", W, wide_h, wide_body, "-w", True)
+           + one("dg-narrow", W_NARROW, narrow_h, narrow_body, "-n", False))
+    out_path.write_text("\n".join(out) + "\n", encoding="utf-8")
+    return wide_h

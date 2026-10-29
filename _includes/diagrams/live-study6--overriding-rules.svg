@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 358" role="img" aria-labelledby="live-study6--overriding-rules-title live-study6--overriding-rules-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 358" role="img" aria-labelledby="live-study6--overriding-rules-title live-study6--overriding-rules-desc">
   <title id="live-study6--overriding-rules-title">메서드 오버라이딩이 성립하려면 지켜야 할 조건들</title>
   <desc id="live-study6--overriding-rules-desc">메서드 오버라이딩이 성립하려면 지켜야 할 조건들</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="live-study6--overriding-rules-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -18,7 +18,7 @@
   <text class="dg-t" x="329" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">매개변수</text>
   <rect class="dg-item" x="393" y="56" width="158" height="52" rx="6"/>
   <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">반환: 같거나 하위 타입</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#live-study6--overriding-rules-arw-w)"/>
 
   <!-- 접근 범위와 checked 예외 범위에는 제약이 있다 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="166" rx="8"/>
@@ -30,4 +30,35 @@
   <text class="dg-t" x="484" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">checked 예외 — 같은·하위 타입</text>
   <rect class="dg-item" x="245" y="266" width="229" height="52" rx="6"/>
   <text class="dg-t" x="359" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">static 메서드는 오버라이딩이 아니…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="live-study6--overriding-rules-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 이름과 매개변수 타입은 같아야 한다 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="158" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">이름과 매개변수 타입은 같아야 한다</text>
+  <rect class="dg-item" x="76" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이름</text>
+  <rect class="dg-item" x="188" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">매개변수</text>
+  <rect class="dg-item" x="101" y="122" width="158" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">반환: 같거나 하위 타입</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#live-study6--overriding-rules-arw-n)"/>
+
+  <!-- 접근 범위와 checked 예외 범위에는 제약이 있다 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="205" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">접근 범위와 checked 예외 범위에는 제약이 있다</text>
+  <rect class="dg-item" x="64" y="266" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">접근 제어자 — 조상보다 좁게 못 한…</text>
+  <rect class="dg-item" x="79" y="332" width="202" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">checked 예외 — 같은·하위 타입</text>
+  <rect class="dg-item" x="65" y="398" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">static 메서드는 오버라이딩이 아니…</text>
 </svg>

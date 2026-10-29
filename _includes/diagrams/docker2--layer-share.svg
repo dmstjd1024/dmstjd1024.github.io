@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="docker2--layer-share-title docker2--layer-share-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="docker2--layer-share-title docker2--layer-share-desc">
   <title id="docker2--layer-share-title">여러 이미지가 같은 레이어를 공유하므로 실제 디스크 사용량은 표시된 합보다 작다</title>
   <desc id="docker2--layer-share-desc">여러 이미지가 같은 레이어를 공유하므로 실제 디스크 사용량은 표시된 합보다 작다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="docker2--layer-share-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="99" y="56" width="163" height="52" rx="6"/>
   <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이미지 A</text>
   <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">앱 레이어 · + Node.js 런타임</text>
@@ -22,4 +24,29 @@
   <rect class="dg-item" x="256" y="122" width="207" height="52" rx="6"/>
   <text class="dg-t" x="359" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Node.js 레이어 — 실제로는 하나</text>
   <text class="dg-s" x="359" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">디스크에 한 번만 저장된다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="docker2--layer-share-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="98" y="56" width="163" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이미지 A</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">앱 레이어 · + Node.js 런타임</text>
+  <rect class="dg-item" x="98" y="122" width="163" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이미지 B</text>
+  <text class="dg-s" x="179" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">앱 레이어 · + Node.js 런타임</text>
+  <rect class="dg-item" x="98" y="188" width="163" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이미지 C</text>
+  <text class="dg-s" x="179" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">앱 레이어 · + Node.js 런타임</text>
+  <rect class="dg-item" x="76" y="254" width="207" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Node.js 레이어 — 실제로는 하나</text>
+  <text class="dg-s" x="179" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">디스크에 한 번만 저장된다</text>
 </svg>

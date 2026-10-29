@@ -1,20 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="ci-cache--nobody-seeds-title ci-cache--nobody-seeds-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="ci-cache--nobody-seeds-title ci-cache--nobody-seeds-desc">
   <title id="ci-cache--nobody-seeds-title">기본 브랜치 main 에는 빌드 워크플로가 없고 CI 는 PR 로만 돌아 어느 워크플로도 캐시를 채울 자격을 갖지 못한다</title>
   <desc id="ci-cache--nobody-seeds-desc">기본 브랜치 main 에는 빌드 워크플로가 없고 CI 는 PR 로만 돌아 어느 워크플로도 캐시를 채울 자격을 갖지 못한다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="ci-cache--nobody-seeds-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="128" y="56" width="218" height="52" rx="6"/>
   <text class="dg-t" x="237" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기본값 — ref_name 이 기본 브랜…</text>
   <rect class="dg-item" x="362" y="56" width="229" height="52" rx="6"/>
   <text class="dg-t" x="476" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">아무도 캐시를 채우지 못한다 — 계…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#ci-cache--nobody-seeds-arw-w)"/>
 
   <!-- main — 기본 브랜치 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -22,7 +24,7 @@
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">main — 기본 브랜치</text>
   <rect class="dg-item" x="248" y="200" width="223" height="52" rx="6"/>
   <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">자격은 있지만 빌드 워크플로가 없다</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#ci-cache--nobody-seeds-arw-w)"/>
 
   <!-- PR — refs/pull/<n>/merge -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -30,4 +32,37 @@
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">PR — refs/pull/&lt;n&gt;/merge</text>
   <rect class="dg-item" x="272" y="344" width="175" height="52" rx="6"/>
   <text class="dg-t" x="359" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">빌드는 돌지만 자격이 없다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 502" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="ci-cache--nobody-seeds-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="71" y="56" width="218" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기본값 — ref_name 이 기본 브랜…</text>
+  <rect class="dg-item" x="65" y="122" width="229" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">아무도 캐시를 채우지 못한다 — 계…</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#ci-cache--nobody-seeds-arw-n)"/>
+
+  <!-- main — 기본 브랜치 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="95" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">main — 기본 브랜치</text>
+  <rect class="dg-item" x="68" y="266" width="223" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">자격은 있지만 빌드 워크플로가 없다</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#ci-cache--nobody-seeds-arw-n)"/>
+
+  <!-- PR — refs/pull/<n>/merge -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="121" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">PR — refs/pull/&lt;n&gt;/merge</text>
+  <rect class="dg-item" x="92" y="410" width="175" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">빌드는 돌지만 자격이 없다</text>
 </svg>

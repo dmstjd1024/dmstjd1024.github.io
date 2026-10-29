@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="volume-leak--capture-order-title volume-leak--capture-order-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="volume-leak--capture-order-title volume-leak--capture-order-desc">
   <title id="volume-leak--capture-order-title">컨테이너를 지우면 볼륨 목록을 조회할 방법이 사라지므로, 삭제 전에 목록을 먼저 확보해야 한다는 순서 문제</title>
   <desc id="volume-leak--capture-order-desc">컨테이너를 지우면 볼륨 목록을 조회할 방법이 사라지므로, 삭제 전에 목록을 먼저 확보해야 한다는 순서 문제</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="volume-leak--capture-order-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="92" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="208" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이름에 클러스터명이 든 볼륨만 매칭</text>
   <text class="dg-s" x="208" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">익명 볼륨은 이름이 sha256 해시라 안 걸린다…</text>
@@ -25,4 +27,32 @@
   <rect class="dg-item" x="370" y="122" width="106" height="52" rx="6"/>
   <text class="dg-t" x="423" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">캡처한 ID로</text>
   <text class="dg-s" x="423" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">명시적으로 삭제</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="volume-leak--capture-order-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">이름에 클러스터명이 든 볼륨만 매칭</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">익명 볼륨은 이름이 sha256 해시라 안 걸린다…</text>
+  <rect class="dg-item" x="118" y="122" width="124" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">클러스터 삭제</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">컨테이너가 사라진다</text>
+  <rect class="dg-item" x="106" y="188" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">inspect 로 먼저 캡처</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">마운트된 볼륨 ID 수집</text>
+  <rect class="dg-item" x="64" y="254" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="119" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">클러스터 삭제</text>
+  <text class="dg-s" x="119" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">이제 조회 불가</text>
+  <rect class="dg-item" x="190" y="254" width="106" height="52" rx="6"/>
+  <text class="dg-t" x="243" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">캡처한 ID로</text>
+  <text class="dg-s" x="243" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">명시적으로 삭제</text>
 </svg>

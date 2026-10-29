@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study3--short-circuit-title live-study3--short-circuit-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study3--short-circuit-title live-study3--short-circuit-desc">
   <title id="live-study3--short-circuit-title">논리 연산자가 결과가 확정되면 오른쪽을 평가하지 않고 건너뛰는 동작</title>
   <desc id="live-study3--short-circuit-desc">논리 연산자가 결과가 확정되면 오른쪽을 평가하지 않고 건너뛰는 동작</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="live-study3--short-circuit-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -16,7 +16,7 @@
   <text class="dg-t" x="267" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">왼쪽이 true</text>
   <rect class="dg-item" x="333" y="56" width="169" height="52" rx="6"/>
   <text class="dg-t" x="417" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">오른쪽은 평가하지 않는다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#live-study3--short-circuit-arw-w)"/>
 
   <!-- &&  (AND) -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -26,4 +26,31 @@
   <text class="dg-t" x="267" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">왼쪽이 false</text>
   <rect class="dg-item" x="335" y="200" width="169" height="52" rx="6"/>
   <text class="dg-t" x="419" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">오른쪽은 평가하지 않는다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="live-study3--short-circuit-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- ||  (OR) -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">||  (OR)</text>
+  <rect class="dg-item" x="130" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">왼쪽이 true</text>
+  <rect class="dg-item" x="95" y="122" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">오른쪽은 평가하지 않는다</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#live-study3--short-circuit-arw-n)"/>
+
+  <!-- &&  (AND) -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">&amp;&amp;  (AND)</text>
+  <rect class="dg-item" x="128" y="266" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">왼쪽이 false</text>
+  <rect class="dg-item" x="95" y="332" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">오른쪽은 평가하지 않는다</text>
 </svg>

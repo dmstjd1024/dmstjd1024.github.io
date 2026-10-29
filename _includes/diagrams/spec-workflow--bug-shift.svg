@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="spec-workflow--bug-shift-title spec-workflow--bug-shift-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="spec-workflow--bug-shift-title spec-workflow--bug-shift-desc">
   <title id="spec-workflow--bug-shift-title">스펙과 자기검토를 거치면 버그가 없어지는 게 아니라 종류가 바뀐다는 정리</title>
   <desc id="spec-workflow--bug-shift-desc">스펙과 자기검토를 거치면 버그가 없어지는 게 아니라 종류가 바뀐다는 정리</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="spec-workflow--bug-shift-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="244" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">자기검토가 보는 층위와 세부 누락의…</text>
   <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">되돌리는 비용이 훨씬 크니, 이 교환은 남는 장…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#spec-workflow--bug-shift-arw-w)"/>
 
   <!-- 줄어든 것 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -21,7 +23,7 @@
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">줄어든 것</text>
   <rect class="dg-item" x="267" y="200" width="185" height="52" rx="6"/>
   <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구조를 잘못 잡아 되돌아가기</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#spec-workflow--bug-shift-arw-w)"/>
 
   <!-- 늘어난 것 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -29,4 +31,36 @@
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">늘어난 것</text>
   <rect class="dg-item" x="310" y="344" width="99" height="52" rx="6"/>
   <text class="dg-t" x="359" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">잔손질 커밋</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 436" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="spec-workflow--bug-shift-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">자기검토가 보는 층위와 세부 누락의…</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">되돌리는 비용이 훨씬 크니, 이 교환은 남는 장…</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#spec-workflow--bug-shift-arw-n)"/>
+
+  <!-- 줄어든 것 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">줄어든 것</text>
+  <rect class="dg-item" x="87" y="200" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구조를 잘못 잡아 되돌아가기</text>
+  <path class="dg-arw" d="M180,276 V314" marker-end="url(#spec-workflow--bug-shift-arw-n)"/>
+
+  <!-- 늘어난 것 -->
+  <rect class="dg-zone" x="24" y="320" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">늘어난 것</text>
+  <rect class="dg-item" x="130" y="344" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">잔손질 커밋</text>
 </svg>

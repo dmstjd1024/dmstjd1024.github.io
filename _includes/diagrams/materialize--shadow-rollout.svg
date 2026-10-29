@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="materialize--shadow-rollout-title materialize--shadow-rollout-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="materialize--shadow-rollout-title materialize--shadow-rollout-desc">
   <title id="materialize--shadow-rollout-title">섀도우 단계에서 읽기 경로를 그대로 두고 관찰한 뒤 전환하는 2단계 롤아웃</title>
   <desc id="materialize--shadow-rollout-desc">섀도우 단계에서 읽기 경로를 그대로 두고 관찰한 뒤 전환하는 2단계 롤아웃</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="materialize--shadow-rollout-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -19,7 +19,7 @@
   <rect class="dg-item" x="434" y="56" width="221" height="52" rx="6"/>
   <text class="dg-t" x="544" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사용자 체감 변화 없음</text>
   <text class="dg-s" x="544" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">_mat 이 뷰를 따라오는지 · 실데이터로 관찰</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#materialize--shadow-rollout-arw-w)"/>
 
   <!-- 2단계 — 전환 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -32,4 +32,37 @@
   <rect class="dg-item" x="450" y="200" width="115" height="52" rx="6"/>
   <text class="dg-t" x="507" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">애노테이션 2줄</text>
   <text class="dg-s" x="507" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">되돌리기도 2줄</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="materialize--shadow-rollout-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 1단계 — 섀도우 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="79" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">1단계 — 섀도우</text>
+  <rect class="dg-item" x="74" y="56" width="212" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">_mat 테이블 생성 · 백필 · 동기화</text>
+  <rect class="dg-item" x="117" y="122" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">읽기는 여전히 뷰</text>
+  <rect class="dg-item" x="69" y="188" width="221" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사용자 체감 변화 없음</text>
+  <text class="dg-s" x="179" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">_mat 이 뷰를 따라오는지 · 실데이터로 관찰</text>
+  <path class="dg-arw" d="M180,264 V302" marker-end="url(#materialize--shadow-rollout-arw-n)"/>
+
+  <!-- 2단계 — 전환 -->
+  <rect class="dg-zone" x="24" y="308" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="302" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="311" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">2단계 — 전환</text>
+  <rect class="dg-item" x="111" y="332" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">엔티티 매핑만 변경</text>
+  <rect class="dg-item" x="51" y="398" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="114" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">읽기가 _mat 으로</text>
+  <rect class="dg-item" x="193" y="398" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="250" y="420" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">애노테이션 2줄</text>
+  <text class="dg-s" x="250" y="437" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">되돌리기도 2줄</text>
 </svg>

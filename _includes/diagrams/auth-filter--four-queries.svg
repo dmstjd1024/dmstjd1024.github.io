@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="auth-filter--four-queries-title auth-filter--four-queries-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="auth-filter--four-queries-title auth-filter--four-queries-desc">
   <title id="auth-filter--four-queries-title">필터 체인을 지나며 DB 를 네 번 접근하는 구조</title>
   <desc id="auth-filter--four-queries-desc">필터 체인을 지나며 DB 를 네 번 접근하는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="auth-filter--four-queries-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="300" y="56" width="119" height="52" rx="6"/>
   <text class="dg-t" x="359" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">요청</text>
   <text class="dg-s" x="359" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">리소스 하나 · 읽기</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#auth-filter--four-queries-arw-w)"/>
 
   <!-- 필터 체인 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -31,11 +33,56 @@
   <rect class="dg-item" x="520" y="200" width="110" height="52" rx="6"/>
   <text class="dg-t" x="575" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LoggingFilter</text>
   <text class="dg-s" x="575" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">감사 로그 INSERT</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#auth-filter--four-queries-arw-w)"/>
 
   <!--  -->
   <rect class="dg-zone-a" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="16" height="12" rx="2"/>
+  <text class="dg-n" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-hl" x="312" y="344" width="96" height="52" rx="6"/>
   <text class="dg-n" x="360" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DB</text>
   <text class="dg-n" x="360" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">4회 접근</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 568" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="auth-filter--four-queries-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="120" y="56" width="119" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">요청</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">리소스 하나 · 읽기</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#auth-filter--four-queries-arw-n)"/>
+
+  <!-- 필터 체인 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">필터 체인</text>
+  <rect class="dg-item" x="132" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JwtFilter</text>
+  <text class="dg-s" x="180" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">User 조회</text>
+  <rect class="dg-item" x="87" y="266" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ResourceAuthorizationFilter</text>
+  <text class="dg-s" x="179" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">User 재조회</text>
+  <rect class="dg-item" x="66" y="332" width="101" height="52" rx="6"/>
+  <text class="dg-t" x="116" y="354" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">같은 필터</text>
+  <text class="dg-s" x="116" y="371" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">메뉴 권한 조회</text>
+  <rect class="dg-item" x="183" y="332" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="238" y="354" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LoggingFilter</text>
+  <text class="dg-s" x="238" y="371" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">감사 로그 INSERT</text>
+  <path class="dg-arw" d="M180,408 V446" marker-end="url(#auth-filter--four-queries-arw-n)"/>
+
+  <!--  -->
+  <rect class="dg-zone-a" x="24" y="452" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="446" width="16" height="12" rx="2"/>
+  <text class="dg-n" x="44" y="455" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-hl" x="132" y="476" width="96" height="52" rx="6"/>
+  <text class="dg-n" x="180" y="498" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DB</text>
+  <text class="dg-n" x="180" y="515" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">4회 접근</text>
 </svg>

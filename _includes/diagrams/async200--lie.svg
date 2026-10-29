@@ -1,19 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="async200--lie-title async200--lie-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="async200--lie-title async200--lie-desc">
   <title id="async200--lie-title">비동기 작업 등록 성공을 200 으로 응답해 사용자가 완료로 오해하는 구조</title>
   <desc id="async200--lie-desc">비동기 작업 등록 성공을 200 으로 응답해 사용자가 완료로 오해하는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="async200--lie-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="244" y="56" width="232" height="52" rx="6"/>
   <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">실제로 벌어진 일</text>
   <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">설치가 3분째 진행 중인 네트워크에 삭제를 눌렀…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#async200--lie-arw-w)"/>
 
   <!-- 서버가 뜻한 것 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -21,7 +23,7 @@
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">서버가 뜻한 것</text>
   <rect class="dg-item" x="267" y="200" width="185" height="52" rx="6"/>
   <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">비동기 작업 등록에 성공했다</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#async200--lie-arw-w)"/>
 
   <!-- 사용자가 읽은 것 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -29,4 +31,36 @@
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">사용자가 읽은 것</text>
   <rect class="dg-item" x="297" y="344" width="126" height="52" rx="6"/>
   <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">"삭제되었습니다"</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 436" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="async200--lie-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="64" y="56" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">실제로 벌어진 일</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">설치가 3분째 진행 중인 네트워크에 삭제를 눌렀…</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#async200--lie-arw-n)"/>
+
+  <!-- 서버가 뜻한 것 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="74" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">서버가 뜻한 것</text>
+  <rect class="dg-item" x="87" y="200" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">비동기 작업 등록에 성공했다</text>
+  <path class="dg-arw" d="M180,276 V314" marker-end="url(#async200--lie-arw-n)"/>
+
+  <!-- 사용자가 읽은 것 -->
+  <rect class="dg-zone" x="24" y="320" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="83" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">사용자가 읽은 것</text>
+  <rect class="dg-item" x="117" y="344" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">"삭제되었습니다"</text>
 </svg>

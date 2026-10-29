@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="rtk--waterfall-title rtk--waterfall-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="rtk--waterfall-title rtk--waterfall-desc">
   <title id="rtk--waterfall-title">effect 가 상태를 거쳐 다음 effect 를 깨우면서 요청이 직렬로 이어지는 워터폴</title>
   <desc id="rtk--waterfall-desc">effect 가 상태를 거쳐 다음 effect 를 깨우면서 요청이 직렬로 이어지는 워터폴</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="rtk--waterfall-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -20,4 +20,25 @@
   <text class="dg-t" x="437" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">상세 데이터 호출</text>
   <rect class="dg-item" x="516" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="564" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LCA 선택</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 214" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="rtk--waterfall-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 응답을 받아야 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">응답을 받아야</text>
+  <rect class="dg-item" x="54" y="56" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="106" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">summary 조회</text>
+  <rect class="dg-item" x="174" y="56" width="131" height="52" rx="6"/>
+  <text class="dg-t" x="239" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">첫 제품 자동 선택</text>
+  <rect class="dg-item" x="61" y="122" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">상세 데이터 호출</text>
+  <rect class="dg-item" x="203" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="251" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LCA 선택</text>
 </svg>

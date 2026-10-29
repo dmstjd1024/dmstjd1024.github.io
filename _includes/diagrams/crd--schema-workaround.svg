@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="crd--schema-workaround-title crd--schema-workaround-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="crd--schema-workaround-title crd--schema-workaround-desc">
   <title id="crd--schema-workaround-title">오퍼레이터가 자기 CRD 의 required 필드를 채우지 않아 status 갱신이 막히는 구조</title>
   <desc id="crd--schema-workaround-desc">오퍼레이터가 자기 CRD 의 required 필드를 채우지 않아 status 갱신이 막히는 구조</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="crd--schema-workaround-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="158" y="56" width="110" height="52" rx="6"/>
   <text class="dg-t" x="213" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">오퍼레이터</text>
   <text class="dg-s" x="213" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">status 갱신 시도</text>
@@ -25,4 +27,32 @@
   <rect class="dg-item" x="367" y="122" width="232" height="52" rx="6"/>
   <text class="dg-t" x="483" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">고칠 수 없는 남의 코드라, CRD 쪽…</text>
   <text class="dg-s" x="483" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">스키마를 느슨하게 하는 건 최선이 아니지만, 버…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="crd--schema-workaround-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="48" y="56" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="103" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">오퍼레이터</text>
+  <text class="dg-s" x="103" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">status 갱신 시도</text>
+  <rect class="dg-item" x="174" y="56" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="242" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">required 필드 누락</text>
+  <text class="dg-s" x="242" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">conditions · message</text>
+  <rect class="dg-item" x="118" y="122" width="124" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">검증 거부</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">status 가 안 바뀐다</text>
+  <rect class="dg-item" x="65" y="188" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그래서 FAILED 에 고착된다</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">배포는 실제로 성공했는데 STATUS 만 FAILED…</text>
+  <rect class="dg-item" x="64" y="254" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">고칠 수 없는 남의 코드라, CRD 쪽…</text>
+  <text class="dg-s" x="180" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">스키마를 느슨하게 하는 건 최선이 아니지만, 버…</text>
 </svg>

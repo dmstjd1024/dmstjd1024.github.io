@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="ssr-ssg--rendering-timing-title ssr-ssg--rendering-timing-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="ssr-ssg--rendering-timing-title ssr-ssg--rendering-timing-desc">
   <title id="ssr-ssg--rendering-timing-title">CSR, SSR, SSG 가 HTML 을 만드는 시점이 각각 다르다는 비교</title>
   <desc id="ssr-ssg--rendering-timing-desc">CSR, SSR, SSG 가 HTML 을 만드는 시점이 각각 다르다는 비교</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="ssr-ssg--rendering-timing-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -18,7 +18,7 @@
   <text class="dg-t" x="352" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">빈 div 만 보냄</text>
   <rect class="dg-item" x="426" y="56" width="110" height="52" rx="6"/>
   <text class="dg-t" x="481" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">여기서 그린다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#ssr-ssg--rendering-timing-arw-w)"/>
 
   <!-- SSR -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -30,7 +30,7 @@
   <text class="dg-t" x="326" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">여기서 그린다</text>
   <rect class="dg-item" x="397" y="200" width="164" height="52" rx="6"/>
   <text class="dg-t" x="479" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">표시 · 선택적 동작 연결</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#ssr-ssg--rendering-timing-arw-w)"/>
 
   <!-- SSG -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -42,4 +42,47 @@
   <text class="dg-t" x="333" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일만 내려줌</text>
   <rect class="dg-item" x="404" y="344" width="164" height="52" rx="6"/>
   <text class="dg-t" x="486" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">표시 · 선택적 동작 연결</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 634" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="ssr-ssg--rendering-timing-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- CSR -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="28" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CSR</text>
+  <rect class="dg-item" x="66" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="114" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">—</text>
+  <rect class="dg-item" x="178" y="56" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">빈 div 만 보냄</text>
+  <rect class="dg-item" x="125" y="122" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">여기서 그린다</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#ssr-ssg--rendering-timing-arw-n)"/>
+
+  <!-- SSR -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="28" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SSR</text>
+  <rect class="dg-item" x="69" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="117" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">—</text>
+  <rect class="dg-item" x="181" y="266" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">여기서 그린다</text>
+  <rect class="dg-item" x="98" y="332" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">표시 · 선택적 동작 연결</text>
+  <path class="dg-arw" d="M180,408 V446" marker-end="url(#ssr-ssg--rendering-timing-arw-n)"/>
+
+  <!-- SSG -->
+  <rect class="dg-zone" x="24" y="452" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="446" width="28" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="455" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SSG</text>
+  <rect class="dg-item" x="62" y="476" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="117" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">여기서 그린다</text>
+  <rect class="dg-item" x="188" y="476" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="243" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일만 내려줌</text>
+  <rect class="dg-item" x="98" y="542" width="164" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">표시 · 선택적 동작 연결</text>
 </svg>

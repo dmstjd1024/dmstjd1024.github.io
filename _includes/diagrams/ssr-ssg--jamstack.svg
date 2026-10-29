@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="ssr-ssg--jamstack-title ssr-ssg--jamstack-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="ssr-ssg--jamstack-title ssr-ssg--jamstack-desc">
   <title id="ssr-ssg--jamstack-title">Jam Stack 은 정적 페이지를 CDN 으로 배포하고 동적 기능은 외부 API 에 맡긴다</title>
   <desc id="ssr-ssg--jamstack-desc">Jam Stack 은 정적 페이지를 CDN 으로 배포하고 동적 기능은 외부 API 에 맡긴다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="ssr-ssg--jamstack-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="91" y="56" width="141" height="52" rx="6"/>
   <text class="dg-t" x="161" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">빌드</text>
   <text class="dg-s" x="161" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">미리 렌더링한 정적 파일</text>
@@ -22,4 +24,29 @@
   <rect class="dg-item" x="500" y="56" width="128" height="52" rx="6"/>
   <text class="dg-t" x="564" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">외부 API</text>
   <text class="dg-s" x="564" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">로그인 · 결제 · 댓글</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="ssr-ssg--jamstack-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="109" y="56" width="141" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">빌드</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">미리 렌더링한 정적 파일</text>
+  <rect class="dg-item" x="62" y="122" width="124" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CDN</text>
+  <text class="dg-s" x="124" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">전 세계에 뿌려 둔다</text>
+  <rect class="dg-item" x="202" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="250" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">브라우저</text>
+  <text class="dg-s" x="250" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">바로 받는다</text>
+  <rect class="dg-item" x="116" y="188" width="128" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">외부 API</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">로그인 · 결제 · 댓글</text>
 </svg>

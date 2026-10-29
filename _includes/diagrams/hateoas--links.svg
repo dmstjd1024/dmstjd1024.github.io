@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="hateoas--links-title hateoas--links-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="hateoas--links-title hateoas--links-desc">
   <title id="hateoas--links-title">일반 응답과 HATEOAS 응답의 차이 — 링크가 함께 실려 온다</title>
   <desc id="hateoas--links-desc">일반 응답과 HATEOAS 응답의 차이 — 링크가 함께 실려 온다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="hateoas--links-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -15,7 +15,7 @@
   <rect class="dg-item" x="249" y="56" width="221" height="52" rx="6"/>
   <text class="dg-t" x="359" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">id</text>
   <text class="dg-s" x="359" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">1 · name · test · email · test@email.co…</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#hateoas--links-arw-w)"/>
 
   <!-- HATEOAS 응답 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -24,4 +24,29 @@
   <rect class="dg-item" x="249" y="200" width="221" height="52" rx="6"/>
   <text class="dg-t" x="359" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">id · name · email</text>
   <text class="dg-s" x="359" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">_links · self  → /api/account/1 · prof…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 292" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="hateoas--links-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 일반 응답 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="53" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">일반 응답</text>
+  <rect class="dg-item" x="69" y="56" width="221" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">id</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">1 · name · test · email · test@email.co…</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#hateoas--links-arw-n)"/>
+
+  <!-- HATEOAS 응답 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="66" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">HATEOAS 응답</text>
+  <rect class="dg-item" x="69" y="200" width="221" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">id · name · email</text>
+  <text class="dg-s" x="179" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">_links · self  → /api/account/1 · prof…</text>
 </svg>

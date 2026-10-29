@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study--jvm-portability-title live-study--jvm-portability-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study--jvm-portability-title live-study--jvm-portability-desc">
   <title id="live-study--jvm-portability-title">일반 애플리케이션과 자바 애플리케이션이 하드웨어까지 도달하는 경로 비교</title>
   <desc id="live-study--jvm-portability-desc">일반 애플리케이션과 자바 애플리케이션이 하드웨어까지 도달하는 경로 비교</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="live-study--jvm-portability-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -18,7 +18,7 @@
   <text class="dg-t" x="364" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OS</text>
   <rect class="dg-item" x="428" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="476" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">하드웨어</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#live-study--jvm-portability-arw-w)"/>
 
   <!-- 자바 애플리케이션 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -33,4 +33,38 @@
   <text class="dg-t" x="440" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OS</text>
   <rect class="dg-item" x="504" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="552" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">하드웨어</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="live-study--jvm-portability-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 일반 애플리케이션 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="87" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">일반 애플리케이션</text>
+  <rect class="dg-item" x="72" y="56" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">애플리케이션</text>
+  <rect class="dg-item" x="192" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="240" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OS</text>
+  <rect class="dg-item" x="132" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">하드웨어</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#live-study--jvm-portability-arw-n)"/>
+
+  <!-- 자바 애플리케이션 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="87" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">자바 애플리케이션</text>
+  <rect class="dg-item" x="51" y="266" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="103" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">애플리케이션</text>
+  <rect class="dg-item" x="171" y="266" width="137" height="52" rx="6"/>
+  <text class="dg-t" x="239" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JVM</text>
+  <text class="dg-s" x="239" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">OS 마다 다른 것을 쓴다</text>
+  <rect class="dg-item" x="76" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OS</text>
+  <rect class="dg-item" x="188" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">하드웨어</text>
 </svg>

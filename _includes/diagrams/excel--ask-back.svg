@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="excel--ask-back-title excel--ask-back-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="excel--ask-back-title excel--ask-back-desc">
   <title id="excel--ask-back-title">모호한 행을 전부 실패시키거나 임의 선택하는 대신 되묻는 방식</title>
   <desc id="excel--ask-back-desc">모호한 행을 전부 실패시키거나 임의 선택하는 대신 되묻는 방식</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="excel--ask-back-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -14,7 +14,7 @@
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">전부 실패시키기</text>
   <rect class="dg-item" x="310" y="56" width="99" height="52" rx="6"/>
   <text class="dg-t" x="359" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">업로드 거부</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#excel--ask-back-arw-w)"/>
 
   <!-- 알아서 하나 고르기 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -22,7 +22,7 @@
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">알아서 하나 고르기</text>
   <rect class="dg-item" x="302" y="200" width="115" height="52" rx="6"/>
   <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">첫 번째를 채택</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#excel--ask-back-arw-w)"/>
 
   <!-- 되묻기 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -30,4 +30,35 @@
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">되묻기</text>
   <rect class="dg-item" x="297" y="344" width="126" height="52" rx="6"/>
   <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">모호한 행만 표시</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 436" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="excel--ask-back-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 전부 실패시키기 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="79" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">전부 실패시키기</text>
+  <rect class="dg-item" x="130" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">업로드 거부</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#excel--ask-back-arw-n)"/>
+
+  <!-- 알아서 하나 고르기 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="91" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">알아서 하나 고르기</text>
+  <rect class="dg-item" x="122" y="200" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">첫 번째를 채택</text>
+  <path class="dg-arw" d="M180,276 V314" marker-end="url(#excel--ask-back-arw-n)"/>
+
+  <!-- 되묻기 -->
+  <rect class="dg-zone" x="24" y="320" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">되묻기</text>
+  <rect class="dg-item" x="117" y="344" width="126" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">모호한 행만 표시</text>
 </svg>

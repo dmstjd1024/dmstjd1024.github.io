@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 148" role="img" aria-labelledby="live-study8--interface-multiple-title live-study8--interface-multiple-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="live-study8--interface-multiple-title live-study8--interface-multiple-desc">
   <title id="live-study8--interface-multiple-title">클래스는 하나만 상속받지만 인터페이스는 여럿을 구현할 수 있다</title>
   <desc id="live-study8--interface-multiple-desc">클래스는 하나만 상속받지만 인터페이스는 여럿을 구현할 수 있다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="live-study8--interface-multiple-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="126" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="174" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Moving</text>
   <text class="dg-s" x="174" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">move()</text>
@@ -21,4 +23,28 @@
   <text class="dg-s" x="416" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">둘 다 가진 인터페이스</text>
   <rect class="dg-item" x="498" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="546" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NBAPlayer</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 214" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="live-study8--interface-multiple-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="76" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Moving</text>
+  <text class="dg-s" x="124" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">move()</text>
+  <rect class="dg-item" x="188" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Shooting</text>
+  <text class="dg-s" x="236" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">shoot()</text>
+  <rect class="dg-item" x="58" y="122" width="132" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Player</text>
+  <text class="dg-s" x="124" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">둘 다 가진 인터페이스</text>
+  <rect class="dg-item" x="206" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="254" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">NBAPlayer</text>
 </svg>

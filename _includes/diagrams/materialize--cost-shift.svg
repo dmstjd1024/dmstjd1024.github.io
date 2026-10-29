@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 424" role="img" aria-labelledby="materialize--cost-shift-title materialize--cost-shift-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 424" role="img" aria-labelledby="materialize--cost-shift-title materialize--cost-shift-desc">
   <title id="materialize--cost-shift-title">뷰는 읽을 때마다 재계산하고 물질화 테이블은 쓸 때 한 번 계산한다</title>
   <desc id="materialize--cost-shift-desc">뷰는 읽을 때마다 재계산하고 물질화 테이블은 쓸 때 한 번 계산한다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="materialize--cost-shift-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -20,7 +20,7 @@
   <text class="dg-t" x="531" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 3 → 또 풀스캔</text>
   <rect class="dg-item" x="275" y="122" width="169" height="52" rx="6"/>
   <text class="dg-t" x="359" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쓰기는 아무 일도 안 한다</text>
-  <path class="dg-arw" d="M360,198 V236" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,198 V236" marker-end="url(#materialize--cost-shift-arw-w)"/>
 
   <!-- 물질화 테이블 (_mat) -->
   <rect class="dg-zone" x="24" y="242" width="672" height="166" rx="8"/>
@@ -34,4 +34,39 @@
   <text class="dg-t" x="518" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 3 → 그냥 읽기</text>
   <rect class="dg-item" x="267" y="332" width="185" height="52" rx="6"/>
   <text class="dg-t" x="359" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쓰기 때 한 번 계산해 넣는다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 688" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="materialize--cost-shift-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 뷰 (@Subselect) -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="79" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">뷰 (@Subselect)</text>
+  <rect class="dg-item" x="95" y="56" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 1 → CTE 5개 풀스캔</text>
+  <rect class="dg-item" x="109" y="122" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 2 → 또 풀스캔</text>
+  <rect class="dg-item" x="109" y="188" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 3 → 또 풀스캔</text>
+  <rect class="dg-item" x="95" y="254" width="169" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="285" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쓰기는 아무 일도 안 한다</text>
+  <path class="dg-arw" d="M180,330 V368" marker-end="url(#materialize--cost-shift-arw-n)"/>
+
+  <!-- 물질화 테이블 (_mat) -->
+  <rect class="dg-zone" x="24" y="374" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="368" width="100" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="377" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">물질화 테이블 (_mat)</text>
+  <rect class="dg-item" x="109" y="398" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 1 → 그냥 읽기</text>
+  <rect class="dg-item" x="109" y="464" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="495" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 2 → 그냥 읽기</text>
+  <rect class="dg-item" x="109" y="530" width="142" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="561" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 3 → 그냥 읽기</text>
+  <rect class="dg-item" x="87" y="596" width="185" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="627" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쓰기 때 한 번 계산해 넣는다</text>
 </svg>

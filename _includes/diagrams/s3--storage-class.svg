@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" role="img" aria-labelledby="s3--storage-class-title s3--storage-class-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 280" role="img" aria-labelledby="s3--storage-class-title s3--storage-class-desc">
   <title id="s3--storage-class-title">S3 스토리지 유형 다섯 가지를 접근 빈도 순으로 비교</title>
   <desc id="s3--storage-class-desc">S3 스토리지 유형 다섯 가지를 접근 빈도 순으로 비교</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="s3--storage-class-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="127" y="56" width="217" height="52" rx="6"/>
   <text class="dg-t" x="235" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">일반 S3</text>
   <text class="dg-s" x="235" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">여러 가용영역에 중복 저장 · 늘 쓰는 파일</text>
@@ -25,4 +27,32 @@
   <rect class="dg-item" x="244" y="188" width="232" height="52" rx="6"/>
   <text class="dg-t" x="360" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">지능적 티어링</text>
   <text class="dg-s" x="360" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">접근 주기를 보고 알아서 등급을 바꾼다 · 얼마…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="s3--storage-class-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="364" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="71" y="56" width="217" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">일반 S3</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">여러 가용영역에 중복 저장 · 늘 쓰는 파일</text>
+  <rect class="dg-item" x="64" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">드문 접근</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">가끔 꺼내지만 꺼낼 땐 빨라야 할 때 · 재해복구…</text>
+  <rect class="dg-item" x="64" y="188" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">단일 존</text>
+  <text class="dg-s" x="180" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">가용영역 하나에만 둔다 · 그 영역이 죽으면 접…</text>
+  <rect class="dg-item" x="64" y="254" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">글레시어</text>
+  <text class="dg-s" x="180" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">몇 년에 한 번 쓸까 말까 한 것 · 등급·복원 옵…</text>
+  <rect class="dg-item" x="64" y="320" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="342" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">지능적 티어링</text>
+  <text class="dg-s" x="180" y="359" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">접근 주기를 보고 알아서 등급을 바꾼다 · 얼마…</text>
 </svg>

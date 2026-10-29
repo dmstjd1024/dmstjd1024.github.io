@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 436" role="img" aria-labelledby="herdr--hierarchy-title herdr--hierarchy-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="herdr--hierarchy-title herdr--hierarchy-desc">
   <title id="herdr--hierarchy-title">Herdr 의 구조: 하나의 배경 서버가 세션을 들고 있고, 그 아래 워크스페이스 · 탭 · 판이 계층으로 놓인다. 판 안의 에이전트만 상태를 갖는다</title>
   <desc id="herdr--hierarchy-desc">Herdr 의 구조: 하나의 배경 서버가 세션을 들고 있고, 그 아래 워크스페이스 · 탭 · 판이 계층으로 놓인다. 판 안의 에이전트만 상태를 갖는다</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="herdr--hierarchy-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -15,7 +15,7 @@
   <rect class="dg-item" x="245" y="56" width="230" height="52" rx="6"/>
   <text class="dg-t" x="360" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">herdr server</text>
   <text class="dg-s" x="360" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">세션을 들고 있다 — 창을 닫아도 여기 남는다</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#herdr--hierarchy-arw-w)"/>
 
   <!-- 터미널의 위치 — tmux 도 아는 것 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -30,7 +30,7 @@
   <rect class="dg-item" x="453" y="200" width="146" height="52" rx="6"/>
   <text class="dg-t" x="526" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">판(pane)</text>
   <text class="dg-s" x="526" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">w9:p2 · 실제 터미널 하나</text>
-  <path class="dg-arw" d="M360,276 V314" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#herdr--hierarchy-arw-w)"/>
 
   <!-- 여기부터가 Herdr 만 아는 것 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
@@ -39,4 +39,44 @@
   <rect class="dg-item" x="249" y="344" width="221" height="52" rx="6"/>
   <text class="dg-t" x="359" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">판 안의 에이전트</text>
   <text class="dg-s" x="359" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">idle · working · blocked · done · unkno…</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 568" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="herdr--hierarchy-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 배경에 늘 떠 있는 것 — 서버 하나 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="154" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">배경에 늘 떠 있는 것 — 서버 하나</text>
+  <rect class="dg-item" x="65" y="56" width="230" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">herdr server</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">세션을 들고 있다 — 창을 닫아도 여기 남는다</text>
+  <path class="dg-arw" d="M180,132 V170" marker-end="url(#herdr--hierarchy-arw-n)"/>
+
+  <!-- 터미널의 위치 — tmux 도 아는 것 -->
+  <rect class="dg-zone" x="24" y="176" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="150" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">터미널의 위치 — tmux 도 아는 것</text>
+  <rect class="dg-item" x="114" y="200" width="132" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">워크스페이스</text>
+  <text class="dg-s" x="180" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">w9 · 일 단위로 가른다</text>
+  <rect class="dg-item" x="96" y="266" width="168" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">탭</text>
+  <text class="dg-s" x="180" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">w9:t1 · 워크스페이스에 속한다</text>
+  <rect class="dg-item" x="107" y="332" width="146" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="354" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">판(pane)</text>
+  <text class="dg-s" x="180" y="371" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">w9:p2 · 실제 터미널 하나</text>
+  <path class="dg-arw" d="M180,408 V446" marker-end="url(#herdr--hierarchy-arw-n)"/>
+
+  <!-- 여기부터가 Herdr 만 아는 것 -->
+  <rect class="dg-zone" x="24" y="452" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="446" width="129" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="455" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">여기부터가 Herdr 만 아는 것</text>
+  <rect class="dg-item" x="69" y="476" width="221" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="498" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">판 안의 에이전트</text>
+  <text class="dg-s" x="179" y="515" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">idle · working · blocked · done · unkno…</text>
 </svg>

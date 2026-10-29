@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="n1--in-widening-title n1--in-widening-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="n1--in-widening-title n1--in-widening-desc">
   <title id="n1--in-widening-title">루프마다 쿼리를 부르는 대신 id 를 모아 한 번에 조회하고 메모리에서 나누는 방식</title>
   <desc id="n1--in-widening-desc">루프마다 쿼리를 부르는 대신 id 를 모아 한 번에 조회하고 메모리에서 나누는 방식</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="n1--in-widening-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -18,7 +18,7 @@
   <text class="dg-t" x="359" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사업장 2 → 집계 쿼리</text>
   <rect class="dg-item" x="452" y="56" width="153" height="52" rx="6"/>
   <text class="dg-t" x="528" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사업장 3 → 집계 쿼리</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#n1--in-widening-arw-w)"/>
 
   <!-- 이후 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -30,4 +30,35 @@
   <text class="dg-t" x="362" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">IN 절로 한 번에 조회</text>
   <rect class="dg-item" x="452" y="200" width="175" height="52" rx="6"/>
   <text class="dg-t" x="539" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">groupingBy 로 다시 나눈다</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 556" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="n1--in-widening-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 이전 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="32" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">이전</text>
+  <rect class="dg-item" x="103" y="56" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사업장 1 → 집계 쿼리</text>
+  <rect class="dg-item" x="103" y="122" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사업장 2 → 집계 쿼리</text>
+  <rect class="dg-item" x="103" y="188" width="153" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사업장 3 → 집계 쿼리</text>
+  <path class="dg-arw" d="M180,264 V302" marker-end="url(#n1--in-widening-arw-n)"/>
+
+  <!-- 이후 -->
+  <rect class="dg-zone" x="24" y="308" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="302" width="32" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="311" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">이후</text>
+  <rect class="dg-item" x="90" y="332" width="180" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">모든 사업장의 id 를 모은다</text>
+  <rect class="dg-item" x="106" y="398" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">IN 절로 한 번에 조회</text>
+  <rect class="dg-item" x="92" y="464" width="175" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="495" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">groupingBy 로 다시 나눈다</text>
 </svg>

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 292" role="img" aria-labelledby="live-study8--default-method-title live-study8--default-method-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study8--default-method-title live-study8--default-method-desc">
   <title id="live-study8--default-method-title">인터페이스에 메서드를 추가하면 구현 클래스가 모두 깨지는 문제와 디폴트 메서드의 해결</title>
   <desc id="live-study8--default-method-desc">인터페이스에 메서드를 추가하면 구현 클래스가 모두 깨지는 문제와 디폴트 메서드의 해결</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="live-study8--default-method-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
@@ -18,7 +18,7 @@
   <text class="dg-t" x="362" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현 클래스 A — 컴파일 에러</text>
   <rect class="dg-item" x="474" y="56" width="191" height="52" rx="6"/>
   <text class="dg-t" x="569" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현 클래스 B — 컴파일 에러</text>
-  <path class="dg-arw" d="M360,132 V170" marker-end="url(#br-arw)"/>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#live-study8--default-method-arw-w)"/>
 
   <!-- default 를 붙이면 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
@@ -30,4 +30,35 @@
   <text class="dg-t" x="367" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현 클래스 A — 그대로 동작</text>
   <rect class="dg-item" x="479" y="200" width="191" height="52" rx="6"/>
   <text class="dg-t" x="574" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현 클래스 B — 그대로 동작</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 556" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="live-study8--default-method-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 그냥 추상 메서드를 추가하면 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="129" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">그냥 추상 메서드를 추가하면</text>
+  <rect class="dg-item" x="82" y="56" width="196" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인터페이스에 newMethod() 추가</text>
+  <rect class="dg-item" x="84" y="122" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현 클래스 A — 컴파일 에러</text>
+  <rect class="dg-item" x="84" y="188" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현 클래스 B — 컴파일 에러</text>
+  <path class="dg-arw" d="M180,264 V302" marker-end="url(#live-study8--default-method-arw-n)"/>
+
+  <!-- default 를 붙이면 -->
+  <rect class="dg-zone" x="24" y="308" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="302" width="87" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="311" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">default 를 붙이면</text>
+  <rect class="dg-item" x="76" y="332" width="207" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">default void newMethod() { ..…</text>
+  <rect class="dg-item" x="84" y="398" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현 클래스 A — 그대로 동작</text>
+  <rect class="dg-item" x="84" y="464" width="191" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="495" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현 클래스 B — 그대로 동작</text>
 </svg>

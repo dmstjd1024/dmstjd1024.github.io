@@ -1,15 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 214" role="img" aria-labelledby="live-study4--switch-fallthrough-title live-study4--switch-fallthrough-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="live-study4--switch-fallthrough-title live-study4--switch-fallthrough-desc">
   <title id="live-study4--switch-fallthrough-title">break 를 생략해 아래 case 로 계속 흘러내려 권한을 누적 부여하는 방식</title>
   <desc id="live-study4--switch-fallthrough-desc">break 를 생략해 아래 case 로 계속 흘러내려 권한을 누적 부여하는 방식</desc>
 
   <defs>
-    <marker id="br-arw" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+    <marker id="live-study4--switch-fallthrough-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
       <path d="M0 0 L8 3 L0 6 z"/>
     </marker>
   </defs>
 
   <!--  -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="58" y="56" width="177" height="52" rx="6"/>
   <text class="dg-t" x="146" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">case 3 :</text>
   <text class="dg-s" x="146" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">grantDelete() · 여기로 들어와서</text>
@@ -22,4 +24,29 @@
   <rect class="dg-item" x="269" y="122" width="181" height="52" rx="6"/>
   <text class="dg-t" x="359" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">case 1 :</text>
   <text class="dg-s" x="359" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">grantRead() · break — 여기서 끝</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="live-study4--switch-fallthrough-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!--  -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
+  <rect class="dg-item" x="91" y="56" width="177" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">case 3 :</text>
+  <text class="dg-s" x="179" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">grantDelete() · 여기로 들어와서</text>
+  <rect class="dg-item" x="64" y="122" width="232" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">결과</text>
+  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">삭제 권한 · 쓰기 권한 · 읽기 권한 · 세 개가…</text>
+  <rect class="dg-item" x="98" y="188" width="163" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="210" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">case 2 :</text>
+  <text class="dg-s" x="179" y="227" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">grantWrite() · 그대로 이어서</text>
+  <rect class="dg-item" x="89" y="254" width="181" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="276" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">case 1 :</text>
+  <text class="dg-s" x="179" y="293" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">grantRead() · break — 여기서 끝</text>
 </svg>
