@@ -1,0 +1,182 @@
+// ---------------------------------------------------------------------------
+// 백엔드 로드맵 (/roadmap/)
+//
+// "인생 그래프"처럼 읽히게 막을 왼쪽 아래에서 오른쪽 위로 계단식으로 올린다.
+// 높이 차이는 각 막의 style="--i:n" 하나로 만든다 — 막을 더 넣어도 여기는 그대로다.
+//
+// 좁은 화면에서는 계단을 접고 왼쪽 선을 따라 내려가는 세로 타임라인이 된다.
+// 색은 vars.scss 의 의미 토큰만 써서 다크모드가 그대로 따라온다.
+// ---------------------------------------------------------------------------
+
+$roadmap-step:2.75rem;   // 막 하나당 올라가는 높이
+
+.roadmap {
+  max-width:$widewd;
+  margin-inline:auto;
+  padding:0 1.25rem 6rem;
+
+  &__head {
+    padding:4rem 0 2.5rem;
+    max-width:$contentwd;
+  }
+
+  &__eyebrow {
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    letter-spacing:.14em;
+    color:var(--fg-subtle);
+    text-transform:uppercase;
+  }
+
+  &__title {
+    margin-top:.75rem;
+    font-size:clamp(2rem, 5vw, 3rem);
+    line-height:1.15;
+    letter-spacing:-.04em;
+  }
+
+  &__lead {
+    margin-top:1rem;
+    color:var(--fg-muted);
+    line-height:1.7;
+  }
+
+  &__src {
+    margin-top:3rem;
+    padding-top:1.25rem;
+    border-top:1px solid var(--border);
+    font-size:.8rem;
+    color:var(--fg-subtle);
+    line-height:1.7;
+
+    a { text-decoration:underline; text-underline-offset:2px; }
+  }
+}
+
+// --- 다섯 막 ---------------------------------------------------------------
+
+.acts {
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0, 1fr));
+  gap:1rem;
+  align-items:start;
+}
+
+.act {
+  // 뒤 막일수록 위로 — 마지막 막(--i:4)이 0, 첫 막이 가장 낮다
+  margin-top:calc((4 - var(--i)) * #{$roadmap-step});
+  padding:1.1rem 1rem 1rem;
+  border:1px solid var(--border);
+  border-top:3px solid var(--border-strong);
+  border-radius:var(--r);
+  background:var(--bg-raised);
+
+  &__no {
+    display:flex;
+    align-items:center;
+    gap:.4rem;
+    flex-wrap:wrap;
+    font-family:var(--font-mono);
+    font-size:.75rem;
+    color:var(--fg-subtle);
+  }
+
+  &__name {
+    margin-top:.35rem;
+    font-size:1.25rem;
+    letter-spacing:-.03em;
+  }
+
+  &__scope {
+    margin-top:.25rem;
+    font-size:.8rem;
+    color:var(--category);
+  }
+
+  &__items {
+    margin:.85rem 0 0;
+    padding-left:1rem;
+    font-size:.88rem;
+    line-height:1.6;
+    color:var(--fg-muted);
+
+    li + li { margin-top:.2rem; }
+  }
+
+  // 다음 막으로 넘어가는 계기
+  &__next {
+    margin-top:1rem;
+    padding-top:.75rem;
+    border-top:1px dashed var(--border);
+    font-size:.8rem;
+    line-height:1.5;
+    color:var(--fg-subtle);
+
+    &::before { content:"→ "; color:var(--accent); }
+  }
+
+  &__pin,
+  &__badge {
+    font-family:var(--font-sans);
+    font-size:.7rem;
+    padding:.1rem .45rem;
+    border-radius:999px;
+  }
+
+  &__pin { background:var(--accent); color:var(--bg); }
+  &__badge { border:1px solid var(--accent); color:var(--accent); }
+
+  &--here { border-top-color:var(--accent); }
+  &--next { border-style:dashed; border-top-style:solid; border-top-color:var(--accent); }
+}
+
+// --- AI 평생 트랙 ------------------------------------------------------------
+//
+// 막이 아니라 모든 막을 가로지르므로 다섯 막 아래에 가로 띠로 깐다.
+
+.track {
+  margin-top:1.5rem;
+  padding:1rem;
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  background:var(--bg-sunken);
+
+  &__name { font-size:1rem; }
+
+  &__steps {
+    list-style:none;
+    margin:.75rem 0 0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    gap:1rem;
+    font-size:.85rem;
+    line-height:1.5;
+    color:var(--fg-muted);
+
+    span {
+      display:block;
+      font-family:var(--font-mono);
+      font-size:.72rem;
+      color:var(--fg-subtle);
+    }
+  }
+}
+
+// --- 좁은 화면: 세로 타임라인 -----------------------------------------------
+
+@media (max-width:$bp-tablet) {
+  .acts {
+    grid-template-columns:1fr;
+    gap:1rem;
+    padding-left:1rem;
+    border-left:2px solid var(--border);
+  }
+
+  .act { margin-top:0; }
+
+  .track__steps { grid-template-columns:1fr; }
+}

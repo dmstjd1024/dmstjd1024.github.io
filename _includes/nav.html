@@ -115,6 +115,13 @@
     </nav>
 
     <div class="nav__tools">
+      {%- comment -%}
+        로드맵은 카테고리가 아니라 한 장짜리 지도라 메뉴 목록이 아니라 도구 영역에 둔다.
+      {%- endcomment -%}
+      <a href="{{ '/roadmap/' | prepend: site.baseurl }}" aria-label="백엔드 로드맵" title="백엔드 로드맵"
+         {% if here == 'roadmap' %}aria-current="page"{% endif %}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"/></svg>
+      </a>
       <button id="btn-search" type="button" aria-label="검색" title="검색">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 105.3 14l5.4 5.4 1.4-1.4-5.4-5.4A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
       </button>

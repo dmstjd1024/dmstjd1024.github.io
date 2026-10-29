@@ -20,7 +20,7 @@
     카드와 그리드가 눌린다. 그 외(404 등)는 지금까지처럼 본문 폭을 쓴다.
   {%- endcomment -%}
   <main id="content">
-    {%- if page.url == '/' or page.url == '/index.html' -%}
+    {%- if page.url == '/' or page.url == '/index.html' or page.url == '/roadmap/' -%}
       {{ content }}
     {%- else -%}
       <div class="wrap wrap--post">
