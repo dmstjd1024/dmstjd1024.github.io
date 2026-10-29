@@ -25,10 +25,11 @@ permalink: /roadmap/
     <h1 class="roadmap__title">백엔드 개발자의 다섯 막</h1>
     <p class="roadmap__lead">막을 가르는 건 아는 기술의 개수가 아니라 <strong>책임지는 범위</strong>다.
       코드 품질은 시니어에서 상한에 닿고, 그 위는 설계 판단과 범위로 올라간다.</p>
+    <p class="roadmap__legend"><b class="act__rank">1</b> 다음에 집중할 순서</p>
   </header>
 
   <ol class="acts">
-    <li class="act" style="--i:0">
+    <li class="act" style="--i:0; --hue:var(--c-tag-slate)">
       <p class="act__no">1막</p>
       <h2 class="act__name">기초</h2>
       <p class="act__scope">범위 · 태스크</p>
@@ -40,7 +41,7 @@ permalink: /roadmap/
       <p class="act__next">기능 하나를 혼자 끝까지 낸다</p>
     </li>
 
-    <li class="act" style="--i:1">
+    <li class="act" style="--i:1; --hue:var(--c-tag-green)">
       <p class="act__no">2막</p>
       <h2 class="act__name">주니어</h2>
       <p class="act__scope">범위 · 기능</p>
@@ -53,7 +54,7 @@ permalink: /roadmap/
       <p class="act__next">운영 서비스를 맡아 장애를 직접 받는다</p>
     </li>
 
-    <li class="act act--here" style="--i:2">
+    <li class="act act--here" style="--i:2; --hue:var(--c-tag-blue)">
       <p class="act__no">3막 <span class="act__pin">📍 지금 여기</span></p>
       <h2 class="act__name">미들</h2>
       <p class="act__scope">범위 · 서비스</p>
@@ -67,22 +68,22 @@ permalink: /roadmap/
       <p class="act__next">실패 모드를 설계하고, 결정을 글로 설명한다</p>
     </li>
 
-    <li class="act act--next" style="--i:3">
+    <li class="act act--next" style="--i:3; --hue:var(--c-tag-orange)">
       <p class="act__no">4막 <span class="act__badge">다음</span></p>
       <h2 class="act__name">시니어</h2>
       <p class="act__scope">범위 · 팀 도메인</p>
       <ul class="act__items">
-        <li>분산 정합성 — Outbox · 멱등 소비 · 보상 트랜잭션</li>
-        <li>부하 테스트 · 프로파일링 (k6)</li>
-        <li>실행계획 · 인덱스 튜닝</li>
-        <li>분산 추적 · SLO (OpenTelemetry)</li>
+        <li class="is-key"><b class="act__rank">1</b>분산 정합성 — Outbox · 멱등 소비 · 보상 트랜잭션</li>
+        <li class="is-key"><b class="act__rank">2</b>부하 테스트 · 프로파일링 (k6)</li>
+        <li class="is-key"><b class="act__rank">3</b>실행계획 · 인덱스 튜닝</li>
+        <li class="is-key"><b class="act__rank">4</b>분산 추적 · SLO (OpenTelemetry)</li>
         <li>무중단 · 점진 마이그레이션</li>
         <li>ADR · 설계 문서</li>
       </ul>
       <p class="act__next">여러 팀, 여러 해의 방향을 맡는다</p>
     </li>
 
-    <li class="act" style="--i:4">
+    <li class="act" style="--i:4; --hue:var(--c-tag-pink)">
       <p class="act__no">5막</p>
       <h2 class="act__name">스태프</h2>
       <p class="act__scope">범위 · 여러 팀 · 여러 해</p>
@@ -98,7 +99,7 @@ permalink: /roadmap/
   {%- comment -%}
     AI 는 막이 아니라 모든 막을 가로지르는 트랙이다. 막마다 AI 와 맺는 관계가 달라진다.
   {%- endcomment -%}
-  <section class="track" aria-labelledby="track-ai">
+  <section class="track" aria-labelledby="track-ai" style="--hue:var(--c-tag-purple)">
     <h2 class="track__name" id="track-ai">🤖 평생 트랙 · AI</h2>
     <ol class="track__steps">
       <li><span>2막</span>코딩 도구로 쓴다</li>
