@@ -34,6 +34,30 @@
 
       toc.hidden = false;
 
+      // 같은 제목 목록으로 본문 안 접는 목차도 채운다. 옆쪽 목차가 숨는
+      // 좁은 화면에서만 보이지만, 여기서 같이 만들어 두 목차가 어긋나지
+      // 않게 한다 (CSS 가 어느 쪽을 보일지 정한다).
+      var inline = document.getElementById('post-toc');
+      if (inline) {
+        var ol = inline.querySelector('.post-toc__list');
+        var h2s = 0;
+        items.forEach(function (it) {
+          if (it.head.tagName === 'H3') return;   // 접는 목차는 h2 만
+          h2s += 1;
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#' + it.head.id;
+          a.textContent = it.head.textContent;
+          li.appendChild(a);
+          ol.appendChild(li);
+        });
+        if (h2s >= 2) {
+          inline.querySelector('.post-toc__sum').textContent =
+            '목차 · ' + h2s + '개 절';
+          inline.hidden = false;
+        }
+      }
+
       // 화면에 보이는 제목을 목차에서 강조한다.
       // 스크롤 이벤트마다 계산하면 버벅이므로 IntersectionObserver 를 쓴다.
       var visible = new Set();

@@ -14,6 +14,14 @@
       {%- if d != "1900-01-01" -%}
         <time datetime="{{ d }}">{{ page.date | date: "%Y.%m.%d" }}</time>
       {%- endif -%}
+      {%- comment -%}
+        읽는 시간. 한글은 분당 500자 정도로 읽으므로 그 기준으로 나눈다.
+        영어 단어 수(200wpm)로 세면 한글 글이 실제보다 4배 길게 나온다.
+        strip_html 로 코드블록의 마크업을 걷어내고 글자 수만 센다.
+      {%- endcomment -%}
+      {%- assign chars = content | strip_html | size -%}
+      {%- assign mins = chars | divided_by: 500 | plus: 1 -%}
+      <span>읽는 데 {{ mins }}분</span>
     </div>
     <h1 class="post-head__title">{{ page.title }}</h1>
     {%- comment -%}
@@ -58,9 +66,64 @@
     </figure>
   {%- endif -%}
 
+  {%- comment -%}
+    본문 안의 접는 목차. 옆쪽 목차(.toc)는 1544px 미만에서 자리가 없어
+    숨으므로, 좁은 화면에서는 글의 구조를 볼 방법이 없었다. 여기가 그
+    자리다. 내용은 post.js 가 같은 제목 목록으로 채우고, 채우기 전까지는
+    hidden 이라 빈 상자가 보이지 않는다.
+  {%- endcomment -%}
+  <details class="post-toc" id="post-toc" hidden>
+    <summary class="post-toc__sum"></summary>
+    <ol class="post-toc__list"></ol>
+  </details>
+
   <div class="post-body" id="post-body">
     {{ content }}
   </div>
+
+  {%- comment -%}
+    이전·다음 글. 같은 최상위 카테고리 안에서 날짜순으로 앞뒤를 찾는다.
+
+    site.pages 를 쓰는 이유: 이 블로그의 글은 _posts 가 아니라 _pages 에
+    있어서 site.posts 가 비어 있다(post-list.html 과 같은 사정).
+    index.md 는 카테고리 표지라 목록에서 뺀다.
+  {%- endcomment -%}
+  {%- assign cat_url = '/' | append: seg[0] | append: '/' -%}
+  {%- assign sibs = site.pages
+        | where_exp: "p", "p.url contains cat_url"
+        | where_exp: "p", "p.name != 'index.md'"
+        | sort: "date" | reverse -%}
+  {%- assign prev_p = nil -%}
+  {%- assign next_p = nil -%}
+  {%- for p in sibs -%}
+    {%- if p.url == page.url -%}
+      {%- assign i = forloop.index0 -%}
+      {%- if i > 0 -%}
+        {%- assign ni = i | minus: 1 -%}
+        {%- assign next_p = sibs[ni] -%}
+      {%- endif -%}
+      {%- assign pi = i | plus: 1 -%}
+      {%- if pi < sibs.size -%}
+        {%- assign prev_p = sibs[pi] -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if prev_p or next_p -%}
+    <nav class="post-nav" aria-label="이전·다음 글">
+      {%- if prev_p -%}
+        <a class="post-nav__link" href="{{ prev_p.url | prepend: site.baseurl }}">
+          <span class="post-nav__dir">← 이전 글 · {{ seg[0] }}</span>
+          <span class="post-nav__title">{{ prev_p.title }}</span>
+        </a>
+      {%- else -%}<span></span>{%- endif -%}
+      {%- if next_p -%}
+        <a class="post-nav__link post-nav__link--next" href="{{ next_p.url | prepend: site.baseurl }}">
+          <span class="post-nav__dir">다음 글 · {{ seg[0] }} →</span>
+          <span class="post-nav__title">{{ next_p.title }}</span>
+        </a>
+      {%- endif -%}
+    </nav>
+  {%- endif -%}
 
   <footer class="post-foot">
     <a class="post-foot__back" href="{{ '/' | append: seg[0] | prepend: site.baseurl }}">← {{ seg[0] }} 글 더 보기</a>

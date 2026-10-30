@@ -162,20 +162,96 @@
     code { background:none; padding:0; }
   }
 
-  // 표도 마찬가지로 자기 영역 안에서 스크롤한다
+  // 표도 마찬가지로 자기 영역 안에서 스크롤한다.
+  //
+  // 칸마다 테두리를 두르지 않고 가로줄만 남긴다. 세로선이 없으면 눈이
+  // 행을 따라 흐르고, 바깥 테두리 하나가 표의 범위를 알려준다.
+  // display:block 이라 radius 를 주면 모서리가 내용에 잘리므로
+  // overflow:hidden 으로 잘라낸다.
   table {
     display:block;
     width:100%;
     overflow-x:auto;
     border-collapse:collapse;
     font-size:.9375rem;
+    border:1px solid var(--border);
+    border-radius:var(--r);
 
     th, td {
       padding:.6rem .8rem;
-      border:1px solid var(--border);
+      border-bottom:1px solid var(--border);
       text-align:left;
     }
-    th { background:var(--bg-sunken); font-weight:600; }
+    th { background:var(--bg-sunken); font-weight:500; }
+    tr:last-child td { border-bottom:0; }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 본문 안 접는 목차 — 옆쪽 목차(.toc)가 숨는 좁은 화면에서만 보인다.
+//
+// 둘을 같이 보이면 같은 목록이 한 화면에 두 번 나온다. 기준은 .toc 를
+// 숨기는 값과 같은 1544px 이어야 한다. 어긋나면 어느 구간에서는 목차가
+// 둘 다 보이거나 둘 다 사라진다.
+// ---------------------------------------------------------------------------
+.post-toc {
+  margin:2rem 0 0;
+  padding:.75rem 0;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  font-size:.9375rem;
+
+  &__sum {
+    cursor:pointer;
+    color:var(--fg-muted);
+    font-weight:500;
+    &:hover { color:var(--accent); }
+  }
+
+  &__list {
+    margin:.75rem 0 .25rem;
+    padding-left:1.25rem;
+    line-height:2;
+    color:var(--fg-muted);
+
+    a { color:inherit; }
+    a:hover { color:var(--accent); }
+  }
+
+  @media (min-width:96.5rem) { display:none; }
+}
+
+// ---------------------------------------------------------------------------
+// 이전·다음 글. 자리가 좁으면 두 칸이 한 줄로 떨어진다.
+// ---------------------------------------------------------------------------
+.post-nav {
+  margin-top:3rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+  gap:1rem;
+
+  &__link {
+    display:block;
+    padding:1.1rem 1.25rem;
+    border:1px solid var(--border);
+    border-radius:var(--r);
+    color:var(--fg);
+
+    &:hover { border-color:var(--accent); }
+    &--next { text-align:right; }
+  }
+
+  &__dir {
+    display:block;
+    font-size:.8125rem;
+    color:var(--fg-subtle);
+  }
+
+  &__title {
+    display:block;
+    margin-top:.35rem;
+    font-weight:500;
+    line-height:1.5;
   }
 }
 
