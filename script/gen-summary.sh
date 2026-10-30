@@ -15,7 +15,8 @@ WRITE="${2:-}"
 
 if grep -q '^summary:' "$POST"; then
   echo "이미 summary 가 있다: $POST" >&2
-  [ "$WRITE" = "--write" ] && exit 1
+  # 여러 편을 도는 루프가 "거부" 를 성공으로 보지 않도록 1 로 끝낸다.
+  if [ "$WRITE" = "--write" ]; then exit 1; fi
 fi
 
 OUT=$(codex exec --skip-git-repo-check \
@@ -44,11 +45,15 @@ printf '%s\n' "$YAML" | ruby -ryaml -e '
 ' || { echo "YAML 검사 실패" >&2; printf '%s\n' "$YAML" >&2; exit 1; }
 
 if [ "$WRITE" = "--write" ]; then
-  python3 -I - "$POST" <<PY
-import sys, pathlib
+  # YAML 을 파이썬 소스에 끼워 넣지 않는다. codex 가 쓴 문자열이라
+  # 따옴표 세 개가 하나만 들어와도 문자열이 거기서 닫히고 그 뒤가
+  # 코드로 실행된다. 환경변수로 넘기고 heredoc 구분자를 따옴표로 묶어
+  # 셸이 본문을 치환하지 않게 한다.
+  SUMMARY_YAML="$YAML" python3 -I - "$POST" <<'PY'
+import os, sys, pathlib
 post = pathlib.Path(sys.argv[1])
 t = post.read_text(encoding="utf-8")
-yaml_block = '''$YAML'''
+yaml_block = os.environ["SUMMARY_YAML"]
 # 프론트매터는 첫 --- 와 두 번째 --- 사이다. 그 끝에 붙인다.
 a = t.index("---", 0) + 3
 b = t.index("\n---", a)
