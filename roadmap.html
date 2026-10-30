@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 백엔드 로드맵
-description: "기초부터 스태프까지, 백엔드 개발자가 지나는 다섯 막과 각 막에서 공부할 것"
+description: "기초부터 스태프까지, 백엔드 개발자가 지나는 다섯 단계와 각 단계에서 공부할 것"
 permalink: /roadmap/
 ---
 
@@ -11,8 +11,8 @@ permalink: /roadmap/
   글이 아니라 한 장짜리 지도라 _pages 컬렉션 밖(루트)에 둔다. 컬렉션에 넣으면
   카테고리 메뉴·전체 목록·태그에 글처럼 섞인다.
 
-  막은 기술 목록이 아니라 "책임 범위"로 나눴다. 커리어 프레임워크(CircleCI·Dropbox)가
-  단계를 영향 범위와 기간으로 가르기 때문이다. 막 사이 화살표 문장이 다음 막으로
+  단계는 기술 목록이 아니라 "책임 범위"로 나눴다. 커리어 프레임워크(CircleCI·Dropbox)가
+  단계를 영향 범위와 기간으로 가르기 때문이다. 단계 사이 화살표 문장이 다음 단계로
   넘어가는 계기다.
 
   스타일은 _sass/roadmap.scss.
@@ -22,15 +22,15 @@ permalink: /roadmap/
 
   <header class="roadmap__head">
     <p class="roadmap__eyebrow">Backend Roadmap</p>
-    <h1 class="roadmap__title">백엔드 개발자의 다섯 막</h1>
-    <p class="roadmap__lead">막을 가르는 건 아는 기술의 개수가 아니라 <strong>책임지는 범위</strong>다.
+    <h1 class="roadmap__title">백엔드 개발자 로드맵</h1>
+    <p class="roadmap__lead">단계를 가르는 건 아는 기술의 개수가 아니라 <strong>책임지는 범위</strong>다.
       코드 품질은 시니어에서 상한에 닿고, 그 위는 설계 판단과 범위로 올라간다.</p>
     <p class="roadmap__legend"><b class="act__rank">1</b> 다음에 집중할 순서</p>
   </header>
 
   <ol class="acts">
     <li class="act" style="--i:0; --hue:var(--c-tag-slate)">
-      <p class="act__no">1막</p>
+      <p class="act__no">1단계</p>
       <h2 class="act__name">기초</h2>
       <p class="act__scope">범위 · 태스크</p>
       <ul class="act__items">
@@ -42,7 +42,7 @@ permalink: /roadmap/
     </li>
 
     <li class="act" style="--i:1; --hue:var(--c-tag-green)">
-      <p class="act__no">2막</p>
+      <p class="act__no">2단계</p>
       <h2 class="act__name">주니어</h2>
       <p class="act__scope">범위 · 기능</p>
       <ul class="act__items">
@@ -55,7 +55,7 @@ permalink: /roadmap/
     </li>
 
     <li class="act act--here" style="--i:2; --hue:var(--c-tag-blue)">
-      <p class="act__no">3막 <span class="act__pin">지금 여기</span></p>
+      <p class="act__no">3단계 <span class="act__pin">지금 여기</span></p>
       <h2 class="act__name">미들</h2>
       <p class="act__scope">범위 · 서비스</p>
       <ul class="act__items">
@@ -69,7 +69,7 @@ permalink: /roadmap/
     </li>
 
     <li class="act act--next" style="--i:3; --hue:var(--c-tag-orange)">
-      <p class="act__no">4막 <span class="act__badge">다음</span></p>
+      <p class="act__no">4단계 <span class="act__badge">다음</span></p>
       <h2 class="act__name">시니어</h2>
       <p class="act__scope">범위 · 팀 도메인</p>
       <ul class="act__items">
@@ -84,7 +84,7 @@ permalink: /roadmap/
     </li>
 
     <li class="act" style="--i:4; --hue:var(--c-tag-pink)">
-      <p class="act__no">5막</p>
+      <p class="act__no">5단계</p>
       <h2 class="act__name">스태프</h2>
       <p class="act__scope">범위 · 여러 팀 · 여러 해</p>
       <ul class="act__items">
@@ -97,15 +97,15 @@ permalink: /roadmap/
   </ol>
 
   {%- comment -%}
-    AI 는 막이 아니라 모든 막을 가로지르는 트랙이다. 막마다 AI 와 맺는 관계가 달라진다.
+    AI 는 단계가 아니라 모든 단계를 가로지르는 트랙이다. 단계마다 AI 와 맺는 관계가 달라진다.
   {%- endcomment -%}
   <section class="track" aria-labelledby="track-ai" style="--hue:var(--c-tag-purple)">
-    <h2 class="track__name" id="track-ai">AI 는 막마다 쓰는 법이 달라진다</h2>
+    <h2 class="track__name" id="track-ai">AI 는 단계마다 쓰는 법이 달라진다</h2>
     <ol class="track__steps">
-      <li><span>2막</span>코딩 도구로 쓴다</li>
-      <li><span>3막</span>"거의 맞는" 출력을 걸러낸다</li>
-      <li><span>4막</span>LLM 게이트웨이 · 평가 · 비용 · 권한을 운영한다</li>
-      <li><span>5막</span>조직에 들인다</li>
+      <li><span>2단계</span>코딩 도구로 쓴다</li>
+      <li><span>3단계</span>"거의 맞는" 출력을 걸러낸다</li>
+      <li><span>4단계</span>LLM 게이트웨이 · 평가 · 비용 · 권한을 운영한다</li>
+      <li><span>5단계</span>조직에 들인다</li>
     </ol>
   </section>
 
@@ -115,7 +115,7 @@ permalink: /roadmap/
       <a href="https://dropbox.github.io/dbx-career-framework/">Dropbox</a> ·
       <a href="https://docs.google.com/spreadsheets/d/131XZCEb8LoXqy79WWrhCX4sBnGhCM1nAIz4feFZJsEo/edit">CircleCI</a> 커리어 프레임워크,
       <a href="https://roadmap.sh/backend">roadmap.sh</a>.</p>
-    <p>막마다 무엇을 익히는지 항목별로 보려면 —
+    <p>단계마다 무엇을 익히는지 항목별로 보려면 —
       <a href="{{ '/Develop/backend-roadmap-2026.html' | prepend: site.baseurl }}">백엔드 개발자 로드맵 2026</a>
       (원본 로드맵 132개 항목을 전부 그린 상세판).</p>
   </footer>
