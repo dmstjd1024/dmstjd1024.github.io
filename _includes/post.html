@@ -67,6 +67,49 @@
   {%- endif -%}
 
   {%- comment -%}
+    요약 카드. 프론트매터에 summary 가 있는 글에만 그린다.
+
+    다섯 칸(환경·문제·선택·포기한 것·결과)은 시안에서 왔다. 어느 한 칸이
+    비면 그 줄만 건너뛴다 — 근거 없는 수치를 채우느니 비우는 편이 낫다
+    (CLAUDE.md "측정하지 않은 숫자는 쓰지 않는다").
+
+    결과(result)만 목록이다. 수치 배지를 여러 개 다는 자리라서.
+  {%- endcomment -%}
+  {%- if page.summary -%}
+    {%- assign sm = page.summary -%}
+    {%- assign field_rows = "환경|환경,문제|문제,선택|선택,포기|포기한 것" | split: ',' -%}
+    <section class="post-sum" aria-label="요약">
+      <div class="post-sum__head">
+        <span class="post-sum__label">요약</span>
+        {%- if sm.context -%}<span class="post-sum__ctx">{{ sm.context }}</span>{%- endif -%}
+      </div>
+      <dl class="post-sum__body">
+        {%- comment -%}
+          한글 키는 점 표기(sm.환경)로 못 읽는다. Liquid 가 ASCII 가 아닌
+          이름을 변수명으로 인식하지 못해 조용히 부모(해시 전체)를 돌려줬다
+          — 다섯 칸에 해시가 통째로 찍혔다. 대괄호 표기를 쓴다.
+        {%- endcomment -%}
+        {%- for row in field_rows -%}
+          {%- assign key = row | split: '|' | first -%}
+          {%- assign label = row | split: '|' | last -%}
+          {%- assign val = sm[key] -%}
+          {%- if val and val != '' -%}
+            <dt>{{ label }}</dt>
+            <dd>{{ val | markdownify | remove: '<p>' | remove: '</p>' }}</dd>
+          {%- endif -%}
+        {%- endfor -%}
+        {%- assign outs = sm['결과'] -%}
+        {%- if outs and outs.size > 0 -%}
+          <dt>결과</dt>
+          <dd class="post-sum__out">
+            {%- for r in outs -%}<span class="post-sum__badge">{{ r }}</span>{%- endfor -%}
+          </dd>
+        {%- endif -%}
+      </dl>
+    </section>
+  {%- endif -%}
+
+  {%- comment -%}
     본문 안의 접는 목차. 옆쪽 목차(.toc)는 1544px 미만에서 자리가 없어
     숨으므로, 좁은 화면에서는 글의 구조를 볼 방법이 없었다. 여기가 그
     자리다. 내용은 post.js 가 같은 제목 목록으로 채우고, 채우기 전까지는
