@@ -84,6 +84,10 @@
   .dg-release { stroke: #bf8700; }
   .dg-hotfix  { stroke: #cf222e; }
 
+  // 브랜치 위의 커밋 점. 선 색과 같이 움직이도록 클래스로 준다.
+  .dg-dot-master  { fill: #8250df; }
+  .dg-dot-develop { fill: var(--accent); }
+
   // 코드 문법 색
   .dg-key { fill: #0550ae; }
   .dg-enc, .dg-g { fill: var(--category); }
@@ -127,5 +131,6 @@ body.dark-theme .diagram {
   .dg-release { stroke: #d29922; }
   .dg-hotfix  { stroke: #f85149; }
   .dg-key     { fill: #79c0ff; }
+  .dg-dot-master { fill: #a371f7; }
   .dg-f       { fill: #a371f7; }
 }

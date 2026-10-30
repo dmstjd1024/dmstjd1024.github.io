@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="단계별 성공률이 0.85라고 가정할 때 의존 단계 수에 따라 전체 성공률이 감소하는 개념도. 프로세스 재시작 효과를 측정한 그래프는 아니다">
+<svg class="dg-wide" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-label="단계별 성공률이 0.85라고 가정할 때 의존 단계 수에 따라 전체 성공률이 감소하는 개념도. 프로세스 재시작 효과를 측정한 그래프는 아니다">
   <text class="dg-h" x="24" y="30">의존 단계가 늘면 전체 성공률은 곱해진다</text>
   <text class="dg-s" x="24" y="50">걸음당 성공률 0.85 를 가정한 개념도. 새 프로세스와 이어가는 세션을 비교한 실측이 아니다</text>
 
@@ -25,4 +25,32 @@
   <rect class="dg-lane" x="24" y="262" width="672" height="46" rx="8"/>
   <text class="dg-v" x="44" y="284">세션을 나누기만 해도 누적 성공률이 복구되는 것은 아니다</text>
   <text class="dg-s" x="44" y="302">태스크 사이의 검증과 오류 수정이 필요하다</text>
+</svg>
+<svg class="dg-narrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 356" role="presentation" aria-hidden="true">
+  <!-- 세로본. 그래프는 행으로 접을 수 없으므로 축을 그대로 두고 좌우
+       여백만 줄였다(가로본 88..660 → 56..336). 한 줄로 길었던 부제와
+       곡선 라벨은 폭이 모자라 두 줄로 끊었다. -->
+  <text class="dg-h" x="24" y="28">의존 단계가 늘면</text>
+  <text class="dg-h" x="24" y="50">전체 성공률은 곱해진다</text>
+  <text class="dg-s" x="24" y="72">걸음당 성공률 0.85 를 가정한 개념도다.</text>
+
+  <path class="dg-arw" d="M56 212 H336"/>
+  <path class="dg-arw" d="M56 88 V212"/>
+
+  <text class="dg-s" x="50" y="100" text-anchor="end">1.0</text>
+  <text class="dg-s" x="50" y="156" text-anchor="end">0.5</text>
+  <text class="dg-s" x="50" y="216" text-anchor="end">0</text>
+
+  <text class="dg-s" x="56" y="230" text-anchor="middle">0</text>
+  <text class="dg-s" x="149" y="230" text-anchor="middle">8</text>
+  <text class="dg-s" x="243" y="230" text-anchor="middle">16</text>
+  <text class="dg-s" x="336" y="230" text-anchor="end">24</text>
+  <text class="dg-s" x="336" y="246" text-anchor="end">걸음 수</text>
+
+  <polyline class="dg-arw" fill="none" points="56,96 68,113 79,128 91,141 103,151 114,161 126,168 138,175 149,180 161,185 173,189 184,193 196,195 208,198 219,200 231,202 243,203 254,205 266,206 278,207 289,208 301,208 313,209 324,209 336,210"/>
+
+  <rect class="dg-lane" x="24" y="268" width="312" height="72" rx="8"/>
+  <text class="dg-v" x="40" y="292">세션을 나누기만 해도 누적</text>
+  <text class="dg-v" x="40" y="310">성공률이 복구되지는 않는다</text>
+  <text class="dg-s" x="40" y="330">태스크 사이의 검증과 수정이 필요하다</text>
 </svg>
