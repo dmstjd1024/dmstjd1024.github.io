@@ -21,15 +21,11 @@ $roadmap-spine:3px;
     max-width:$contentwd;
   }
 
-  &__eyebrow {
+  &__title {
     margin:0;
-    font-weight:400;
-    line-height:1.4;
-    font-family:var(--font-mono);
-    font-size:.75rem;
-    letter-spacing:.14em;
-    color:var(--fg-subtle);
-    text-transform:uppercase;
+    font-size:clamp(2rem, 5vw, 3rem);
+    line-height:1.15;
+    letter-spacing:-.04em;
   }
 
   &__lead {
