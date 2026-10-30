@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 백엔드 로드맵
-description: "기초부터 스태프까지, 백엔드 개발자가 지나는 다섯 단계와 각 단계에서 공부할 것"
+description: "roadmap.sh 백엔드 로드맵의 세부 항목 132개를 세로선 하나에 펼친 지도"
 permalink: /roadmap/
 ---
 
@@ -11,9 +11,9 @@ permalink: /roadmap/
   글이 아니라 한 장짜리 지도라 _pages 컬렉션 밖(루트)에 둔다. 컬렉션에 넣으면
   카테고리 메뉴·전체 목록·태그에 글처럼 섞인다.
 
-  단계는 기술 목록이 아니라 "책임 범위"로 나눴다. 커리어 프레임워크(CircleCI·Dropbox)가
-  단계를 영향 범위와 기간으로 가르기 때문이다. 단계 사이 화살표 문장이 다음 단계로
-  넘어가는 계기다.
+  내용은 _data/backend_roadmap.yml 에 있다. 단계(stage) → 주제(topic) → 항목(item).
+  주제 노드는 가운데 세로선 위에 앉고, 항목은 앞 절반을 왼쪽·나머지를 오른쪽에 붙인다.
+  좌우에 의미 차이는 없다 — 보기 균형만 맞춘 것이다.
 
   스타일은 _sass/roadmap.scss.
 {%- endcomment -%}
@@ -22,125 +22,50 @@ permalink: /roadmap/
 
   <header class="roadmap__head">
     <h1 class="roadmap__title">Backend Roadmap</h1>
-    <p class="roadmap__lead">단계를 가르는 건 아는 기술의 개수가 아니라 <strong>책임지는 범위</strong>다.
-      코드 품질은 시니어에서 상한에 닿고, 그 위는 설계 판단과 범위로 올라간다.</p>
-    <p class="roadmap__legend"><b class="act__rank">1</b> 다음에 집중할 순서</p>
+    <p class="roadmap__lead"><a href="https://roadmap.sh/backend">roadmap.sh 백엔드 로드맵</a>(2026-02 갱신본)의
+      세부 항목 132개를 하나도 합치지 않고 옮겼다. 위에서 아래로 내려가며 익힌다.</p>
+    <ul class="roadmap__legend">
+      <li><span class="rm-item">기본</span> 먼저 익힐 항목</li>
+      <li><span class="rm-item is-alt">대안</span> 위 기본 대신 하나만 고른다</li>
+      <li><span class="rm-item is-key"><b class="rm-rank">1</b>순서</span> 다음에 집중할 것 — 국내 공고 조사 기준</li>
+    </ul>
   </header>
 
-  {%- comment -%}
-    단계 노드는 가운데 세로선 위에 앉고, 공부할 항목은 좌우로 갈라 붙인다.
-    좌우 배분은 보기 균형만 맞춘 것이다 — 왼쪽·오른쪽에 의미 차이는 없다.
-  {%- endcomment -%}
-  <ol class="acts">
-    <li class="act" style="--hue:var(--c-tag-slate)">
-      <div class="act__node">
-        <p class="act__no">1단계</p>
-        <h2 class="act__name">기초</h2>
-        <p class="act__scope">범위 · 태스크</p>
-      </div>
-      <ul class="act__items act__items--l">
-        <li>언어 문법 · 자료구조</li>
-        <li>SQL · HTTP</li>
-      </ul>
-      <ul class="act__items act__items--r">
-        <li>Git · Linux</li>
-      </ul>
-      <p class="act__next">기능 하나를 혼자 끝까지 낸다</p>
+  {%- comment -%} for 태그에는 필터를 못 쓴다 — 좌우 목록은 미리 배열로 만든다 {%- endcomment -%}
+  {%- assign sides = "l,r" | split: "," %}
+  <ol class="rm-stages">
+    {%- for stage in site.data.backend_roadmap %}
+    <li class="rm-stage" style="--hue:var(--c-tag-{{ stage.hue }})">
+      <h2 class="rm-stage__name">{{ stage.stage }}</h2>
+      {%- for topic in stage.topics %}
+      {%- assign half = topic.items.size | plus: 1 | divided_by: 2 %}
+      <section class="rm-topic">
+        <h3 class="rm-topic__node">{{ topic.name }}</h3>
+        {%- for side in sides %}
+        {%- if side == "l" %}{% assign from = 0 %}{% assign count = half %}{% else %}{% assign from = half %}{% assign count = topic.items.size %}{% endif %}
+        <ul class="rm-topic__items rm-topic__items--{{ side }}">
+          {%- for it in topic.items offset: from limit: count %}
+          <li class="rm-item{% if it.tag == '대안' %} is-alt{% endif %}{% if it.rank %} is-key{% endif %}">
+            {%- if it.rank %}<b class="rm-rank">{{ it.rank }}</b>{% endif %}{{ it.name }}
+            {%- if it.tag %}<small>{{ it.tag }}</small>{% endif -%}
+          </li>
+          {%- endfor %}
+        </ul>
+        {%- endfor %}
+      </section>
+      {%- endfor %}
     </li>
-
-    <li class="act" style="--hue:var(--c-tag-green)">
-      <div class="act__node">
-        <p class="act__no">2단계</p>
-        <h2 class="act__name">주니어</h2>
-        <p class="act__scope">범위 · 기능</p>
-      </div>
-      <ul class="act__items act__items--l">
-        <li>Spring · JPA · REST</li>
-        <li>테스트 · 코드 리뷰</li>
-      </ul>
-      <ul class="act__items act__items--r">
-        <li>인증 · 인가</li>
-        <li>CI/CD 기초</li>
-      </ul>
-      <p class="act__next">운영 서비스를 맡아 장애를 직접 받는다</p>
-    </li>
-
-    <li class="act act--here" style="--hue:var(--c-tag-blue)">
-      <div class="act__node">
-        <p class="act__no">3단계 <span class="act__pin">지금 여기</span></p>
-        <h2 class="act__name">미들</h2>
-        <p class="act__scope">범위 · 서비스</p>
-      </div>
-      <ul class="act__items act__items--l">
-        <li>캐시 · 선착순 트래픽</li>
-        <li>메시지 큐 (Kafka)</li>
-        <li>인덱스 기초</li>
-      </ul>
-      <ul class="act__items act__items--r">
-        <li>Docker · 클라우드</li>
-        <li>모니터링 · 알림</li>
-      </ul>
-      <p class="act__next">실패 모드를 설계하고, 결정을 글로 설명한다</p>
-    </li>
-
-    <li class="act act--next" style="--hue:var(--c-tag-orange)">
-      <div class="act__node">
-        <p class="act__no">4단계 <span class="act__badge">다음</span></p>
-        <h2 class="act__name">시니어</h2>
-        <p class="act__scope">범위 · 팀 도메인</p>
-      </div>
-      <ul class="act__items act__items--l">
-        <li class="is-key"><b class="act__rank">1</b>분산 정합성 — Outbox · 멱등 소비 · 보상 트랜잭션</li>
-        <li class="is-key"><b class="act__rank">2</b>부하 테스트 · 프로파일링 (k6)</li>
-        <li class="is-key"><b class="act__rank">3</b>실행계획 · 인덱스 튜닝</li>
-        <li class="is-key"><b class="act__rank">4</b>분산 추적 · SLO (OpenTelemetry)</li>
-      </ul>
-      <ul class="act__items act__items--r">
-        <li>무중단 · 점진 마이그레이션</li>
-        <li>ADR · 설계 문서</li>
-      </ul>
-      <p class="act__next">여러 팀, 여러 해의 방향을 맡는다</p>
-    </li>
-
-    <li class="act" style="--hue:var(--c-tag-pink)">
-      <div class="act__node">
-        <p class="act__no">5단계</p>
-        <h2 class="act__name">스태프</h2>
-        <p class="act__scope">범위 · 여러 팀 · 여러 해</p>
-      </div>
-      <ul class="act__items act__items--l">
-        <li>기술 전략 · 로드맵</li>
-        <li>build vs buy 판단</li>
-      </ul>
-      <ul class="act__items act__items--r">
-        <li>플랫폼 · 공통 라이브러리</li>
-        <li>복잡한 설계를 단순한 기반으로</li>
-      </ul>
-    </li>
+    {%- endfor %}
   </ol>
 
-  {%- comment -%}
-    AI 는 단계가 아니라 모든 단계를 가로지르는 트랙이다. 단계마다 AI 와 맺는 관계가 달라진다.
-  {%- endcomment -%}
-  <section class="track" aria-labelledby="track-ai" style="--hue:var(--c-tag-purple)">
-    <h2 class="track__name" id="track-ai">AI 는 단계마다 쓰는 법이 달라진다</h2>
-    <ol class="track__steps">
-      <li><span>2단계</span>코딩 도구로 쓴다</li>
-      <li><span>3단계</span>"거의 맞는" 출력을 걸러낸다</li>
-      <li><span>4단계</span>LLM 게이트웨이 · 평가 · 비용 · 권한을 운영한다</li>
-      <li><span>5단계</span>조직에 들인다</li>
-    </ol>
-  </section>
-
   <footer class="roadmap__src">
-    <p>근거 — 국내 백엔드 채용공고 30건 직접 집계(2026-10),
-      토스 SLASH · if(kakao) · WOOWACON 발표,
-      <a href="https://dropbox.github.io/dbx-career-framework/">Dropbox</a> ·
-      <a href="https://docs.google.com/spreadsheets/d/131XZCEb8LoXqy79WWrhCX4sBnGhCM1nAIz4feFZJsEo/edit">CircleCI</a> 커리어 프레임워크,
-      <a href="https://roadmap.sh/backend">roadmap.sh</a>.</p>
-    <p>단계마다 무엇을 익히는지 항목별로 보려면 —
-      <a href="{{ '/Develop/backend-roadmap-2026.html' | prepend: site.baseurl }}">백엔드 개발자 로드맵 2026</a>
-      (원본 로드맵 132개 항목을 전부 그린 상세판).</p>
+    <p>원본 — <a href="https://roadmap.sh/backend">roadmap.sh/backend</a>.
+      컨테이너는 원본에서도 별도 로드맵(<a href="https://roadmap.sh/docker">Docker</a> ·
+      <a href="https://roadmap.sh/kubernetes">쿠버네티스</a>)으로 빠진다.</p>
+    <p>1~4 번호와 "국내 추가" 항목 — 국내 백엔드 채용공고 30건 직접 집계(2026-10),
+      토스 SLASH · if(kakao) · WOOWACON 발표.</p>
+    <p>단계마다 왜 그 항목인지는 —
+      <a href="{{ '/Develop/backend-roadmap-2026.html' | prepend: site.baseurl }}">백엔드 개발자 로드맵 2026</a>.</p>
   </footer>
 
 </div>

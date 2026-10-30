@@ -1,14 +1,14 @@
 // ---------------------------------------------------------------------------
 // 백엔드 로드맵 (/roadmap/)
 //
-// 가운데 세로선(spine) 하나를 따라 단계 노드가 내려가고, 공부할 항목은 노드 좌우로
-// 점선을 달고 뻗는다. 단계 사이 문장은 선 위에 얹어 "다음으로 넘어가는 계기"로 읽힌다.
+// 가운데 세로선(spine) 하나를 따라 단계 → 주제 노드가 내려가고, 항목은 주제 노드
+// 좌우로 점선을 달고 뻗는다. 단계 이름은 선 위에 알약 모양으로 얹는다.
 //
 // 좁은 화면에서는 선을 왼쪽으로 옮기고 노드·항목을 한 줄로 쌓는다.
 // 색은 vars.scss 의 의미 토큰만 써서 다크모드가 그대로 따라온다.
 // ---------------------------------------------------------------------------
 
-$roadmap-gap:2.5rem;     // 항목과 노드 사이 — 점선 연결선 길이가 된다
+$roadmap-gap:2rem;       // 항목과 노드 사이 — 점선 연결선 길이가 된다
 $roadmap-spine:3px;
 
 .roadmap {
@@ -17,7 +17,7 @@ $roadmap-spine:3px;
   padding:0 1.25rem 6rem;
 
   &__head {
-    padding:4rem 0 2.5rem;
+    padding:4rem 0 1.5rem;
     max-width:$contentwd;
   }
 
@@ -32,6 +32,23 @@ $roadmap-spine:3px;
     margin-top:1rem;
     color:var(--fg-muted);
     line-height:1.7;
+
+    a { text-decoration:underline; text-underline-offset:2px; }
+  }
+
+  &__legend {
+    --hue:var(--border-strong);
+    list-style:none;
+    margin:1rem 0 0;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem 1.25rem;
+    font-size:.8rem;
+    color:var(--fg-subtle);
+
+    li { display:flex; align-items:center; gap:.45rem; }
+    .rm-item { font-size:.75rem; padding:.15rem .5rem; }
   }
 
   &__src {
@@ -46,15 +63,15 @@ $roadmap-spine:3px;
   }
 }
 
-// --- 다섯 단계 ---------------------------------------------------------------
+// --- 세로선과 단계 ----------------------------------------------------------
 
-.acts {
+.rm-stages {
   position:relative;
   list-style:none;
-  margin:1rem 0 0;
+  margin:1.5rem 0 0;
   padding:0;
 
-  // 세로선 — 1단계→5단계 색을 따라 내려간다
+  // 세로선 — 단계 색을 따라 내려간다
   &::before {
     content:"";
     position:absolute;
@@ -63,220 +80,155 @@ $roadmap-spine:3px;
     left:calc(50% - #{$roadmap-spine} / 2);
     width:$roadmap-spine;
     border-radius:$roadmap-spine;
-    background:linear-gradient(var(--c-tag-slate), var(--c-tag-green), var(--c-tag-blue), var(--c-tag-orange), var(--c-tag-pink));
+    background:linear-gradient(var(--c-tag-slate), var(--c-tag-green), var(--c-tag-teal), var(--c-tag-blue), var(--c-tag-purple), var(--c-tag-orange), var(--c-tag-pink));
   }
 }
 
 // 단계마다 고유색(--hue)을 HTML 에서 태그 색 토큰으로 넘긴다. 태그 색은 다크모드 값이
 // 따로 있어 여기서 분기할 필요가 없다.
-.act {
+.rm-stage {
   --hue:var(--border-strong);
   position:relative;
+  padding-top:3rem;
+
+  &__name {
+    position:relative;
+    z-index:1;
+    width:fit-content;
+    margin:0 auto;
+    padding:.3rem .9rem;
+    border-radius:999px;
+    background:var(--hue);
+    color:var(--bg);
+    font-size:.85rem;
+    letter-spacing:0;
+  }
+}
+
+// --- 주제 노드와 항목 -------------------------------------------------------
+
+.rm-topic {
   display:grid;
-  grid-template-columns:minmax(0, 1fr) minmax(11rem, 14rem) minmax(0, 1fr);
-  grid-template-areas:"l node r" ". next .";
+  grid-template-columns:minmax(0, 1fr) minmax(9rem, 12rem) minmax(0, 1fr);
+  grid-template-areas:"l node r";
   column-gap:$roadmap-gap;
   align-items:center;
-  padding-top:2.5rem;
+  padding-top:1.75rem;
 
   &__node {
     grid-area:node;
     position:relative;
     z-index:1;
-    padding:.8rem 1rem;
+    margin:0;
+    padding:.6rem .75rem;
     text-align:center;
+    font-size:.95rem;
+    letter-spacing:-.02em;
     border:2px solid var(--hue);
     border-radius:var(--r);
     background:color-mix(in srgb, var(--hue) 14%, var(--bg-raised));
   }
 
-  &__no {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:.4rem;
-    flex-wrap:wrap;
-    font-family:var(--font-mono);
-    font-size:.75rem;
-    font-weight:600;
-    color:var(--hue);
-  }
-
-  &__name {
-    margin-top:.25rem;
-    font-size:1.25rem;
-    letter-spacing:-.03em;
-  }
-
-  &__scope {
-    margin-top:.15rem;
-    font-size:.78rem;
-    color:var(--hue);
-  }
-
-  // 항목 상자. 노드 쪽 끝에 붙고, 남은 간격(=column-gap)을 점선이 메운다.
+  // 항목은 노드 쪽 끝에 붙고, 남은 간격(=column-gap)을 점선이 메운다
   &__items {
     list-style:none;
     margin:0;
     padding:0;
     display:flex;
     flex-direction:column;
-    gap:.5rem;
-    font-size:.85rem;
-    line-height:1.45;
-    color:var(--fg-muted);
+    gap:.4rem;
 
-    li {
-      position:relative;
-      max-width:100%;
-      padding:.4rem .7rem;
-      border:1px solid color-mix(in srgb, var(--hue) 45%, var(--border));
-      border-radius:calc(var(--r) * .6);
-      background:var(--bg-raised);
-
-      &::after {
-        content:"";
-        position:absolute;
-        top:50%;
-        width:$roadmap-gap;
-        border-top:2px dotted color-mix(in srgb, var(--hue) 70%, transparent);
-      }
+    .rm-item::after {
+      content:"";
+      position:absolute;
+      top:50%;
+      width:$roadmap-gap;
+      border-top:2px dotted color-mix(in srgb, var(--hue) 60%, transparent);
     }
 
     &--l {
       grid-area:l;
       align-items:flex-end;
-      text-align:right;
-      li::after { left:100%; }
+      .rm-item::after { left:100%; }
     }
 
     &--r {
       grid-area:r;
       align-items:flex-start;
-      li::after { right:100%; }
-    }
-
-    // 우선순위 항목: 번호 원을 앞에 달고 굵게
-    .is-key {
-      display:flex;
-      gap:.45rem;
-      align-items:baseline;
-      text-align:left;
-      color:var(--fg);
-      font-weight:600;
-      border-color:var(--hue);
+      .rm-item::after { right:100%; }
     }
   }
+}
 
-  &__rank {
-    flex-shrink:0;
-    display:inline-grid;
-    place-items:center;
-    width:1.15rem;
-    height:1.15rem;
-    border-radius:50%;
-    background:var(--hue);
-    color:var(--bg);
+.rm-item {
+  position:relative;
+  display:inline-flex;
+  align-items:baseline;
+  gap:.4rem;
+  max-width:100%;
+  padding:.3rem .6rem;
+  border:1px solid color-mix(in srgb, var(--hue) 45%, var(--border));
+  border-radius:calc(var(--r) * .6);
+  background:var(--bg-raised);
+  font-size:.82rem;
+  line-height:1.4;
+  color:var(--fg);
+
+  small {
     font-family:var(--font-mono);
-    font-size:.68rem;
-  }
-
-  // 다음 단계로 넘어가는 계기 — 세로선 위에 얹는다(배경으로 선을 가린다)
-  &__next {
-    grid-area:next;
-    position:relative;
-    z-index:1;
-    justify-self:center;
-    margin-top:2.5rem;
-    padding:.2rem .6rem;
-    font-size:.78rem;
-    line-height:1.5;
-    text-align:center;
+    font-size:.65rem;
     color:var(--fg-subtle);
-    background:var(--bg);
-
-    &::before { content:"↓ "; color:var(--hue); }
   }
 
-  &__pin,
-  &__badge {
-    font-family:var(--font-sans);
-    font-size:.7rem;
-    padding:.1rem .45rem;
-    border-radius:999px;
-    background:var(--hue);
-    color:var(--bg);
+  // 대안: 하나만 고르면 되는 항목이라 한 단계 흐리게
+  &.is-alt {
+    border-style:dashed;
+    border-color:var(--border-strong);
+    background:transparent;
+    color:var(--fg-subtle);
   }
 
-  // 지금 위치와 다음 목표는 노드에 빛을 둘러 다른 단계보다 먼저 보이게 한다
-  &--here &__node,
-  &--next &__node {
-    box-shadow:0 0 0 4px color-mix(in srgb, var(--hue) 22%, transparent);
+  // 다음에 집중할 것: 단계 색과 겹치지 않는 빨강으로 고정
+  &.is-key {
+    border:2px solid var(--c-tag-red);
+    font-weight:600;
   }
 }
 
-.roadmap__legend {
-  margin-top:.75rem;
-  display:flex;
-  align-items:center;
-  gap:.45rem;
-  font-size:.8rem;
-  color:var(--fg-subtle);
-
-  .act__rank { --hue:var(--c-tag-orange); }
-}
-
-// --- AI 평생 트랙 ------------------------------------------------------------
-//
-// 단계가 아니라 모든 단계를 가로지르므로 다섯 단계 아래에 가로 띠로 깐다.
-
-.track {
-  margin-top:1.5rem;
-  padding:1rem;
-  border:1px solid color-mix(in srgb, var(--hue) 35%, var(--border));
-  border-left:4px solid var(--hue);
-  border-radius:var(--r);
-  background:color-mix(in srgb, var(--hue) 7%, var(--bg-sunken));
-
-  &__name { font-size:1rem; color:var(--hue); }
-
-  &__steps {
-    list-style:none;
-    margin:.75rem 0 0;
-    padding:0;
-    display:grid;
-    grid-template-columns:repeat(4, minmax(0, 1fr));
-    gap:1rem;
-    font-size:.85rem;
-    line-height:1.5;
-    color:var(--fg-muted);
-
-    span {
-      display:block;
-      font-family:var(--font-mono);
-      font-size:.72rem;
-      font-weight:600;
-      color:var(--hue);
-    }
-  }
+.rm-rank {
+  flex-shrink:0;
+  align-self:center;
+  display:inline-grid;
+  place-items:center;
+  width:1.1rem;
+  height:1.1rem;
+  border-radius:50%;
+  background:var(--c-tag-red);
+  color:var(--bg);
+  font-family:var(--font-mono);
+  font-size:.65rem;
 }
 
 // --- 좁은 화면: 선을 왼쪽으로 -----------------------------------------------
 
 @media (max-width:$bp-tablet) {
-  .acts {
+  .rm-stages {
     padding-left:1.25rem;
     &::before { left:0; }
   }
 
-  .act {
+  .rm-stage {
+    padding-top:2rem;
+    &__name { margin:0 0 0 -1.25rem; }
+  }
+
+  .rm-topic {
     grid-template-columns:minmax(0, 1fr);
-    grid-template-areas:"node" "l" "r" "next";
-    row-gap:.5rem;
-    padding-top:1.5rem;
+    grid-template-areas:"node" "l" "r";
+    row-gap:.4rem;
+    padding-top:1.25rem;
 
     &__node { text-align:left; }
-    &__no { justify-content:flex-start; }
 
     // 항목은 노드 아래로 들여 쌓고, 연결선은 왼쪽 세로선까지 끈다
     &__items {
@@ -284,17 +236,8 @@ $roadmap-spine:3px;
 
       &--l, &--r {
         align-items:flex-start;
-        text-align:left;
-        li::after { left:auto; right:100%; width:2.25rem; }
+        .rm-item::after { left:auto; right:100%; width:2.25rem; }
       }
     }
-
-    &__next {
-      justify-self:start;
-      margin-top:.75rem;
-      margin-left:-1.25rem;
-    }
   }
-
-  .track__steps { grid-template-columns:1fr; }
 }
