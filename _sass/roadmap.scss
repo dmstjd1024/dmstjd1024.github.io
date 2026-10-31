@@ -63,6 +63,55 @@ $roadmap-spine:3px;
   }
 }
 
+// --- 경력 단계 ---------------------------------------------------------------
+// 지도 위에 한 줄로 놓는 사다리. 지도의 단계 색(--hue)은 쓰지 않는다 — 기술 단계와
+// 경력 단계가 같은 것으로 읽히면 안 된다. 지금 위치는 강조색, 다음은 번호와 같은 빨강.
+
+.rm-career {
+  margin-top:1rem;
+
+  &__title { font-size:1rem; letter-spacing:-.02em; }
+
+  &__steps {
+    list-style:none;
+    margin:.75rem 0 0;
+    padding:0;
+    display:grid;
+    grid-template-columns:repeat(5, minmax(0, 1fr));
+    gap:.5rem;
+
+    li {
+      padding:.75rem;
+      border:1px solid var(--border);
+      border-radius:var(--r);
+      background:var(--bg-sunken);
+
+      &.is-here { border:2px solid var(--accent); }
+      &.is-here .rm-career__pin { background:var(--accent); }
+      &.is-next { border:2px dashed var(--c-tag-red); }
+      &.is-next .rm-career__pin { background:var(--c-tag-red); }
+    }
+
+    h3 { margin:0; font-size:.95rem; }
+    p { margin:.35rem 0 0; font-size:.78rem; line-height:1.5; }
+  }
+
+  &__pin {
+    display:inline-block;
+    margin-left:.25rem;
+    padding:.05rem .4rem;
+    border-radius:999px;
+    color:var(--bg);
+    font-size:.65rem;
+    font-weight:600;
+    vertical-align:middle;
+  }
+
+  &__scope { color:var(--fg-subtle); }
+  &__next { color:var(--fg); }
+  &__ai { color:var(--fg-subtle); }
+}
+
 // --- 세로선과 단계 ----------------------------------------------------------
 
 .rm-stages {
@@ -212,6 +261,8 @@ $roadmap-spine:3px;
 // --- 좁은 화면: 선을 왼쪽으로 -----------------------------------------------
 
 @media (max-width:$bp-tablet) {
+  .rm-career__steps { grid-template-columns:minmax(0, 1fr); }
+
   .rm-stages {
     padding-left:1.25rem;
     &::before { left:0; }

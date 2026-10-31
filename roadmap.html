@@ -31,6 +31,46 @@ permalink: /roadmap/
     </ul>
   </header>
 
+  {%- comment -%}
+    경력 단계는 지도의 기술 단계와 따로 둔다. 기술 항목 하나하나를 "이건 미들"로 나눌
+    근거가 없어서다. 단계는 아는 기술이 아니라 책임 범위로 가른다 — Dropbox·CircleCI
+    커리어 프레임워크가 영향 범위와 기간으로 가르는 것을 따랐다. 지도 단계와 헷갈리지
+    않게 번호를 붙이지 않는다.
+  {%- endcomment %}
+  <section class="rm-career" aria-labelledby="rm-career-title">
+    <h2 class="rm-career__title" id="rm-career-title">경력을 가르는 건 아는 기술의 개수가 아니라 책임지는 범위다</h2>
+    <ol class="rm-career__steps">
+      <li>
+        <h3>기초</h3>
+        <p class="rm-career__scope">범위 · 태스크</p>
+        <p class="rm-career__next">기능 하나를 혼자 끝까지 낸다</p>
+      </li>
+      <li>
+        <h3>주니어</h3>
+        <p class="rm-career__scope">범위 · 기능</p>
+        <p class="rm-career__next">운영 서비스를 맡아 장애를 직접 받는다</p>
+        <p class="rm-career__ai">AI · 코딩 도구로 쓴다</p>
+      </li>
+      <li class="is-here">
+        <h3>미들 <span class="rm-career__pin">지금 여기</span></h3>
+        <p class="rm-career__scope">범위 · 서비스</p>
+        <p class="rm-career__next">실패 모드를 설계하고, 결정을 글로 설명한다</p>
+        <p class="rm-career__ai">AI · "거의 맞는" 출력을 걸러낸다</p>
+      </li>
+      <li class="is-next">
+        <h3>시니어 <span class="rm-career__pin">다음 · 번호 1~4</span></h3>
+        <p class="rm-career__scope">범위 · 팀 도메인</p>
+        <p class="rm-career__next">여러 팀, 여러 해의 방향을 맡는다</p>
+        <p class="rm-career__ai">AI · LLM 게이트웨이 · 평가 · 비용 · 권한을 운영한다</p>
+      </li>
+      <li>
+        <h3>스태프</h3>
+        <p class="rm-career__scope">범위 · 여러 팀 · 여러 해</p>
+        <p class="rm-career__ai">AI · 조직에 들인다</p>
+      </li>
+    </ol>
+  </section>
+
   {%- comment -%} for 태그에는 필터를 못 쓴다 — 좌우 목록은 미리 배열로 만든다 {%- endcomment -%}
   {%- assign sides = "l,r" | split: "," %}
   <ol class="rm-stages">
@@ -64,6 +104,8 @@ permalink: /roadmap/
       <a href="https://roadmap.sh/kubernetes">쿠버네티스</a>)으로 빠진다.</p>
     <p>1~4 번호와 "국내 추가" 항목 — 국내 백엔드 채용공고 30건 직접 집계(2026-10),
       토스 SLASH · if(kakao) · WOOWACON 발표.</p>
+    <p>경력 단계 — <a href="https://dropbox.github.io/dbx-career-framework/">Dropbox</a> ·
+      <a href="https://docs.google.com/spreadsheets/d/131XZCEb8LoXqy79WWrhCX4sBnGhCM1nAIz4feFZJsEo/edit">CircleCI</a> 커리어 프레임워크.</p>
     <p>단계마다 왜 그 항목인지는 —
       <a href="{{ '/Develop/backend-roadmap-2026.html' | prepend: site.baseurl }}">백엔드 개발자 로드맵 2026</a>.</p>
   </footer>
