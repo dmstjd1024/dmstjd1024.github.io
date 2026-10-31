@@ -37,7 +37,7 @@ $roadmap-spine:3px;
   }
 
   &__legend {
-    --hue:var(--border-strong);
+    --hue:var(--c-tag-purple);   // 원본 로드맵의 추천 색
     list-style:none;
     margin:1rem 0 0;
     padding:0;
@@ -77,7 +77,7 @@ $roadmap-spine:3px;
     margin:.75rem 0 0;
     padding:0;
     display:grid;
-    grid-template-columns:repeat(5, minmax(0, 1fr));
+    grid-template-columns:repeat(4, minmax(0, 1fr));
     gap:.5rem;
 
     li {
@@ -216,7 +216,7 @@ $roadmap-spine:3px;
   gap:.4rem;
   max-width:100%;
   padding:.3rem .6rem;
-  border:1px solid color-mix(in srgb, var(--hue) 45%, var(--border));
+  border:1px solid var(--border);
   border-radius:calc(var(--r) * .6);
   background:var(--bg-raised);
   font-size:.82rem;
@@ -228,6 +228,11 @@ $roadmap-spine:3px;
     font-size:.65rem;
     color:var(--fg-subtle);
   }
+
+  a { text-decoration:underline; text-underline-offset:2px; }
+
+  // 원본 작성자의 추천: 단계 색 테두리. 표시 없는 항목은 회색 테두리 그대로 둔다
+  &.is-rec { border-color:color-mix(in srgb, var(--hue) 70%, var(--border)); }
 
   // 대안: 하나만 고르면 되는 항목이라 한 단계 흐리게
   &.is-alt {

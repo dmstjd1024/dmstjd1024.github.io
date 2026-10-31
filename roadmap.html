@@ -25,47 +25,43 @@ permalink: /roadmap/
     <p class="roadmap__lead"><a href="https://roadmap.sh/backend">roadmap.sh 백엔드 로드맵</a>(2026-02 갱신본)의
       세부 항목 132개를 하나도 합치지 않고 옮겼다. 위에서 아래로 내려가며 익힌다.</p>
     <ul class="roadmap__legend">
-      <li><span class="rm-item">기본</span> 먼저 익힐 항목</li>
-      <li><span class="rm-item is-alt">대안</span> 위 기본 대신 하나만 고른다</li>
-      <li><span class="rm-item is-key"><b class="rm-rank">1</b>순서</span> 다음에 집중할 것 — 국내 공고 조사 기준</li>
+      <li><span class="rm-item is-rec">추천</span> 원본 작성자의 추천</li>
+      <li><span class="rm-item is-alt">대안</span> 추천 항목 대신 골라도 된다</li>
+      <li><span class="rm-item">표시 없음</span> 원본에도 표시가 없다</li>
+      <li><span class="rm-item is-key"><b class="rm-rank">1</b>순서</span> 다음에 집중할 것 — 국내 공고·발표가 강조하는데 내 노트에 비어 있는 것</li>
     </ul>
   </header>
 
   {%- comment -%}
     경력 단계는 지도의 기술 단계와 따로 둔다. 기술 항목 하나하나를 "이건 미들"로 나눌
-    근거가 없어서다. 단계는 아는 기술이 아니라 책임 범위로 가른다 — Dropbox·CircleCI
-    커리어 프레임워크가 영향 범위와 기간으로 가르는 것을 따랐다. 지도 단계와 헷갈리지
-    않게 번호를 붙이지 않는다.
+    근거가 없어서다. 범위는 CircleCI 역량 매트릭스(E1~)·Dropbox 커리어 프레임워크(IC1~)
+    원문의 표현이고, 괄호가 그 등급이다. 두 문서에 없는 "기초"는 경력 단계로 넣지 않는다.
+    지도 단계와 헷갈리지 않게 번호를 붙이지 않는다.
   {%- endcomment %}
   <section class="rm-career" aria-labelledby="rm-career-title">
     <h2 class="rm-career__title" id="rm-career-title">경력을 가르는 건 아는 기술의 개수가 아니라 책임지는 범위다</h2>
     <ol class="rm-career__steps">
       <li>
-        <h3>기초</h3>
-        <p class="rm-career__scope">범위 · 태스크</p>
-        <p class="rm-career__next">기능 하나를 혼자 끝까지 낸다</p>
-      </li>
-      <li>
         <h3>주니어</h3>
-        <p class="rm-career__scope">범위 · 기능</p>
+        <p class="rm-career__scope">범위 · 태스크 (E1 · IC1)</p>
         <p class="rm-career__next">운영 서비스를 맡아 장애를 직접 받는다</p>
         <p class="rm-career__ai">AI · 코딩 도구로 쓴다</p>
       </li>
       <li class="is-here">
-        <h3>미들 <span class="rm-career__pin">지금 여기</span></h3>
-        <p class="rm-career__scope">범위 · 서비스</p>
+        <h3>미들 <span class="rm-career__pin">지금 여기 · 추정</span></h3>
+        <p class="rm-career__scope">범위 · 에픽 · 프로젝트 (E2 · IC2~3)</p>
         <p class="rm-career__next">실패 모드를 설계하고, 결정을 글로 설명한다</p>
         <p class="rm-career__ai">AI · "거의 맞는" 출력을 걸러낸다</p>
       </li>
       <li class="is-next">
         <h3>시니어 <span class="rm-career__pin">다음 · 번호 1~4</span></h3>
-        <p class="rm-career__scope">범위 · 팀 도메인</p>
+        <p class="rm-career__scope">범위 · 팀 (E3 · IC4)</p>
         <p class="rm-career__next">여러 팀, 여러 해의 방향을 맡는다</p>
         <p class="rm-career__ai">AI · LLM 게이트웨이 · 평가 · 비용 · 권한을 운영한다</p>
       </li>
       <li>
         <h3>스태프</h3>
-        <p class="rm-career__scope">범위 · 여러 팀 · 여러 해</p>
+        <p class="rm-career__scope">범위 · 여러 팀 · 여러 해 (IC5)</p>
         <p class="rm-career__ai">AI · 조직에 들인다</p>
       </li>
     </ol>
@@ -85,9 +81,10 @@ permalink: /roadmap/
         {%- if side == "l" %}{% assign from = 0 %}{% assign count = half %}{% else %}{% assign from = half %}{% assign count = topic.items.size %}{% endif %}
         <ul class="rm-topic__items rm-topic__items--{{ side }}">
           {%- for it in topic.items offset: from limit: count %}
-          <li class="rm-item{% if it.tag == '대안' %} is-alt{% endif %}{% if it.rank %} is-key{% endif %}">
-            {%- if it.rank %}<b class="rm-rank">{{ it.rank }}</b>{% endif %}{{ it.name }}
-            {%- if it.tag %}<small>{{ it.tag }}</small>{% endif -%}
+          <li class="rm-item{% if it.tag == '추천' %} is-rec{% elsif it.tag == '대안' %} is-alt{% endif %}{% if it.rank %} is-key{% endif %}">
+            {%- if it.rank %}<b class="rm-rank">{{ it.rank }}</b>{% endif %}
+            {%- if it.url %}<a href="{{ it.url }}">{{ it.name }}</a>{% else %}{{ it.name }}{% endif %}
+            {%- if it.tag and it.tag != '추천' %}<small>{{ it.tag }}</small>{% endif -%}
           </li>
           {%- endfor %}
         </ul>
@@ -102,10 +99,12 @@ permalink: /roadmap/
     <p>원본 — <a href="https://roadmap.sh/backend">roadmap.sh/backend</a>.
       컨테이너는 원본에서도 별도 로드맵(<a href="https://roadmap.sh/docker">Docker</a> ·
       <a href="https://roadmap.sh/kubernetes">쿠버네티스</a>)으로 빠진다.</p>
-    <p>1~4 번호와 "국내 추가" 항목 — 국내 백엔드 채용공고 30건 직접 집계(2026-10),
-      토스 SLASH · if(kakao) · WOOWACON 발표.</p>
-    <p>경력 단계 — <a href="https://dropbox.github.io/dbx-career-framework/">Dropbox</a> ·
-      <a href="https://docs.google.com/spreadsheets/d/131XZCEb8LoXqy79WWrhCX4sBnGhCM1nAIz4feFZJsEo/edit">CircleCI</a> 커리어 프레임워크.</p>
+    <p>1~4 번호와 "국내 추가" 항목 — 국내 백엔드 채용공고 30건 직접 집계(2026-10)와
+      토스 SLASH · if(kakao) · WOOWACON 발표가 강조하는 것 중, 내 노트에 비어 있는 것을 골랐다.</p>
+    <p>경력 범위 — <a href="https://docs.google.com/spreadsheets/d/131XZCEb8LoXqy79WWrhCX4sBnGhCM1nAIz4feFZJsEo/edit">CircleCI</a> 역량 매트릭스(E) ·
+      <a href="https://dropbox.github.io/dbx-career-framework/">Dropbox</a> 커리어 프레임워크(IC).
+      다음 단계로 넘어가는 문장과 AI 줄은 이전 조사를 정리한 것이고,
+      "지금 여기"는 내 노트의 키워드로 짐작한 위치다.</p>
     <p>단계마다 왜 그 항목인지는 —
       <a href="{{ '/Develop/backend-roadmap-2026.html' | prepend: site.baseurl }}">백엔드 개발자 로드맵 2026</a>.</p>
   </footer>
