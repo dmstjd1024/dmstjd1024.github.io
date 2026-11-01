@@ -209,6 +209,48 @@ $roadmap-spine:3px;
   }
 }
 
+// 원본 그림의 소분류 라벨 — 항목이 아니라 연결선을 달지 않는다
+.rm-group {
+  padding-top:.35rem;
+  font-size:.7rem;
+  font-weight:600;
+  color:var(--fg-subtle);
+}
+
+// 원본 작성자의 안내 문장과 관련 로드맵 링크 — 세 칸 아래 줄을 통째로 쓴다
+.rm-topic__more {
+  grid-column:1 / -1;
+  position:relative;
+  z-index:1;
+  justify-self:center;
+  max-width:28rem;
+  margin-top:.75rem;
+  padding:.5rem .75rem;
+  border:1px dashed var(--border-strong);
+  border-radius:var(--r);
+  background:var(--bg);
+  font-size:.8rem;
+  text-align:center;
+
+  p { margin:0; color:var(--fg-muted); line-height:1.6; }
+  small { color:var(--fg-subtle); font-weight:600; margin-right:.25rem; }
+  a {
+    display:inline-block;
+    margin:.35rem .3rem 0;
+    text-decoration:underline;
+    text-underline-offset:2px;
+  }
+}
+
+.rm-next {
+  margin-top:3rem;
+  text-align:center;
+
+  &__title { font-size:1rem; letter-spacing:-.02em; }
+  p { margin:.5rem 0 0; display:flex; flex-wrap:wrap; justify-content:center; gap:.5rem 1.25rem; }
+  a { text-decoration:underline; text-underline-offset:2px; }
+}
+
 .rm-item {
   position:relative;
   display:inline-flex;
@@ -285,6 +327,7 @@ $roadmap-spine:3px;
     padding-top:1.25rem;
 
     &__node { text-align:left; }
+    &__more { justify-self:start; margin-left:1rem; text-align:left; }
 
     // 항목은 노드 아래로 들여 쌓고, 연결선은 왼쪽 세로선까지 끈다
     &__items {

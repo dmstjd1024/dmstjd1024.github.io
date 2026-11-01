@@ -93,14 +93,14 @@
   <text class="dg-t" x="457" y="651" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">텔레메트리</text>
   <rect class="dg-item" x="521" y="620" width="126" height="52" rx="6"/>
   <text class="dg-t" x="584" y="651" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">우아한 성능 저하</text>
-  <rect class="dg-item" x="137" y="686" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="185" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스로틀링</text>
-  <rect class="dg-item" x="249" y="686" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="297" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백프레셔</text>
-  <rect class="dg-item" x="361" y="686" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="409" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">부하 분산</text>
-  <rect class="dg-item" x="473" y="686" width="110" height="52" rx="6"/>
-  <text class="dg-t" x="528" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서킷 브레이커</text>
+  <rect class="dg-item" x="133" y="686" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="181" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스로틀링</text>
+  <rect class="dg-item" x="245" y="686" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="293" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백프레셔</text>
+  <rect class="dg-item" x="357" y="686" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="409" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Loadshifting</text>
+  <rect class="dg-item" x="477" y="686" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="532" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서킷 브레이커</text>
 </svg>
 <svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 1372" role="presentation" aria-hidden="true">
 
@@ -197,10 +197,10 @@
   <text class="dg-t" x="124" y="1179" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">우아한 성능 저하</text>
   <rect class="dg-item" x="203" y="1148" width="96" height="52" rx="6"/>
   <text class="dg-t" x="251" y="1179" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스로틀링</text>
-  <rect class="dg-item" x="76" y="1214" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="1245" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백프레셔</text>
-  <rect class="dg-item" x="188" y="1214" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="1245" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">부하 분산</text>
+  <rect class="dg-item" x="72" y="1214" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="120" y="1245" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백프레셔</text>
+  <rect class="dg-item" x="184" y="1214" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="1245" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Loadshifting</text>
   <rect class="dg-item" x="125" y="1280" width="110" height="52" rx="6"/>
   <text class="dg-t" x="180" y="1311" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서킷 브레이커</text>
 </svg>
