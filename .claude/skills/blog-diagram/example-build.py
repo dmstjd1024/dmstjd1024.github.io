@@ -103,8 +103,7 @@ D = [
                 {"t": '스트리밍'}, {"t": '구조화된 출력'}, {"t": 'Function Calling'},
                 {"t": 'Gemini'}, {"t": 'OpenAI'}, {"t": 'Anthropic'},
             ]},
-        ],
-        focal=0),
+        ]),
     dict(
         slug='backend-roadmap--s6',
         title='6단계 심화',
