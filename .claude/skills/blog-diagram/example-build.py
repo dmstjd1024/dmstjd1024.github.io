@@ -70,7 +70,7 @@ D = [
         ]),
     dict(
         slug='backend-roadmap--s4',
-        title='4단계 캐싱, 웹 서버, 보안',
+        title='4단계 캐싱 · 웹 서버 · 보안',
         desc='캐싱과 웹 서버를 거쳐 웹 보안으로 이어지는 구간. Memcached·Apache·Caddy·MS IIS 는 대안, 웹 보안은 원본에 표시가 없고 나머지는 모두 추천이다.',
         zones=[
             {"name": '캐싱', "nodes": [
