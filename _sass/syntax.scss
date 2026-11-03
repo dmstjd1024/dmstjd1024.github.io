@@ -27,7 +27,7 @@ body.dark-theme {
   --syn-func:#d2a8ff;
   --syn-type:#ffa657;
   --syn-punct:#9198a1;
-  --syn-del:#ff8182;       // 어두운 배경에서는 밝은 쪽 값이 3.3~3.6:1 이라 따로 둔다
+  --syn-del:#ff8182;       // 밝은 테마 값(#a0405e)은 어두운 배경에서 2.8~3.1:1 이라 따로 둔다
   --syn-ins:#7ee787;
 }
 

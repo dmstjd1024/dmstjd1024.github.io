@@ -18,8 +18,16 @@
         읽는 시간. 한글은 분당 500자 정도로 읽으므로 그 기준으로 나눈다.
         영어 단어 수(200wpm)로 세면 한글 글이 실제보다 4배 길게 나온다.
         strip_html 로 코드블록의 마크업을 걷어내고 글자 수만 센다.
+        인라인 SVG 도식은 먼저 통째로 뺀다 — 도식 글자·title·desc 까지 세면
+        도식이 많은 글이 서너 배 길게 나왔다(로드맵 글 5분 → 20분).
       {%- endcomment -%}
-      {%- assign chars = content | strip_html | size -%}
+      {%- assign svg_parts = content | split: '<svg' -%}
+      {%- assign text = svg_parts | first -%}
+      {%- for part in svg_parts offset: 1 -%}
+        {%- assign after = part | split: '</svg>' | last -%}
+        {%- assign text = text | append: after -%}
+      {%- endfor -%}
+      {%- assign chars = text | strip_html | size -%}
       {%- assign mins = chars | divided_by: 500 | plus: 1 -%}
       <span>읽는 데 {{ mins }}분</span>
     </div>

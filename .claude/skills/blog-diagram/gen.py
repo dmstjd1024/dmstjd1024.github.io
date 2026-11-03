@@ -42,8 +42,8 @@ def wrap_rows(items, avail_w):
 def node_width(label, sub, W=W):
     """글자 수로 대략의 폭을 잡는다. 한글은 넓게 친다.
 
-    상한은 존 안쪽 폭을 넘지 않게 잡는다 — 세로본(360)에서 232 를 그대로
-    쓰면 상자가 존 밖으로 삐져나온다.
+    상한은 존 안쪽 폭을 넘지 않게 잡는다. 지금 세로본(360)은 안쪽 폭이
+    264 라 232 가 그대로 들어가고, W 를 더 줄였을 때만 이 상한이 걸린다.
     """
     def vis(s):
         return sum(2 if ord(c) > 0x2000 else 1 for c in s)
