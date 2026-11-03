@@ -81,10 +81,10 @@ D = [
                 {"t": 'MS IIS', "s": '대안'},
             ]},
             {"name": '보안 · 암호화', "nodes": [
-                {"t": '웹 보안'}, {"t": 'HTTPS'}, {"t": 'OWASP 위험'},
-                {"t": 'CORS'}, {"t": 'SSL/TLS'}, {"t": 'CSP'},
-                {"t": '서버 보안'}, {"t": 'MD5'}, {"t": 'SHA'},
-                {"t": 'scrypt'}, {"t": 'bcrypt'},
+                {"t": '웹 보안'}, {"t": 'MD5'}, {"t": 'SHA'},
+                {"t": 'scrypt'}, {"t": 'bcrypt'}, {"t": 'HTTPS'},
+                {"t": 'OWASP 위험'}, {"t": 'CORS'}, {"t": 'SSL/TLS'},
+                {"t": 'CSP'}, {"t": '서버 보안'},
             ]},
         ]),
     dict(

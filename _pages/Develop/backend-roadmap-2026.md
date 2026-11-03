@@ -175,16 +175,16 @@ Docker 와 Kubernetes 는?
 
 - [roadmap.sh/backend](https://roadmap.sh/backend) — 원본 로드맵 (2026-02-07 갱신본 기준, 토픽 23개 · 세부 항목 132개)
 
-원본에는 다른 로드맵으로 빠지는 버튼이 이 글에 그린 것 말고도 더 있다.
-학습 항목이 아니라 분기점이라 도식에는 넣지 않았다.
+원본에서 다른 로드맵으로 빠지는 버튼을 모두 적는다.
+학습 항목이 아니라 분기점이라 위의 Docker·쿠버네티스 그림 말고는 도식에 넣지 않았다.
 
 | 위치 | 나가는 로드맵 |
 |---|---|
 | 컨테이너 | [Docker](https://roadmap.sh/docker) · [쿠버네티스](https://roadmap.sh/kubernetes) |
 | 보안 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
 | AI | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) |
-| 아키텍처 | [시스템 디자인](https://roadmap.sh/system-design) · [소프트웨어 설계](https://roadmap.sh/software-design-architecture) |
+| 아키텍처 | [시스템 설계](https://roadmap.sh/system-design) · [소프트웨어 설계](https://roadmap.sh/software-design-architecture) |
 | NoSQL | [기초 운영 스킬](https://roadmap.sh/devops?r=devops-beginner) |
-| 맨 끝 | [DevOps](https://roadmap.sh/devops) · [시스템 디자인](https://roadmap.sh/system-design) · [풀스택](https://roadmap.sh/full-stack) |
+| 맨 끝 | [DevOps](https://roadmap.sh/devops) · [시스템 설계](https://roadmap.sh/system-design) · [풀스택](https://roadmap.sh/full-stack) |
 | 실습 | [프로젝트 아이디어](https://roadmap.sh/backend/projects) (입문 · 중급) |
 | 맨 위 | [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |
