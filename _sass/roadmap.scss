@@ -120,18 +120,6 @@ $roadmap-spine:3px;
   list-style:none;
   margin:1.5rem 0 0;
   padding:0;
-
-  // 세로선 — 단계 색을 따라 내려간다
-  &::before {
-    content:"";
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:calc(50% - #{$roadmap-spine} / 2);
-    width:$roadmap-spine;
-    border-radius:$roadmap-spine;
-    background:linear-gradient(var(--c-tag-slate), var(--c-tag-green), var(--c-tag-teal), var(--c-tag-blue), var(--c-tag-purple), var(--c-tag-orange), var(--c-tag-pink));
-  }
 }
 
 // 단계마다 고유색(--hue)을 HTML 에서 태그 색 토큰으로 넘긴다. 태그 색은 다크모드 값이
@@ -140,6 +128,20 @@ $roadmap-spine:3px;
   --hue:var(--border-strong);
   position:relative;
   padding-top:3rem;
+
+  // 세로선 — 단계마다 자기 높이만큼 자기 색으로 긋는다. 목록 전체에 그라데이션 하나를
+  // 깔면 정지점이 높이를 7등분해, 길이가 다른 단계와 색이 한 단계씩 어긋났다
+  &::before {
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:calc(50% - #{$roadmap-spine} / 2);
+    width:$roadmap-spine;
+    background:var(--hue);
+  }
+  &:first-child::before { border-radius:$roadmap-spine $roadmap-spine 0 0; }
+  &:last-child::before { border-radius:0 0 $roadmap-spine $roadmap-spine; }
 
   &__name {
     position:relative;
@@ -311,13 +313,11 @@ $roadmap-spine:3px;
 @media (max-width:$bp-tablet) {
   .rm-career__steps { grid-template-columns:minmax(0, 1fr); }
 
-  .rm-stages {
-    padding-left:1.25rem;
-    &::before { left:0; }
-  }
+  .rm-stages { padding-left:1.25rem; }
 
   .rm-stage {
     padding-top:2rem;
+    &::before { left:-1.25rem; }
     &__name { margin:0 0 0 -1.25rem; }
   }
 
