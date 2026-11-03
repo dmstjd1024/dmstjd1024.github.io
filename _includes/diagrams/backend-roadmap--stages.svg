@@ -17,7 +17,7 @@
   <text class="dg-s" x="128" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">HTTP · DNS</text>
   <rect class="dg-item" x="194" y="56" width="110" height="52" rx="6"/>
   <text class="dg-t" x="249" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">언어 1개</text>
-  <text class="dg-s" x="249" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Python · Java …</text>
+  <text class="dg-s" x="249" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Go · Python …</text>
   <rect class="dg-item" x="320" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="368" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">버전 관리</text>
   <text class="dg-s" x="368" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Git · GitHub</text>
@@ -75,7 +75,7 @@
   <text class="dg-s" x="116" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">HTTP · DNS</text>
   <rect class="dg-item" x="182" y="56" width="110" height="52" rx="6"/>
   <text class="dg-t" x="237" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">언어 1개</text>
-  <text class="dg-s" x="237" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Python · Java …</text>
+  <text class="dg-s" x="237" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Go · Python …</text>
   <rect class="dg-item" x="76" y="122" width="96" height="52" rx="6"/>
   <text class="dg-t" x="124" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">버전 관리</text>
   <text class="dg-s" x="124" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Git · GitHub</text>

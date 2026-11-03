@@ -69,9 +69,9 @@ API 의 소비자가 프론트엔드이기 때문이다.
 {% include diagrams/backend-roadmap--s3.svg %}
 </div>
 
-관계형 DB 는 **PostgreSQL 만 추천**이고 나머지 6개는 전부 대안이다.
+관계형 DB 엔진 6개 중 **PostgreSQL 만 추천**이고 나머지 5개는 대안이다.
 `N+1 문제` 와 `마이그레이션` 은 특정 DB 에 종속되지 않는 공통 개념이라 같은 묶음에 들어 있다.
-인증은 `JWT`·`OAuth` 가 추천이고 `OpenID`·`SAML` 은 순서 무관으로 분류돼 있다.
+인증 방식은 `OpenID`·`SAML` 만 순서 무관이고 `JWT`·`OAuth`·Basic·Token·Cookie 인증은 모두 추천이다.
 
 원본은 이 구간이 끝나는 지점에 **"여기까지면 취업할 만큼은 안다.
 이제 프로젝트를 만들며 실습하라"** 는 문구를 달아 뒀다.
@@ -184,7 +184,7 @@ Docker 와 Kubernetes 는?
 | 보안 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
 | AI | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) |
 | 아키텍처 | [시스템 디자인](https://roadmap.sh/system-design) · [소프트웨어 설계](https://roadmap.sh/software-design-architecture) |
-| 규모 대응 | [기초 운영 스킬](https://roadmap.sh/devops?r=devops-beginner) |
+| NoSQL | [기초 운영 스킬](https://roadmap.sh/devops?r=devops-beginner) |
 | 맨 끝 | [DevOps](https://roadmap.sh/devops) · [시스템 디자인](https://roadmap.sh/system-design) · [풀스택](https://roadmap.sh/full-stack) |
 | 실습 | [프로젝트 아이디어](https://roadmap.sh/backend/projects) (입문 · 중급) |
 | 맨 위 | [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |

@@ -51,7 +51,7 @@ D = [
     dict(
         slug='backend-roadmap--s3',
         title='3단계 데이터베이스와 API',
-        desc='관계형 DB 에서 API 와 인증으로 이어지는 구간. 관계형 DB 는 PostgreSQL 만 추천이고 나머지는 대안이다.',
+        desc='관계형 DB 에서 API 와 인증으로 이어지는 구간. 관계형 DB 엔진은 PostgreSQL 만 추천이고 나머지는 대안이다.',
         zones=[
             {"name": '관계형 DB', "nodes": [
                 {"t": '마이그레이션'}, {"t": 'MySQL', "s": '대안'}, {"t": 'PostgreSQL'},

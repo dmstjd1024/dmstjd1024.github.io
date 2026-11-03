@@ -330,6 +330,9 @@
     - name: "NoSQL"
       split: 6
       note: "대부분은 쓸 일이 없을 수도 있다. 무엇인지, 언제 쓰는지만 알아 둔다."
+      links:
+        - name: "기초 운영 스킬"
+          url: "https://roadmap.sh/devops?r=devops-beginner"
       items:
         - name: "Firebase"
           group: "실시간"
@@ -375,9 +378,6 @@
           tag: "대안"
     - name: "대규모 서비스 대응"
       split: 4
-      links:
-        - name: "기초 운영 스킬"
-          url: "https://roadmap.sh/devops?r=devops-beginner"
       items:
         - name: "관측성"
           tag: "추천"
