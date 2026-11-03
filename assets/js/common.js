@@ -66,6 +66,15 @@
         menuBtn.focus({ preventScroll: true });   // 상단바(scroll-padding 영역) 버튼이라 그냥 주면 페이지가 튄다
       }
 
+      // 서랍은 미끄러져 나가는 .25s 동안 아직 보이므로, 그 사이 Shift+Tab 이 사라질
+      // 링크로 들어가지 않게 닫자마자 inert 로 막고 연출이 끝나면 푼다(넓은 화면 레일로 쓰인다).
+      if (menu) {
+        menu.inert = !open;
+        if (!open) window.setTimeout(function () {
+          if (!nav.classList.contains('is-open')) menu.inert = false;
+        }, 260);
+      }
+
       // 막은 닫힐 때 서서히 사라져야 하므로 전환이 끝난 뒤에 감춘다.
       if (!scrim) return;
       if (open) {

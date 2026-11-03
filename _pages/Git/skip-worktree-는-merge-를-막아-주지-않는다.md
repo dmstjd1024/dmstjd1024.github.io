@@ -24,9 +24,9 @@ skip-worktree 는 git 이 특정 파일의 로컬 변경을 못 본 척하게 �
 
 핵심은 "못 본 척"이 어디까지냐다. 가려지는 곳은 `git status` 하나다. 원격에서 같은 파일이 바뀌어 merge 해야 하면 git 은 로컬 변경을 그대로 본다. 그리고 그 변경을 덮어쓰지 않으려고 merge 를 거부한다.
 
-text
+```text
 local changes would be overwritten
-
+```
 
 이 동작은 격리 레포를 따로 만들어 재현해 확인했다.
 

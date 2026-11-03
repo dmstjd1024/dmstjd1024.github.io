@@ -332,7 +332,8 @@
 // 뒤에 숨기는 것)까지 없앤다.
 @media (prefers-reduced-motion:reduce) {
   .nav__menu,
-  .has-sub > .nav__sub { transition:none; }
+  .has-sub > .nav__sub,
+  .nav:not(.is-open) .has-sub.is-open > .nav__sub { transition:none; }   // 마지막은 닫힌 서랍의 펼친 하위(특정도가 높아 따로 적는다)
 }
 
 @media (max-width:$bp-mobile) {
