@@ -37,7 +37,7 @@ $roadmap-spine:3px;
   }
 
   &__legend {
-    --hue:var(--c-tag-purple);   // 원본 로드맵의 추천 색
+    --hue:var(--fg);   // 지도의 추천 테두리는 단계마다 그 단계 색이라, 범례는 어느 단계 색도 아닌 중립색으로
     list-style:none;
     margin:1rem 0 0;
     padding:0;

@@ -261,12 +261,12 @@
           rank: 2
     - name: "컨테이너"
       items:
-        - name: "LXC"
-          group: "컨테이너화"
         - name: "Docker"
           group: "컨테이너화"
           tag: "별도 로드맵"
           url: "https://roadmap.sh/docker"
+        - name: "LXC"
+          group: "컨테이너화"
         - name: "Kubernetes"
           group: "오케스트레이션"
           tag: "별도 로드맵"
