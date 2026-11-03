@@ -127,7 +127,7 @@ def main():
     ap.add_argument("--base", default="http://127.0.0.1:4000",
                     help="jekyll serve 주소")
     ap.add_argument("--min", type=float, default=0.5,
-                    help="이 값(px)보다 큰 넘침만 보고한다")
+                    help="이 값(px) 이상인 넘침만 보고한다")
     args = ap.parse_args()
 
     if not SITE.is_dir():

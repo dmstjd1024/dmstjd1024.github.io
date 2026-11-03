@@ -132,6 +132,19 @@
     }, { rootMargin: '300px' });
     io2.observe(box);
 
+    // 댓글 iframe 은 붙은 뒤에 높이를 몇 번 바꾼다(giscus 가 메시지로 알린다).
+    // 그 아래 바닥글에 키보드 포커스가 있으면 화면 밖으로 밀려나므로 다시 보이게 한다.
+    // giscus 의 높이 조절도 같은 메시지를 받아 처리하므로 한 프레임 뒤에 잰다.
+    window.addEventListener('message', function (e) {
+      if (e.origin !== 'https://giscus.app') return;
+      requestAnimationFrame(function () {
+        var a = document.activeElement;
+        if (!a || a === document.body || !a.matches(':focus-visible')) return;
+        var r = a.getBoundingClientRect();
+        if (r.bottom > window.innerHeight || r.top < 0) a.scrollIntoView({ block: 'nearest' });
+      });
+    });
+
     // 테마를 바꾸면 iframe 안쪽도 따라 바꿔준다.
     var themeBtn = document.getElementById('btn-theme');
     if (themeBtn) {

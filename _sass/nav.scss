@@ -79,6 +79,11 @@
     gap:.25rem;
     flex-shrink:0;
 
+    // 메뉴는 좁은 화면에서는 서랍, 넓은 화면에서는 레일로 fixed 로 빠져
+    // 상단바의 flex 흐름에서 사라진다. 그러면 로고·도구가 왼쪽에 몰리므로
+    // 도구는 직접 오른쪽으로 민다.
+    margin-left:auto;
+
     button, a {
       display:grid;
       place-items:center;
@@ -219,8 +224,10 @@
       overscroll-behavior:contain;         // 서랍 끝에서 본문이 딸려 스크롤되지 않게
 
       transform:translateX(-100%);
-      transition:transform .25s ease;
-      visibility:hidden;                   // 닫혔을 때 포커스가 들어가지 않도록
+      // 닫혔을 때 포커스가 들어가지 않도록 숨기되, 미끄러져 나간 뒤(.25s)에 숨긴다.
+      // 바로 숨기면 닫히는 연출이 보이지 않는다
+      transition:transform .25s ease, visibility 0s linear .25s;
+      visibility:hidden;
 
       > ul {
         display:block;                     // 가로 바의 flex 를 세로로 되돌린다
@@ -239,6 +246,7 @@
     &.is-open &__menu {
       transform:none;
       visibility:visible;
+      transition-delay:0s;
     }
 
     // 상단바에 backdrop-filter 를 직접 걸면 상단바가 position:fixed 자식(서랍)의
@@ -383,10 +391,6 @@
     > ul > li > a { font-weight:600; color:var(--fg); }
     > ul > li + li { margin-top:.15rem; }
   }
-
-  // 메뉴가 fixed 로 빠지면서 상단바의 flex 흐름에서 사라졌다. 그러면
-  // 남은 항목(로고·도구)이 왼쪽에 몰리므로, 도구는 직접 오른쪽으로 민다.
-  .nav__tools { margin-left:auto; }
 
   // 하위 카테고리 — 좁은 화면 서랍과 같은 모양
   // (여백·세로선을 안쪽 li 에 두는 이유는 위 서랍 쪽 주석 참고)

@@ -11,6 +11,7 @@
   if (!box || !input || !openBtn) return;
 
   var index = null, loading = null;
+  var before = null;   // 검색을 열기 전 포커스 — 닫으면 돌려준다
 
   function load() {
     if (loading) return loading;
@@ -22,6 +23,7 @@
   }
 
   function open() {
+    before = document.activeElement;
     box.hidden = false;
     document.body.style.overflow = 'hidden';
     load().then(function () { input.focus(); });
@@ -34,6 +36,7 @@
     input.value = '';
     out.innerHTML = '';
     hint.textContent = '제목과 본문에서 찾습니다.';
+    if (before && before.focus) before.focus();
   }
 
   // 버튼에 마우스만 올려도 미리 받아둔다 — 누를 때쯤이면 준비되어 있다.
@@ -44,6 +47,15 @@
   });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !box.hidden) close();
+    // 검색은 화면을 덮는 대화상자라 Tab 을 그 안에 가둔다. 브라우저에 맡기면
+    // 뒤에 가려진 본문·메뉴로 포커스가 간다
+    if (e.key === 'Tab' && !box.hidden) {
+      var f = Array.prototype.slice.call(box.querySelectorAll('input, button, a[href]'));
+      var i = f.indexOf(document.activeElement);
+      e.preventDefault();
+      var n = i === -1 ? 0 : i + (e.shiftKey ? -1 : 1);
+      f[(n + f.length) % f.length].focus();
+    }
     // cmd/ctrl + K
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); box.hidden ? open() : close(); }
   });

@@ -44,7 +44,7 @@
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('nav-locked', open);
 
-      // 열린 서랍이 메뉴 버튼을 덮으므로 포커스를 서랍 첫 항목으로 옮기고,
+      // 열린 동안 메뉴 버튼은 막 아래에 깔리므로 포커스를 서랍 첫 항목으로 옮기고,
       // 닫을 때 서랍 안에 있던 포커스는 메뉴 버튼으로 돌려준다.
       if (open) {
         var items = drawerItems();
@@ -100,8 +100,12 @@
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
+    var search = document.getElementById('search');
+
     document.addEventListener('keydown', function (e) {
       if (!nav.classList.contains('is-open')) return;
+      // 서랍 위에 검색창이 떠 있으면 키 처리는 검색 쪽에 맡긴다
+      if (search && !search.hidden) return;
 
       if (e.key === 'Escape') {
         setMenu(false);
@@ -114,7 +118,7 @@
       // 키보드 사용자는 자기가 어디 있는지 알 수 없다.
       if (e.key !== 'Tab') return;
 
-      // 메뉴 버튼은 열린 서랍에 가려 있으므로 순환에서 뺀다(닫기는 Esc·막).
+      // 메뉴 버튼은 막 아래에 깔려 있으므로 순환에서 뺀다(닫기는 Esc·막).
       // 순서는 직접 돌린다 — 브라우저에 맡기면 서랍 끝에서 본문으로 샌다.
       var items = drawerItems();
       if (!items.length) return;
