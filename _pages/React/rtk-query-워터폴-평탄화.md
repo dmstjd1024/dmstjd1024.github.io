@@ -1,5 +1,5 @@
 ---
-title:  "RTK Query 워터폴을 없애자 stale 이 드러났다"
+title:  "RTK Query 요청 흐름을 개선하고 캐시 갱신 누락을 찾았다"
 subtitle: "캐시를 켠 대가"
 description: "캐시를 켠 대가"
 categories:
@@ -25,7 +25,7 @@ summary 조회
 ```
 
 - 각 단계가 앞 단계의 응답을 기다린 뒤에야 시작 — 전형적인 워터폴
-- 추가로 이 API 그룹은 `keepUnusedDataFor: 0`으로 캐싱 비활성 → 탭 재진입마다 체인을 처음부터 재실행
+- 추가로 이 API 그룹은 `keepUnusedDataFor: 0`으로 구독 종료 후 캐시를 즉시 제거 → 탭 재진입마다 체인을 처음부터 재실행
 
 <div class="diagram" role="img" aria-label="요청이 직렬로 이어지는 워터폴 구조">
 {% include diagrams/rtk--waterfall.svg %}
@@ -97,9 +97,10 @@ const instIOList = useMemo<any[]>(() => ioRes?.data?.gwpIoTypeList ?? [], [ioRes
 
 이관 중 걸린 함정:
 
-- **lazy 훅과 일반 훅의 응답 언랩 깊이가 다름**
+- **lazy trigger의 반환 객체와 훅에서 꺼낸 `data`를 혼동함**
 - lazy — `res.data.data`로 한 겹 더 진입
-- 일반 훅 — `data.data`
+- 일반 훅 — 훅 결과에서 꺼낸 `data`가 API 응답 본문이므로 `data.data`
+- 응답 본문 모양은 동일하다. 위의 `ioRes`는 이미 훅 결과의 `data`를 꺼낸 값이라 `ioRes.data`로 접근한다. lazy trigger에서 `.unwrap()`을 쓰면 같은 응답 본문을 직접 받을 수 있다.
 
 - 그대로 옮길 시 — 조용히 `undefined` → 차트가 빈 채로 렌더
 
@@ -113,7 +114,7 @@ const instIOList = useMemo<any[]>(() => ioRes?.data?.gwpIoTypeList ?? [], [ioRes
 - 원인 — 이 API 그룹은 `GHGEcoView` 태그를 정의만 해놓고, **이 태그를 invalidate하는 mutation이 하나도 없음**
 - 배경 — 데이터를 바꾸는 저장 로직이 다른 API 슬라이스에 존재해 태그 미연결
 
-- 캐싱 비활성 시 미발현 — 매번 재요청했기 때문
+- 구독 종료 후 캐시 즉시 제거 시 미발현 — 재진입마다 재요청했기 때문
 - 캐시 활성화 순간 "무효화 경로 부재"가 표면화
 
 선택지:
@@ -122,7 +123,7 @@ const instIOList = useMemo<any[]>(() => ioRes?.data?.gwpIoTypeList ?? [], [ioRes
 2. 마운트 시 재요청에 의존
 
 - 1번이 정석. 다만 저장 경로가 여러 슬라이스에 분산돼 배선 누락 위험이 큼
-- 캐시 이득의 본질은 "탭 전환 중 재요청 안 하기" → 2번으로도 획득 가능
+- 2번의 이득은 캐시 데이터를 즉시 보여주면서 최신 데이터를 다시 받는 것. 재마운트 시 네트워크 요청을 없애는 방법은 아님
 - 조치 — 관련 훅 4개(`by-scope`, `by-month`, `by-branch`, `scope3`)에 `refetchOnMountOrArgChange: true`
 - `refetchOnFocus`는 비활성 — 창 전환할 때마다 쏘는 건 과함
 
@@ -139,7 +140,7 @@ const instIOList = useMemo<any[]>(() => ioRes?.data?.gwpIoTypeList ?? [], [ioRes
 그러다 드러난 버그:
 
 - 한 차트의 `options` `useMemo` 의존성에 `barData` 누락
-- memo 적용 전 — 부모 리렌더 시 자식도 같이 리렌더되며 우연히 갱신
+- memo 적용 전 — 부모 리렌더와 함께 차트가 갱신되는 모습이었음. 다만 `useMemo`의 의존성이 같으면 부모가 다시 렌더돼도 `options`는 재계산되지 않으므로, 이 현상만으로 의존성 누락이 가려진 경로까지 확정할 수는 없음
 - memo 적용 후 — **막대차트가 옛날 데이터로 고정**
 - 조치 — 의존성 보충
 
@@ -148,7 +149,7 @@ const instIOList = useMemo<any[]>(() => ioRes?.data?.gwpIoTypeList ?? [], [ioRes
 하나는 **effect로 상태를 미러링하는 코드는 대부분 렌더 파생값으로 바꿀 수 있다는 것**이다.
 
 - 사례: `selectedItem` 상태 + effect 동기화 → `activeId` 한 줄로 대체
-- 동반 소멸: 요청 체인, desync 위험
+- 줄어든 것: effect·상태를 거치는 렌더 왕복과 복사본의 desync 위험. 제품 ID를 먼저 받아야 하는 데이터 의존성은 남음
 
 다른 하나는 **최적화가 기존 버그를 드러낸다는 것**이다.
 

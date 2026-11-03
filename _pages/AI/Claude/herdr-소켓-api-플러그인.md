@@ -1,5 +1,5 @@
 ---
-title:  "문서에 없는 API 를 바이너리에서 꺼냈다"
+title:  "Herdr CLI에서 API 스키마를 추출해 플러그인 만들기"
 subtitle: "Herdr 소켓 API 로 플러그인 만들기"
 description: "Herdr 소켓 API 로 플러그인 만들기"
 categories:

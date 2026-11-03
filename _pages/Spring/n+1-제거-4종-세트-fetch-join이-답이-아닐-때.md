@@ -1,5 +1,5 @@
 ---
-title:  "N+1 은 하나의 문제가 아니었다"
+title:  "N+1에 fetch join 반사가 통하지 않은 네 가지 조회 성능 문제"
 subtitle: "fetch join 이 답이 아닐 때 네 가지"
 description: "fetch join 이 답이 아닐 때 네 가지"
 categories:
@@ -57,7 +57,7 @@ private List<Lca> lcaList;
 - 둘 다 fetch join 시 역시 `MultipleBagFetchException`
 - 직전 커밋에 월별 메타를 fetch join으로 시도했다 되돌린 흔적 잔존
 
-- 정리: **컬렉션 1개면 fetch join, 2개 이상이면 하나만 fetch join + 나머지 @BatchSize**
+- 이 사례의 선택: **두 bag 중 하나만 fetch join + 나머지 @BatchSize**. 컬렉션 개수만으로 항상 같은 처방을 정할 수는 없다
 
 ## (b) 루프 안의 집계 쿼리 — 집합을 넓혀 1회 호출
 
@@ -90,8 +90,8 @@ private List<Lca> lcaList;
 - 근거 기록 위치: 커밋 메시지
 
 - 행 단위 연산(변환 · 곱셈 · 나눗셈)은 개별 행에만 적용 → 집합을 넓혀도 각 행의 결과 동일
-- **`BigDecimal`의 덧셈은 결합법칙 · 교환법칙 만족** → 어떤 순서로 묶어 더해도 합계 동일
-- `BigDecimal`은 임의 정밀도 → `double`과 달리 덧셈 순서에 따른 오차 누적 없음
+- **중간 반올림 없이 `BigDecimal.add`로 정확히 더하면** 수치상 결합법칙 · 교환법칙을 만족 → 묶는 순서가 달라도 합계 동일
+- `MathContext`로 정밀도를 제한하거나 중간에 반올림하면 `BigDecimal`도 덧셈 순서에 따라 결과가 달라질 수 있음
 
 이 성질이 없었다면 "쿼리 하나로 합치기"는 값이 미세하게 달라질 수 있는 변경이었다. 성능 최적화가 **결과 불변임을 논증할 수 있는 변경**인지 확인하는 건 리뷰어 입장에서 가장 알고 싶은 부분이라고 본다.
 

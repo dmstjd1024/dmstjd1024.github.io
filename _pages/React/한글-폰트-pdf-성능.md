@@ -1,5 +1,5 @@
 ---
-title:  "PDF 다운로드가 7초 걸렸는데, 범인은 한글 폰트였다"
+title:  "PDF 생성에 7초가 걸린 원인은 한글 폰트 처리였다"
 subtitle: "폰트 로딩을 들여다본 기록"
 description: "폰트 로딩을 들여다본 기록"
 categories:
@@ -47,7 +47,7 @@ thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 - 라이브러리 버전업 — 4.x가 이미 최신이라 올릴 곳 없음
 - 텍스트 자체 축약 — PDF 서문과 notes 문구를 한글로 축약해 layout 대상 글자 수 감축. 체감할 만큼 미감소
 
-- 결론: 글자 수에 선형 비례하는 문제가 아님
+- 결론: 시험한 축약 범위에서는 글자 수를 줄이는 것만으로 체감할 개선을 얻지 못함
 
 ## 어떻게 고쳤나
 

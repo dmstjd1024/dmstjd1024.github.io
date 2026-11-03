@@ -1,5 +1,5 @@
 ---
-title:  "AI 코드리뷰 봇이 못 잡는 것이 있었다"
+title:  "AI 코드 리뷰 봇이 찾은 코드 결함과 놓친 성능 병목"
 subtitle: "봇 2종을 파이프라인에 넣고 배운 것"
 description: "봇 2종을 파이프라인에 넣고 배운 것"
 categories:
@@ -52,7 +52,7 @@ redirect_from:
 - 형태: `setGridRows((prev) => { ... setDeleteIdList(...); return next; })`
 - 원칙: React 업데이터 함수는 순수해야 함
 - 위반: 안에서 다른 상태를 갱신
-- 결과: Strict Mode·동시성 렌더에서 업데이터 2회 호출 → `deleteIdList`에 항목 중복
+- 위험: 개발 환경의 Strict Mode에서 업데이터 2회 호출 → 안에 둔 상태 갱신이 반복되어 `deleteIdList`에 항목이 중복될 수 있음
 
 - 수정: 부작용을 이벤트 핸들러로 끌어올림
 - 현재 스코프의 `gridRows`를 직접 참조해 계산

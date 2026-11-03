@@ -1,5 +1,5 @@
 ---
-title:  "소프트 삭제 전환과 @Filter가 새는 곳"
+title:  "소프트 삭제 전환 후 유니크 제약과 @Filter 미적용 문제 해결하기"
 subtitle: "엔티티 14개를 하드 삭제에서 바꾸며"
 description: "엔티티 14개를 하드 삭제에서 바꾸며"
 categories:
@@ -45,7 +45,7 @@ ALTER TABLE tb_xxx ADD UNIQUE KEY uk_xxx_active (company_id, active_name);
 
 - 활성 행 → 원래 값, 삭제된 행 → `NULL`
 - MySQL 유니크 인덱스는 `NULL`을 중복으로 미취급 → 삭제된 행끼리는 몇 개가 겹쳐도 무방, 활성 행끼리만 유니크
-- VIRTUAL이라 저장 공간 미사용
+- VIRTUAL 값은 테이블 행에는 저장하지 않지만, 이 유니크 인덱스에는 저장되므로 인덱스 공간은 사용
 - 적용 대상 — 이름과 계수 값 양쪽 (`active_name`, `active_coefficient`)
 
 ### FK가 기존 유니크를 붙들고 있는 경우

@@ -1,5 +1,5 @@
 ---
-title:  "ddl-auto: update 의 빈틈을 메웠다"
+title:  "ddl-auto: update가 처리하지 못하는 스키마 변경을 SQL로 자동 적용하기"
 subtitle: "보완 DDL 자동화로 채운 것"
 description: "보완 DDL 자동화로 채운 것"
 categories:
@@ -76,7 +76,7 @@ public class ManualSqlRunner implements ApplicationRunner {
 **`ApplicationRunner`인 이유**
 
 - ALTER 대상 테이블이 먼저 존재해야 함 → `ddl-auto` 선행 필요
-- 부팅 완료 후에 도는 `ApplicationRunner`가 그 순서를 보장
+- 애플리케이션 컨텍스트가 준비된 뒤 `ApplicationRunner`가 실행되므로, EntityManagerFactory 초기화 시 수행되는 `ddl-auto`보다 뒤에 실행
 
 **멱등 SQL이라 이력 테이블 불필요**
 
@@ -103,7 +103,7 @@ public class ManualSqlRunner implements ApplicationRunner {
 
 - 조치: 파일 단위 try/catch
 - 한 파일이 실패해도 ERROR 로그만 남기고 다음 파일 계속 적용
-- 모든 SQL이 멱등 → 원인 해소 후 재기동하면 실패한 파일만 재적용
+- 모든 SQL이 멱등 → 원인 해소 후 재기동하면 전체 파일을 다시 실행해도 이미 적용된 변경은 반복하지 않도록 처리
 
 - 남은 위험: 실패를 조용히 삼키면 "앱은 떴는데 보완 DDL은 빠진" 상태를 런타임 에러로 늦게 발견
 - 보완: 부팅 로그 끝에 `{성공}/{전체}`와 실패 파일명 요약
@@ -127,7 +127,7 @@ public class ManualSqlRunner implements ApplicationRunner {
 
 - Runner는 주입받은 `DataSource`에 DDL을 그대로 전송한다
 - 즉 **접속 설정이 의도와 다른 DB를 가리키면 그대로 적용된다**
-- MySQL DDL은 롤백이 안 되므로 되돌릴 방법이 없다
+- 이 ALTER·CREATE 같은 MySQL DDL은 일반 트랜잭션 롤백으로 되돌릴 수 없다. 원복 DDL이나 백업 복원이 필요하다
 
 그래서 스키마명 검증(연결된 DB가 기대한 스키마가 맞는지 확인 후 실행)은
 선택이 아니라 전제다. 자동 DDL 범위를 넓힐수록 이 가드의 중요도가 올라간다.

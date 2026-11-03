@@ -1,7 +1,7 @@
 ---
 title:  "AG Grid의 autoHeight는 행 가상화를 끈다"
-subtitle: "columnDefs 재생성과 전체 remap 두 가지 원인"
-description: "columnDefs 재생성과 전체 remap 두 가지 원인"
+subtitle: "columnDefs 재생성·전체 remap·autoHeight 세 가지 원인"
+description: "columnDefs 재생성·전체 remap·autoHeight 세 가지 원인"
 categories:
   - React
 tags:
@@ -101,7 +101,7 @@ const useFixedHeight = collapsed || rowData.length > VISIBLE_ROWS;
 
 - 임계값을 둔 이유: 작은·빈 섹션까지 고정 높이면 빈 공간과 중첩 스크롤 발생
 - 12개 이하는 기존 동작 유지
-- 12개 초과 시 DOM 행 수 일정 → 500행이든 5000행이든 렌더 비용 동일
+- 12개 초과 시 뷰포트와 버퍼에 해당하는 행만 DOM에 유지 → 전체 행 수에 비례하던 DOM 렌더 비용을 줄임. 정렬·필터링 등 데이터 처리 비용까지 같아지는 것은 아님
 
 - 예외: 접힌 섹션도 고정 높이 적용
 - 이유: 부모가 `display: none`이면 `autoHeight`가 높이를 0으로 측정

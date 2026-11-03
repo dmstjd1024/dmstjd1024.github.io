@@ -1,5 +1,5 @@
 ---
-title:  "탭 상태를 useState에 두지 마라"
+title:  "URL에서 탭 상태를 직접 읽어 화면과 주소의 불일치 해결하기"
 subtitle: "URL 파생 상태로 바꾸기"
 description: "URL 파생 상태로 바꾸기"
 categories:

@@ -1,5 +1,5 @@
 ---
-title:  "JWT 에서 Spring Session 으로 바꾼 뒤가 문제였다"
+title:  "JWT에서 Spring Session으로 전환한 뒤 겪은 세션 관리 문제"
 subtitle: "전환 자체는 하루였다"
 description: "전환 자체는 하루였다"
 categories:
@@ -61,10 +61,11 @@ card_thumbnail: "/assets/img/thumbnail/spring_card.webp"
 
 **Redis 장애 가드**
 
-- 세션 갱신은 부가 기능
+- 이 응답 어드바이스의 세션 갱신·안내는 부가 기능
 - Redis 다운 → 응답 어드바이스에서 예외 → **모든 API 응답 실패**
 - 부가 기능이 주 기능을 죽이는 구조
 - 조치: 예외를 잡아 갱신만 건너뛰는 가드 추가
+- 이 가드는 어드바이스의 실패만 격리한다. Spring Session의 인증 세션 조회·저장 자체가 Redis 장애로 실패하는 것까지 막지는 않는다
 
 - 응답 후처리에 무언가를 얹을 때의 필수 확인: 그 실패가 응답 전체를 막는지 여부
 
@@ -118,7 +119,7 @@ HTTP는 요청마다 세션을 확인하지만 **WebSocket은 연결이 한 번 
 ## (e) 쿠키 속성 정합성
 
 - 세션 쿠키 속성: `SameSite`, `Secure`, 도메인
-- 환경별로 달라야 함 — 로컬은 `Secure` 불가, 운영은 필수
+- 환경별로 맞춰야 함 — HTTPS 운영은 `Secure` 사용. 로컬도 HTTPS에서는 사용할 수 있고, localhost는 브라우저의 예외 처리도 있다
 - yml에 흩어져 있으면 조합이 어긋나기 쉬움
 
 - 대표 사례: `SameSite=None` + `Secure=false`

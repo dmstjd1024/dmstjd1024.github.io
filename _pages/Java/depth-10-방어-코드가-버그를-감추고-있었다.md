@@ -1,5 +1,5 @@
 ---
-title:  "depth < 10 방어 코드가 버그를 감추고 있었다"
+title:  "조직 트리의 깊이를 10으로 제한했더니 조상 조직이 누락됐다"
 subtitle: "두 문제가 한 숫자에 뭉개져 있었다"
 description: "두 문제가 한 숫자에 뭉개져 있었다"
 categories:

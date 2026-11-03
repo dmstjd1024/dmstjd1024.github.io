@@ -1,5 +1,5 @@
 ---
-title:  "블록 탐색기 하나 때문에 전용 DB 를 띄웠다"
+title:  "Fabric Explorer에 조회용 PostgreSQL을 따로 두는 이유"
 subtitle: "PostgreSQL 을 클러스터 안에 두기"
 description: "PostgreSQL 을 클러스터 안에 두기"
 categories:

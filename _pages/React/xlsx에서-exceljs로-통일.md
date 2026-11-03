@@ -1,5 +1,5 @@
 ---
-title:  "엑셀 라이브러리가 xlsx·exceljs 두 개였다"
+title:  "엑셀 내보내기 스타일을 맞추려고 xlsx를 ExcelJS로 교체했다"
 subtitle: "하나로 통일하기"
 description: "하나로 통일하기"
 categories:
@@ -94,9 +94,9 @@ function computeColumnWidths(headers: string[]): number[] {
 onClick={() => void exportGridsAsExcel(...)}
 ```
 
-- 걸리는 규칙 — TypeScript `no-floating-promises`
+- 걸리는 규칙 — typescript-eslint의 `@typescript-eslint/no-floating-promises`
 - 조치 — 호출부 **8곳에 `void` 표기** 추가
-- 의미 — `await`하지 않는 게 의도임을 명시
+- 의미 — `await`하지 않는 게 의도임을 명시. `void`는 rejection을 처리하지 않으므로 실패 처리는 별도로 필요
 
 - 여기서 판단 하나 발생
 - 대안: 호출부를 전부 `async` 핸들러로 전환해 `await` + 로딩 상태 노출
@@ -115,7 +115,7 @@ onClick={() => void exportGridsAsExcel(...)}
 라이브러리 교체 작업에서 가장 중요한 건 **어디까지가 라이브러리에 묶인 코드인지 선을 긋는 것**이었다.
 
 - 선을 그은 뒤 실제 재작성 범위: `excelExport.ts` 한 파일의 절반 정도
-- 나머지 9개 파일의 변경: 전부 `void` 한 글자
+- 호출부 8곳의 변경: `void` 표기 추가. 테스트 파일은 워크북 검증과 비동기 호출에 맞게 갱신
 
 - 가정: `buildSheetAoa` 같은 도메인 규칙이 라이브러리 호출과 뒤엉킨 경우 — 예컨대 `XLSX.utils` 객체를 셀 단위로 조작하며 필터링 규칙까지 그 안에서 처리 — 교체 비용 몇 배
 이건 결과적으로 원래 코드가 잘 짜여 있었다는 얘기이기도 하다. 라이브러리를 바꿀 계획이 없더라도 순수 로직과 I/O를 분리해두면 이럴 때 값을 한다.

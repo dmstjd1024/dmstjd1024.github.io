@@ -1,5 +1,5 @@
 ---
-title:  "GROUP BY 축이 한 줄 달라서 배출량이 2배가 됐다"
+title:  "GROUP BY 기준이 달라 같은 투입량이 두 공정에 중복 반영됐다"
 description: "두 CTE 의 집계 축이 어긋나 있었다"
 
 categories:
