@@ -74,7 +74,9 @@ def render(zones, focal_zone, W, arw="br-arw"):
 
         body.append(f'\n  <!-- {z["name"]} -->')
         body.append(f'  <rect class="{zcls}" x="{PAD}" y="{y}" width="{W-2*PAD}" height="{zone_h}" rx="8"/>')
-        lw = int(sum(2 if ord(c) > 0x2000 else 1 for c in z["name"]) * 4.2) + 16
+        # 7px 고정폭 + 자간 0.14em 실측: 영문 5.2, 한글 7.1~8 — 영문을 4.2 로 잡았더니
+        # 영문이 긴 라벨에서 마스크가 모자라 테두리 선이 끝 글자를 지나갔다
+        lw = int(sum(8 if ord(c) > 0x2000 else 5.2 for c in z["name"])) + 10
         body.append(f'  <rect class="dg-mask" x="{PAD+16}" y="{y-6}" width="{lw}" height="12" rx="2"/>')
         body.append(
             f'  <text class="{tcls}" x="{PAD+20}" y="{y+3}" font-size="7" '

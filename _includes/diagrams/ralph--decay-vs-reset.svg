@@ -9,7 +9,7 @@
   <text class="dg-s" x="80" y="100" text-anchor="end">1.0</text>
   <text class="dg-s" x="80" y="160" text-anchor="end">0.5</text>
   <text class="dg-s" x="80" y="220" text-anchor="end">0</text>
-  <text class="dg-s" x="30" y="150">성공률</text>
+  <text class="dg-s" x="30" y="130">성공률</text>
 
   <text class="dg-s" x="88" y="234" text-anchor="middle">0</text>
   <text class="dg-s" x="275" y="234" text-anchor="middle">8</text>
@@ -19,7 +19,7 @@
 
   <!-- 한 세션으로 계속 -->
   <polyline class="dg-arw" fill="none" points="88,96 111,114 135,129 158,142 181,153 205,163 228,171 251,178 275,183 298,188 321,192 345,196 368,199 391,201 415,204 438,206 461,207 485,208 508,210 531,211 555,211 578,212 601,213 625,213 648,214"/>
-  <rect class="dg-mask" x="470" y="194" width="122" height="12" rx="2"/>
+  <rect class="dg-mask" x="470" y="194" width="168" height="12" rx="2"/>
   <text class="dg-s" x="474" y="203">의존 단계 전체의 성공률</text>
 
   <rect class="dg-lane" x="24" y="262" width="672" height="46" rx="8"/>

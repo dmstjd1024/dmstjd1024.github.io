@@ -10,7 +10,7 @@
 
   <!-- CI / CD -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="45" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="46" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CI / CD</text>
   <rect class="dg-item" x="312" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI / CD</text>
@@ -18,7 +18,7 @@
 
   <!-- DB 심화 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="170" width="45" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="170" width="41" height="12" rx="2"/>
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">DB 심화</text>
   <rect class="dg-item" x="88" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="136" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">트랜잭션</text>
@@ -37,7 +37,7 @@
 
   <!-- 테스트 -->
   <rect class="dg-zone" x="24" y="386" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="380" width="41" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="380" width="34" height="12" rx="2"/>
   <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">테스트</text>
   <rect class="dg-item" x="195" y="410" width="99" height="52" rx="6"/>
   <text class="dg-t" x="244" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">통합 테스트</text>
@@ -49,7 +49,7 @@
 
   <!-- 컨테이너 -->
   <rect class="dg-zone" x="24" y="530" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="524" width="49" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="524" width="42" height="12" rx="2"/>
   <text class="dg-s" x="44" y="533" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컨테이너</text>
   <rect class="dg-item" x="312" y="554" width="96" height="52" rx="6"/>
   <text class="dg-t" x="360" y="585" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LXC</text>
@@ -57,7 +57,7 @@
 
   <!-- 메시지 브로커 -->
   <rect class="dg-zone" x="24" y="674" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="668" width="70" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="668" width="63" height="12" rx="2"/>
   <text class="dg-s" x="44" y="677" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">메시지 브로커</text>
   <rect class="dg-item" x="256" y="698" width="96" height="52" rx="6"/>
   <text class="dg-t" x="304" y="729" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Kafka</text>
@@ -68,7 +68,7 @@
 
   <!-- 검색엔진 -->
   <rect class="dg-zone" x="24" y="818" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="812" width="49" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="812" width="42" height="12" rx="2"/>
   <text class="dg-s" x="44" y="821" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">검색엔진</text>
   <rect class="dg-item" x="249" y="842" width="110" height="52" rx="6"/>
   <text class="dg-t" x="304" y="873" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Elasticsearch</text>
@@ -79,7 +79,7 @@
 
   <!-- 아키텍처 패턴 -->
   <rect class="dg-zone" x="24" y="962" width="672" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="956" width="70" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="956" width="63" height="12" rx="2"/>
   <text class="dg-s" x="44" y="965" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">아키텍처 패턴</text>
   <rect class="dg-item" x="77" y="986" width="96" height="52" rx="6"/>
   <text class="dg-t" x="125" y="1017" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">모놀리식</text>
@@ -104,7 +104,7 @@
 
   <!-- CI / CD -->
   <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="45" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="46" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CI / CD</text>
   <rect class="dg-item" x="132" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI / CD</text>
@@ -112,7 +112,7 @@
 
   <!-- DB 심화 -->
   <rect class="dg-zone" x="24" y="176" width="312" height="232" rx="8"/>
-  <rect class="dg-mask" x="40" y="170" width="45" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="170" width="41" height="12" rx="2"/>
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">DB 심화</text>
   <rect class="dg-item" x="76" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="124" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">트랜잭션</text>
@@ -131,7 +131,7 @@
 
   <!-- 테스트 -->
   <rect class="dg-zone" x="24" y="452" width="312" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="446" width="41" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="446" width="34" height="12" rx="2"/>
   <text class="dg-s" x="44" y="455" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">테스트</text>
   <rect class="dg-item" x="73" y="476" width="99" height="52" rx="6"/>
   <text class="dg-t" x="122" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">통합 테스트</text>
@@ -143,7 +143,7 @@
 
   <!-- 컨테이너 -->
   <rect class="dg-zone" x="24" y="662" width="312" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="656" width="49" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="656" width="42" height="12" rx="2"/>
   <text class="dg-s" x="44" y="665" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컨테이너</text>
   <rect class="dg-item" x="132" y="686" width="96" height="52" rx="6"/>
   <text class="dg-t" x="180" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LXC</text>
@@ -151,7 +151,7 @@
 
   <!-- 메시지 브로커 -->
   <rect class="dg-zone" x="24" y="806" width="312" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="800" width="70" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="800" width="63" height="12" rx="2"/>
   <text class="dg-s" x="44" y="809" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">메시지 브로커</text>
   <rect class="dg-item" x="76" y="830" width="96" height="52" rx="6"/>
   <text class="dg-t" x="124" y="861" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Kafka</text>
@@ -162,7 +162,7 @@
 
   <!-- 검색엔진 -->
   <rect class="dg-zone" x="24" y="950" width="312" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="944" width="49" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="944" width="42" height="12" rx="2"/>
   <text class="dg-s" x="44" y="953" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">검색엔진</text>
   <rect class="dg-item" x="69" y="974" width="110" height="52" rx="6"/>
   <text class="dg-t" x="124" y="1005" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Elasticsearch</text>
@@ -173,7 +173,7 @@
 
   <!-- 아키텍처 패턴 -->
   <rect class="dg-zone" x="24" y="1094" width="312" height="232" rx="8"/>
-  <rect class="dg-mask" x="40" y="1088" width="70" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="1088" width="63" height="12" rx="2"/>
   <text class="dg-s" x="44" y="1097" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">아키텍처 패턴</text>
   <rect class="dg-item" x="66" y="1118" width="96" height="52" rx="6"/>
   <text class="dg-t" x="114" y="1149" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">모놀리식</text>

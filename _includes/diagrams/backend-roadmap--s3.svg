@@ -10,7 +10,7 @@
 
   <!-- 관계형 DB -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="53" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="49" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">관계형 DB</text>
   <rect class="dg-item" x="84" y="56" width="104" height="52" rx="6"/>
   <text class="dg-t" x="136" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마이그레이션</text>
@@ -37,7 +37,7 @@
 
   <!-- API -->
   <rect class="dg-zone" x="24" y="242" width="672" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="236" width="28" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="236" width="25" height="12" rx="2"/>
   <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">API</text>
   <rect class="dg-item" x="88" y="266" width="96" height="52" rx="6"/>
   <text class="dg-t" x="136" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">REST</text>
@@ -59,7 +59,7 @@
 
   <!-- 인증 · 인가 -->
   <rect class="dg-zone" x="24" y="452" width="672" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="446" width="62" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="446" width="57" height="12" rx="2"/>
   <text class="dg-s" x="44" y="455" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">인증 · 인가</text>
   <rect class="dg-item" x="88" y="476" width="96" height="52" rx="6"/>
   <text class="dg-t" x="136" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인증</text>
@@ -90,7 +90,7 @@
 
   <!-- 관계형 DB -->
   <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="53" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="49" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">관계형 DB</text>
   <rect class="dg-item" x="72" y="56" width="104" height="52" rx="6"/>
   <text class="dg-t" x="124" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마이그레이션</text>
@@ -117,7 +117,7 @@
 
   <!-- API -->
   <rect class="dg-zone" x="24" y="374" width="312" height="232" rx="8"/>
-  <rect class="dg-mask" x="40" y="368" width="28" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="368" width="25" height="12" rx="2"/>
   <text class="dg-s" x="44" y="377" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">API</text>
   <rect class="dg-item" x="76" y="398" width="96" height="52" rx="6"/>
   <text class="dg-t" x="124" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">REST</text>
@@ -139,7 +139,7 @@
 
   <!-- 인증 · 인가 -->
   <rect class="dg-zone" x="24" y="650" width="312" height="298" rx="8"/>
-  <rect class="dg-mask" x="40" y="644" width="62" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="644" width="57" height="12" rx="2"/>
   <text class="dg-s" x="44" y="653" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">인증 · 인가</text>
   <rect class="dg-item" x="76" y="674" width="96" height="52" rx="6"/>
   <text class="dg-t" x="124" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인증</text>

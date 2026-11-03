@@ -20,7 +20,7 @@
 
   <!-- private 필드 + setter -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="170" width="104" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="170" width="111" height="12" rx="2"/>
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">private 필드 + setter</text>
   <rect class="dg-item" x="204" y="200" width="115" height="52" rx="6"/>
   <text class="dg-t" x="261" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">t.setHour(25);</text>
@@ -47,7 +47,7 @@
 
   <!-- private 필드 + setter -->
   <rect class="dg-zone" x="24" y="176" width="312" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="170" width="104" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="170" width="111" height="12" rx="2"/>
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">private 필드 + setter</text>
   <rect class="dg-item" x="122" y="200" width="115" height="52" rx="6"/>
   <text class="dg-t" x="179" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">t.setHour(25);</text>

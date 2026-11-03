@@ -10,7 +10,7 @@
 
   <!-- 기초 -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="32" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="26" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">기초</text>
   <rect class="dg-item" x="60" y="56" width="110" height="52" rx="6"/>
   <text class="dg-t" x="115" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LLM 동작 원리</text>
@@ -26,7 +26,7 @@
 
   <!-- 적용 분야 -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="170" width="53" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="170" width="47" height="12" rx="2"/>
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">적용 분야</text>
   <rect class="dg-item" x="200" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="248" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">코드 리뷰</text>
@@ -38,7 +38,7 @@
 
   <!-- AI 코딩 도구 -->
   <rect class="dg-zone" x="24" y="320" width="672" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="314" width="66" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="314" width="62" height="12" rx="2"/>
   <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">AI 코딩 도구</text>
   <rect class="dg-item" x="78" y="344" width="99" height="52" rx="6"/>
   <text class="dg-t" x="127" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Claude Code</text>
@@ -63,7 +63,7 @@
 
   <!-- AI 기능 개발 -->
   <rect class="dg-zone" x="24" y="530" width="672" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="524" width="66" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="524" width="62" height="12" rx="2"/>
   <text class="dg-s" x="44" y="533" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">AI 기능 개발</text>
   <rect class="dg-item" x="66" y="554" width="96" height="52" rx="6"/>
   <text class="dg-t" x="114" y="585" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스트리밍</text>
@@ -88,7 +88,7 @@
 
   <!-- 기초 -->
   <rect class="dg-zone" x="24" y="32" width="312" height="232" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="32" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="26" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">기초</text>
   <rect class="dg-item" x="48" y="56" width="110" height="52" rx="6"/>
   <text class="dg-t" x="103" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LLM 동작 원리</text>
@@ -104,7 +104,7 @@
 
   <!-- 적용 분야 -->
   <rect class="dg-zone" x="24" y="308" width="312" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="302" width="53" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="302" width="47" height="12" rx="2"/>
   <text class="dg-s" x="44" y="311" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">적용 분야</text>
   <rect class="dg-item" x="76" y="332" width="96" height="52" rx="6"/>
   <text class="dg-t" x="124" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">코드 리뷰</text>
@@ -116,7 +116,7 @@
 
   <!-- AI 코딩 도구 -->
   <rect class="dg-zone" x="24" y="518" width="312" height="298" rx="8"/>
-  <rect class="dg-mask" x="40" y="512" width="66" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="512" width="62" height="12" rx="2"/>
   <text class="dg-s" x="44" y="521" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">AI 코딩 도구</text>
   <rect class="dg-item" x="74" y="542" width="99" height="52" rx="6"/>
   <text class="dg-t" x="123" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Claude Code</text>
@@ -141,7 +141,7 @@
 
   <!-- AI 기능 개발 -->
   <rect class="dg-zone" x="24" y="860" width="312" height="232" rx="8"/>
-  <rect class="dg-mask" x="40" y="854" width="66" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="854" width="62" height="12" rx="2"/>
   <text class="dg-s" x="44" y="863" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">AI 기능 개발</text>
   <rect class="dg-item" x="69" y="884" width="96" height="52" rx="6"/>
   <text class="dg-t" x="117" y="915" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">스트리밍</text>

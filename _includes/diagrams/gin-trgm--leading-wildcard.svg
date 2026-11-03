@@ -20,7 +20,7 @@
 
   <!-- GIN + pg_trgm -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="170" width="70" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="170" width="76" height="12" rx="2"/>
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">GIN + pg_trgm</text>
   <rect class="dg-item" x="140" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="188" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">abc</text>
@@ -51,7 +51,7 @@
 
   <!-- GIN + pg_trgm -->
   <rect class="dg-zone" x="24" y="176" width="312" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="170" width="70" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="170" width="76" height="12" rx="2"/>
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">GIN + pg_trgm</text>
   <rect class="dg-item" x="76" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="124" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">abc</text>

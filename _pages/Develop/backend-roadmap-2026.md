@@ -6,10 +6,11 @@ categories:
   - Develop
 tags:
   - Develop
-  - Roadmap
+  - 로드맵
   - Backend
 
 date: 2026-08-22
+last_modified_at: 2026-11-04
 thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 ---
 

@@ -9,7 +9,9 @@
 
 - `dg-zone` / `dg-lane` — 묶음 영역이다. 라벨이 테두리 위로 걸쳐 나오는 것이
   설계다. 넘침이 아니다.
-- `dg-mask` — 선을 가리는 배경이다. 글자보다 좁아도 된다.
+- `dg-mask` — 존 라벨 뒤에서 테두리 선을 가리는 배경이다. 글자를 품는 상자로
+  짝짓지 않고, 바로 뒤 라벨이 마스크 오른쪽 끝을 넘는지만 따로 잰다(넘으면
+  테두리 선이 라벨 끝 글자를 지나간다).
 
 그리고 **이 스크립트가 통과한 것이 도식이 멀쩡하다는 뜻은 아니다.** 1위로
 올라온 넘침 101px 은 상자 안 글자가 아니라 화살표 옆 라벨이었다. 상자에
@@ -72,15 +74,25 @@ try {
             .filter(r => tx >= r.x - 1 && tx <= r.x + r.w - 8
                       && ty >= r.y - 2 && ty <= r.y + r.h + 2)
             .sort((a, c) => a.w * a.h - c.w * c.h)[0];
-          const right = b.x + b.width;
+          // 네 면 중 가장 많이 나간 쪽을 넘침으로 본다
+          const sides = (x, y, w, h) => Math.max(
+            x - b.x, (b.x + b.width) - (x + w), y - b.y, (b.y + b.height) - (y + h));
           if (box) {
-            const over = right - (box.x + box.w);
+            const over = sides(box.x, box.y, box.w, box.h);
             if (over > 0) out.push({ svg: si, kind: 'box', cls: box.cls,
                                      text: t.textContent, over: +over.toFixed(1) });
           }
-          const vbOver = right - vb.width;
+          const vbOver = sides(vb.x, vb.y, vb.width, vb.height);
           if (vbOver > 0) out.push({ svg: si, kind: 'viewBox',
                                      text: t.textContent, over: +vbOver.toFixed(1) });
+        });
+        svg.querySelectorAll('rect.dg-mask').forEach(m => {
+          const t = m.nextElementSibling;
+          if (!t || t.tagName !== 'text' || !t.textContent) return;
+          const b = t.getBBox();
+          const over = (b.x + b.width) - (+m.getAttribute('x') + +m.getAttribute('width'));
+          if (over > 0) out.push({ svg: si, kind: 'mask',
+                                   text: t.textContent, over: +over.toFixed(1) });
         });
       });
       return out;
@@ -152,7 +164,7 @@ def main():
     hits = sorted(uniq, key=lambda h: -h["over"])
 
     if not hits:
-        print(f"넘침 {args.min:.0f}px 이상 없음.")
+        print(f"넘침 {args.min:g}px 이상 없음.")
         return
 
     for h in hits:

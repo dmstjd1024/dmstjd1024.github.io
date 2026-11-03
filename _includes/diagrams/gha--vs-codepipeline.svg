@@ -10,7 +10,7 @@
 
   <!-- GitHub Actions -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="74" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="81" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">GitHub Actions</text>
   <rect class="dg-item" x="305" y="56" width="110" height="52" rx="6"/>
   <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">돌린 시간만큼</text>
@@ -18,7 +18,7 @@
 
   <!-- Code Pipeline -->
   <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="170" width="70" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="170" width="76" height="12" rx="2"/>
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Code Pipeline</text>
   <rect class="dg-item" x="275" y="200" width="169" height="52" rx="6"/>
   <text class="dg-t" x="359" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">활성 파이프라인 개수만큼</text>
@@ -33,7 +33,7 @@
 
   <!-- GitHub Actions -->
   <rect class="dg-zone" x="24" y="32" width="312" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="74" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="81" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">GitHub Actions</text>
   <rect class="dg-item" x="125" y="56" width="110" height="52" rx="6"/>
   <text class="dg-t" x="180" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">돌린 시간만큼</text>
@@ -41,7 +41,7 @@
 
   <!-- Code Pipeline -->
   <rect class="dg-zone" x="24" y="176" width="312" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="170" width="70" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="170" width="76" height="12" rx="2"/>
   <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">Code Pipeline</text>
   <rect class="dg-item" x="95" y="200" width="169" height="52" rx="6"/>
   <text class="dg-t" x="179" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">활성 파이프라인 개수만큼</text>

@@ -39,7 +39,7 @@
   <path class="dg-join" d="M680 71 V279"/>
   <path class="dg-join" d="M760 279 V71"/>
 
-  <text class="dg-s" x="24" y="340">feature 는 develop 에서 갈라져 develop 으로 합쳐지고, hotfix 는 master 에서 갈라져 master 로 돌아온다</text>
+  <text class="dg-s" x="24" y="340">feature 는 develop 에서 갈라져 develop 으로, hotfix 는 master 에서 갈라져 master 로 간다</text>
 </svg>
 <svg class="dg-narrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 464" role="img" aria-label="git flow 의 다섯 브랜치 구조와 각 브랜치의 역할">
   <!-- 세로본. 가로본은 왼쪽 140px 를 브랜치 이름에 썼는데 360 폭에서는

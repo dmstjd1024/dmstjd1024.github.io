@@ -153,7 +153,10 @@
   grid-template-rows:0fr;
   grid-auto-rows:0;
   opacity:0;
-  transition:grid-template-rows .22s ease, opacity .18s ease;
+  // 접힌 링크가 Tab 으로 잡히고 스크린리더에 읽히지 않게 숨긴다.
+  // 접을 때는 높이가 다 줄어든 뒤(.22s)에 숨겨야 연출이 끊기지 않는다
+  visibility:hidden;
+  transition:grid-template-rows .22s ease, opacity .18s ease, visibility 0s linear .22s;
 
   // fr 이 실제로 줄어들려면 자식이 min-height:auto 를 벗어나야 한다.
   // 안 그러면 내용 높이가 하한이 되어 0fr 이 먹지 않는다.
@@ -171,6 +174,8 @@
 .has-sub.is-open > .nav__sub {
   grid-template-rows:1fr;
   opacity:1;
+  visibility:visible;
+  transition-delay:0s;
 }
 
 // 페이지를 열자마자 현재 카테고리를 펼칠 때는 연출을 건너뛴다.
