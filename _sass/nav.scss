@@ -443,8 +443,3 @@
     min-height:calc(100vh - var(--nav-h) - 2.5rem);
   }
 }
-
-// 사이드 메뉴가 자리를 차지하는 만큼 목차를 띄울 여유가 줄어든다
-@media (max-width:#{$bp-desktop + 200px}) {
-  .toc { display:none; }
-}

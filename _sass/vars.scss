@@ -143,8 +143,3 @@ body.dark-theme {
   --shadow:0 2px 8px rgba(1,4,9,.5);
   --shadow-lg:0 8px 24px rgba(1,4,9,.6);
 }
-
-// 왼쪽 메뉴가 생기기 전의 목차 숨김 기준.
-// 지금 목차는 post.scss 의 max-width:1543px 이 숨기고, 이 값은
-// nav.scss 의 같은 규칙(+200px)에만 남아 있다.
-$bp-desktop:1260px;
