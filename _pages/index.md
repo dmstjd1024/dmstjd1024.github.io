@@ -19,7 +19,7 @@ layout: default
     <p class="hero__links">
       <a class="hero__cta" href="#featured">주요 작업 보기</a>
       <a href="https://github.com/dmstjd1024">GitHub</a>
-      <a href="/글/index.html">블로그 글</a>
+      <a href="/글/">블로그 글</a>
     </p>
   </header>
 
@@ -29,7 +29,7 @@ layout: default
 {%- endcomment -%}
   <section class="featured" id="featured" aria-labelledby="h-featured">
     <h2 class="sec__title" id="h-featured">주요 작업</h2>
-    <ul class="featured__list">
+    <ul class="featured__list" role="list">
       <li>
         <a href="/React/한글-폰트-pdf-성능.html">
           <b>탄소배출 산정 웹앱 — PDF 생성 속도 개선</b>
@@ -56,14 +56,14 @@ layout: default
 
   <section class="recent" aria-labelledby="h-recent">
     <h2 class="sec__title" id="h-recent">최근 글</h2>
-    <ul class="recent__list">
+    <ul class="recent__list" role="list">
       {%- assign latest = site.documents | where_exp: "p", "p.description" | sort: "date" | reverse -%}
       {%- for p in latest limit: 3 -%}
         {%- assign seg = p.path | remove_first: '_pages/' | split: '/' -%}
         <li><a href="{{ p.url }}"><span>{{ p.title }}</span><i>{{ seg[0] }}</i></a></li>
       {%- endfor -%}
     </ul>
-    <p class="recent__more"><a href="/글/index.html">모든 글 보기 →</a></p>
+    <p class="recent__more"><a href="/글/">모든 글 보기 →</a></p>
   </section>
 
   <section class="stack" aria-labelledby="h-stack">
@@ -215,7 +215,7 @@ layout: default
         제품별 탄소배출량을 계산하는 서비스입니다. DB 스키마 관리와 조회 성능을
         개선하고, 중복으로 유지되던 화면 구현을 통합했습니다.
       </p>
-      <ul class="cases">
+      <ul class="cases" role="list">
         <li>
           <h4>기존 스키마와 충돌한 Flyway를 제거하고 필요한 SQL만 자동 적용</h4>
           <p>
@@ -273,7 +273,7 @@ layout: default
         백엔드 API와 인프라 자동화를 담당했습니다. 인터넷이 차단된 환경에서 설치할 수
         있도록 필요한 이미지를 로컬 레지스트리에 미리 적재하고, 외부 다운로드를 막았습니다.
       </p>
-      <ul class="cases">
+      <ul class="cases" role="list">
         <li>
           <h4>신규 기관 환경 구성을 API 요청 한 번으로 자동화</h4>
           <p>
@@ -336,7 +336,7 @@ layout: default
         JSP와 JavaScript로 구현한 업무 화면 수십 개를 운영하는 시스템입니다.
         장비의 조직 소속 모델, 권한 관리, 검색 쿼리를 개선했습니다.
       </p>
-      <ul class="cases">
+      <ul class="cases" role="list">
         <li>
           <h4>장비의 소속 조직을 고객과 독립적으로 관리하도록 모델 변경</h4>
           <p>
@@ -376,7 +376,7 @@ layout: default
         증권사 API로 주문과 체결을 처리하는 개인 프로젝트입니다. 직접 개발해 실계좌로
         운용하며, 실제 체결 내역과 백테스트 결과로 계산과 전략을 검증하고 있습니다.
       </p>
-      <ul class="cases">
+      <ul class="cases" role="list">
         <li>
           <h4>실제 체결 47건과 대조해 수수료·세금 계산 수정</h4>
           <p>
@@ -414,7 +414,7 @@ layout: default
   <section class="career" aria-labelledby="h-career">
     <h2 class="sec__title" id="h-career">경력</h2>
     <p class="sec__note">2021년부터 업무 시스템과 웹 서비스의 개발·유지보수를 맡아 왔습니다.</p>
-    <ol class="career__list">
+    <ol class="career__list" role="list">
       <li>
         <span class="career__when">2023 — 현재</span>
         <span class="career__what">
@@ -466,7 +466,7 @@ layout: default
         <li>데이터 이전 중 기존 기능을 유지하는 방법과 자동 검증</li>
       </ul>
     </div>
-    <a class="allposts" href="/글/index.html">
+    <a class="allposts" href="/글/">
       <b>블로그 글</b>
       <span>개발 과정과 문제 해결 기록 보기 →</span>
     </a>

@@ -66,7 +66,10 @@
     //
     // 저장된 상태보다 우선한다. 어떤 글을 보고 있는데 그 글이 속한 갈래가
     // 접혀 있으면 자기 위치를 알 수 없다.
-    var cur = menu.querySelector('a[aria-current="page"]');
+    // 값이 page(그 페이지)든 true(그 갈래 안의 글)든 펼친다. 하위 카테고리에도
+    // 붙으므로 가장 깊은 것(문서 순서상 마지막)에서 위로 올라가며 연다.
+    var curs = menu.querySelectorAll('a[aria-current]');
+    var cur = curs[curs.length - 1];
     if (cur) {
       var li = cur.closest('.has-sub');
       while (li) {

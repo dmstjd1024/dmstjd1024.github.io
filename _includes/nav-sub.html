@@ -22,6 +22,11 @@
                       {%- assign sseg = sub.path | remove_first: '_pages/' | split: '/' -%}
                       {%- if sseg.size == include.depth -%}
                         {%- assign ni = include.depth | minus: 2 -%}
+                        {%- comment -%} 지금 이 하위 카테고리 페이지면 page, 그 아래 글이면 true {%- endcomment -%}
+                        {%- assign su = sub.url | remove: 'index.html' -%}
+                        {%- assign upre = page.url | slice: 0, su.size -%}
+                        {%- assign cur = '' -%}
+                        {%- if page.url == sub.url -%}{%- assign cur = 'page' -%}{%- elsif upre == su -%}{%- assign cur = 'true' -%}{%- endif -%}
                         {%- assign nm = sseg[ni] -%}
                         {%- assign cp = include.prefix | append: nm | append: '/' -%}
                         {%- assign cd = include.depth | plus: 1 -%}
@@ -35,7 +40,7 @@
                         <li{% if gc > 0 %} class="has-sub"{% endif %}>
                           {%- if gc > 0 -%}
                           <div class="nav__row">
-                          <a href="{{ sub.url | prepend: site.baseurl }}">{{ nm }}</a>
+                          <a href="{{ su | prepend: site.baseurl }}"{% if cur != '' %} aria-current="{{ cur }}"{% endif %}>{{ nm }}</a>
                           <button type="button" class="nav__toggle" aria-expanded="false" aria-label="{{ nm }} 하위 메뉴 펼치기">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
                           </button>
@@ -44,7 +49,7 @@
                           {%- assign cd2 = include.depth | plus: 1 -%}
                           {%- include nav-sub.html cats=include.cats prefix=cp2 depth=cd2 -%}
                           {%- else %}
-                          <a href="{{ sub.url | prepend: site.baseurl }}">{{ nm }}</a>
+                          <a href="{{ su | prepend: site.baseurl }}"{% if cur != '' %} aria-current="{{ cur }}"{% endif %}>{{ nm }}</a>
                         {%- endif %}
                         </li>
                       {%- endif -%}
