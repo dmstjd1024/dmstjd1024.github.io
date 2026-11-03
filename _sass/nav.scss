@@ -313,12 +313,12 @@
   #btn-menu { display:grid; }
 }
 
-// 움직임을 줄여달라고 설정한 사용자에게는 미끄러지는 연출을 끈다
+// 움직임을 줄여달라고 설정한 사용자: 전환 시간은 base.scss 가 모든 요소에서
+// 이미 줄인다. 여기서는 그 규칙이 못 건드리는 visibility 지연(닫힐 때 .25s·.22s
+// 뒤에 숨기는 것)까지 없앤다.
 @media (prefers-reduced-motion:reduce) {
   .nav__menu,
-  .nav__scrim,
-  .has-sub > .nav__sub,
-  .nav__toggle svg { transition:none; }
+  .has-sub > .nav__sub { transition:none; }
 }
 
 @media (max-width:$bp-mobile) {

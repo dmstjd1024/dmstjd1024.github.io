@@ -105,7 +105,13 @@
   }
 }
 
+// 폰에서는 화면을 꽉 채우고, 결과 목록만 남은 높이 안에서 스크롤한다.
+// 목록 높이를 풀기만 하면 패널(overflow:hidden)이 뒤쪽 결과와 안내를 잘라 버린다
 @media (max-width:$bp-mobile) {
-  .search__panel { margin:0; max-width:none; height:100%; border-radius:0; border:none; }
-  .search__results { max-height:none; }
+  .search__panel {
+    margin:0; max-width:none; height:100%; border-radius:0; border:none;
+    display:flex;
+    flex-direction:column;
+  }
+  .search__results { max-height:none; flex:1; min-height:0; }
 }

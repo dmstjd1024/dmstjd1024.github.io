@@ -159,7 +159,7 @@
       split: 5
       links:
         - name: "API 보안 모범 사례"
-          url: "https://roadmap.sh/best-practices/api-security"
+          url: "https://roadmap.sh/api-security-best-practices"
       items:
         - name: "웹 보안"
         - name: "MD5"

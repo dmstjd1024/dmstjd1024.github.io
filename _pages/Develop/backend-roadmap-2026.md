@@ -155,7 +155,7 @@ NoSQL 은 원본에서 **성격별로 묶여** 있다. 도식에는 이름만 �
 | 맨 위 | [roadmap.sh](https://roadmap.sh) · [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |
 | 백엔드 언어 · 택&nbsp;1 | [입문 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=beginner) |
 | 인증 · 인가 | [중급 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=intermediate) |
-| 보안 · 암호화 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
+| 보안 · 암호화 | [API 보안 모범 사례](https://roadmap.sh/api-security-best-practices) |
 | AI 코딩 도구 | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) — 원본 버튼은 주소가 비어 있어 같은 이름의 로드맵을 걸었다 |
 | 컨테이너 | [Docker](https://roadmap.sh/docker) · [쿠버네티스](https://roadmap.sh/kubernetes) |
 | 아키텍처 패턴 | [시스템 설계](https://roadmap.sh/system-design) · [소프트웨어 설계 · 아키텍처](https://roadmap.sh/software-design-architecture) |

@@ -9,7 +9,7 @@
 <article class="wrap wrap--post">
   <header class="post-head">
     <div class="post-head__meta">
-      <a class="post-head__cat" href="{{ '/' | append: seg[0] | prepend: site.baseurl }}">{{ seg[0] }}</a>
+      <a class="post-head__cat" href="{{ '/' | append: seg[0] | append: '/' | prepend: site.baseurl }}">{{ seg[0] }}</a>
       {%- assign d = page.date | date: "%Y-%m-%d" -%}
       {%- if d != "1900-01-01" -%}
         <time datetime="{{ d }}">{{ page.date | date: "%Y.%m.%d" }}</time>
@@ -177,7 +177,7 @@
   {%- endif -%}
 
   <footer class="post-foot">
-    <a class="post-foot__back" href="{{ '/' | append: seg[0] | prepend: site.baseurl }}">← {{ seg[0] }} 글 더 보기</a>
+    <a class="post-foot__back" href="{{ '/' | append: seg[0] | append: '/' | prepend: site.baseurl }}">← {{ seg[0] }} 글 더 보기</a>
   </footer>
 
   {%- comment -%}

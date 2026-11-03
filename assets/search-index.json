@@ -38,7 +38,14 @@ sitemap: false
   {%- assign first = false -%}
   {%- assign p_body = '' -%}
   {%- if p_type != 'category' -%}
-    {%- assign fence_split = p.content | split: '<div class="highlight">' -%}
+    {%- comment -%} 도식 SVG 글자는 본문이 아니다 — 읽는 시간 계산(post.html)과 같이 뺀다 {%- endcomment -%}
+    {%- assign svg_parts = p.content | split: '<svg' -%}
+    {%- assign no_svg = svg_parts | first -%}
+    {%- for part in svg_parts offset: 1 -%}
+      {%- assign after_svg = part | split: '</svg>' | last -%}
+      {%- assign no_svg = no_svg | append: ' ' | append: after_svg -%}
+    {%- endfor -%}
+    {%- assign fence_split = no_svg | split: '<div class="highlight">' -%}
     {%- for chunk in fence_split -%}
       {%- if forloop.first -%}
         {%- assign p_body = p_body | append: chunk -%}

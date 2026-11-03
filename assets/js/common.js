@@ -39,8 +39,19 @@
       });
     };
 
+    // 열린 서랍은 막으로 나머지를 덮는 모달이다. 뒤쪽(본문·상단바의 로고·도구)을
+    // inert 로 막아 화면 낭독기의 가상 커서도 서랍 밖으로 나가지 않게 한다.
+    // 검색 대화상자는 서랍 위에 뜰 수 있으므로 뺀다.
+    var behind = function () {
+      var out = Array.prototype.filter.call(document.body.children, function (el) {
+        return !el.contains(nav) && el.id !== 'search' && el.tagName !== 'SCRIPT';
+      });
+      return out.concat(Array.prototype.slice.call(nav.querySelectorAll('.nav__brand, .nav__tools')));
+    };
+
     var setMenu = function (open) {
       nav.classList.toggle('is-open', open);
+      behind().forEach(function (el) { el.inert = open; });
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('nav-locked', open);
 
