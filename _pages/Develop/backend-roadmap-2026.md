@@ -102,7 +102,7 @@ API 의 소비자가 프론트엔드이기 때문이다.
 </div>
 
 **AI 도구의 사용과 AI 기능의 구현은 별도 항목으로 구분된다.**
-백엔드 직군의 요구 범위는 후자, 즉 스트리밍·Function Calling 을 이용한 기능 구현이다.
+원본이 적은 말은 아니지만, 백엔드 직군에 요구되는 쪽은 후자, 즉 스트리밍·Function Calling 을 이용한 기능 구현이라고 본다.
 
 ---
 
@@ -153,8 +153,6 @@ Docker 와 Kubernetes 는?
 <div class="diagram">
 {% include diagrams/backend-roadmap--containers.svg %}
 </div>
-
-백엔드 로드맵 내부의 학습 항목이 아니라, 각각 독립된 로드맵으로 연결되는 분기점이다.
 
 ---
 
