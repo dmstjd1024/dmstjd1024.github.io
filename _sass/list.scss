@@ -18,7 +18,7 @@
   &__title {
     font-size:clamp(1.75rem, 4vw, 2.5rem);
     letter-spacing:-.03em;
-    overflow-wrap:anywhere;   // keep-all 이라 WebKit 이 하이픈에서도 안 끊는다(TICKET-EXPEDITIONARY-FORCE)
+    overflow-wrap:anywhere;   // 그래도 넘칠 때만. 하이픈 이름은 post-list 가 '-' 뒤에 <wbr> 을 넣는다(keep-all 이라 WebKit·Firefox 는 하이픈에서 안 끊는다)
   }
 
   &__count {

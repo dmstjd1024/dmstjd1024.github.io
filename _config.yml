@@ -77,13 +77,13 @@ feed:
 defaults:
   -
     scope:
-      # 글(_pages 컬렉션)에만 준다. 빈 경로로 두면 /roadmap/·태그 페이지 같은 일반
-      # 페이지에도 이 날짜가 붙어 검색 메타데이터에 글(BlogPosting)로 나간다
+      # 글(_pages 컬렉션)에만 준다. 기본 날짜는 두지 않는다 — 글은 모두 front matter 에
+      # date 가 있고, 기본값을 주면 카테고리 목록(index.md)에 2025-05-27 이 붙어
+      # 사이트맵 lastmod 가 사실과 달라졌다(일반 페이지는 BlogPosting 으로까지 나갔다)
       path: "_pages"
       type: "pages"
     values:
       layout: "page"
-      date: "2025-05-27"
 
 # Markdown newline activator 
 kramdown:

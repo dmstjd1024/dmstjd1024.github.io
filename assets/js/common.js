@@ -52,6 +52,7 @@
     };
 
     var setMenu = function (open) {
+      var wasOpen = nav.classList.contains('is-open');
       nav.classList.toggle('is-open', open);
       behind().forEach(function (el) { el.inert = open; });
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -68,7 +69,7 @@
 
       // 서랍은 미끄러져 나가는 .25s 동안 아직 보이므로, 그 사이 Shift+Tab 이 사라질
       // 링크로 들어가지 않게 닫자마자 inert 로 막고 연출이 끝나면 푼다(넓은 화면 레일로 쓰인다).
-      if (menu) {
+      if (menu && (open || wasOpen)) {
         menu.inert = !open;
         if (!open) window.setTimeout(function () {
           if (!nav.classList.contains('is-open')) menu.inert = false;
@@ -93,9 +94,10 @@
 
     if (scrim) scrim.addEventListener('click', function () { setMenu(false); });
 
-    // 링크를 고르면 이동하면서 닫는다
+    // 서랍에서 링크를 고르면 이동하면서 닫는다. 넓은 화면 레일은 서랍이 아니므로
+    // 건드리지 않는다 — 새 탭으로 열 때 누른 링크의 포커스를 잃지 않게
     nav.addEventListener('click', function (e) {
-      if (e.target.closest('.nav__menu a')) setMenu(false);
+      if (nav.classList.contains('is-open') && e.target.closest('.nav__menu a')) setMenu(false);
     });
 
     // 펼침 상태(현재 카테고리 펼치기 + 이전 페이지에서 이어받기)는 여기서
