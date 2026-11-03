@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="mojibake--patch-growth-title mojibake--patch-growth-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="mojibake--patch-growth-title" aria-describedby="mojibake--patch-growth-desc">
   <title id="mojibake--patch-growth-title">원인은 저장 시점에서 이미 고쳤는데, 조회 시점에 복구 단계를 네 번 덧댄 뒤 전부 삭제한 과정</title>
   <desc id="mojibake--patch-growth-desc">원인은 저장 시점에서 이미 고쳤는데, 조회 시점에 복구 단계를 네 번 덧댄 뒤 전부 삭제한 과정</desc>
 
@@ -27,7 +27,7 @@
   <rect class="dg-item" x="369" y="122" width="229" height="52" rx="6"/>
   <text class="dg-t" x="483" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">87줄을 2줄로 되돌렸다 — 살아남은…</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="img" aria-labelledby="mojibake--patch-growth-title" aria-describedby="mojibake--patch-growth-desc">
 
   <defs>
     <marker id="mojibake--patch-growth-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

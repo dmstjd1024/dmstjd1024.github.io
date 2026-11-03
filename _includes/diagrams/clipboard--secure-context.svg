@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="clipboard--secure-context-title clipboard--secure-context-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="clipboard--secure-context-title" aria-describedby="clipboard--secure-context-desc">
   <title id="clipboard--secure-context-title">navigator.clipboard 는 HTTPS 나 localhost 에서만 동작하며 HTTP 배포 환경에서는 조용히 실패한다</title>
   <desc id="clipboard--secure-context-desc">navigator.clipboard 는 HTTPS 나 localhost 에서만 동작하며 HTTP 배포 환경에서는 조용히 실패한다</desc>
 
@@ -36,7 +36,7 @@
   <rect class="dg-item" x="333" y="344" width="212" height="52" rx="6"/>
   <text class="dg-t" x="439" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">undefined 이거나 Promise rejec…</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 568" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 568" role="img" aria-labelledby="clipboard--secure-context-title" aria-describedby="clipboard--secure-context-desc">
 
   <defs>
     <marker id="clipboard--secure-context-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

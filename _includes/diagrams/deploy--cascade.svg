@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="deploy--cascade-title deploy--cascade-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="deploy--cascade-title" aria-describedby="deploy--cascade-desc">
   <title id="deploy--cascade-title">하나를 고칠 때마다 다음 문제가 드러난 55분간의 연쇄 장애 시간 흐름</title>
   <desc id="deploy--cascade-desc">하나를 고칠 때마다 다음 문제가 드러난 55분간의 연쇄 장애 시간 흐름</desc>
 
@@ -28,7 +28,7 @@
   <text class="dg-t" x="427" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">그래서 배포 검증 단계를 넣었다…</text>
   <text class="dg-s" x="427" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">"배포 성공" 과 "기능 동작" 은 다른 사건이다</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="img" aria-labelledby="deploy--cascade-title" aria-describedby="deploy--cascade-desc">
 
   <defs>
     <marker id="deploy--cascade-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

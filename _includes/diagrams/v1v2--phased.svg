@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="v1v2--phased-title v1v2--phased-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="v1v2--phased-title" aria-describedby="v1v2--phased-desc">
   <title id="v1v2--phased-title">배선만 깔고 동작을 바꾸지 않는 단계를 앞에 두어 롤백 가능하게 만든 6단계 이관</title>
   <desc id="v1v2--phased-desc">배선만 깔고 동작을 바꾸지 않는 단계를 앞에 두어 롤백 가능하게 만든 6단계 이관</desc>
 
@@ -25,7 +25,7 @@
   <text class="dg-t" x="460" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">삭제할 때 조심한 것</text>
   <text class="dg-s" x="460" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">V1 전용처럼 보이지만 V2 도 쓰는 부품 5개…</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="img" aria-labelledby="v1v2--phased-title" aria-describedby="v1v2--phased-desc">
 
   <defs>
     <marker id="v1v2--phased-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

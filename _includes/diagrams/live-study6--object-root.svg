@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="live-study6--object-root-title live-study6--object-root-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="live-study6--object-root-title" aria-describedby="live-study6--object-root-desc">
   <title id="live-study6--object-root-title">모든 클래스가 Object 를 최상위 조상으로 갖는 상속 계층</title>
   <desc id="live-study6--object-root-desc">모든 클래스가 Object 를 최상위 조상으로 갖는 상속 계층</desc>
 
@@ -22,7 +22,7 @@
   <rect class="dg-item" x="551" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="599" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">List</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="img" aria-labelledby="live-study6--object-root-title" aria-describedby="live-study6--object-root-desc">
 
   <defs>
     <marker id="live-study6--object-root-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

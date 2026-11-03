@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="gin-trgm--leading-wildcard-title gin-trgm--leading-wildcard-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="gin-trgm--leading-wildcard-title" aria-describedby="gin-trgm--leading-wildcard-desc">
   <title id="gin-trgm--leading-wildcard-title">앞에 퍼센트가 붙은 LIKE 는 B-tree 인덱스를 못 쓰지만 trigram 은 가능하다</title>
   <desc id="gin-trgm--leading-wildcard-desc">앞에 퍼센트가 붙은 LIKE 는 B-tree 인덱스를 못 쓰지만 trigram 은 가능하다</desc>
 
@@ -31,7 +31,7 @@
   <rect class="dg-item" x="476" y="200" width="104" height="52" rx="6"/>
   <text class="dg-t" x="528" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LIKE '%bcd%'</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 358" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 358" role="img" aria-labelledby="gin-trgm--leading-wildcard-title" aria-describedby="gin-trgm--leading-wildcard-desc">
 
   <defs>
     <marker id="gin-trgm--leading-wildcard-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

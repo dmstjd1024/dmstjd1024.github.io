@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="jira--workflow-title jira--workflow-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="jira--workflow-title" aria-describedby="jira--workflow-desc">
   <title id="jira--workflow-title">워크플로우가 상태 사이의 이동 경로를 정해두어 건너뛰기를 막는 구조</title>
   <desc id="jira--workflow-desc">워크플로우가 상태 사이의 이동 경로를 정해두어 건너뛰기를 막는 구조</desc>
 
@@ -23,7 +23,7 @@
   <rect class="dg-item" x="248" y="122" width="223" height="52" rx="6"/>
   <text class="dg-t" x="359" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">길이 없으면 못 간다 — "할 일"에…</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="img" aria-labelledby="jira--workflow-title" aria-describedby="jira--workflow-desc">
 
   <defs>
     <marker id="jira--workflow-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

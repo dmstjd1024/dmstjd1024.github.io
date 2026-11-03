@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="k8s--deploy-service-title k8s--deploy-service-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="k8s--deploy-service-title" aria-describedby="k8s--deploy-service-desc">
   <title id="k8s--deploy-service-title">디플로이먼트와 서비스가 각각 라벨을 보고 같은 파드 묶음을 찾아내는 구조</title>
   <desc id="k8s--deploy-service-desc">디플로이먼트와 서비스가 각각 라벨을 보고 같은 파드 묶음을 찾아내는 구조</desc>
 
@@ -31,7 +31,7 @@
   <rect class="dg-item" x="444" y="200" width="137" height="52" rx="6"/>
   <text class="dg-t" x="512" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">nginx-7d9c...-e5f6</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="img" aria-labelledby="k8s--deploy-service-title" aria-describedby="k8s--deploy-service-desc">
 
   <defs>
     <marker id="k8s--deploy-service-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

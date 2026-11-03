@@ -41,7 +41,7 @@
 
   <text class="dg-s" x="24" y="340">feature 는 develop 에서 갈라져 develop 으로 합쳐지고, hotfix 는 master 에서 갈라져 master 로 돌아온다</text>
 </svg>
-<svg class="dg-narrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 464" role="presentation" aria-hidden="true">
+<svg class="dg-narrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 464" role="img" aria-label="git flow 의 다섯 브랜치 구조와 각 브랜치의 역할">
   <!-- 세로본. 가로본은 왼쪽 140px 를 브랜치 이름에 썼는데 360 폭에서는
        그게 39% 다. 이름을 레인 위 한 줄로 올려 가로를 전부 타임라인에
        쓴다. 이름을 선과 같은 줄에 두면 분기선이 글자를 뚫고 지나간다. -->

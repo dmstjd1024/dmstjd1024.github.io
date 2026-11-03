@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study--jvm-portability-title live-study--jvm-portability-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study--jvm-portability-title" aria-describedby="live-study--jvm-portability-desc">
   <title id="live-study--jvm-portability-title">일반 애플리케이션과 자바 애플리케이션이 하드웨어까지 도달하는 경로 비교</title>
   <desc id="live-study--jvm-portability-desc">일반 애플리케이션과 자바 애플리케이션이 하드웨어까지 도달하는 경로 비교</desc>
 
@@ -34,7 +34,7 @@
   <rect class="dg-item" x="504" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="552" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">하드웨어</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="img" aria-labelledby="live-study--jvm-portability-title" aria-describedby="live-study--jvm-portability-desc">
 
   <defs>
     <marker id="live-study--jvm-portability-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

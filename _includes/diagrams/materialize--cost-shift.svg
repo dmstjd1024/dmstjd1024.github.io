@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 424" role="img" aria-labelledby="materialize--cost-shift-title materialize--cost-shift-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 424" role="img" aria-labelledby="materialize--cost-shift-title" aria-describedby="materialize--cost-shift-desc">
   <title id="materialize--cost-shift-title">뷰는 읽을 때마다 재계산하고 물질화 테이블은 쓸 때 한 번 계산한다</title>
   <desc id="materialize--cost-shift-desc">뷰는 읽을 때마다 재계산하고 물질화 테이블은 쓸 때 한 번 계산한다</desc>
 
@@ -35,7 +35,7 @@
   <rect class="dg-item" x="267" y="332" width="185" height="52" rx="6"/>
   <text class="dg-t" x="359" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쓰기 때 한 번 계산해 넣는다</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 688" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 688" role="img" aria-labelledby="materialize--cost-shift-title" aria-describedby="materialize--cost-shift-desc">
 
   <defs>
     <marker id="materialize--cost-shift-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

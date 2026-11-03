@@ -26,7 +26,7 @@
   <text class="dg-v" x="44" y="284">세션을 나누기만 해도 누적 성공률이 복구되는 것은 아니다</text>
   <text class="dg-s" x="44" y="302">태스크 사이의 검증과 오류 수정이 필요하다</text>
 </svg>
-<svg class="dg-narrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 356" role="presentation" aria-hidden="true">
+<svg class="dg-narrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 356" role="img" aria-label="단계별 성공률이 0.85라고 가정할 때 의존 단계 수에 따라 전체 성공률이 감소하는 개념도. 프로세스 재시작 효과를 측정한 그래프는 아니다">
   <!-- 세로본. 그래프는 행으로 접을 수 없으므로 축을 그대로 두고 좌우
        여백만 줄였다(가로본 88..660 → 56..336). 한 줄로 길었던 부제와
        곡선 라벨은 폭이 모자라 두 줄로 끊었다. -->

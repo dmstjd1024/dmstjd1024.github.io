@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="react2--memo-callback-ref-title react2--memo-callback-ref-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="react2--memo-callback-ref-title" aria-describedby="react2--memo-callback-ref-desc">
   <title id="react2--memo-callback-ref-title">useMemo 는 값을 useCallback 은 함수를 useRef 는 참조를 기억한다</title>
   <desc id="react2--memo-callback-ref-desc">useMemo 는 값을 useCallback 은 함수를 useRef 는 참조를 기억한다</desc>
 
@@ -28,7 +28,7 @@
   <rect class="dg-item" x="547" y="122" width="99" height="52" rx="6"/>
   <text class="dg-t" x="596" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">참조를 기억</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="img" aria-labelledby="react2--memo-callback-ref-title" aria-describedby="react2--memo-callback-ref-desc">
 
   <defs>
     <marker id="react2--memo-callback-ref-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

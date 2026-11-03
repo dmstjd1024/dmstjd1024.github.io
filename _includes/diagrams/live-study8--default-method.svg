@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study8--default-method-title live-study8--default-method-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study8--default-method-title" aria-describedby="live-study8--default-method-desc">
   <title id="live-study8--default-method-title">인터페이스에 메서드를 추가하면 구현 클래스가 모두 깨지는 문제와 디폴트 메서드의 해결</title>
   <desc id="live-study8--default-method-desc">인터페이스에 메서드를 추가하면 구현 클래스가 모두 깨지는 문제와 디폴트 메서드의 해결</desc>
 
@@ -31,7 +31,7 @@
   <rect class="dg-item" x="479" y="200" width="191" height="52" rx="6"/>
   <text class="dg-t" x="574" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">구현 클래스 B — 그대로 동작</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 556" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 556" role="img" aria-labelledby="live-study8--default-method-title" aria-describedby="live-study8--default-method-desc">
 
   <defs>
     <marker id="live-study8--default-method-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

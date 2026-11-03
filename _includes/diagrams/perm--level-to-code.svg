@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="perm--level-to-code-title perm--level-to-code-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="perm--level-to-code-title" aria-describedby="perm--level-to-code-desc">
   <title id="perm--level-to-code-title">정수 하나로 권한을 표현하는 방식과 권한 코드 기반 모델의 차이</title>
   <desc id="perm--level-to-code-desc">정수 하나로 권한을 표현하는 방식과 권한 코드 기반 모델의 차이</desc>
 
@@ -30,7 +30,7 @@
   <rect class="dg-item" x="461" y="200" width="158" height="52" rx="6"/>
   <text class="dg-t" x="540" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">사용자에게 역할을 부여</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="img" aria-labelledby="perm--level-to-code-title" aria-describedby="perm--level-to-code-desc">
 
   <defs>
     <marker id="perm--level-to-code-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

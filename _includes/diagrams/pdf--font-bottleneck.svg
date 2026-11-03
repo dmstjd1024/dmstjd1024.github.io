@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="pdf--font-bottleneck-title pdf--font-bottleneck-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="pdf--font-bottleneck-title" aria-describedby="pdf--font-bottleneck-desc">
   <title id="pdf--font-bottleneck-title">폰트를 빠르게 만드는 시도가 모두 실패한 뒤 텍스트 자체를 없애는 쪽으로 방향을 바꾼 과정</title>
   <desc id="pdf--font-bottleneck-desc">폰트를 빠르게 만드는 시도가 모두 실패한 뒤 텍스트 자체를 없애는 쪽으로 방향을 바꾼 과정</desc>
 
@@ -37,7 +37,7 @@
   <rect class="dg-item" x="477" y="200" width="121" height="52" rx="6"/>
   <text class="dg-t" x="537" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">텍스트 객체 0개</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="img" aria-labelledby="pdf--font-bottleneck-title" aria-describedby="pdf--font-bottleneck-desc">
 
   <defs>
     <marker id="pdf--font-bottleneck-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

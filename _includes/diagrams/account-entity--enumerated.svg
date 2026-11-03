@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="account-entity--enumerated-title account-entity--enumerated-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="account-entity--enumerated-title" aria-describedby="account-entity--enumerated-desc">
   <title id="account-entity--enumerated-title">EnumType ORDINAL 은 순서를 숫자로 저장하고 STRING 은 이름을 저장한다</title>
   <desc id="account-entity--enumerated-desc">EnumType ORDINAL 은 순서를 숫자로 저장하고 STRING 은 이름을 저장한다</desc>
 
@@ -24,7 +24,7 @@
   <rect class="dg-item" x="289" y="122" width="142" height="52" rx="6"/>
   <text class="dg-t" x="360" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">DB 에  USER · ADMIN</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="img" aria-labelledby="account-entity--enumerated-title" aria-describedby="account-entity--enumerated-desc">
 
   <defs>
     <marker id="account-entity--enumerated-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

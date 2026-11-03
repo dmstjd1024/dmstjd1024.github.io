@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="session--redis-guard-title session--redis-guard-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="session--redis-guard-title" aria-describedby="session--redis-guard-desc">
   <title id="session--redis-guard-title">응답 후처리의 부가 기능이 실패하면 응답 전체가 실패하는 구조와 가드 추가</title>
   <desc id="session--redis-guard-desc">응답 후처리의 부가 기능이 실패하면 응답 전체가 실패하는 구조와 가드 추가</desc>
 
@@ -31,7 +31,7 @@
   <rect class="dg-item" x="450" y="200" width="169" height="52" rx="6"/>
   <text class="dg-t" x="534" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">응답은 정상적으로 나간다</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 556" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 556" role="img" aria-labelledby="session--redis-guard-title" aria-describedby="session--redis-guard-desc">
 
   <defs>
     <marker id="session--redis-guard-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

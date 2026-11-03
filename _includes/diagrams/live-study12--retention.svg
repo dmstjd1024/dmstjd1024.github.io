@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="live-study12--retention-title live-study12--retention-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="live-study12--retention-title" aria-describedby="live-study12--retention-desc">
   <title id="live-study12--retention-title">SOURCE, CLASS, RUNTIME 유지 정책이 각 단계에서 애노테이션을 어디까지 남기는지</title>
   <desc id="live-study12--retention-desc">SOURCE, CLASS, RUNTIME 유지 정책이 각 단계에서 애노테이션을 어디까지 남기는지</desc>
 
@@ -43,7 +43,7 @@
   <rect class="dg-item" x="420" y="344" width="104" height="52" rx="6"/>
   <text class="dg-t" x="472" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">읽을 수 있다</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 634" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 634" role="img" aria-labelledby="live-study12--retention-title" aria-describedby="live-study12--retention-desc">
 
   <defs>
     <marker id="live-study12--retention-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

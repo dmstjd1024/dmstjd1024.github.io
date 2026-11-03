@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="parallel-test--jvm-boundary-title parallel-test--jvm-boundary-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="parallel-test--jvm-boundary-title" aria-describedby="parallel-test--jvm-boundary-desc">
   <title id="parallel-test--jvm-boundary-title">포크 병렬은 JVM 이 분리돼 인메모리 DB 도 따로 생기지만 스레드 병렬은 같은 JVM 안에서 같은 DB 를 공유한다</title>
   <desc id="parallel-test--jvm-boundary-desc">포크 병렬은 JVM 이 분리돼 인메모리 DB 도 따로 생기지만 스레드 병렬은 같은 JVM 안에서 같은 DB 를 공유한다</desc>
 
@@ -30,7 +30,7 @@
   <rect class="dg-item" x="365" y="200" width="196" height="52" rx="6"/>
   <text class="dg-t" x="463" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">→ 테스트끼리 서로를 깨뜨린다</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 358" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 358" role="img" aria-labelledby="parallel-test--jvm-boundary-title" aria-describedby="parallel-test--jvm-boundary-desc">
 
   <defs>
     <marker id="parallel-test--jvm-boundary-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

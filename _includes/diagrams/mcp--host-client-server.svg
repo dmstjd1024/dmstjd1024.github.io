@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="mcp--host-client-server-title mcp--host-client-server-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="mcp--host-client-server-title" aria-describedby="mcp--host-client-server-desc">
   <title id="mcp--host-client-server-title">MCP 의 Host, Client, Server 구조와 Client 가 서버와 일대일로 연결되는 관계</title>
   <desc id="mcp--host-client-server-desc">MCP 의 Host, Client, Server 구조와 Client 가 서버와 일대일로 연결되는 관계</desc>
 
@@ -33,7 +33,7 @@
   <rect class="dg-item" x="514" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="562" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Client 3</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="img" aria-labelledby="mcp--host-client-server-title" aria-describedby="mcp--host-client-server-desc">
 
   <defs>
     <marker id="mcp--host-client-server-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

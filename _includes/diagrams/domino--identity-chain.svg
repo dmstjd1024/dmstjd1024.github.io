@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 280" role="img" aria-labelledby="domino--identity-chain-title domino--identity-chain-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 280" role="img" aria-labelledby="domino--identity-chain-title" aria-describedby="domino--identity-chain-desc">
   <title id="domino--identity-chain-title">deps 를 rows 로 바꾸자 매 keystroke 마다 콜백 identity 가 바뀌고 useMemo 사슬을 거쳐 ag-grid cellRenderer 재생성과 input 재마운트로 이어진다</title>
   <desc id="domino--identity-chain-desc">deps 를 rows 로 바꾸자 매 keystroke 마다 콜백 identity 가 바뀌고 useMemo 사슬을 거쳐 ag-grid cellRenderer 재생성과 input 재마운트로 이어진다</desc>
 
@@ -23,7 +23,7 @@
   <rect class="dg-item" x="245" y="188" width="229" height="52" rx="6"/>
   <text class="dg-t" x="359" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">④ 안의 &lt;input&gt; 언마운트·재마운트…</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 412" role="img" aria-labelledby="domino--identity-chain-title" aria-describedby="domino--identity-chain-desc">
 
   <defs>
     <marker id="domino--identity-chain-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

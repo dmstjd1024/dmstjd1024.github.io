@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="git-flow--JIRA-title git-flow--JIRA-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="git-flow--JIRA-title" aria-describedby="git-flow--JIRA-desc">
   <title id="git-flow--JIRA-title">Jira 이슈 생성부터 develop 병합까지의 운영 순서 흐름도</title>
   <desc id="git-flow--JIRA-desc">Jira 이슈 생성부터 develop 병합까지의 운영 순서 흐름도</desc>
 
@@ -16,7 +16,7 @@
   <text class="dg-t" x="359" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">1</text>
   <text class="dg-s" x="359" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Jira 이슈 생성</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 148" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 148" role="img" aria-labelledby="git-flow--JIRA-title" aria-describedby="git-flow--JIRA-desc">
 
   <defs>
     <marker id="git-flow--JIRA-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

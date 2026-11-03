@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="live-study4--for-order-title live-study4--for-order-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="live-study4--for-order-title" aria-describedby="live-study4--for-order-desc">
   <title id="live-study4--for-order-title">for 문의 초기화, 조건식, 수행문, 증감식이 도는 순서</title>
   <desc id="live-study4--for-order-desc">for 문의 초기화, 조건식, 수행문, 증감식이 도는 순서</desc>
 
@@ -29,7 +29,7 @@
   <rect class="dg-item" x="345" y="122" width="142" height="52" rx="6"/>
   <text class="dg-t" x="416" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">거짓이면 빠져나온다</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="img" aria-labelledby="live-study4--for-order-title" aria-describedby="live-study4--for-order-desc">
 
   <defs>
     <marker id="live-study4--for-order-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

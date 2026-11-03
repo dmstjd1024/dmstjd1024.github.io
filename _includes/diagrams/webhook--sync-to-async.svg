@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="webhook--sync-to-async-title webhook--sync-to-async-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="webhook--sync-to-async-title" aria-describedby="webhook--sync-to-async-desc">
   <title id="webhook--sync-to-async-title">동기 대기 방식과 webhook 콜백 방식에서 요청 스레드가 점유되는 시간의 차이</title>
   <desc id="webhook--sync-to-async-desc">동기 대기 방식과 webhook 콜백 방식에서 요청 스레드가 점유되는 시간의 차이</desc>
 
@@ -32,7 +32,7 @@
   <rect class="dg-item" x="445" y="200" width="121" height="52" rx="6"/>
   <text class="dg-t" x="505" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">jobId 즉시 반환</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="img" aria-labelledby="webhook--sync-to-async-title" aria-describedby="webhook--sync-to-async-desc">
 
   <defs>
     <marker id="webhook--sync-to-async-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

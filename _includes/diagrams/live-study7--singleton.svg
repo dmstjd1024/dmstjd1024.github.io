@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study7--singleton-title live-study7--singleton-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="live-study7--singleton-title" aria-describedby="live-study7--singleton-desc">
   <title id="live-study7--singleton-title">생성자를 private 로 막고 static 메서드로만 인스턴스를 얻게 하는 싱글톤 구조</title>
   <desc id="live-study7--singleton-desc">생성자를 private 로 막고 static 메서드로만 인스턴스를 얻게 하는 싱글톤 구조</desc>
 
@@ -29,7 +29,7 @@
   <rect class="dg-item" x="376" y="200" width="185" height="52" rx="6"/>
   <text class="dg-t" x="468" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">public static getInstance()</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="img" aria-labelledby="live-study7--singleton-title" aria-describedby="live-study7--singleton-desc">
 
   <defs>
     <marker id="live-study7--singleton-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

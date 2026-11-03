@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 358" role="img" aria-labelledby="live-study6--overriding-rules-title live-study6--overriding-rules-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 358" role="img" aria-labelledby="live-study6--overriding-rules-title" aria-describedby="live-study6--overriding-rules-desc">
   <title id="live-study6--overriding-rules-title">메서드 오버라이딩이 성립하려면 지켜야 할 조건들</title>
   <desc id="live-study6--overriding-rules-desc">메서드 오버라이딩이 성립하려면 지켜야 할 조건들</desc>
 
@@ -31,7 +31,7 @@
   <rect class="dg-item" x="245" y="266" width="229" height="52" rx="6"/>
   <text class="dg-t" x="359" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">static 메서드는 오버라이딩이 아니…</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 490" role="img" aria-labelledby="live-study6--overriding-rules-title" aria-describedby="live-study6--overriding-rules-desc">
 
   <defs>
     <marker id="live-study6--overriding-rules-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

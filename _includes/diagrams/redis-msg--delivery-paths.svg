@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="redis-msg--delivery-paths-title redis-msg--delivery-paths-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="redis-msg--delivery-paths-title" aria-describedby="redis-msg--delivery-paths-desc">
   <title id="redis-msg--delivery-paths-title">소비자가 처리 도중 죽었을 때 Pub/Sub은 메시지가 사라지고 List는 꺼낸 메시지만 사라지며 Streams는 PEL에 남아 재처리되는 구조</title>
   <desc id="redis-msg--delivery-paths-desc">소비자가 처리 도중 죽었을 때 Pub/Sub은 메시지가 사라지고 List는 꺼낸 메시지만 사라지며 Streams는 PEL에 남아 재처리되는 구조</desc>
 
@@ -43,7 +43,7 @@
   <rect class="dg-item" x="426" y="344" width="148" height="52" rx="6"/>
   <text class="dg-t" x="500" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PEL 에 미처리로 남음</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 766" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 766" role="img" aria-labelledby="redis-msg--delivery-paths-title" aria-describedby="redis-msg--delivery-paths-desc">
 
   <defs>
     <marker id="redis-msg--delivery-paths-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

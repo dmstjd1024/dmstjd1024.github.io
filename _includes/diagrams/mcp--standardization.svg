@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 424" role="img" aria-labelledby="mcp--standardization-title mcp--standardization-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 424" role="img" aria-labelledby="mcp--standardization-title" aria-describedby="mcp--standardization-desc">
   <title id="mcp--standardization-title">프레임워크마다 제각각이던 툴 연동 방식이 표준 프로토콜로 정리되는 구조</title>
   <desc id="mcp--standardization-desc">프레임워크마다 제각각이던 툴 연동 방식이 표준 프로토콜로 정리되는 구조</desc>
 
@@ -45,7 +45,7 @@
   <rect class="dg-item" x="368" y="332" width="96" height="52" rx="6"/>
   <text class="dg-t" x="416" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">파일</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 622" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 622" role="img" aria-labelledby="mcp--standardization-title" aria-describedby="mcp--standardization-desc">
 
   <defs>
     <marker id="mcp--standardization-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

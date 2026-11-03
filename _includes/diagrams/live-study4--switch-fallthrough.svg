@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="live-study4--switch-fallthrough-title live-study4--switch-fallthrough-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="live-study4--switch-fallthrough-title" aria-describedby="live-study4--switch-fallthrough-desc">
   <title id="live-study4--switch-fallthrough-title">break 를 생략해 아래 case 로 계속 흘러내려 권한을 누적 부여하는 방식</title>
   <desc id="live-study4--switch-fallthrough-desc">break 를 생략해 아래 case 로 계속 흘러내려 권한을 누적 부여하는 방식</desc>
 
@@ -25,7 +25,7 @@
   <text class="dg-t" x="359" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">case 1 :</text>
   <text class="dg-s" x="359" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">grantRead() · break — 여기서 끝</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 346" role="img" aria-labelledby="live-study4--switch-fallthrough-title" aria-describedby="live-study4--switch-fallthrough-desc">
 
   <defs>
     <marker id="live-study4--switch-fallthrough-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

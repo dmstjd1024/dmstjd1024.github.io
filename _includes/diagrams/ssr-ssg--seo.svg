@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="ssr-ssg--seo-title ssr-ssg--seo-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="ssr-ssg--seo-title" aria-describedby="ssr-ssg--seo-desc">
   <title id="ssr-ssg--seo-title">검색 크롤러가 받는 HTML 이 CSR 과 SSR 에서 다르다</title>
   <desc id="ssr-ssg--seo-desc">검색 크롤러가 받는 HTML 이 CSR 과 SSR 에서 다르다</desc>
 
@@ -28,7 +28,7 @@
   <rect class="dg-item" x="334" y="200" width="191" height="52" rx="6"/>
   <text class="dg-t" x="429" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">제목과 본문을 색인할 수 있다</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="img" aria-labelledby="ssr-ssg--seo-title" aria-describedby="ssr-ssg--seo-desc">
 
   <defs>
     <marker id="ssr-ssg--seo-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

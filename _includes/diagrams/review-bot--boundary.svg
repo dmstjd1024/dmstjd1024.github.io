@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="review-bot--boundary-title review-bot--boundary-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="review-bot--boundary-title" aria-describedby="review-bot--boundary-desc">
   <title id="review-bot--boundary-title">정적 분석으로 판정 가능한 범위와 실행이나 도메인 지식이 필요한 범위의 경계</title>
   <desc id="review-bot--boundary-desc">정적 분석으로 판정 가능한 범위와 실행이나 도메인 지식이 필요한 범위의 경계</desc>
 
@@ -23,7 +23,7 @@
   <rect class="dg-item" x="262" y="200" width="196" height="52" rx="6"/>
   <text class="dg-t" x="360" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">실행하거나 업무를 알아야 한다</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 292" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 292" role="img" aria-labelledby="review-bot--boundary-title" aria-describedby="review-bot--boundary-desc">
 
   <defs>
     <marker id="review-bot--boundary-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

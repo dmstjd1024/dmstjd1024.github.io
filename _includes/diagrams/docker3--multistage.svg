@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="docker3--multistage-title docker3--multistage-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 292" role="img" aria-labelledby="docker3--multistage-title" aria-describedby="docker3--multistage-desc">
   <title id="docker3--multistage-title">멀티 스테이지 빌드에서 빌드 도구는 버리고 결과물만 최종 이미지로 옮긴다</title>
   <desc id="docker3--multistage-desc">멀티 스테이지 빌드에서 빌드 도구는 버리고 결과물만 최종 이미지로 옮긴다</desc>
 
@@ -31,7 +31,7 @@
   <rect class="dg-item" x="368" y="200" width="96" height="52" rx="6"/>
   <text class="dg-t" x="416" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">.jar</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 424" role="img" aria-labelledby="docker3--multistage-title" aria-describedby="docker3--multistage-desc">
 
   <defs>
     <marker id="docker3--multistage-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="git-flow--enter-task-name-title git-flow--enter-task-name-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="git-flow--enter-task-name-title" aria-describedby="git-flow--enter-task-name-desc">
   <title id="git-flow--enter-task-name-title">IntelliJ 의 Default task 목록에서 Jira 이슈를 고르는 과정</title>
   <desc id="git-flow--enter-task-name-desc">IntelliJ 의 Default task 목록에서 Jira 이슈를 고르는 과정</desc>
 
@@ -20,7 +20,7 @@
   <rect class="dg-item" x="430" y="56" width="164" height="52" rx="6"/>
   <text class="dg-t" x="512" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PROJ-13  회원 조회 화면</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="img" aria-labelledby="git-flow--enter-task-name-title" aria-describedby="git-flow--enter-task-name-desc">
 
   <defs>
     <marker id="git-flow--enter-task-name-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

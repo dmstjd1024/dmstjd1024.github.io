@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="diagram-rules--layers-title diagram-rules--layers-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 436" role="img" aria-labelledby="diagram-rules--layers-title" aria-describedby="diagram-rules--layers-desc">
   <title id="diagram-rules--layers-title">도식 규칙이 놓인 세 층</title>
   <desc id="diagram-rules--layers-desc">색은 CSS 가, 좌표는 코드가 자동으로 강제한다. 가운데 규칙 문서 층만 강제력이 없고, 실제로 새어 나간 도식 3개가 전부 이 층의 항목이었다.</desc>
 
@@ -44,7 +44,7 @@
   <text class="dg-t" x="416" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">seq=True 없으면 안 이음</text>
   <text class="dg-s" x="416" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">없는 순서 방지</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 700" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 700" role="img" aria-labelledby="diagram-rules--layers-title" aria-describedby="diagram-rules--layers-desc">
 
   <defs>
     <marker id="diagram-rules--layers-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

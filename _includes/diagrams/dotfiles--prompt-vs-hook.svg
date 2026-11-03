@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="dotfiles--prompt-vs-hook-title dotfiles--prompt-vs-hook-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="dotfiles--prompt-vs-hook-title" aria-describedby="dotfiles--prompt-vs-hook-desc">
   <title id="dotfiles--prompt-vs-hook-title">프롬프트의 금지 목록은 요청에 그치고 PreToolUse 훅만 실제로 명령을 차단한다</title>
   <desc id="dotfiles--prompt-vs-hook-desc">프롬프트의 금지 목록은 요청에 그치고 PreToolUse 훅만 실제로 명령을 차단한다</desc>
 
@@ -21,7 +21,7 @@
   <rect class="dg-item" x="251" y="122" width="218" height="52" rx="6"/>
   <text class="dg-t" x="360" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">시크릿 경로를 건드리지 않는 cat…</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="img" aria-labelledby="dotfiles--prompt-vs-hook-title" aria-describedby="dotfiles--prompt-vs-hook-desc">
 
   <defs>
     <marker id="dotfiles--prompt-vs-hook-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

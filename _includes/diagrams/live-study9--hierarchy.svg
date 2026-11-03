@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="live-study9--hierarchy-title live-study9--hierarchy-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 214" role="img" aria-labelledby="live-study9--hierarchy-title" aria-describedby="live-study9--hierarchy-desc">
   <title id="live-study9--hierarchy-title">Throwable 아래 Error 와 Exception 이 갈리고 Exception 아래 RuntimeException 이 있는 계층</title>
   <desc id="live-study9--hierarchy-desc">Throwable 아래 Error 와 Exception 이 갈리고 Exception 아래 RuntimeException 이 있는 계층</desc>
 
@@ -27,7 +27,7 @@
   <rect class="dg-item" x="302" y="122" width="115" height="52" rx="6"/>
   <text class="dg-t" x="359" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">IOException 등</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 280" role="img" aria-labelledby="live-study9--hierarchy-title" aria-describedby="live-study9--hierarchy-desc">
 
   <defs>
     <marker id="live-study9--hierarchy-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
