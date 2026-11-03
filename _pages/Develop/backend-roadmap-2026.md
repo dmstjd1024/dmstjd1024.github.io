@@ -26,7 +26,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 =====
 -----
 
-세부 항목을 제외한 큰 단계만 표시한다.
+큰 단계만 표시한다. 상자 아래 작은 글씨는 그 단계의 대표 항목이다.
 
 <div class="diagram">
 {% include diagrams/backend-roadmap--stages.svg %}
