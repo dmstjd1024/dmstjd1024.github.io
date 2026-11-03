@@ -151,7 +151,7 @@ NoSQL 은 원본에서 **성격별로 묶여** 있다. 도식에는 이름만 �
 
 | 위치 | 나가는 곳 |
 |---|---|
-| 맨 위 | [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |
+| 맨 위 | [roadmap.sh](https://roadmap.sh) · [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |
 | 백엔드 언어 · 택&nbsp;1 | [입문 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=beginner) |
 | 인증 · 인가 | [중급 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=intermediate) |
 | 보안 · 암호화 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |

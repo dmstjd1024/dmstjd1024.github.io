@@ -46,6 +46,11 @@ try {
   for (const url of urls) {
     await page.goto(url);
     const hits = await page.evaluate(() => {
+      // 창 폭에 따라 가로본·세로본 중 하나는 display:none 이라 getBBox 가 0 이 된다.
+      // 둘 다 보이게 해서 폰용 세로본도 함께 잰다.
+      const show = document.createElement('style');
+      show.textContent = '.diagram .dg-wide, .diagram .dg-narrow { display:block !important; }';
+      document.head.append(show);
       const out = [];
       document.querySelectorAll('.diagram svg').forEach((svg, si) => {
         const vb = svg.viewBox.baseVal;

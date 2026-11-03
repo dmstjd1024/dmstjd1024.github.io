@@ -68,7 +68,9 @@ feed:
 defaults:
   -
     scope:
-      path: ""
+      # 글(_pages 컬렉션)에만 준다. 빈 경로로 두면 /roadmap/·태그 페이지 같은 일반
+      # 페이지에도 이 날짜가 붙어 검색 메타데이터에 글(BlogPosting)로 나간다
+      path: "_pages"
       type: "pages"
     values:
       layout: "page"

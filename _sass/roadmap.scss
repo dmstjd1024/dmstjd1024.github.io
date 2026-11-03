@@ -212,7 +212,7 @@ $roadmap-spine:3px;
   }
 }
 
-// 추천은 테두리 색으로만 보이므로 스크린리더에는 글자로 알린다
+// 추천은 테두리 색·굵기로만 보이므로 스크린리더에는 글자로 알린다
 .rm-sr {
   position:absolute;
   width:1px;
@@ -287,7 +287,7 @@ $roadmap-spine:3px;
   a { text-decoration:underline; text-underline-offset:2px; }
 
   // 원본 작성자의 추천: 단계 색 테두리. 표시 없는 항목은 회색 테두리 그대로 둔다.
-  // 두 테두리 색의 대비가 3:1 에 못 미쳐 색만으로는 못 가르므로 왼쪽을 굵게 한다
+  // 두 테두리 색의 대비가 대부분의 단계에서 3:1 에 못 미쳐 색만으로는 못 가르므로 왼쪽을 굵게 한다
   &.is-rec {
     border-color:color-mix(in srgb, var(--hue) 70%, var(--border));
     border-left-width:3px;

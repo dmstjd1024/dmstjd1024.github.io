@@ -17,7 +17,7 @@
   <rect class="dg-item" x="368" y="56" width="212" height="52" rx="6"/>
   <text class="dg-t" x="474" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">① 매 keystroke 마다 handleRow…</text>
   <rect class="dg-item" x="142" y="122" width="212" height="52" rx="6"/>
-  <text class="dg-t" x="248" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">② emsColumn(useMemo) → colum…</text>
+  <text class="dg-t" x="248" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">② emsColumn(useMemo) → colu…</text>
   <rect class="dg-item" x="370" y="122" width="207" height="52" rx="6"/>
   <text class="dg-t" x="473" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">③ ag-grid 가 cellRenderer 재…</text>
   <rect class="dg-item" x="245" y="188" width="229" height="52" rx="6"/>
@@ -40,7 +40,7 @@
   <rect class="dg-item" x="74" y="122" width="212" height="52" rx="6"/>
   <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">① 매 keystroke 마다 handleRow…</text>
   <rect class="dg-item" x="74" y="188" width="212" height="52" rx="6"/>
-  <text class="dg-t" x="180" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">② emsColumn(useMemo) → colum…</text>
+  <text class="dg-t" x="180" y="219" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">② emsColumn(useMemo) → colu…</text>
   <rect class="dg-item" x="76" y="254" width="207" height="52" rx="6"/>
   <text class="dg-t" x="179" y="285" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">③ ag-grid 가 cellRenderer 재…</text>
   <rect class="dg-item" x="65" y="320" width="229" height="52" rx="6"/>

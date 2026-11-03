@@ -79,5 +79,5 @@
   <path class="dg-join" d="M336 364 V60"/>
 
   <text class="dg-s" x="24" y="434">feature 는 develop 에서 갈라져 develop 으로,</text>
-  <text class="dg-s" x="24" y="452">hotfix 는 master 에서 갈라져 master 로 돌아온다</text>
+  <text class="dg-s" x="24" y="452">hotfix 는 master 에서 갈라져 master 로 간다</text>
 </svg>

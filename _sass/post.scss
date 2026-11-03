@@ -399,7 +399,7 @@
     &:hover { color:var(--fg); }
   }
 
-  // 지금 읽고 있는 절 (common.js 가 붙인다)
+  // 지금 읽고 있는 절 (post.js 가 붙인다)
   .is-active > a { color:var(--accent); font-weight:600; }
 
   .toc__sub { padding-left:.75rem; }

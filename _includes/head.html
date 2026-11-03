@@ -85,7 +85,7 @@
     글 페이지는 seo 태그가 canonical·og:url 까지 다 넣는다.
     여기서 또 넣으면 같은 태그가 두 번 나가므로 이미지만 보탠다.
 
-    ⚠️ 설명(description)은 각 글의 front matter 에 둔다 — subtitle 과 같은 값이다.
+    주의: 설명(description)은 각 글의 front matter 에 둔다 — subtitle 과 같은 값이다.
     seo 태그는 `page["description"] || page["excerpt"]` 순으로만 보고
     태그 인자(description=)는 받지 않는다(drop.rb:107). front matter 에 없으면
     excerpt, 즉 본문 첫 덩어리가 들어가는데 이 블로그 글은 대개 `## 한 줄로`
