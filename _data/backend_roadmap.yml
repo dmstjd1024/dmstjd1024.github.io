@@ -202,6 +202,7 @@
         - name: "리팩터링"
         - name: "문서 생성"
     - name: "AI 코딩 도구"
+      # 원본의 두 버튼은 href 가 비어 있다 — 같은 이름의 roadmap.sh 로드맵 주소를 걸었다
       links:
         - name: "프롬프트 엔지니어링"
           url: "https://roadmap.sh/prompt-engineering"

@@ -16,15 +16,13 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 원본 로드맵의 세부 항목 132개를 하나도 합치지 않고 전부 그렸다.
 큰 흐름만 보려면 아래 **전체 흐름** 도식 하나로 충분하고, 그 뒤 1~7단계가 세부 항목이다.
 
-항목에 붙은 **대안**은 원본 작성자가 추천한 항목 대신 골라도 된다는 뜻이고,
-**순서 무관**은 아무 때나 익혀도 되는 항목이다. 표시가 없으면 원본 작성자가 추천했거나 원본에도 표시가 없는 항목이다.
+항목에 붙은 **대안**은 원본 작성자가 추천한 항목 대신 골라도 된다는 뜻이고, **순서 무관**은 아무 때나 익혀도 되는 항목이다. 표시가 없으면 원본 작성자가 추천했거나 원본에도 표시가 없는 항목이다.
 `PostgreSQL` 과 `MySQL(대안)` 을 둘 다 학습할 필요는 없다.
+같은 항목을 도식 대신 글자 목록으로 보려면 [백엔드 로드맵 지도](/roadmap/)를 연다.
 
 ---
 
-전체 흐름
-=====
------
+## 전체 흐름
 
 큰 단계만 표시한다. 일부 상자 아래 작은 글씨는 그 단계의 대표 항목이다.
 
@@ -34,9 +32,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 
 ---
 
-1단계 · 기초
-=====
------
+## 1단계 · 기초
 
 <div class="diagram">
 {% include diagrams/backend-roadmap--s1.svg %}
@@ -47,9 +43,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 
 ---
 
-2단계 · 언어와 버전 관리
-=====
------
+## 2단계 · 언어와 버전 관리
 
 <div class="diagram">
 {% include diagrams/backend-roadmap--s2.svg %}
@@ -60,9 +54,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 
 ---
 
-3단계 · 데이터베이스와 API
-=====
------
+## 3단계 · 데이터베이스와 API
 
 <div class="diagram">
 {% include diagrams/backend-roadmap--s3.svg %}
@@ -77,9 +69,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 
 ---
 
-4단계 · 캐싱 · 웹 서버 · 보안
-=====
------
+## 4단계 · 캐싱 · 웹 서버 · 보안
 
 <div class="diagram">
 {% include diagrams/backend-roadmap--s4.svg %}
@@ -89,9 +79,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 
 ---
 
-5단계 · AI (2026년 신규)
-=====
------
+## 5단계 · AI (2026년 신규)
 
 이전 로드맵에는 없던 영역이다. 배치 위치는 맨 뒤가 아니라 **기본기 직후 · 심화 직전**이다.
 
@@ -104,9 +92,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 
 ---
 
-6단계 · 심화
-=====
------
+## 6단계 · 심화
 
 <div class="diagram">
 {% include diagrams/backend-roadmap--s6.svg %}
@@ -114,16 +100,13 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 
 ---
 
-7단계 · 규모 대응
-=====
------
+## 7단계 · 규모 대응
 
 <div class="diagram">
 {% include diagrams/backend-roadmap--s7.svg %}
 </div>
 
-`관측성(Observability)`, `서킷 브레이커`, `백프레셔`, `스로틀링` 등
-장애 대응·복원력 관련 항목이 이 구간에 배치돼 있다.
+`관측성(Observability)`, `서킷 브레이커`, `백프레셔`, `스로틀링` 등 장애 대응·복원력 관련 항목이 이 구간에 배치돼 있다.
 
 NoSQL 은 원본에서 **성격별로 묶여** 있다. 도식에는 이름만 그렸으므로 분류를 적어 둔다.
 
@@ -140,12 +123,9 @@ NoSQL 은 원본에서 **성격별로 묶여** 있다. 도식에는 이름만 �
 
 ---
 
-Docker 와 쿠버네티스는?
-=====
------
+## Docker 와 쿠버네티스는?
 
-로드맵을 보면 컨테이너 자리에 Docker·쿠버네티스가 있는데,
-이 둘은 **로드맵 안의 학습 항목이 아니라 별도 로드맵으로 빠지는 버튼**이다.
+로드맵을 보면 컨테이너 자리에 Docker·쿠버네티스가 있는데, 이 둘은 **로드맵 안의 학습 항목이 아니라 별도 로드맵으로 빠지는 버튼**이다.
 
 <div class="diagram">
 {% include diagrams/backend-roadmap--containers.svg %}
@@ -153,20 +133,16 @@ Docker 와 쿠버네티스는?
 
 ---
 
-정리
-=====
------
+## 정리
 
 - 기본기 구간은 **인터넷 기초 → 언어 → Git → DB → API → 캐싱 → 웹 서버** 까지다. 웹 보안 묶음은 원본에서 연결선 없이 AI 구간 옆에 따로 놓여 있고, 이 글과 지도는 4단계에 넣었다.
 - **AI 는 기본기 직후**에 배치돼 있다. 이전 로드맵에는 없던 영역이다.
-- **대안 항목은 택1**이며 전체 학습 대상이 아니다. 세부 항목 132개 중 28개가 대안이다.
+- **대안 항목은 택 1**이며 전체 학습 대상이 아니다. 세부 항목 132개 중 28개가 대안이다.
 - Docker·쿠버네티스는 별도 로드맵으로 분리돼 있다.
 
 ---
 
-참고
-=====
------
+## 참고
 
 - [roadmap.sh/backend](https://roadmap.sh/backend) — 원본 로드맵 (<span style="white-space:nowrap">2026-02-07</span> 갱신본 기준, 토픽 23개 · 세부 항목 132개)
 
@@ -179,7 +155,7 @@ Docker 와 쿠버네티스는?
 | 백엔드 언어 · 택&nbsp;1 | [입문 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=beginner) |
 | 인증 · 인가 | [중급 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=intermediate) |
 | 보안 · 암호화 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
-| AI 코딩 도구 | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) |
+| AI 코딩 도구 | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) — 원본 버튼은 주소가 비어 있어 같은 이름의 로드맵을 걸었다 |
 | 컨테이너 | [Docker](https://roadmap.sh/docker) · [쿠버네티스](https://roadmap.sh/kubernetes) |
 | 아키텍처 패턴 | [시스템 설계](https://roadmap.sh/system-design) · [소프트웨어 설계 · 아키텍처](https://roadmap.sh/software-design-architecture) |
 | NoSQL | [기초 운영 스킬](https://roadmap.sh/devops?r=devops-beginner) |
