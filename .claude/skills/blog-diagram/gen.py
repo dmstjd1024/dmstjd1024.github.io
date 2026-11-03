@@ -8,7 +8,7 @@
 import html
 
 W = 720           # viewBox 폭 (가로본)
-W_NARROW = 360    # 폰 폭. 본문 폭이 이보다 좁아지면 세로본으로 바꾼다
+W_NARROW = 360    # 세로본 viewBox 폭. 화면 폭 40rem 이하에서 세로본으로 바꾼다(diagram.scss)
 PAD = 24          # 좌우 여백
 ZONE_PAD = 24     # 존 안쪽 여백
 NODE_H = 52
@@ -142,10 +142,13 @@ def build(zones, out_path, title, desc, focal_zone=None):
         ]
 
     def one(cls, vb_w, vb_h, lines, suffix, labelled):
-        # title·desc 는 가로본에만 두고 세로본은 같은 id 를 가리킨다. 화면 폭에 따라
+        # title·desc 는 가로본에만 두고 두 본 모두 같은 id 를 가리킨다. 화면 폭에 따라
         # 한쪽은 display:none 이라 두 번 읽히지 않고, 숨은 요소도 aria-labelledby 로는
         # 이름이 된다 — 세로본을 aria-hidden 으로 두면 폰에서 도식이 통째로 안 읽혔다.
-        a11y = f' role="img" aria-labelledby="{stem}-title {stem}-desc"'
+        # 이름은 title, 설명은 desc 로 나눈다. 둘 다 이름에 넣으면 <desc> 자식이 설명으로
+        # 한 번 더 잡혀 가로본에서 같은 문장이 두 번 읽혔다.
+        a11y = (f' role="img" aria-labelledby="{stem}-title"'
+                f' aria-describedby="{stem}-desc"')
         head = [f'<svg xmlns="http://www.w3.org/2000/svg" class="{cls}" '
                 f'viewBox="0 0 {vb_w} {vb_h}"{a11y}>']
         if labelled:

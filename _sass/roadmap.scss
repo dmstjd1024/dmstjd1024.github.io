@@ -212,6 +212,16 @@ $roadmap-spine:3px;
   }
 }
 
+// 추천은 테두리 색으로만 보이므로 스크린리더에는 글자로 알린다
+.rm-sr {
+  position:absolute;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  clip-path:inset(50%);
+  white-space:nowrap;
+}
+
 // 원본 그림의 소분류 라벨 — 항목이 아니라 연결선을 달지 않는다
 .rm-group {
   padding-top:.35rem;

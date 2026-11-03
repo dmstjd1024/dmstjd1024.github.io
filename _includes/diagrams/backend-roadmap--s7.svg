@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 778" role="img" aria-labelledby="backend-roadmap--s7-title backend-roadmap--s7-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 778" role="img" aria-labelledby="backend-roadmap--s7-title" aria-describedby="backend-roadmap--s7-desc">
   <title id="backend-roadmap--s7-title">7단계 규모 대응</title>
   <desc id="backend-roadmap--s7-desc">실시간 데이터와 DB 확장, NoSQL 을 거쳐 대규모 서비스 대응으로 이어지는 구간.</desc>
 
@@ -102,7 +102,7 @@
   <rect class="dg-item" x="477" y="686" width="110" height="52" rx="6"/>
   <text class="dg-t" x="532" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서킷 브레이커</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 1372" role="img" aria-labelledby="backend-roadmap--s7-title backend-roadmap--s7-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 1372" role="img" aria-labelledby="backend-roadmap--s7-title" aria-describedby="backend-roadmap--s7-desc">
 
   <defs>
     <marker id="backend-roadmap--s7-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

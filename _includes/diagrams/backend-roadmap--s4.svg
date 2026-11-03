@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 568" role="img" aria-labelledby="backend-roadmap--s4-title backend-roadmap--s4-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 568" role="img" aria-labelledby="backend-roadmap--s4-title" aria-describedby="backend-roadmap--s4-desc">
   <title id="backend-roadmap--s4-title">4단계 캐싱 · 웹 서버 · 보안</title>
   <desc id="backend-roadmap--s4-desc">캐싱과 웹 서버를 거쳐 웹 보안으로 이어지는 구간. Memcached·Apache·Caddy·MS IIS 는 대안, 웹 보안은 원본에 표시가 없고 나머지는 모두 추천이다.</desc>
 
@@ -65,7 +65,7 @@
   <rect class="dg-item" x="312" y="476" width="96" height="52" rx="6"/>
   <text class="dg-t" x="360" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버 보안</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 898" role="img" aria-labelledby="backend-roadmap--s4-title backend-roadmap--s4-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 898" role="img" aria-labelledby="backend-roadmap--s4-title" aria-describedby="backend-roadmap--s4-desc">
 
   <defs>
     <marker id="backend-roadmap--s4-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

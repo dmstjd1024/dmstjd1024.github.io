@@ -90,7 +90,7 @@ permalink: /roadmap/
           <li class="rm-item{% if it.tag == '추천' %} is-rec{% elsif it.tag == '대안' %} is-alt{% endif %}{% if it.rank %} is-key{% endif %}">
             {%- if it.rank %}<b class="rm-rank">{{ it.rank }}</b>{% endif %}
             {%- if it.url %}<a href="{{ it.url }}">{{ it.name }}</a>{% else %}{{ it.name }}{% endif %}
-            {%- if it.tag and it.tag != '추천' %}<small>{{ it.tag }}</small>{% endif -%}
+            {%- if it.tag == '추천' %}<span class="rm-sr"> 추천</span>{% elsif it.tag %}<small>{{ it.tag }}</small>{% endif -%}
           </li>
           {%- endfor %}
         </ul>
