@@ -22,7 +22,7 @@
   <text class="dg-t" x="495" y="122" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿠버네티스 로드맵</text>
   <text class="dg-s" x="495" y="139" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/kubernetes</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 220" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 220" role="img" aria-labelledby="backend-roadmap--containers-title backend-roadmap--containers-desc">
 
   <defs>
     <marker id="backend-roadmap--containers-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

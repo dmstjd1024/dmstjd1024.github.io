@@ -65,7 +65,7 @@
   <rect class="dg-item" x="312" y="476" width="96" height="52" rx="6"/>
   <text class="dg-t" x="360" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버 보안</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 898" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 898" role="img" aria-labelledby="backend-roadmap--s4-title backend-roadmap--s4-desc">
 
   <defs>
     <marker id="backend-roadmap--s4-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

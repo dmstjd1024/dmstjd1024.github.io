@@ -58,7 +58,7 @@
   <rect class="dg-item" x="428" y="410" width="137" height="52" rx="6"/>
   <text class="dg-t" x="496" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">규모 대응 · 관측성</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 700" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 700" role="img" aria-labelledby="backend-roadmap--stages-title backend-roadmap--stages-desc">
 
   <defs>
     <marker id="backend-roadmap--stages-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

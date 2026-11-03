@@ -109,6 +109,7 @@
           tag: "순서 무관"
         - name: "OpenAPI 명세"
           tag: "순서 무관"
+    # 원본에서는 주제가 아니라 'Learn about APIs' 옆의 제목 없는 묶음 상자다
     - name: "인증 · 인가"
       note: "여기까지 익히면 취업할 만큼은 안다. 프로젝트를 만들며 손에 익힌다."
       links:
@@ -153,6 +154,7 @@
           tag: "대안"
         - name: "MS IIS"
           tag: "대안"
+    # 원본에서는 주제 노드 없이 웹 보안 항목과 해시 알고리즘 묶음으로 놓여 있다
     - name: "보안 · 암호화"
       split: 5
       links:
@@ -259,6 +261,7 @@
         - name: "부하 테스트 (k6)"
           tag: "국내 추가"
           rank: 2
+    # 원본에서는 주제가 아니라 Containerization · Container Orchestration 라벨이 붙은 묶음이다
     - name: "컨테이너"
       items:
         - name: "Docker"

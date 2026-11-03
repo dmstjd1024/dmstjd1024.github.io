@@ -102,7 +102,7 @@
   <rect class="dg-item" x="477" y="686" width="110" height="52" rx="6"/>
   <text class="dg-t" x="532" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서킷 브레이커</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 1372" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 1372" role="img" aria-labelledby="backend-roadmap--s7-title backend-roadmap--s7-desc">
 
   <defs>
     <marker id="backend-roadmap--s7-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

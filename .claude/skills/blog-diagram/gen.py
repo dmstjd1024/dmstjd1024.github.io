@@ -142,9 +142,10 @@ def build(zones, out_path, title, desc, focal_zone=None):
         ]
 
     def one(cls, vb_w, vb_h, lines, suffix, labelled):
-        # 접근성 이름은 한쪽에만 둔다 — 둘 다 주면 같은 설명이 두 번 읽힌다.
-        a11y = (f' role="img" aria-labelledby="{stem}-title {stem}-desc"'
-                if labelled else ' role="presentation" aria-hidden="true"')
+        # title·desc 는 가로본에만 두고 세로본은 같은 id 를 가리킨다. 화면 폭에 따라
+        # 한쪽은 display:none 이라 두 번 읽히지 않고, 숨은 요소도 aria-labelledby 로는
+        # 이름이 된다 — 세로본을 aria-hidden 으로 두면 폰에서 도식이 통째로 안 읽혔다.
+        a11y = f' role="img" aria-labelledby="{stem}-title {stem}-desc"'
         head = [f'<svg xmlns="http://www.w3.org/2000/svg" class="{cls}" '
                 f'viewBox="0 0 {vb_w} {vb_h}"{a11y}>']
         if labelled:
