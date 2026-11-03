@@ -26,10 +26,32 @@
   var scrim = document.querySelector('.nav__scrim');
 
   if (menuBtn && nav) {
+    var menu = nav.querySelector('.nav__menu');
+
+    // 서랍 안에서 지금 눌러 갈 수 있는 항목. 접힌 하위 메뉴(visibility:hidden)는 뺀다.
+    // 접기 버튼도 넣는다 — 링크만 세면 화살표를 건너뛴다.
+    var drawerItems = function () {
+      if (!menu) return [];
+      return Array.prototype.slice.call(
+        menu.querySelectorAll('a[href], button:not([disabled])')
+      ).filter(function (el) {
+        return el.getClientRects().length && getComputedStyle(el).visibility === 'visible';
+      });
+    };
+
     var setMenu = function (open) {
       nav.classList.toggle('is-open', open);
       menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
       document.body.classList.toggle('nav-locked', open);
+
+      // 열린 서랍이 메뉴 버튼을 덮으므로 포커스를 서랍 첫 항목으로 옮기고,
+      // 닫을 때 서랍 안에 있던 포커스는 메뉴 버튼으로 돌려준다.
+      if (open) {
+        var items = drawerItems();
+        if (items.length) items[0].focus();
+      } else if (menu && menu.contains(document.activeElement)) {
+        menuBtn.focus();
+      }
 
       // 막은 닫힐 때 서서히 사라져야 하므로 전환이 끝난 뒤에 감춘다.
       if (!scrim) return;
@@ -92,23 +114,11 @@
       // 키보드 사용자는 자기가 어디 있는지 알 수 없다.
       if (e.key !== 'Tab') return;
 
-      var menu = nav.querySelector('.nav__menu');
-      if (!menu) return;
-
-      // 접기 버튼도 탭 순서에 포함한다. 링크만 세면 화살표를 건너뛴다.
-      // 접힌 하위 메뉴(visibility:hidden)는 빼야 한다 — 남겨 두면 마지막 항목이
-      // 안 보이는 링크가 되어 Tab 이 서랍 밖으로 샌다.
-      var items = [menuBtn].concat(
-        Array.prototype.slice.call(
-          menu.querySelectorAll('a[href], button:not([disabled])')
-        )
-      ).filter(function (el) {
-        return el.getClientRects().length && getComputedStyle(el).visibility === 'visible';
-      });
+      // 메뉴 버튼은 열린 서랍에 가려 있으므로 순환에서 뺀다(닫기는 Esc·막).
+      // 순서는 직접 돌린다 — 브라우저에 맡기면 서랍 끝에서 본문으로 샌다.
+      var items = drawerItems();
       if (!items.length) return;
 
-      // 메뉴가 문서에서 버튼보다 앞에 있어 브라우저에 맡기면 버튼 다음 Tab 이
-      // 본문으로 간다. 순서는 직접 돌린다.
       e.preventDefault();
       var i = items.indexOf(document.activeElement);
       var next = i === -1 ? (e.shiftKey ? items.length - 1 : 0) : i + (e.shiftKey ? -1 : 1);

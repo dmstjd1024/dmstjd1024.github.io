@@ -27,6 +27,15 @@
 // 겹쳐 보인다(글자가 오른쪽 위에 중복돼 뜨는 현상).
 .nav__inner { view-transition-name: site-nav; }
 
+// 좁은 화면에서는 로고·도구 버튼에 따로 이름을 붙인다. 이름이 붙은 요소는
+// 쌓임 맥락이 되므로, .nav__inner 에 붙여 두면 그 안의 서랍까지 한 층에 묶여
+// 서랍 막(.nav__scrim)이 서랍 위를 덮는다 — 메뉴를 눌러도 닫히기만 했다.
+@media (max-width:$bp-tablet) {
+  .nav__inner { view-transition-name: none; }
+  .nav__brand { view-transition-name: site-brand; }
+  .nav__tools { view-transition-name: site-tools; }
+}
+
 // 왼쪽 카테고리 열도 상단바와 같이 전환에서 뺀다.
 //
 // 한동안은 반대로 했다 — 이름을 주지 않아 루트 스냅샷에 섞이게 뒀다.
@@ -62,6 +71,10 @@
 // 같은 글자가 겹치면 획이 진해져 굵어 보인다.
 ::view-transition-old(site-nav),
 ::view-transition-new(site-nav),
+::view-transition-old(site-brand),
+::view-transition-new(site-brand),
+::view-transition-old(site-tools),
+::view-transition-new(site-tools),
 ::view-transition-old(site-menu),
 ::view-transition-new(site-menu) {
   animation:none;

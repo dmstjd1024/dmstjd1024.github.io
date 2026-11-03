@@ -23,7 +23,11 @@
     bundle exec jekyll serve --port 4000 &
     python3 script/check-diagram-overflow.py --base http://127.0.0.1:4000
 
-`--min` 으로 문턱을 올린다 (기본 10px — 그 아래는 눈에 띄지 않는다).
+`--min` 으로 문턱을 바꾼다 (기본 0.5px — 마스크가 1px 모자라도 테두리 선이 끝 글자를
+지나가는 게 보였다).
+
+shortcut: ego(Chromium) 한 엔진에서만 잰다. 웹킷·파이어폭스는 글자 폭이 1~2px 달라
+거기서만 넘치는 경우가 있다 — 도식을 새로 만들면 Playwright 로 세 엔진을 따로 잰다.
 """
 import argparse
 import json
@@ -122,7 +126,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--base", default="http://127.0.0.1:4000",
                     help="jekyll serve 주소")
-    ap.add_argument("--min", type=float, default=10.0,
+    ap.add_argument("--min", type=float, default=0.5,
                     help="이 값(px)보다 큰 넘침만 보고한다")
     args = ap.parse_args()
 

@@ -127,7 +127,7 @@ printf 'NodeOUs:\n  Enable: true\n  ClientOUIdentifier:\n    Certificate: cacert
 
 - 전제 지식: "기다리는 명령"이 사실은 안 기다린다는 점
 
-## 별건: helm uninstall --wait가 만든 연쇄
+## 별건: `helm uninstall --wait`가 만든 연쇄
 
 - 삭제 경로에도 후속 정리를 막는 장시간 대기 존재
 - 원인: PV finalizer가 남아 `helm uninstall --wait`가 삭제 완료를 기다림. Helm 3의 `--wait`는 기본 `--timeout` 5분의 제한을 받으므로 무한 대기라고 일반화할 수는 없음

@@ -9,8 +9,8 @@
   들어가 있어도 상위 카테고리에 표시가 남는다.
 
   좁은 화면(900px 이하)에서는 이 목록이 왼쪽에서 밀려 들어오는 세로
-  서랍(drawer)이 된다. 그때는 하위 카테고리까지 함께 펼쳐 보여준다 —
-  가로 바에서는 자리가 없어 최상위만 올리지만, 세로로 쌓이면 여유가 있다.
+  서랍(drawer)이 되고, 넓은 화면(901px 이상)에서는 본문 왼쪽의 세로 레일이
+  된다. 둘 다 세로로 쌓이므로 하위 카테고리까지 접었다 펼 수 있게 넣는다.
 {%- endcomment -%}
 {%- assign nav_cats = site.pages | where_exp: "p", "p.path contains 'index.md'" | sort: "path" -%}
 {%- assign here = page.url | remove_first: '/' | split: '/' | first -%}
@@ -56,7 +56,7 @@
             {%- comment -%}
               이 카테고리의 하위 카테고리(깊이 3 = 이름/하위/index.md)를 모은다.
               접두어에 슬래시까지 붙여 비교하므로 "Java" 가 "JavaScript" 를
-              집어삼키지 않는다. 서랍에서만 보여준다.
+              집어삼키지 않는다. 서랍과 레일에서 접었다 펼 수 있다.
             {%- endcomment -%}
             {%- assign prefix = '_pages/' | append: name | append: '/' -%}
             {%- assign subs = nav_cats | where_exp: "s", "s.path contains prefix" -%}
@@ -133,10 +133,12 @@
       </button>
     </div>
   </div>
-</header>
 
-{%- comment -%}
-  서랍이 열렸을 때 본문을 덮는 막. 여기를 누르면 닫힌다.
-  좁은 화면에서만 보인다(스타일 쪽에서 통제).
-{%- endcomment -%}
-<div class="nav__scrim" hidden></div>
+  {%- comment -%}
+    서랍이 열렸을 때 본문과 상단바를 덮는 막. 여기를 누르면 닫힌다.
+    좁은 화면에서만 보인다(스타일 쪽에서 통제).
+    상단바 안에 둬야 서랍과 같은 쌓임 맥락에 들어가 서랍(60) 아래, 상단바 글자 위에
+    깔린다. 바깥에 두면 서랍까지 덮거나(막이 위) 상단바를 못 덮는다(상단바가 위).
+  {%- endcomment %}
+  <div class="nav__scrim" hidden></div>
+</header>
