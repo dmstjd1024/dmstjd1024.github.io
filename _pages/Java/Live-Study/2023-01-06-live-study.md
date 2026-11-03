@@ -30,7 +30,7 @@ redirect_from:
 
 
 
-#### JVM이란 무엇인가
+### JVM이란 무엇인가
 
 JVM이란 java를 실행하기 위한 가상 머신이다. 여기서 '가상머신' 대신 '가상 컴퓨터'라고 부르는게 이해하기 좋다.
 
@@ -46,7 +46,7 @@ JVM이란 java를 실행하기 위한 가상 머신이다. 여기서 '가상머�
 {% include diagrams/live-study--jvm-portability.svg %}
 </div>
 
-#### 컴파일 하는 방법
+### 컴파일 하는 방법
 
 ---
 개발 툴을 이용해 .java 파일을 생성하고 build시 java Compiler의 javac라는 명령어를 사용해 .class 파일을 생성합니다. (이 .class는 파일은 아직은 어셈블리어가 아닌 자바 바이트 코드 입니다)
@@ -57,7 +57,7 @@ JVM이란 java를 실행하기 위한 가상 머신이다. 여기서 '가상머�
 </div>
 
 
-#### 바이트코드란 무엇인가
+### 바이트코드란 무엇인가
 
 자바의 바이트 코드란 JVM이 이해할 수 있는 언어로 변환된 자바 소스 코드이며, 자바 컴파일러에 의해 변환되는 각 명령의 연산 코드(opcode)가 1바이트다. 피연산자까지 포함한 명령 전체가 항상 1바이트인 것은 아니다.
 
@@ -65,7 +65,7 @@ JVM이란 java를 실행하기 위한 가상 머신이다. 여기서 '가상머�
 
 
 
-#### JIT 컴파일러란 무엇이며 어떻게 동작하는지
+### JIT 컴파일러란 무엇이며 어떻게 동작하는지
 
 일단 JIT(Just In Time) 컴파일러란 동적 번역 이라 할 수 있으며 실제로 프로그램을 실행하는 기점에서 기계어로 번역하는 컴파일러이다.
 
@@ -85,7 +85,7 @@ Interpreter는 실행 중 프로그래밍 언어를 읽어가면서 해당 기�
 
 
 
-#### JVM 구성 요소
+### JVM 구성 요소
 
 JVM은 ClassLoader, Execution Engine, RuntimeData Areas로 구성된다.
 
@@ -122,7 +122,7 @@ Excution Engine에게 해석된 프로그램은 Runtime Data Area에 배치되�
 {% include diagrams/live-study--runtime-data-area.svg %}
 </div>
 
-#### JDK와 JRE의 차이
+### JDK와 JRE의 차이
 
 - JDK
 

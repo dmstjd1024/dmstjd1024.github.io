@@ -40,7 +40,7 @@ card_thumbnail: "/assets/img/thumbnail/mcp_card.jpg"
 MCP(Model Context Protocol)는 Claude 에 도구를 붙이는 규격이다. 붙이는 방법은
 두 갈래인데, **메모리 관점에서는 이 둘이 완전히 다르다.**
 
-| | 로컬(stdio) | 원격(HTTP) |
+| 구분 | 로컬(stdio) | 원격(HTTP) |
 |---|---|---|
 | 뜨는 것 | 세션마다 **내 컴퓨터에** 프로세스 하나 | 없음 (남의 서버로 요청만) |
 | 세션 21개면 | 21개 | 0개 |

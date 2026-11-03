@@ -35,7 +35,7 @@ Herdr 판 안에서 돌고 있다.
 tmux 가 이걸 못 도와주는 건 버그가 아니다. **tmux 는 프로세스가 살아 있는지까지만
 안다.** 살아 있는 셸과, 승인을 기다리며 멈춘 에이전트는 tmux 입장에서 똑같다.
 
-| | tmux | Herdr |
+| 구분 | tmux | Herdr |
 |---|---|---|
 | 아는 것 | 창·판의 **위치** | 위치 + **그 안의 에이전트** |
 | 상태 | 프로세스가 살아 있는가 | `idle` · `working` · `blocked` · `done` · `unknown` |
@@ -156,7 +156,7 @@ herdr agent prompt reviewer "현재 diff 를 리뷰해줘" --wait --timeout 1200
 
 Claude Code 자체에도 서브에이전트가 있다. 겹치는 것 아닌가 싶지만 성격이 다르다.
 
-| | Task 서브에이전트 | Herdr 에이전트 |
+| 구분 | Task 서브에이전트 | Herdr 에이전트 |
 |---|---|---|
 | 어디서 도나 | 내 프로세스 안 | **진짜 터미널** |
 | 종류 | Claude | 22종 (Codex·Gemini…) |

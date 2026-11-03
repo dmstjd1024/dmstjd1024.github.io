@@ -181,7 +181,7 @@ node bin/archify.mjs deliver  workflow foo.json foo.html --quality showcase --js
 
 맨 위 흐름도를 두 방식으로 그렸을 때의 값이다. 브라우저에서 직접 쟀다.
 
-| | Mermaid | Archify |
+| 구분 | Mermaid | Archify |
 |---|---|---|
 | 노드 / 화살표 | 9 / 8 | **9 / 8** |
 | 소스 | 9줄 | JSON 약 90줄 |

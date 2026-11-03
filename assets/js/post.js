@@ -6,6 +6,20 @@
 
   var body = document.getElementById('post-body');
 
+  // --- 가로 스크롤 영역에 키보드로 닿게 ----------------------------------
+  // 코드 블록과 표는 넘치면 자기 안에서 가로로 스크롤한다(post.scss). 마우스가
+  // 없으면 그 안으로 들어갈 방법이 없어, 넘치는 것에만 tab 으로 닿게 한다.
+  if (body) {
+    var markScrollable = function () {
+      Array.prototype.forEach.call(body.querySelectorAll('pre, table'), function (el) {
+        if (el.scrollWidth > el.clientWidth) el.setAttribute('tabindex', '0');
+        else el.removeAttribute('tabindex');
+      });
+    };
+    markScrollable();
+    window.addEventListener('resize', markScrollable);
+  }
+
   // --- 목차 ---------------------------------------------------------------
   // 본문의 h2/h3 를 훑어 옆쪽 목차를 만든다. 제목이 2개도 안 되면
   // 목차가 의미 없으므로 그냥 숨긴 채로 둔다.

@@ -92,7 +92,7 @@ Source(CodeCommit, S3, GitHub 등) → Build(CodeBuild) → Deploy(CodeDeploy) �
 </div>
 
  
-|                | Github Action(Teams 플랜) | Code Pipeline                                                                                |
+| 구분 | Github Action(Teams 플랜) | Code Pipeline                                                                                |
 |----------------|-------------------------|----------------------------------------------------------------------------------------------|
 |갯수별 비용| X| 활성 파이프라인(사용기간 30일 이상, 코드 1회 변경)<br/> 개당 1.00 USD(생성 후 첫 30일간 무료) <br/>※ 월별 무료 활성 파이프라인 1개 지원 |
 |패키지 스토리지| 2GB| X|

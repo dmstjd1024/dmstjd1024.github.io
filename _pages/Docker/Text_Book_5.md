@@ -209,7 +209,7 @@ sh: can't create /app/data/should-fail.txt: Read-only file system
 
 ### 볼륨과 바인드 마운트 비교
 
-| | 볼륨(Volume) | 바인드 마운트(Bind Mount) |
+| 구분 | 볼륨(Volume) | 바인드 마운트(Bind Mount) |
 |---|---|---|
 | 관리 주체 | 도커 | 사용자 |
 | 위치 | 도커가 정한 경로 | 내가 지정한 호스트 경로 |

@@ -60,7 +60,7 @@ kubectl apply -f -
 
 Grafana 에는 대시보드를 등록하는 REST API 가 있다. 그걸 안 쓴 이유가 있다.
 
-| | API 호출 | ConfigMap + 사이드카 |
+| 구분 | API 호출 | ConfigMap + 사이드카 |
 |---|---|---|
 | 필요한 것 | Grafana 주소·인증 토큰 | **없음** |
 | 순서 | Grafana 가 **먼저 떠 있어야** | 순서 무관 |

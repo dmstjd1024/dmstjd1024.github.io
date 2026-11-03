@@ -8,13 +8,15 @@
 // 색은 팔레트에서 뽑았다 — 코드 블록만 튀지 않게.
 // ---------------------------------------------------------------------------
 :root {
-  --syn-comment:#6e7781;
+  --syn-comment:#59636e;   // 코드 배경(#f6f8fa)에서 4.5:1 을 넘기는 값 — #6e7781 은 4.27:1 이었다
   --syn-keyword:#cf222e;   // 붉은색 키워드 — 기술문서에서 가장 익숙한 배색
   --syn-string:#0a3069;
   --syn-number:#0550ae;
   --syn-func:#8250df;
   --syn-type:#953800;
   --syn-punct:#57606a;
+  --syn-del:#a0405e;       // diff 삭제 줄 — #b0566f 는 4.48:1 이었다
+  --syn-ins:#5f7247;
 }
 
 body.dark-theme {
@@ -25,6 +27,8 @@ body.dark-theme {
   --syn-func:#d2a8ff;
   --syn-type:#ffa657;
   --syn-punct:#9198a1;
+  --syn-del:#ff8182;       // 어두운 배경에서는 밝은 쪽 값이 3.3~3.6:1 이라 따로 둔다
+  --syn-ins:#7ee787;
 }
 
 .highlight, .highlighter-rouge {
@@ -45,10 +49,10 @@ body.dark-theme {
 
   .p, .pi { color:var(--syn-punct); }
 
-  .gd { color:#b0566f; }
-  .gi { color:#5f7247; }
+  .gd { color:var(--syn-del); }
+  .gi { color:var(--syn-ins); }
   .gh, .gu { color:var(--syn-comment); font-weight:600; }
-  .err { color:#b0566f; }
+  .err { color:var(--syn-del); }
 
   // 줄번호가 있는 코드 블록
   .lineno {

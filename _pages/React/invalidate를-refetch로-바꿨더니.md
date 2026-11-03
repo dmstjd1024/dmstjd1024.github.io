@@ -54,7 +54,7 @@ thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 
 정리:
 
-| | invalidateQueries | refetchQueries |
+| 구분 | invalidateQueries | refetchQueries |
 |---|---|---|
 | 활성 쿼리 | 즉시 refetch | 즉시 refetch |
 | 비활성 쿼리 | stale 표시만 (lazy) | 즉시 refetch |

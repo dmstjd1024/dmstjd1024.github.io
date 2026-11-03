@@ -42,7 +42,7 @@ card_thumbnail: "/assets/img/thumbnail/nginx_card.png"
 
 쿠버네티스에서 서비스를 밖으로 여는 방법은 크게 둘이다.
 
-| | NodePort | Ingress |
+| 구분 | NodePort | Ingress |
 |---|---|---|
 | 방식 | 서비스마다 포트 하나 | **경로로 갈라 하나의 포트 공유** |
 | 3종 노출 시 | 포트 3개 | **포트 1개** |

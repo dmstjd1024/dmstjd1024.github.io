@@ -152,7 +152,7 @@ code, pre, kbd, samp { font-family:var(--font-mono); }
     font-size:4rem;
     font-weight:700;
     line-height:1;
-    color:var(--border-strong);
+    color:var(--fg-subtle);   // 테두리 색(--border-strong)은 2:1 이라 큰 글자 기준(3:1)에도 못 미쳤다
     letter-spacing:-.04em;
   }
 

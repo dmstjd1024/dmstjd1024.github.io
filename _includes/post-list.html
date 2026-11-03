@@ -172,7 +172,7 @@
         {%- assign base_n = base_n | plus: 1 -%}
       {%- endunless -%}
     {%- endfor -%}
-    <nav class="chips" aria-label="카테고리">
+    <nav class="chips" aria-label="하위 카테고리">
       <a class="chip{% if base_url == here %} is-on{% endif %}"
          href="{{ base_url | prepend: site.baseurl }}"
          {% if base_url == here %}aria-current="page"{% endif %}>

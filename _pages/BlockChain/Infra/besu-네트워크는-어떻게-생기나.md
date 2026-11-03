@@ -25,7 +25,7 @@ card_thumbnail: "/assets/img/thumbnail/besu_card.png"
 
 [Fabric 글](/BlockChain/Infra/fabric-네트워크는-어떻게-생기나.html)과 나란히 놓으면 차이가 뚜렷하다.
 
-| | Fabric | Besu |
+| 구분 | Fabric | Besu |
 |---|---|---|
 | 설치 방식 | `kubectl hlf` 20단계 | **Helm 5번** |
 | 스크립트 | 1,178줄 | 약 300줄 |

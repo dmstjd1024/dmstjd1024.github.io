@@ -99,7 +99,7 @@ docker image build -t web-ping:v2 .
 {% include diagrams/docker2--layer-cache.svg %}
 </div>
 
-#### 최적화 한 스크립트 (핵심)
+### 최적화 한 스크립트 (핵심)
 
 ```docker
 FROM diamol/node 

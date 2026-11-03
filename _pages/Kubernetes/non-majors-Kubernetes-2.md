@@ -145,7 +145,7 @@ kubectl port-forward service/spring-service 8080:8080
 
 서버를 늘리거나 줄이는 방법은 두 가지다.
 
-### 1. 매니페스트 파일 수정
+## 1. 매니페스트 파일 수정
 
 `replicas` 값만 바꾸고 다시 적용한다.
 
@@ -158,7 +158,7 @@ spec:
 kubectl apply -f spring-deployment.yaml
 ```
 
-### 2. 명령어로 바로 변경
+## 2. 명령어로 바로 변경
 
 ```bash
 kubectl scale deployment/spring-deployment --replicas=5
@@ -210,7 +210,7 @@ kubectl get pods              # 잠시 후 다시 3개
 kubectl apply -f spring-deployment.yaml
 ```
 
-### 한 번에 다 바꾸지 않는다
+## 한 번에 다 바꾸지 않는다
 
 디플로이먼트는 파드를 **전부 지우고 새로 만들지 않는다.**
 하나씩 새 버전으로 갈아끼우면서 기존 파드를 지운다. (롤링 업데이트)
@@ -221,7 +221,7 @@ kubectl apply -f spring-deployment.yaml
 kubectl get pods -w    # -w 옵션으로 변화 과정을 지켜볼 수 있다
 ```
 
-### 이전 버전으로 되돌리기
+## 이전 버전으로 되돌리기
 
 새 버전에 문제가 있으면 되돌린다.
 

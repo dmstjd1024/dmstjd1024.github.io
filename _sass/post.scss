@@ -257,7 +257,7 @@
     font-family:var(--font-mono);
     font-size:.875rem;
     color:var(--accent);
-    background:color-mix(in srgb, var(--accent) 12%, var(--bg));
+    background:color-mix(in srgb, var(--accent) 8%, var(--bg));   // 12% 면 글자 대비가 4.4:1 로 모자랐다
     padding:.2rem .5rem;
     border-radius:var(--r-sm);
   }
