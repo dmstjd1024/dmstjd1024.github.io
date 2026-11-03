@@ -133,15 +133,25 @@
     io2.observe(box);
 
     // 댓글 iframe 은 붙은 뒤에 높이를 몇 번 바꾼다(giscus 가 메시지로 알린다).
-    // 그 아래 바닥글에 키보드 포커스가 있으면 화면 밖으로 밀려나므로 다시 보이게 한다.
+    // 그 아래 바닥글에 키보드 포커스가 있으면 늘어난 만큼 화면 밖으로 밀려나므로
+    // 다시 보이게 한다. 늘기 전에도 화면 밖이었던 포커스(읽으려고 스크롤해 둔 경우)는
+    // 건드리지 않는다 — 건드리면 읽던 자리에서 끌려간다.
     // giscus 의 높이 조절도 같은 메시지를 받아 처리하므로 한 프레임 뒤에 잰다.
+    var frameH = 0;
     window.addEventListener('message', function (e) {
       if (e.origin !== 'https://giscus.app') return;
       requestAnimationFrame(function () {
+        var f = box.querySelector('iframe.giscus-frame');
+        if (!f) return;
+        var grew = f.offsetHeight - frameH;
+        frameH = f.offsetHeight;
         var a = document.activeElement;
-        if (!a || a === document.body || !a.matches(':focus-visible')) return;
+        if (grew <= 0 || !a || box.contains(a) || !a.matches(':focus-visible')) return;
+        if (!(box.compareDocumentPosition(a) & Node.DOCUMENT_POSITION_FOLLOWING)) return;
         var r = a.getBoundingClientRect();
-        if (r.bottom > window.innerHeight || r.top < 0) a.scrollIntoView({ block: 'nearest' });
+        if (r.bottom > window.innerHeight && r.top - grew < window.innerHeight) {
+          a.scrollIntoView({ block: 'nearest' });
+        }
       });
     });
 

@@ -46,7 +46,9 @@
     if (e.target.hasAttribute('data-search-close')) close();
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && !box.hidden) close();
+    // 서랍 위에 떠 있을 때 Esc 한 번은 검색만 닫는다. common.js(defer)의 서랍
+    // 리스너가 같은 document 에 뒤에 붙어 있으므로 여기서 끊는다
+    if (e.key === 'Escape' && !box.hidden) { close(); e.stopImmediatePropagation(); return; }
     // 검색은 화면을 덮는 대화상자라 Tab 을 그 안에 가둔다. 브라우저에 맡기면
     // 뒤에 가려진 본문·메뉴로 포커스가 간다
     if (e.key === 'Tab' && !box.hidden) {
