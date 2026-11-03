@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 568" role="img" aria-labelledby="backend-roadmap--s4-title backend-roadmap--s4-desc">
   <title id="backend-roadmap--s4-title">4단계 캐싱, 웹 서버, 보안</title>
-  <desc id="backend-roadmap--s4-desc">캐싱과 웹 서버를 거쳐 웹 보안으로 이어지는 구간. 캐싱은 Redis, 웹 서버는 Nginx 만 추천이고 Memcached·Apache·Caddy·MS IIS 는 대안이다.</desc>
+  <desc id="backend-roadmap--s4-desc">캐싱과 웹 서버를 거쳐 웹 보안으로 이어지는 구간. Memcached·Apache·Caddy·MS IIS 는 대안, 웹 보안은 원본에 표시가 없고 나머지는 모두 추천이다.</desc>
 
   <defs>
     <marker id="backend-roadmap--s4-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
