@@ -168,7 +168,7 @@ Docker 와 쿠버네티스는?
 =====
 -----
 
-- [roadmap.sh/backend](https://roadmap.sh/backend) — 원본 로드맵 (2026-02-07 갱신본 기준, 토픽 23개 · 세부 항목 132개)
+- [roadmap.sh/backend](https://roadmap.sh/backend) — 원본 로드맵 (<span style="white-space:nowrap">2026-02-07</span> 갱신본 기준, 토픽 23개 · 세부 항목 132개)
 
 원본에서 다른 페이지로 빠지는 버튼(다른 로드맵·프로젝트 아이디어·입문자용 축약판)을 모두 적는다.
 학습 항목이 아니라 분기점이라 위의 Docker·쿠버네티스 그림 말고는 도식에 넣지 않았다.
@@ -176,7 +176,7 @@ Docker 와 쿠버네티스는?
 | 위치 | 나가는 곳 |
 |---|---|
 | 맨 위 | [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |
-| 백엔드 언어 · 택 1 | [입문 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=beginner) |
+| 백엔드 언어 · 택&nbsp;1 | [입문 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=beginner) |
 | 인증 · 인가 | [중급 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=intermediate) |
 | 보안 · 암호화 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
 | AI 코딩 도구 | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) |

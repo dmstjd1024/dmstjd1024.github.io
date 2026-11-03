@@ -24,7 +24,7 @@ permalink: /roadmap/
     <h1 class="roadmap__title">Backend Roadmap</h1>
     <p class="roadmap__lead"><a href="https://roadmap.sh/backend">roadmap.sh 백엔드 로드맵</a>(2026-02 갱신본)의
       세부 항목 132개를 하나도 합치지 않고 옮겼다. 위에서 아래로 내려가며 익힌다.</p>
-    <ul class="roadmap__legend">
+    <ul class="roadmap__legend" role="list">
       <li><span class="rm-item is-rec">추천</span> 원본 작성자의 추천 — 테두리가 단계 색이다</li>
       <li><span class="rm-item is-alt">대안</span> 추천 항목 대신 골라도 된다</li>
       <li><span class="rm-item">항목<small>순서 무관</small></span> 아무 때나 익혀도 된다</li>
@@ -41,7 +41,7 @@ permalink: /roadmap/
   {%- endcomment %}
   <section class="rm-career" aria-labelledby="rm-career-title">
     <h2 class="rm-career__title" id="rm-career-title">경력을 가르는 건 아는 기술의 개수가 아니라 책임지는 범위다</h2>
-    <ol class="rm-career__steps">
+    <ol class="rm-career__steps" role="list">
       <li>
         <h3>주니어</h3>
         <p class="rm-career__scope">범위 · 태스크 (E1 · IC1)</p>
@@ -68,9 +68,10 @@ permalink: /roadmap/
     </ol>
   </section>
 
-  {%- comment -%} for 태그에는 필터를 못 쓴다 — 좌우 목록은 미리 배열로 만든다 {%- endcomment -%}
+  {%- comment -%} for 태그에는 필터를 못 쓴다 — 좌우 목록은 미리 배열로 만든다.
+    목록마다 role="list" 를 단다 — list-style:none 이면 Safari·VoiceOver 가 목록으로 읽지 않는다 {%- endcomment -%}
   {%- assign sides = "l,r" | split: "," %}
-  <ol class="rm-stages">
+  <ol class="rm-stages" role="list">
     {%- for stage in site.data.backend_roadmap %}
     <li class="rm-stage" style="--hue:var(--c-tag-{{ stage.hue }})">
       <h2 class="rm-stage__name">{{ stage.stage }}</h2>
@@ -84,10 +85,10 @@ permalink: /roadmap/
         {%- if side == "l" %}{% assign from = 0 %}{% assign count = half %}{% assign n = half %}{% else %}{% assign from = half %}{% assign count = topic.items.size %}{% assign n = topic.items.size | minus: half %}{% endif %}
         {%- comment %} 항목이 한쪽에만 있으면 반대쪽에 빈 목록을 그리지 않는다 {% endcomment %}
         {%- if n > 0 %}
-        <ul class="rm-topic__items rm-topic__items--{{ side }}">
+        <ul class="rm-topic__items rm-topic__items--{{ side }}" role="list">
           {%- assign prev = "" %}
           {%- for it in topic.items offset: from limit: count %}
-          {%- if it.group and it.group != prev %}<li class="rm-group" role="presentation">{{ it.group }}</li>{% endif %}
+          {%- if it.group and it.group != prev %}<li class="rm-group">{{ it.group }}</li>{% endif %}
           {%- assign prev = it.group | default: "" %}
           <li class="rm-item{% if it.tag == '추천' %} is-rec{% elsif it.tag == '대안' %} is-alt{% endif %}{% if it.rank %} is-key{% endif %}">
             {%- if it.rank %}<b class="rm-rank">{{ it.rank }}</b>{% endif %}
