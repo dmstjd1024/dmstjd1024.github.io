@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="backend-roadmap--containers-title backend-roadmap--containers-desc">
-  <title id="backend-roadmap--containers-title">컨테이너는 별도 로드맵으로 분기</title>
+  <title id="backend-roadmap--containers-title">Docker·쿠버네티스는 별도 로드맵으로 분기</title>
   <desc id="backend-roadmap--containers-desc">백엔드 로드맵의 컨테이너 자리에서 Docker 로드맵과 쿠버네티스 로드맵으로 각각 갈라져 나가는 구조. 두 항목은 로드맵 내부의 학습 항목이 아니다.</desc>
 
   <defs>
