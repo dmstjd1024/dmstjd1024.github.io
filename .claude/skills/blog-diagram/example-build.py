@@ -71,7 +71,7 @@ D = [
     dict(
         slug='backend-roadmap--s4',
         title='4단계 캐싱, 웹 서버, 보안',
-        desc='캐싱과 웹 서버를 거쳐 웹 보안으로 이어지는 구간. Redis 와 Nginx 가 추천이다.',
+        desc='캐싱과 웹 서버를 거쳐 웹 보안으로 이어지는 구간. 캐싱은 Redis, 웹 서버는 Nginx 만 추천이고 Memcached·Apache·Caddy·MS IIS 는 대안이다.',
         zones=[
             {"name": '캐싱', "nodes": [
                 {"t": 'Redis'}, {"t": 'Memcached', "s": '대안'}, {"t": 'HTTP Caching'},
