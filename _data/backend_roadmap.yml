@@ -194,6 +194,11 @@
         - name: "임베딩"
         - name: "Vector"
         - name: "RAG"
+    - name: "적용 분야"
+      items:
+        - name: "코드 리뷰"
+        - name: "리팩터링"
+        - name: "문서 생성"
     - name: "AI 코딩 도구"
       links:
         - name: "프롬프트 엔지니어링"
@@ -213,11 +218,6 @@
         - name: "Agents"
         - name: "MCP"
         - name: "Skills"
-    - name: "적용 분야"
-      items:
-        - name: "코드 리뷰"
-        - name: "리팩터링"
-        - name: "문서 생성"
     - name: "AI 기능 개발"
       items:
         - name: "스트리밍"
@@ -232,17 +232,6 @@
 - stage: "6단계 · 심화"
   hue: orange
   topics:
-    - name: "테스트"
-      items:
-        - name: "통합 테스트"
-          tag: "추천"
-        - name: "단위 테스트"
-          tag: "추천"
-        - name: "기능 테스트"
-          tag: "추천"
-        - name: "부하 테스트 (k6)"
-          tag: "국내 추가"
-          rank: 2
     # 원본에서도 세부 항목 없이 주제 하나로만 있다
     - name: "CI / CD"
     - name: "DB 심화"
@@ -259,6 +248,17 @@
           tag: "추천"
         - name: "성능 프로파일링"
           tag: "추천"
+    - name: "테스트"
+      items:
+        - name: "통합 테스트"
+          tag: "추천"
+        - name: "단위 테스트"
+          tag: "추천"
+        - name: "기능 테스트"
+          tag: "추천"
+        - name: "부하 테스트 (k6)"
+          tag: "국내 추가"
+          rank: 2
     - name: "컨테이너"
       items:
         - name: "LXC"

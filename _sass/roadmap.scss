@@ -86,8 +86,9 @@ $roadmap-spine:3px;
       border-radius:var(--r);
       background:var(--bg-sunken);
 
-      &.is-here { border:2px solid var(--accent); }
-      &.is-here .rm-career__pin { background:var(--accent); }
+      // 지도의 단계 색과 겹치지 않게 본문 글자색을 쓴다 — --accent 는 4단계 파랑과 같은 값이다
+      &.is-here { border:2px solid var(--fg); }
+      &.is-here .rm-career__pin { background:var(--fg); }
       &.is-next { border:2px dashed var(--c-tag-red); }
       &.is-next .rm-career__pin { background:var(--c-tag-red); }
     }
