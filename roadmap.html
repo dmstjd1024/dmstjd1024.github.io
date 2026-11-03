@@ -78,6 +78,7 @@ permalink: /roadmap/
       {%- if topic.split %}{% assign half = topic.split %}{% endif %}
       <section class="rm-topic">
         <h3 class="rm-topic__node">{{ topic.name }}</h3>
+        {%- if topic.items %}
         {%- for side in sides %}
         {%- if side == "l" %}{% assign from = 0 %}{% assign count = half %}{% else %}{% assign from = half %}{% assign count = topic.items.size %}{% endif %}
         <ul class="rm-topic__items rm-topic__items--{{ side }}">
@@ -93,6 +94,7 @@ permalink: /roadmap/
           {%- endfor %}
         </ul>
         {%- endfor %}
+        {%- endif %}
         {%- if topic.note or topic.links %}
         <div class="rm-topic__more">
           {%- if topic.note %}<p><small>원본 안내</small> {{ topic.note }}</p>{% endif %}
@@ -110,7 +112,6 @@ permalink: /roadmap/
     <h2 class="rm-next__title" id="rm-next-title">원본이 이어서 권하는 로드맵</h2>
     <p>
       <a href="https://roadmap.sh/devops">DevOps</a>
-      <a href="https://roadmap.sh/devops?r=devops-beginner">기초 운영 스킬</a>
       <a href="https://roadmap.sh/system-design">시스템 설계</a>
       <a href="https://roadmap.sh/full-stack">풀스택</a>
     </p>
