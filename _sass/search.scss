@@ -72,6 +72,8 @@
       padding:.7rem 1rem;
 
       &:hover { background:var(--bg-sunken); }
+      // 목록이 스크롤 상자라 바깥으로 그린 포커스 테두리 좌우가 잘린다 — 안쪽으로 그린다
+      &:focus-visible { outline-offset:-2px; }
     }
   }
 

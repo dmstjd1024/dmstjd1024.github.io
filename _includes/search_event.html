@@ -1,7 +1,7 @@
 <script>
 // 검색 인덱스는 페이지마다 심지 않고 별도 JSON 으로 두고, 검색을 처음 열 때만
-// 받는다. 인덱스를 HTML 에 넣어두면 모든 페이지가 그만큼(28KB) 무거워지는데
-// 정작 검색을 쓰는 사람은 일부다.
+// 받는다. 본문까지 담아 1MB 남짓(gzip 전송 약 400KB)이라 HTML 에 넣으면 모든
+// 페이지가 그만큼 무거워지는데, 정작 검색을 쓰는 사람은 일부다.
 (function () {
   var box = document.getElementById('search');
   var input = document.getElementById('search-input');

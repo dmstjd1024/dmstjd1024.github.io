@@ -39,14 +39,16 @@
       });
     };
 
-    // 열린 서랍은 막으로 나머지를 덮는 모달이다. 뒤쪽(본문·상단바의 로고·도구)을
+    // 열린 서랍은 막으로 나머지를 덮는 모달이다. 뒤쪽(본문·상단바의 로고·검색·테마)을
     // inert 로 막아 화면 낭독기의 가상 커서도 서랍 밖으로 나가지 않게 한다.
+    // 메뉴 버튼은 남긴다 — Esc 가 없는 터치 화면 낭독기에는 이름 있는 유일한 닫기다.
     // 검색 대화상자는 서랍 위에 뜰 수 있으므로 뺀다.
     var behind = function () {
       var out = Array.prototype.filter.call(document.body.children, function (el) {
         return !el.contains(nav) && el.id !== 'search' && el.tagName !== 'SCRIPT';
       });
-      return out.concat(Array.prototype.slice.call(nav.querySelectorAll('.nav__brand, .nav__tools')));
+      return out.concat(Array.prototype.slice.call(
+        nav.querySelectorAll('.nav__brand, .nav__tools > :not(#btn-menu)')));
     };
 
     var setMenu = function (open) {

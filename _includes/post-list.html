@@ -83,7 +83,7 @@
       {%- endcomment -%}
       {%- assign my_seg = page.path | remove_first: '_pages/' | split: '/' -%}
       <p class="list-head__eyebrow">
-        <a href="{{ '/' | prepend: site.baseurl }}">전체 글</a>
+        <a href="{{ '/글/' | prepend: site.baseurl }}">전체 글</a>
         {%- if my_seg.size > 2 -%}
           {%- assign up_idx = my_seg.size | minus: 3 -%}
           {%- comment -%} here 에서 마지막 한 칸을 떼면 부모 주소가 된다 {%- endcomment -%}
