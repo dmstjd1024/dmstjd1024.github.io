@@ -46,6 +46,15 @@ plugins:
 
 exclude:
   - docs/
+  # 저장소 관리용 파일 — 사이트 주소로 열릴 이유가 없다
+  - CLAUDE.md
+  - README.md
+  - LICENSE
+  - jekyll-theme-satellite.gemspec
+  - review-findings.json
+  - review_result.json
+  - script/
+  - scripts/
 
 collections:
   pages:

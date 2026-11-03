@@ -96,23 +96,23 @@
       if (!menu) return;
 
       // 접기 버튼도 탭 순서에 포함한다. 링크만 세면 화살표를 건너뛴다.
+      // 접힌 하위 메뉴(visibility:hidden)는 빼야 한다 — 남겨 두면 마지막 항목이
+      // 안 보이는 링크가 되어 Tab 이 서랍 밖으로 샌다.
       var items = [menuBtn].concat(
         Array.prototype.slice.call(
           menu.querySelectorAll('a[href], button:not([disabled])')
         )
-      );
+      ).filter(function (el) {
+        return el.getClientRects().length && getComputedStyle(el).visibility === 'visible';
+      });
       if (!items.length) return;
 
-      var first = items[0];
-      var last = items[items.length - 1];
-
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
+      // 메뉴가 문서에서 버튼보다 앞에 있어 브라우저에 맡기면 버튼 다음 Tab 이
+      // 본문으로 간다. 순서는 직접 돌린다.
+      e.preventDefault();
+      var i = items.indexOf(document.activeElement);
+      var next = i === -1 ? (e.shiftKey ? items.length - 1 : 0) : i + (e.shiftKey ? -1 : 1);
+      items[(next + items.length) % items.length].focus();
     });
 
     // 넓은 화면으로 돌아가면 서랍 상태를 털어낸다.

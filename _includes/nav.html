@@ -71,7 +71,7 @@
               {%- if ss.size == 3 -%}{%- assign child_count = child_count | plus: 1 -%}{%- endif -%}
             {%- endfor -%}
             {%- comment -%}
-              펼침 상태는 여기서 넣지 않고 common.js 가 페이지 로드 뒤에 넣는다.
+              펼침 상태는 여기서 넣지 않고 nav_state.html 이 nav 바로 뒤에서 첫 화면 전에 넣는다.
 
               지금 보고 있는 카테고리를 서버에서 미리 펼쳐 두면 페이지마다
               메뉴 높이가 달라진다(/AI/ 는 5줄 열림, /Docker/ 는 0줄).

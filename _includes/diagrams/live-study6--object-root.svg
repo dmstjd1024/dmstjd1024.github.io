@@ -14,7 +14,7 @@
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="73" y="56" width="208" height="52" rx="6"/>
   <text class="dg-t" x="177" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Object</text>
-  <text class="dg-s" x="177" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">toString() · equals() · hashCode() ...</text>
+  <text class="dg-s" x="177" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">toString() · equals() · hashCode() …</text>
   <rect class="dg-item" x="297" y="56" width="126" height="52" rx="6"/>
   <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내가 만든 클래스</text>
   <rect class="dg-item" x="439" y="56" width="96" height="52" rx="6"/>
@@ -36,7 +36,7 @@
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
   <rect class="dg-item" x="76" y="56" width="208" height="52" rx="6"/>
   <text class="dg-t" x="180" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Object</text>
-  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">toString() · equals() · hashCode() ...</text>
+  <text class="dg-s" x="180" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">toString() · equals() · hashCode() …</text>
   <rect class="dg-item" x="61" y="122" width="126" height="52" rx="6"/>
   <text class="dg-t" x="124" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">내가 만든 클래스</text>
   <rect class="dg-item" x="203" y="122" width="96" height="52" rx="6"/>

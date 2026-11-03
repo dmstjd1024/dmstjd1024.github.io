@@ -90,7 +90,7 @@
           {%- assign up_url = here | split: '/' -%}
           {%- assign up_cut = up_url.size | minus: 1 -%}
           {%- assign up_path = up_url | slice: 0, up_cut | join: '/' -%}
-          <span class="sep">›</span>
+          <span class="sep">/</span>
           <a href="{{ up_path | append: '/' | prepend: site.baseurl }}">{{ my_seg[up_idx] }}</a>
         {%- endif -%}
       </p>

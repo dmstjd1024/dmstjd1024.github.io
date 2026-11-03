@@ -10,7 +10,7 @@
 
   <!-- 뷰 (@Subselect) -->
   <rect class="dg-zone" x="24" y="32" width="672" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="79" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="85" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">뷰 (@Subselect)</text>
   <rect class="dg-item" x="117" y="56" width="169" height="52" rx="6"/>
   <text class="dg-t" x="201" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 1 → CTE 5개 풀스캔</text>
@@ -45,7 +45,7 @@
 
   <!-- 뷰 (@Subselect) -->
   <rect class="dg-zone" x="24" y="32" width="312" height="298" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="79" height="12" rx="2"/>
+  <rect class="dg-mask" x="40" y="26" width="85" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">뷰 (@Subselect)</text>
   <rect class="dg-item" x="95" y="56" width="169" height="52" rx="6"/>
   <text class="dg-t" x="179" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">조회 1 → CTE 5개 풀스캔</text>
