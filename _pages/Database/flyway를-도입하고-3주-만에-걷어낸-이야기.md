@@ -35,10 +35,11 @@ card_thumbnail: "/assets/img/thumbnail/postgresql_card.png"
 
 Flyway는 자연스러운 선택으로 보였다. 그런데 전제가 어긋나 있었다.
 
-- Flyway의 전제 — **빈 DB에서 시작해 마이그레이션으로 쌓아 올린 스키마**
+- 이번 도입에서 택한 방식 — **빈 DB에서도 마이그레이션 전량 실행으로 스키마 재현**
 - 이 프로젝트의 실제 — 이미 81개 테이블이 존재하는 레거시 스키마
+- Flyway 자체는 기존 DB의 `baseline`도 지원한다. 충돌한 것은 도구의 필수 전제가 아니라 이번에 구성한 초기 스키마·모듈별 실행 방식이었다
 
-<div class="diagram" role="img" aria-label="Flyway 의 전제와 레거시 스키마의 불일치">
+<div class="diagram" role="img" aria-label="빈 DB 재현이라는 도입 목표와 레거시 기준점 정리 과제">
 {% include diagrams/flyway--premise-mismatch.svg %}
 </div>
 
@@ -52,7 +53,8 @@ Flyway는 자연스러운 선택으로 보였다. 그런데 전제가 어긋나 
 - 제외 대상 — 뷰로 교체된 3개 테이블
 - 추가 제외 — 후속 마이그레이션과 충돌하는 컬럼
 - 추가 포함 — 반대로 참조되는 컬럼
-- `baselineVersion` 조정 — "1"에서 "0"으로. 그래야 fresh DB에서 V1이 baseline에 가려 스킵되지 않음
+- `baselineVersion` 조정 — "1"에서 "0"으로. baseline이 적용된 환경에서도 V1을 실행 대상으로 남기려는 설정
+- 빈 스키마에 `migrate`만 실행하는 경우에는 `baselineVersion`만으로 V1이 스킵되지는 않음
 
 ### 2. 모듈별로 쪼개자 실행 순서가 깨졌다
 
@@ -121,7 +123,7 @@ Flyway는 자연스러운 선택으로 보였다. 그런데 전제가 어긋나 
 
 Flyway가 나쁜 도구여서가 아니다. **"멀티모듈 + 이미 존재하는 레거시 스키마"라는 조합에서 비용이 특히 비쌌다.**
 
-- 모듈 다수 → 마이그레이션 경로도 다수 → Flyway 기본 제공 단일 버전 축 붕괴
+- 이번 구성은 모듈별 Flyway 인스턴스·history를 나눠 단일 버전 순서를 잃었다. 멀티모듈 자체가 원인은 아니며, 여러 경로를 한 Flyway 인스턴스에서 관리하는 방식도 가능하다
 - 순서 보장을 직접 구현하는 시점 = 이미 도구의 범위 이탈
 
 되짚어보면 신호는 일찍부터 있었다.

@@ -1,5 +1,5 @@
 ---
-title:  "undo 하나 넣었다가 4단 도미노"
+title:  "AG Grid 실행 취소 기능을 고치며 생긴 포커스·한글 입력 문제"
 description: "되돌렸더니 엉뚱한 값이 살아났다"
 
 categories:
@@ -98,18 +98,18 @@ onChange → handleManualEmsNameChange → handleRowUpdate
         → setRows → AG Grid rowData → params.data → value
 ```
 
-**이 왕복이 한 렌더라도 늦으면**, React가 조합 중인 DOM input에 **이전(stale) 값을 다시 써 넣는다.** 그러면 브라우저의 IME 조합 상태가 파괴된다.
+**이 왕복이 늦어 이전 값이 다시 전달되면**, React가 조합 중인 DOM input에 **이전(stale) 값을 다시 써 넣을 수 있다.** 그러면 브라우저의 IME 조합 상태가 파괴된다.
 
-한글 입력은 여러 keystroke가 모여 한 글자가 되는 **조합(composition)** 과정이다. 그 도중에 DOM의 `value`를 밖에서 덮어쓰면 브라우저는 조합을 포기한다. 영문은 한 글자가 한 keystroke라 이 문제가 안 보인다. **영어로 테스트하면 절대 못 잡는 버그다.**
+한글 입력은 여러 keystroke가 모여 한 글자가 되는 **조합(composition)** 과정이다. 그 도중에 DOM의 `value`를 밖에서 덮어쓰면 브라우저는 조합을 포기한다. 이번 영문 입력 테스트에서는 조합 상태가 없어 이 문제가 드러나지 않았다. **IME 조합을 포함한 테스트가 필요하다.**
 
-수정의 핵심은 **`value` prop을 input에 직접 물리지 않는 것**이다.
+수정의 핵심은 **AG Grid에서 돌아온 `row` 값을 input의 `value`에 직접 물리지 않는 것**이다.
 
 - 별도 컴포넌트를 만들어 **로컬 draft state로 DOM value를 관리**
 - `composingRef` / `lastEmittedRef`로 **조합 중인지, 내가 emit한 값이 돌아온 건지** 판별
 - 붙여넣기·Undo/Redo 같은 **진짜 외부 변경만** draft에 동기화
 - `onChange`는 조합 중에도 **항상 상위에 알린다** — 저장·검증용 데이터는 최신 유지
 
-즉 **DOM 표시값과 애플리케이션 데이터를 일부러 분리**했다. controlled input의 원칙을 국소적으로 깬 것인데, IME라는 브라우저 고유 상태를 보호하려면 이 방법밖에 없었다.
+즉 **DOM 표시값과 애플리케이션 데이터를 일부러 분리**했다. input은 로컬 draft를 값으로 받는 controlled input으로 유지하되, AG Grid를 거친 값 왕복으로 조합 중인 표시값이 덮이지 않게 했다. 이 구조에서 선택한 해결책이다.
 
 ## 도미노 3: 그 수정에도 결함이 있었다
 

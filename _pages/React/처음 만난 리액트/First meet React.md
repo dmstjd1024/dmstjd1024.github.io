@@ -32,8 +32,8 @@ const element = <h1>Hello, world!</h1>;
 ```jsx
 React.createElement(
     type,
-    [props], ## 속성
-    [...children]  ## 자식 엘리먼트
+    props, // 속성 객체 또는 null
+    ...children // 자식 엘리먼트들
 )
 ```
 
@@ -58,7 +58,7 @@ React.createElement(
 - Root dom node
 - ReactElement : React 의 Virtual DOM에 존재
 - DOMElement : 실제 브라우저의 DOM에 존재
-- ReactDOM.render()를 통해 ReactElement를 DOMElement로 변환
+- React 18 이상은 `createRoot(...).render()`로 React 엘리먼트를 DOM에 반영한다. `ReactDOM.render()`는 이전 API이며 React 19에서 제거됐다.
 
 <div class="diagram" role="img" aria-label="Virtual DOM 이 바뀐 부분만 실제 DOM 에 반영하는 흐름">
 {% include diagrams/react1--virtual-dom.svg %}
@@ -85,7 +85,7 @@ React.createElement(
 </div>
 
 ```jsx
-function App(pros){
+function App(props){
     return (
         <Profile
             name="John Doe"
@@ -95,7 +95,7 @@ function App(pros){
 }
 ```
 ```jsx
-function App(pros){
+function App(props){
     return (
         <Layout
             width={100}
@@ -153,14 +153,14 @@ const element = <Welcome name="소플" />;
 #### 컴포넌트 렌더링
 
 ```jsx
+import { createRoot } from 'react-dom/client';
+
 function Welcome(props) {
   return <h1>안녕하세요, {props.name}님!</h1>;
 }
 const element = <Welcome name="소플" />;
-ReactDOM.render(
-    element,
-    document.getElementById('root')
-);
+const root = createRoot(document.getElementById('root'));
+root.render(element);
 ```
 
 ### 컴포넌트 합성과 추출
@@ -308,7 +308,7 @@ function CommentList(props) {
         <div>
             {comments.map((comment) => {
                 return (
-                    <Comment name={comment.name} comment={comment.comment}/>
+                    <Comment key={comment.name} name={comment.name} comment={comment.comment}/>
                 )
             })}
         </div>
@@ -321,11 +321,14 @@ export default CommentList;
 - App.jsx
 
 ```jsx
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import CommentList from './CommentList';
+
 const root = createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <CommentList />
-    </React.StrictMode>,
-    document.getElementById('root')
-    );
+    </React.StrictMode>
+);
 ```

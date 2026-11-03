@@ -91,9 +91,8 @@ Streams 로 같은 걸 해보면 차이가 분명해진다.
 
 ### 그런데 이게 단점만은 아니다
 
-키 공간에 안 남는다는 건 **메모리를 안 먹고, 정리할 것도 없다**는 뜻이다.
-Streams 처럼 `MAXLEN` 으로 트리밍을 고민할 일이 없고, List 처럼 소비자가
-멈췄을 때 키가 무한정 부풀 걱정도 없다.
+키 공간에 안 남는다는 건 **키 공간에 메시지 이력이 쌓이지 않는다**는 뜻이다.
+Streams처럼 `MAXLEN`으로 메시지 이력을 정리할 필요는 없다. 다만 구독 정보와 느린 구독자에게 보낼 출력 버퍼는 메모리를 사용하며, 버퍼 제한을 넘으면 연결이 끊길 수 있다.
 
 문서가 짚는 또 하나 — Pub/Sub 은 **DB 번호와 무관**하다.
 
@@ -308,7 +307,7 @@ public StreamMessageListenerContainer<String, MapRecord<String, String, String>>
 }
 ```
 
-`receive()` 대신 `receiveAutoAck()` 도 있는데, **이건 읽는 즉시 ack 을 보낸다.**
+`receive()` 대신 `receiveAutoAck()`도 있는데, **이는 Redis의 NOACK 옵션으로 읽어 PEL에 등록하지 않는다.**
 처리 중 죽어도 PEL 에 안 남으므로 Streams 를 쓰는 이유가 사라진다.
 유실이 곤란해서 Streams 를 골랐다면 `receive()` 를 쓰고 직접 `acknowledge()` 한다.
 
@@ -318,10 +317,25 @@ public StreamMessageListenerContainer<String, MapRecord<String, String, String>>
 ```java
 try {
     redisTemplate.opsForStream().createGroup("orders", ReadOffset.from("0"), "order-group");
-} catch (RedisSystemException e) {
-    // BUSYGROUP — 이미 있으면 그대로 쓴다
+} catch (DataAccessException e) {
+    // 이미 있으면 BUSYGROUP 하나만 통과시킨다. 그 외는 덮지 않고 올린다
+    String msg = e.getMostSpecificCause().getMessage();
+    if (msg == null || !msg.contains("BUSYGROUP")) {
+        throw e;
+    }
 }
 ```
+
+`catch` 를 비워두면 연결 장애 등 여기 잡히는 다른 오류까지 삼킨다.
+그룹이 안 만들어진 채로 읽기에 들어가면 `NOGROUP` 이 난다 —
+원인에서 멀어진 자리에서 터지는 게 더 나쁘다.
+
+가장 안쪽 원인 예외의 메시지는 `null` 일 수 있으므로 먼저 검사한다.
+안 보면 `NullPointerException` 이 원래 오류를 가린다.
+
+> `BUSYGROUP` 의 변환 타입은 클라이언트마다 다르다 — Lettuce 는
+> `RedisSystemException`, Jedis 는 `InvalidDataAccessApiUsageException` 이다.
+> 그래서 공통 상위 타입인 `DataAccessException` 으로 잡았다.
 
 ### List — 가장 코드가 적다
 
@@ -380,14 +394,14 @@ Redis 7.0 이 이걸 위해 sharded Pub/Sub 을 넣었다.
 | 상황 | 고른다 | 이유 |
 |---|---|---|
 | 실시간 알림 — 지금 접속한 사람에게만 | Pub/Sub | 못 받은 사람에게 나중에 줄 이유가 없다 |
-| 서버 간 캐시 무효화 신호 | Pub/Sub | 한 건 놓쳐도 다음 신호가 덮는다 |
+| 서버 간 캐시 무효화 신호 | Pub/Sub | TTL·재검증 등 누락 복구 수단이 있을 때 |
 | WebSocket 브로드캐스트 (다중 인스턴스) | Pub/Sub | 연결이 끊긴 클라이언트는 어차피 못 받는다 |
 | 간단한 백그라운드 잡 큐 | List | `BRPOP` 하나로 끝난다. 유실을 감당할 수 있을 때 |
-| 유실이 곤란한 잡 큐 | Streams | PEL + `XAUTOCLAIM` 이 재처리를 대신한다 |
-| 여러 소비자가 같은 이벤트를 각자 처리 | Streams | 그룹을 나누면 Pub/Sub 처럼 되면서 유실은 없다 |
+| 유실이 곤란한 잡 큐 | Streams | PEL + 주기적 `XAUTOCLAIM` 호출로 미처리 회수 |
+| 여러 소비자가 같은 이벤트를 각자 처리 | Streams | 그룹별 진행 위치·미처리를 보관. 보존·복구 정책 필요 |
 | 며칠치 이벤트를 쌓고 재처리 | Redis 가 아닌 것 | 인메모리에 묶인 용도가 아니다 |
 
-한 줄로 줄이면 이렇다. **못 받아도 되면 Pub/Sub, 꼭 받아야 하면 Streams 다.**
+한 줄로 줄이면 이렇다. **못 받아도 되면 Pub/Sub, 미처리를 추적·회수해야 하면 Streams가 맞다.** Streams도 영속화 설정, 트리밍 범위, 재처리 루프가 맞아야 유실을 줄일 수 있다.
 List 는 그 사이에서 "지금 당장 간단히"가 필요할 때의 선택지다.
 
 ## 직접 확인하지 않은 것
@@ -402,7 +416,7 @@ List 는 그 사이에서 "지금 당장 간단히"가 필요할 때의 선택�
 
 이 블로그의 [Redis 로 동시 접속 기기를 제한한 글](/Database/Redis/장부만-지우고-세션은-살려뒀다.html)
 에서 Pub/Sub 으로 세션 종료 알림을 보냈다. 거기서 알림을 먼저 보내고 `Thread.sleep(200)` 을
-넣은 직접적인 이유는 세션을 먼저 지우면 SSE 연결이 같이 끊겨 알림이 도착하지 못해서였다.
+넣은 직접적인 이유는 그 프로젝트에서 세션 삭제 뒤 SSE 알림이 도착하지 않는 현상이 있었기 때문이다. 세션 삭제와 SSE 연결 종료가 항상 자동으로 연동되는 것은 아니다.
 다만 **"전송이 끝났는지 확인하고 넘어가는" 경로가 없어 시간으로 때울 수밖에 없었던 것**은
 이 글에서 본 성질과 같은 자리다. 확인을 받으려면 ack 경로를 따로 만들어야 하고,
 그건 Pub/Sub 이 주지 않는 것이다.

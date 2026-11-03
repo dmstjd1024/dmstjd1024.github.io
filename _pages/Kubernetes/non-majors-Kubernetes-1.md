@@ -98,19 +98,19 @@ ImagePullBackOff 오류 발생
 이미지 풀 정책(Image pull Policy) 때문에 발생
 ### 이미지 풀 정책
 yaml 을 읽어서 Pod 생성 시, 이미지를 어떻게 Pull 할 지에 대한 정책
-- `Always`: 로컬 말고, 무조건 레지스트리(Dockerhub, ECR(원격 이미지 저장소)) 에서 가져온다.
-- `IfNotPresent`: 로컬에 이미지 먼저 가져오고, 없으면 레지스트리에서 가져온다.
+- `Always`: 시작할 때마다 레지스트리에서 이미지의 다이제스트를 확인한다. 같은 다이제스트가 노드에 있으면 캐시를 재사용한다.
+- `IfNotPresent`: 노드에 이미지가 있으면 사용하고, 없으면 레지스트리에서 가져온다.
 - `Never`: 로컬에서만 이미지를 가져온다.
 
 `image` 뒤에 `version`을 명시하지 않거나, latest 태그를 사용하는 경우 `Always` 가 기본값
-`lastest` 태그를 사용하지 않는다면 `IfNotPresent` 가 기본값
+`latest` 태그를 사용하지 않는다면 `IfNotPresent` 가 기본값
 
 <div class="diagram" role="img" aria-label="이미지 풀 정책과 태그에 따른 기본값">
 {% include diagrams/k8s--image-pull-policy.svg %}
 </div>
 
 ### 해결 방법
-이미지 풀 정책을 `IfNotPresent` 로 변경
+이미지 풀 정책을 `IfNotPresent` 로 변경한다. 이때 이미지는 호스트 Docker뿐 아니라 **파드를 실행할 노드의 컨테이너 런타임**에 있어야 한다. kind처럼 노드가 별도 컨테이너인 환경에서는 이미지 로드나 레지스트리 등록도 필요하다.
 ```yaml
 ...
       ports:

@@ -1,5 +1,5 @@
 ---
-title:  "kubectl exec 은 왜 멈추는가"
+title:  "kubectl exec 무한 대기에 타임아웃과 재시도 적용하기"
 subtitle: "셸 스크립트에 타임아웃과 재시도 넣기"
 description: "셸 스크립트에 타임아웃과 재시도 넣기"
 categories:
@@ -66,6 +66,7 @@ kubectl_with_retry() {
 - 즉 **재시도의 전제 조건이 타임아웃**
 
 - 모든 호출에 `--request-timeout` 부착
+- 단, 이 옵션은 API 요청 타임아웃이다. `exec`의 스트리밍과 원격 명령 전체 실행 시간을 같은 값으로 제한한다고 보장할 수는 없다. 실행 전체의 상한이 필요하면 별도의 프로세스 타임아웃도 검증해야 한다
 - 작업 성격에 따라 값 차등
 
 | 작업 | 타임아웃 |
@@ -128,12 +129,12 @@ printf 'NodeOUs:\n  Enable: true\n  ClientOUIdentifier:\n    Certificate: cacert
 
 ## 별건: helm uninstall --wait가 만든 연쇄
 
-- 삭제 경로에도 같은 종류의 무한 대기 존재
-- 원인: PV finalizer로 `helm uninstall --wait` 미종료
+- 삭제 경로에도 후속 정리를 막는 장시간 대기 존재
+- 원인: PV finalizer가 남아 `helm uninstall --wait`가 삭제 완료를 기다림. Helm 3의 `--wait`는 기본 `--timeout` 5분의 제한을 받으므로 무한 대기라고 일반화할 수는 없음
 
 ```
 PV finalizer 잔존
-  → helm uninstall --wait 무한 대기
+  → helm uninstall --wait 삭제 완료 대기
   → 삭제 스크립트 중단
   → 애플리케이션이 응답을 못 받음
   → 네트워크 상태 DELETE_FAILED
@@ -157,5 +158,5 @@ PV finalizer 잔존
 **"기다린다"고 이름 붙은 도구가 정말 기다리는지 확인한다.**
 
 - `kubectl wait` — 안 기다림
-- `helm --wait` — 너무 기다림
+- `helm --wait` — 후속 정리가 필요해도 타임아웃까지 먼저 기다릴 수 있음
 - 공통점: 이름의 약속과 실제 동작 불일치

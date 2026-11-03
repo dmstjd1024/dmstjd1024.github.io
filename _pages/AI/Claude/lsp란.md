@@ -1,5 +1,5 @@
 ---
-title:  "LSP 는 코드를 글자가 아니라 뜻으로 읽는다"
+title:  "LSP는 같은 이름의 함수와 변수를 어떻게 구분할까"
 subtitle: "에이전트에게 무엇을 주는가"
 description: "에이전트에게 무엇을 주는가"
 categories:
@@ -115,8 +115,8 @@ VS Code 용 자바 지원, IntelliJ 용 자바 지원, Vim 용 자바 지원을 
 | `clangd`, `sourcekit-lsp` | **Xcode 명령줄 도구**에 기본 포함 |
 | `dart` | **Flutter** 설치 시 함께 |
 
-근거는 경로에 있었다. 앞의 둘은 `/usr/bin` 아래 **root 소유**이고 **설치 시각이 초 단위까지
-같다.** 개별로 깔면 이렇게 될 수 없다.
+앞의 둘은 `/usr/bin` 아래 **root 소유**이고, 아래 `ls -la` 출력에서는 **수정 시각이 같다.**
+다만 이 출력은 설치 시각을 보여주지 않으므로, 이것만으로 설치 출처를 확정할 수는 없다.
 
 ```
 $ ls -la /usr/bin/clangd /usr/bin/sourcekit-lsp
@@ -169,7 +169,8 @@ TypeScript → ~/.nvm/versions/node/v24.16.0/bin/   ← 노드 버전에 묶임
 | `clangd` | 119 KB |
 | `sourcekit-lsp` | 119 KB |
 
-**둘 합쳐 240KB 다.** 사진 한 장보다 작다.
+**측정한 두 파일은 합쳐 약 240KB 다.** 다만 `/usr/bin` 의 실행 파일 크기이며,
+실제 언어 서버와 Xcode 명령줄 도구 전체의 설치 용량을 뜻하지는 않는다.
 
 **셋째, 다른 게 깨진다.** 이것들은 LSP 전용 프로그램이 아니라 **Xcode 명령줄 도구의
 일부**다. 그 묶음에는 `git` 과 컴파일러가 같이 들어 있다. 건드리면 엉뚱한 게 멈춘다.

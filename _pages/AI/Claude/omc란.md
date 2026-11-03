@@ -1,5 +1,5 @@
 ---
-title:  "OMC 는 에이전트 19개를 부린다"
+title:  "OMC가 에이전트 19개에 작업을 나누는 방식"
 subtitle: "oh-my-claudecode 오케스트레이션 층"
 description: "oh-my-claudecode 오케스트레이션 층"
 categories:
@@ -91,7 +91,7 @@ The session model set via /model governs the main loop only;
 delegated agents run on their pinned tier
 ```
 
-즉 세션을 가볍게 해뒀어도 `ralph` 나 `team` 을 돌리면 **opus 핀 7개가 그대로 호출된다.**
+즉 세션을 가볍게 해뒀어도 `ralph` 나 `team` 에서 **opus 로 고정된 에이전트에 위임하면 opus 가 호출된다.**
 그래서 내 전역 규칙에는 이런 경고를 넣어뒀다.
 
 ```
@@ -175,8 +175,8 @@ rather than keeping them as compatibility aliases
 완료 시점을 직접 판단하면→ultrawork, 완주·검증까지 맡기면→ralph
 ```
 
-`ultrawork` 는 5.0.0 에 없다. 규칙은 2026년 7월 7일에 만든 뒤 개정하지 않았고, 그 사이
-플러그인이 버전을 올리며 그 이름을 지웠다. **글을 쓰려고 조사하다 발견해서 `execute` 로
+`ultrawork` 는 5.0.0 에 없다. 2026년 7월 7일에 만든 자동 실행 규칙에는 그 이름이 남아 있었고,
+그 사이 플러그인이 버전을 올리며 그 이름을 지웠다. **글을 쓰려고 조사하다 발견해서 `execute` 로
 고쳤다.** 그 이야기는 [다음 글](/AI/Claude/omc-긴-과정-줄이기.html)에 있다.
 
 ## 정리

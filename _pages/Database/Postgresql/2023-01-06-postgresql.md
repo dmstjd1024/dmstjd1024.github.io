@@ -32,7 +32,7 @@ Nested transactions (savepoints)
 Point in time recovery  
 Online/hot backups, Parallel restore  
 Rules system (query rewrite system)  
-B-tree, R-tree, hash, GiST method indexes  
+B-tree, hash, GiST, SP-GiST, GIN, BRIN indexes
 Multi-Version Concurrency Control (MVCC)  
 Tablespaces  
 Procedural Language  
@@ -63,7 +63,7 @@ Table inheritance
 </div>
 
 - 함수  
-  때때로, ‘저장 프로시저’라고 불리는 SQL문으로 작성된 함수를 서버환경에서 사용할 수 있다. 비록 다른 언어와는 달리 제어문과 반복문을 사용하지는 못하지만, 다른 언어와 결합시킬 수 있다. 일부 언어에서는 심지어 트리거 내부에서 실행시킬 수 있다.
+  SQL이나 PL/pgSQL 등으로 작성한 함수를 서버에서 실행할 수 있다. 함수와 저장 프로시저는 별도 객체이며, PL/pgSQL은 조건문과 반복문을 지원한다. 트리거 함수를 정의해 데이터 변경 시 실행할 수도 있다.
 
 ---  
 

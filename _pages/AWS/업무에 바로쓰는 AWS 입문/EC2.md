@@ -21,19 +21,17 @@ card_thumbnail: "/assets/img/thumbnail/aws_card.jpeg"
 ## 비용 지불 방법
 
 - **온디맨드**: 사용한 만큼만 지불, 예측 불가능한 트래픽에 적합
-- **리저브드**: 저렴한 비용, 1~3년 임대, 인스턴스 크기 변경 불가능
-- **스팟 인스턴스**: 입찰, 단기 작업에 적합
+- **리저브드**: 1년 또는 3년 약정으로 할인. [조건에 따라 같은 패밀리 내 크기 변경 등이 가능](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html)
+- **스팟 인스턴스**: AWS가 정한 스팟 가격으로 남는 용량 사용. 중단을 허용할 수 있는 작업에 적합
 
 <div class="diagram" role="img" aria-label="EC2 비용 지불 방법 비교">
 {% include diagrams/ec2--pricing.svg %}
 </div>
 
-## EBS 란
-
 ## EBS란
 
-- 파일 및 오브젝트 보관할 수 있는 스토리지 볼륨
-- 인스턴스 종료되어도 데이터 유지
+- EC2에 디스크처럼 연결하는 **블록 스토리지**. 오브젝트 스토리지인 S3와 구분
+- 인스턴스를 중지해도 유지되지만, 종료 시에는 볼륨의 `DeleteOnTermination` 설정에 따라 삭제될 수 있음
 - 가용 영역을 설정해줘야함
 
 ## 가용영역

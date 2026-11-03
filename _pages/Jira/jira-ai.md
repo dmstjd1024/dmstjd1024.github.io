@@ -1,5 +1,5 @@
 ---
-title:  "AI 붙여서 쓰기 (Rovo 와 MCP)"
+title:  "Jira에서 Rovo와 MCP로 AI 활용하기"
 subtitle: "JIRA 활용"
 description: "JIRA 활용"
 categories:
@@ -19,6 +19,8 @@ card_thumbnail: "/assets/img/thumbnail/jira_card.png"
 >
 > ⚠️ **이 분야는 변화가 빠르다.** 이 글은 2026년 8월 기준으로 확인한 내용이며,
 > 요금제·크레딧·기능명은 자주 바뀌므로 실제 적용 전에 [공식 문서](https://support.atlassian.com/rovo/)를 확인하는 것이 좋다.
+>
+> **2026-10-23 확인:** 아래 고정 크레딧 설명은 작성 당시 기록이다. 8월 31일부터 적용되는 [현재 정책](https://support.atlassian.com/rovo/docs/rovo-usage-limits/)은 고급 Agent·심화 추론을 가변 크레딧으로 구분한다. MCP도 단일 제품 조회·수정은 무료지만 통합 검색 같은 확장 맥락 조회는 크레딧을 쓸 수 있다. 신규 연결용 URL은 [공식 시작 가이드](https://developer.atlassian.com/cloud/rovo-mcp/guides/getting-started/)의 `https://mcp.atlassian.com/v2/mcp`를 확인한다.
 
 먼저 이름 정리부터
 =====
@@ -74,7 +76,7 @@ Rovo는 세 덩어리로 구성된다.
 이 표가 이 글에서 가장 실용적인 부분이다. 계산해보면 답이 나온다.
 
 - Standard 사용자 1인의 월 크레딧은 **25** → **Deep Research(100)는 한 번도 못 돌린다**
-- Chat 한 번이 10크레딧 → 개인 할당량으로는 **월 2~3회**
+- Chat 한 번이 10크레딧 → 다른 소비가 없는 25크레딧만으로는 **월 2회**
 
 **결론: 검색과 요약 위주로 쓰고, Chat·Agent는 정말 필요할 때만 쓴다.** 조직 단위 합산이라 실제로는 좀 더 여유가 있지만, 팀에서 몇 명이 Deep Research를 돌리면 전체 할당량이 순식간에 사라진다.
 
@@ -97,8 +99,8 @@ JQL을 외우지 않고 한국어(또는 영어)로 질문해 이슈를 찾는 �
 이 기능의 진짜 가치는 검색 자체가 아니다. **질문과 함께 생성된 JQL을 같이 보여준다는 점**이다.
 
 ```
-질문: 지난주에 만들어진 미완료 버그
-생성된 JQL: issuetype = Bug AND created >= -1w AND status != Done
+질문: 최근 7일에 만들어진 미완료 버그
+생성된 JQL: issuetype = Bug AND created >= -1w AND statusCategory != Done
 ```
 
 [2편](/Jira/jira-automation.html)에서 JQL 문법을 다뤘는데, 자연어로 물어보고 나온 JQL을 읽는 방식으로 익히면 훨씬 빠르다. **결과를 필터로 저장하면 다음부터는 크레딧도 AI도 필요 없다.**
@@ -184,6 +186,8 @@ MCP로 Claude에 붙이기
 
 ## Claude Code에 연결하기
 
+아래 명령은 8월 작성 당시 경로다. 신규 설정은 위 2026-10-23 확인 메모의 현재 URL을 사용한다.
+
 ```bash
 claude mcp add --transport http atlassian https://mcp.atlassian.com/v1/mcp/authv2
 ```
@@ -246,9 +250,9 @@ MCP를 붙이면 이런 흐름이 한 대화 안에서 끝난다.
 ```
 
 ```
-"이번 스프린트 완료된 이슈로 릴리스 노트 만들어줘"
+"v2.1.0 릴리스에 포함된 완료 이슈로 릴리스 노트 만들어줘"
 
-→ fixVersion = "v2.1.0" AND status = Done 으로 조회 (MCP)
+→ fixVersion = "v2.1.0" AND statusCategory = Done 으로 조회 (MCP)
 → 이슈 제목·설명을 읽고
 → 사용자 관점 릴리스 노트로 정리
 ```

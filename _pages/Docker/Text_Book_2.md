@@ -76,7 +76,7 @@ docker image history web-ping
 
 docker 에서는 이미지가 비슷한 용량을 가진 것으로 보이지만, 
 Node.js 런타임을 포함한 이미지가 런타임을 공유하였을 때, 
-각 Image의 실제 용량은 `image ls`로 호출한 SIZE 값아랑 다르다. 
+각 Image의 실제 용량은 `image ls`로 호출한 SIZE 값과 다르다.
 (`system df`로 확인 가능)
 
 따라서 공유되는 레이어는 수정할 수 없어야 한다. (읽기전용으로 구현)
@@ -85,13 +85,13 @@ Node.js 런타임을 포함한 이미지가 런타임을 공유하였을 때,
 {% include diagrams/docker2--layer-share.svg %}
 </div>
 
-## 이미지 레이어 캐시를 이요한 Dockerfile 스크립트 최적화
+## 이미지 레이어 캐시를 이용한 Dockerfile 스크립트 최적화
  
 ```docker
 # 이미지의 파일을 수정 후 다시 빌드 시, 새로운 이미지 레이어 생성.
 docker image build -t web-ping:v2 .
 ```
-- Docker 스크립트 인스트럭션은 각 하나의 이미지 레이어와 1:1 연결
+- `RUN`, `COPY`, `ADD`는 파일 시스템 레이어를 만들지만, `CMD`, `ENV` 같은 설정은 이미지 메타데이터를 바꾼다. 모든 인스트럭션이 파일 시스템 레이어와 1:1로 연결되는 것은 아니다
 - 결과가 이전과 같다면 이전 캐시된 레이어 사용
 따라서 잘 수정하지 않는 인스트럭션이 앞으로 오도록 작성하는 것이 좋다.
 

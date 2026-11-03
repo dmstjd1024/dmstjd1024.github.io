@@ -92,7 +92,7 @@ LOWER(c.name) LIKE LOWER('%' || #{keyword} || '%')
 - 문제의 핵심 — **인덱스는 `name`에 존재, `LOWER(name)`에는 부재**
 
 - PostgreSQL 입장에서 `name`과 `LOWER(name)`은 전혀 다른 표현식
-- 인덱스 정의와 쿼리 표현식이 문자 그대로 일치해야 후보로 등록
+- 이 조건을 인덱스로 검색하려면 인덱스가 쿼리의 `LOWER(name)` 표현식에 대응해야 함
 - 함수를 한 번 감싸는 순간 인덱스는 없는 것과 동일
 
 <div class="diagram" role="img" aria-label="함수로 감싸면 인덱스 표현식과 달라져 사용되지 않는 구조">
@@ -103,11 +103,11 @@ LOWER(c.name) LIKE LOWER('%' || #{keyword} || '%')
 
 | 방법 | 내용 | 판단 |
 |---|---|---|
-| 표현식 인덱스로 맞추기 | `GIN (LOWER(name) gin_trgm_ops)` 로 재생성 | 인덱스가 커지고, 모든 검색 컬럼마다 별도 인덱스 필요 |
+| 표현식 인덱스로 맞추기 | `GIN (LOWER(name) gin_trgm_ops)` 로 재생성 | 검색 표현식에 맞춘 인덱스 재생성·관리 필요 |
 | 쿼리를 인덱스에 맞추기 | `LOWER(x) LIKE LOWER(y)` → `x ILIKE y` | 인덱스 그대로 사용 가능 |
 
 - `ILIKE` — PostgreSQL의 대소문자 무시 LIKE
-- 의미는 `LOWER() LIKE LOWER()`와 동일
+- 일반적인 ASCII 검색에서는 `LOWER() LIKE LOWER()`와 같은 결과를 기대할 수 있지만, 로케일에 따른 차이는 아래처럼 별도 확인 필요
 - trigram GIN 인덱스가 지원하는 연산자
 
 - 채택: 후자

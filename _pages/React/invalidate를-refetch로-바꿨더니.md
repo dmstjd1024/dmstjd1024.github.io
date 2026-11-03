@@ -1,7 +1,7 @@
 ---
 title:  "TanStack Query 에서 mutation 후 목록이 안 바뀐다"
-subtitle: "invalidate 가 lazy 해서 생긴 일"
-description: "invalidate 가 lazy 해서 생긴 일"
+subtitle: "비활성 쿼리의 기본 갱신 시점과 공통 핸들러의 누락"
+description: "비활성 쿼리의 기본 갱신 시점과 공통 핸들러의 누락"
 categories:
   - React
 tags:
@@ -22,29 +22,29 @@ thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 - 반영 시점 — 탭을 옮겼다 오거나 새로고침한 뒤
 - 전제 — mutation 성공 후 `invalidateQueries` 호출 중이었음
 
-## 원인: invalidate는 lazy하다
+## 원인 후보: 비활성 쿼리는 기본적으로 즉시 재요청하지 않는다
 
 `invalidateQueries`의 동작 — 쿼리를 stale로 표시. 그 다음 동작은 쿼리 상태에 따라 분기.
 
-- **활성(active)** 쿼리 — 화면 어딘가에서 구독 중이면 즉시 refetch
+- **활성(active)** 쿼리 — 활성화된 옵저버가 있으면 기본적으로 즉시 refetch
 - **비활성(inactive)** 쿼리 — 마운트된 옵저버가 없으면 표시만 하고 종료. 다음에 구독될 때 refetch
 
 문제 화면들의 구조:
 
 - 대부분 탭 구조
 - 기대 동작 — 탭 A에서 작업하고 탭 B의 목록이 갱신되는 것
-- 실제 — 탭 B 컴포넌트가 언마운트 상태라 해당 쿼리는 비활성
+- 탭 B 컴포넌트가 언마운트 상태라면 해당 쿼리는 비활성
 - invalidate가 남기는 것 — "다음에 볼 때 새로 받아라"는 메모뿐
 
 <div class="diagram" role="img" aria-label="활성 쿼리와 비활성 쿼리에서 invalidate 동작이 갈리는 구조">
 {% include diagrams/invalidate--active-inactive.svg %}
 </div>
 
-여기에 겹친 변수들 — 모달 닫은 뒤 목록 재마운트 타이밍, `staleTime` 설정, 캐시 gc 시점.
+다만 비활성 상태라는 사실만으로 재진입 후에도 목록이 그대로인 증상까지 설명되지는 않는다. 기본 설정에서는 무효화된 쿼리가 다시 마운트될 때 재요청된다. `staleTime`도 무효화로 인한 stale 판정을 보통 막지 않는다. 재마운트 설정, 쿼리 키 일치 여부와 아래의 핸들러 누락을 함께 봐야 한다.
 
 - 사용자 체감: "가끔 되고 가끔 안 되는" 동작
 
-- `refetchQueries`의 동작 — 활성 여부를 따지지 않고 지금 다시 요청
+- `refetchQueries`의 동작 — 기본적으로 필터에 맞는 활성·비활성 캐시 쿼리를 지금 다시 요청. 비활성화(`enabled: false`)된 쿼리나 `staleTime: 'static'` 쿼리는 제외
 - 조치 — `invalidateQueries`를 `refetchQueries`로 일괄 치환
 
 ```diff
@@ -59,6 +59,8 @@ thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 | 활성 쿼리 | 즉시 refetch | 즉시 refetch |
 | 비활성 쿼리 | stale 표시만 (lazy) | 즉시 refetch |
 | 네트워크 비용 | 필요한 만큼 | 안 보는 화면도 요청 |
+
+위 표는 기본 옵션과 재요청 가능한 캐시 쿼리를 기준으로 한다. `invalidateQueries({ queryKey, refetchType: 'all' })`로 비활성 쿼리까지 즉시 재요청할 수도 있다. 메서드 교체만이 해법은 아니다. [QueryClient 공식 문서](https://tanstack.com/query/latest/docs/framework/react/reference/QueryClient)
 
 이건 트레이드오프지 정답이 아니다.
 
@@ -107,7 +109,7 @@ if (keys.detail && data?.id) {
 여기서 `refetch`가 아니라 `invalidate`를 쓴 이유:
 
 - 상세 캐시 전체를 지금 다시 받으면 — 캐시에 남은 모든 상세 항목을 한꺼번에 요청
-- 상세의 갱신 필요 시점 — 사용자가 열어볼 때. 즉 lazy가 적절
+- 비활성 상세의 갱신 필요 시점 — 사용자가 열어볼 때. 활성 상세는 `invalidateQueries` 기본 동작으로 즉시 재요청
 
 목록은 refetch, 상세는 invalidate — 같은 핸들러 안에서 둘을 다르게 쓰는 것이 의도된 선택
 
@@ -154,7 +156,7 @@ useEffect(() => {
 
 ## 남는 교훈
 
-invalidate와 refetch의 차이는 "언제 다시 받느냐"가 아니라 **"안 보고 있는 데이터를 지금 받을 것이냐"** 다.
+이 사례에서 비교한 기본 동작의 차이는 **"안 보고 있는 캐시 데이터를 지금 받을 것이냐"** 였다. `invalidateQueries`는 stale 표시도 남기며, 재요청 범위는 옵션으로 바꿀 수 있다.
 
 - 답을 결정하는 변수: 화면 구조(탭 다수 여부) + 데이터 크기
 - 따라서 프로젝트마다 상이

@@ -1,5 +1,5 @@
 ---
-title:  "readOnly 에서 write 를 잡아냈다"
+title:  "readOnly 트랜잭션의 쓰기 SQL을 감지하는 테스트 만들기"
 subtitle: "테스트 가드레일 만들기"
 description: "테스트 가드레일 만들기"
 categories:
@@ -96,7 +96,7 @@ if (TransactionSynchronizationManager.isCurrentTransactionReadOnly()
 
 readOnly 위반 감지 후보 — JPA 레벨 dirty checking 감시, AOP로 서비스 메서드 검사 등.
 
-SQL 레벨을 택한 건 **거기가 마지막 관문이기 때문**이다.
+SQL 레벨을 택한 건 **이 DataSource를 쓰는 경로의 공통 관문이기 때문**이다.
 
 - JPA 우회 native query, QueryDSL 벌크 연산, JdbcTemplate 직접 호출 — 어떤 경로든 결국 `Statement` 통과
 - 상위 계층 감지 시 우회로 발생
@@ -105,7 +105,7 @@ SQL 레벨을 택한 건 **거기가 마지막 관문이기 때문**이다.
 |---|---|---|
 | 서비스 메서드 AOP | 애노테이션 붙은 호출 | 내부 호출·native 우회 |
 | JPA dirty checking | 엔티티 변경 | 벌크·native 우회 |
-| Statement 실행 직전 | 모든 SQL | 없음 |
+| Statement 실행 직전 | 래핑된 DataSource를 통과하는 SQL | SQL 분류가 놓치는 구문·별도 DataSource |
 
 ## 남는 교훈
 
@@ -114,7 +114,7 @@ SQL 레벨을 택한 건 **거기가 마지막 관문이기 때문**이다.
 - 1차 시도(5월 29일) — `readOnly = true`를 붙여 "선언". 되돌려짐
 - 2차 시도 — 위반을 **검출**하는 쪽으로 방향 전환
 
-선언은 코드베이스가 이미 그 규약을 지키고 있을 때만 통한다. 지키지 않는 코드가 남아 있는 상태에서 선언부터 붙이면 런타임에 터진다. 검출 장치는 반대다 — 지키지 않는 곳이 어디인지 먼저 알려주고, 정리된 영역부터 규약을 확대할 수 있게 해준다.
+`readOnly = true`는 트랜잭션 매니저·드라이버가 참고하는 힌트이며, 그 자체로 모든 쓰기를 차단하지는 않는다. 기존 쓰기 경로에 붙이면 환경에 따라 오류가 나거나 쓰기가 반영되지 않을 수 있다. 검출 장치는 반대다 — 지키지 않는 곳이 어디인지 먼저 알려주고, 정리된 영역부터 규약을 확대할 수 있게 해준다.
 
 - "조회 API가 write를 유발한다" — 코드 정독으로 알아내기 어려운 종류
 - 호출 체인 서너 단계 아래의 부수효과는 육안 식별 불가

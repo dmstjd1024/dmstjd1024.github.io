@@ -1,5 +1,5 @@
 ---
-title:  "TOCTOU 한 건을 고치는 대신 버그 클래스를 없앴다"
+title:  "SFTP 동시성 오류를 고치다 같은 패턴을 상위 계층에서 둘 더 찾았다"
 description: "SFTP 한 건이 아니라 check-then-act 패턴 전체를"
 
 categories:
@@ -66,7 +66,7 @@ for (String dir : dirs) {
 - 원격 디렉토리 생성을 `mkdir -p`에 위임
 
 ```java
-// 원격 디렉토리는 셸 mkdir -p 로 원자적으로 보장한다.
+// 원격 디렉토리 생성과 이미 존재하는 디렉토리 처리는 mkdir -p 에 위임한다.
 // SFTP 의 stat/mkdir 루프는 동시 업로드 시 TOCTOU race 가 발생하므로 사용 금지.
 String remoteDir = remoteFilePath.substring(0, remoteFilePath.lastIndexOf('/'));
 if (!remoteDir.isEmpty()) {
@@ -74,12 +74,12 @@ if (!remoteDir.isEmpty()) {
 }
 ```
 
-- `mkdir -p` → "없으면 만들고 있으면 성공"을 커널이 원자적으로 처리
-- check와 use 사이의 틈이 애초에 존재하지 않음
-- 동시 호출이 몇 개가 들어오든 race 발생 불가
+- `mkdir -p`는 부모 디렉토리를 순서대로 만들며, 이미 존재하는 디렉토리는 성공으로 처리한다
+- 전체 경로 생성이 단일 시스템 호출인 것은 아니다. 애플리케이션의 `stat → mkdir` 루프와 동시 생성 처리를 검증된 도구에 위임한 것이다
+- 다른 작업이 경로를 삭제·교체하는 경쟁까지 막는 것은 아니다
 - 35줄 → 20줄, 그중 중요한 건 삭제된 15줄
 
-<div class="diagram" role="img" aria-label="예외로 감싸는 방식과 틈 자체를 없애는 방식의 대비">
+<div class="diagram" role="img" aria-label="직접 예외 처리를 겹치는 방식과 디렉토리 생성을 도구에 위임하는 방식의 대비">
 {% include diagrams/toctou--class-vs-instance.svg %}
 </div>
 
@@ -115,7 +115,7 @@ public void setException(Exception exception) {
 
 ```java
 // status = CREATED → INSTALLING 원자적 UPDATE.
-// 영향받은 행 수가 1이면 락 획득, 0이면 다른 스레드가 이미 진입했음을 의미한다.
+// 영향받은 행 수가 1이면 상태 선점 성공, 0이면 CREATED 조건을 만족하는 행이 없음을 의미한다.
 int markInstalling(@Param("id") String id);
 ```
 
@@ -139,12 +139,12 @@ Optional<Agency> findByIdForUpdate(@Param("id") String id);
 | 방식 | 쓸 때 | 비용 |
 |---|---|---|
 | 낙관적 재시도 | 충돌이 드물고 재시도가 안전(멱등)할 때 | 충돌이 잦으면 재시도 폭풍 |
-| 원자적 위임 | 연산이 한 문장으로 표현될 때 (`mkdir -p`, 조건부 UPDATE) | 표현 가능한 연산이 제한적 |
+| 검증된 도구·원자적 연산에 위임 | 디렉토리 생성은 `mkdir -p`, 상태 선점은 조건부 UPDATE로 맡길 때 | 도구마다 보장 범위가 다름 |
 | 비관락 | 여러 문장을 하나의 임계 구역으로 묶어야 할 때 | 락 대기, 데드락 가능성 |
 
 - 첫 번째 코드의 시도: 사실상 낙관적 재시도 — 실패하면 다시 확인하는 방식
-- 그러나 SFTP 디렉토리 생성은 훨씬 싼 원자적 연산으로 표현 가능
-- 결론: 재시도 로직을 정교하게 다듬는 건 처음부터 잘못된 방향
+- 이 디렉토리 생성 경로에서는 `mkdir -p`로 이미 존재하는 경우의 처리를 위임할 수 있었다
+- 결론: 직접 만든 재시도 루프를 늘리기 전에 기존 도구의 보장 범위를 확인한다
 
 ## 남는 교훈
 

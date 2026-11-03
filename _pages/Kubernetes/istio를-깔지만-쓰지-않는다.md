@@ -94,7 +94,7 @@ components:
       enabled: true
 ```
 
-`minimal` 은 **pilot 과 게이트웨이만** 깐다. 사이드카 자동 주입 같은 무거운 기능은 빠진다.
+[`minimal` 기본 프로파일은 컨트롤 플레인만 설치한다](https://istio.io/latest/docs/setup/additional-setup/config-profiles/). 위 설정은 게이트웨이를 별도로 켠 것이다. 워크로드에 사이드카가 붙는지는 네임스페이스·파드의 주입 설정으로 결정된다.
 자원도 제한해뒀다 — pilot 이 CPU 500m, 메모리 512Mi 상한이다.
 
 즉 **최소한으로 깔아두고 실제로는 거의 안 쓰는 상태**다. 오퍼레이터가 Istio 리소스를
@@ -208,7 +208,7 @@ kubectl apply -f "${ISTIO_GATEWAY_CONFIG}" || {
   노출을 해결하기 때문
 - `--istio-port=7050` 의 값은 Istio 포트가 아니라 **오더러의 gRPC 포트**다
 - 그래도 필드를 채우는 이유는 **CRD 스키마가 요구**하고, 앵커 피어 주소 계산에 쓰이기 때문
-- 설치는 `minimal` 프로파일 — **pilot 과 게이트웨이만**, 자원도 제한
+- 설치는 `minimal`에 **게이트웨이를 별도로 활성화**한 구성이고, 자원도 제한
 - 폐쇄망 대응은 **`--hub` 하나**로 끝난다. Helm 보다 간결한 지점
 - ⚠️ 겪은 사고는 Istio 자체가 아니라 **설치 순서**였다. `istioctl operator init` 은
   즉시 반환되는데 파드는 아직 뜨는 중이라, 다음 컴포넌트가 먼저 시작됐다.

@@ -1,5 +1,5 @@
 ---
-title:  "리액트 시작하기 (6 ~ 장)"
+title:  "리액트 시작하기: State와 Hooks"
 subtitle: "State 와 Hooks — useState 부터 useRef 까지"
 description: "State 와 Hooks — useState 부터 useRef 까지"
 categories:
@@ -12,7 +12,7 @@ date: 2025-07-12
 thumbnail: "/assets/img/thumbnail/react_thumbnail.webp"
 ---
 ## State
-- 리액트 Component의 상태를 관리하는 객체
+- 리액트 Component가 렌더 사이에 기억하는 값. 클래스의 `this.state`는 객체이며 `useState`는 숫자·문자열 등도 저장할 수 있다.
 - state는 개발자가 정의한다.
 - 랜더링이나 데이터의 흐름에 사용되는 값들만 state에 포함시켜야한다.
   - state가 변경될 경우, 컴포넌트가 재 랜더링 되기 때문에 랜더링과 데이터의 흐름에 관계없는 데이터를 저장하면, 컴포넌트가 재 랜더링되어 성능에 영향을 줄 수 있다.
@@ -30,7 +30,7 @@ class LikeButton extends React.Component {
 - state는 직접 수정할 수 없다.
 
 ```jsx
-  (X)
+  // 잘못된 예: 생성자 밖에서 state 직접 대입
   this.state = {name : 'Inje'}
   
   this.setState({
@@ -182,7 +182,7 @@ const memoizedValue = useMemo( () => {
     [의존성 변수1, 의존성 변수2]
 );
 ```
-- 랜더링에서 일어날 내용을 넣으면 안됨 ex) `useEffect`에서 실행되어야 할 side effect
+- 렌더링 중 계산할 순수한 로직을 넣는다. `useEffect`에서 실행해야 할 side effect는 넣으면 안 된다.
 - 의존성 배열을 넣지 않으면 컴포넌트가 랜더링 될 때마다 실행된다.
 
 ```jsx
@@ -190,7 +190,7 @@ const memoizedValue = useMemo(
         () => computeExpensiveValue(a,b)
 );
 ```
-- 의존성배열이 빈 배열인 경우, 컴포넌트 mount 시에만 호출된다. -> mount 이후에는 변경되지 않음
+- 의존성 배열이 빈 배열이면 보통 초기 계산 결과를 재사용한다. 다만 개발 StrictMode에서는 계산을 두 번 호출할 수 있고 React가 캐시를 버릴 수도 있으므로 영구 저장 보장은 아니다.
 
 ```jsx
 const memoizedValue = useMemo(
@@ -216,8 +216,8 @@ const memoizedCallback = useCallback(
   useMemo(() => 함수, 의존성 배열); // 위아래 둘다 같은 내용
 ```
 ### useRef()
-- reference를 사용하기 위한 Hook -> 특정 컴포넌트를 접근할 수 있는 객체
-- `refObject.current` 속성 -> ref 하는 엘리먼트
+- 렌더에 쓰이지 않는 값을 리렌더 사이에 보관하는 Hook
+- `refObject.current`에는 임의의 값을 저장할 수 있고, JSX의 `ref`에 연결하면 해당 DOM 엘리먼트가 들어간다.
 
 ```jsx
 const refContainer = useRef(null);
@@ -243,7 +243,7 @@ function TextInputWithFocusButton() {
 }
 ```
 내부의 데이터가 변경되었을 때, 별도로 알려주지 않는다.
-`useCallback`은 자식 엘리먼트가 변경되었을 때, 알림을 받을 수 있다.
+DOM 노드의 연결·해제를 알고 싶으면 함수 형태의 ref(callback ref)를 전달한다. `useCallback`은 그 함수의 참조를 안정화할 뿐, 스스로 변경 알림을 주지는 않는다.
 ### Callback Ref
 
 ```jsx
@@ -271,7 +271,7 @@ function MyComponent(props) {
     }
 }
 ```
-- 리액트 함수 컴포넌트에서만 Hook을 호출해야 한다.
+- 리액트 함수 컴포넌트 또는 Custom Hook 안에서 Hook을 호출해야 한다.
 - 일반적인 javascript에서 호출 X
 `eslint-plugin-react-hooks`를 사용하여 Hook의 규칙을 검사할 수 있다.
 

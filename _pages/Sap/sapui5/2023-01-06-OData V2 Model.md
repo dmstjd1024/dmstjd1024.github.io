@@ -19,13 +19,13 @@ redirect_from:
 
 oData V2 모델을 사용하면 oData Service로 부터 데이터 제어를 가져올 수 있다.
 
-oData V2 모델은 서버측의 모델이며 데이터 셋은 단지 서버에서 사용가능하고 클라이언트들은 단순히 요청된 데이터만 알 수 있다. 각 정렬과 필터링 작동은 서버 위에 올라간다. 클라이언트는 서버에 요청을 보내고 응답한 데이터를 보인다.
+oData V2 모델은 서버측의 모델이며 데이터 셋은 단지 서버에서 사용가능하고 클라이언트들은 단순히 요청된 데이터만 알 수 있다. 기본 Server 모드에서는 정렬과 필터링이 서버에서 실행된다. V2 모델은 아래 표처럼 Client/Auto 모드의 클라이언트 정렬·필터링도 지원한다. 클라이언트는 서버에 요청을 보내고 응답한 데이터를 보인다.
 
 백앤드 요청은 바인딩 목록, 컨텍스트 바인딩들, 그리고 CRUD 함수들이 ODataModel에 의해 제공된다. 속성 바인딩은 요청이 되지 않는다.
 
-OData model은 현재 2.0 버전까지 지원한다.
+이 글에서 다루는 두 모델은 OData 2.0을 지원한다. SAPUI5에는 별도로 OData V4 모델(`sap.ui.model.odata.v4.ODataModel`)도 있다.
 
-2가지 버전의 OData 모델은 `sap.ui.model.odata.ODataModel` 과 `sap.ui.model.odata.v2.ODataModel`을 참조한다. `v2.ODataModel`은 기능이 더해졌고, 참조된 이 모델 안에서 새로운 기능을 참조만 할 것이다. `sap.ui.model.odata.ODataModel`은 지원되지 않으며 **SAP는 `v2.ODataModel` 만 사용할 것을 추천한다.**
+2가지 버전의 OData 모델은 `sap.ui.model.odata.ODataModel` 과 `sap.ui.model.odata.v2.ODataModel`을 참조한다. `v2.ODataModel`은 기능이 더해졌고, 참조된 이 모델 안에서 새로운 기능을 참조만 할 것이다. `sap.ui.model.odata.ODataModel`은 deprecated(신규 사용이 권장되지 않는 상태)이며 **SAP는 `v2.ODataModel` 만 사용할 것을 추천한다.**
 
 | 기능  | v2.ODataModel | ODataModel |
 | :------------: | :-----------: | :-------------------: |
@@ -116,6 +116,7 @@ var oModel = new ODataModel({
 
 ```
 var oModel = new sap.ui.model.odata.v2.ODataModel({
+    serviceUrl: "https://services.odata.org/V2/Northwind/Northwind.svc/",
     headers: {
         "myHeader1" : "value1",
         "myHeader2" : "value2"
@@ -158,9 +159,9 @@ OData Model 내 바인딩 샘플은 Northwind 데모 서비스에서 부터 가�
 - 전체 경로
 
 ```
-"/Customer('ALFKI')/CompanyName"
-"/Customer('ALFKI')/Address"
-"/Customer('ALFKI')/Orders"
+"/Customers('ALFKI')/CompanyName"
+"/Customers('ALFKI')/Address"
+"/Customers('ALFKI')/Orders"
 ```
 
 - 단일 엔티티 또는 엔티티들의 컬렉션이 사용되는 탐색 속성
@@ -174,7 +175,7 @@ OData Model 내 바인딩 샘플은 Northwind 데모 서비스에서 부터 가�
 
 OData 서비스에서 요청한 데이터는 OData 모델에 캐시된다. `getProperty()` 메서드에 의해 엑세스 될 수 있으며, 엔티티 객체 또는 값을 리턴한다. 이 메서드는 백앤드로부터 요청한 데이터가 아니며, 단지 미리 요청되거나 캐시된 엔티티들로 엑세스 될 수 있다.
 ```
-oModel.getProperty("/Customer('ALFKI')/Address")
+oModel.getProperty("/Customers('ALFKI')/Address")
 ```
 
 이 메소드들로 싱글엔티티들과 속성들을 엑세스 할 수 있다. 엔티티 집합들을 엑세스하면, 바인딩 목록으로 읽기 전용 엔티티들을 바인딩 컨텍스트로 가져올 수 있다. 이 메서드가 리턴한 값들은 JSON 모델 안에서 참조된 것이 아닌 카피된 데이터이다.
@@ -238,7 +239,7 @@ oModel.update("/Products(999)", oData, {success: mySuccessHandler, error: myErro
 ```
 
 - 엔티티 삭제
-delete 함수는 DELETE 요청으로 작동하며, 어플리케이션에서는 삭제해야할 엔트리의 경로를 명시해야한다.
+`remove` 함수는 DELETE 요청으로 작동하며, 어플리케이션에서는 삭제해야할 엔트리의 경로를 명시해야한다.
 
 ```
 oModel.remove("/Products(999)", {success: mySuccessHandler, error: myErrorHandler});
@@ -250,10 +251,10 @@ oModel.remove("/Products(999)", {success: mySuccessHandler, error: myErrorHandle
 
 - 자식 엔티티 생성  
 
-부모 엔티티에 새로운 자식 엔티티 생성은 한번의 싱글 API 요청으로 가능하지 않다. 이를 만들려면 부모, 자식의 생성 엔티티 API 호출을 연결하면 만들 수 있고 아래의 샘플은 판매 주문과 주문 항목을 모두 생성한다.
+아래 예제는 부모를 먼저 저장하고 성공 콜백에서 자식을 생성하는 순차 방식이다. 판매 주문과 주문 항목에 두 번의 제출을 사용한다. 지원 여부는 사용하는 UI5 버전과 서비스에 따라 확인해야 하며, 이를 모든 V2 모델에서 단일 요청 생성이 불가능하다는 뜻으로 읽으면 안 된다. [UI5 V2 문서의 Deep Create](https://help.sap.com/docs/SAPUI5/3f47ec0c79a547aeaa23090b74c9520c/6c47b2b39db9404582994070ec3d57a2.html?version=1.120)도 참고한다.
 
 ```
-var oParentContext, oModel = this.getView().getModel(); 
+var oParentContext, oChildContext, oModel = this.getView().getModel();
 
 oParentContext = oModel.createEntry("SalesOrderSet", { //부모 엔티티 생성
 	properties : {
@@ -362,7 +363,7 @@ OData 프로토콜은 명시적으로 다른 URL 파라미터이다.
 확장 파라미터는 어플리케이션에서 그들의 네비게이션 속성들과 함께 연결된 엔티티들을 읽는 걸 허락한다.  
 
 ```
-oControl.bindElement("/Category(1)", {expand: "Products"}); 
+oControl.bindElement({path: "/Categories(1)", parameters: {expand: "Products"}});
 
 oTable.bindRows({
     path: "/Products",
@@ -370,16 +371,16 @@ oTable.bindRows({
 });
 
 ```
-예로 Category(1) 의 모든 제품들은 서버 응답안에 inline으로 내장되어 하나의 요청만 부른다. 모든 Products 위한 카테고리는 각각의 product 위한 응답에 inline으로 내장되어있다.
+예로 Categories(1)의 모든 제품들은 서버 응답안에 inline으로 내장되어 하나의 요청만 부른다. 모든 Products 위한 카테고리는 각각의 product 위한 응답에 inline으로 내장되어있다.
 
 - Select parameter
 
 선택 파라미터는 어플리케이션이 엔티티를 요청할 때 읽는 속성들의 서브셋으로 정의하는 것을 허락한다.
 ```
-oControl.bindElement("/Category(1)", {expand: "Products", select: "Name,ID,Products"}); 
-oTable.bindRows({ path: "/Products", parameters: {select: "Name,Category"} });
+oControl.bindElement({path: "/Categories(1)", parameters: {expand: "Products", select: "CategoryName,CategoryID,Products"}});
+oTable.bindRows({ path: "/Products", parameters: {select: "ProductName,Category"} });
 ```
-예를 들어 `Name`, `ID` 그리고 `ofCategory(1)` 속성 뿐만 아니라 제품에 내장된 모든 속성들도 응답한다. 이 속성과 카테고리는 각각의 제품에 포함되며 카테고리 속성은 관련된 카테고리 항목에 대한 링크를 포함한다.
+첫 번째 예제는 카테고리의 `CategoryName`, `CategoryID`와 `$expand`로 포함한 `Products`를 요청한다. 이 속성과 카테고리는 각각의 제품에 포함되며 카테고리 속성은 관련된 카테고리 항목에 대한 링크를 포함한다.
 
  - Custom query options
 
@@ -399,10 +400,9 @@ oTable.bindRows({
 
 만약 `bindElement()`를 사용하면, 아래와 같이 파라미터를 명시할 수 있다.
 ```
-oTextField.bindElement("/GetProducts", {
-	custom: {
-		"price" : "500"
-	}
+oTextField.bindElement({
+	path: "/Products(1)",
+	parameters: {custom: {price: "500"}}
 });
 ```
 
@@ -431,7 +431,7 @@ ODataContextBinding 생성자 또는 ODataListBinding 생성자에 해당하는 
 
 그러나 이러한 매개변수 사용하는 바인딩 인스턴스와 부모쌍에 대한 `preliminaryContext`를 바꾼다.
 
-예를 들면, 부모 바인딩인 "/Product{1}" 경로를 가진 컨텍스트 바인딩을 보여준다.(`sap.m.Panel` 경로로 바인딩된 컨텍스트들을 생성) 'Supplier' 경로를 가진 의존적 관련 바인딩은 product의 모든 supplier를 보여주는 테이블로 생성된다. ( `sap.ui.table.Table` 제어 위한 행 을 생성)
+예를 들면, 부모 바인딩인 "/Products(1)" 경로를 가진 컨텍스트 바인딩을 보여준다.(`sap.m.Panel` 경로로 바인딩된 컨텍스트들을 생성) 'Supplier' 경로를 가진 의존적 관련 바인딩은 product의 모든 supplier를 보여주는 테이블로 생성된다. ( `sap.ui.table.Table` 제어 위한 행 을 생성)
 ![](https://sapui5.hana.ondemand.com/docs/topics/loioe2fe691bea0f4181b6d835c11c92e9ba_LowRes.png)
 
 **싱글 바인딩 예제** 
@@ -440,8 +440,8 @@ ODataContextBinding 생성자 또는 ODataListBinding 생성자에 해당하는 
 
 | 요청 넘버 | 요소 |
 |:--:|:--:|
-|1| GET Product(1) |
-|1| GET Product(1)/Supplier |
+|1| GET Products(1) |
+|2| GET Products(1)/Supplier |
 
 아래에서 보여주는 바인딩 매개변수를 설정하여 요청을 최적화 할 수 있다.
 ![](https://sapui5.hana.ondemand.com/docs/topics/loio57a4d12d4e5d41ecb74298a55b60d0fb_LowRes.png)
@@ -452,7 +452,7 @@ ODataContextBinding 생성자 또는 ODataListBinding 생성자에 해당하는 
 
 | 요청 넘버 | 요소 |
 |:--:|:--:|
-|1| GET Product(1),GET Product(1)/Supplier|
+|1| GET Products(1), GET Products(1)/Supplier |
 
 ### 함수 임포트
 ODataModel은 `callFunction()` 메소드에 의해 임포트나 또는 액션 함수들의 부르는 것을 지원한다.
@@ -602,7 +602,7 @@ Example: `{:= ${path:'target>extensions/[${name} === \'semantics\']/value'} === 
                 }],
                 "sap:label" : "Company Name",
                 "sap:creatable" : "false",
-                "sap:updatable" : "false"
+                "sap:updatable" : "false",
                 "Org.OData.Core.V1.Computed" : {
                     "Bool" : "true"
                 }
@@ -673,9 +673,9 @@ OData V4 시나리오와 대조적으로 OData V2는 코드 리스트 서비스�
 service's metadata.xml 파일 내 통화 코드와 단위 코드 리스트 문서
 ```
 ...
-<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
-<edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
-<edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+<edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+<edmx:Include Namespace="Org.OData.Core.V1" Alias="Core"/>
+<edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
 ...
 <EntityType Name="Product">
     ...
@@ -716,13 +716,13 @@ service's metadata.xml 파일 내 통화 코드와 단위 코드 리스트 문�
 <Annotations
     xmlns="http://docs.oasis-open.org/odata/ns/edm"
     Target="GWSAMPLE_BASIC.GWSAMPLE_BASIC_Entities"> 
-    <Annotation Term="SAP__CodeList.CurrencyCodes">
+    <Annotation Term="CodeList.CurrencyCodes">
         <Record>
             <PropertyValue Property="Url" String="./$metadata"/>
             <PropertyValue Property="CollectionPath" String="SAP__Currencies"/>
         </Record>
     </Annotation>
-    <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+    <Annotation Term="CodeList.UnitsOfMeasure">
         <Record>
             <PropertyValue Property="Url" String="./$metadata"/>
             <PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/>
@@ -730,7 +730,9 @@ service's metadata.xml 파일 내 통화 코드와 단위 코드 리스트 문�
     </Annotation>
 </Annotations>
 
-<Annotations Target="SAP__self.Currency/CurrencyCode">
+<Annotations
+    xmlns="http://docs.oasis-open.org/odata/ns/edm"
+    Target="GWSAMPLE_BASIC.SAP__Currency/CurrencyCode">
     <Annotation Term="Common.Text" Path="Text" />
     <Annotation Term="Common.UnitSpecificScale" Path="DecimalPlaces" />
     <Annotation Term="CodeList.StandardCode" Path="ISOCode" />
@@ -756,10 +758,10 @@ service's metadata.xml 파일 내 통화 코드와 단위 코드 리스트 문�
               <Record>
                 <PropertyValue Property="Name" PropertyPath="ExternalCode" />
                 <PropertyValue Property="Alias" String="ExternalCode" />
-              <Record>
+              </Record>
             </Collection>
           </PropertyValue>
-        <Record>
+        </Record>
       </Collection>
     </Annotation>
 </Annotations>

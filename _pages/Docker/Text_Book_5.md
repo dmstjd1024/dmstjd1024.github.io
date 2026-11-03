@@ -127,7 +127,10 @@ VOLUME /app/data
 
 이 이미지로 컨테이너를 실행하면, `-v` 를 안 써도 볼륨이 자동으로 만들어진다.
 
+위 Dockerfile을 `Dockerfile`로 저장한 뒤 이미지를 빌드한다.
+
 ```docker
+docker image build -t vol-demo .
 docker container run --name vol-auto -d vol-demo sleep 60
 docker volume ls
 ```
@@ -162,6 +165,8 @@ docker volume prune
 사용법은 볼륨과 같은 `-v` 인데, 볼륨 이름 대신 **경로**를 적는다.
 
 ```docker
+mkdir -p hostdir
+printf '호스트에서 만든 파일\n' > hostdir/from-host.txt
 docker container run --rm -v "$(pwd)/hostdir:/app/data" diamol/base \
   cat /app/data/from-host.txt
 ```
@@ -266,7 +271,7 @@ TZ  alpine-release  apk  ca-certificates  conf.d ...
 
 ### 3. 그 외 주의할 점
 
-- 호스트에 없는 경로를 마운트하면 도커가 **빈 디렉터리를 만들어버린다** (오타 주의)
+- `-v`로 호스트에 없는 경로를 지정하면 도커가 **빈 디렉터리를 만든다**. `--mount type=bind`는 기본적으로 없는 경로를 오류로 처리한다 (오타 주의)
 - 리눅스에서는 호스트 파일의 소유자·권한 때문에 컨테이너가 쓰기에 실패할 수 있다
 - 여러 컨테이너가 같은 경로에 동시에 쓰면 충돌한다 — 도커가 막아주지 않는다
 

@@ -1,5 +1,5 @@
 ---
-title:  "팀 설정 파일을 내 것처럼 고칠 수 없다"
+title:  "공유 설정 파일의 로컬 변경 때문에 git pull이 충돌했다"
 subtitle: "skip-worktree 로 흡수하기"
 description: "skip-worktree 로 흡수하기"
 categories:
@@ -31,8 +31,8 @@ card_thumbnail: "/assets/img/thumbnail/github_card.png"
 
 ## 설정 파일이 내 것이 아니었다
 
-`settings.json` 을 저장소에 넣었더니 매일 `pull` 이 충돌로 막혔다. 원인이 셋이었고, 셋 다
-**나 아닌 것들이 그 파일을 고치고 있었다.**
+`settings.json` 과 `.gitconfig` 를 저장소에 넣었더니 매일 `pull` 이 충돌로 막혔다. 원인이 셋이었고,
+**외부 도구와 명령이 공유 파일들을 고치고 있었다.**
 
 | 누가 | 무엇을 쓰나 |
 |---|---|
@@ -94,7 +94,7 @@ skip-worktree 로 로컬 변경만 무시한다
 | 대상 | pull 로 전파되나 |
 |---|---|
 | 파일 내용 (`CLAUDE.md`) | 된다 |
-| 심볼릭 링크 | **안 된다** — 링크는 내용이 아니다 |
+| 홈 디렉터리에 만드는 심볼릭 링크 | **안 된다** — `install.sh` 가 별도로 생성한다 |
 | `skip-worktree` 플래그 | **안 된다** — 인덱스에 있고 커밋 대상이 아니다 |
 | LaunchAgent 등록 주기 | **안 된다** — launchd 가 들고 있다 |
 
@@ -127,7 +127,7 @@ skip-worktree 로 로컬 변경만 무시한다
 ## 정리
 
 - 저장소 하나 + 심링크로 맥 4대가 같은 `CLAUDE.md` 를 본다
-- `settings.json` 은 **외부 도구·Claude 자신·git config** 셋이 함께 더럽힌다
+- 공유 설정 파일은 **외부 도구·Claude 자신·git config** 가 바꾼다
 - `skip-worktree`로 로컬 변경을 숨길 수 있지만, 같은 파일의 원격 변경과 병합되는 것은 아니다
 - 확정값은 프로파일별 `settings.local.json` 으로 망명시킨다 (deep-merge 로 이긴다)
 - **pull 은 파일 내용만 옮긴다.** 심링크·플래그·등록 주기는 `install.sh` 재실행이 필요하다

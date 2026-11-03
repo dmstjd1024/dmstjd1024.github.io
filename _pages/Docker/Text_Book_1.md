@@ -33,8 +33,8 @@ docker container run diamol/ch02-hello-diamol
 </div>
 ### 컨테이너를 원격 컴퓨터처럼 사용하기
 
-`--tty` : 터미널 세션을 통해 컨테이너 조작
-`--interactive` : 컨테이너에 접속된 상태
+`--tty` : 가상 터미널 할당
+`--interactive` : 표준 입력을 열린 상태로 유지
 `docker container run --interactive --tty diamol/base`
 
 #### 실행중인 모든 컨테이너 정보

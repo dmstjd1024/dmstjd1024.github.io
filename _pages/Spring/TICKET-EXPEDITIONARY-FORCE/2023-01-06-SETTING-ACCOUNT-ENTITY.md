@@ -79,9 +79,7 @@ public class Account {
 
 @Lob
 
-Lob은 Large Obejct란 뜻으로 프로필사진같은 경우 데이터가 크기 때문에 지정하는 것도 있고
-  데이터를 안정성 때문이다. -> 만약 이미지 경로로 지정해놨을 때 실수로 이미지 경로의 파일들이
-  사라지는 경우 이미지파일을 찾을 수 없게되기 때문이다.
+LOB은 Large Object로 큰 데이터를 저장하는 매핑이다. 위 예제의 `String profileImage`에 붙이면 문자 LOB(CLOB)으로 매핑되며, 이미지 파일을 자동으로 DB에 넣어 주지는 않는다. 문자열이 파일 경로라면 실제 파일 삭제 문제도 그대로 남는다. 이미지 바이너리를 DB에 저장하려면 `byte[]` 같은 바이너리 타입과 LOB 매핑을 사용해야 한다.
 
 @Enumerated(EnumType.STRING)
 

@@ -1,5 +1,5 @@
 ---
-title:  "개념부터 기본 사용법까지"
+title:  "Jira의 기본 개념과 사용법"
 subtitle: "JIRA 입문"
 description: "JIRA 입문"
 categories:
@@ -33,12 +33,12 @@ Atlassian(아틀라시안)에서 만든 **이슈 트래커(Issue Tracker, 할 �
 
 | 제품 | 용도 |
 |---|---|
-| Jira Software | 개발팀용. 스프린트, 보드, 백로그 제공 |
+| Jira | 개발·비개발팀 업무 관리. 스프린트, 보드, 백로그, 목록 등 제공 |
 | Jira Service Management | 고객·사내 문의 접수(헬프데스크)용 |
-| Jira Work Management | 비개발 부서(인사, 마케팅 등) 업무 관리용 |
+| Jira Product Discovery | 제품 아이디어 수집·우선순위 관리용 |
 
-- 개발자가 "지라"라고 하면 보통 **Jira Software**를 뜻한다
-- 이 글도 Jira Software 기준으로 설명한다
+- Jira Software와 Jira Work Management Cloud는 2024년 **Jira**로 통합됐다. [Atlassian 안내](https://www.atlassian.com/licensing/jira-work-management)
+- 이 글은 Jira Cloud의 소프트웨어 팀 기능을 중심으로 설명한다
 
 핵심 개념과 용어
 =====
@@ -104,7 +104,7 @@ JIRA에서 관리하는 **일 하나의 단위**
 - 흐름: 백로그에 이슈를 쌓아두고 → 이번 스프린트에 할 것만 골라 옮기고 → 기간이 끝나면 스프린트 종료
 
 ## 보드(Board)
-스프린트에 담긴 이슈를 **상태별 열(column)로 보여주는 화면**
+이슈를 **상태에 매핑된 열(column)로 보여주는 화면**. 스크럼 보드에서는 진행 중인 스프린트를, 칸반 보드에서는 스프린트 없이 흐르는 작업을 본다
 
 ```
 | 할 일   | 진행 중  | 리뷰 중  | 완료    |
@@ -177,7 +177,7 @@ O  "카드 결제 후 주문 상태가 '결제대기'로 남는 문제"
 - `duplicates`: 중복 이슈일 때
 
 ## 5. Git 연동
-브랜치명이나 커밋 메시지에 **이슈 키를 넣으면 자동으로 이슈에 연결**된다.
+Git 호스팅과 Jira를 먼저 연결해야 한다. 연결된 저장소에서 브랜치명이나 커밋 메시지에 **이슈 키를 넣으면 자동으로 이슈에 연결**된다.
 
 ```bash
 # 브랜치명에 이슈 키 포함
@@ -194,7 +194,7 @@ JQL(Jira Query Language)은 이슈를 조건으로 걸러내는 검색 문법이
 
 ```sql
 -- 내가 담당인 미완료 이슈
-assignee = currentUser() AND status != Done
+assignee = currentUser() AND statusCategory != Done
 
 -- SHOP 프로젝트의 이번 스프린트 버그
 project = SHOP AND issuetype = Bug AND sprint in openSprints()
@@ -231,7 +231,7 @@ project = SHOP AND assignee is EMPTY AND status = "To Do"
 | 타입 | 특징 |
 |---|---|
 | 팀 관리형(Team-managed) | 프로젝트 관리자가 직접 설정 변경. 설정이 이 프로젝트에만 적용됨. 간단함 |
-| 회사 관리형(Company-managed) | Jira 관리자만 설정 변경. 여러 프로젝트가 설정을 공유. 복잡하지만 일관성 유지 |
+| 회사 관리형(Company-managed) | Jira 관리자가 공통 스킴을 관리하고 프로젝트 관리자가 일부 설정을 관리. 여러 프로젝트가 설정을 공유할 수 있음 |
 
 - 처음 시작하거나 팀 하나만 쓴다면 **팀 관리형**이 편하다
 - 여러 팀이 같은 워크플로우·필드를 써야 한다면 **회사 관리형**
@@ -256,6 +256,7 @@ project = SHOP AND assignee is EMPTY AND status = "To Do"
 주의: 상태를 너무 많이 만들면 팀원이 어디로 옮겨야 할지 헷갈린다. **5개 이내**를 권장한다.
 
 ## 3. 이슈 타입과 필드 설정
+아래의 스킴 설정은 회사 관리형 기준이다. 팀 관리형은 프로젝트 내부에서 별도로 설정한다.
 - **이슈 타입 스킴(Issue Type Scheme)**: 이 프로젝트에서 쓸 이슈 타입 목록을 정한다
 - **화면 스킴(Screen Scheme)**: 이슈 생성·수정·조회 화면에 어떤 필드를 보일지 정한다
 - **사용자 정의 필드(Custom Field)**: 기본 필드로 부족할 때 추가 (예: "배포 환경", "고객사")
@@ -263,6 +264,7 @@ project = SHOP AND assignee is EMPTY AND status = "To Do"
 사용자 정의 필드는 최소한으로 만든다. 필드가 많으면 이슈 생성이 번거로워져서 팀원이 대충 채우게 된다.
 
 ## 4. 권한 설정
+권한 스킴은 회사 관리형에서 사용한다. 팀 관리형은 접근 수준과 프로젝트 역할로 권한을 관리한다.
 - **역할(Role)**: 프로젝트 안에서의 역할 (Administrator, Member, Viewer)
 - **권한 스킴(Permission Scheme)**: 각 역할이 무엇을 할 수 있는지 정의
   - 이슈 생성, 이슈 삭제, 워크플로우 전환, 스프린트 관리 등을 개별 제어

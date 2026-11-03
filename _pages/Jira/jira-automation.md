@@ -63,7 +63,7 @@ project = SHOP AND status = "In Progress" ORDER BY created DESC
 | `WAS` / `WAS NOT` | 과거에 그 값이었다 | `status WAS "Rejected"` |
 | `CHANGED` | 값이 바뀐 적 있다 | `status CHANGED AFTER -1d` |
 
-`~`는 **부분 일치 검색**이다. `summary ~ "결제"`는 제목에 "결제"가 들어간 이슈를 모두 찾는다.
+`~`는 텍스트 검색 연산자다. 단순한 문자열 포함 검사와 같지 않으며, 토큰화·어간 분석 등 검색 규칙을 따른다. `summary ~ "결제"`도 제목에 그 문자열이 든 모든 이슈를 반드시 찾는다는 뜻은 아니다. [Atlassian 텍스트 검색 문서](https://support.atlassian.com/jira-software-cloud/docs/search-for-issues-using-the-text-field/)
 
 `WAS`와 `CHANGED`가 JQL의 진짜 강점이다. 현재 상태가 아니라 **이력**을 검색한다.
 
@@ -96,7 +96,7 @@ created >= startOfDay()
 resolutiondate >= startOfWeek()
 
 -- 마감일이 지났는데 아직 안 끝난 이슈
-duedate < now() AND status != Done
+duedate < now() AND statusCategory != Done
 ```
 
 ## 자주 쓰는 함수
@@ -119,10 +119,10 @@ duedate < now() AND status != Done
 
 ```sql
 -- 1. 내가 오늘 할 일
-assignee = currentUser() AND status != Done AND sprint IN openSprints()
+assignee = currentUser() AND statusCategory != Done AND sprint IN openSprints()
 ORDER BY priority DESC
 
--- 2. 내가 리뷰해야 할 이슈
+-- 2. 다른 담당자의 리뷰 대기 이슈
 status = "In Review" AND assignee != currentUser()
 AND sprint IN openSprints()
 
@@ -138,7 +138,7 @@ ORDER BY updated ASC
 sprint IN openSprints() AND created >= startOfWeek()
 
 -- 6. 이번 릴리스에 포함될 미완료 이슈
-fixVersion = "v2.1.0" AND status != Done
+fixVersion = "v2.1.0" AND statusCategory != Done
 
 -- 7. 최근 일주일간 생성된 버그
 project = SHOP AND issuetype = Bug AND created >= -1w
@@ -151,7 +151,7 @@ project = SHOP AND sprint IS EMPTY AND updated <= -30d
 reporter = currentUser() AND resolution = Unresolved
 
 -- 10. 우리 팀 이슈 중 마감 임박
-assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
+assignee IN membersOf("backend-team") AND duedate <= 3d AND statusCategory != Done
 ```
 
 4번 쿼리는 생성된 지 3일 이상 지났고, 현재 진행 중이면서 최근 3일 동안 상태 변경이 없던 이슈를 찾는다. `status CHANGED BEFORE -3d`만 쓰면 과거의 오래된 변경 이력 때문에 오늘 다시 진행 중이 된 이슈도 포함될 수 있다.
@@ -225,8 +225,9 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 ```
 트리거: 이슈 전환됨 (→ 완료)
 조건: 이슈 타입 = 서브태스크
-조건: 같은 부모의 모든 서브태스크가 완료 상태
-액션: 부모 이슈를 완료로 전환
+분기: 관련 이슈 → 부모
+  조건: 부모의 모든 서브태스크가 완료 상태
+  액션: 현재 분기의 이슈(부모)를 완료로 전환
 ```
 
 서브태스크를 다 끝내고도 부모 이슈를 안 닫아서 보드에 남아 있는 상황을 막는다.
@@ -250,7 +251,7 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 
 앞에서 만든 4번 JQL을 그대로 쓴다. **JQL과 자동화는 이렇게 붙여 쓸 때 위력이 나온다.**
 
-### 4. 긴급 버그는 우선순위 자동 설정 + 팀 알림
+### 4. 긴급 버그는 담당자 자동 지정 + 팀 알림
 
 ```
 트리거: 이슈 생성됨
@@ -264,7 +265,7 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 
 ```
 트리거: 예약 (매일 오전 9시)
-       JQL: duedate <= 2d AND status != Done
+       JQL: duedate <= 2d AND statusCategory != Done
 액션: 담당자에게 이메일 발송
 ```
 
@@ -272,9 +273,10 @@ assignee IN membersOf("backend-team") AND duedate <= 3d AND status != Done
 
 ```
 트리거: 스프린트 완료됨
-조건: 상태 != 완료
-액션: 이슈를 백로그로 이동
-액션: 댓글 추가 "이전 스프린트에서 완료되지 않아 백로그로 이동했습니다."
+분기: 해당 스프린트의 이슈
+  조건: 상태 범주 != 완료
+  액션: 이슈를 백로그로 이동
+  액션: 댓글 추가 "이전 스프린트에서 완료되지 않아 백로그로 이동했습니다."
 ```
 
 ## 스마트 값(Smart Values)
@@ -391,8 +393,10 @@ jobs:
 
       - name: 브랜치명에서 이슈 키 추출
         id: issue
+        env:
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
-          KEY=$(echo "${{ github.event.pull_request.head.ref }}" \
+          KEY=$(printf '%s\n' "$PR_HEAD_REF" \
             | grep -oE '[A-Z]+-[0-9]+' | head -1)
           echo "key=$KEY" >> "$GITHUB_OUTPUT"
 

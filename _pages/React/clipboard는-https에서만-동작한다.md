@@ -39,10 +39,10 @@ const copyToken = () => {
 ```
 
 - 반환된 Promise를 아무도 수신하지 않음
-- rejection은 어디에도 도달하지 않고 소멸
+- rejection을 처리하지 않아 브라우저에 unhandled rejection으로 보고될 수 있음
 - 스낵바는 복사 여부와 무관하게 노출
 
-"복사되었습니다"라는 성공 메시지가 뜨면서 클립보드는 비어 있는 상태다. 무반응보다 나쁘다.
+`writeText()`가 Promise를 반환한 뒤 거부되는 경로에서는 "복사되었습니다"라는 성공 메시지가 먼저 뜰 수 있다. `navigator.clipboard` 자체가 없으면 그 앞에서 동기 예외가 나므로 스낵바도 실행되지 않는다.
 
 <div class="diagram" role="img" aria-label="secure context 여부에 따라 clipboard API 가 갈리는 구조">
 {% include diagrams/clipboard--secure-context.svg %}
@@ -74,9 +74,10 @@ const copyToken = async () => {
 
 - 상태: 폐기 예정 API
 - 장점: secure context 미요구
-- 결론: HTTP 환경에서는 유일한 선택지
+- 결론: 당시 HTTP 환경을 지원하기 위해 선택한 호환성 폴백. 브라우저 정책과 사용자 동작 조건에 따라 실패할 수 있음
 
 - 사용자 포털 — 공통 유틸 `helpers.ts`의 `copyToClipboard`에 일괄 반영
+- 아래는 최초 폴백 버전이다. `opacity: 0`과 반환값 미검사가 남아 있어 최종 코드가 아니다.
 
 ```ts
 export const copyToClipboard = (text: string) => {
@@ -106,7 +107,7 @@ function execCommandCopy(text: string) {
 - 존재 → 시도 후 `.catch()`에서 폴백
 - 두 경우를 다 막는 이유: 존재 여부와 동작 여부가 별개
 
-## 클라이맥스: 왜 opacity를 버렸나
+## 후속 수정: 숨김 위치·포커스·반환값 검사를 함께 바꿨다
 
 - 같은 관리 화면 — 여기서 한 번 더 수정
 - 두 번째 커밋 diff의 핵심 줄
@@ -136,27 +137,24 @@ function execCommandCopy(text: string) {
 - `select()`로 선택
 - 복사 실행
 
-그 textarea가 화면에 보이면 안 되니까 숨겨야 하는데, 여기서 숨기는 방법이 결과를 가른다.
+textarea를 화면 밖에 두는 방식으로 바꾸면서 포커스 부여와 반환값 검사도 함께 추가했다. 따라서 이 diff만으로 `opacity: 0`이 단독 원인이었다고 확정할 수는 없다.
 
 `opacity: 0`의 경우:
 
 - 요소는 렌더 트리에 잔존, 투명 처리만 됨
-- 브라우저가 비가시 요소의 선택을 거부하거나 무시하는 경우 존재
-- `select()` 호출돼도 실제 selection 미형성
-- 복사 대상이 없으므로 `execCommand("copy")`는 아무것도 복사하지 않음
+- 투명하다는 사실만으로 선택이 불가능해지는 것은 아님
+- 당시 실패가 투명도, 포커스, 브라우저 정책 중 어느 조건 때문인지는 따로 분리해 측정하지 않음
 
 `left/top: -999999px`의 경우:
 
-- 요소는 완전히 정상 렌더, 선택 가능
-- 위치만 뷰포트 바깥
-- 브라우저 입장에서 "숨겨진 요소"가 아니라 "저 멀리 있는 요소"
-- 선택도 되고 복사도 됨
+- 위치만 뷰포트 바깥으로 이동
+- 이 위치 설정과 `focus()`, 반환값 검사를 함께 적용한 뒤 복사 동작을 확인
 
-`display: none`이나 `visibility: hidden`은 더 확실하게 안 된다. 렌더 트리에서 빠지거나 선택 대상이 아니게 되므로 selection API가 잡을 것이 없다.
+`display: none`이나 `visibility: hidden`처럼 선택할 수 없게 숨기는 방식은 피한다. 화면 밖 배치도 복사를 보장하지는 않으므로 실행 결과를 검사해야 한다.
 
-- 같이 들어간 나머지 두 개 — 같은 문제의 다른 면
+- 함께 바꾼 두 가지
 
-- `textarea.focus()` — `select()` 전 포커스 부여로 selection 안정화. 특히 iOS Safari
+- `textarea.focus()` — `select()` 전에 명시적으로 포커스 부여
 - `execCommand` 반환값 체크 — 예외 미발생, `false` 반환. 반환값 미확인 시 1단계의 `try/catch`가 이 경로에서 무용지물. 실패 시 명시적 `throw`로 catch에 전달
 
 - 정리
@@ -165,8 +163,8 @@ function execCommandCopy(text: string) {
 |---|---|---|---|
 | `display: none` | 제외 | 불가 | 불가 |
 | `visibility: hidden` | 포함(비가시) | 불안정 | 불가 |
-| `opacity: 0` | 포함(투명) | 브라우저에 따라 거부 | 불안정 |
-| `left/top: -999999px` | 포함(화면 밖) | 정상 | 가능 |
+| `opacity: 0` | 포함(투명) | 투명도만으로 불가하지 않음 | 단독 원인 미확정 |
+| `left/top: -999999px` | 포함(화면 밖) | 선택 가능 | 포커스·반환값 검사와 함께 적용 |
 
 ## 남는 교훈
 
@@ -183,4 +181,6 @@ secure context를 요구하는 API:
 - 따라서 로컬 개발에서는 이 제약이 전부 투명해짐
 - HTTPS를 쓸 수 없는 배포 환경이라면 이 목록은 처음부터 확인 대상
 
-그리고 이 두 번의 커밋은 같은 얘기를 반복한다. **1단계는 실패를 감지 가능하게 만들었고, 2단계는 감지 가능해진 실패를 실제로 고쳤다.** 순서가 반대였으면 `opacity: 0` 버전이 여전히 실패하고 있다는 사실조차 몰랐을 것이다.
+그리고 이 두 번의 커밋은 같은 얘기를 반복한다. **1단계는 실패를 감지 가능하게 만들었고, 2단계는 감지 가능해진 실패를 실제로 고쳤다.** 반환값을 검사하지 않으면 폴백이 `false`로 실패해도 성공으로 오인할 수 있다.
+
+API의 보안 조건은 [Clipboard 명세](https://www.w3.org/TR/clipboard-apis/#navigator-interface)를 참고했다. secure context가 필요하며 권한·사용자 활성화 조건도 따로 확인해야 한다.
