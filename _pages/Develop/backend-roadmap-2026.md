@@ -175,12 +175,12 @@ Docker 와 쿠버네티스는?
 
 | 위치 | 나가는 곳 |
 |---|---|
-| 백엔드 언어 | [입문 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=beginner) |
+| 맨 위 | [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |
+| 백엔드 언어 · 택 1 | [입문 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=beginner) |
 | 인증 · 인가 | [중급 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=intermediate) |
+| 보안 · 암호화 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
+| AI 코딩 도구 | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) |
 | 컨테이너 | [Docker](https://roadmap.sh/docker) · [쿠버네티스](https://roadmap.sh/kubernetes) |
-| 보안 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
-| AI | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) |
-| 아키텍처 | [시스템 설계](https://roadmap.sh/system-design) · [소프트웨어 설계 · 아키텍처](https://roadmap.sh/software-design-architecture) |
+| 아키텍처 패턴 | [시스템 설계](https://roadmap.sh/system-design) · [소프트웨어 설계 · 아키텍처](https://roadmap.sh/software-design-architecture) |
 | NoSQL | [기초 운영 스킬](https://roadmap.sh/devops?r=devops-beginner) |
 | 맨 끝 | [DevOps](https://roadmap.sh/devops) · [시스템 설계](https://roadmap.sh/system-design) · [풀스택](https://roadmap.sh/full-stack) |
-| 맨 위 | [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |

@@ -145,7 +145,7 @@
     padding:.15em .4em;
     border-radius:var(--r-sm);
     font-size:.9em;
-    word-break:break-all;
+    overflow-wrap:anywhere;   // 넘칠 때만 끊는다 — break-all 은 JWT 같은 짧은 코드도 글자 중간에서 끊었다
   }
 
   // 코드 블록 — 가로로 길면 이 안에서만 스크롤된다(페이지는 안 밀린다)
