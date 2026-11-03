@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 1144" role="img" aria-labelledby="backend-roadmap--s6-title backend-roadmap--s6-desc">
   <title id="backend-roadmap--s6-title">6단계 심화</title>
-  <desc id="backend-roadmap--s6-desc">CI/CD 에서 DB 심화, 테스트, 컨테이너, 메시지 브로커, 검색엔진, 아키텍처 패턴으로 이어지는 구간.</desc>
+  <desc id="backend-roadmap--s6-desc">CI / CD 에서 DB 심화, 테스트, 컨테이너, 메시지 브로커, 검색엔진, 아키텍처 패턴으로 이어지는 구간.</desc>
 
   <defs>
     <marker id="backend-roadmap--s6-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
