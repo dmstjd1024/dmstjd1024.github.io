@@ -43,7 +43,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 </div>
 
 백엔드 직군이라도 **HTML·CSS·JavaScript 는 기초 수준까지 포함된다.**
-API 의 소비자가 프론트엔드이기 때문이다.
+원본에 이유가 적혀 있지는 않은데, API 의 소비자가 프론트엔드이기 때문이라고 본다.
 
 ---
 
@@ -70,7 +70,7 @@ API 의 소비자가 프론트엔드이기 때문이다.
 </div>
 
 관계형 DB 엔진 6개 중 **PostgreSQL 만 추천**이고 나머지 5개는 대안이다.
-`N+1 문제` 와 `마이그레이션` 은 특정 DB 에 종속되지 않는 공통 개념이라 같은 묶음에 들어 있다.
+`N+1 문제` 와 `마이그레이션` 도 같은 묶음에 들어 있다. 특정 DB 에 종속되지 않는 공통 개념이라 함께 둔 것으로 보인다.
 인증 방식은 `OpenID`·`SAML` 만 순서 무관이고 `JWT`·`OAuth`·Basic·Token·Cookie 인증은 모두 추천이다.
 
 원본은 이 구간이 끝나는 지점에 **"여기까지면 취업할 만큼은 안다.
@@ -143,11 +143,11 @@ NoSQL 은 원본에서 **성격별로 묶여** 있다. 도식에는 이름만 �
 
 ---
 
-Docker 와 Kubernetes 는?
+Docker 와 쿠버네티스는?
 =====
 -----
 
-로드맵을 보면 컨테이너 자리에 Docker·Kubernetes 가 있는데,
+로드맵을 보면 컨테이너 자리에 Docker·쿠버네티스가 있는데,
 이 둘은 **로드맵 안의 학습 항목이 아니라 별도 로드맵으로 빠지는 버튼**이다.
 
 <div class="diagram">
@@ -184,5 +184,5 @@ Docker 와 Kubernetes 는?
 | 아키텍처 | [시스템 설계](https://roadmap.sh/system-design) · [소프트웨어 설계 · 아키텍처](https://roadmap.sh/software-design-architecture) |
 | NoSQL | [기초 운영 스킬](https://roadmap.sh/devops?r=devops-beginner) |
 | 맨 끝 | [DevOps](https://roadmap.sh/devops) · [시스템 설계](https://roadmap.sh/system-design) · [풀스택](https://roadmap.sh/full-stack) |
-| 실습 | [프로젝트 아이디어](https://roadmap.sh/backend/projects) (입문 · 중급) |
+| 실습 | 프로젝트 아이디어 — [입문](https://roadmap.sh/backend/projects?difficulty=beginner) · [중급](https://roadmap.sh/backend/projects?difficulty=intermediate) |
 | 맨 위 | [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |
