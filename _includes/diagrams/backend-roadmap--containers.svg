@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 148" role="img" aria-labelledby="backend-roadmap--containers-title backend-roadmap--containers-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 184" role="img" aria-labelledby="backend-roadmap--containers-title backend-roadmap--containers-desc">
   <title id="backend-roadmap--containers-title">Docker·쿠버네티스는 별도 로드맵으로 분기</title>
   <desc id="backend-roadmap--containers-desc">백엔드 로드맵의 컨테이너 자리에서 Docker 로드맵과 쿠버네티스 로드맵으로 각각 갈라져 나가는 구조. 두 항목은 로드맵 내부의 학습 항목이 아니다.</desc>
 
@@ -8,21 +8,21 @@
     </marker>
   </defs>
 
-  <!--  -->
-  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
-  <rect class="dg-item" x="165" y="56" width="115" height="52" rx="6"/>
-  <text class="dg-t" x="222" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Docker 로드맵</text>
-  <text class="dg-s" x="222" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/docker</text>
-  <rect class="dg-item" x="296" y="56" width="110" height="52" rx="6"/>
-  <text class="dg-t" x="351" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백엔드 로드맵</text>
-  <text class="dg-s" x="351" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">컨테이너 자리</text>
-  <rect class="dg-item" x="422" y="56" width="132" height="52" rx="6"/>
-  <text class="dg-t" x="488" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿠버네티스 로드맵</text>
-  <text class="dg-s" x="488" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/kubernetes</text>
+  <!-- 손으로 그린 도식 — example-build.py 대상이 아니다. 한 출발점에서 두 로드맵으로 갈라지는 것이 요지다 -->
+  <rect class="dg-zone" x="24" y="16" width="672" height="152" rx="8"/>
+  <rect class="dg-item" x="170" y="66" width="130" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="88" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백엔드 로드맵</text>
+  <text class="dg-s" x="235" y="105" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">컨테이너 자리</text>
+  <path class="dg-arw" d="M300,92 H350 V60 H418" marker-end="url(#backend-roadmap--containers-arw-w)"/>
+  <path class="dg-arw" d="M350,92 V126 H418" marker-end="url(#backend-roadmap--containers-arw-w)"/>
+  <rect class="dg-item" x="420" y="34" width="150" height="52" rx="6"/>
+  <text class="dg-t" x="495" y="56" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Docker 로드맵</text>
+  <text class="dg-s" x="495" y="73" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/docker</text>
+  <rect class="dg-item" x="420" y="100" width="150" height="52" rx="6"/>
+  <text class="dg-t" x="495" y="122" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿠버네티스 로드맵</text>
+  <text class="dg-s" x="495" y="139" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/kubernetes</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 214" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 220" role="presentation" aria-hidden="true">
 
   <defs>
     <marker id="backend-roadmap--containers-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
@@ -30,17 +30,16 @@
     </marker>
   </defs>
 
-  <!--  -->
-  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="16" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em"></text>
-  <rect class="dg-item" x="59" y="56" width="115" height="52" rx="6"/>
-  <text class="dg-t" x="116" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Docker 로드맵</text>
-  <text class="dg-s" x="116" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/docker</text>
-  <rect class="dg-item" x="190" y="56" width="110" height="52" rx="6"/>
-  <text class="dg-t" x="245" y="78" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백엔드 로드맵</text>
-  <text class="dg-s" x="245" y="95" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">컨테이너 자리</text>
-  <rect class="dg-item" x="114" y="122" width="132" height="52" rx="6"/>
-  <text class="dg-t" x="180" y="144" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿠버네티스 로드맵</text>
-  <text class="dg-s" x="180" y="161" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/kubernetes</text>
+  <rect class="dg-zone" x="24" y="16" width="312" height="188" rx="8"/>
+  <rect class="dg-item" x="115" y="36" width="130" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="58" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">백엔드 로드맵</text>
+  <text class="dg-s" x="180" y="75" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">컨테이너 자리</text>
+  <path class="dg-arw" d="M180,88 V110 H110 V134" marker-end="url(#backend-roadmap--containers-arw-n)"/>
+  <path class="dg-arw" d="M180,110 H254 V134" marker-end="url(#backend-roadmap--containers-arw-n)"/>
+  <rect class="dg-item" x="44" y="136" width="132" height="52" rx="6"/>
+  <text class="dg-t" x="110" y="158" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Docker 로드맵</text>
+  <text class="dg-s" x="110" y="175" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/docker</text>
+  <rect class="dg-item" x="184" y="136" width="140" height="52" rx="6"/>
+  <text class="dg-t" x="254" y="158" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">쿠버네티스 로드맵</text>
+  <text class="dg-s" x="254" y="175" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">roadmap.sh/kubernetes</text>
 </svg>
