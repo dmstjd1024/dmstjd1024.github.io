@@ -47,10 +47,10 @@
   <text class="dg-s" x="499" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">스트리밍 · 구조화된 출력</text>
   <path class="dg-arw" d="M360,342 V380" marker-end="url(#backend-roadmap--stages-arw-w)"/>
 
-  <!-- 심화 · 확장 -->
+  <!-- 심화 · 규모 대응 -->
   <rect class="dg-zone" x="24" y="386" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="380" width="62" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">심화 · 확장</text>
+  <rect class="dg-mask" x="40" y="380" width="72" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">심화 · 규모 대응</text>
   <rect class="dg-item" x="155" y="410" width="115" height="52" rx="6"/>
   <text class="dg-t" x="212" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI / CD · 테스트</text>
   <rect class="dg-item" x="286" y="410" width="126" height="52" rx="6"/>
@@ -105,10 +105,10 @@
   <text class="dg-s" x="179" y="437" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">스트리밍 · 구조화된 출력</text>
   <path class="dg-arw" d="M180,474 V512" marker-end="url(#backend-roadmap--stages-arw-n)"/>
 
-  <!-- 심화 · 확장 -->
+  <!-- 심화 · 규모 대응 -->
   <rect class="dg-zone" x="24" y="518" width="312" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="512" width="62" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="521" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">심화 · 확장</text>
+  <rect class="dg-mask" x="40" y="512" width="72" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="521" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">심화 · 규모 대응</text>
   <rect class="dg-item" x="51" y="542" width="115" height="52" rx="6"/>
   <text class="dg-t" x="108" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI / CD · 테스트</text>
   <rect class="dg-item" x="182" y="542" width="126" height="52" rx="6"/>

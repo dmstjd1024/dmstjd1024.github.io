@@ -81,11 +81,13 @@ permalink: /roadmap/
         <h3 class="rm-topic__node">{{ topic.name }}</h3>
         {%- if topic.items %}
         {%- for side in sides %}
-        {%- if side == "l" %}{% assign from = 0 %}{% assign count = half %}{% else %}{% assign from = half %}{% assign count = topic.items.size %}{% endif %}
+        {%- if side == "l" %}{% assign from = 0 %}{% assign count = half %}{% assign n = half %}{% else %}{% assign from = half %}{% assign count = topic.items.size %}{% assign n = topic.items.size | minus: half %}{% endif %}
+        {%- comment %} 항목이 한쪽에만 있으면 반대쪽에 빈 목록을 그리지 않는다 {% endcomment %}
+        {%- if n > 0 %}
         <ul class="rm-topic__items rm-topic__items--{{ side }}">
           {%- assign prev = "" %}
           {%- for it in topic.items offset: from limit: count %}
-          {%- if it.group and it.group != prev %}<li class="rm-group">{{ it.group }}</li>{% endif %}
+          {%- if it.group and it.group != prev %}<li class="rm-group" role="presentation">{{ it.group }}</li>{% endif %}
           {%- assign prev = it.group | default: "" %}
           <li class="rm-item{% if it.tag == '추천' %} is-rec{% elsif it.tag == '대안' %} is-alt{% endif %}{% if it.rank %} is-key{% endif %}">
             {%- if it.rank %}<b class="rm-rank">{{ it.rank }}</b>{% endif %}
@@ -94,6 +96,7 @@ permalink: /roadmap/
           </li>
           {%- endfor %}
         </ul>
+        {%- endif %}
         {%- endfor %}
         {%- endif %}
         {%- if topic.note or topic.links %}

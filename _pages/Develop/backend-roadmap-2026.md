@@ -56,8 +56,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 </div>
 
 **언어는 하나만 선택한다.** 나열된 항목은 선택지이며 전부 학습하는 대상이 아니다.
-원본은 이 자리에 **"언어 하나로 프로젝트를 많이 만들어 본 뒤에 넘어간다"**
-는 문구를 달아 뒀다.
+원본은 이 자리에 **"언어 하나로 프로젝트를 많이 만들어 본 뒤에 넘어간다"** 는 문구를 달아 뒀다.
 
 ---
 
@@ -73,8 +72,7 @@ thumbnail: "/assets/img/thumbnail/ect_thumbnail.jpg"
 `N+1 문제` 와 `마이그레이션` 도 같은 묶음에 들어 있다. 특정 DB 에 종속되지 않는 공통 개념이라 함께 둔 것으로 보인다.
 인증 방식은 `OpenID`·`SAML` 만 순서 무관이고 `JWT`·`OAuth`·Basic·Token·Cookie 인증은 모두 추천이다.
 
-원본은 이 구간이 끝나는 지점에 **"여기까지 익히면 취업할 만큼은 안다.
-프로젝트를 만들며 손에 익힌다"** 는 문구를 달아 뒀다.
+원본은 이 구간이 끝나는 지점에 **"여기까지 익히면 취업할 만큼은 안다. 프로젝트를 만들며 손에 익힌다"** 는 문구를 달아 뒀다.
 로드맵 전체 분량의 절반도 안 되는 지점이다.
 
 ---
@@ -138,8 +136,7 @@ NoSQL 은 원본에서 **성격별로 묶여** 있다. 도식에는 이름만 �
 | 그래프 | Neo4j · AWS Neptune · DGraph |
 | 시계열 | Influx DB · TimescaleDB |
 
-원본은 이 구간에 **"대부분은 쓸 일이 없을 수도 있다.
-무엇인지, 언제 쓰는지만 알아 둔다"** 는 문구를 달아 뒀다.
+원본은 이 구간에 **"대부분은 쓸 일이 없을 수도 있다. 무엇인지, 언제 쓰는지만 알아 둔다"** 는 문구를 달아 뒀다.
 
 ---
 
@@ -178,11 +175,12 @@ Docker 와 쿠버네티스는?
 
 | 위치 | 나가는 곳 |
 |---|---|
+| 백엔드 언어 | [입문 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=beginner) |
+| 인증 · 인가 | [중급 프로젝트 아이디어](https://roadmap.sh/backend/projects?difficulty=intermediate) |
 | 컨테이너 | [Docker](https://roadmap.sh/docker) · [쿠버네티스](https://roadmap.sh/kubernetes) |
 | 보안 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
 | AI | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) |
 | 아키텍처 | [시스템 설계](https://roadmap.sh/system-design) · [소프트웨어 설계 · 아키텍처](https://roadmap.sh/software-design-architecture) |
 | NoSQL | [기초 운영 스킬](https://roadmap.sh/devops?r=devops-beginner) |
 | 맨 끝 | [DevOps](https://roadmap.sh/devops) · [시스템 설계](https://roadmap.sh/system-design) · [풀스택](https://roadmap.sh/full-stack) |
-| 실습 | 프로젝트 아이디어 — [입문](https://roadmap.sh/backend/projects?difficulty=beginner) · [중급](https://roadmap.sh/backend/projects?difficulty=intermediate) |
 | 맨 위 | [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |
