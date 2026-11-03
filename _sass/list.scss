@@ -18,6 +18,7 @@
   &__title {
     font-size:clamp(1.75rem, 4vw, 2.5rem);
     letter-spacing:-.03em;
+    overflow-wrap:anywhere;   // keep-all 이라 WebKit 이 하이픈에서도 안 끊는다(TICKET-EXPEDITIONARY-FORCE)
   }
 
   &__count {
@@ -141,6 +142,7 @@
     font-size:1.125rem;
     margin-bottom:.35rem;
     transition:color .15s ease;
+    overflow-wrap:anywhere;   // 320px 에서 긴 영문 제목이 썸네일 쪽으로 넘치던 것
   }
 
   // 부제. 요약(아래)과 둘 다 회색이라 층을 갈라야 한다 —

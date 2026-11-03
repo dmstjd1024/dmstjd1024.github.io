@@ -237,6 +237,8 @@
       a {
         padding:.6rem .75rem;
         font-size:.95rem;
+        white-space:normal;                // 긴 이름(TICKET-EXPEDITIONARY-FORCE)이 서랍 폭에서 잘리지 않게
+        overflow-wrap:anywhere;
       }
 
       // 맨 앞의 '전체'·'태그' — 카테고리보다 상위 개념이라 늘 또렷하게 둔다.
@@ -249,6 +251,14 @@
       transform:none;
       visibility:visible;
       transition-delay:0s;
+    }
+
+    // 펼친 하위 메뉴는 visibility:visible 을 스스로 걸어(위 .has-sub.is-open 규칙)
+    // 닫힌 서랍의 hidden 을 이긴다. 그대로 두면 화면 밖 링크가 Tab·낭독기에 잡힌다.
+    // 서랍이 미끄러져 나간 뒤(.25s)에 같이 숨긴다
+    &:not(.is-open) .has-sub.is-open > .nav__sub {
+      visibility:hidden;
+      transition:visibility 0s linear .25s;
     }
 
     // 상단바에 backdrop-filter 를 직접 걸면 상단바가 position:fixed 자식(서랍)의
@@ -460,7 +470,7 @@
   // /Database/ 는 메뉴 끝 700px, 푸터 시작 604px) 그 선이 메뉴를 지나간다.
   //
   // 고칠 대상은 메뉴가 아니라 본문이다. 겹치는 페이지는 메뉴가 넘쳐서가
-  // 아니라(596px < 한계 756px) 본문이 짧아 푸터가 올라온 것이고, 실제로
+  // 아니라(2026-08 실측 596px < 한계 756px) 본문이 짧아 푸터가 올라온 것이고, 실제로
   // 그런 페이지는 스크롤 자체가 없다(docH 900 = vh 900). 그래서 본문이
   // 메뉴 끝까지 자리를 차지하게 하면 푸터는 자연히 그 아래로 내려간다.
   //

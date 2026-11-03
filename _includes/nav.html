@@ -13,7 +13,7 @@
   된다. 둘 다 세로로 쌓이므로 하위 카테고리까지 접었다 펼 수 있게 넣는다.
 {%- endcomment -%}
 {%- assign nav_cats = site.pages | where_exp: "p", "p.path contains 'index.md'" | sort: "path" -%}
-{%- assign here = page.url | remove_first: '/' | split: '/' | first -%}
+{%- assign here = page.url | remove_first: '/' | split: '/' | first | url_decode -%}
 
 <a class="skip-link" href="#content">본문 바로가기</a>
 

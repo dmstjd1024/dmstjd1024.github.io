@@ -13,6 +13,7 @@
   {%- if seg.size > 1 -%}
     {%- assign idx = seg.size | minus: 2 -%}
     {%- assign head_title = seg[idx] -%}
+    {%- if head_title == '글' -%}{%- assign head_title = '전체 글' -%}{%- endif -%}
   {%- endif -%}
 {%- else -%}
   {%- assign head_title = page.title -%}
@@ -31,7 +32,11 @@
 {%- endcomment -%}
 {%- if seg.last == 'index.md' -%}
   {%- if head_title -%}
-    {%- assign page_desc = head_title | append: ' 관련 글 모음 · ' | append: site.title -%}
+    {%- if head_title == '전체 글' -%}
+      {%- assign page_desc = '전체 글 목록 · ' | append: site.title -%}
+    {%- else -%}
+      {%- assign page_desc = head_title | append: ' 관련 글 모음 · ' | append: site.title -%}
+    {%- endif -%}
   {%- else -%}
     {%- assign page_desc = site.description -%}
   {%- endif -%}

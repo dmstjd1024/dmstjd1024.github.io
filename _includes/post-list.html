@@ -33,8 +33,13 @@
 {%- else -%}
   {%- assign here = page.url | remove: 'index.html' -%}
 {%- endif -%}
+{%- comment -%}
+  주소의 "포함"으로 고르면 /Infra/ 가 /BlockChain/Infra/ 글까지 집는다. 파일 경로
+  앞부분(_pages/Infra/)으로 고른다. page.url 은 한글이 퍼센트 인코딩돼 있어 푼다.
+{%- endcomment -%}
+{%- assign here_path = '_pages' | append: here | url_decode -%}
 {%- assign cand = site.pages
-      | where_exp: "p", "p.url contains here"
+      | where_exp: "p", "p.path contains here_path"
       | sort: "date" | reverse -%}
 
 {%- comment -%}
@@ -149,8 +154,9 @@
   {%- endif -%}
   {%- assign want_depth = base_depth | plus: 1 -%}
 
+  {%- assign base_path = '_pages' | append: base_url | url_decode -%}
   {%- assign subs = site.pages
-        | where_exp: "p", "p.url contains base_url"
+        | where_exp: "p", "p.path contains base_path"
         | where_exp: "p", "p.path contains '/index.md'"
         | sort: "path" -%}
 
@@ -165,7 +171,7 @@
       부모 전체의 글 수. p.name 은 Jekyll 3 에서 비어 있어 쓸 수 없으므로
       URL 로 카테고리 페이지를 걸러 센다.
     {%- endcomment -%}
-    {%- assign base_cand = site.pages | where_exp: "p", "p.url contains base_url" -%}
+    {%- assign base_cand = site.pages | where_exp: "p", "p.path contains base_path" -%}
     {%- assign base_n = 0 -%}
     {%- for bp in base_cand -%}
       {%- unless bp.url contains 'index.html' -%}
@@ -185,7 +191,8 @@
           {%- assign s_seg = s.path | remove_first: '_pages/' | split: '/' -%}
           {%- assign s_idx = s_seg.size | minus: 2 -%}
           {%- comment -%} 그 서브에 속한 글 수 — index.md 는 글이 아니므로 뺀다 {%- endcomment -%}
-          {%- assign s_all = site.pages | where_exp: "p", "p.url contains s_here" -%}
+          {%- assign s_path = '_pages' | append: s_here | url_decode -%}
+          {%- assign s_all = site.pages | where_exp: "p", "p.path contains s_path" -%}
           {%- assign s_count = 0 -%}
           {%- for sp in s_all -%}
             {%- unless sp.path contains '/index.md' -%}
@@ -193,7 +200,7 @@
             {%- endunless -%}
           {%- endfor -%}
           <a class="chip{% if s_here == here %} is-on{% endif %}"
-             href="{{ s.url | prepend: site.baseurl }}"
+             href="{{ s_here | prepend: site.baseurl }}"
              {% if s_here == here %}aria-current="page"{% endif %}>
             {{ s_seg[s_idx] }} <span class="chip__n">{{ s_count }}</span>
           </a>
