@@ -131,12 +131,12 @@ NoSQL 은 원본에서 **성격별로 묶여** 있다. 도식에는 이름만 �
 
 | 분류 | 항목 |
 |---|---|
+| 실시간 | Firebase · RethinkDB |
 | 문서 | MongoDB · CouchDB |
 | 키-값 | Redis · DynamoDB |
 | 컬럼 | ClickHouse · Cassandra · ScyllaDB |
 | 그래프 | Neo4j · AWS Neptune · DGraph |
 | 시계열 | Influx DB · TimescaleDB |
-| 실시간 | Firebase · RethinkDB |
 
 원본은 이 구간에 **"대부분은 쓸 일이 없을 수도 있다.
 무엇인지, 언제 쓰는지만 알아 두라"** 는 문구를 달아 뒀다.
@@ -183,7 +183,7 @@ Docker 와 Kubernetes 는?
 | 컨테이너 | [Docker](https://roadmap.sh/docker) · [쿠버네티스](https://roadmap.sh/kubernetes) |
 | 보안 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
 | AI | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) |
-| 아키텍처 | [시스템 설계](https://roadmap.sh/system-design) · [소프트웨어 설계](https://roadmap.sh/software-design-architecture) |
+| 아키텍처 | [시스템 설계](https://roadmap.sh/system-design) · [소프트웨어 설계 · 아키텍처](https://roadmap.sh/software-design-architecture) |
 | NoSQL | [기초 운영 스킬](https://roadmap.sh/devops?r=devops-beginner) |
 | 맨 끝 | [DevOps](https://roadmap.sh/devops) · [시스템 설계](https://roadmap.sh/system-design) · [풀스택](https://roadmap.sh/full-stack) |
 | 실습 | [프로젝트 아이디어](https://roadmap.sh/backend/projects) (입문 · 중급) |
