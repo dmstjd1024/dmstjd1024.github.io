@@ -45,25 +45,25 @@
   <rect class="dg-item" x="88" y="344" width="96" height="52" rx="6"/>
   <text class="dg-t" x="136" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">웹 보안</text>
   <rect class="dg-item" x="200" y="344" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="248" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MD5</text>
+  <text class="dg-t" x="248" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">HTTPS</text>
   <rect class="dg-item" x="312" y="344" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SHA</text>
+  <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OWASP 위험</text>
   <rect class="dg-item" x="424" y="344" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="472" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">scrypt</text>
+  <text class="dg-t" x="472" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CORS</text>
   <rect class="dg-item" x="536" y="344" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="584" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">bcrypt</text>
+  <text class="dg-t" x="584" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SSL/TLS</text>
   <rect class="dg-item" x="88" y="410" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="136" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">HTTPS</text>
+  <text class="dg-t" x="136" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CSP</text>
   <rect class="dg-item" x="200" y="410" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="248" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OWASP 위험</text>
+  <text class="dg-t" x="248" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버 보안</text>
   <rect class="dg-item" x="312" y="410" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="360" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CORS</text>
+  <text class="dg-t" x="360" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MD5</text>
   <rect class="dg-item" x="424" y="410" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="472" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SSL/TLS</text>
+  <text class="dg-t" x="472" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SHA</text>
   <rect class="dg-item" x="536" y="410" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="584" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CSP</text>
+  <text class="dg-t" x="584" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">scrypt</text>
   <rect class="dg-item" x="312" y="476" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="360" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버 보안</text>
+  <text class="dg-t" x="360" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">bcrypt</text>
 </svg>
 <svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 898" role="presentation" aria-hidden="true">
 
@@ -110,23 +110,23 @@
   <rect class="dg-item" x="76" y="476" width="96" height="52" rx="6"/>
   <text class="dg-t" x="124" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">웹 보안</text>
   <rect class="dg-item" x="188" y="476" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MD5</text>
+  <text class="dg-t" x="236" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">HTTPS</text>
   <rect class="dg-item" x="76" y="542" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SHA</text>
+  <text class="dg-t" x="124" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OWASP 위험</text>
   <rect class="dg-item" x="188" y="542" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">scrypt</text>
+  <text class="dg-t" x="236" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CORS</text>
   <rect class="dg-item" x="76" y="608" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="639" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">bcrypt</text>
+  <text class="dg-t" x="124" y="639" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SSL/TLS</text>
   <rect class="dg-item" x="188" y="608" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="639" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">HTTPS</text>
+  <text class="dg-t" x="236" y="639" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CSP</text>
   <rect class="dg-item" x="76" y="674" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">OWASP 위험</text>
+  <text class="dg-t" x="124" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버 보안</text>
   <rect class="dg-item" x="188" y="674" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CORS</text>
+  <text class="dg-t" x="236" y="705" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MD5</text>
   <rect class="dg-item" x="76" y="740" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="771" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SSL/TLS</text>
+  <text class="dg-t" x="124" y="771" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SHA</text>
   <rect class="dg-item" x="188" y="740" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="771" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CSP</text>
+  <text class="dg-t" x="236" y="771" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">scrypt</text>
   <rect class="dg-item" x="132" y="806" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="180" y="837" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버 보안</text>
+  <text class="dg-t" x="180" y="837" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">bcrypt</text>
 </svg>

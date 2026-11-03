@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 856" role="img" aria-labelledby="backend-roadmap--s6-title backend-roadmap--s6-desc">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 1144" role="img" aria-labelledby="backend-roadmap--s6-title backend-roadmap--s6-desc">
   <title id="backend-roadmap--s6-title">6단계 심화</title>
   <desc id="backend-roadmap--s6-desc">테스트와 CI/CD 에서 DB 심화, 컨테이너화, 메시지 브로커, 검색엔진, 아키텍처 패턴으로 이어지는 구간.</desc>
 
@@ -8,81 +8,93 @@
     </marker>
   </defs>
 
-  <!-- 테스트 · 배포 -->
+  <!-- 테스트 -->
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="70" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">테스트 · 배포</text>
-  <rect class="dg-item" x="139" y="56" width="99" height="52" rx="6"/>
-  <text class="dg-t" x="188" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">통합 테스트</text>
-  <rect class="dg-item" x="254" y="56" width="99" height="52" rx="6"/>
-  <text class="dg-t" x="303" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">단위 테스트</text>
-  <rect class="dg-item" x="369" y="56" width="99" height="52" rx="6"/>
-  <text class="dg-t" x="418" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기능 테스트</text>
-  <rect class="dg-item" x="484" y="56" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="532" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI/CD</text>
+  <rect class="dg-mask" x="40" y="26" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">테스트</text>
+  <rect class="dg-item" x="195" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="244" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">통합 테스트</text>
+  <rect class="dg-item" x="310" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">단위 테스트</text>
+  <rect class="dg-item" x="425" y="56" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="474" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기능 테스트</text>
   <path class="dg-arw" d="M360,132 V170" marker-end="url(#backend-roadmap--s6-arw-w)"/>
 
-  <!-- DB 심화 -->
-  <rect class="dg-zone" x="24" y="176" width="672" height="166" rx="8"/>
+  <!-- CI / CD -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
   <rect class="dg-mask" x="40" y="170" width="45" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">DB 심화</text>
-  <rect class="dg-item" x="88" y="200" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="136" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">트랜잭션</text>
-  <rect class="dg-item" x="200" y="200" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="248" y="222" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ORM</text>
-  <text class="dg-s" x="248" y="239" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CI / CD</text>
   <rect class="dg-item" x="312" y="200" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="360" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ACID</text>
-  <rect class="dg-item" x="424" y="200" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="472" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">정규화</text>
-  <rect class="dg-item" x="536" y="200" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="584" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">장애 유형</text>
-  <rect class="dg-item" x="299" y="266" width="121" height="52" rx="6"/>
-  <text class="dg-t" x="359" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">성능 프로파일링</text>
-  <path class="dg-arw" d="M360,342 V380" marker-end="url(#backend-roadmap--s6-arw-w)"/>
+  <text class="dg-t" x="360" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI/CD</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#backend-roadmap--s6-arw-w)"/>
 
-  <!-- 컨테이너화 -->
-  <rect class="dg-zone" x="24" y="386" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="380" width="58" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컨테이너화</text>
-  <rect class="dg-item" x="312" y="410" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="360" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LXC</text>
+  <!-- DB 심화 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">DB 심화</text>
+  <rect class="dg-item" x="88" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="136" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">트랜잭션</text>
+  <rect class="dg-item" x="200" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="366" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ORM</text>
+  <text class="dg-s" x="248" y="383" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
+  <rect class="dg-item" x="312" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ACID</text>
+  <rect class="dg-item" x="424" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">정규화</text>
+  <rect class="dg-item" x="536" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="584" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">장애 유형</text>
+  <rect class="dg-item" x="299" y="410" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">성능 프로파일링</text>
   <path class="dg-arw" d="M360,486 V524" marker-end="url(#backend-roadmap--s6-arw-w)"/>
 
-  <!-- 메시지 브로커 · 검색엔진 -->
+  <!-- 컨테이너 -->
   <rect class="dg-zone" x="24" y="530" width="672" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="524" width="116" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="533" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">메시지 브로커 · 검색엔진</text>
-  <rect class="dg-item" x="137" y="554" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="185" y="585" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Kafka</text>
-  <rect class="dg-item" x="249" y="554" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="297" y="576" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RabbitMQ</text>
-  <text class="dg-s" x="297" y="593" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
-  <rect class="dg-item" x="361" y="554" width="110" height="52" rx="6"/>
-  <text class="dg-t" x="416" y="585" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Elasticsearch</text>
-  <rect class="dg-item" x="487" y="554" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="535" y="576" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Solr</text>
-  <text class="dg-s" x="535" y="593" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <rect class="dg-mask" x="40" y="524" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="533" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컨테이너</text>
+  <rect class="dg-item" x="312" y="554" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="585" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LXC</text>
   <path class="dg-arw" d="M360,630 V668" marker-end="url(#backend-roadmap--s6-arw-w)"/>
 
-  <!-- 아키텍처 패턴 -->
-  <rect class="dg-zone" x="24" y="674" width="672" height="166" rx="8"/>
+  <!-- 메시지 브로커 -->
+  <rect class="dg-zone" x="24" y="674" width="672" height="100" rx="8"/>
   <rect class="dg-mask" x="40" y="668" width="70" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="677" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">아키텍처 패턴</text>
-  <rect class="dg-item" x="77" y="698" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="125" y="729" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">모놀리식</text>
-  <rect class="dg-item" x="189" y="698" width="115" height="52" rx="6"/>
-  <text class="dg-t" x="246" y="729" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마이크로서비스</text>
-  <rect class="dg-item" x="320" y="698" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="368" y="729" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SOA</text>
-  <rect class="dg-item" x="432" y="698" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="480" y="729" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버리스</text>
-  <rect class="dg-item" x="544" y="698" width="99" height="52" rx="6"/>
-  <text class="dg-t" x="593" y="729" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서비스 메시</text>
-  <rect class="dg-item" x="305" y="764" width="110" height="52" rx="6"/>
-  <text class="dg-t" x="360" y="795" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">12 Factor App</text>
+  <text class="dg-s" x="44" y="677" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">메시지 브로커</text>
+  <rect class="dg-item" x="256" y="698" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="304" y="729" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Kafka</text>
+  <rect class="dg-item" x="368" y="698" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="416" y="720" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RabbitMQ</text>
+  <text class="dg-s" x="416" y="737" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <path class="dg-arw" d="M360,774 V812" marker-end="url(#backend-roadmap--s6-arw-w)"/>
+
+  <!-- 검색엔진 -->
+  <rect class="dg-zone" x="24" y="818" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="812" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="821" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">검색엔진</text>
+  <rect class="dg-item" x="249" y="842" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="304" y="873" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Elasticsearch</text>
+  <rect class="dg-item" x="375" y="842" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="423" y="864" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Solr</text>
+  <text class="dg-s" x="423" y="881" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <path class="dg-arw" d="M360,918 V956" marker-end="url(#backend-roadmap--s6-arw-w)"/>
+
+  <!-- 아키텍처 패턴 -->
+  <rect class="dg-zone" x="24" y="962" width="672" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="956" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="965" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">아키텍처 패턴</text>
+  <rect class="dg-item" x="77" y="986" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="125" y="1017" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">모놀리식</text>
+  <rect class="dg-item" x="189" y="986" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="246" y="1017" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마이크로서비스</text>
+  <rect class="dg-item" x="320" y="986" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="368" y="1017" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SOA</text>
+  <rect class="dg-item" x="432" y="986" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="480" y="1017" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버리스</text>
+  <rect class="dg-item" x="544" y="986" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="593" y="1017" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서비스 메시</text>
+  <rect class="dg-item" x="305" y="1052" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="1083" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">12 Factor App</text>
 </svg>
-<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 1120" role="presentation" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 1342" role="presentation" aria-hidden="true">
 
   <defs>
     <marker id="backend-roadmap--s6-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
@@ -90,77 +102,89 @@
     </marker>
   </defs>
 
-  <!-- 테스트 · 배포 -->
+  <!-- 테스트 -->
   <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="26" width="70" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">테스트 · 배포</text>
+  <rect class="dg-mask" x="40" y="26" width="41" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">테스트</text>
   <rect class="dg-item" x="73" y="56" width="99" height="52" rx="6"/>
   <text class="dg-t" x="122" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">통합 테스트</text>
   <rect class="dg-item" x="188" y="56" width="99" height="52" rx="6"/>
   <text class="dg-t" x="237" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">단위 테스트</text>
-  <rect class="dg-item" x="74" y="122" width="99" height="52" rx="6"/>
-  <text class="dg-t" x="123" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기능 테스트</text>
-  <rect class="dg-item" x="189" y="122" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="237" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI/CD</text>
+  <rect class="dg-item" x="130" y="122" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="179" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기능 테스트</text>
   <path class="dg-arw" d="M180,198 V236" marker-end="url(#backend-roadmap--s6-arw-n)"/>
 
-  <!-- DB 심화 -->
-  <rect class="dg-zone" x="24" y="242" width="312" height="232" rx="8"/>
+  <!-- CI / CD -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="100" rx="8"/>
   <rect class="dg-mask" x="40" y="236" width="45" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">DB 심화</text>
-  <rect class="dg-item" x="76" y="266" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">트랜잭션</text>
-  <rect class="dg-item" x="188" y="266" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ORM</text>
-  <text class="dg-s" x="236" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
-  <rect class="dg-item" x="76" y="332" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ACID</text>
-  <rect class="dg-item" x="188" y="332" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">정규화</text>
-  <rect class="dg-item" x="63" y="398" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="111" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">장애 유형</text>
-  <rect class="dg-item" x="175" y="398" width="121" height="52" rx="6"/>
-  <text class="dg-t" x="235" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">성능 프로파일링</text>
-  <path class="dg-arw" d="M180,474 V512" marker-end="url(#backend-roadmap--s6-arw-n)"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CI / CD</text>
+  <rect class="dg-item" x="132" y="266" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">CI/CD</text>
+  <path class="dg-arw" d="M180,342 V380" marker-end="url(#backend-roadmap--s6-arw-n)"/>
 
-  <!-- 컨테이너화 -->
-  <rect class="dg-zone" x="24" y="518" width="312" height="100" rx="8"/>
-  <rect class="dg-mask" x="40" y="512" width="58" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="521" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컨테이너화</text>
-  <rect class="dg-item" x="132" y="542" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="180" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LXC</text>
+  <!-- DB 심화 -->
+  <rect class="dg-zone" x="24" y="386" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="380" width="45" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="389" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">DB 심화</text>
+  <rect class="dg-item" x="76" y="410" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="441" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">트랜잭션</text>
+  <rect class="dg-item" x="188" y="410" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="432" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ORM</text>
+  <text class="dg-s" x="236" y="449" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">순서 무관</text>
+  <rect class="dg-item" x="76" y="476" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ACID</text>
+  <rect class="dg-item" x="188" y="476" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="507" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">정규화</text>
+  <rect class="dg-item" x="63" y="542" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="111" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">장애 유형</text>
+  <rect class="dg-item" x="175" y="542" width="121" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">성능 프로파일링</text>
   <path class="dg-arw" d="M180,618 V656" marker-end="url(#backend-roadmap--s6-arw-n)"/>
 
-  <!-- 메시지 브로커 · 검색엔진 -->
-  <rect class="dg-zone" x="24" y="662" width="312" height="166" rx="8"/>
-  <rect class="dg-mask" x="40" y="656" width="116" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="665" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">메시지 브로커 · 검색엔진</text>
-  <rect class="dg-item" x="76" y="686" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Kafka</text>
-  <rect class="dg-item" x="188" y="686" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="708" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RabbitMQ</text>
-  <text class="dg-s" x="236" y="725" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
-  <rect class="dg-item" x="69" y="752" width="110" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="783" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Elasticsearch</text>
-  <rect class="dg-item" x="195" y="752" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="243" y="774" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Solr</text>
-  <text class="dg-s" x="243" y="791" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
-  <path class="dg-arw" d="M180,828 V866" marker-end="url(#backend-roadmap--s6-arw-n)"/>
+  <!-- 컨테이너 -->
+  <rect class="dg-zone" x="24" y="662" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="656" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="665" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">컨테이너</text>
+  <rect class="dg-item" x="132" y="686" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="717" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">LXC</text>
+  <path class="dg-arw" d="M180,762 V800" marker-end="url(#backend-roadmap--s6-arw-n)"/>
+
+  <!-- 메시지 브로커 -->
+  <rect class="dg-zone" x="24" y="806" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="800" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="809" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">메시지 브로커</text>
+  <rect class="dg-item" x="76" y="830" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="861" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Kafka</text>
+  <rect class="dg-item" x="188" y="830" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="852" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RabbitMQ</text>
+  <text class="dg-s" x="236" y="869" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <path class="dg-arw" d="M180,906 V944" marker-end="url(#backend-roadmap--s6-arw-n)"/>
+
+  <!-- 검색엔진 -->
+  <rect class="dg-zone" x="24" y="950" width="312" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="944" width="49" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="953" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">검색엔진</text>
+  <rect class="dg-item" x="69" y="974" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="1005" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Elasticsearch</text>
+  <rect class="dg-item" x="195" y="974" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="243" y="996" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Solr</text>
+  <text class="dg-s" x="243" y="1013" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">대안</text>
+  <path class="dg-arw" d="M180,1050 V1088" marker-end="url(#backend-roadmap--s6-arw-n)"/>
 
   <!-- 아키텍처 패턴 -->
-  <rect class="dg-zone" x="24" y="872" width="312" height="232" rx="8"/>
-  <rect class="dg-mask" x="40" y="866" width="70" height="12" rx="2"/>
-  <text class="dg-s" x="44" y="875" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">아키텍처 패턴</text>
-  <rect class="dg-item" x="66" y="896" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="114" y="927" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">모놀리식</text>
-  <rect class="dg-item" x="178" y="896" width="115" height="52" rx="6"/>
-  <text class="dg-t" x="235" y="927" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마이크로서비스</text>
-  <rect class="dg-item" x="76" y="962" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="124" y="993" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SOA</text>
-  <rect class="dg-item" x="188" y="962" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="236" y="993" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버리스</text>
-  <rect class="dg-item" x="67" y="1028" width="99" height="52" rx="6"/>
-  <text class="dg-t" x="116" y="1059" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서비스 메시</text>
-  <rect class="dg-item" x="182" y="1028" width="110" height="52" rx="6"/>
-  <text class="dg-t" x="237" y="1059" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">12 Factor App</text>
+  <rect class="dg-zone" x="24" y="1094" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="1088" width="70" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="1097" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">아키텍처 패턴</text>
+  <rect class="dg-item" x="66" y="1118" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="114" y="1149" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">모놀리식</text>
+  <rect class="dg-item" x="178" y="1118" width="115" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="1149" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">마이크로서비스</text>
+  <rect class="dg-item" x="76" y="1184" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="1215" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SOA</text>
+  <rect class="dg-item" x="188" y="1184" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="1215" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서버리스</text>
+  <rect class="dg-item" x="67" y="1250" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="116" y="1281" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">서비스 메시</text>
+  <rect class="dg-item" x="182" y="1250" width="110" height="52" rx="6"/>
+  <text class="dg-t" x="237" y="1281" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">12 Factor App</text>
 </svg>

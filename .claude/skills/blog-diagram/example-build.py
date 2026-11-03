@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """로드맵 글의 1~7단계 도식을 생성한다.
 
-roadmap.sh/backend 의 세부 노드 132개를 하나도 합치지 않고 각각 상자로 그린다.
-토픽 23개는 존(묶음) 라벨이 된다.
+roadmap.sh/backend 의 세부 노드 132개를 하나도 합치지 않고 각각 상자로 그린다
+(세부 노드가 없는 토픽 CI/CD 만 토픽 자체를 상자로 더해 133개).
+존(묶음)은 /roadmap/ 페이지(_data/backend_roadmap.yml)의 주제와 이름·순서를 맞춘다 —
+원본 토픽 23개에 원본 그림의 묶음 셋(인증 · 인가, 보안 · 암호화, 컨테이너)을 더한 26개다.
 
 표시 규칙: '추천'이 132개 중 72개로 다수라 달지 않는다.
 예외인 '대안'·'순서 무관'만 단다.
@@ -40,20 +42,23 @@ D = [
                 {"t": 'PHP', "s": '대안'}, {"t": 'Rust', "s": '대안'},
             ]},
             {"name": '버전 관리', "nodes": [
-                {"t": 'Git'}, {"t": 'GitHub'}, {"t": 'GitLab', "s": '대안'},
+                {"t": 'Git'},
+            ]},
+            {"name": '저장소 호스팅', "nodes": [
+                {"t": 'GitHub'}, {"t": 'GitLab', "s": '대안'},
             ]},
         ]),
     dict(
         slug='backend-roadmap--s3',
         title='3단계 데이터베이스와 API',
-        desc='관계형 DB 에서 API 스타일, 인증, 웹 보안으로 이어지는 구간. PostgreSQL 만 추천이고 나머지는 대안이다.',
+        desc='관계형 DB 에서 API 와 인증으로 이어지는 구간. 관계형 DB 는 PostgreSQL 만 추천이고 나머지는 대안이다.',
         zones=[
             {"name": '관계형 DB', "nodes": [
                 {"t": '마이그레이션'}, {"t": 'MySQL', "s": '대안'}, {"t": 'PostgreSQL'},
                 {"t": 'MariaDB', "s": '대안'}, {"t": 'SQLite', "s": '대안'}, {"t": 'MS SQL', "s": '대안'},
                 {"t": 'Oracle', "s": '대안'}, {"t": 'N+1 문제'},
             ]},
-            {"name": 'API 스타일', "nodes": [
+            {"name": 'API', "nodes": [
                 {"t": 'REST'}, {"t": 'JSON API'}, {"t": 'SOAP', "s": '순서 무관'},
                 {"t": 'gRPC', "s": '순서 무관'}, {"t": 'GraphQL', "s": '순서 무관'}, {"t": 'OpenAPI 명세', "s": '순서 무관'},
             ]},
@@ -76,10 +81,10 @@ D = [
                 {"t": 'MS IIS', "s": '대안'},
             ]},
             {"name": '보안 · 암호화', "nodes": [
-                {"t": '웹 보안'}, {"t": 'MD5'}, {"t": 'SHA'},
-                {"t": 'scrypt'}, {"t": 'bcrypt'}, {"t": 'HTTPS'},
-                {"t": 'OWASP 위험'}, {"t": 'CORS'}, {"t": 'SSL/TLS'},
-                {"t": 'CSP'}, {"t": '서버 보안'},
+                {"t": '웹 보안'}, {"t": 'HTTPS'}, {"t": 'OWASP 위험'},
+                {"t": 'CORS'}, {"t": 'SSL/TLS'}, {"t": 'CSP'},
+                {"t": '서버 보안'}, {"t": 'MD5'}, {"t": 'SHA'},
+                {"t": 'scrypt'}, {"t": 'bcrypt'},
             ]},
         ]),
     dict(
@@ -89,7 +94,7 @@ D = [
         zones=[
             {"name": '기초', "nodes": [
                 {"t": 'LLM 동작 원리'}, {"t": '기존 코딩과의 차이'}, {"t": '임베딩'},
-                {"t": '벡터'}, {"t": 'RAG'},
+                {"t": 'Vector'}, {"t": 'RAG'},
             ]},
             {"name": 'AI 코딩 도구', "nodes": [
                 {"t": 'Claude Code'}, {"t": 'Cursor', "s": '대안'}, {"t": 'Copilot', "s": '대안'},
@@ -109,8 +114,11 @@ D = [
         title='6단계 심화',
         desc='테스트와 CI/CD 에서 DB 심화, 컨테이너화, 메시지 브로커, 검색엔진, 아키텍처 패턴으로 이어지는 구간.',
         zones=[
-            {"name": '테스트 · 배포', "nodes": [
+            {"name": '테스트', "nodes": [
                 {"t": '통합 테스트'}, {"t": '단위 테스트'}, {"t": '기능 테스트'},
+            ]},
+            # 원본에서는 세부 노드 없는 토픽이다. 빈 존은 gen.py 가 그리지 못해 토픽 자체를 상자로 둔다
+            {"name": 'CI / CD', "nodes": [
                 {"t": 'CI/CD'},
             ]},
             {"name": 'DB 심화', "nodes": [
@@ -118,12 +126,14 @@ D = [
                 {"t": '정규화'}, {"t": '장애 유형'}, {"t": '성능 프로파일링'},
             ]},
             # 원본에서 LXC 는 Docker·Kubernetes 링크와 함께 컨테이너화 묶음에 있다
-            {"name": '컨테이너화', "nodes": [
+            {"name": '컨테이너', "nodes": [
                 {"t": 'LXC'},
             ]},
-            {"name": '메시지 브로커 · 검색엔진', "nodes": [
-                {"t": 'Kafka'}, {"t": 'RabbitMQ', "s": '대안'}, {"t": 'Elasticsearch'},
-                {"t": 'Solr', "s": '대안'},
+            {"name": '메시지 브로커', "nodes": [
+                {"t": 'Kafka'}, {"t": 'RabbitMQ', "s": '대안'},
+            ]},
+            {"name": '검색엔진', "nodes": [
+                {"t": 'Elasticsearch'}, {"t": 'Solr', "s": '대안'},
             ]},
             {"name": '아키텍처 패턴', "nodes": [
                 {"t": '모놀리식'}, {"t": '마이크로서비스'}, {"t": 'SOA'},
@@ -136,7 +146,7 @@ D = [
         desc='실시간 데이터와 DB 확장, NoSQL 을 거쳐 대규모 서비스 대응으로 이어지는 구간.',
         zones=[
             {"name": '실시간 데이터', "nodes": [
-                {"t": 'SSE'}, {"t": 'WebSocket'}, {"t": '롱·숏 폴링'},
+                {"t": 'SSE'}, {"t": 'WebSocket'}, {"t": 'Long · Short Polling'},
             ]},
             {"name": 'DB 확장', "nodes": [
                 {"t": '인덱스'}, {"t": '복제', "s": '순서 무관'}, {"t": '샤딩', "s": '순서 무관'},

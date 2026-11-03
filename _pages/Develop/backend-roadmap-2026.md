@@ -71,7 +71,11 @@ API 의 소비자가 프론트엔드이기 때문이다.
 
 관계형 DB 는 **PostgreSQL 만 추천**이고 나머지 6개는 전부 대안이다.
 `N+1 문제` 와 `마이그레이션` 은 특정 DB 에 종속되지 않는 공통 개념이라 같은 묶음에 들어 있다.
-인증은 `JWT`·`OAuth` 가 기본이고 `OpenID`·`SAML` 은 순서 무관으로 분류돼 있다.
+인증은 `JWT`·`OAuth` 가 추천이고 `OpenID`·`SAML` 은 순서 무관으로 분류돼 있다.
+
+원본은 이 구간이 끝나는 지점에 **"여기까지면 취업할 만큼은 안다.
+이제 프로젝트를 만들며 실습하라"** 는 문구를 달아 뒀다.
+로드맵 전체 분량의 절반도 안 되는 지점이다.
 
 ---
 
@@ -83,9 +87,7 @@ API 의 소비자가 프론트엔드이기 때문이다.
 {% include diagrams/backend-roadmap--s4.svg %}
 </div>
 
-원본은 이 구간이 끝나는 지점에 **"여기까지면 취업할 만큼은 안다.
-이제 프로젝트를 만들며 실습하라"** 는 문구를 달아 뒀다.
-로드맵 전체 분량의 절반도 안 되는 지점이다.
+보안 묶음의 `MD5`·`SHA`·`scrypt`·`bcrypt` 는 원본에서 **해시 알고리즘**으로 따로 묶여 있다.
 
 ---
 
@@ -125,19 +127,19 @@ API 의 소비자가 프론트엔드이기 때문이다.
 `관측성(Observability)`, `서킷 브레이커`, `백프레셔`, `스로틀링` 등
 장애 대응·복원력 관련 항목이 이 구간에 배치돼 있다.
 
-NoSQL 은 원본에서 **성격별로 묶여** 있다. 도식에는 이름만 폈으므로 분류를 적어 둔다.
+NoSQL 은 원본에서 **성격별로 묶여** 있다. 도식에는 이름만 그렸으므로 분류를 적어 둔다.
 
 | 분류 | 항목 |
 |---|---|
 | 문서 | MongoDB · CouchDB |
-| Key-Value | Redis · DynamoDB |
+| 키-값 | Redis · DynamoDB |
 | 컬럼 | ClickHouse · Cassandra · ScyllaDB |
 | 그래프 | Neo4j · AWS Neptune · DGraph |
 | 시계열 | Influx DB · TimescaleDB |
 | 실시간 | Firebase · RethinkDB |
 
-원본은 이 구간에 **"대부분은 평생 쓸 일이 없을 수도 있다.
-무엇이 있고 언제 쓰는지만 알아 두라"** 는 문구를 달아 뒀다.
+원본은 이 구간에 **"대부분은 쓸 일이 없을 수도 있다.
+무엇인지, 언제 쓰는지만 알아 두라"** 는 문구를 달아 뒀다.
 
 ---
 
@@ -182,5 +184,7 @@ Docker 와 Kubernetes 는?
 | 보안 | [API 보안 모범 사례](https://roadmap.sh/best-practices/api-security) |
 | AI | [프롬프트 엔지니어링](https://roadmap.sh/prompt-engineering) · [AI 에이전트](https://roadmap.sh/ai-agents) |
 | 아키텍처 | [시스템 디자인](https://roadmap.sh/system-design) · [소프트웨어 설계](https://roadmap.sh/software-design-architecture) |
-| 규모 대응 | [DevOps](https://roadmap.sh/devops) · [풀스택](https://roadmap.sh/full-stack) |
+| 규모 대응 | [기초 운영 스킬](https://roadmap.sh/devops?r=devops-beginner) |
+| 맨 끝 | [DevOps](https://roadmap.sh/devops) · [시스템 디자인](https://roadmap.sh/system-design) · [풀스택](https://roadmap.sh/full-stack) |
 | 실습 | [프로젝트 아이디어](https://roadmap.sh/backend/projects) (입문 · 중급) |
+| 맨 위 | [입문자용 축약판](https://roadmap.sh/backend?r=backend-beginner) |

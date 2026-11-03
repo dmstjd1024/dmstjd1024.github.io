@@ -12,12 +12,12 @@
   <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
   <rect class="dg-mask" x="40" y="26" width="70" height="12" rx="2"/>
   <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">실시간 데이터</text>
-  <rect class="dg-item" x="200" y="56" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="248" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SSE</text>
-  <rect class="dg-item" x="312" y="56" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">WebSocket</text>
-  <rect class="dg-item" x="424" y="56" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">롱·숏 폴링</text>
+  <rect class="dg-item" x="174" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="222" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SSE</text>
+  <rect class="dg-item" x="286" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="334" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">WebSocket</text>
+  <rect class="dg-item" x="398" y="56" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Long · Short Polling</text>
   <path class="dg-arw" d="M360,132 V170" marker-end="url(#backend-roadmap--s7-arw-w)"/>
 
   <!-- DB 확장 -->
@@ -118,8 +118,8 @@
   <text class="dg-t" x="124" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">SSE</text>
   <rect class="dg-item" x="188" y="56" width="96" height="52" rx="6"/>
   <text class="dg-t" x="236" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">WebSocket</text>
-  <rect class="dg-item" x="132" y="122" width="96" height="52" rx="6"/>
-  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">롱·숏 폴링</text>
+  <rect class="dg-item" x="106" y="122" width="148" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Long · Short Polling</text>
   <path class="dg-arw" d="M180,198 V236" marker-end="url(#backend-roadmap--s7-arw-n)"/>
 
   <!-- DB 확장 -->

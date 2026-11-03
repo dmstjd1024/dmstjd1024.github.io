@@ -44,7 +44,7 @@
   <text class="dg-s" x="349" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Claude Code · Cursor</text>
   <rect class="dg-item" x="429" y="266" width="141" height="52" rx="6"/>
   <text class="dg-t" x="499" y="288" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기능 개발</text>
-  <text class="dg-s" x="499" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Agents · MCP · 스트리밍</text>
+  <text class="dg-s" x="499" y="305" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">스트리밍 · 구조화된 출력</text>
   <path class="dg-arw" d="M360,342 V380" marker-end="url(#backend-roadmap--stages-arw-w)"/>
 
   <!-- 심화 · 확장 -->
@@ -102,7 +102,7 @@
   <text class="dg-s" x="247" y="371" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Claude Code · Cursor</text>
   <rect class="dg-item" x="109" y="398" width="141" height="52" rx="6"/>
   <text class="dg-t" x="179" y="420" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">기능 개발</text>
-  <text class="dg-s" x="179" y="437" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Agents · MCP · 스트리밍</text>
+  <text class="dg-s" x="179" y="437" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">스트리밍 · 구조화된 출력</text>
   <path class="dg-arw" d="M180,474 V512" marker-end="url(#backend-roadmap--stages-arw-n)"/>
 
   <!-- 심화 · 확장 -->
