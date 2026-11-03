@@ -207,7 +207,7 @@
   {%- else -%}
     {%- comment -%} 실무 글 {%- endcomment -%}
     {%- if n_main > 0 -%}
-      <ul class="cards">
+      <ul class="cards" role="list">
         {%- for p in cand -%}
           {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
           {%- assign pd = p.date | date: '%Y-%m-%d' -%}
@@ -230,7 +230,7 @@
           </p>
         </header>
       {%- endif -%}
-      <ul class="cards cards--note">
+      <ul class="cards cards--note" role="list">
         {%- for p in cand -%}
           {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
           {%- assign pd = p.date | date: '%Y-%m-%d' -%}

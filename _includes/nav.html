@@ -36,7 +36,7 @@
           링크를 깨뜨리지 않기 위해서다(디렉터리 이름 = URL).
         {%- endcomment -%}
         <li>
-          <a href="{{ '/글/index.html' | prepend: site.baseurl }}"
+          <a href="{{ '/글/' | prepend: site.baseurl }}"
              {% if here == '글' %}aria-current="page"{% endif %}>전체</a>
         </li>
         {%- comment -%}
@@ -46,7 +46,7 @@
         {%- endcomment -%}
         <li>
           <a href="{{ '/tags/' | prepend: site.baseurl }}"
-             {% if here == 'tags' %}aria-current="page"{% endif %}>태그</a>
+             {% if here == 'tags' %}aria-current="{% if page.url == '/tags/' %}page{% else %}true{% endif %}"{% endif %}>태그</a>
         </li>
         {%- for cat in nav_cats -%}
           {%- assign seg = cat.path | remove_first: '_pages/' | split: '/' -%}
@@ -82,8 +82,8 @@
             {%- endcomment -%}
             <li{% if child_count > 0 %} class="has-sub"{% endif %}>
               <div class="nav__row">
-                <a href="{{ cat.url | prepend: site.baseurl }}"
-                   {% if here == name %}aria-current="page"{% endif %}>{{ name }}</a>
+                <a href="{{ cat.url | remove: 'index.html' | prepend: site.baseurl }}"
+                   {% if here == name %}aria-current="{% if page.url == cat.url %}page{% else %}true{% endif %}"{% endif %}>{{ name }}</a>
                 {%- if child_count > 0 -%}
                   <button type="button" class="nav__toggle"
                           aria-expanded="false"

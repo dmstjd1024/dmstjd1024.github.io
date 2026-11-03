@@ -65,7 +65,7 @@
       <p class="empty">아직 글이 없습니다.</p>
     {%- else -%}
       {%- if n_main > 0 -%}
-        <ul class="cards">
+        <ul class="cards" role="list">
           {%- for p in posts -%}
             {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
             {%- unless p.tags contains want -%}{%- continue -%}{%- endunless -%}
@@ -85,7 +85,7 @@
             </p>
           </header>
         {%- endif -%}
-        <ul class="cards cards--note">
+        <ul class="cards cards--note" role="list">
           {%- for p in posts -%}
             {%- if p.url contains 'index.html' -%}{%- continue -%}{%- endif -%}
             {%- unless p.tags contains want -%}{%- continue -%}{%- endunless -%}

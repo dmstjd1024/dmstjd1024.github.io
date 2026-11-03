@@ -68,11 +68,11 @@
   글 페이지는 title 이 제대로 있으니 seo 태그가 처리한다.
 {%- endcomment -%}
 {%- if seg.last == 'index.md' -%}
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="canonical" href="{{ page.url | remove: 'index.html' | absolute_url }}">
   <meta property="og:title" content="{{ page_title }}">
   <meta property="og:description" content="{{ page_desc }}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:url" content="{{ page.url | remove: 'index.html' | absolute_url }}">
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:locale" content="{{ site.lang }}">
   <meta property="og:image" content="{{ site.image | absolute_url }}">

@@ -69,7 +69,7 @@
       &:hover { background:var(--bg-sunken); color:var(--fg); }
 
       // 현재 보고 있는 카테고리
-      &[aria-current="page"] { color:var(--fg); font-weight:600; }
+      &[aria-current] { color:var(--fg); font-weight:600; }   // page(그 페이지)·true(그 갈래 안의 글)
     }
   }
 
@@ -94,7 +94,7 @@
       transition:background-color .15s ease, color .15s ease;
 
       &:hover { background:var(--bg-sunken); color:var(--fg); }
-      &[aria-current="page"] { color:var(--accent); }
+      &[aria-current] { color:var(--accent); }
     }
   }
 }
@@ -311,6 +311,8 @@
     &[hidden] { display:none; }
   }
   .nav.is-open .nav__scrim { opacity:1; }
+  // 닫히며 사라지는 동안(.25s)에는 탭을 받지 않는다 — 받으면 그 아래 링크가 안 눌린다
+  .nav:not(.is-open) .nav__scrim { pointer-events:none; }
 
   #btn-menu { display:grid; }
 }

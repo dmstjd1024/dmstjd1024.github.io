@@ -63,7 +63,7 @@
         var items = drawerItems();
         if (items.length) items[0].focus();
       } else if (menu && menu.contains(document.activeElement)) {
-        menuBtn.focus();
+        menuBtn.focus({ preventScroll: true });   // 상단바(scroll-padding 영역) 버튼이라 그냥 주면 페이지가 튄다
       }
 
       // 막은 닫힐 때 서서히 사라져야 하므로 전환이 끝난 뒤에 감춘다.
@@ -122,7 +122,7 @@
 
       if (e.key === 'Escape') {
         setMenu(false);
-        menuBtn.focus();               // 닫은 뒤 돌아갈 자리를 잃지 않게
+        menuBtn.focus({ preventScroll: true });   // 닫은 뒤 돌아갈 자리를 잃지 않게
         return;
       }
 

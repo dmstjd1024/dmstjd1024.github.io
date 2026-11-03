@@ -45,7 +45,7 @@
         slug 규칙은 _plugins/tag_pages.rb 의 slug_for 와 같아야 한다.
         소문자로 낮추고 공백만 하이픈으로 — 기본 slugify 는 한글을 지운다.
       {%- endcomment -%}
-      <ul class="post-head__tags">
+      <ul class="post-head__tags" role="list">
         {%- for tag in page.tags -%}
           {%- assign slug = tag | downcase | strip | replace: ' ', '-' | url_encode -%}
           {%- assign hue = tag | downcase | strip -%}
@@ -189,5 +189,5 @@
 
 <aside class="toc" id="toc" hidden>
   <p class="toc__label">목차</p>
-  <ul class="toc__list"></ul>
+  <ul class="toc__list" role="list"></ul>
 </aside>
