@@ -33,7 +33,7 @@
     align-items:center;
     gap:.6rem;
     flex-shrink:0;
-    font-family:var(--font-display);   // 로고에만 Poppins 를 쓴다
+    font-family:var(--font-display);   // 로고는 Poppins
     font-weight:600;
     font-size:.95rem;
     letter-spacing:-.02em;
@@ -94,8 +94,9 @@
       transition:background-color .15s ease, color .15s ease;
 
       &:hover { background:var(--bg-sunken); color:var(--fg); }
-      &[aria-current] { color:var(--accent); }
     }
+
+    a[aria-current] { color:var(--accent); }   // /roadmap/ 링크
   }
 }
 

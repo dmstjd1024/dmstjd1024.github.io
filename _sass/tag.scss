@@ -1,8 +1,8 @@
 // ---------------------------------------------------------------------------
 // 태그 색
 //
-// 모양(크기·여백)은 쓰는 자리마다 다르므로 각 파일(post.scss, list.scss)에
-// 그대로 두고, 여기서는 색만 준다. 그래서 선택자가 `.tag--red` 하나뿐이다.
+// 모양(크기·여백)은 쓰는 자리(post.scss 의 .post-head__tags)에 그대로 두고,
+// 여기서는 색만 준다. 그래서 선택자가 `a.tag--red` 하나뿐이다.
 //
 // 어느 태그가 어느 색인지는 _includes/tag-hue.html 이 정한다.
 // 색값은 _sass/vars.scss 의 --c-tag-* 이고 다크모드에서 다시 정의된다.
@@ -18,10 +18,10 @@
   border-color:color-mix(in srgb, #{$c} 35%, transparent);
   background:color-mix(in srgb, #{$c} 8%, var(--bg));
 
+  // 배경은 그대로 두고 테두리만 진하게 한다. 배경을 16% 로 올렸더니 글자 대비가 4.0~4.2:1 로 내려갔다.
   &:hover {
     color:$c;
     border-color:color-mix(in srgb, #{$c} 70%, transparent);
-    background:color-mix(in srgb, #{$c} 16%, var(--bg));
   }
 }
 
@@ -41,7 +41,7 @@ a.tag {
   &--pink   { @include tag-hue(var(--c-tag-pink));   }
 
   // 색을 주지 않은 태그. 태그 223개 중 1편짜리가 134개(2026-11)라 이쪽이 오히려 기본값이다.
-  // 기존과 같은 회색이되, 테두리만 있던 목록 칩에도 배경을 줘 모양을 맞춘다.
+  // 회색 글자에 다른 색 태그와 같은 모양(테두리+옅은 배경)을 준다.
   &--slate {
     color:var(--fg-subtle);
     border-color:var(--border);

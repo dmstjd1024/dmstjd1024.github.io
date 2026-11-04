@@ -13,6 +13,7 @@ title  : iframe 제목. 스크린리더가 읽으므로 반드시 채운다
 {%- endcomment -%}
 <div class="archify"
      data-src="{{ site.baseurl }}/assets/diagrams/{{ include.src }}.html"
+     data-title="{{ include.title | escape }}"
      style="--archify-h: {{ include.height | default: 640 }}px">
   <noscript>
     <a href="{{ site.baseurl }}/assets/diagrams/{{ include.src }}.html">

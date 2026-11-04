@@ -40,14 +40,6 @@ $baseurl: "{{ site.baseurl }}";
 @font-face {
   font-family:'Poppins';
   font-style:normal;
-  font-weight:500;
-  font-display:swap;
-  src:url("#{$baseurl}/assets/fonts/poppins-500.woff2") format("woff2");
-  unicode-range:U+0000-00FF, U+2000-206F, U+2190-21FF, U+2212;
-}
-@font-face {
-  font-family:'Poppins';
-  font-style:normal;
   font-weight:600;
   font-display:swap;
   src:url("#{$baseurl}/assets/fonts/poppins-600.woff2") format("woff2");
@@ -68,7 +60,7 @@ $baseurl: "{{ site.baseurl }}";
 @import "home";
 @import "roadmap";
 @import "post";
-// 태그 색은 list/post 의 회색 규칙을 덮어야 하므로 그 뒤에 온다.
+// 태그 색은 post 의 회색 규칙을 덮어야 하므로 그 뒤에 온다.
 @import "tag";
 @import "syntax";
 @import "diagram";

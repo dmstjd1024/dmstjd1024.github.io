@@ -61,6 +61,7 @@ flowchart LR
 
 <div class="archify"
      data-src="/assets/diagrams/type-workflow.html"
+     data-title="Archify workflow 도식 — dotfiles 설치 스크립트의 분기"
      style="--archify-h: 700px">
 </div>
 
@@ -124,6 +125,7 @@ node bin/archify.mjs deliver  workflow foo.json foo.html --quality showcase --js
 
 <div class="archify"
      data-src="/assets/diagrams/type-architecture.html"
+     data-title="Archify architecture 도식 — 블로그 배포 구조"
      style="--archify-h: 620px">
 </div>
 
@@ -133,6 +135,7 @@ node bin/archify.mjs deliver  workflow foo.json foo.html --quality showcase --js
 
 <div class="archify"
      data-src="/assets/diagrams/type-sequence.html"
+     data-title="Archify sequence 도식 — 독자가 글을 열 때"
      style="--archify-h: 620px">
 </div>
 
@@ -142,6 +145,7 @@ node bin/archify.mjs deliver  workflow foo.json foo.html --quality showcase --js
 
 <div class="archify"
      data-src="/assets/diagrams/type-dataflow.html"
+     data-title="Archify dataflow 도식 — 마크다운이 HTML이 되기까지"
      style="--archify-h: 520px">
 </div>
 
@@ -151,6 +155,7 @@ node bin/archify.mjs deliver  workflow foo.json foo.html --quality showcase --js
 
 <div class="archify"
      data-src="/assets/diagrams/type-lifecycle.html"
+     data-title="Archify lifecycle 도식 — 글 한 편의 상태"
      style="--archify-h: 560px">
 </div>
 
@@ -211,6 +216,7 @@ edges[6] "present-skip" 과 55px 회랑을 공유함 (최소 8px)
 
 <div class="archify"
      data-src="/assets/diagrams/archify-repair-loop.html"
+     data-title="Archify 도식 — 겹침 반려를 고쳐 통과하기까지"
      style="--archify-h: 680px">
 </div>
 
