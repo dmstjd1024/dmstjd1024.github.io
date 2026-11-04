@@ -40,7 +40,7 @@
                         <li{% if gc > 0 %} class="has-sub"{% endif %}>
                           {%- if gc > 0 -%}
                           <div class="nav__row">
-                          <a href="{{ su | prepend: site.baseurl }}"{% if cur != '' %} aria-current="{{ cur }}"{% endif %}>{{ nm | replace: '-', '-<wbr>' }}</a>
+                          <a href="{{ su | prepend: site.baseurl }}"{% if cur != '' %} aria-current="{{ cur }}"{% endif %}>{{ nm | replace: '-', '-<wbr aria-hidden="true">' }}</a>
                           <button type="button" class="nav__toggle" aria-expanded="false" aria-label="{{ nm }} 하위 메뉴 펼치기">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.6 16.6 13.2 12 8.6 7.4 10 6l6 6-6 6z"/></svg>
                           </button>
@@ -49,7 +49,7 @@
                           {%- assign cd2 = include.depth | plus: 1 -%}
                           {%- include nav-sub.html cats=include.cats prefix=cp2 depth=cd2 -%}
                           {%- else %}
-                          <a href="{{ su | prepend: site.baseurl }}"{% if cur != '' %} aria-current="{{ cur }}"{% endif %}>{{ nm | replace: '-', '-<wbr>' }}</a>
+                          <a href="{{ su | prepend: site.baseurl }}"{% if cur != '' %} aria-current="{{ cur }}"{% endif %}>{{ nm | replace: '-', '-<wbr aria-hidden="true">' }}</a>
                         {%- endif %}
                         </li>
                       {%- endif -%}

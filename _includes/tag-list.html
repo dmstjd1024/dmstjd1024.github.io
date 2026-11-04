@@ -15,10 +15,9 @@
 {%- comment -%}
   글만 남긴다. 카테고리 페이지는 URL 이 index.html 로 끝난다.
 
-  site.pages 가 아니라 site.documents 를 쓴다. _config.yml 이
-  collections.pages 를 정의해서 글이 그 컬렉션에 들어가고, site.pages 에는
-  404·index 같은 28 개만 남는다. (post-list.html 은 site.pages 를 쓰지만
-  거기서 다루는 카테고리 index 는 실제로 site.pages 에 있다.)
+  site.documents 를 쓴다. _config.yml 이 collections.pages 를 정의해서 글이
+  그 컬렉션에 들어간다. (Liquid 의 site.pages 도 이름이 같아 그 컬렉션 문서를
+  돌려주고, post-list.html 은 그쪽을 쓴다.)
 {%- endcomment -%}
 {%- assign posts = site.documents
       | where_exp: "p", "p.tags"
@@ -57,7 +56,7 @@
         <span class="sep">/</span>
         <a href="{{ '/tags/' | prepend: site.baseurl }}">태그</a>
       </p>
-      <h1 class="list-head__title">{{ want | replace: '-', '-<wbr>' | replace: '_', '_<wbr>' }}</h1>
+      <h1 class="list-head__title">{{ want | replace: '-', '-<wbr aria-hidden="true">' | replace: '_', '_<wbr aria-hidden="true">' }}</h1>
       <p class="list-head__count">글 {{ total }}편{%- if n_note > 0 and n_main > 0 %} · 학습 노트 {{ n_note }}편 포함{% endif -%}</p>
     </header>
 

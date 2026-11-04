@@ -183,6 +183,8 @@
       text-align:left;
     }
     th { background:var(--bg-sunken); font-weight:500; }
+    // anywhere 는 칸의 최소 폭까지 줄여, 표가 스크롤되는 대신 코드를 글자 단위로 잘랐다
+    :not(pre) > code { overflow-wrap:normal; }
     tr:last-child td { border-bottom:0; }
   }
 }

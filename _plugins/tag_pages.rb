@@ -1,7 +1,7 @@
 # 태그별 페이지를 빌드 때 만들어 준다.
 #
 # 왜 플러그인인가:
-#   태그는 108 개이고 계속 는다. 그때마다 _pages 아래에 빈 파일을 손으로
+#   태그는 200 개가 넘고 계속 는다. 그때마다 _pages 아래에 빈 파일을 손으로
 #   만들면 글을 쓸 때마다 잊어버린다. 카테고리는 디렉터리가 곧 메뉴라
 #   빈 index.md 로 충분했지만, 태그는 글에서 파생되므로 생성이 맞다.
 #
@@ -39,7 +39,7 @@ module TagPages
     def generate(site)
       # 글은 site.pages 가 아니라 "pages" 컬렉션에 있다.
       # _config.yml 이 collections.pages 를 정의해서 그렇다 — 이름이 같아
-      # 헷갈리지만 site.pages 에는 404·index 등 28개뿐이다.
+      # 헷갈리지만 Ruby 의 site.pages 에는 컬렉션 밖 페이지(404·redirect 등)만 있다.
       docs = site.collections["pages"] ? site.collections["pages"].docs : []
       tags = {}
       docs.each do |p|
