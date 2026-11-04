@@ -202,7 +202,7 @@
           <a class="chip{% if s_here == here %} is-on{% endif %}"
              href="{{ s_here | prepend: site.baseurl }}"
              {% if s_here == here %}aria-current="page"{% endif %}>
-            {{ s_seg[s_idx] | replace: '-', '-<wbr aria-hidden="true">' }} <span class="chip__n">{{ s_count }}</span>
+            <span>{{ s_seg[s_idx] | replace: '-', '-<wbr aria-hidden="true">' }}</span> <span class="chip__n">{{ s_count }}</span>
           </a>
         {%- endif -%}
       {%- endfor -%}

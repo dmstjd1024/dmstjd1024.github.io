@@ -138,10 +138,11 @@
     site.pages 를 쓰는 이유: 이 블로그의 글은 _posts 가 아니라 _pages 에
     있어서 site.posts 가 비어 있다(post-list.html 과 같은 사정).
     index.md 는 카테고리 표지라 목록에서 뺀다.
+    주소(/Infra/)로 거르면 /BlockChain/Infra/ 글까지 걸려서 경로 앞부분으로 거른다.
   {%- endcomment -%}
-  {%- assign cat_url = '/' | append: seg[0] | append: '/' -%}
+  {%- assign cat_path = '_pages/' | append: seg[0] | append: '/' -%}
   {%- assign sibs = site.pages
-        | where_exp: "p", "p.url contains cat_url"
+        | where_exp: "p", "p.path contains cat_path"
         | where_exp: "p", "p.name != 'index.md'"
         | sort: "date" | reverse -%}
   {%- assign prev_p = nil -%}
