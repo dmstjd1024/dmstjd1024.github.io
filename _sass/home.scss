@@ -615,13 +615,6 @@ body.dark-theme .stack__sub img { filter:saturate(.9); }
 
     li::marker { color:var(--fg-subtle); }
   }
-
-  &__date {
-    margin-top:.75rem;
-    font-family:var(--font-mono);
-    font-size:.75rem;
-    color:var(--fg-subtle);
-  }
 }
 
 .allposts {
@@ -657,8 +650,6 @@ body.dark-theme .stack__sub img { filter:saturate(.9); }
 @media (max-width:$bp-mobile) {
   .hero {
     padding:3rem 0 2.5rem;
-
-    &__facts { gap:1.5rem; }
   }
 
   .home__foot {

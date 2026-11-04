@@ -28,21 +28,6 @@
     color:var(--fg-subtle);
     font-variant-numeric:tabular-nums;
   }
-
-  // 첫 화면 소개문. 제목과 글 목록 사이에 두 줄만 끼우는 자리라
-  // max-width 를 걸어 한 줄이 너무 길어지지 않게 한다.
-  &__intro {
-    margin-top:1rem;
-    max-width:44rem;
-    font-size:.9375rem;
-    line-height:1.7;
-    color:var(--fg-muted);
-
-    a {
-      color:var(--accent);
-      white-space:nowrap;   // "프로젝트 보기 →" 가 화살표만 다음 줄로 넘어가지 않게
-    }
-  }
 }
 
 // 하위 카테고리 칩
@@ -172,46 +157,6 @@
     -webkit-line-clamp:2;
     -webkit-box-orient:vertical;
     overflow:hidden;
-  }
-
-  // 카드 하단 태그 줄.
-  //
-  // card__link 바깥에 있다(링크 중첩을 피하려고). 그래서 링크의 padding
-  // 을 물려받지 못하고, 좌우를 여기서 같은 값으로 맞춰야 제목과 세로선이
-  // 어긋나지 않는다. 위쪽은 링크의 아래 패딩이 이미 있어 조금만 준다.
-  &__tags {
-    display:flex;
-    flex-wrap:wrap;
-    gap:.3rem;
-    padding:0 1.25rem 1rem;
-    margin-top:-.5rem;
-    list-style:none;
-
-    a {
-      display:inline-block;
-      font-family:var(--font-mono);
-      font-size:.6875rem;
-      color:var(--fg-subtle);
-      border:1px solid var(--border);
-      padding:.1rem .4rem;
-      border-radius:var(--r-sm);
-      transition:border-color .15s ease, color .15s ease;
-
-      &:hover {
-        color:var(--fg);
-        border-color:var(--border-strong);
-      }
-
-      // 태그 페이지에서, 지금 보고 있는 그 태그
-      //
-      // 색은 태그 색(tag.scss) 그대로 두고 굵기와 테두리로만 구분한다.
-      // 카테고리 초록으로 칠하면 초록 계열 태그(#Spring, #Backend)와 같아
-      // 보여 강조가 사라졌다.
-      &.is-on {
-        font-weight:700;
-        border-color:currentColor;
-      }
-    }
   }
 
   &__thumb {
