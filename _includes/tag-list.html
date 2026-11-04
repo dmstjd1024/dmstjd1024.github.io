@@ -57,7 +57,7 @@
         <span class="sep">/</span>
         <a href="{{ '/tags/' | prepend: site.baseurl }}">태그</a>
       </p>
-      <h1 class="list-head__title">{{ want }}</h1>
+      <h1 class="list-head__title">{{ want | replace: '-', '-<wbr>' | replace: '_', '_<wbr>' }}</h1>
       <p class="list-head__count">글 {{ total }}편{%- if n_note > 0 and n_main > 0 %} · 학습 노트 {{ n_note }}편 포함{% endif -%}</p>
     </header>
 
