@@ -24,7 +24,8 @@ module TagPages
       self.data = {
         "layout"   => "page",
         "tag"      => tag,
-        "title"    => tag,
+        # 카테고리와 이름이 같은 태그(java·Docker 등)가 많아 페이지 제목이 겹치지 않게 한다.
+        "title"    => "#{tag} 태그",
         # 목록 페이지는 사이트맵에 넣지 않는다. 글이 아니라 색인이고,
         # 태그마다 한 장씩 늘어 사이트맵이 본문보다 커진다.
         "sitemap"  => false,
