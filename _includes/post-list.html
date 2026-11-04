@@ -78,8 +78,8 @@
       <h1 class="list-head__title">전체 글</h1>
     {%- else -%}
       {%- comment -%}
-        서브 카테고리(AI/Backend)에서는 바로 위(AI)로 올라갈 수 있게 한다.
-        최상위(AI)에서는 전체 글로 간다.
+        서브 카테고리(Database/Redis)에서는 바로 위(Database)로 올라갈 수 있게 한다.
+        최상위(Database)에서는 전체 글로 간다.
       {%- endcomment -%}
       {%- assign my_seg = page.path | remove_first: '_pages/' | split: '/' -%}
       <p class="list-head__eyebrow">
@@ -111,9 +111,9 @@
   {%- comment -%}
     같은 묶음의 카테고리를 칩으로 띄운다.
 
-    기준은 "나" 가 아니라 "형제를 묶는 부모" 다. AI 에서는 AI 의 하위가,
-    AI/Backend 에서는 (부모인 AI 의 하위, 즉) 형제들이 나온다. 그래야
-    Backend 에서 Frontend 로 갈 때 AI 로 한 번 올라갔다 내려오지 않아도 된다.
+    기준은 "나" 가 아니라 "형제를 묶는 부모" 다. Database 에서는 Database 의 하위가,
+    Database/Redis 에서는 (부모인 Database 의 하위, 즉) 형제들이 나온다. 그래야
+    Redis 에서 Postgresql 로 갈 때 Database 로 한 번 올라갔다 내려오지 않아도 된다.
 
     서브가 없는 카테고리(Docker 등)에는 칩 줄 자체를 그리지 않는다 —
     "전체" 하나만 덩그러니 있으면 누를 것도 없이 자리만 차지한다.
@@ -132,8 +132,8 @@
   {%- elsif my_seg2.size > 2 -%}
     {%- comment -%}
       서브에 있다 — 부모를 기준으로 삼는다.
-      here 는 "/AI/Frontend/" 처럼 index.html 이 이미 빠진 값이고,
-      split 하면 ["","AI","Frontend"] 라 마지막 한 칸을 떼면 부모가 된다.
+      here 는 "/Database/Redis/" 처럼 index.html 이 이미 빠진 값이고,
+      split 하면 ["","Database","Redis"] 라 마지막 한 칸을 떼면 부모가 된다.
     {%- endcomment -%}
     {%- assign u = here | split: '/' -%}
     {%- assign u_cut = u.size | minus: 1 -%}

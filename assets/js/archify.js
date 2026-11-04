@@ -42,8 +42,8 @@
 
   Array.prototype.forEach.call(boxes, function (box) { io.observe(box); });
 
-  // 테마를 바꾸면 주소를 다시 준다. sandbox 에 allow-same-origin 을 주지
-  // 않았으므로 postMessage 로 안쪽을 건드릴 수 없다 — src 교체가 유일한 길이다.
+  // 테마를 바꾸면 주소를 다시 준다. 뷰어(assets/diagrams/*.html)는 테마를
+  // 주소 파라미터로만 읽고 message 를 받지 않으므로 src 교체가 유일한 길이다.
   var btn = document.getElementById('btn-theme');
   if (btn) {
     btn.addEventListener('click', function () {
