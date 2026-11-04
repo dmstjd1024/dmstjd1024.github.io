@@ -80,11 +80,13 @@
   글 페이지는 title 이 제대로 있으니 seo 태그가 처리한다.
 {%- endcomment -%}
 {%- if seg.last == 'index.md' -%}
-  {%- comment -%} 미리보기 제목에는 사이트 이름을 빼고 og:site_name 에 맡긴다(글·태그 페이지의 seo 태그와 같다) {%- endcomment -%}
+  {%- comment -%} 미리보기 제목·설명에는 사이트 이름을 빼고 og:site_name 에 맡긴다(글·태그 페이지의 seo 태그와 같다) {%- endcomment -%}
   {%- assign og_title = head_title | default: site.title -%}
+  {%- assign site_suffix = ' · ' | append: site.title -%}
+  {%- assign og_desc = page_desc | remove: site_suffix -%}
   <link rel="canonical" href="{{ page.url | remove: 'index.html' | absolute_url }}">
   <meta property="og:title" content="{{ og_title }}">
-  <meta property="og:description" content="{{ page_desc }}">
+  <meta property="og:description" content="{{ og_desc }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | remove: 'index.html' | absolute_url }}">
   <meta property="og:site_name" content="{{ site.title }}">
@@ -92,7 +94,7 @@
   <meta property="og:image" content="{{ site.image | absolute_url }}">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ og_title }}">
-  <meta name="twitter:description" content="{{ page_desc }}">
+  <meta name="twitter:description" content="{{ og_desc }}">
   <meta name="twitter:image" content="{{ site.image | absolute_url }}">
 {%- else -%}
   {%- comment -%}
