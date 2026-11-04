@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 502" role="img" aria-labelledby="backend-roadmap--stages-title" aria-describedby="backend-roadmap--stages-desc">
   <title id="backend-roadmap--stages-title">백엔드 로드맵 전체 구조</title>
-  <desc id="backend-roadmap--stages-desc">기본기(인터넷·언어·DB·API·캐싱)를 거쳐 AI 단계로 들어가고, 그 뒤 심화와 규모 대응으로 이어지는 백엔드 학습 경로. AI 는 2026년에 새로 들어온 단계다.</desc>
+  <desc id="backend-roadmap--stages-desc">기본기(인터넷·언어·버전 관리·관계형 DB·API·캐싱·웹 서버)를 거쳐 AI 단계로 들어가고, 그 뒤 심화와 규모 대응으로 이어지는 백엔드 학습 경로. AI 는 2026년에 새로 들어온 단계다.</desc>
 
   <defs>
     <marker id="backend-roadmap--stages-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

@@ -96,7 +96,8 @@
       &:hover { background:var(--bg-sunken); color:var(--fg); }
     }
 
-    a[aria-current] { color:var(--accent); }   // /roadmap/ 링크
+    // /roadmap/ 링크. 색만으로는 옆 아이콘과 대비가 1.7:1 이라(WCAG 1.4.1) 아래 막대를 더한다.
+    a[aria-current] { color:var(--accent); box-shadow:inset 0 -2px 0 currentColor; }
   }
 }
 
