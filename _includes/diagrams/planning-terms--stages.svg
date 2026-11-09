@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 580" role="img" aria-labelledby="planning-terms--stages-title planning-terms--stages-desc">
+  <title id="planning-terms--stages-title">서비스 기획 용어를 네 단계로 나눈 지도</title>
+  <desc id="planning-terms--stages-desc">문제 정의, 해법 설계, 명세, 검증 순서로 이어지는 네 단계와 각 단계에서 쓰는 용어 14개.</desc>
+
+  <defs>
+    <marker id="planning-terms--stages-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 문제 정의 · 무엇이 문제인가 -->
+  <rect class="dg-zone" x="24" y="32" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="129" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">문제 정의 · 무엇이 문제인가</text>
+  <rect class="dg-item" x="200" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="248" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">역기획</text>
+  <rect class="dg-item" x="312" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="360" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">페르소나</text>
+  <rect class="dg-item" x="424" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="472" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JTBD</text>
+  <path class="dg-arw" d="M360,132 V170" marker-end="url(#planning-terms--stages-arw-w)"/>
+
+  <!-- 해법 설계 · 어떻게 풀고 무엇부터 하나 -->
+  <rect class="dg-zone" x="24" y="176" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="170" width="171" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="179" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">해법 설계 · 어떻게 풀고 무엇부터 하나</text>
+  <rect class="dg-item" x="82" y="200" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="131" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">유저 플로우</text>
+  <rect class="dg-item" x="197" y="200" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="249" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">와이어프레임</text>
+  <rect class="dg-item" x="317" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="365" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">정책서</text>
+  <rect class="dg-item" x="429" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="477" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RICE</text>
+  <rect class="dg-item" x="541" y="200" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="589" y="231" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MoSCoW</text>
+  <path class="dg-arw" d="M360,276 V314" marker-end="url(#planning-terms--stages-arw-w)"/>
+
+  <!-- 명세 · 무엇을 만들지 어떻게 전하나 -->
+  <rect class="dg-zone" x="24" y="320" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="314" width="158" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="323" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">명세 · 무엇을 만들지 어떻게 전하나</text>
+  <rect class="dg-item" x="198" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="246" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PRD</text>
+  <rect class="dg-item" x="310" y="344" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="359" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">유저 스토리</text>
+  <rect class="dg-item" x="425" y="344" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="473" y="375" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인수 조건</text>
+  <path class="dg-arw" d="M360,420 V458" marker-end="url(#planning-terms--stages-arw-w)"/>
+
+  <!-- 검증 · 문제가 풀렸는지 어떻게 아나 -->
+  <rect class="dg-zone" x="24" y="464" width="672" height="100" rx="8"/>
+  <rect class="dg-mask" x="40" y="458" width="158" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="467" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">검증 · 문제가 풀렸는지 어떻게 아나</text>
+  <rect class="dg-item" x="198" y="488" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="247" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">북극성 지표</text>
+  <rect class="dg-item" x="313" y="488" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="361" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">AARRR</text>
+  <rect class="dg-item" x="425" y="488" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="473" y="519" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">A/B 테스트</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="dg-narrow" viewBox="0 0 360 910" role="presentation" aria-hidden="true">
+
+  <defs>
+    <marker id="planning-terms--stages-arw-n" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0 0 L8 3 L0 6 z"/>
+    </marker>
+  </defs>
+
+  <!-- 문제 정의 · 무엇이 문제인가 -->
+  <rect class="dg-zone" x="24" y="32" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="26" width="129" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="35" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">문제 정의 · 무엇이 문제인가</text>
+  <rect class="dg-item" x="76" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">역기획</text>
+  <rect class="dg-item" x="188" y="56" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="87" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">페르소나</text>
+  <rect class="dg-item" x="132" y="122" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="153" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">JTBD</text>
+  <path class="dg-arw" d="M180,198 V236" marker-end="url(#planning-terms--stages-arw-n)"/>
+
+  <!-- 해법 설계 · 어떻게 풀고 무엇부터 하나 -->
+  <rect class="dg-zone" x="24" y="242" width="312" height="232" rx="8"/>
+  <rect class="dg-mask" x="40" y="236" width="171" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="245" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">해법 설계 · 어떻게 풀고 무엇부터 하나</text>
+  <rect class="dg-item" x="70" y="266" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="119" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">유저 플로우</text>
+  <rect class="dg-item" x="185" y="266" width="104" height="52" rx="6"/>
+  <text class="dg-t" x="237" y="297" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">와이어프레임</text>
+  <rect class="dg-item" x="76" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="124" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">정책서</text>
+  <rect class="dg-item" x="188" y="332" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="236" y="363" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">RICE</text>
+  <rect class="dg-item" x="132" y="398" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="429" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">MoSCoW</text>
+  <path class="dg-arw" d="M180,474 V512" marker-end="url(#planning-terms--stages-arw-n)"/>
+
+  <!-- 명세 · 무엇을 만들지 어떻게 전하나 -->
+  <rect class="dg-zone" x="24" y="518" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="512" width="158" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="521" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">명세 · 무엇을 만들지 어떻게 전하나</text>
+  <rect class="dg-item" x="74" y="542" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="122" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">PRD</text>
+  <rect class="dg-item" x="186" y="542" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="235" y="573" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">유저 스토리</text>
+  <rect class="dg-item" x="132" y="608" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="639" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">인수 조건</text>
+  <path class="dg-arw" d="M180,684 V722" marker-end="url(#planning-terms--stages-arw-n)"/>
+
+  <!-- 검증 · 문제가 풀렸는지 어떻게 아나 -->
+  <rect class="dg-zone" x="24" y="728" width="312" height="166" rx="8"/>
+  <rect class="dg-mask" x="40" y="722" width="158" height="12" rx="2"/>
+  <text class="dg-s" x="44" y="731" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">검증 · 문제가 풀렸는지 어떻게 아나</text>
+  <rect class="dg-item" x="74" y="752" width="99" height="52" rx="6"/>
+  <text class="dg-t" x="123" y="783" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">북극성 지표</text>
+  <rect class="dg-item" x="189" y="752" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="237" y="783" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">AARRR</text>
+  <rect class="dg-item" x="132" y="818" width="96" height="52" rx="6"/>
+  <text class="dg-t" x="180" y="849" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">A/B 테스트</text>
+</svg>
