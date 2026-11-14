@@ -1,7 +1,7 @@
 ---
 title:  "docker compose 가 221커밋 뒤처진 소스로 빌드할 뻔했다"
-subtitle: "자동매매 v2 실전 전환 전 deploy-p8.sh 점검: --project-directory, 고정된 되돌림 태그, git 이 아닌 배포 폴더"
-description: "자동매매 v2 실전 전환 전 deploy-p8.sh 점검: --project-directory, 고정된 되돌림 태그, git 이 아닌 배포 폴더"
+subtitle: "자동매매 v2 실전 전환 전 deploy-p8.sh 점검: project-directory 옵션, 고정된 되돌림 태그, git 이 아닌 배포 폴더"
+description: "자동매매 v2 실전 전환 전 deploy-p8.sh 점검: project-directory 옵션, 고정된 되돌림 태그, git 이 아닌 배포 폴더"
 
 categories:
   - Docker

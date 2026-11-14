@@ -95,7 +95,7 @@ Amplitude 의 [다른 글](https://www.amplitude.com/blog/good-bad-north-star-me
 
 정리하면 이렇다. 이 구분은 내 해석이다.
 
-| | 북극성 지표 | KPI |
+| 구분 | 북극성 지표 | KPI |
 |---|---|---|
 | 개수 | 하나 | 여럿 |
 | 재는 것 | 고객이 얻는 가치 | 부서·목표별 운영 성과 |
@@ -140,7 +140,7 @@ Dave McClure 의 발표 자료 [「Startup Metrics for Pirates: AARRR!」](https
 
 ## A/B 테스트는 사용자를 무작위로, 계속 같은 쪽에 나눈다
 
-Kohavi, Tang, Xu 의 『Trustworthy Online Controlled Experiments』(Cambridge, 2020) [1장 공개 발췌](https://assets.cambridge.org/97811087/24265/excerpt/9781108724265_excerpt.pdf)를 읽었다. 책은 통제 실험(controlled experiment)과 A/B 테스트를 같은 뜻으로 쓴다. 가장 흔한 형태는 이렇다.
+Kohavi, Tang, Xu 의 『Trustworthy Online Controlled Experiments』(Cambridge, 2020) [1장 공개 발췌](https://web.archive.org/web/20220503101107/https://assets.cambridge.org/97811087/24265/excerpt/9781108724265_excerpt.pdf)를 읽었다. 책은 통제 실험(controlled experiment)과 A/B 테스트를 같은 뜻으로 쓴다. 가장 흔한 형태는 이렇다.
 
 > users are randomly split between variants in a persistent manner (a user receives the same variant in multiple visits)
 

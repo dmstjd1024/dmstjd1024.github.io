@@ -149,9 +149,9 @@
                 {%- comment -%}
                   _plugins/tag_pages.rb 의 slug_for 와 같은 규칙이어야 한다.
                   소문자로 낮추고 공백만 하이픈으로 바꾼다 — 기본 slugify 는 한글을
-                  통째로 지워 서로 다른 태그가 같은 주소가 된다.
+                  통째로 지워 서로 다른 태그가 같은 주소가 된다. 경로 조각 앞의 '.' 은 뗀다.
                 {%- endcomment -%}
-                {%- assign slug = t | downcase | strip | replace: ' ', '-' | url_encode -%}
+                {%- assign slug = t | downcase | strip | replace: ' ', '-' | prepend: '/' | replace: '/.', '/' | remove_first: '/' | url_encode -%}
                 <a href="{{ '/tags/' | append: slug | append: '/' | prepend: site.baseurl }}">{{ t }}</a>{% unless forloop.last %}, {% endunless %}
               {%- endfor -%}
             </p>

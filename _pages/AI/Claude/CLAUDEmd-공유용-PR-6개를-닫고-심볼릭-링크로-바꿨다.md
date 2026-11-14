@@ -1,7 +1,7 @@
 ---
 title:  "CLAUDE.md 공유용 PR 6개를 닫고 심볼릭 링크로 바꿨다"
-subtitle: "공통 레포 분리, `@` import, RULE.md를 차례로 걸러냈지만 링크된 규칙의 로드는 아직 확인하지 못했다"
-description: "공통 레포 분리, `@` import, RULE.md를 차례로 걸러냈지만 링크된 규칙의 로드는 아직 확인하지 못했다"
+subtitle: "공통 레포 분리, @ import, RULE.md를 차례로 걸러냈지만 링크된 규칙의 로드는 아직 확인하지 못했다"
+description: "공통 레포 분리, @ import, RULE.md를 차례로 걸러냈지만 링크된 규칙의 로드는 아직 확인하지 못했다"
 
 categories:
   - AI

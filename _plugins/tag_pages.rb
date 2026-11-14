@@ -65,8 +65,10 @@ module TagPages
 
     # Liquid 의 `slugify: 'raw'` 와 같은 동작. 공백을 하이픈으로 바꾸는 정도만
     # 하고 한글은 남긴다. URL 인코딩은 브라우저·서버가 처리한다.
+    # 경로 조각 앞의 '.' 은 뗀다 — ".claude/rules" 가 tags/.claude/ 숨김 폴더가 되면
+    # upload-pages-artifact 가 숨김 파일을 빼고 올려 운영에서 404 가 났다.
     def slug_for(tag)
-      tag.to_s.downcase.strip.gsub(/\s+/, "-")
+      tag.to_s.downcase.strip.gsub(/\s+/, "-").gsub(%r{(\A|/)\.}, '\\1')
     end
   end
 

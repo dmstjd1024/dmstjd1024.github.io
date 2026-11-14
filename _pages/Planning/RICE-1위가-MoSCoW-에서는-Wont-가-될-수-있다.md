@@ -27,13 +27,14 @@ RICE 와 MoSCoW 는 둘 다 우선순위 기법으로 묶이지만 **답하는 �
 
 ## RICE 는 펫 아이디어를 막으려고 만들었다
 
-RICE 는 Intercom 의 Sean McBride 가 [2018년 1월 5일 글](https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/)에서 소개했다. 글은 우선순위가 어려운 이유를 세 가지로 든다.
+RICE 는 Intercom 의 Sean McBride 가 [2018년 1월 5일 글](https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/)에서 소개했다. 글은 우선순위가 어려운 이유를 네 가지로 든다.
 
 - 자기가 쓸 펫 아이디어(pet ideas)에 끌린다 — "넓게 닿는 프로젝트 대신 내가 쓸 아이디어를 하는 게 만족스럽다"
 - 영리한 아이디어에 끌린다 — 목표에 직접 영향을 주는 프로젝트 대신
+- 새 아이디어에 뛰어들고 싶어진다 — 이미 자신 있는 프로젝트 대신
 - 추가로 드는 노력을 과소평가한다
 
-기존 기법은 많지만 "서로 다른 아이디어를 일관되게 비교하게 해주는 것"을 찾기 어려워서, 팀이 원리부터 직접 만들었다고 쓴다. 세 가지 문제가 그대로 네 요소로 바뀐다. 펫 아이디어는 Reach 로, 영리한 아이디어는 Impact 와 Confidence 로, 노력 과소평가는 Effort 로 견제한다. 이 대응은 내 해석이다. 원문이 이렇게 짝지어 말하지는 않는다.
+기존 기법은 많지만 "서로 다른 아이디어를 일관되게 비교하게 해주는 것"을 찾기 어려워서, 팀이 원리부터 직접 만들었다고 쓴다. 네 가지 문제가 그대로 네 요소로 바뀐다. 펫 아이디어는 Reach 로, 영리한 아이디어는 Impact 로, 새 아이디어 쏠림은 Confidence 로, 노력 과소평가는 Effort 로 견제한다. 이 대응은 내 해석이다. 원문이 이렇게 짝지어 말하지는 않는다.
 
 ### 네 요소와 척도
 
@@ -189,7 +190,7 @@ MoSCoW 를 실제로 쓰면 가장 먼저 무너지는 곳이 Must 다. 다들 �
 
 ## 정리
 
-| | RICE | MoSCoW |
+| 구분 | RICE | MoSCoW |
 |---|---|---|
 | 출처 | Intercom, Sean McBride, 2018 | Agile Business Consortium 의 DSDM 문서 |
 | 답하는 질문 | 무엇이 일한 시간 대비 효과가 큰가 | 이번 기간에 무엇을 반드시 내고 무엇을 빼나 |

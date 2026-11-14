@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="dg-wide" viewBox="0 0 720 580" role="img" aria-labelledby="planning-terms--stages-title planning-terms--stages-desc">
   <title id="planning-terms--stages-title">서비스 기획 용어를 네 단계로 나눈 지도</title>
-  <desc id="planning-terms--stages-desc">문제 정의, 해법 설계, 명세, 검증 순서로 이어지는 네 단계와 각 단계에서 쓰는 용어 14개.</desc>
+  <desc id="planning-terms--stages-desc">문제 정의(무엇이 문제인가: 역기획·페르소나·JTBD), 해법 설계(어떻게 풀고 무엇부터 하나: 유저 플로우·와이어프레임·정책서·RICE·MoSCoW), 명세(무엇을 만들지 어떻게 전하나: PRD·유저 스토리·인수 조건), 검증(문제가 풀렸는지 어떻게 아나: 북극성 지표·AARRR·A/B 테스트) 순서로 이어지는 네 단계와 각 단계에서 쓰는 용어 14개.</desc>
 
   <defs>
     <marker id="planning-terms--stages-arw-w" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">

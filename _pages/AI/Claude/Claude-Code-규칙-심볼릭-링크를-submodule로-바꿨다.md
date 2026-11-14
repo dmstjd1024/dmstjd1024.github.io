@@ -1,7 +1,7 @@
 ---
 title:  "Claude Code 규칙 심볼릭 링크를 submodule로 바꿨다"
-subtitle: "`@` import는 안쪽 폴더에서 `NONE`이었고, `.claude/rules`는 바깥·안쪽 모두 읽혔다"
-description: "`@` import는 안쪽 폴더에서 `NONE`이었고, `.claude/rules`는 바깥·안쪽 모두 읽혔다"
+subtitle: "@ import는 안쪽 폴더에서 NONE이었고, .claude/rules는 바깥·안쪽 모두 읽혔다"
+description: "@ import는 안쪽 폴더에서 NONE이었고, .claude/rules는 바깥·안쪽 모두 읽혔다"
 
 categories:
   - AI
