@@ -87,7 +87,7 @@ git commit -m "ITS-xxx 공통 규칙 갱신"
 "진행하자"만으로 clone까지 되지는 않는다. 역할은 이렇게 나뉜다.
 
 - **사람**: 바깥 레포 받기, 인증
-- **Claude**: 이후 구조 확인과 안내
+- **Claude**: README의 설치 프롬프트를 받으면 안쪽 레포(backend·frontend) clone, 이후 구조 확인과 안내
 
 이를 위해 README에 Claude용 설치 프롬프트를 넣고, `claude -p`와 sonnet으로 시험했다.
 
